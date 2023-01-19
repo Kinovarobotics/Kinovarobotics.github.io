@@ -1,0 +1,378 @@
+================================
+ProgramRunner
+================================
+    
+.. py:currentmodule:: kortex_api.autogen
+
+.. _ProgramRunnerStateChangeNotification:
+
+.. py:class:: StateChangeNotification
+
+    Describes state change notification
+
+   :canonical: kortex_api.autogen.messages.ProgramRunner_pb2.StateChangeNotification
+
+   :param sequence:   Sequence of actions executed when a program is playing
+   :type sequence: :ref:`StateSequence <ProgramRunnerStateSequence>` 
+
+   :param timestamp:   This field is deprecated and will be removed in a future release
+   :type timestamp: :ref:`Timestamp <CommonTimestamp>` 
+
+   :param connection:   This field is deprecated and will be removed in a future release
+   :type connection: :ref:`Connection <CommonConnection>` 
+
+   :param generic_info:   Generic notification information
+   :type generic_info: :ref:`NotificationInformation <CommonNotificationInformation>` 
+
+.. _ProgramRunnerVariableState:
+
+.. py:class:: VariableState
+
+    Describes the state of a variable
+
+   :canonical: kortex_api.autogen.messages.ProgramRunner_pb2.VariableState
+
+   :param identifier:   Variable unique identifier
+   :type identifier: :ref:`str <>` 
+
+   :param value:   Current value
+   :type value: :ref:`str <>` 
+
+.. _ProgramRunnerStatusInformation:
+
+.. py:class:: StatusInformation
+
+    Describes the status of the Runner
+
+   :canonical: kortex_api.autogen.messages.ProgramRunner_pb2.StatusInformation
+
+   :param status:   Current status of the Runner
+   :type status: :ref:`Status <ProgramRunnerStatus>` 
+
+   :param current_handles:   Handles to identify what is running or paused
+   :type current_handles: :ref:`ContextualizedRunnableHandles <ProgramRunnerContextualizedRunnableHandles>` 
+
+   :param start_operating_mode:   Operating mode at program start. Is OPERATING_MODE_UNSPECIFIED when runner status is STATUS_IDLE.
+   :type start_operating_mode: :ref:`OperatingModeType <CommonOperatingModeType>` 
+
+.. _ProgramRunnerStatusChangeNotification:
+
+.. py:class:: StatusChangeNotification
+
+    Status event that is sent when program runner status changed. Use GetStatus for initial status discovery
+
+   :canonical: kortex_api.autogen.messages.ProgramRunner_pb2.StatusChangeNotification
+
+   :param status_info:   New status info
+   :type status_info: :ref:`StatusInformation <ProgramRunnerStatusInformation>` 
+
+   :param timestamp:   This field is deprecated and will be removed in a future release
+   :type timestamp: :ref:`Timestamp <CommonTimestamp>` 
+
+   :param connection:   This field is deprecated and will be removed in a future release
+   :type connection: :ref:`Connection <CommonConnection>` 
+
+   :param generic_info:   Generic notification information
+   :type generic_info: :ref:`NotificationInformation <CommonNotificationInformation>` 
+
+.. _ProgramRunnerExecutionEventNotification:
+
+.. py:class:: ExecutionEventNotification
+
+    Notification about a program execution event
+
+   :canonical: kortex_api.autogen.messages.ProgramRunner_pb2.ExecutionEventNotification
+
+   :param event:   Occured event                                      
+   :type event: :ref:`ExecutionEvent <ProgramRunnerExecutionEvent>` 
+
+   :param handle:   Handle to identify what is the runnable that is affected by the notification
+   :type handle: :ref:`RunnableHandle <ProgramRunnerRunnableHandle>` 
+
+   :param payload:   Generic payload (JSON) whose content depends on the event. Can be a feedback, a reason or an output depending on the event
+   :type payload: :ref:`str <>` 
+
+   :param timestamp:   This field is deprecated and will be removed in a future release
+   :type timestamp: :ref:`Timestamp <CommonTimestamp>` 
+
+   :param connection:   This field is deprecated and will be removed in a future release
+   :type connection: :ref:`Connection <CommonConnection>` 
+
+   :param field_feedbacks:   Field feedbacks in the Action form at runtime (optional)
+   :type field_feedbacks: :ref:`JSONFieldFeedback <PluginJSONFieldFeedback>` [ ]
+
+   :param generic_info:   Generic notification information
+   :type generic_info: :ref:`NotificationInformation <CommonNotificationInformation>` 
+
+.. _ProgramRunnerActionList:
+
+.. py:class:: ActionList
+
+    List of all available actions
+
+   :canonical: kortex_api.autogen.messages.ProgramRunner_pb2.ActionList
+
+   :param actionList:  
+   :type actionList: :ref:`PluginAction <ProgramRunnerPluginAction>` [ ]
+
+.. _ProgramRunnerRunnableHandle:
+
+.. py:class:: RunnableHandle
+
+    Handle to identify a runnable
+
+   :canonical: kortex_api.autogen.messages.ProgramRunner_pb2.RunnableHandle
+
+   :param action_handle:   Handle of the action
+   :type action_handle: :ref:`ActionHandle <CommonActionHandle>` 
+
+   :param program_handle:   Handle of the program                              
+   :type program_handle: :ref:`ProgramHandle <CommonProgramHandle>` 
+
+.. _ProgramRunnerContextualizedActionHandle:
+
+.. py:class:: ContextualizedActionHandle
+
+    Handle to identify a contextualized action
+
+   :canonical: kortex_api.autogen.messages.ProgramRunner_pb2.ContextualizedActionHandle
+
+   :param handle:   Handle of the action
+   :type handle: :ref:`ActionHandle <CommonActionHandle>` 
+
+   :param context_action_ids:   This context is used to differentiate actions running in SubPrograms
+   :type context_action_ids: :ref:`int <>` [ ]
+
+.. _ProgramRunnerRunnableHandles:
+
+.. py:class:: RunnableHandles
+
+    Handles to identify the runnables
+
+   :canonical: kortex_api.autogen.messages.ProgramRunner_pb2.RunnableHandles
+
+   :param action_handles:   Handles of the actions
+   :type action_handles: :ref:`ActionHandle <CommonActionHandle>` [ ]
+
+   :param program_handle:   Handle of the program                              
+   :type program_handle: :ref:`ProgramHandle <CommonProgramHandle>` 
+
+.. _ProgramRunnerContextualizedRunnableHandles:
+
+.. py:class:: ContextualizedRunnableHandles
+
+    Handles to identify the contextualized runnables
+
+   :canonical: kortex_api.autogen.messages.ProgramRunner_pb2.ContextualizedRunnableHandles
+
+   :param action_handles:   Handles of the actions
+   :type action_handles: :ref:`ContextualizedActionHandle <ProgramRunnerContextualizedActionHandle>` [ ]
+
+   :param program_handle:   Handle of the program                              
+   :type program_handle: :ref:`ProgramHandle <CommonProgramHandle>` 
+
+.. _ProgramRunnerProgramStartConfiguration:
+
+.. py:class:: ProgramStartConfiguration
+
+    Program start configuration
+
+   :canonical: kortex_api.autogen.messages.ProgramRunner_pb2.ProgramStartConfiguration
+
+   :param debug_mode:   Is the program running in debug mode
+   :type debug_mode: :ref:`bool <>` 
+
+   :param handle:   Handle to identify what is the runnable
+   :type handle: :ref:`RunnableHandle <ProgramRunnerRunnableHandle>` 
+
+.. _ProgramRunnerActionsStartConfiguration:
+
+.. py:class:: ActionsStartConfiguration
+
+    Actions start configuration
+
+   :canonical: kortex_api.autogen.messages.ProgramRunner_pb2.ActionsStartConfiguration
+
+   :param debug_mode:   Are the actions running in debug mode
+   :type debug_mode: :ref:`bool <>` 
+
+   :param handle:   Handles to identify what are the runnables
+   :type handle: :ref:`RunnableHandles <ProgramRunnerRunnableHandles>` 
+
+   :param variables:   Variables required to operate the actions
+   :type variables: :ref:`Variable <VariableManagerVariable>` [ ]
+
+.. _ProgramRunnerProgramValidationConfiguration:
+
+.. py:class:: ProgramValidationConfiguration
+
+    Program validation configuration
+
+   :canonical: kortex_api.autogen.messages.ProgramRunner_pb2.ProgramValidationConfiguration
+
+   :param is_valid:   True if the program is valid, false otherwise
+   :type is_valid: :ref:`bool <>` 
+
+   :param program_handle:   Handle of the program
+   :type program_handle: :ref:`ProgramHandle <CommonProgramHandle>` 
+
+.. _ProgramRunnerPluginAction:
+
+.. py:class:: PluginAction
+
+    Plugin Action
+
+   :canonical: kortex_api.autogen.messages.ProgramRunner_pb2.PluginAction
+
+   :param handle:   Handle to uniquely identify a plugin action
+   :type handle: :ref:`PluginActionHandle <ProgramConfigPluginActionHandle>` 
+
+   :param description:   Properties describing the action
+   :type description: :ref:`ActionDescription <PluginActionDescription>` 
+
+.. _ProgramRunnerStateEvent:
+
+.. py:class:: StateEvent
+
+    State event
+
+   :canonical: kortex_api.autogen.messages.ProgramRunner_pb2.StateEvent
+
+   :param payload:   Generic payload (JSON) that changes depending on its type
+   :type payload: :ref:`str <>` 
+
+   :param timestamp:   Event timestamp
+   :type timestamp: :ref:`Timestamp <CommonTimestamp>` 
+
+   :param type:   Event type
+   :type type: :ref:`StateEventType <ProgramRunnerStateEventType>` 
+
+.. _ProgramRunnerStateActionSnapshot:
+
+.. py:class:: StateActionSnapshot
+
+    State action snapshot
+
+   :canonical: kortex_api.autogen.messages.ProgramRunner_pb2.StateActionSnapshot
+
+   :param state:   Generic action state (JSON) that changes depending on action type
+   :type state: :ref:`str <>` 
+
+   :param timestamp:   Snapshot timestamp
+   :type timestamp: :ref:`Timestamp <CommonTimestamp>` 
+
+   :param variables:   Values of the variables when taking the snapshot
+   :type variables: :ref:`VariableState <ProgramRunnerVariableState>` [ ]
+
+.. _ProgramRunnerStateActionStats:
+
+.. py:class:: StateActionStats
+
+    State action stats
+
+   :canonical: kortex_api.autogen.messages.ProgramRunner_pb2.StateActionStats
+
+   :param execution_duration:   Duration (in milliseconds) of the execution of the action (without pre/post-processing)
+   :type execution_duration: :ref:`int <>` 
+
+   :param failure_count:   Number of times a failure occured
+   :type failure_count: :ref:`int <>` 
+
+   :param pause_count:   Number of times an action has been paused
+   :type pause_count: :ref:`int <>` 
+
+   :param pause_duration:   How long (in milliseconds) an action has been paused
+   :type pause_duration: :ref:`int <>` 
+
+   :param play_count:   Number of times the action has been played
+   :type play_count: :ref:`int <>` 
+
+   :param play_duration:   How long (in milliseconds) an action has been playing
+   :type play_duration: :ref:`int <>` 
+
+   :param plugin_start_confirmation:   How long (in milliseconds) a plugin action has been waiting for the confirmation that it started
+   :type plugin_start_confirmation: :ref:`int <>` 
+
+   :param total_duration:   How long (in milliseconds) an action has been running
+   :type total_duration: :ref:`int <>` 
+
+.. _ProgramRunnerStateAction:
+
+.. py:class:: StateAction
+
+    State action - all the events/snapshots/stats collected during the execution of an action
+
+   :canonical: kortex_api.autogen.messages.ProgramRunner_pb2.StateAction
+
+   :param handle:   Action handle
+   :type handle: :ref:`ContextualizedActionHandle <ProgramRunnerContextualizedActionHandle>` 
+
+   :param index:   Action index
+   :type index: :ref:`int <>` 
+
+   :param events:   list of events that occured during the execution of an action
+   :type events: :ref:`StateEvent <ProgramRunnerStateEvent>` [ ]
+
+   :param snapshot_start:   snapshot taken at the start of the action
+   :type snapshot_start: :ref:`StateActionSnapshot <ProgramRunnerStateActionSnapshot>` 
+
+   :param snapshot_end:   snapshot taken at the end of the action
+   :type snapshot_end: :ref:`StateActionSnapshot <ProgramRunnerStateActionSnapshot>` 
+
+   :param stats:   stats collected during the execution of the action
+   :type stats: :ref:`StateActionStats <ProgramRunnerStateActionStats>` 
+
+.. _ProgramRunnerStateSequenceStats:
+
+.. py:class:: StateSequenceStats
+
+    Sequence stats
+
+   :canonical: kortex_api.autogen.messages.ProgramRunner_pb2.StateSequenceStats
+
+   :param average_time_between_actions:   Sequencer's average time between 2 actions (milliseconds)
+   :type average_time_between_actions: :ref:`int <>` 
+
+   :param average_time_plugin_start_confirmation:   Average time between the moment the sequencer starts a plugin action and the moment it receives a confirmation that the plugin started (milliseconds) 
+   :type average_time_plugin_start_confirmation: :ref:`int <>` 
+
+   :param average_time_waypoint_initialization:   Average time between the moment the sequencer receives a start confirmation for a waypoint action and the moment the robot actually starts to move (milliseconds)
+   :type average_time_waypoint_initialization: :ref:`int <>` 
+
+   :param average_time_action_processing:   Average time it takes for the pre/post-processing of an action
+   :type average_time_action_processing: :ref:`int <>` 
+
+   :param duration:   Total duration of the sequence (milliseconds)
+   :type duration: :ref:`int <>` 
+
+   :param end:   Sequence end timestamp
+   :type end: :ref:`Timestamp <CommonTimestamp>` 
+
+   :param start:   Sequence start timestamp
+   :type start: :ref:`Timestamp <CommonTimestamp>` 
+
+.. _ProgramRunnerStateSequence:
+
+.. py:class:: StateSequence
+
+    State sequence - list of actions with an identifier
+
+   :canonical: kortex_api.autogen.messages.ProgramRunner_pb2.StateSequence
+
+   :param identifier:   Sequence identifier
+   :type identifier: :ref:`str <>` 
+
+   :param actions:   Actions that were played during the execution of a program
+   :type actions: :ref:`StateAction <ProgramRunnerStateAction>` [ ]
+
+   :param init_variables:   Initial values of the variables when the program starts to play
+   :type init_variables: :ref:`VariableState <ProgramRunnerVariableState>` [ ]
+
+   :param pre_play_events:   Events that were captured before the first action is started
+   :type pre_play_events: :ref:`StateEvent <ProgramRunnerStateEvent>` [ ]
+
+   :param stats:   Sequence stats
+   :type stats: :ref:`StateSequenceStats <ProgramRunnerStateSequenceStats>` 
+
+   :param is_main:   True if it is the main sequence of the program, otherwise (ex: thread) false
+   :type is_main: :ref:`bool <>` 

@@ -1,0 +1,1880 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Base &mdash; Kortex API  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/dark_mode_css/general.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/dark_mode_css/dark.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/sphinx_highlight.js"></script>
+        <script src="../../../_static/dark_mode_js/default_dark.js"></script>
+        <script src="../../../_static/dark_mode_js/theme_switcher.js"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="BaseCyclic" href="BaseCyclic.html" />
+    <link rel="prev" title="ActuatorCyclic" href="ActuatorCyclic.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> Kortex API
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption" role="heading"><span class="caption-text">Getting started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../getting_started/installation.html">Install the API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../getting_started/api_mechanism.html">Get to know it</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../getting_started/code_examples.html">See what you can do (examples)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../getting_started/error_management.html">Managing problems</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">API</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Python API Reference</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../RouterClient.html">RouterClient</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../SessionManager.html">SessionManager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../MqttTransport.html">MqttTransport</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../UDPTransport.html">UDPTransport</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Constants.html">Constants</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../exceptions/index.html">Exceptions</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">Autogen</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../Enums/index.html">Enums</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="index.html">Services</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="ActuatorConfig.html">ActuatorConfig</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ActuatorCyclic.html">ActuatorCyclic</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Base</a></li>
+<li class="toctree-l4"><a class="reference internal" href="BaseCyclic.html">BaseCyclic</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ControlConfig.html">ControlConfig</a></li>
+<li class="toctree-l4"><a class="reference internal" href="DeviceConfig.html">DeviceConfig</a></li>
+<li class="toctree-l4"><a class="reference internal" href="DeviceManager.html">DeviceManager</a></li>
+<li class="toctree-l4"><a class="reference internal" href="EditingContext.html">EditingContext</a></li>
+<li class="toctree-l4"><a class="reference internal" href="EventBroker.html">EventBroker</a></li>
+<li class="toctree-l4"><a class="reference internal" href="IndustrialIO.html">IndustrialIO</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Modbus.html">Modbus</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Plugin.html">Plugin</a></li>
+<li class="toctree-l4"><a class="reference internal" href="PluginManager.html">PluginManager</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ProgramConfig.html">ProgramConfig</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ProgramRunner.html">ProgramRunner</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ProtectionZone.html">ProtectionZone</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SafetyControlUnitConfig.html">SafetyControlUnitConfig</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SafetyFunctions.html">SafetyFunctions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SafetyIO.html">SafetyIO</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Session.html">Session</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ToolManager.html">ToolManager</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ToolPlugin.html">ToolPlugin</a></li>
+<li class="toctree-l4"><a class="reference internal" href="VariableManager.html">VariableManager</a></li>
+<li class="toctree-l4"><a class="reference internal" href="WristConfigC61.html">WristConfigC61</a></li>
+<li class="toctree-l4"><a class="reference internal" href="WristCyclic.html">WristCyclic</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../Messages/index.html">Messages</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Notifications.html">Notifications</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Kortex API</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../index.html">Python API Reference</a> &raquo;</li>
+        
+          <li><a href="../index.html">Autogen</a> &raquo;</li>
+        
+          <li><a href="index.html">Services</a> &raquo;</li>
+        
+      <li>Base</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../_sources/ref/autogen/Services/Base.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="base">
+<h1>Base<a class="headerlink" href="#base" title="Permalink to this heading">¶</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.BaseClient">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">BaseClient</span></span><a class="headerlink" href="#kortex_api.autogen.BaseClient" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.client_stubs.BaseClientRpc</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="kortex_api.autogen.BaseClient.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">router</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">namespace</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kortex_api.autogen.BaseClient.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Constructs a BaseClient with an initialized <a class="reference internal" href="../../RouterClient.html#kortex_api.RouterClient.RouterClient" title="kortex_api.RouterClient.RouterClient"><code class="xref py py-class docutils literal notranslate"><span class="pre">RouterClient</span></code></a> and an optional namespace.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>router</strong> (<a class="reference internal" href="../../RouterClient.html#kortex_api.RouterClient.RouterClient" title="kortex_api.RouterClient.RouterClient"><em>RouterClient</em></a>) – <a class="reference internal" href="../../RouterClient.html#kortex_api.RouterClient.RouterClient" title="kortex_api.RouterClient.RouterClient"><code class="xref py py-class docutils literal notranslate"><span class="pre">RouterClient</span></code></a> used for the communication</p></li>
+<li><p><strong>namespace</strong> (<em>string</em>) – Optional namespace on which to initialize the BaseClient (defaults to <code class="docutils literal notranslate"><span class="pre">None</span></code>)</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kortex_api.autogen.BaseClient.IsAlive">
+<span class="sig-name descname"><span class="pre">IsAlive</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">timeoutMs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">1000</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kortex_api.autogen.BaseClient.IsAlive" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns <code class="docutils literal notranslate"><span class="pre">True</span></code> if the Service Server is detected online before <code class="docutils literal notranslate"><span class="pre">timeoutMs</span></code> is expired, <code class="docutils literal notranslate"><span class="pre">False</span></code> otherwise.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>timeoutMs</strong> (<em>unsigned int</em>) – The maximum time to wait for an answer from the server</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>bool</p>
+</dd>
+</dl>
+<span class="target" id="baseclientcreateuserprofile"></span></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kortex_api.autogen.BaseClient.CreateUserProfile">
+<span class="sig-name descname"><span class="pre">CreateUserProfile</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fulluserprofile</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">deviceId</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">options</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">RouterClientSendOptions()</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kortex_api.autogen.BaseClient.CreateUserProfile" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line">The <code class="docutils literal notranslate"><span class="pre">CONFIGURE</span></code> permission is necessary to call this RPC.</div>
+<div class="line"><br /></div>
+<div class="line">Creates a user profile and returns a handle to the profile.</div>
+<div class="line">The created user profile will always have the “Operator” role, who has the READ_ONLY and OPERATE user permissions.</div>
+<div class="line">The handle.permission field is a bitmask of Common.Permission values. A permission of 7 should always be used.</div>
+<div class="line">The username cannot be empty.</div>
+<div class="line">The username, first name and last name cannot exceed 50 characters in length.</div>
+<div class="line">The password cannot exceed 103 characters in length.</div>
+<div class="line">There cannot be more than 107 user profiles created.</div>
+<div class="line">Two user profiles cannot have the same username.</div>
+<div class="line"><br /></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>fulluserprofile</strong> (<a class="reference internal" href="../Messages/Base.html#basefulluserprofile"><span class="std std-ref">FullUserProfile</span></a>) – </p></li>
+<li><p><strong>deviceId</strong> (<em>int</em>) – Device’s Id called by rpc (optional)</p></li>
+<li><p><strong>options</strong> (<a class="reference internal" href="../../RouterClient.html#kortex_api.RouterClient.RouterClientSendOptions" title="kortex_api.RouterClient.RouterClientSendOptions"><em>RouterClientSendOptions</em></a>) – Router options for sending the message</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="../Messages/Common.html#kortex_api.autogen.UserProfileHandle" title="kortex_api.autogen.UserProfileHandle">UserProfileHandle</a></p>
+</dd>
+</dl>
+<span class="target" id="baseclientupdateuserprofile"></span></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kortex_api.autogen.BaseClient.UpdateUserProfile">
+<span class="sig-name descname"><span class="pre">UpdateUserProfile</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">userprofile</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">deviceId</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">options</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">RouterClientSendOptions()</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kortex_api.autogen.BaseClient.UpdateUserProfile" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line">The <code class="docutils literal notranslate"><span class="pre">CONFIGURE</span></code> permission is necessary to call this RPC.</div>
+<div class="line"><br /></div>
+<div class="line">Updates an existing user profile.</div>
+<div class="line">The handle.identifier parameter must be set to a valid identifier.</div>
+<div class="line">The username cannot already be in use by another user profile.</div>
+<div class="line">The same username, password, first name and last name length constraints as CreateUserProfile apply for this RPC.</div>
+<div class="line"><br /></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>userprofile</strong> (<a class="reference internal" href="../Messages/Base.html#baseuserprofile"><span class="std std-ref">UserProfile</span></a>) – </p></li>
+<li><p><strong>deviceId</strong> (<em>int</em>) – Device’s Id called by rpc (optional)</p></li>
+<li><p><strong>options</strong> (<a class="reference internal" href="../../RouterClient.html#kortex_api.RouterClient.RouterClientSendOptions" title="kortex_api.RouterClient.RouterClientSendOptions"><em>RouterClientSendOptions</em></a>) – Router options for sending the message</p></li>
+</ul>
+</dd>
+</dl>
+<span class="target" id="baseclientreaduserprofile"></span></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kortex_api.autogen.BaseClient.ReadUserProfile">
+<span class="sig-name descname"><span class="pre">ReadUserProfile</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">userprofilehandle</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">deviceId</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">options</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">RouterClientSendOptions()</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kortex_api.autogen.BaseClient.ReadUserProfile" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line">The <code class="docutils literal notranslate"><span class="pre">CONFIGURE</span></code> permission is necessary to call this RPC.</div>
+<div class="line"><br /></div>
+<div class="line">Retrieves an existing user profile</div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>userprofilehandle</strong> (<a class="reference internal" href="../Messages/Common.html#commonuserprofilehandle"><span class="std std-ref">UserProfileHandle</span></a>) – </p></li>
+<li><p><strong>deviceId</strong> (<em>int</em>) – Device’s Id called by rpc (optional)</p></li>
+<li><p><strong>options</strong> (<a class="reference internal" href="../../RouterClient.html#kortex_api.RouterClient.RouterClientSendOptions" title="kortex_api.RouterClient.RouterClientSendOptions"><em>RouterClientSendOptions</em></a>) – Router options for sending the message</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="../Messages/Base.html#kortex_api.autogen.UserProfile" title="kortex_api.autogen.UserProfile">UserProfile</a></p>
+</dd>
+</dl>
+<span class="target" id="baseclientdeleteuserprofile"></span></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kortex_api.autogen.BaseClient.DeleteUserProfile">
+<span class="sig-name descname"><span class="pre">DeleteUserProfile</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">userprofilehandle</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">deviceId</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">options</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">RouterClientSendOptions()</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kortex_api.autogen.BaseClient.DeleteUserProfile" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line">The <code class="docutils literal notranslate"><span class="pre">CONFIGURE</span></code> permission is necessary to call this RPC.</div>
+<div class="line"><br /></div>
+<div class="line">Deletes an existing user profile.</div>
+<div class="line">The handle.identifier parameter must be set to a valid identifier.</div>
+<div class="line">The handle.permission of the user profile to delete must include the DELETE_PERMISSION.</div>
+<div class="line"><br /></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>userprofilehandle</strong> (<a class="reference internal" href="../Messages/Common.html#commonuserprofilehandle"><span class="std std-ref">UserProfileHandle</span></a>) – </p></li>
+<li><p><strong>deviceId</strong> (<em>int</em>) – Device’s Id called by rpc (optional)</p></li>
+<li><p><strong>options</strong> (<a class="reference internal" href="../../RouterClient.html#kortex_api.RouterClient.RouterClientSendOptions" title="kortex_api.RouterClient.RouterClientSendOptions"><em>RouterClientSendOptions</em></a>) – Router options for sending the message</p></li>
+</ul>
+</dd>
+</dl>
+<span class="target" id="baseclientreadalluserprofiles"></span></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kortex_api.autogen.BaseClient.ReadAllUserProfiles">
+<span class="sig-name descname"><span class="pre">ReadAllUserProfiles</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">deviceId</span> <span class="pre">=</span> <span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">options</span> <span class="pre">=</span> <span class="pre">RouterClientSendOptions()</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kortex_api.autogen.BaseClient.ReadAllUserProfiles" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line">The <code class="docutils literal notranslate"><span class="pre">OPERATE</span></code> permission is necessary to call this RPC.</div>
+<div class="line"><br /></div>
+<div class="line">Retrieves all user profiles</div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>deviceId</strong> (<em>int</em>) – Device’s Id called by rpc (optional)</p></li>
+<li><p><strong>options</strong> (<a class="reference internal" href="../../RouterClient.html#kortex_api.RouterClient.RouterClientSendOptions" title="kortex_api.RouterClient.RouterClientSendOptions"><em>RouterClientSendOptions</em></a>) – Router options for sending the message</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="../Messages/Base.html#kortex_api.autogen.UserProfileList" title="kortex_api.autogen.UserProfileList">UserProfileList</a></p>
+</dd>
+</dl>
+<span class="target" id="baseclientreadallusers"></span></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kortex_api.autogen.BaseClient.ReadAllUsers">
+<span class="sig-name descname"><span class="pre">ReadAllUsers</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">deviceId</span> <span class="pre">=</span> <span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">options</span> <span class="pre">=</span> <span class="pre">RouterClientSendOptions()</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kortex_api.autogen.BaseClient.ReadAllUsers" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line">The <code class="docutils literal notranslate"><span class="pre">CONFIGURE</span></code> permission is necessary to call this RPC.</div>
+<div class="line"><br /></div>
+<div class="line">Retrieves the list of all user profile handles</div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>deviceId</strong> (<em>int</em>) – Device’s Id called by rpc (optional)</p></li>
+<li><p><strong>options</strong> (<a class="reference internal" href="../../RouterClient.html#kortex_api.RouterClient.RouterClientSendOptions" title="kortex_api.RouterClient.RouterClientSendOptions"><em>RouterClientSendOptions</em></a>) – Router options for sending the message</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="../Messages/Base.html#kortex_api.autogen.UserList" title="kortex_api.autogen.UserList">UserList</a></p>
+</dd>
+</dl>
+<span class="target" id="baseclientchangepassword"></span></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kortex_api.autogen.BaseClient.ChangePassword">
+<span class="sig-name descname"><span class="pre">ChangePassword</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">passwordchange</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">deviceId</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">options</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">RouterClientSendOptions()</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kortex_api.autogen.BaseClient.ChangePassword" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line">The <code class="docutils literal notranslate"><span class="pre">CONFIGURE</span></code> permission is necessary to call this RPC.</div>
+<div class="line"><br /></div>
+<div class="line">Changes the password of an existing user.</div>
+<div class="line">The handle.identifier parameter must be set to a valid identifier.</div>
+<div class="line">The old_password parameter must match the user’s current password.</div>
+<div class="line"><br /></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>passwordchange</strong> (<a class="reference internal" href="../Messages/Base.html#basepasswordchange"><span class="std std-ref">PasswordChange</span></a>) – </p></li>
+<li><p><strong>deviceId</strong> (<em>int</em>) – Device’s Id called by rpc (optional)</p></li>
+<li><p><strong>options</strong> (<a class="reference internal" href="../../RouterClient.html#kortex_api.RouterClient.RouterClientSendOptions" title="kortex_api.RouterClient.RouterClientSendOptions"><em>RouterClientSendOptions</em></a>) – Router options for sending the message</p></li>
+</ul>
+</dd>
+</dl>
+<span class="target" id="baseclientexecuteaction"></span></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kortex_api.autogen.BaseClient.ExecuteAction">
+<span class="sig-name descname"><span class="pre">ExecuteAction</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">action</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">deviceId</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">options</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">RouterClientSendOptions()</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kortex_api.autogen.BaseClient.ExecuteAction" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line">The <code class="docutils literal notranslate"><span class="pre">OPERATE</span></code> permission is necessary to call this RPC.</div>
+<div class="line"><br /></div>
+<div class="line">Commands the robot to execute the specified action.</div>
+<div class="line">This RPC cannot be called when the operating mode is OPERATING_MODE_JOG_MANUAL.</div>
+<div class="line">This RPC will be ignored if it is called when the operating mode is OPERATING_MODE_MONITORED_STOP.</div>
+<div class="line">A ROBOT_NOT_MOVING exception “Failed to execute action: The Enabling device must be pressed for the arm to move” is thrown if the operating mode is OPERATING_MODE_HOLD_TO_RUN and the enabling device is not pressed when the action starts running.</div>
+<div class="line">A DEVICE_DISCONNECTED exception “Stopping motion failed for Session ID &lt;session ID&gt;: No Arm Detected” is thrown if the arm is not powered on.</div>
+<div class="line">Most of the action types are no longer supported. All action types that are not detailed below will return an UNSUPPORTED_ACTION exception “Unsupported action type: &lt;type ID of action&gt; in action “&lt;name of action&gt;””.</div>
+<div class="line"><br /></div>
+<div class="line">send_twist_command:</div>
+<div class="line">- If the input twist is higher than the set arm limits, the command does not return an error or warning but the twists do not exceed the set limits.</div>
+<div class="line">- If the arm is given a twist command in a direction it can’t move in, it will try to move which can induce movement in other directions as well.</div>
+<div class="line">- If the twist is too high, the induced acceleration may cause the arm to falsely detect a collision.</div>
+<div class="line">- The action will not stop after the time specified in the duration parameter of the TwistCommand object.</div>
+<div class="line"><br /></div>
+<div class="line">send_joint_speeds:</div>
+<div class="line">- The JointSpeed objects’ input parameter “identifier” should be an integer between 0 and 5, defining the index of the joint to control.</div>
+<div class="line">- If not all 6 joint speeds have been defined, then the undefined ones are set as 0.</div>
+<div class="line"><br /></div>
+<div class="line">execute_waypoint_list:has to be an integer</div>
+<div class="line">- A METHOD_FAILED exception “The waypoint list is empty” will be thrown if the list of waypoints is empty or no argument has been passed to the WaypointList object.</div>
+<div class="line">- If a waypoint is out of reach, the robot will not execute the waypoint list and it will send a warning message “Invalid Waypoint - Out of Robot Workspace”.</div>
+<div class="line">- The action will not stop after the time specified in the duration parameter of the WaypointList object.</div>
+<div class="line"><br /></div>
+<div class="line">change_payload_parameters:</div>
+<div class="line">- The input parameter mass of ChangePayloadParameters has to be between 0 and 9 kg.</div>
+<div class="line">- The input parameter center_of_mass should have values between -1 and 1.</div>
+<div class="line">- The input parameter inertia should have diagonal values (I <sub>xx</sub>,I <sub>yy</sub>,I <sub>zz</sub>) between 0 and 1, and cross-product element values (I <sub>xy</sub>,I <sub>xz</sub>,I <sub>yz</sub>) between -1 and 1.</div>
+<div class="line">- If any value is outside its range, the action will be ignored and no value will be changed.</div>
+<div class="line"><br /></div>
+<div class="line">switch_control_mapping:</div>
+<div class="line">- This action type is not to be used.</div>
+<div class="line"><br /></div>
+<div class="line">play_pre_computed_trajectory:</div>
+<div class="line">- This action type is to be deprecated.</div>
+<div class="line">- The elements of the list of PreComputedJointTRajectoryElement objects should be spaced by 1ms increments.</div>
+<div class="line">- The action will be ignored if the trajectory elements do not form a coherent path, given the time spacing of 1ms.</div>
+<div class="line"><br /></div>
+<div class="line">execute_action:</div>
+<div class="line">- This action type is deprecated.</div>
+<div class="line"><br /></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>action</strong> (<a class="reference internal" href="../Messages/Base.html#baseaction"><span class="std std-ref">Action</span></a>) – </p></li>
+<li><p><strong>deviceId</strong> (<em>int</em>) – Device’s Id called by rpc (optional)</p></li>
+<li><p><strong>options</strong> (<a class="reference internal" href="../../RouterClient.html#kortex_api.RouterClient.RouterClientSendOptions" title="kortex_api.RouterClient.RouterClientSendOptions"><em>RouterClientSendOptions</em></a>) – Router options for sending the message</p></li>
+</ul>
+</dd>
+</dl>
+<span class="target" id="baseclientpauseaction"></span></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kortex_api.autogen.BaseClient.PauseAction">
+<span class="sig-name descname"><span class="pre">PauseAction</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">deviceId</span> <span class="pre">=</span> <span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">options</span> <span class="pre">=</span> <span class="pre">RouterClientSendOptions()</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kortex_api.autogen.BaseClient.PauseAction" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line">The <code class="docutils literal notranslate"><span class="pre">OPERATE</span></code> permission is necessary to call this RPC.</div>
+<div class="line"><br /></div>
+<div class="line">Pauses the currently executed action. ResumeAction can be invoked afterwards.</div>
+<div class="line">Pausing an action sets the operating the operating mode to OPERATING_MODE_MONITORED_STOP.</div>
+<div class="line">A ROBOT_NOT_MOVING exception “Failed to pause action: The Enabling device must be pressed for the arm to move” is thrown when the operating mode is OPERATING_MODE_HOLD_TO_RUN and the enabling device is not pressed.</div>
+<div class="line">A DEVICE_DISCONNECTED exception “Failed to pause action: No Arm Detected” is thrown if the arm is not powered on.</div>
+<div class="line"><br /></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>deviceId</strong> (<em>int</em>) – Device’s Id called by rpc (optional)</p></li>
+<li><p><strong>options</strong> (<a class="reference internal" href="../../RouterClient.html#kortex_api.RouterClient.RouterClientSendOptions" title="kortex_api.RouterClient.RouterClientSendOptions"><em>RouterClientSendOptions</em></a>) – Router options for sending the message</p></li>
+</ul>
+</dd>
+</dl>
+<span class="target" id="baseclientstopaction"></span></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kortex_api.autogen.BaseClient.StopAction">
+<span class="sig-name descname"><span class="pre">StopAction</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">deviceId</span> <span class="pre">=</span> <span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">options</span> <span class="pre">=</span> <span class="pre">RouterClientSendOptions()</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kortex_api.autogen.BaseClient.StopAction" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line">The <code class="docutils literal notranslate"><span class="pre">OPERATE</span></code> permission is necessary to call this RPC.</div>
+<div class="line"><br /></div>
+<div class="line">Stops the currently executed action. ResumeAction cannot be invoked afterwards.</div>
+<div class="line">An INVALID_PARAM exception “Failed to stop action: Argument Invalid” is thrown if the operating mode is OPERATING_MODE_MONITORED_STOP.</div>
+<div class="line">A ROBOT_NOT_MOVING exception “Failed to stop action: The Enabling device must be pressed for the arm to move” is thrown when the operating mode is OPERATING_MODE_HOLD_TO_RUN and the enabling device is not pressed.</div>
+<div class="line">A ROBOT_NOT_MOVING exception “Failed to stop action: Trying to stop, pause or resume an action that is not started” is thrown if no action is started before the RPC is called.</div>
+<div class="line">A DEVICE_DISCONNECTED exception “Failed to stop action: No Arm Detected” is thrown if the arm is not powered on.</div>
+<div class="line"><br /></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>deviceId</strong> (<em>int</em>) – Device’s Id called by rpc (optional)</p></li>
+<li><p><strong>options</strong> (<a class="reference internal" href="../../RouterClient.html#kortex_api.RouterClient.RouterClientSendOptions" title="kortex_api.RouterClient.RouterClientSendOptions"><em>RouterClientSendOptions</em></a>) – Router options for sending the message</p></li>
+</ul>
+</dd>
+</dl>
+<span class="target" id="baseclientresumeaction"></span></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kortex_api.autogen.BaseClient.ResumeAction">
+<span class="sig-name descname"><span class="pre">ResumeAction</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">deviceId</span> <span class="pre">=</span> <span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">options</span> <span class="pre">=</span> <span class="pre">RouterClientSendOptions()</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kortex_api.autogen.BaseClient.ResumeAction" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line">The <code class="docutils literal notranslate"><span class="pre">OPERATE</span></code> permission is necessary to call this RPC.</div>
+<div class="line"><br /></div>
+<div class="line">Resumes execution of the currently paused action.</div>
+<div class="line">This RPC can only be called when the operating mode is OPERATING_MODE_AUTO.</div>
+<div class="line">An INVALID_PARAM exception “Failed to resume action: Argument Invalid” is thrown if the operating mode is OPERATING_MODE_MONITORED_STOP.</div>
+<div class="line">A METHOD_FAILED exception “Failed to resume action: Action failed” is thrown if the operating mode is OPERATING_MODE_HOLD_TO_RUN.</div>
+<div class="line">A DEVICE_DISCONNECTED exception “Failed to resume action: No Arm Detected” is thrown if the arm is not powered on.</div>
+<div class="line"><br /></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>deviceId</strong> (<em>int</em>) – Device’s Id called by rpc (optional)</p></li>
+<li><p><strong>options</strong> (<a class="reference internal" href="../../RouterClient.html#kortex_api.RouterClient.RouterClientSendOptions" title="kortex_api.RouterClient.RouterClientSendOptions"><em>RouterClientSendOptions</em></a>) – Router options for sending the message</p></li>
+</ul>
+</dd>
+</dl>
+<span class="target" id="baseclientgetipv4configuration"></span></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kortex_api.autogen.BaseClient.GetIPv4Configuration">
+<span class="sig-name descname"><span class="pre">GetIPv4Configuration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">networkhandle</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">deviceId</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">options</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">RouterClientSendOptions()</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kortex_api.autogen.BaseClient.GetIPv4Configuration" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line">The <code class="docutils literal notranslate"><span class="pre">READ_ONLY</span></code> permission is necessary to call this RPC.</div>
+<div class="line"><br /></div>
+<div class="line">Retrieves the IPv4 network configuration for the specified network adapter</div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>networkhandle</strong> (<a class="reference internal" href="../Messages/Base.html#basenetworkhandle"><span class="std std-ref">NetworkHandle</span></a>) – </p></li>
+<li><p><strong>deviceId</strong> (<em>int</em>) – Device’s Id called by rpc (optional)</p></li>
+<li><p><strong>options</strong> (<a class="reference internal" href="../../RouterClient.html#kortex_api.RouterClient.RouterClientSendOptions" title="kortex_api.RouterClient.RouterClientSendOptions"><em>RouterClientSendOptions</em></a>) – Router options for sending the message</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="../Messages/Base.html#kortex_api.autogen.IPv4Configuration" title="kortex_api.autogen.IPv4Configuration">IPv4Configuration</a></p>
+</dd>
+</dl>
+<span class="target" id="baseclientsetipv4configuration"></span></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kortex_api.autogen.BaseClient.SetIPv4Configuration">
+<span class="sig-name descname"><span class="pre">SetIPv4Configuration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fullipv4configuration</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">deviceId</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">options</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">RouterClientSendOptions()</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kortex_api.autogen.BaseClient.SetIPv4Configuration" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line">The <code class="docutils literal notranslate"><span class="pre">CONFIGURE</span></code> permission is necessary to call this RPC.</div>
+<div class="line"><br /></div>
+<div class="line">Modifies the IPv4 network configuration for the specified network adapter</div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>fullipv4configuration</strong> (<a class="reference internal" href="../Messages/Base.html#basefullipv4configuration"><span class="std std-ref">FullIPv4Configuration</span></a>) – </p></li>
+<li><p><strong>deviceId</strong> (<em>int</em>) – Device’s Id called by rpc (optional)</p></li>
+<li><p><strong>options</strong> (<a class="reference internal" href="../../RouterClient.html#kortex_api.RouterClient.RouterClientSendOptions" title="kortex_api.RouterClient.RouterClientSendOptions"><em>RouterClientSendOptions</em></a>) – Router options for sending the message</p></li>
+</ul>
+</dd>
+</dl>
+<span class="target" id="baseclientunsubscribe"></span></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kortex_api.autogen.BaseClient.Unsubscribe">
+<span class="sig-name descname"><span class="pre">Unsubscribe</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">notificationhandle</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">deviceId</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">options</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">RouterClientSendOptions()</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kortex_api.autogen.BaseClient.Unsubscribe" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line">The <code class="docutils literal notranslate"><span class="pre">READ_ONLY</span></code> permission is necessary to call this RPC.</div>
+<div class="line"><br /></div>
+<div class="line">Unsubscribes client from receiving notifications for the specified topic</div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>notificationhandle</strong> (<a class="reference internal" href="../Messages/Common.html#commonnotificationhandle"><span class="std std-ref">NotificationHandle</span></a>) – </p></li>
+<li><p><strong>deviceId</strong> (<em>int</em>) – Device’s Id called by rpc (optional)</p></li>
+<li><p><strong>options</strong> (<a class="reference internal" href="../../RouterClient.html#kortex_api.RouterClient.RouterClientSendOptions" title="kortex_api.RouterClient.RouterClientSendOptions"><em>RouterClientSendOptions</em></a>) – Router options for sending the message</p></li>
+</ul>
+</dd>
+</dl>
+<span class="target" id="onnotificationbaseclientconfigurationchangetopic"></span></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kortex_api.autogen.BaseClient.OnNotificationConfigurationChangeTopic">
+<span class="sig-name descname"><span class="pre">OnNotificationConfigurationChangeTopic</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">callback</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">notificationoptions</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kortex_api.autogen.BaseClient.OnNotificationConfigurationChangeTopic" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line">The <code class="docutils literal notranslate"><span class="pre">READ_ONLY</span></code> permission is necessary to call this RPC.</div>
+<div class="line"><br /></div>
+<div class="line">Subscribes to configuration change topic for notifications</div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>callback</strong> (<em>function</em>) – Function callback taking a <a class="reference internal" href="../Messages/VariableManager.html#kortex_api.autogen.ConfigurationChangeNotification" title="kortex_api.autogen.ConfigurationChangeNotification"><code class="xref py py-class docutils literal notranslate"><span class="pre">ConfigurationChangeNotification</span></code></a> as only argument, and returning <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p></li>
+<li><p><strong>notificationoptions</strong> (<a class="reference internal" href="../Messages/Common.html#kortex_api.autogen.NotificationOptions" title="kortex_api.autogen.NotificationOptions"><em>NotificationOptions</em></a>) – Notification options</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="../Messages/Common.html#kortex_api.autogen.NotificationHandle" title="kortex_api.autogen.NotificationHandle">NotificationHandle</a></p>
+</dd>
+</dl>
+<span class="target" id="onnotificationbaseclientoperatingmodetopic"></span></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kortex_api.autogen.BaseClient.OnNotificationOperatingModeTopic">
+<span class="sig-name descname"><span class="pre">OnNotificationOperatingModeTopic</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">callback</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">notificationoptions</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kortex_api.autogen.BaseClient.OnNotificationOperatingModeTopic" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line">The <code class="docutils literal notranslate"><span class="pre">READ_ONLY</span></code> permission is necessary to call this RPC.</div>
+<div class="line"><br /></div>
+<div class="line">Subscribes to operating mode topic for notifications</div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>callback</strong> (<em>function</em>) – Function callback taking a <a class="reference internal" href="../Messages/Base.html#kortex_api.autogen.OperatingModeNotification" title="kortex_api.autogen.OperatingModeNotification"><code class="xref py py-class docutils literal notranslate"><span class="pre">OperatingModeNotification</span></code></a> as only argument, and returning <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p></li>
+<li><p><strong>notificationoptions</strong> (<a class="reference internal" href="../Messages/Common.html#kortex_api.autogen.NotificationOptions" title="kortex_api.autogen.NotificationOptions"><em>NotificationOptions</em></a>) – Notification options</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="../Messages/Common.html#kortex_api.autogen.NotificationHandle" title="kortex_api.autogen.NotificationHandle">NotificationHandle</a></p>
+</dd>
+</dl>
+<span class="target" id="onnotificationbaseclientcontrollertopic"></span></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kortex_api.autogen.BaseClient.OnNotificationControllerTopic">
+<span class="sig-name descname"><span class="pre">OnNotificationControllerTopic</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">callback</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">notificationoptions</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kortex_api.autogen.BaseClient.OnNotificationControllerTopic" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line">The <code class="docutils literal notranslate"><span class="pre">READ_ONLY</span></code> permission is necessary to call this RPC.</div>
+<div class="line"><br /></div>
+<div class="line">Subscribes to controller topic for notifications</div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>callback</strong> (<em>function</em>) – Function callback taking a <a class="reference internal" href="../Messages/Base.html#kortex_api.autogen.ControllerNotification" title="kortex_api.autogen.ControllerNotification"><code class="xref py py-class docutils literal notranslate"><span class="pre">ControllerNotification</span></code></a> as only argument, and returning <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p></li>
+<li><p><strong>notificationoptions</strong> (<a class="reference internal" href="../Messages/Common.html#kortex_api.autogen.NotificationOptions" title="kortex_api.autogen.NotificationOptions"><em>NotificationOptions</em></a>) – Notification options</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="../Messages/Common.html#kortex_api.autogen.NotificationHandle" title="kortex_api.autogen.NotificationHandle">NotificationHandle</a></p>
+</dd>
+</dl>
+<span class="target" id="onnotificationbaseclientactiontopic"></span></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kortex_api.autogen.BaseClient.OnNotificationActionTopic">
+<span class="sig-name descname"><span class="pre">OnNotificationActionTopic</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">callback</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">notificationoptions</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kortex_api.autogen.BaseClient.OnNotificationActionTopic" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line">The <code class="docutils literal notranslate"><span class="pre">READ_ONLY</span></code> permission is necessary to call this RPC.</div>
+<div class="line"><br /></div>
+<div class="line">Subscribes to action topic for notifications</div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>callback</strong> (<em>function</em>) – Function callback taking a <a class="reference internal" href="../Messages/Plugin.html#kortex_api.autogen.ActionNotification" title="kortex_api.autogen.ActionNotification"><code class="xref py py-class docutils literal notranslate"><span class="pre">ActionNotification</span></code></a> as only argument, and returning <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p></li>
+<li><p><strong>notificationoptions</strong> (<a class="reference internal" href="../Messages/Common.html#kortex_api.autogen.NotificationOptions" title="kortex_api.autogen.NotificationOptions"><em>NotificationOptions</em></a>) – Notification options</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="../Messages/Common.html#kortex_api.autogen.NotificationHandle" title="kortex_api.autogen.NotificationHandle">NotificationHandle</a></p>
+</dd>
+</dl>
+<span class="target" id="onnotificationbaseclientroboteventtopic"></span></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kortex_api.autogen.BaseClient.OnNotificationRobotEventTopic">
+<span class="sig-name descname"><span class="pre">OnNotificationRobotEventTopic</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">callback</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">notificationoptions</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kortex_api.autogen.BaseClient.OnNotificationRobotEventTopic" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line">The <code class="docutils literal notranslate"><span class="pre">READ_ONLY</span></code> permission is necessary to call this RPC.</div>
+<div class="line"><br /></div>
+<div class="line">Subscribes to robot event topic for notifications</div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>callback</strong> (<em>function</em>) – Function callback taking a <a class="reference internal" href="../Messages/Base.html#kortex_api.autogen.RobotEventNotification" title="kortex_api.autogen.RobotEventNotification"><code class="xref py py-class docutils literal notranslate"><span class="pre">RobotEventNotification</span></code></a> as only argument, and returning <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p></li>
+<li><p><strong>notificationoptions</strong> (<a class="reference internal" href="../Messages/Common.html#kortex_api.autogen.NotificationOptions" title="kortex_api.autogen.NotificationOptions"><em>NotificationOptions</em></a>) – Notification options</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="../Messages/Common.html#kortex_api.autogen.NotificationHandle" title="kortex_api.autogen.NotificationHandle">NotificationHandle</a></p>
+</dd>
+</dl>
+<span class="target" id="baseclientstop"></span></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kortex_api.autogen.BaseClient.Stop">
+<span class="sig-name descname"><span class="pre">Stop</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">deviceId</span> <span class="pre">=</span> <span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">options</span> <span class="pre">=</span> <span class="pre">RouterClientSendOptions()</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kortex_api.autogen.BaseClient.Stop" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line">The <code class="docutils literal notranslate"><span class="pre">OPERATE</span></code> permission is necessary to call this RPC.</div>
+<div class="line"><br /></div>
+<div class="line">Stops robot movement</div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>deviceId</strong> (<em>int</em>) – Device’s Id called by rpc (optional)</p></li>
+<li><p><strong>options</strong> (<a class="reference internal" href="../../RouterClient.html#kortex_api.RouterClient.RouterClientSendOptions" title="kortex_api.RouterClient.RouterClientSendOptions"><em>RouterClientSendOptions</em></a>) – Router options for sending the message</p></li>
+</ul>
+</dd>
+</dl>
+<span class="target" id="baseclientgetmeasuredcartesianpose"></span></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kortex_api.autogen.BaseClient.GetMeasuredCartesianPose">
+<span class="sig-name descname"><span class="pre">GetMeasuredCartesianPose</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">deviceId</span> <span class="pre">=</span> <span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">options</span> <span class="pre">=</span> <span class="pre">RouterClientSendOptions()</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kortex_api.autogen.BaseClient.GetMeasuredCartesianPose" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line">The <code class="docutils literal notranslate"><span class="pre">READ_ONLY</span></code> permission is necessary to call this RPC.</div>
+<div class="line"><br /></div>
+<div class="line">Retrieves the current computed tool pose (position and orientation) for the robot</div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>deviceId</strong> (<em>int</em>) – Device’s Id called by rpc (optional)</p></li>
+<li><p><strong>options</strong> (<a class="reference internal" href="../../RouterClient.html#kortex_api.RouterClient.RouterClientSendOptions" title="kortex_api.RouterClient.RouterClientSendOptions"><em>RouterClientSendOptions</em></a>) – Router options for sending the message</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="../Messages/Base.html#kortex_api.autogen.Pose" title="kortex_api.autogen.Pose">Pose</a></p>
+</dd>
+</dl>
+<span class="target" id="baseclientsendtwistjoystickcommand"></span></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kortex_api.autogen.BaseClient.SendTwistJoystickCommand">
+<span class="sig-name descname"><span class="pre">SendTwistJoystickCommand</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">twistcommand</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">deviceId</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">options</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">RouterClientSendOptions()</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kortex_api.autogen.BaseClient.SendTwistJoystickCommand" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line">The <code class="docutils literal notranslate"><span class="pre">OPERATE</span></code> permission is necessary to call this RPC.</div>
+<div class="line"><br /></div>
+<div class="line">Sends a twist (screw consisting of linear and angular velocity) joystick command to be applied to the tool.</div>
+<div class="line">The twist values sent to this call are expected to be a ratio of the maximum value (between -1.0/+1.0).</div>
+<div class="line">This RPC can only be sent while the robot is in Jog Manual.</div>
+<div class="line">A ROBOT_NOT_MOVING error will be thrown if the Enabling Device is not pressed.</div>
+<div class="line"><br /></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>twistcommand</strong> (<a class="reference internal" href="../Messages/Base.html#basetwistcommand"><span class="std std-ref">TwistCommand</span></a>) – </p></li>
+<li><p><strong>deviceId</strong> (<em>int</em>) – Device’s Id called by rpc (optional)</p></li>
+<li><p><strong>options</strong> (<a class="reference internal" href="../../RouterClient.html#kortex_api.RouterClient.RouterClientSendOptions" title="kortex_api.RouterClient.RouterClientSendOptions"><em>RouterClientSendOptions</em></a>) – Router options for sending the message</p></li>
+</ul>
+</dd>
+</dl>
+<span class="target" id="baseclientsendtwistcommand"></span></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kortex_api.autogen.BaseClient.SendTwistCommand">
+<span class="sig-name descname"><span class="pre">SendTwistCommand</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">twistcommand</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">deviceId</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">options</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">RouterClientSendOptions()</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kortex_api.autogen.BaseClient.SendTwistCommand" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line">The <code class="docutils literal notranslate"><span class="pre">OPERATE</span></code> permission is necessary to call this RPC.</div>
+<div class="line"><br /></div>
+<div class="line">Sends a twist (screw consisting of linear and angular velocity) command to be applied to the tool.</div>
+<div class="line">This RPC can only be sent while the robot is in Jog Manual.</div>
+<div class="line">A ROBOT_NOT_MOVING error will be thrown if the Enabling Device is not pressed.</div>
+<div class="line"><br /></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>twistcommand</strong> (<a class="reference internal" href="../Messages/Base.html#basetwistcommand"><span class="std std-ref">TwistCommand</span></a>) – </p></li>
+<li><p><strong>deviceId</strong> (<em>int</em>) – Device’s Id called by rpc (optional)</p></li>
+<li><p><strong>options</strong> (<a class="reference internal" href="../../RouterClient.html#kortex_api.RouterClient.RouterClientSendOptions" title="kortex_api.RouterClient.RouterClientSendOptions"><em>RouterClientSendOptions</em></a>) – Router options for sending the message</p></li>
+</ul>
+</dd>
+</dl>
+<span class="target" id="baseclientgetmeasuredjointangles"></span></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kortex_api.autogen.BaseClient.GetMeasuredJointAngles">
+<span class="sig-name descname"><span class="pre">GetMeasuredJointAngles</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">deviceId</span> <span class="pre">=</span> <span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">options</span> <span class="pre">=</span> <span class="pre">RouterClientSendOptions()</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kortex_api.autogen.BaseClient.GetMeasuredJointAngles" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line">The <code class="docutils literal notranslate"><span class="pre">READ_ONLY</span></code> permission is necessary to call this RPC.</div>
+<div class="line"><br /></div>
+<div class="line">Retrieves the currently measured joint angles for each joint</div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>deviceId</strong> (<em>int</em>) – Device’s Id called by rpc (optional)</p></li>
+<li><p><strong>options</strong> (<a class="reference internal" href="../../RouterClient.html#kortex_api.RouterClient.RouterClientSendOptions" title="kortex_api.RouterClient.RouterClientSendOptions"><em>RouterClientSendOptions</em></a>) – Router options for sending the message</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="../Messages/Base.html#kortex_api.autogen.JointAngles" title="kortex_api.autogen.JointAngles">JointAngles</a></p>
+</dd>
+</dl>
+<span class="target" id="baseclientsendjointspeedscommand"></span></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kortex_api.autogen.BaseClient.SendJointSpeedsCommand">
+<span class="sig-name descname"><span class="pre">SendJointSpeedsCommand</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">jointspeeds</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">deviceId</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">options</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">RouterClientSendOptions()</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kortex_api.autogen.BaseClient.SendJointSpeedsCommand" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line">The <code class="docutils literal notranslate"><span class="pre">OPERATE</span></code> permission is necessary to call this RPC.</div>
+<div class="line"><br /></div>
+<div class="line">Sends a set of joint speed commands to all joints with one command. Joint speed commmands must be sent to all joints.</div>
+<div class="line">If you do not want to move some of the joints, simply send a speed value of 0 degrees / second for that joint.</div>
+<div class="line">This RPC can only be sent while the robot is in Jog Manual.</div>
+<div class="line">A ROBOT_NOT_MOVING error will be thrown if the Enabling Device is not pressed.</div>
+<div class="line"><br /></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>jointspeeds</strong> (<a class="reference internal" href="../Messages/Base.html#basejointspeeds"><span class="std std-ref">JointSpeeds</span></a>) – </p></li>
+<li><p><strong>deviceId</strong> (<em>int</em>) – Device’s Id called by rpc (optional)</p></li>
+<li><p><strong>options</strong> (<a class="reference internal" href="../../RouterClient.html#kortex_api.RouterClient.RouterClientSendOptions" title="kortex_api.RouterClient.RouterClientSendOptions"><em>RouterClientSendOptions</em></a>) – Router options for sending the message</p></li>
+</ul>
+</dd>
+</dl>
+<span class="target" id="baseclientsendselectedjointspeedcommand"></span></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kortex_api.autogen.BaseClient.SendSelectedJointSpeedCommand">
+<span class="sig-name descname"><span class="pre">SendSelectedJointSpeedCommand</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">jointspeed</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">deviceId</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">options</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">RouterClientSendOptions()</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kortex_api.autogen.BaseClient.SendSelectedJointSpeedCommand" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line">The <code class="docutils literal notranslate"><span class="pre">OPERATE</span></code> permission is necessary to call this RPC.</div>
+<div class="line"><br /></div>
+<div class="line">Sends a speed command for a specific joint.</div>
+<div class="line">This RPC can only be sent while the robot is in Jog Manual.</div>
+<div class="line">A ROBOT_NOT_MOVING error will be thrown if the Enabling Device is not pressed.</div>
+<div class="line"><br /></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>jointspeed</strong> (<a class="reference internal" href="../Messages/Base.html#basejointspeed"><span class="std std-ref">JointSpeed</span></a>) – </p></li>
+<li><p><strong>deviceId</strong> (<em>int</em>) – Device’s Id called by rpc (optional)</p></li>
+<li><p><strong>options</strong> (<a class="reference internal" href="../../RouterClient.html#kortex_api.RouterClient.RouterClientSendOptions" title="kortex_api.RouterClient.RouterClientSendOptions"><em>RouterClientSendOptions</em></a>) – Router options for sending the message</p></li>
+</ul>
+</dd>
+</dl>
+<span class="target" id="baseclientapplyquickstop"></span></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kortex_api.autogen.BaseClient.ApplyQuickStop">
+<span class="sig-name descname"><span class="pre">ApplyQuickStop</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">deviceId</span> <span class="pre">=</span> <span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">options</span> <span class="pre">=</span> <span class="pre">RouterClientSendOptions()</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kortex_api.autogen.BaseClient.ApplyQuickStop" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line">The <code class="docutils literal notranslate"><span class="pre">OPERATE</span></code> permission is necessary to call this RPC.</div>
+<div class="line"><br /></div>
+<div class="line">Applies a category 2 stop to the robot and puts it back in Monitored Stop state.</div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>deviceId</strong> (<em>int</em>) – Device’s Id called by rpc (optional)</p></li>
+<li><p><strong>options</strong> (<a class="reference internal" href="../../RouterClient.html#kortex_api.RouterClient.RouterClientSendOptions" title="kortex_api.RouterClient.RouterClientSendOptions"><em>RouterClientSendOptions</em></a>) – Router options for sending the message</p></li>
+</ul>
+</dd>
+</dl>
+<span class="target" id="baseclientclearfaults"></span></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kortex_api.autogen.BaseClient.ClearFaults">
+<span class="sig-name descname"><span class="pre">ClearFaults</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">deviceId</span> <span class="pre">=</span> <span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">options</span> <span class="pre">=</span> <span class="pre">RouterClientSendOptions()</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kortex_api.autogen.BaseClient.ClearFaults" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line">The <code class="docutils literal notranslate"><span class="pre">OPERATE</span></code> permission is necessary to call this RPC.</div>
+<div class="line"><br /></div>
+<div class="line">Clears robot fault state. Robot is permitted to move again.</div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>deviceId</strong> (<em>int</em>) – Device’s Id called by rpc (optional)</p></li>
+<li><p><strong>options</strong> (<a class="reference internal" href="../../RouterClient.html#kortex_api.RouterClient.RouterClientSendOptions" title="kortex_api.RouterClient.RouterClientSendOptions"><em>RouterClientSendOptions</em></a>) – Router options for sending the message</p></li>
+</ul>
+</dd>
+</dl>
+<span class="target" id="baseclientgetservoingmode"></span></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kortex_api.autogen.BaseClient.GetServoingMode">
+<span class="sig-name descname"><span class="pre">GetServoingMode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">deviceId</span> <span class="pre">=</span> <span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">options</span> <span class="pre">=</span> <span class="pre">RouterClientSendOptions()</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kortex_api.autogen.BaseClient.GetServoingMode" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line">The <code class="docutils literal notranslate"><span class="pre">READ_ONLY</span></code> permission is necessary to call this RPC.</div>
+<div class="line"><br /></div>
+<div class="line">Retrieves current servoing mode</div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>deviceId</strong> (<em>int</em>) – Device’s Id called by rpc (optional)</p></li>
+<li><p><strong>options</strong> (<a class="reference internal" href="../../RouterClient.html#kortex_api.RouterClient.RouterClientSendOptions" title="kortex_api.RouterClient.RouterClientSendOptions"><em>RouterClientSendOptions</em></a>) – Router options for sending the message</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="../Messages/Base.html#kortex_api.autogen.ServoingModeInformation" title="kortex_api.autogen.ServoingModeInformation">ServoingModeInformation</a></p>
+</dd>
+</dl>
+<span class="target" id="onnotificationbaseclientservoingmodetopic"></span></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kortex_api.autogen.BaseClient.OnNotificationServoingModeTopic">
+<span class="sig-name descname"><span class="pre">OnNotificationServoingModeTopic</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">callback</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">notificationoptions</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kortex_api.autogen.BaseClient.OnNotificationServoingModeTopic" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line">The <code class="docutils literal notranslate"><span class="pre">READ_ONLY</span></code> permission is necessary to call this RPC.</div>
+<div class="line"><br /></div>
+<div class="line">Subscribes to servoing mode topic for notifications</div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>callback</strong> (<em>function</em>) – Function callback taking a <a class="reference internal" href="../Messages/Base.html#kortex_api.autogen.ServoingModeNotification" title="kortex_api.autogen.ServoingModeNotification"><code class="xref py py-class docutils literal notranslate"><span class="pre">ServoingModeNotification</span></code></a> as only argument, and returning <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p></li>
+<li><p><strong>notificationoptions</strong> (<a class="reference internal" href="../Messages/Common.html#kortex_api.autogen.NotificationOptions" title="kortex_api.autogen.NotificationOptions"><em>NotificationOptions</em></a>) – Notification options</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="../Messages/Common.html#kortex_api.autogen.NotificationHandle" title="kortex_api.autogen.NotificationHandle">NotificationHandle</a></p>
+</dd>
+</dl>
+<span class="target" id="baseclientrestorefactorysettings"></span></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kortex_api.autogen.BaseClient.RestoreFactorySettings">
+<span class="sig-name descname"><span class="pre">RestoreFactorySettings</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">deviceId</span> <span class="pre">=</span> <span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">options</span> <span class="pre">=</span> <span class="pre">RouterClientSendOptions()</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kortex_api.autogen.BaseClient.RestoreFactorySettings" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line">The <code class="docutils literal notranslate"><span class="pre">CONFIGURE</span></code> permission is necessary to call this RPC.</div>
+<div class="line"><br /></div>
+<div class="line">Deletes all configurations and reverts settings to their factory defaults (except network settings)</div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>deviceId</strong> (<em>int</em>) – Device’s Id called by rpc (optional)</p></li>
+<li><p><strong>options</strong> (<a class="reference internal" href="../../RouterClient.html#kortex_api.RouterClient.RouterClientSendOptions" title="kortex_api.RouterClient.RouterClientSendOptions"><em>RouterClientSendOptions</em></a>) – Router options for sending the message</p></li>
+</ul>
+</dd>
+</dl>
+<span class="target" id="baseclientreboot"></span></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kortex_api.autogen.BaseClient.Reboot">
+<span class="sig-name descname"><span class="pre">Reboot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">deviceId</span> <span class="pre">=</span> <span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">options</span> <span class="pre">=</span> <span class="pre">RouterClientSendOptions()</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kortex_api.autogen.BaseClient.Reboot" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line">The <code class="docutils literal notranslate"><span class="pre">OPERATE</span></code> permission is necessary to call this RPC.</div>
+<div class="line"><br /></div>
+<div class="line">Reboots the controller</div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>deviceId</strong> (<em>int</em>) – Device’s Id called by rpc (optional)</p></li>
+<li><p><strong>options</strong> (<a class="reference internal" href="../../RouterClient.html#kortex_api.RouterClient.RouterClientSendOptions" title="kortex_api.RouterClient.RouterClientSendOptions"><em>RouterClientSendOptions</em></a>) – Router options for sending the message</p></li>
+</ul>
+</dd>
+</dl>
+<span class="target" id="onnotificationbaseclientfactorytopic"></span></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kortex_api.autogen.BaseClient.OnNotificationFactoryTopic">
+<span class="sig-name descname"><span class="pre">OnNotificationFactoryTopic</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">callback</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">notificationoptions</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kortex_api.autogen.BaseClient.OnNotificationFactoryTopic" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line">The <code class="docutils literal notranslate"><span class="pre">READ_ONLY</span></code> permission is necessary to call this RPC.</div>
+<div class="line"><br /></div>
+<div class="line">Subscribes to factory topic for notifications</div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>callback</strong> (<em>function</em>) – Function callback taking a <a class="reference internal" href="../Messages/Base.html#kortex_api.autogen.FactoryNotification" title="kortex_api.autogen.FactoryNotification"><code class="xref py py-class docutils literal notranslate"><span class="pre">FactoryNotification</span></code></a> as only argument, and returning <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p></li>
+<li><p><strong>notificationoptions</strong> (<a class="reference internal" href="../Messages/Common.html#kortex_api.autogen.NotificationOptions" title="kortex_api.autogen.NotificationOptions"><em>NotificationOptions</em></a>) – Notification options</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="../Messages/Common.html#kortex_api.autogen.NotificationHandle" title="kortex_api.autogen.NotificationHandle">NotificationHandle</a></p>
+</dd>
+</dl>
+<span class="target" id="baseclientgetactuatorcount"></span></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kortex_api.autogen.BaseClient.GetActuatorCount">
+<span class="sig-name descname"><span class="pre">GetActuatorCount</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">deviceId</span> <span class="pre">=</span> <span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">options</span> <span class="pre">=</span> <span class="pre">RouterClientSendOptions()</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kortex_api.autogen.BaseClient.GetActuatorCount" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line">The <code class="docutils literal notranslate"><span class="pre">READ_ONLY</span></code> permission is necessary to call this RPC.</div>
+<div class="line"><br /></div>
+<div class="line">Retrieves the number of actuators in the robot</div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>deviceId</strong> (<em>int</em>) – Device’s Id called by rpc (optional)</p></li>
+<li><p><strong>options</strong> (<a class="reference internal" href="../../RouterClient.html#kortex_api.RouterClient.RouterClientSendOptions" title="kortex_api.RouterClient.RouterClientSendOptions"><em>RouterClientSendOptions</em></a>) – Router options for sending the message</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="../Messages/Base.html#kortex_api.autogen.ActuatorInformation" title="kortex_api.autogen.ActuatorInformation">ActuatorInformation</a></p>
+</dd>
+</dl>
+<span class="target" id="baseclientgetarmstate"></span></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kortex_api.autogen.BaseClient.GetArmState">
+<span class="sig-name descname"><span class="pre">GetArmState</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">deviceId</span> <span class="pre">=</span> <span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">options</span> <span class="pre">=</span> <span class="pre">RouterClientSendOptions()</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kortex_api.autogen.BaseClient.GetArmState" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line">The <code class="docutils literal notranslate"><span class="pre">READ_ONLY</span></code> permission is necessary to call this RPC.</div>
+<div class="line"><br /></div>
+<div class="line">Retrieves current robot arm state</div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>deviceId</strong> (<em>int</em>) – Device’s Id called by rpc (optional)</p></li>
+<li><p><strong>options</strong> (<a class="reference internal" href="../../RouterClient.html#kortex_api.RouterClient.RouterClientSendOptions" title="kortex_api.RouterClient.RouterClientSendOptions"><em>RouterClientSendOptions</em></a>) – Router options for sending the message</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="../Messages/Base.html#kortex_api.autogen.ArmStateInformation" title="kortex_api.autogen.ArmStateInformation">ArmStateInformation</a></p>
+</dd>
+</dl>
+<span class="target" id="onnotificationbaseclientarmstatetopic"></span></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kortex_api.autogen.BaseClient.OnNotificationArmStateTopic">
+<span class="sig-name descname"><span class="pre">OnNotificationArmStateTopic</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">callback</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">notificationoptions</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kortex_api.autogen.BaseClient.OnNotificationArmStateTopic" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line">The <code class="docutils literal notranslate"><span class="pre">READ_ONLY</span></code> permission is necessary to call this RPC.</div>
+<div class="line"><br /></div>
+<div class="line">Subscribes to robot arm state notifications</div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>callback</strong> (<em>function</em>) – Function callback taking a <a class="reference internal" href="../Messages/Base.html#kortex_api.autogen.ArmStateNotification" title="kortex_api.autogen.ArmStateNotification"><code class="xref py py-class docutils literal notranslate"><span class="pre">ArmStateNotification</span></code></a> as only argument, and returning <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p></li>
+<li><p><strong>notificationoptions</strong> (<a class="reference internal" href="../Messages/Common.html#kortex_api.autogen.NotificationOptions" title="kortex_api.autogen.NotificationOptions"><em>NotificationOptions</em></a>) – Notification options</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="../Messages/Common.html#kortex_api.autogen.NotificationHandle" title="kortex_api.autogen.NotificationHandle">NotificationHandle</a></p>
+</dd>
+</dl>
+<span class="target" id="baseclientgetipv4information"></span></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kortex_api.autogen.BaseClient.GetIPv4Information">
+<span class="sig-name descname"><span class="pre">GetIPv4Information</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">networkhandle</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">deviceId</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">options</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">RouterClientSendOptions()</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kortex_api.autogen.BaseClient.GetIPv4Information" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line">The <code class="docutils literal notranslate"><span class="pre">READ_ONLY</span></code> permission is necessary to call this RPC.</div>
+<div class="line"><br /></div>
+<div class="line">Retrieves the IPv4 network information for the specified network adapter</div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>networkhandle</strong> (<a class="reference internal" href="../Messages/Base.html#basenetworkhandle"><span class="std std-ref">NetworkHandle</span></a>) – </p></li>
+<li><p><strong>deviceId</strong> (<em>int</em>) – Device’s Id called by rpc (optional)</p></li>
+<li><p><strong>options</strong> (<a class="reference internal" href="../../RouterClient.html#kortex_api.RouterClient.RouterClientSendOptions" title="kortex_api.RouterClient.RouterClientSendOptions"><em>RouterClientSendOptions</em></a>) – Router options for sending the message</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="../Messages/Base.html#kortex_api.autogen.IPv4Information" title="kortex_api.autogen.IPv4Information">IPv4Information</a></p>
+</dd>
+</dl>
+<span class="target" id="baseclientsendjointspeedsjoystickcommand"></span></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kortex_api.autogen.BaseClient.SendJointSpeedsJoystickCommand">
+<span class="sig-name descname"><span class="pre">SendJointSpeedsJoystickCommand</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">jointspeeds</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">deviceId</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">options</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">RouterClientSendOptions()</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kortex_api.autogen.BaseClient.SendJointSpeedsJoystickCommand" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line">The <code class="docutils literal notranslate"><span class="pre">OPERATE</span></code> permission is necessary to call this RPC.</div>
+<div class="line"><br /></div>
+<div class="line">Sends the desired joystick speeds to all joints with one command.</div>
+<div class="line">The speed values sent to this call are expected to be a ratio of the maximum value (between -1.0/+1.0)</div>
+<div class="line">Speeds must be sent to all joints. If you don’t want to move some of the joints, send a value of 0.</div>
+<div class="line">This RPC can only be sent while the robot is in Jog Manual.</div>
+<div class="line">A ROBOT_NOT_MOVING error will be thrown if the Enabling Device is not pressed.</div>
+<div class="line"><br /></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>jointspeeds</strong> (<a class="reference internal" href="../Messages/Base.html#basejointspeeds"><span class="std std-ref">JointSpeeds</span></a>) – </p></li>
+<li><p><strong>deviceId</strong> (<em>int</em>) – Device’s Id called by rpc (optional)</p></li>
+<li><p><strong>options</strong> (<a class="reference internal" href="../../RouterClient.html#kortex_api.RouterClient.RouterClientSendOptions" title="kortex_api.RouterClient.RouterClientSendOptions"><em>RouterClientSendOptions</em></a>) – Router options for sending the message</p></li>
+</ul>
+</dd>
+</dl>
+<span class="target" id="baseclientsendselectedjointspeedjoystickcommand"></span></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kortex_api.autogen.BaseClient.SendSelectedJointSpeedJoystickCommand">
+<span class="sig-name descname"><span class="pre">SendSelectedJointSpeedJoystickCommand</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">jointspeed</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">deviceId</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">options</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">RouterClientSendOptions()</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kortex_api.autogen.BaseClient.SendSelectedJointSpeedJoystickCommand" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line">The <code class="docutils literal notranslate"><span class="pre">OPERATE</span></code> permission is necessary to call this RPC.</div>
+<div class="line"><br /></div>
+<div class="line">Sends a joystick speed for a specific joint.</div>
+<div class="line">The speed value sent to this call is expected to be a ratio of the maximum value (between -1.0/+1.0)</div>
+<div class="line">This RPC can only be sent while the robot is in Jog Manual.</div>
+<div class="line">A ROBOT_NOT_MOVING error will be thrown if the Enabling Device is not pressed.</div>
+<div class="line"><br /></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>jointspeed</strong> (<a class="reference internal" href="../Messages/Base.html#basejointspeed"><span class="std std-ref">JointSpeed</span></a>) – </p></li>
+<li><p><strong>deviceId</strong> (<em>int</em>) – Device’s Id called by rpc (optional)</p></li>
+<li><p><strong>options</strong> (<a class="reference internal" href="../../RouterClient.html#kortex_api.RouterClient.RouterClientSendOptions" title="kortex_api.RouterClient.RouterClientSendOptions"><em>RouterClientSendOptions</em></a>) – Router options for sending the message</p></li>
+</ul>
+</dd>
+</dl>
+<span class="target" id="baseclientplayprecomputedjointtrajectory"></span></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kortex_api.autogen.BaseClient.PlayPreComputedJointTrajectory">
+<span class="sig-name descname"><span class="pre">PlayPreComputedJointTrajectory</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">precomputedjointtrajectory</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">deviceId</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">options</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">RouterClientSendOptions()</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kortex_api.autogen.BaseClient.PlayPreComputedJointTrajectory" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line">The <code class="docutils literal notranslate"><span class="pre">OPERATE</span></code> permission is necessary to call this RPC.</div>
+<div class="line"><br /></div>
+<div class="line">Plays a pre-computed angular trajectory</div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>precomputedjointtrajectory</strong> (<a class="reference internal" href="../Messages/Base.html#baseprecomputedjointtrajectory"><span class="std std-ref">PreComputedJointTrajectory</span></a>) – </p></li>
+<li><p><strong>deviceId</strong> (<em>int</em>) – Device’s Id called by rpc (optional)</p></li>
+<li><p><strong>options</strong> (<a class="reference internal" href="../../RouterClient.html#kortex_api.RouterClient.RouterClientSendOptions" title="kortex_api.RouterClient.RouterClientSendOptions"><em>RouterClientSendOptions</em></a>) – Router options for sending the message</p></li>
+</ul>
+</dd>
+</dl>
+<span class="target" id="baseclientgetproductconfiguration"></span></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kortex_api.autogen.BaseClient.GetProductConfiguration">
+<span class="sig-name descname"><span class="pre">GetProductConfiguration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">deviceId</span> <span class="pre">=</span> <span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">options</span> <span class="pre">=</span> <span class="pre">RouterClientSendOptions()</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kortex_api.autogen.BaseClient.GetProductConfiguration" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line">The <code class="docutils literal notranslate"><span class="pre">READ_ONLY</span></code> permission is necessary to call this RPC.</div>
+<div class="line"><br /></div>
+<div class="line">Retrieves product configuration information</div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>deviceId</strong> (<em>int</em>) – Device’s Id called by rpc (optional)</p></li>
+<li><p><strong>options</strong> (<a class="reference internal" href="../../RouterClient.html#kortex_api.RouterClient.RouterClientSendOptions" title="kortex_api.RouterClient.RouterClientSendOptions"><em>RouterClientSendOptions</em></a>) – Router options for sending the message</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="../Messages/ProductConfiguration.html#kortex_api.autogen.CompleteProductConfiguration" title="kortex_api.autogen.CompleteProductConfiguration">CompleteProductConfiguration</a></p>
+</dd>
+</dl>
+<span class="target" id="baseclientgettrajectoryerrorreport"></span></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kortex_api.autogen.BaseClient.GetTrajectoryErrorReport">
+<span class="sig-name descname"><span class="pre">GetTrajectoryErrorReport</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">deviceId</span> <span class="pre">=</span> <span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">options</span> <span class="pre">=</span> <span class="pre">RouterClientSendOptions()</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kortex_api.autogen.BaseClient.GetTrajectoryErrorReport" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line">The <code class="docutils literal notranslate"><span class="pre">READ_ONLY</span></code> permission is necessary to call this RPC.</div>
+<div class="line"><br /></div>
+<div class="line">Obtains trajectory error report listing errors for rejected trajectory.</div>
+<div class="line">Provides some feedback on why the trajectory could not be completed.</div>
+<div class="line"><br /></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>deviceId</strong> (<em>int</em>) – Device’s Id called by rpc (optional)</p></li>
+<li><p><strong>options</strong> (<a class="reference internal" href="../../RouterClient.html#kortex_api.RouterClient.RouterClientSendOptions" title="kortex_api.RouterClient.RouterClientSendOptions"><em>RouterClientSendOptions</em></a>) – Router options for sending the message</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="../Messages/Base.html#kortex_api.autogen.TrajectoryErrorReport" title="kortex_api.autogen.TrajectoryErrorReport">TrajectoryErrorReport</a></p>
+</dd>
+</dl>
+<span class="target" id="baseclientgetfirmwarebundleversions"></span></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kortex_api.autogen.BaseClient.GetFirmwareBundleVersions">
+<span class="sig-name descname"><span class="pre">GetFirmwareBundleVersions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">deviceId</span> <span class="pre">=</span> <span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">options</span> <span class="pre">=</span> <span class="pre">RouterClientSendOptions()</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kortex_api.autogen.BaseClient.GetFirmwareBundleVersions" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line">The <code class="docutils literal notranslate"><span class="pre">READ_ONLY</span></code> permission is necessary to call this RPC.</div>
+<div class="line"><br /></div>
+<div class="line">Retrieves current firmware bundle versions</div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>deviceId</strong> (<em>int</em>) – Device’s Id called by rpc (optional)</p></li>
+<li><p><strong>options</strong> (<a class="reference internal" href="../../RouterClient.html#kortex_api.RouterClient.RouterClientSendOptions" title="kortex_api.RouterClient.RouterClientSendOptions"><em>RouterClientSendOptions</em></a>) – Router options for sending the message</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="../Messages/Base.html#kortex_api.autogen.FirmwareBundleVersions" title="kortex_api.autogen.FirmwareBundleVersions">FirmwareBundleVersions</a></p>
+</dd>
+</dl>
+<span class="target" id="baseclientexecutewaypointtrajectory"></span></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kortex_api.autogen.BaseClient.ExecuteWaypointTrajectory">
+<span class="sig-name descname"><span class="pre">ExecuteWaypointTrajectory</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">waypointlist</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">deviceId</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">options</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">RouterClientSendOptions()</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kortex_api.autogen.BaseClient.ExecuteWaypointTrajectory" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line">The <code class="docutils literal notranslate"><span class="pre">OPERATE</span></code> permission is necessary to call this RPC.</div>
+<div class="line"><br /></div>
+<div class="line">Executes a trajectory defined by a series of waypoints in joint space or in Cartesian space</div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>waypointlist</strong> (<a class="reference internal" href="../Messages/Base.html#basewaypointlist"><span class="std std-ref">WaypointList</span></a>) – </p></li>
+<li><p><strong>deviceId</strong> (<em>int</em>) – Device’s Id called by rpc (optional)</p></li>
+<li><p><strong>options</strong> (<a class="reference internal" href="../../RouterClient.html#kortex_api.RouterClient.RouterClientSendOptions" title="kortex_api.RouterClient.RouterClientSendOptions"><em>RouterClientSendOptions</em></a>) – Router options for sending the message</p></li>
+</ul>
+</dd>
+</dl>
+<span class="target" id="baseclientvalidatewaypointlist"></span></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kortex_api.autogen.BaseClient.ValidateWaypointList">
+<span class="sig-name descname"><span class="pre">ValidateWaypointList</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">waypointlist</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">deviceId</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">options</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">RouterClientSendOptions()</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kortex_api.autogen.BaseClient.ValidateWaypointList" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line">The <code class="docutils literal notranslate"><span class="pre">OPERATE</span></code> permission is necessary to call this RPC.</div>
+<div class="line"><br /></div>
+<div class="line">Validate a waypoint list, returns an empty trajectory error report list if the waypoint list is valid.</div>
+<div class="line">If the use_optimal_blending option is true, a waypoint list with optimal blending will be returned.</div>
+<div class="line"><br /></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>waypointlist</strong> (<a class="reference internal" href="../Messages/Base.html#basewaypointlist"><span class="std std-ref">WaypointList</span></a>) – </p></li>
+<li><p><strong>deviceId</strong> (<em>int</em>) – Device’s Id called by rpc (optional)</p></li>
+<li><p><strong>options</strong> (<a class="reference internal" href="../../RouterClient.html#kortex_api.RouterClient.RouterClientSendOptions" title="kortex_api.RouterClient.RouterClientSendOptions"><em>RouterClientSendOptions</em></a>) – Router options for sending the message</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="../Messages/Base.html#kortex_api.autogen.WaypointValidationReport" title="kortex_api.autogen.WaypointValidationReport">WaypointValidationReport</a></p>
+</dd>
+</dl>
+<span class="target" id="baseclientcomputeforwardkinematics"></span></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kortex_api.autogen.BaseClient.ComputeForwardKinematics">
+<span class="sig-name descname"><span class="pre">ComputeForwardKinematics</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">jointangles</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">deviceId</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">options</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">RouterClientSendOptions()</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kortex_api.autogen.BaseClient.ComputeForwardKinematics" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line">The <code class="docutils literal notranslate"><span class="pre">OPERATE</span></code> permission is necessary to call this RPC.</div>
+<div class="line"><br /></div>
+<div class="line">Get the forward kinematics given specified angular positions of actuators</div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>jointangles</strong> (<a class="reference internal" href="../Messages/Base.html#basejointangles"><span class="std std-ref">JointAngles</span></a>) – </p></li>
+<li><p><strong>deviceId</strong> (<em>int</em>) – Device’s Id called by rpc (optional)</p></li>
+<li><p><strong>options</strong> (<a class="reference internal" href="../../RouterClient.html#kortex_api.RouterClient.RouterClientSendOptions" title="kortex_api.RouterClient.RouterClientSendOptions"><em>RouterClientSendOptions</em></a>) – Router options for sending the message</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="../Messages/Base.html#kortex_api.autogen.Pose" title="kortex_api.autogen.Pose">Pose</a></p>
+</dd>
+</dl>
+<span class="target" id="baseclientcomputeinversekinematics"></span></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kortex_api.autogen.BaseClient.ComputeInverseKinematics">
+<span class="sig-name descname"><span class="pre">ComputeInverseKinematics</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ikdata</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">deviceId</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">options</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">RouterClientSendOptions()</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kortex_api.autogen.BaseClient.ComputeInverseKinematics" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line">The <code class="docutils literal notranslate"><span class="pre">OPERATE</span></code> permission is necessary to call this RPC.</div>
+<div class="line"><br /></div>
+<div class="line">Get the inverse kinematics given a specified cartesian pose and guess of joint angles</div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ikdata</strong> (<a class="reference internal" href="../Messages/Base.html#baseikdata"><span class="std std-ref">IKData</span></a>) – </p></li>
+<li><p><strong>deviceId</strong> (<em>int</em>) – Device’s Id called by rpc (optional)</p></li>
+<li><p><strong>options</strong> (<a class="reference internal" href="../../RouterClient.html#kortex_api.RouterClient.RouterClientSendOptions" title="kortex_api.RouterClient.RouterClientSendOptions"><em>RouterClientSendOptions</em></a>) – Router options for sending the message</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="../Messages/Base.html#kortex_api.autogen.JointAngles" title="kortex_api.autogen.JointAngles">JointAngles</a></p>
+</dd>
+</dl>
+<span class="target" id="baseclientactivaterobot"></span></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kortex_api.autogen.BaseClient.ActivateRobot">
+<span class="sig-name descname"><span class="pre">ActivateRobot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">deviceId</span> <span class="pre">=</span> <span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">options</span> <span class="pre">=</span> <span class="pre">RouterClientSendOptions()</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kortex_api.autogen.BaseClient.ActivateRobot" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line">The <code class="docutils literal notranslate"><span class="pre">OPERATE</span></code> permission is necessary to call this RPC.</div>
+<div class="line"><br /></div>
+<div class="line">Activates the robot.</div>
+<div class="line">This function will return after the command is sent, not after the arm is properly activated.</div>
+<div class="line">Subscribe to the ArmStateTopic to be notified of the robot’s current activation status.</div>
+<div class="line">A METHOD_FAILED error will be thrown if the robot was powered off less than 8 seconds ago. Activating the robot can only be done more than 8 seconds after the last power off.</div>
+<div class="line">A WRONG_MODE error will be thrown if the robot is already activated.</div>
+<div class="line"><br /></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>deviceId</strong> (<em>int</em>) – Device’s Id called by rpc (optional)</p></li>
+<li><p><strong>options</strong> (<a class="reference internal" href="../../RouterClient.html#kortex_api.RouterClient.RouterClientSendOptions" title="kortex_api.RouterClient.RouterClientSendOptions"><em>RouterClientSendOptions</em></a>) – Router options for sending the message</p></li>
+</ul>
+</dd>
+</dl>
+<span class="target" id="onnotificationbaseclientupdatingmodetopic"></span></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kortex_api.autogen.BaseClient.OnNotificationUpdatingModeTopic">
+<span class="sig-name descname"><span class="pre">OnNotificationUpdatingModeTopic</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">callback</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">notificationoptions</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kortex_api.autogen.BaseClient.OnNotificationUpdatingModeTopic" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line">The <code class="docutils literal notranslate"><span class="pre">READ_ONLY</span></code> permission is necessary to call this RPC.</div>
+<div class="line"><br /></div>
+<div class="line">Subscribes to updating mode topic for notifications</div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>callback</strong> (<em>function</em>) – Function callback taking a <a class="reference internal" href="../Messages/Base.html#kortex_api.autogen.UpdatingModeNotification" title="kortex_api.autogen.UpdatingModeNotification"><code class="xref py py-class docutils literal notranslate"><span class="pre">UpdatingModeNotification</span></code></a> as only argument, and returning <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p></li>
+<li><p><strong>notificationoptions</strong> (<a class="reference internal" href="../Messages/Common.html#kortex_api.autogen.NotificationOptions" title="kortex_api.autogen.NotificationOptions"><em>NotificationOptions</em></a>) – Notification options</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="../Messages/Common.html#kortex_api.autogen.NotificationHandle" title="kortex_api.autogen.NotificationHandle">NotificationHandle</a></p>
+</dd>
+</dl>
+<span class="target" id="baseclientsetupdatingmode"></span></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kortex_api.autogen.BaseClient.SetUpdatingMode">
+<span class="sig-name descname"><span class="pre">SetUpdatingMode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">updatingmodeinformation</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">deviceId</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">options</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">RouterClientSendOptions()</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kortex_api.autogen.BaseClient.SetUpdatingMode" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line">The <code class="docutils literal notranslate"><span class="pre">CONFIGURE</span></code> permission is necessary to call this RPC.</div>
+<div class="line"><br /></div>
+<div class="line">Sets a new updating mode. Only Maintenance, Update and Run modes are permitted.</div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>updatingmodeinformation</strong> (<a class="reference internal" href="../Messages/Base.html#baseupdatingmodeinformation"><span class="std std-ref">UpdatingModeInformation</span></a>) – </p></li>
+<li><p><strong>deviceId</strong> (<em>int</em>) – Device’s Id called by rpc (optional)</p></li>
+<li><p><strong>options</strong> (<a class="reference internal" href="../../RouterClient.html#kortex_api.RouterClient.RouterClientSendOptions" title="kortex_api.RouterClient.RouterClientSendOptions"><em>RouterClientSendOptions</em></a>) – Router options for sending the message</p></li>
+</ul>
+</dd>
+</dl>
+<span class="target" id="baseclientgetupdatingmode"></span></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kortex_api.autogen.BaseClient.GetUpdatingMode">
+<span class="sig-name descname"><span class="pre">GetUpdatingMode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">deviceId</span> <span class="pre">=</span> <span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">options</span> <span class="pre">=</span> <span class="pre">RouterClientSendOptions()</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kortex_api.autogen.BaseClient.GetUpdatingMode" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line">The <code class="docutils literal notranslate"><span class="pre">READ_ONLY</span></code> permission is necessary to call this RPC.</div>
+<div class="line"><br /></div>
+<div class="line">Retrieves current updating mode</div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>deviceId</strong> (<em>int</em>) – Device’s Id called by rpc (optional)</p></li>
+<li><p><strong>options</strong> (<a class="reference internal" href="../../RouterClient.html#kortex_api.RouterClient.RouterClientSendOptions" title="kortex_api.RouterClient.RouterClientSendOptions"><em>RouterClientSendOptions</em></a>) – Router options for sending the message</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="../Messages/Base.html#kortex_api.autogen.UpdatingModeInformation" title="kortex_api.autogen.UpdatingModeInformation">UpdatingModeInformation</a></p>
+</dd>
+</dl>
+<span class="target" id="baseclientselectoperatingmode"></span></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kortex_api.autogen.BaseClient.SelectOperatingMode">
+<span class="sig-name descname"><span class="pre">SelectOperatingMode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">modeselection</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">deviceId</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">options</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">RouterClientSendOptions()</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kortex_api.autogen.BaseClient.SelectOperatingMode" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line">The <code class="docutils literal notranslate"><span class="pre">OPERATE</span></code> permission is necessary to call this RPC.</div>
+<div class="line"><br /></div>
+<div class="line">Select the operating mode</div>
+<div class="line">There is a small transition period (about 1 ms) when switching operating modes where the value of the current operating mode is temporarily set as OPERATING_MODE_MONITORED_STOP.</div>
+<div class="line">If a call that checks the current operating mode is made from the API shortly after this RPC has been called, it might return OPERATING_MODE_MONITORED_STOP instead of the correct operating mode.</div>
+<div class="line"><br /></div>
+<div class="line">When the arm is in ARMSTATE_RECOVERY, no exceptions are thrown but the command is ignored</div>
+<div class="line"><br /></div>
+<div class="line">A DEVICE_DISCONNECTED exception “Stopping motion failed for Session ID &lt;session ID&gt;: No Arm Detected” will be thrown if the arm is powered off.</div>
+<div class="line">A ROBOT_NOT_READY exception “Stopping motion failed for Session ID &lt;session ID&gt;: Arm Initialization In Progress” if the arm is initializing.</div>
+<div class="line">A METHOD_FAILED exception “Failed to change the operating mode : Unknown Event” if the arm is in fault (either powered on or off).</div>
+<div class="line">A WRONG_MODE exception “Failed to change the operating mode : Invalid operating mode” will be thrown if the parameter is OPERATING_MODE_HAND_GUIDING.</div>
+<div class="line">A WRONG_MODE exception “Failed to change the operating mode : Invalid transition between two operating modes” will be thrown if the parameter is not an admissible mode to transition into from the current operating mode.</div>
+<div class="line"><br /></div>
+<div class="line">From the operating mode OPERATING_MODE_MONITORED_STOP, the admissible transitions are to the operating modes:</div>
+<div class="line">- OPERATING_MODE_MONITORED_STOP</div>
+<div class="line">- OPERATING_MODE_HOLD_TO_RUN</div>
+<div class="line">- OPERATING_MODE_AUTO</div>
+<div class="line">- OPERATING_MODE_JOG_MANUAL</div>
+<div class="line"><br /></div>
+<div class="line">From the operating mode OPERATING_MODE_HOLD_TO_RUN, the admissible transitions are to the operating modes:</div>
+<div class="line">- OPERATING_MODE_MONITORED_STOP</div>
+<div class="line">- OPERATING_MODE_AUTO</div>
+<div class="line">- OPERATING_MODE_JOG_MANUAL</div>
+<div class="line"><br /></div>
+<div class="line">From the operating mode OPERATING_MODE_AUTO, the admissible transitions are to the operating modes:</div>
+<div class="line">- OPERATING_MODE_MONITORED_STOP</div>
+<div class="line">- OPERATING_MODE_HOLD_TO_RUN</div>
+<div class="line"><br /></div>
+<div class="line">From the operating mode OPERATING_MODE_JOG_MANUAL, the admissible transitions are to the operating modes:</div>
+<div class="line">- OPERATING_MODE_MONITORED_STOP</div>
+<div class="line">- OPERATING_MODE_HOLD_TO_RUN</div>
+<div class="line">- OPERATING_MODE_JOG_MANUAL</div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>modeselection</strong> (<a class="reference internal" href="../Messages/Common.html#commonmodeselection"><span class="std std-ref">ModeSelection</span></a>) – </p></li>
+<li><p><strong>deviceId</strong> (<em>int</em>) – Device’s Id called by rpc (optional)</p></li>
+<li><p><strong>options</strong> (<a class="reference internal" href="../../RouterClient.html#kortex_api.RouterClient.RouterClientSendOptions" title="kortex_api.RouterClient.RouterClientSendOptions"><em>RouterClientSendOptions</em></a>) – Router options for sending the message</p></li>
+</ul>
+</dd>
+</dl>
+<span class="target" id="baseclientexitrecoverystate"></span></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kortex_api.autogen.BaseClient.ExitRecoveryState">
+<span class="sig-name descname"><span class="pre">ExitRecoveryState</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">deviceId</span> <span class="pre">=</span> <span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">options</span> <span class="pre">=</span> <span class="pre">RouterClientSendOptions()</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kortex_api.autogen.BaseClient.ExitRecoveryState" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line">The <code class="docutils literal notranslate"><span class="pre">OPERATE</span></code> permission is necessary to call this RPC.</div>
+<div class="line"><br /></div>
+<div class="line">Exit the recovery state after clearing a fault</div>
+<div class="line">This RPC should be called when the Arm State is ARMSTATE_RECOVERY.</div>
+<div class="line">A WRONG_MODE exception “Arm is not in recovery mode” is thrown if the arm is not in recovery mode</div>
+<div class="line">A METHOD_FAILED exception “Arm is still in restricted area - can’t exit recovery mode” will be thrown if the arm is not out of the protection zone when the RPC is called</div>
+<div class="line"><br /></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>deviceId</strong> (<em>int</em>) – Device’s Id called by rpc (optional)</p></li>
+<li><p><strong>options</strong> (<a class="reference internal" href="../../RouterClient.html#kortex_api.RouterClient.RouterClientSendOptions" title="kortex_api.RouterClient.RouterClientSendOptions"><em>RouterClientSendOptions</em></a>) – Router options for sending the message</p></li>
+</ul>
+</dd>
+</dl>
+<span class="target" id="baseclientdeactivaterobot"></span></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kortex_api.autogen.BaseClient.DeactivateRobot">
+<span class="sig-name descname"><span class="pre">DeactivateRobot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">deviceId</span> <span class="pre">=</span> <span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">options</span> <span class="pre">=</span> <span class="pre">RouterClientSendOptions()</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kortex_api.autogen.BaseClient.DeactivateRobot" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line">The <code class="docutils literal notranslate"><span class="pre">OPERATE</span></code> permission is necessary to call this RPC.</div>
+<div class="line"><br /></div>
+<div class="line">Deactivates the robot.</div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>deviceId</strong> (<em>int</em>) – Device’s Id called by rpc (optional)</p></li>
+<li><p><strong>options</strong> (<a class="reference internal" href="../../RouterClient.html#kortex_api.RouterClient.RouterClientSendOptions" title="kortex_api.RouterClient.RouterClientSendOptions"><em>RouterClientSendOptions</em></a>) – Router options for sending the message</p></li>
+</ul>
+</dd>
+</dl>
+<span class="target" id="baseclientgetcurrentoperatingmode"></span></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kortex_api.autogen.BaseClient.GetCurrentOperatingMode">
+<span class="sig-name descname"><span class="pre">GetCurrentOperatingMode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">deviceId</span> <span class="pre">=</span> <span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">options</span> <span class="pre">=</span> <span class="pre">RouterClientSendOptions()</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kortex_api.autogen.BaseClient.GetCurrentOperatingMode" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line">The <code class="docutils literal notranslate"><span class="pre">READ_ONLY</span></code> permission is necessary to call this RPC.</div>
+<div class="line"><br /></div>
+<div class="line">Retrieves the current robot operating mode</div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>deviceId</strong> (<em>int</em>) – Device’s Id called by rpc (optional)</p></li>
+<li><p><strong>options</strong> (<a class="reference internal" href="../../RouterClient.html#kortex_api.RouterClient.RouterClientSendOptions" title="kortex_api.RouterClient.RouterClientSendOptions"><em>RouterClientSendOptions</em></a>) – Router options for sending the message</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="../Messages/Common.html#kortex_api.autogen.ModeSelection" title="kortex_api.autogen.ModeSelection">ModeSelection</a></p>
+</dd>
+</dl>
+<span class="target" id="baseclientreadalluserroles"></span></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kortex_api.autogen.BaseClient.ReadAllUserRoles">
+<span class="sig-name descname"><span class="pre">ReadAllUserRoles</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">deviceId</span> <span class="pre">=</span> <span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">options</span> <span class="pre">=</span> <span class="pre">RouterClientSendOptions()</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kortex_api.autogen.BaseClient.ReadAllUserRoles" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line">The <code class="docutils literal notranslate"><span class="pre">CONFIGURE</span></code> permission is necessary to call this RPC.</div>
+<div class="line"><br /></div>
+<div class="line">Retrieves the list of existing User Roles</div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>deviceId</strong> (<em>int</em>) – Device’s Id called by rpc (optional)</p></li>
+<li><p><strong>options</strong> (<a class="reference internal" href="../../RouterClient.html#kortex_api.RouterClient.RouterClientSendOptions" title="kortex_api.RouterClient.RouterClientSendOptions"><em>RouterClientSendOptions</em></a>) – Router options for sending the message</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="../Messages/Common.html#kortex_api.autogen.UserRoleList" title="kortex_api.autogen.UserRoleList">UserRoleList</a></p>
+</dd>
+</dl>
+<span class="target" id="baseclientsethandguidingmode"></span></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kortex_api.autogen.BaseClient.SetHandGuidingMode">
+<span class="sig-name descname"><span class="pre">SetHandGuidingMode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">handguiding</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">deviceId</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">options</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">RouterClientSendOptions()</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kortex_api.autogen.BaseClient.SetHandGuidingMode" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line">The <code class="docutils literal notranslate"><span class="pre">OPERATE</span></code> permission is necessary to call this RPC.</div>
+<div class="line"><br /></div>
+<div class="line">Set the Hand-Guiding</div>
+<div class="line">This RPC can be called even if the arm is powered off</div>
+<div class="line">An INVALID_PARAM exception “Invalid hand-guiding type” is thrown if the hand guiding mode is not CARTESIAN or JOINT.</div>
+<div class="line"><br /></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>handguiding</strong> (<a class="reference internal" href="../Messages/Base.html#basehandguiding"><span class="std std-ref">HandGuiding</span></a>) – </p></li>
+<li><p><strong>deviceId</strong> (<em>int</em>) – Device’s Id called by rpc (optional)</p></li>
+<li><p><strong>options</strong> (<a class="reference internal" href="../../RouterClient.html#kortex_api.RouterClient.RouterClientSendOptions" title="kortex_api.RouterClient.RouterClientSendOptions"><em>RouterClientSendOptions</em></a>) – Router options for sending the message</p></li>
+</ul>
+</dd>
+</dl>
+<span class="target" id="baseclientgethandguidingmode"></span></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kortex_api.autogen.BaseClient.GetHandGuidingMode">
+<span class="sig-name descname"><span class="pre">GetHandGuidingMode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">deviceId</span> <span class="pre">=</span> <span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">options</span> <span class="pre">=</span> <span class="pre">RouterClientSendOptions()</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kortex_api.autogen.BaseClient.GetHandGuidingMode" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line">The <code class="docutils literal notranslate"><span class="pre">READ_ONLY</span></code> permission is necessary to call this RPC.</div>
+<div class="line"><br /></div>
+<div class="line">Get the Hand-Guiding mode that will be active while hand guiding</div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>deviceId</strong> (<em>int</em>) – Device’s Id called by rpc (optional)</p></li>
+<li><p><strong>options</strong> (<a class="reference internal" href="../../RouterClient.html#kortex_api.RouterClient.RouterClientSendOptions" title="kortex_api.RouterClient.RouterClientSendOptions"><em>RouterClientSendOptions</em></a>) – Router options for sending the message</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="../Messages/Base.html#kortex_api.autogen.HandGuiding" title="kortex_api.autogen.HandGuiding">HandGuiding</a></p>
+</dd>
+</dl>
+<span class="target" id="onnotificationbaseclienthandguidingmodetopic"></span></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kortex_api.autogen.BaseClient.OnNotificationHandGuidingModeTopic">
+<span class="sig-name descname"><span class="pre">OnNotificationHandGuidingModeTopic</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">callback</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">notificationoptions</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kortex_api.autogen.BaseClient.OnNotificationHandGuidingModeTopic" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line">The <code class="docutils literal notranslate"><span class="pre">READ_ONLY</span></code> permission is necessary to call this RPC.</div>
+<div class="line"><br /></div>
+<div class="line">Subscribes to Hand-Guiding mode topic for notifications</div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>callback</strong> (<em>function</em>) – Function callback taking a <a class="reference internal" href="../Messages/Base.html#kortex_api.autogen.HandGuidingModeNotification" title="kortex_api.autogen.HandGuidingModeNotification"><code class="xref py py-class docutils literal notranslate"><span class="pre">HandGuidingModeNotification</span></code></a> as only argument, and returning <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p></li>
+<li><p><strong>notificationoptions</strong> (<a class="reference internal" href="../Messages/Common.html#kortex_api.autogen.NotificationOptions" title="kortex_api.autogen.NotificationOptions"><em>NotificationOptions</em></a>) – Notification options</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="../Messages/Common.html#kortex_api.autogen.NotificationHandle" title="kortex_api.autogen.NotificationHandle">NotificationHandle</a></p>
+</dd>
+</dl>
+<span class="target" id="onnotificationbaseclientenablingdevicetopic"></span></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kortex_api.autogen.BaseClient.OnNotificationEnablingDeviceTopic">
+<span class="sig-name descname"><span class="pre">OnNotificationEnablingDeviceTopic</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">callback</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">notificationoptions</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kortex_api.autogen.BaseClient.OnNotificationEnablingDeviceTopic" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line">The <code class="docutils literal notranslate"><span class="pre">READ_ONLY</span></code> permission is necessary to call this RPC.</div>
+<div class="line"><br /></div>
+<div class="line">Subscribes to enabling device topic for notifications</div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>callback</strong> (<em>function</em>) – Function callback taking a <a class="reference internal" href="../Messages/Base.html#kortex_api.autogen.EnablingDeviceNotification" title="kortex_api.autogen.EnablingDeviceNotification"><code class="xref py py-class docutils literal notranslate"><span class="pre">EnablingDeviceNotification</span></code></a> as only argument, and returning <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p></li>
+<li><p><strong>notificationoptions</strong> (<a class="reference internal" href="../Messages/Common.html#kortex_api.autogen.NotificationOptions" title="kortex_api.autogen.NotificationOptions"><em>NotificationOptions</em></a>) – Notification options</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="../Messages/Common.html#kortex_api.autogen.NotificationHandle" title="kortex_api.autogen.NotificationHandle">NotificationHandle</a></p>
+</dd>
+</dl>
+<span class="target" id="onnotificationbaseclientmotiontopic"></span></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kortex_api.autogen.BaseClient.OnNotificationMotionTopic">
+<span class="sig-name descname"><span class="pre">OnNotificationMotionTopic</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">callback</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">notificationoptions</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kortex_api.autogen.BaseClient.OnNotificationMotionTopic" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line">The <code class="docutils literal notranslate"><span class="pre">READ_ONLY</span></code> permission is necessary to call this RPC.</div>
+<div class="line"><br /></div>
+<div class="line">Subscribes to motion topic for notifications</div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>callback</strong> (<em>function</em>) – Function callback taking a <a class="reference internal" href="../Messages/Base.html#kortex_api.autogen.MotionNotification" title="kortex_api.autogen.MotionNotification"><code class="xref py py-class docutils literal notranslate"><span class="pre">MotionNotification</span></code></a> as only argument, and returning <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p></li>
+<li><p><strong>notificationoptions</strong> (<a class="reference internal" href="../Messages/Common.html#kortex_api.autogen.NotificationOptions" title="kortex_api.autogen.NotificationOptions"><em>NotificationOptions</em></a>) – Notification options</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="../Messages/Common.html#kortex_api.autogen.NotificationHandle" title="kortex_api.autogen.NotificationHandle">NotificationHandle</a></p>
+</dd>
+</dl>
+<span class="target" id="baseclientgetlastrecordedjointangles"></span></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kortex_api.autogen.BaseClient.GetLastRecordedJointAngles">
+<span class="sig-name descname"><span class="pre">GetLastRecordedJointAngles</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">deviceId</span> <span class="pre">=</span> <span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">options</span> <span class="pre">=</span> <span class="pre">RouterClientSendOptions()</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kortex_api.autogen.BaseClient.GetLastRecordedJointAngles" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line">The <code class="docutils literal notranslate"><span class="pre">READ_ONLY</span></code> permission is necessary to call this RPC.</div>
+<div class="line"><br /></div>
+<div class="line">Gets the last recorded joint angles</div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>deviceId</strong> (<em>int</em>) – Device’s Id called by rpc (optional)</p></li>
+<li><p><strong>options</strong> (<a class="reference internal" href="../../RouterClient.html#kortex_api.RouterClient.RouterClientSendOptions" title="kortex_api.RouterClient.RouterClientSendOptions"><em>RouterClientSendOptions</em></a>) – Router options for sending the message</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="../Messages/Base.html#kortex_api.autogen.JointAngles" title="kortex_api.autogen.JointAngles">JointAngles</a></p>
+</dd>
+</dl>
+<span class="target" id="onnotificationbaseclientprogramrequesttopic"></span></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kortex_api.autogen.BaseClient.OnNotificationProgramRequestTopic">
+<span class="sig-name descname"><span class="pre">OnNotificationProgramRequestTopic</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">callback</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">notificationoptions</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kortex_api.autogen.BaseClient.OnNotificationProgramRequestTopic" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line">The <code class="docutils literal notranslate"><span class="pre">READ_ONLY</span></code> permission is necessary to call this RPC.</div>
+<div class="line"><br /></div>
+<div class="line">Subscribes to program request topic for notifications</div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>callback</strong> (<em>function</em>) – Function callback taking a <a class="reference internal" href="../Messages/Base.html#kortex_api.autogen.ProgramRequestNotification" title="kortex_api.autogen.ProgramRequestNotification"><code class="xref py py-class docutils literal notranslate"><span class="pre">ProgramRequestNotification</span></code></a> as only argument, and returning <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p></li>
+<li><p><strong>notificationoptions</strong> (<a class="reference internal" href="../Messages/Common.html#kortex_api.autogen.NotificationOptions" title="kortex_api.autogen.NotificationOptions"><em>NotificationOptions</em></a>) – Notification options</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="../Messages/Common.html#kortex_api.autogen.NotificationHandle" title="kortex_api.autogen.NotificationHandle">NotificationHandle</a></p>
+</dd>
+</dl>
+<span class="target" id="baseclientgetstoragelist"></span></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kortex_api.autogen.BaseClient.GetStorageList">
+<span class="sig-name descname"><span class="pre">GetStorageList</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">deviceId</span> <span class="pre">=</span> <span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">options</span> <span class="pre">=</span> <span class="pre">RouterClientSendOptions()</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kortex_api.autogen.BaseClient.GetStorageList" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line">The <code class="docutils literal notranslate"><span class="pre">CONFIGURE</span></code> permission is necessary to call this RPC.</div>
+<div class="line"><br /></div>
+<div class="line">Get available storage mount points</div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>deviceId</strong> (<em>int</em>) – Device’s Id called by rpc (optional)</p></li>
+<li><p><strong>options</strong> (<a class="reference internal" href="../../RouterClient.html#kortex_api.RouterClient.RouterClientSendOptions" title="kortex_api.RouterClient.RouterClientSendOptions"><em>RouterClientSendOptions</em></a>) – Router options for sending the message</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="../Messages/Common.html#kortex_api.autogen.StorageMountPointList" title="kortex_api.autogen.StorageMountPointList">StorageMountPointList</a></p>
+</dd>
+</dl>
+<span class="target" id="baseclientfilesystemlist"></span></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kortex_api.autogen.BaseClient.FileSystemList">
+<span class="sig-name descname"><span class="pre">FileSystemList</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fslistargs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">deviceId</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">options</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">RouterClientSendOptions()</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kortex_api.autogen.BaseClient.FileSystemList" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line">The <code class="docutils literal notranslate"><span class="pre">CONFIGURE</span></code> permission is necessary to call this RPC.</div>
+<div class="line"><br /></div>
+<div class="line">Perform file system item list (files and directories) from given path.</div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>fslistargs</strong> (<a class="reference internal" href="../Messages/Base.html#basefslistargs"><span class="std std-ref">FSListArgs</span></a>) – </p></li>
+<li><p><strong>deviceId</strong> (<em>int</em>) – Device’s Id called by rpc (optional)</p></li>
+<li><p><strong>options</strong> (<a class="reference internal" href="../../RouterClient.html#kortex_api.RouterClient.RouterClientSendOptions" title="kortex_api.RouterClient.RouterClientSendOptions"><em>RouterClientSendOptions</em></a>) – Router options for sending the message</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="../Messages/Common.html#kortex_api.autogen.FSItemList" title="kortex_api.autogen.FSItemList">FSItemList</a></p>
+</dd>
+</dl>
+<span class="target" id="baseclientfilewrite"></span></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kortex_api.autogen.BaseClient.FileWrite">
+<span class="sig-name descname"><span class="pre">FileWrite</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fswriteargs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">deviceId</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">options</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">RouterClientSendOptions()</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kortex_api.autogen.BaseClient.FileWrite" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line">The <code class="docutils literal notranslate"><span class="pre">CONFIGURE</span></code> permission is necessary to call this RPC.</div>
+<div class="line"><br /></div>
+<div class="line">Write text data to a file specified by given path. Directories are created if they do not exist.</div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>fswriteargs</strong> (<a class="reference internal" href="../Messages/Base.html#basefswriteargs"><span class="std std-ref">FSWriteArgs</span></a>) – </p></li>
+<li><p><strong>deviceId</strong> (<em>int</em>) – Device’s Id called by rpc (optional)</p></li>
+<li><p><strong>options</strong> (<a class="reference internal" href="../../RouterClient.html#kortex_api.RouterClient.RouterClientSendOptions" title="kortex_api.RouterClient.RouterClientSendOptions"><em>RouterClientSendOptions</em></a>) – Router options for sending the message</p></li>
+</ul>
+</dd>
+</dl>
+<span class="target" id="baseclientfileread"></span></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kortex_api.autogen.BaseClient.FileRead">
+<span class="sig-name descname"><span class="pre">FileRead</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fsreadargs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">deviceId</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">options</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">RouterClientSendOptions()</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kortex_api.autogen.BaseClient.FileRead" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line">The <code class="docutils literal notranslate"><span class="pre">CONFIGURE</span></code> permission is necessary to call this RPC.</div>
+<div class="line"><br /></div>
+<div class="line">Read text data from file specified by given path.</div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>fsreadargs</strong> (<a class="reference internal" href="../Messages/Base.html#basefsreadargs"><span class="std std-ref">FSReadArgs</span></a>) – </p></li>
+<li><p><strong>deviceId</strong> (<em>int</em>) – Device’s Id called by rpc (optional)</p></li>
+<li><p><strong>options</strong> (<a class="reference internal" href="../../RouterClient.html#kortex_api.RouterClient.RouterClientSendOptions" title="kortex_api.RouterClient.RouterClientSendOptions"><em>RouterClientSendOptions</em></a>) – Router options for sending the message</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="../Messages/Base.html#kortex_api.autogen.FSReadData" title="kortex_api.autogen.FSReadData">FSReadData</a></p>
+</dd>
+</dl>
+<span class="target" id="baseclientrestoreneutralarmcalibration"></span></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kortex_api.autogen.BaseClient.RestoreNeutralArmCalibration">
+<span class="sig-name descname"><span class="pre">RestoreNeutralArmCalibration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">deviceId</span> <span class="pre">=</span> <span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">options</span> <span class="pre">=</span> <span class="pre">RouterClientSendOptions()</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kortex_api.autogen.BaseClient.RestoreNeutralArmCalibration" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line">The <code class="docutils literal notranslate"><span class="pre">CONFIGURE</span></code> permission is necessary to call this RPC.</div>
+<div class="line"><br /></div>
+<div class="line">Restores arm calibration to neutral</div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>deviceId</strong> (<em>int</em>) – Device’s Id called by rpc (optional)</p></li>
+<li><p><strong>options</strong> (<a class="reference internal" href="../../RouterClient.html#kortex_api.RouterClient.RouterClientSendOptions" title="kortex_api.RouterClient.RouterClientSendOptions"><em>RouterClientSendOptions</em></a>) – Router options for sending the message</p></li>
+</ul>
+</dd>
+</dl>
+<span class="target" id="baseclientgetarmcalibrationstatus"></span></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kortex_api.autogen.BaseClient.GetArmCalibrationStatus">
+<span class="sig-name descname"><span class="pre">GetArmCalibrationStatus</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">deviceId</span> <span class="pre">=</span> <span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">options</span> <span class="pre">=</span> <span class="pre">RouterClientSendOptions()</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kortex_api.autogen.BaseClient.GetArmCalibrationStatus" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line">The <code class="docutils literal notranslate"><span class="pre">READ_ONLY</span></code> permission is necessary to call this RPC.</div>
+<div class="line"><br /></div>
+<div class="line">Gets arm calibration status</div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>deviceId</strong> (<em>int</em>) – Device’s Id called by rpc (optional)</p></li>
+<li><p><strong>options</strong> (<a class="reference internal" href="../../RouterClient.html#kortex_api.RouterClient.RouterClientSendOptions" title="kortex_api.RouterClient.RouterClientSendOptions"><em>RouterClientSendOptions</em></a>) – Router options for sending the message</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="../Messages/Base.html#kortex_api.autogen.ArmCalibrationStatus" title="kortex_api.autogen.ArmCalibrationStatus">ArmCalibrationStatus</a></p>
+</dd>
+</dl>
+<span class="target" id="onnotificationbaseclientarmcalibrationstatuschangetopic"></span></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kortex_api.autogen.BaseClient.OnNotificationArmCalibrationStatusChangeTopic">
+<span class="sig-name descname"><span class="pre">OnNotificationArmCalibrationStatusChangeTopic</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">callback</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">notificationoptions</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kortex_api.autogen.BaseClient.OnNotificationArmCalibrationStatusChangeTopic" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line">The <code class="docutils literal notranslate"><span class="pre">READ_ONLY</span></code> permission is necessary to call this RPC.</div>
+<div class="line"><br /></div>
+<div class="line">Subscribes to arm calibration status change topic for notifications</div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>callback</strong> (<em>function</em>) – Function callback taking a <a class="reference internal" href="../Messages/Base.html#kortex_api.autogen.ArmCalibrationStatusChangeNotification" title="kortex_api.autogen.ArmCalibrationStatusChangeNotification"><code class="xref py py-class docutils literal notranslate"><span class="pre">ArmCalibrationStatusChangeNotification</span></code></a> as only argument, and returning <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p></li>
+<li><p><strong>notificationoptions</strong> (<a class="reference internal" href="../Messages/Common.html#kortex_api.autogen.NotificationOptions" title="kortex_api.autogen.NotificationOptions"><em>NotificationOptions</em></a>) – Notification options</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="../Messages/Common.html#kortex_api.autogen.NotificationHandle" title="kortex_api.autogen.NotificationHandle">NotificationHandle</a></p>
+</dd>
+</dl>
+<span class="target" id="onnotificationbaseclientacknowledgeactiontopic"></span></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kortex_api.autogen.BaseClient.OnNotificationAcknowledgeActionTopic">
+<span class="sig-name descname"><span class="pre">OnNotificationAcknowledgeActionTopic</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">callback</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">notificationoptions</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kortex_api.autogen.BaseClient.OnNotificationAcknowledgeActionTopic" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line">The <code class="docutils literal notranslate"><span class="pre">READ_ONLY</span></code> permission is necessary to call this RPC.</div>
+<div class="line"><br /></div>
+<div class="line">Subscribes to acknowledge action topic for notifications</div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>callback</strong> (<em>function</em>) – Function callback taking a <a class="reference internal" href="../Messages/Base.html#kortex_api.autogen.AcknowledgeActionNotification" title="kortex_api.autogen.AcknowledgeActionNotification"><code class="xref py py-class docutils literal notranslate"><span class="pre">AcknowledgeActionNotification</span></code></a> as only argument, and returning <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p></li>
+<li><p><strong>notificationoptions</strong> (<a class="reference internal" href="../Messages/Common.html#kortex_api.autogen.NotificationOptions" title="kortex_api.autogen.NotificationOptions"><em>NotificationOptions</em></a>) – Notification options</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="../Messages/Common.html#kortex_api.autogen.NotificationHandle" title="kortex_api.autogen.NotificationHandle">NotificationHandle</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="BaseCyclic.html" class="btn btn-neutral float-right" title="BaseCyclic" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="ActuatorCyclic.html" class="btn btn-neutral float-left" title="ActuatorCyclic" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2022, Kinova.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

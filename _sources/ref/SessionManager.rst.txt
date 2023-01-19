@@ -1,0 +1,6 @@
+SessionManager
+==============
+
+.. automodule:: kortex_api.SessionManager
+    :members:
+    :undoc-members:

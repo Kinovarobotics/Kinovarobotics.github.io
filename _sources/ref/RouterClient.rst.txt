@@ -1,0 +1,6 @@
+RouterClient
+=============
+
+.. automodule:: kortex_api.RouterClient
+    :members:
+    :undoc-members:

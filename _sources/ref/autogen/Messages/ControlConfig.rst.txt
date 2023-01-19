@@ -1,0 +1,545 @@
+================================
+ControlConfig
+================================
+    
+.. py:currentmodule:: kortex_api.autogen
+
+.. _ControlConfigJointPositionLimits:
+
+.. py:class:: JointPositionLimits
+
+    Defines joint position limits
+
+   :canonical: kortex_api.autogen.messages.ControlConfig_pb2.JointPositionLimits
+
+   :param lower:   Joint position lower limit (in degrees)
+   :type lower: :ref:`float <>` 
+
+   :param upper:   Joint position upper limit (in degrees)
+   :type upper: :ref:`float <>` 
+
+.. _ControlConfigGravityVector:
+
+.. py:class:: GravityVector
+
+    Defines the gravity vector in terms of the robot base frame. If not explicitly configured, it defaults to (0, 0, -9.81), assuming a mounting on a horizontal surface. If the robot is mounted on a wall or ceiling, the gravity vector relative to the base frame will change. The control library needs to be aware of this to accurately compensate for gravity.
+
+   :canonical: kortex_api.autogen.messages.ControlConfig_pb2.GravityVector
+
+   :param x:   x (meters / second^2)
+   :type x: :ref:`float <>` 
+
+   :param y:   y (meters / second^2)
+   :type y: :ref:`float <>` 
+
+   :param z:   z (meters / second^2)
+   :type z: :ref:`float <>` 
+
+.. _ControlConfigPosition:
+
+.. py:class:: Position
+
+    A Cartesian position
+
+   :canonical: kortex_api.autogen.messages.ControlConfig_pb2.Position
+
+   :param x:   x position (in meters)
+   :type x: :ref:`float <>` 
+
+   :param y:   y position (in meters)
+   :type y: :ref:`float <>` 
+
+   :param z:   z position (in meters)
+   :type z: :ref:`float <>` 
+
+.. _ControlConfigPayloadInformation:
+
+.. py:class:: PayloadInformation
+
+    Defines payload information
+
+   :canonical: kortex_api.autogen.messages.ControlConfig_pb2.PayloadInformation
+
+   :param payload_mass:   Payload mass in kg
+   :type payload_mass: :ref:`float <>` 
+
+   :param payload_mass_center:   Payload center of mass position relative to the tool reference frame
+   :type payload_mass_center: :ref:`Position <ControlConfigPosition>` 
+
+   :param payload_inertia:   Payload inertia matrix
+   :type payload_inertia: :ref:`SymmetricMatrix3x3 <CommonSymmetricMatrix3x3>` 
+
+.. _ControlConfigCartesianTransform:
+
+.. py:class:: CartesianTransform
+
+    Defines a Cartesian transform
+
+   :canonical: kortex_api.autogen.messages.ControlConfig_pb2.CartesianTransform
+
+   :param x:   x (in meters)
+   :type x: :ref:`float <>` 
+
+   :param y:   y (in meters)
+   :type y: :ref:`float <>` 
+
+   :param z:   z (in meters)
+   :type z: :ref:`float <>` 
+
+   :param theta_x:   Theta x (in degrees)
+   :type theta_x: :ref:`float <>` 
+
+   :param theta_y:   Theta y (in degrees)
+   :type theta_y: :ref:`float <>` 
+
+   :param theta_z:   Theta z (in degrees)
+   :type theta_z: :ref:`float <>` 
+
+.. _ControlConfigToolConfiguration:
+
+.. py:class:: ToolConfiguration
+
+    Defines a tool configuration
+
+   :canonical: kortex_api.autogen.messages.ControlConfig_pb2.ToolConfiguration
+
+   :param tool_transform:   Cartesian tool transform
+   :type tool_transform: :ref:`CartesianTransform <ControlConfigCartesianTransform>` 
+
+   :param tool_mass:   Tool mass (in kg)
+   :type tool_mass: :ref:`float <>` 
+
+   :param tool_mass_center:   Tool mass center relative to the interface module reference frame
+   :type tool_mass_center: :ref:`Position <ControlConfigPosition>` 
+
+   :param tool_inertia_matrix:   Tool inertia matrix
+   :type tool_inertia_matrix: :ref:`SymmetricMatrix3x3 <CommonSymmetricMatrix3x3>` 
+
+   :param tool_rotation_matrix:   Tool rotation matrix
+   :type tool_rotation_matrix: :ref:`Matrix3x3 <CommonMatrix3x3>` 
+
+.. _ControlConfigToolConfigurationList:
+
+.. py:class:: ToolConfigurationList
+
+   
+
+   :canonical: kortex_api.autogen.messages.ControlConfig_pb2.ToolConfigurationList
+
+   :param tool_configurations:   List of tool configurations
+   :type tool_configurations: :ref:`ToolConfiguration <ControlConfigToolConfiguration>` [ ]
+
+.. _ControlConfigControlConfigurationNotification:
+
+.. py:class:: ControlConfigurationNotification
+
+    Notification about a single control configuration event
+
+   :canonical: kortex_api.autogen.messages.ControlConfig_pb2.ControlConfigurationNotification
+
+   :param event:  
+   :type event: :ref:`ControlConfigurationEvent <ControlConfigControlConfigurationEvent>` 
+
+   :param timestamp:   This field is deprecated and will be removed in a future release
+   :type timestamp: :ref:`Timestamp <CommonTimestamp>` 
+
+   :param user_handle:   This field is deprecated and will be removed in a future release
+   :type user_handle: :ref:`UserProfileHandle <CommonUserProfileHandle>` 
+
+   :param connection:   This field is deprecated and will be removed in a future release
+   :type connection: :ref:`Connection <CommonConnection>` 
+
+   :param generic_info:   Generic notification information
+   :type generic_info: :ref:`NotificationInformation <CommonNotificationInformation>` 
+
+.. _ControlConfigCartesianReferenceFrameInfo:
+
+.. py:class:: CartesianReferenceFrameInfo
+
+    Cartesian reference frame
+
+   :canonical: kortex_api.autogen.messages.ControlConfig_pb2.CartesianReferenceFrameInfo
+
+   :param reference_frame:   Reference frame
+   :type reference_frame: :ref:`CartesianReferenceFrame <CommonCartesianReferenceFrame>` 
+
+.. _ControlConfigTwistLinearSoftLimit:
+
+.. py:class:: TwistLinearSoftLimit
+
+    Software twist linear speed limit
+
+   :canonical: kortex_api.autogen.messages.ControlConfig_pb2.TwistLinearSoftLimit
+
+   :param control_mode:   Control mode
+   :type control_mode: :ref:`ControlMode <ControlConfigControlMode>` 
+
+   :param twist_linear_soft_limit:   Software linear twist limit
+   :type twist_linear_soft_limit: :ref:`float <>` 
+
+.. _ControlConfigTwistAngularSoftLimit:
+
+.. py:class:: TwistAngularSoftLimit
+
+    Software twist angular speed limit
+
+   :canonical: kortex_api.autogen.messages.ControlConfig_pb2.TwistAngularSoftLimit
+
+   :param control_mode:   Control mode
+   :type control_mode: :ref:`ControlMode <ControlConfigControlMode>` 
+
+   :param twist_angular_soft_limit:   Software angular twist limit
+   :type twist_angular_soft_limit: :ref:`float <>` 
+
+.. _ControlConfigJointPositionSoftLimits:
+
+.. py:class:: JointPositionSoftLimits
+
+    Software joint position limits
+
+   :canonical: kortex_api.autogen.messages.ControlConfig_pb2.JointPositionSoftLimits
+
+   :param control_mode:   Control mode
+   :type control_mode: :ref:`ControlMode <ControlConfigControlMode>` 
+
+   :param joint_position_soft_limits:   Software joint position limits
+   :type joint_position_soft_limits: :ref:`JointPositionLimits <ControlConfigJointPositionLimits>` [ ]
+
+.. _ControlConfigJointSpeedSoftLimits:
+
+.. py:class:: JointSpeedSoftLimits
+
+    Software joint speed limits
+
+   :canonical: kortex_api.autogen.messages.ControlConfig_pb2.JointSpeedSoftLimits
+
+   :param control_mode:   Control mode
+   :type control_mode: :ref:`ControlMode <ControlConfigControlMode>` 
+
+   :param joint_speed_soft_limits:   Software joint speed limits
+   :type joint_speed_soft_limits: :ref:`float <>` [ ]
+
+.. _ControlConfigJointAccelerationSoftLimits:
+
+.. py:class:: JointAccelerationSoftLimits
+
+    Software Joint acceleration limits
+
+   :canonical: kortex_api.autogen.messages.ControlConfig_pb2.JointAccelerationSoftLimits
+
+   :param control_mode:   Control mode
+   :type control_mode: :ref:`ControlMode <ControlConfigControlMode>` 
+
+   :param joint_acceleration_soft_limits:   Software acceleration limits
+   :type joint_acceleration_soft_limits: :ref:`float <>` [ ]
+
+.. _ControlConfigKinematicLimits:
+
+.. py:class:: KinematicLimits
+
+    Kinematic limits
+
+   :canonical: kortex_api.autogen.messages.ControlConfig_pb2.KinematicLimits
+
+   :param control_mode:   Control mode
+   :type control_mode: :ref:`ControlMode <ControlConfigControlMode>` 
+
+   :param twist_linear:   Linear twist limit (meters / second)
+   :type twist_linear: :ref:`float <>` 
+
+   :param twist_angular:   Angular twist limit (degrees / second)
+   :type twist_angular: :ref:`float <>` 
+
+   :param joint_speed_limits:   Joint speed limits (degrees / second)
+   :type joint_speed_limits: :ref:`float <>` [ ]
+
+   :param joint_acceleration_limits:   Joint acceleration limits (degrees / second²)
+   :type joint_acceleration_limits: :ref:`float <>` [ ]
+
+   :param joint_position_limits:   Joint position limits (degrees)
+   :type joint_position_limits: :ref:`JointPositionLimits <ControlConfigJointPositionLimits>` [ ]
+
+   :param elbow_twist_linear:   Linear elbow twist limit (meters / second)
+   :type elbow_twist_linear: :ref:`float <>` 
+
+   :param acceleration_linear:   Linear acceleration limit (meters / second²)
+   :type acceleration_linear: :ref:`float <>` 
+
+   :param acceleration_angular:   Angular acceleration limit (degrees / second²)
+   :type acceleration_angular: :ref:`float <>` 
+
+.. _ControlConfigKinematicLimitsList:
+
+.. py:class:: KinematicLimitsList
+
+    Kinematic limits
+
+   :canonical: kortex_api.autogen.messages.ControlConfig_pb2.KinematicLimitsList
+
+   :param kinematic_limits_list:   List of kinematic limits
+   :type kinematic_limits_list: :ref:`KinematicLimits <ControlConfigKinematicLimits>` [ ]
+
+.. _ControlConfigDesiredSpeeds:
+
+.. py:class:: DesiredSpeeds
+
+    Desired Joystick speeds.
+
+   :canonical: kortex_api.autogen.messages.ControlConfig_pb2.DesiredSpeeds
+
+   :param linear:   Desired linear speed (meters / second)
+   :type linear: :ref:`float <>` 
+
+   :param angular:   Desired angular speed (degrees / second)
+   :type angular: :ref:`float <>` 
+
+   :param joint_speed:   Desired joint speeds (degrees / second)
+   :type joint_speed: :ref:`float <>` [ ]
+
+.. _ControlConfigLinearTwist:
+
+.. py:class:: LinearTwist
+
+    Desired Joystick linear speed.
+
+   :canonical: kortex_api.autogen.messages.ControlConfig_pb2.LinearTwist
+
+   :param linear:   Desired linear speed (meters / second)
+   :type linear: :ref:`float <>` 
+
+.. _ControlConfigAngularTwist:
+
+.. py:class:: AngularTwist
+
+    Desired Joystick angular speed.
+
+   :canonical: kortex_api.autogen.messages.ControlConfig_pb2.AngularTwist
+
+   :param angular:   Desired angular speed (degrees / second)
+   :type angular: :ref:`float <>` 
+
+.. _ControlConfigJointSpeeds:
+
+.. py:class:: JointSpeeds
+
+    Desired Joystick joint speeds.
+
+   :canonical: kortex_api.autogen.messages.ControlConfig_pb2.JointSpeeds
+
+   :param joint_speed:   Desired joint speeds (degrees / second)
+   :type joint_speed: :ref:`float <>` [ ]
+
+.. _ControlConfigControlModeInformation:
+
+.. py:class:: ControlModeInformation
+
+    Control mode information
+
+   :canonical: kortex_api.autogen.messages.ControlConfig_pb2.ControlModeInformation
+
+   :param control_mode:   Control mode
+   :type control_mode: :ref:`ControlMode <ControlConfigControlMode>` 
+
+.. _ControlConfigControlModeNotification:
+
+.. py:class:: ControlModeNotification
+
+    Notification about a single control mode event
+
+   :canonical: kortex_api.autogen.messages.ControlConfig_pb2.ControlModeNotification
+
+   :param control_mode:   New control mode
+   :type control_mode: :ref:`ControlMode <ControlConfigControlMode>` 
+
+   :param timestamp:   This field is deprecated and will be removed in a future release
+   :type timestamp: :ref:`Timestamp <CommonTimestamp>` 
+
+   :param user_handle:   This field is deprecated and will be removed in a future release
+   :type user_handle: :ref:`UserProfileHandle <CommonUserProfileHandle>` 
+
+   :param connection:   This field is deprecated and will be removed in a future release
+   :type connection: :ref:`Connection <CommonConnection>` 
+
+   :param generic_info:   Generic notification information
+   :type generic_info: :ref:`NotificationInformation <CommonNotificationInformation>` 
+
+   :param old_control_mode:   Previous control mode
+   :type old_control_mode: :ref:`ControlMode <ControlConfigControlMode>` 
+
+   :param succeeded:   True if the control mode switch happened without fail
+   :type succeeded: :ref:`bool <>` 
+
+   :param report:   Additional information about the control mode switch
+   :type report: :ref:`ControlModeReportType <ControlConfigControlModeReportType>` 
+
+.. _ControlConfigAxisLock:
+
+.. py:class:: AxisLock
+
+   
+
+   :canonical: kortex_api.autogen.messages.ControlConfig_pb2.AxisLock
+
+   :param reference_frame:   Reference frame of the targeted axes
+   :type reference_frame: :ref:`CartesianReferenceFrame <CommonCartesianReferenceFrame>` 
+
+   :param axes:   List of target axis
+   :type axes: :ref:`CartesianVector <CommonCartesianVector>` [ ]
+
+.. _ControlConfigAxisLockConfig:
+
+.. py:class:: AxisLockConfig
+
+   
+
+   :canonical: kortex_api.autogen.messages.ControlConfig_pb2.AxisLockConfig
+
+   :param control_mode:   Target control mode on which the lock will be applied
+   :type control_mode: :ref:`ControlModeInformation <ControlConfigControlModeInformation>` 
+
+   :param translation:   Translation axes
+   :type translation: :ref:`AxisLock <ControlConfigAxisLock>` 
+
+   :param orientation:   Orientation axes
+   :type orientation: :ref:`AxisLock <ControlConfigAxisLock>` 
+
+.. _ControlConfigCollisionSensingActivationInformation:
+
+.. py:class:: CollisionSensingActivationInformation
+
+    Collision sensing activation information (deprecated)
+
+   :canonical: kortex_api.autogen.messages.ControlConfig_pb2.CollisionSensingActivationInformation
+
+   :param activation_mode:   Collision sensing activation mode
+   :type activation_mode: :ref:`CollisionSensingActivationMode <ControlConfigCollisionSensingActivationMode>` 
+
+.. _ControlConfigCollisionDetectionLimitsList:
+
+.. py:class:: CollisionDetectionLimitsList
+
+    Collision Detection limits and activation statuses list
+
+   :canonical: kortex_api.autogen.messages.ControlConfig_pb2.CollisionDetectionLimitsList
+
+   :param limits:   Collision detection limits for specific safety system mode
+   :type limits: :ref:`CollisionDetectionLimits <ControlConfigCollisionDetectionLimits>` [ ]
+
+.. _ControlConfigCollisionDetectionLimits:
+
+.. py:class:: CollisionDetectionLimits
+
+    Collision Detection limits and activation status
+
+   :canonical: kortex_api.autogen.messages.ControlConfig_pb2.CollisionDetectionLimits
+
+   :param mode:   Safety system mode
+   :type mode: :ref:`SafetySystemMode <SafetyFunctionsSafetySystemMode>` 
+
+   :param tcp_limit:   Threshold value for TCP (in Newtons)
+   :type tcp_limit: :ref:`float <>` 
+
+   :param elbow_limit:   Threshold value for Elbow (in Newtons)
+   :type elbow_limit: :ref:`float <>` 
+
+   :param enabled:   Collision detection activation status
+   :type enabled: :ref:`bool <>` 
+
+.. _ControlConfigCollisionDetectionRangesList:
+
+.. py:class:: CollisionDetectionRangesList
+
+    Collision detection ranges list
+
+   :canonical: kortex_api.autogen.messages.ControlConfig_pb2.CollisionDetectionRangesList
+
+   :param ranges:   Ranges values and their safety system mode
+   :type ranges: :ref:`CollisionDetectionRanges <ControlConfigCollisionDetectionRanges>` [ ]
+
+.. _ControlConfigCollisionDetectionRanges:
+
+.. py:class:: CollisionDetectionRanges
+
+    Collision detection ranges
+
+   :canonical: kortex_api.autogen.messages.ControlConfig_pb2.CollisionDetectionRanges
+
+   :param mode:   Safety System Mode
+   :type mode: :ref:`SafetySystemMode <SafetyFunctionsSafetySystemMode>` 
+
+   :param lower_limit_tcp:   Lower limit of the range for TCP (in Newtons)
+   :type lower_limit_tcp: :ref:`float <>` 
+
+   :param upper_limit_tcp:   Upper limit of the range for TCP (in Newtons)
+   :type upper_limit_tcp: :ref:`float <>` 
+
+   :param lower_limit_elbow:   Lower limit of the range for Elbow (in Newtons)
+   :type lower_limit_elbow: :ref:`float <>` 
+
+   :param upper_limit_elbow:   Upper limit of the range for Elbow (in Newtons)
+   :type upper_limit_elbow: :ref:`float <>` 
+
+.. _ControlConfigEnergyLimitsList:
+
+.. py:class:: EnergyLimitsList
+
+    Energy limits and activation statuses list
+
+   :canonical: kortex_api.autogen.messages.ControlConfig_pb2.EnergyLimitsList
+
+   :param limits:   Energy limits for specific safety system mode
+   :type limits: :ref:`EnergyLimits <ControlConfigEnergyLimits>` [ ]
+
+.. _ControlConfigEnergyLimits:
+
+.. py:class:: EnergyLimits
+
+    Energy limits and activation status
+
+   :canonical: kortex_api.autogen.messages.ControlConfig_pb2.EnergyLimits
+
+   :param mode:   Safety system mode
+   :type mode: :ref:`SafetySystemMode <SafetyFunctionsSafetySystemMode>` 
+
+   :param tcp_limit:   Threshold value for TCP (in Joules)
+   :type tcp_limit: :ref:`float <>` 
+
+   :param elbow_limit:   Threshold value for Elbow (in Joules)
+   :type elbow_limit: :ref:`float <>` 
+
+   :param enabled:   Energy limitation activation status
+   :type enabled: :ref:`bool <>` 
+
+.. _ControlConfigEnergyLimitsRangesList:
+
+.. py:class:: EnergyLimitsRangesList
+
+    Energy limitation ranges list
+
+   :canonical: kortex_api.autogen.messages.ControlConfig_pb2.EnergyLimitsRangesList
+
+   :param ranges:   Ranges values and their safety system mode
+   :type ranges: :ref:`EnergyLimitsRanges <ControlConfigEnergyLimitsRanges>` [ ]
+
+.. _ControlConfigEnergyLimitsRanges:
+
+.. py:class:: EnergyLimitsRanges
+
+    Energy limitation ranges
+
+   :canonical: kortex_api.autogen.messages.ControlConfig_pb2.EnergyLimitsRanges
+
+   :param mode:   Safety System Mode
+   :type mode: :ref:`SafetySystemMode <SafetyFunctionsSafetySystemMode>` 
+
+   :param lower_limit_tcp:   Lower limit of the range for TCP (in Joules)
+   :type lower_limit_tcp: :ref:`float <>` 
+
+   :param upper_limit_tcp:   Upper limit of the range for TCP (in Joules)
+   :type upper_limit_tcp: :ref:`float <>` 
+
+   :param lower_limit_elbow:   Lower limit of the range for Elbow (in Joules)
+   :type lower_limit_elbow: :ref:`float <>` 
+
+   :param upper_limit_elbow:   Upper limit of the range for Elbow (in Joules)
+   :type upper_limit_elbow: :ref:`float <>` 

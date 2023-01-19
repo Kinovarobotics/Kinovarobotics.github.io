@@ -1,0 +1,189 @@
+================================
+ToolManager
+================================
+    
+.. py:currentmodule:: kortex_api.autogen
+
+.. py:class:: ToolManagerClient
+        
+    :canonical: kortex_api.autogen.client_stubs.ToolManagerClientRpc
+
+    .. py:method:: __init__(router, namespace = None)
+
+        Constructs a ToolManagerClient with an initialized :class:`~kortex_api.RouterClient.RouterClient` and an optional namespace.
+
+        :param RouterClient router: :class:`~kortex_api.RouterClient.RouterClient` used for the communication
+        :param string namespace: Optional namespace on which to initialize the ToolManagerClient (defaults to ``None``)
+
+    .. py:method:: IsAlive (timeoutMs: int = 1000)
+        
+        Returns ``True`` if the Service Server is detected online before ``timeoutMs`` is expired, ``False`` otherwise.
+        
+        :param unsigned int timeoutMs: The maximum time to wait for an answer from the server 
+        :rtype: bool
+
+
+        .. _ToolManagerClientGetAllToolsInformation:
+
+    .. py:method:: GetAllToolsInformation (, deviceId = 0, options = RouterClientSendOptions())
+        
+        | The ``READ_ONLY`` permission is necessary to call this RPC.
+        |
+        | Gets information about all the tools
+
+        :param int deviceId: Device's Id called by rpc (optional)
+        :param RouterClientSendOptions options: Router options for sending the message
+ 
+        :rtype: ToolInformationList
+
+        .. _ToolManagerClientGetToolInformation:
+
+    .. py:method:: GetToolInformation (toolhandle, deviceId = 0, options = RouterClientSendOptions())
+        
+        | The ``READ_ONLY`` permission is necessary to call this RPC.
+        |
+        | Gets information about one specific tool
+        | The handle.identifier of the tool needs to match the identifier from an existing one, or else an ERROR_DEVICE, ENTITY_NOT_FOUND exception is thrown.
+        | 
+
+
+        :param toolhandle:  
+        :type toolhandle: :ref:`ToolHandle <ToolPluginToolHandle>`
+
+        :param int deviceId: Device's Id called by rpc (optional)
+        :param RouterClientSendOptions options: Router options for sending the message
+ 
+        :rtype: ToolInformation
+
+        .. _ToolManagerClientGetActiveToolInformationList:
+
+    .. py:method:: GetActiveToolInformationList (, deviceId = 0, options = RouterClientSendOptions())
+        
+        | The ``READ_ONLY`` permission is necessary to call this RPC.
+        |
+        | Gets information about the active tool list
+
+        :param int deviceId: Device's Id called by rpc (optional)
+        :param RouterClientSendOptions options: Router options for sending the message
+ 
+        :rtype: ToolInformationList
+
+        .. _ToolManagerClientSelectActiveToolList:
+
+    .. py:method:: SelectActiveToolList (toolhandlelist, deviceId = 0, options = RouterClientSendOptions())
+        
+        | The ``CONFIGURE`` permission is necessary to call this RPC.
+        |
+        | Sets the tools from the tool handle list to active. The last tool in the list is the one farthest from the robot flange.
+        | The arm must be powered on and in monitored stop, or be powered off, or else an error ERROR_DEVICE, WRONG_MODE is thrown.
+        | The identifiers of the tools in the list need to match the identifier from an existing one, or else an ERROR_DEVICE, ENTITY_NOT_FOUND exception is thrown.
+        | 
+
+
+        :param toolhandlelist:  
+        :type toolhandlelist: :ref:`ToolHandleList <ToolPluginToolHandleList>`
+
+        :param int deviceId: Device's Id called by rpc (optional)
+        :param RouterClientSendOptions options: Router options for sending the message
+
+        .. _ToolManagerClientCreateCustomTool:
+
+    .. py:method:: CreateCustomTool (toolinformation, deviceId = 0, options = RouterClientSendOptions())
+        
+        | The ``CONFIGURE`` permission is necessary to call this RPC.
+        |
+        | Creates a Custom Tool entry
+        | The tool_plugin_type must be TOOL_TYPE_CUSTOM, or else the error ERROR_DEVICE, INVALID_PARAM is thrown.
+        | The friendly name size must be between 1 and 25.
+        | The mass must be entered in Kilograms and its value must be between 0 and 9 kg.
+        | The range for the cartesian transform must be between -1 and 1 meters for the translation coordinates x, y and z, between -180 and 180 degrees for rotation values theta_x and theta_y and between 0 and 180 degrees for theta_z.
+        | The center of mass must be entered in meters and its value must be between -1 and 1.
+        | The inertia must be between 0 and 1 kgm² for the diagonal values Ixx, Iyy and Izz and between -1 and 1 kgm² for the cross values Ixy, Ixz and Iyz.
+        | 
+
+
+        :param toolinformation:  
+        :type toolinformation: :ref:`ToolInformation <ToolPluginToolInformation>`
+
+        :param int deviceId: Device's Id called by rpc (optional)
+        :param RouterClientSendOptions options: Router options for sending the message
+ 
+        :rtype: ToolHandle
+
+        .. _ToolManagerClientDeleteCustomTool:
+
+    .. py:method:: DeleteCustomTool (toolhandle, deviceId = 0, options = RouterClientSendOptions())
+        
+        | The ``CONFIGURE`` permission is necessary to call this RPC.
+        |
+        | Deletes a Custom Tool entry
+        | The tool to be deleted needs to exist, or else an error ERROR_DEVICE, ENTITY_NOT_FOUND is thrown.
+        | The tool must not be in the active tool list, or else an error ERROR_DEVICE, INVALID_PARAM is thrown.
+        | The tool must be a custom tool to be deleted, or else an error ERROR_DEVICE, INVALID_PARAM is thrown.
+        | 
+
+
+        :param toolhandle:  
+        :type toolhandle: :ref:`ToolHandle <ToolPluginToolHandle>`
+
+        :param int deviceId: Device's Id called by rpc (optional)
+        :param RouterClientSendOptions options: Router options for sending the message
+
+        .. _ToolManagerClientUpdateToolInformation:
+
+    .. py:method:: UpdateToolInformation (toolinformation, deviceId = 0, options = RouterClientSendOptions())
+        
+        | The ``OPERATE`` permission is necessary to call this RPC.
+        |
+        | Updates a Tool's information
+        | Updates on the tool information need to follow the same rules as the ones mentioned in CreateCustomTool's description.
+        | The handle.identifier of the tool to be updated needs to match the identifier from an existing tool, or else an ENTITY_NOT_FOUND exception is thrown.
+        | 
+
+
+        :param toolinformation:  
+        :type toolinformation: :ref:`ToolInformation <ToolPluginToolInformation>`
+
+        :param int deviceId: Device's Id called by rpc (optional)
+        :param RouterClientSendOptions options: Router options for sending the message
+
+        .. _OnNotificationToolManagerClientActiveToolInformationChangedTopic:
+
+    .. py:method:: OnNotificationActiveToolInformationChangedTopic(callback, notificationoptions)
+    
+        | The ``READ_ONLY`` permission is necessary to call this RPC.
+        |
+        | Subscribes to tool information notifications
+
+        :param callback: Function callback taking a :class:`Kinova.Api.ToolManager.ActiveToolNotification` as only argument, and returning ``None``.
+        :type callback: function
+        :param NotificationOptions notificationoptions: Notification options
+        :rtype: NotificationHandle
+
+        .. _OnNotificationToolManagerClientToolInformationTopic:
+
+    .. py:method:: OnNotificationToolInformationTopic(callback, notificationoptions)
+    
+        | The ``READ_ONLY`` permission is necessary to call this RPC.
+        |
+        | Subscribes to custom tool notifications
+
+        :param callback: Function callback taking a :class:`Kinova.Api.ToolManager.ToolNotification` as only argument, and returning ``None``.
+        :type callback: function
+        :param NotificationOptions notificationoptions: Notification options
+        :rtype: NotificationHandle
+
+        .. _ToolManagerClientUnsubscribe:
+
+    .. py:method:: Unsubscribe (notificationhandle, deviceId = 0, options = RouterClientSendOptions())
+        
+        | The ``READ_ONLY`` permission is necessary to call this RPC.
+        |
+        | Unsubscribes client from receiving notifications for the specified topic
+
+
+        :param notificationhandle:  
+        :type notificationhandle: :ref:`NotificationHandle <CommonNotificationHandle>`
+
+        :param int deviceId: Device's Id called by rpc (optional)
+        :param RouterClientSendOptions options: Router options for sending the message

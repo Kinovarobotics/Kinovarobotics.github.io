@@ -1,0 +1,544 @@
+================================
+Common
+================================
+    
+.. py:currentmodule:: kortex_api.autogen
+
+.. _CommonDeviceHandle:
+
+.. py:class:: DeviceHandle
+
+    Reference to a specific device
+
+   :canonical: kortex_api.autogen.messages.Common_pb2.DeviceHandle
+
+   :param device_type:   Device type
+   :type device_type: :ref:`DeviceTypes <CommonDeviceTypes>` 
+
+   :param device_identifier:   Unique device identifier (used with other services)
+   :type device_identifier: :ref:`int <>` 
+
+   :param order:   Unique value indicating the order of that device versus the others to facilitate representation
+   :type order: :ref:`int <>` 
+
+.. _CommonEmpty:
+
+.. py:class:: Empty
+
+    Message used when no information needs to be exchanged between client application and robot, and vice versa
+
+   :canonical: kortex_api.autogen.messages.Common_pb2.Empty
+
+.. _CommonNotificationOptions:
+
+.. py:class:: NotificationOptions
+
+    Specifies options associated to a notification
+
+   :canonical: kortex_api.autogen.messages.Common_pb2.NotificationOptions
+
+   :param type:   Type of notification
+   :type type: :ref:`NotificationType <CommonNotificationType>` 
+
+   :param rate_m_sec:   Rate value (in meters per second) (if applicable)
+   :type rate_m_sec: :ref:`int <>` 
+
+   :param threshold_value:   Threshold value (if applicable)
+   :type threshold_value: :ref:`float <>` 
+
+.. _CommonDiagnosticHandle:
+
+.. py:class:: DiagnosticHandle
+
+    Reference to a specific diagnostic
+
+   :canonical: kortex_api.autogen.messages.Common_pb2.DiagnosticHandle
+
+   :param identifier:   Diagnostic identifier
+   :type identifier: :ref:`int <>` 
+
+   :param bank:   Diagnostic bank
+   :type bank: :ref:`DiagnosticBank <CommonDiagnosticBank>` 
+
+.. _CommonNotificationHandle:
+
+.. py:class:: NotificationHandle
+
+    Reference to a specific notification topic
+
+   :canonical: kortex_api.autogen.messages.Common_pb2.NotificationHandle
+
+   :param identifier:   Notification identifier
+   :type identifier: :ref:`int <>` 
+
+.. _CommonDiagnosticNotification:
+
+.. py:class:: DiagnosticNotification
+
+    Notification about a single diagnostic event
+
+   :canonical: kortex_api.autogen.messages.Common_pb2.DiagnosticNotification
+
+   :param diagnostic_handle:   Diagnostic handle
+   :type diagnostic_handle: :ref:`DiagnosticHandle <CommonDiagnosticHandle>` 
+
+   :param value:   New diagnostic status
+   :type value: :ref:`DiagnosticStatusValue <CommonDiagnosticStatusValue>` 
+
+   :param generic_info:   Generic notification information
+   :type generic_info: :ref:`NotificationInformation <CommonNotificationInformation>` 
+
+.. _CommonTimestamp:
+
+.. py:class:: Timestamp
+
+    Timestamp based on Epoch (00:00:00 Thursday, January 1, 1970)
+
+   :canonical: kortex_api.autogen.messages.Common_pb2.Timestamp
+
+   :param sec:   Number of seconds that have elapsed since Epoch
+   :type sec: :ref:`int <>` 
+
+   :param usec:   Number of microseconds that have elapsed since the last second (0-999999)
+   :type usec: :ref:`int <>` 
+
+.. _CommonUserProfileHandle:
+
+.. py:class:: UserProfileHandle
+
+    Reference to a user profile
+
+   :canonical: kortex_api.autogen.messages.Common_pb2.UserProfileHandle
+
+   :param identifier:   User profile identifier
+   :type identifier: :ref:`int <>` 
+
+   :param permission:   Must use 'Permission' as bitwise (see enum Permission)
+   :type permission: :ref:`int <>` 
+
+.. _CommonUserRole:
+
+.. py:class:: UserRole
+
+    User Role
+
+   :canonical: kortex_api.autogen.messages.Common_pb2.UserRole
+
+   :param identifier:  
+   :type identifier: :ref:`str <>` 
+
+   :param permissions:  
+   :type permissions: :ref:`UserPermission <CommonUserPermission>` [ ]
+
+.. _CommonUserRoleList:
+
+.. py:class:: UserRoleList
+
+    User Role List
+
+   :canonical: kortex_api.autogen.messages.Common_pb2.UserRoleList
+
+   :param roles:  
+   :type roles: :ref:`UserRole <CommonUserRole>` [ ]
+
+.. _CommonConnection:
+
+.. py:class:: Connection
+
+    Connection between a user and the robot
+
+   :canonical: kortex_api.autogen.messages.Common_pb2.Connection
+
+   :param user_handle:   User profile handle. It is equal to 0 if the connection has not created a session.
+   :type user_handle: :ref:`UserProfileHandle <CommonUserProfileHandle>` 
+
+   :param connection_information:   Connection information
+   :type connection_information: :ref:`str <>` 
+
+   :param is_local:   True if the connection was initiated from within the controller, false if it came from the external interface
+   :type is_local: :ref:`bool <>` 
+
+   :param session_identifier:   Session identifier of the connection. It is equal to 0 if the connection has not created a session.
+   :type session_identifier: :ref:`int <>` 
+
+   :param connection_inactivity_timeout:   Inactivity period (in milliseconds) allowed before the robot stops any movement initiated from this session. It is equal to 0 if the connection has not created a session.
+   :type connection_inactivity_timeout: :ref:`int <>` 
+
+   :param roles:   Roles for the connection. It is empty if the connection has not created a session.
+   :type roles: :ref:`UserRole <CommonUserRole>` [ ]
+
+   :param connection_type:   Connection type
+   :type connection_type: :ref:`ConnectionType <CommonConnectionType>` 
+
+   :param is_webapp:   True if the connection is initiated by a WebApp client, false otherwise
+   :type is_webapp: :ref:`bool <>` 
+
+   :param username:   Username for the connection, if applicable
+   :type username: :ref:`str <>` 
+
+.. _CommonModeSelection:
+
+.. py:class:: ModeSelection
+
+    Selected mode information
+
+   :canonical: kortex_api.autogen.messages.Common_pb2.ModeSelection
+
+   :param operating_mode:   Selected operating mode
+   :type operating_mode: :ref:`OperatingModeType <CommonOperatingModeType>` 
+
+.. _CommonUARTConfiguration:
+
+.. py:class:: UARTConfiguration
+
+    UART configuration details This message is deprecated and will be removed in a future release.
+
+   :canonical: kortex_api.autogen.messages.Common_pb2.UARTConfiguration
+
+   :param port_id:   UART port identification
+   :type port_id: :ref:`int <>` 
+
+   :param enabled:   True if UART device is enabled, false otherwise
+   :type enabled: :ref:`bool <>` 
+
+   :param speed:   Speed selection
+   :type speed: :ref:`UARTSpeed <CommonUARTSpeed>` 
+
+   :param word_length:   Word length
+   :type word_length: :ref:`UARTWordLength <CommonUARTWordLength>` 
+
+   :param stop_bits:   Stop bits
+   :type stop_bits: :ref:`UARTStopBits <CommonUARTStopBits>` 
+
+   :param parity:   Parity mode
+   :type parity: :ref:`UARTParity <CommonUARTParity>` 
+
+.. _CommonUARTDeviceIdentification:
+
+.. py:class:: UARTDeviceIdentification
+
+    UART port id identification This message is deprecated and will be removed in a future release.
+
+   :canonical: kortex_api.autogen.messages.Common_pb2.UARTDeviceIdentification
+
+   :param port_id:   UART device port id
+   :type port_id: :ref:`int <>` 
+
+.. _CommonCountryCode:
+
+.. py:class:: CountryCode
+
+    Country code
+
+   :canonical: kortex_api.autogen.messages.Common_pb2.CountryCode
+
+   :param identifier:   ISO3166 country code identifier
+   :type identifier: :ref:`CountryCodeIdentifier <CommonCountryCodeIdentifier>` 
+
+.. _CommonCartesianVector:
+
+.. py:class:: CartesianVector
+
+   A generic vector
+
+   :canonical: kortex_api.autogen.messages.Common_pb2.CartesianVector
+
+   :param x:   Component X of the vector
+   :type x: :ref:`float <>` 
+
+   :param y:   Component Y of the vector
+   :type y: :ref:`float <>` 
+
+   :param z:   Component Z of the vector
+   :type z: :ref:`float <>` 
+
+.. _CommonActionHandle:
+
+.. py:class:: ActionHandle
+
+    Program Action handle
+
+   :canonical: kortex_api.autogen.messages.Common_pb2.ActionHandle
+
+   :param identifier:  
+   :type identifier: :ref:`int <>` 
+
+.. _CommonProgramHandle:
+
+.. py:class:: ProgramHandle
+
+    Program handle
+
+   :canonical: kortex_api.autogen.messages.Common_pb2.ProgramHandle
+
+   :param identifier:  
+   :type identifier: :ref:`int <>` 
+
+   :param permission:   Program permission. See 'Kinova.Api.Common.Permission' enum.
+   :type permission: :ref:`int <>` 
+
+.. _CommonIcon:
+
+.. py:class:: Icon
+
+    Standard Icon Object
+
+   :canonical: kortex_api.autogen.messages.Common_pb2.Icon
+
+   :param type:   Specifies the icon type format: SVG or PNG
+   :type type: :ref:`IconType <CommonIconType>` 
+
+   :param data:   Icon raw image data, either SVG path <path> or Base64 encoded PNG image
+   :type data: :ref:`str <>` 
+
+.. _CommonCustomData:
+
+.. py:class:: CustomData
+
+   
+
+   :canonical: kortex_api.autogen.messages.Common_pb2.CustomData
+
+   :param type:   Type of serialization for the "data" field
+   :type type: :ref:`DataType <CommonDataType>` 
+
+   :param data:   The raw data.
+   :type data: :ref:`str <>` 
+
+.. _CommonRotationMatrixRow:
+
+.. py:class:: RotationMatrixRow
+
+     Single row of a 3x3 rotation matrix. To be a valid possible row of a rotation matrix,   the norm of the row must be 1 (the sum of the squares of the row elements has to equal 1). 
+
+   :canonical: kortex_api.autogen.messages.Common_pb2.RotationMatrixRow
+
+   :param column1:   Value between -1.0 and 1.0
+   :type column1: :ref:`float <>` 
+
+   :param column2:   Value between -1.0 and 1.0
+   :type column2: :ref:`float <>` 
+
+   :param column3:   Value between -1.0 and 1.0
+   :type column3: :ref:`float <>` 
+
+.. _CommonRotationMatrix:
+
+.. py:class:: RotationMatrix
+
+     Representation of a 3x3 rotation matrix. To be a valid rotation matrix, the rows must be orthonormal   (the rows must each have norm of 1 and the row vectors must be orthogonal to each other).   The determinant of the matrix must also be +1. 
+
+   :canonical: kortex_api.autogen.messages.Common_pb2.RotationMatrix
+
+   :param row1:   First rotation matrix row
+   :type row1: :ref:`RotationMatrixRow <CommonRotationMatrixRow>` 
+
+   :param row2:   Second rotation matrix row
+   :type row2: :ref:`RotationMatrixRow <CommonRotationMatrixRow>` 
+
+   :param row3:   Third rotation matrix row
+   :type row3: :ref:`RotationMatrixRow <CommonRotationMatrixRow>` 
+
+.. _CommonSymmetricMatrix3x3:
+
+.. py:class:: SymmetricMatrix3x3
+
+    Value needed from a 3X3 symmetric matrix
+
+   :canonical: kortex_api.autogen.messages.Common_pb2.SymmetricMatrix3x3
+
+   :param ixx:   ixx value
+   :type ixx: :ref:`float <>` 
+
+   :param ixy:   ixy value
+   :type ixy: :ref:`float <>` 
+
+   :param ixz:   ixz value
+   :type ixz: :ref:`float <>` 
+
+   :param iyy:   iyy value
+   :type iyy: :ref:`float <>` 
+
+   :param iyz:   iyz value
+   :type iyz: :ref:`float <>` 
+
+   :param izz:   izz value
+   :type izz: :ref:`float <>` 
+
+.. _CommonMatrix3x3:
+
+.. py:class:: Matrix3x3
+
+    Value needed from a 3X3 matrix
+
+   :canonical: kortex_api.autogen.messages.Common_pb2.Matrix3x3
+
+   :param ixx:   ixx value
+   :type ixx: :ref:`float <>` 
+
+   :param ixy:   ixy value
+   :type ixy: :ref:`float <>` 
+
+   :param ixz:   ixz value
+   :type ixz: :ref:`float <>` 
+
+   :param iyx:   iyx value
+   :type iyx: :ref:`float <>` 
+
+   :param iyy:   iyy value
+   :type iyy: :ref:`float <>` 
+
+   :param iyz:   iyz value
+   :type iyz: :ref:`float <>` 
+
+   :param izx:   izx value
+   :type izx: :ref:`float <>` 
+
+   :param izy:   izy value
+   :type izy: :ref:`float <>` 
+
+   :param izz:   izz value
+   :type izz: :ref:`float <>` 
+
+.. _CommonLocalFileDescriptor:
+
+.. py:class:: LocalFileDescriptor
+
+    File informations
+
+   :canonical: kortex_api.autogen.messages.Common_pb2.LocalFileDescriptor
+
+   :param id:   Reference ID for file
+   :type id: :ref:`int <>` 
+
+   :param file_name:   File name
+   :type file_name: :ref:`str <>` 
+
+   :param size:   File size in bytes
+   :type size: :ref:`int <>` 
+
+   :param type:   File type
+   :type type: :ref:`FileType <CommonFileType>` 
+
+.. _CommonFileList:
+
+.. py:class:: FileList
+
+    List of file descriptors
+
+   :canonical: kortex_api.autogen.messages.Common_pb2.FileList
+
+   :param files:   File descriptor list
+   :type files: :ref:`LocalFileDescriptor <CommonLocalFileDescriptor>` [ ]
+
+.. _CommonFileId:
+
+.. py:class:: FileId
+
+    File reference identifier
+
+   :canonical: kortex_api.autogen.messages.Common_pb2.FileId
+
+   :param id:   File reference ID
+   :type id: :ref:`int <>` 
+
+.. _CommonStorageMountPoint:
+
+.. py:class:: StorageMountPoint
+
+    Mount point information corresponding to storage
+
+   :canonical: kortex_api.autogen.messages.Common_pb2.StorageMountPoint
+
+   :param uid:   Mount point unique ID
+   :type uid: :ref:`int <>` 
+
+   :param name:   Mount point name
+   :type name: :ref:`str <>` 
+
+   :param full_path:   Mount point full path
+   :type full_path: :ref:`str <>` 
+
+.. _CommonStorageMountPointList:
+
+.. py:class:: StorageMountPointList
+
+    List of storage mount points
+
+   :canonical: kortex_api.autogen.messages.Common_pb2.StorageMountPointList
+
+   :param mount_points:   List of mount points
+   :type mount_points: :ref:`StorageMountPoint <CommonStorageMountPoint>` [ ]
+
+.. _CommonFSPath:
+
+.. py:class:: FSPath
+
+    Path descriptor for removable storage
+
+   :canonical: kortex_api.autogen.messages.Common_pb2.FSPath
+
+   :param path:   Path relative to mount point
+   :type path: :ref:`str <>` 
+
+   :param mount_point_id:   Mount point in which item is found
+   :type mount_point_id: :ref:`int <>` 
+
+.. _CommonFSItem:
+
+.. py:class:: FSItem
+
+    Filesystem item descriptor
+
+   :canonical: kortex_api.autogen.messages.Common_pb2.FSItem
+
+   :param path:   Item path relative to mount point
+   :type path: :ref:`FSPath <CommonFSPath>` 
+
+   :param type:   Type: file or directory
+   :type type: :ref:`FSItemType <CommonFSItemType>` 
+
+   :param size:   Size in bytes
+   :type size: :ref:`int <>` 
+
+   :param timestamp:   Timestamp of last modification
+   :type timestamp: :ref:`Timestamp <CommonTimestamp>` 
+
+.. _CommonFSItemList:
+
+.. py:class:: FSItemList
+
+    File system item list
+
+   :canonical: kortex_api.autogen.messages.Common_pb2.FSItemList
+
+   :param items:   File system item list
+   :type items: :ref:`FSItem <CommonFSItem>` [ ]
+
+.. _CommonNotificationInformation:
+
+.. py:class:: NotificationInformation
+
+    General informations about a notification
+
+   :canonical: kortex_api.autogen.messages.Common_pb2.NotificationInformation
+
+   :param severity:   Severity of the notification
+   :type severity: :ref:`NotificationSeverity <CommonNotificationSeverity>` 
+
+   :param timestamp:   Event timestamp
+   :type timestamp: :ref:`Timestamp <CommonTimestamp>` 
+
+   :param connection:   Connection that caused the event
+   :type connection: :ref:`Connection <CommonConnection>` 
+
+.. _CommonCRC32Checksum:
+
+.. py:class:: CRC32Checksum
+
+    CRC-32 checksum
+
+   :canonical: kortex_api.autogen.messages.Common_pb2.CRC32Checksum
+
+   :param crc32:   CRC-32 checksum
+   :type crc32: :ref:`int <>` 

@@ -1,0 +1,93 @@
+================================
+ProgramRunner
+================================
+    
+.. py:currentmodule:: kortex_api.autogen
+
+.. _ProgramRunnerServiceVersion:
+
+.. py:class:: ServiceVersion
+
+     Identifies ProgramRunner service current version
+
+    :canonical: kortex_api.autogen.messages.ProgramRunner_pb2.ServiceVersion
+    .. py:attribute:: RESERVED_0 (0):   Reserved
+
+    .. py:attribute:: CURRENT_VERSION (1):   Current version
+
+.. _ProgramRunnerStatus:
+
+.. py:class:: Status
+
+     All possible statuses of the Runner
+
+    :canonical: kortex_api.autogen.messages.ProgramRunner_pb2.Status
+    .. py:attribute:: STATUS_UNSPECIFIED (0):  
+
+    .. py:attribute:: STATUS_IDLE (1):   Runner is idle. It can be started via Start or StartActions rpcs
+
+    .. py:attribute:: STATUS_RUNNING (2):   Runner is running a program or action
+
+    .. py:attribute:: STATUS_PAUSED (3):   Runner has paused the execution of a program or action.
+
+    .. py:attribute:: STATUS_STARTING (4):   Runner is about to start a program or action. Runner is STARTING while it setups the Plugin action.
+
+    .. py:attribute:: STATUS_STOPPING (5):   Runner is about to stop its execution. Runner is STOPPING while it teardowns the Plugin action.
+
+    .. py:attribute:: STATUS_PAUSED_AUTOMATIC_RESUME (6):   Runner has paused the execution of a program or action, but it will resume automatically.
+
+    .. py:attribute:: STATUS_WAITING_FOR_ACKNOWLEDGE (7):   Runner is waiting for an acknowledge action before starting a program in auto mode.
+
+.. _ProgramRunnerExecutionEvent:
+
+.. py:class:: ExecutionEvent
+
+     All possible events during a program execution
+
+    :canonical: kortex_api.autogen.messages.ProgramRunner_pb2.ExecutionEvent
+    .. py:attribute:: EXECUTION_EVENT_UNSPECIFIED (0):  
+
+    .. py:attribute:: EXECUTION_EVENT_COMPLETED (1):  
+
+    .. py:attribute:: EXECUTION_EVENT_FAILED (2):  
+
+    .. py:attribute:: EXECUTION_EVENT_FEEDBACK (3):  
+
+    .. py:attribute:: EXECUTION_EVENT_PAUSED (4):  
+
+    .. py:attribute:: EXECUTION_EVENT_RESUMED (5):  
+
+    .. py:attribute:: EXECUTION_EVENT_STARTED (6):  
+
+    .. py:attribute:: EXECUTION_EVENT_STOPPED (7):  
+
+.. _ProgramRunnerStateEventType:
+
+.. py:class:: StateEventType
+
+     State event type
+
+    :canonical: kortex_api.autogen.messages.ProgramRunner_pb2.StateEventType
+    .. py:attribute:: STATE_EVENT_TYPE_UNSPECIFIED (0):   Unknown event
+
+    .. py:attribute:: STATE_EVENT_TYPE_ACTION_CONFIGURATION_INTERPOLATION (1):   When an action configuration is interpolated (variables replaced by their values)
+
+    .. py:attribute:: STATE_EVENT_TYPE_ACTION_FAILURE (2):   Action failures
+
+    .. py:attribute:: STATE_EVENT_TYPE_ACTION_ENDED (3):   Action ended
+
+    .. py:attribute:: STATE_EVENT_TYPE_ACTION_STARTED (4):   Action started
+
+    .. py:attribute:: STATE_EVENT_TYPE_ACTION_STATE_CHANGED (5):   Action state change
+
+    .. py:attribute:: STATE_EVENT_TYPE_ACTION_STATUS_CHANGED (6):   Action status change
+
+    .. py:attribute:: STATE_EVENT_TYPE_HOOK (7):   When an action communicates with an external source
+
+    .. py:attribute:: STATE_EVENT_TYPE_PLUGIN_ACTION_COMPLETED (8):   Plugin action is completed 
+
+    .. py:attribute:: STATE_EVENT_TYPE_PLUGIN_ACTION_CONFIRMATION (9):   When an action receives confirmation by a plugin action that it is playing, paused, etc.
+
+    .. py:attribute:: STATE_EVENT_TYPE_SEQUENCER_FAILURE (10):   Sequencer failure
+
+    .. py:attribute:: STATE_EVENT_TYPE_VARIABLE_CHANGED (11):   When a variable is added/changed

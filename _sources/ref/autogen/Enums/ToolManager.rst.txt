@@ -1,0 +1,31 @@
+================================
+ToolManager
+================================
+    
+.. py:currentmodule:: kortex_api.autogen
+
+.. _ToolManagerServiceVersion:
+
+.. py:class:: ServiceVersion
+
+     Identifies service current version
+
+    :canonical: kortex_api.autogen.messages.ToolManager_pb2.ServiceVersion
+    .. py:attribute:: RESERVED_0 (0):   Reserved
+
+    .. py:attribute:: CURRENT_VERSION (1):   Current version
+
+.. _ToolManagerToolEvent:
+
+.. py:class:: ToolEvent
+
+     Admissible user event types
+
+    :canonical: kortex_api.autogen.messages.ToolManager_pb2.ToolEvent
+    .. py:attribute:: TOOL_EVENT_UNSPECIFIED (0):   Unspecified user event
+
+    .. py:attribute:: TOOL_EVENT_CREATED (1):   A tool has been created
+
+    .. py:attribute:: TOOL_EVENT_UPDATED (2):   A tool has been updated
+
+    .. py:attribute:: TOOL_EVENT_DELETED (3):   A tool has been deleted

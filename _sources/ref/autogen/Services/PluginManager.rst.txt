@@ -1,0 +1,136 @@
+================================
+PluginManager
+================================
+    
+.. py:currentmodule:: kortex_api.autogen
+
+.. py:class:: PluginManagerClient
+        
+    :canonical: kortex_api.autogen.client_stubs.PluginManagerClientRpc
+
+    .. py:method:: __init__(router, namespace = None)
+
+        Constructs a PluginManagerClient with an initialized :class:`~kortex_api.RouterClient.RouterClient` and an optional namespace.
+
+        :param RouterClient router: :class:`~kortex_api.RouterClient.RouterClient` used for the communication
+        :param string namespace: Optional namespace on which to initialize the PluginManagerClient (defaults to ``None``)
+
+    .. py:method:: IsAlive (timeoutMs: int = 1000)
+        
+        Returns ``True`` if the Service Server is detected online before ``timeoutMs`` is expired, ``False`` otherwise.
+        
+        :param unsigned int timeoutMs: The maximum time to wait for an answer from the server 
+        :rtype: bool
+
+
+        .. _PluginManagerClientLaunchPlugin:
+
+    .. py:method:: LaunchPlugin (pluginhandle, deviceId = 0, options = RouterClientSendOptions())
+        
+        | The ``CONFIGURE`` permission is necessary to call this RPC.
+        |
+        | Launch an installed plugin
+
+
+        :param pluginhandle:  
+        :type pluginhandle: :ref:`PluginHandle <PluginManagerPluginHandle>`
+
+        :param int deviceId: Device's Id called by rpc (optional)
+        :param RouterClientSendOptions options: Router options for sending the message
+
+        .. _PluginManagerClientShutDownPlugin:
+
+    .. py:method:: ShutDownPlugin (pluginhandle, deviceId = 0, options = RouterClientSendOptions())
+        
+        | The ``CONFIGURE`` permission is necessary to call this RPC.
+        |
+        | Shut down a running plugin
+
+
+        :param pluginhandle:  
+        :type pluginhandle: :ref:`PluginHandle <PluginManagerPluginHandle>`
+
+        :param int deviceId: Device's Id called by rpc (optional)
+        :param RouterClientSendOptions options: Router options for sending the message
+
+        .. _PluginManagerClientShutDownAllPlugins:
+
+    .. py:method:: ShutDownAllPlugins (, deviceId = 0, options = RouterClientSendOptions())
+        
+        | The ``CONFIGURE`` permission is necessary to call this RPC.
+        |
+        | Shut down all running plugins
+
+        :param int deviceId: Device's Id called by rpc (optional)
+        :param RouterClientSendOptions options: Router options for sending the message
+
+        .. _OnNotificationPluginManagerClientPluginUpdatedTopic:
+
+    .. py:method:: OnNotificationPluginUpdatedTopic(callback, notificationoptions)
+    
+        | The ``READ_ONLY`` permission is necessary to call this RPC.
+        |
+        | Notification of plugin update events
+
+        :param callback: Function callback taking a :class:`Kinova.Api.PluginManager.PluginUpdatedNotification` as only argument, and returning ``None``.
+        :type callback: function
+        :param NotificationOptions notificationoptions: Notification options
+        :rtype: NotificationHandle
+
+        .. _OnNotificationPluginManagerClientPluginInstallationTopic:
+
+    .. py:method:: OnNotificationPluginInstallationTopic(callback, notificationoptions)
+    
+        | The ``READ_ONLY`` permission is necessary to call this RPC.
+        |
+        | Notification of plugin installation events
+
+        :param callback: Function callback taking a :class:`Kinova.Api.PluginManager.PluginInstallationNotification` as only argument, and returning ``None``.
+        :type callback: function
+        :param NotificationOptions notificationoptions: Notification options
+        :rtype: NotificationHandle
+
+        .. _PluginManagerClientUnsubscribe:
+
+    .. py:method:: Unsubscribe (notificationhandle, deviceId = 0, options = RouterClientSendOptions())
+        
+        | The ``READ_ONLY`` permission is necessary to call this RPC.
+        |
+        | Unsubscribe from PUB/SUB
+
+
+        :param notificationhandle:  
+        :type notificationhandle: :ref:`NotificationHandle <CommonNotificationHandle>`
+
+        :param int deviceId: Device's Id called by rpc (optional)
+        :param RouterClientSendOptions options: Router options for sending the message
+
+        .. _PluginManagerClientGetPluginInfo:
+
+    .. py:method:: GetPluginInfo (pluginhandle, deviceId = 0, options = RouterClientSendOptions())
+        
+        | The ``READ_ONLY`` permission is necessary to call this RPC.
+        |
+        | Get info for a specific plugin
+
+
+        :param pluginhandle:  
+        :type pluginhandle: :ref:`PluginHandle <PluginManagerPluginHandle>`
+
+        :param int deviceId: Device's Id called by rpc (optional)
+        :param RouterClientSendOptions options: Router options for sending the message
+ 
+        :rtype: PluginInfo
+
+        .. _PluginManagerClientGetPluginsList:
+
+    .. py:method:: GetPluginsList (, deviceId = 0, options = RouterClientSendOptions())
+        
+        | The ``READ_ONLY`` permission is necessary to call this RPC.
+        |
+        | Get info of all plugins
+
+        :param int deviceId: Device's Id called by rpc (optional)
+        :param RouterClientSendOptions options: Router options for sending the message
+ 
+        :rtype: PluginInfoList

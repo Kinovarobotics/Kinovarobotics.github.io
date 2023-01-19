@@ -1,0 +1,16 @@
+================================
+DeviceManager
+================================
+    
+.. py:currentmodule:: kortex_api.autogen
+
+.. _DeviceManagerDeviceHandles:
+
+.. py:class:: DeviceHandles
+
+    Array of Device handles
+
+   :canonical: kortex_api.autogen.messages.DeviceManager_pb2.DeviceHandles
+
+   :param device_handle:   Device handle    
+   :type device_handle: :ref:`DeviceHandle <CommonDeviceHandle>` [ ]

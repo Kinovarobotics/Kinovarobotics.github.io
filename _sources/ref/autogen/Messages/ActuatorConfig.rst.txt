@@ -1,0 +1,494 @@
+================================
+ActuatorConfig
+================================
+    
+.. py:currentmodule:: kortex_api.autogen
+
+.. _ActuatorConfigAxisPosition:
+
+.. py:class:: AxisPosition
+
+    Axis position
+
+   :canonical: kortex_api.autogen.messages.ActuatorConfig_pb2.AxisPosition
+
+   :param position:   Axis position (degrees)
+   :type position: :ref:`float <>` 
+
+.. _ActuatorConfigAxisOffsets:
+
+.. py:class:: AxisOffsets
+
+    Axis offsets
+
+   :canonical: kortex_api.autogen.messages.ActuatorConfig_pb2.AxisOffsets
+
+   :param absolute_offset:   Absolute offset value (degrees)
+   :type absolute_offset: :ref:`float <>` 
+
+   :param relative_offset:   Relative offset value (degrees)
+   :type relative_offset: :ref:`float <>` 
+
+.. _ActuatorConfigTorqueCalibration:
+
+.. py:class:: TorqueCalibration
+
+    Torque calibration settings
+
+   :canonical: kortex_api.autogen.messages.ActuatorConfig_pb2.TorqueCalibration
+
+   :param global_gain:   Global gain value
+   :type global_gain: :ref:`float <>` 
+
+   :param global_offset:   Global offset value
+   :type global_offset: :ref:`float <>` 
+
+   :param gain:   Gain (index 0 to 3)
+   :type gain: :ref:`float <>` [ ]
+
+   :param offset:   Offset (index 0 to 3)
+   :type offset: :ref:`float <>` [ ]
+
+.. _ActuatorConfigTorqueOffset:
+
+.. py:class:: TorqueOffset
+
+    Defines torque offset
+
+   :canonical: kortex_api.autogen.messages.ActuatorConfig_pb2.TorqueOffset
+
+   :param torque_offset:   Torque offset value
+   :type torque_offset: :ref:`float <>` 
+
+.. _ActuatorConfigControlModeInformation:
+
+.. py:class:: ControlModeInformation
+
+    Control mode information
+
+   :canonical: kortex_api.autogen.messages.ActuatorConfig_pb2.ControlModeInformation
+
+   :param control_mode:   Control mode
+   :type control_mode: :ref:`ControlMode <ActuatorConfigControlMode>` 
+
+.. _ActuatorConfigControlLoop:
+
+.. py:class:: ControlLoop
+
+    Control loop
+
+   :canonical: kortex_api.autogen.messages.ActuatorConfig_pb2.ControlLoop
+
+   :param control_loop:   Use ControlLoopSelection enum values to form bitmask
+   :type control_loop: :ref:`int <>` 
+
+.. _ActuatorConfigLoopSelection:
+
+.. py:class:: LoopSelection
+
+    Defines the loop selection
+
+   :canonical: kortex_api.autogen.messages.ActuatorConfig_pb2.LoopSelection
+
+   :param loop_selection:   ControlLoopSelection enum
+   :type loop_selection: :ref:`ControlLoopSelection <ActuatorConfigControlLoopSelection>` 
+
+.. _ActuatorConfigVectorDriveParameters:
+
+.. py:class:: VectorDriveParameters
+
+    Field-oriented control PI controller gain values
+
+   :canonical: kortex_api.autogen.messages.ActuatorConfig_pb2.VectorDriveParameters
+
+   :param kpq:   Quadrature axis current proportional gain
+   :type kpq: :ref:`float <>` 
+
+   :param kiq:   Quadrature axis current integral gain
+   :type kiq: :ref:`float <>` 
+
+   :param kpd:   Direct axis current proportional gain
+   :type kpd: :ref:`float <>` 
+
+   :param kid:   Direct axis current integral gain
+   :type kid: :ref:`float <>` 
+
+.. _ActuatorConfigEncoderDerivativeParameters:
+
+.. py:class:: EncoderDerivativeParameters
+
+    Variable window derivative parameters
+
+   :canonical: kortex_api.autogen.messages.ActuatorConfig_pb2.EncoderDerivativeParameters
+
+   :param max_window_width:   Maximum window width
+   :type max_window_width: :ref:`int <>` 
+
+   :param min_angle:   Minimum angle for derivative (degrees)
+   :type min_angle: :ref:`float <>` 
+
+.. _ActuatorConfigControlLoopParameters:
+
+.. py:class:: ControlLoopParameters
+
+    Control loop parameters (discrete transfer function)
+
+   :canonical: kortex_api.autogen.messages.ActuatorConfig_pb2.ControlLoopParameters
+
+   :param loop_selection:   ControlLoopSelection enum
+   :type loop_selection: :ref:`ControlLoopSelection <ActuatorConfigControlLoopSelection>` 
+
+   :param error_saturation:   Error saturation value
+   :type error_saturation: :ref:`float <>` 
+
+   :param output_saturation:   Output saturation value
+   :type output_saturation: :ref:`float <>` 
+
+   :param kAz:   KAz (index 0 to 4): denominator gains A1 to A5
+   :type kAz: :ref:`float <>` [ ]
+
+   :param kBz:   KBz (index 0 to 5): numerator gains B0 to B5
+   :type kBz: :ref:`float <>` [ ]
+
+   :param error_dead_band:   Error dead band value
+   :type error_dead_band: :ref:`float <>` 
+
+   :param k_p:   Proportional gain
+   :type k_p: :ref:`float <>` 
+
+   :param k_i:   Integral gain
+   :type k_i: :ref:`float <>` 
+
+   :param k_d:   Derivative gain
+   :type k_d: :ref:`float <>` 
+
+.. _ActuatorConfigFrequencyResponse:
+
+.. py:class:: FrequencyResponse
+
+    Frequency response
+
+   :canonical: kortex_api.autogen.messages.ActuatorConfig_pb2.FrequencyResponse
+
+   :param loop_selection:   ControlLoopSelection enum
+   :type loop_selection: :ref:`ControlLoopSelection <ActuatorConfigControlLoopSelection>` 
+
+   :param min_frequency:   Minimum frequency value
+   :type min_frequency: :ref:`float <>` 
+
+   :param max_frequency:   Maximum frequency value
+   :type max_frequency: :ref:`float <>` 
+
+   :param amplitude:   Amplitude value
+   :type amplitude: :ref:`float <>` 
+
+   :param duration:   Duration (in seconds)
+   :type duration: :ref:`float <>` 
+
+.. _ActuatorConfigStepResponse:
+
+.. py:class:: StepResponse
+
+    Step response
+
+   :canonical: kortex_api.autogen.messages.ActuatorConfig_pb2.StepResponse
+
+   :param loop_selection:   ControlLoopSelection enum
+   :type loop_selection: :ref:`ControlLoopSelection <ActuatorConfigControlLoopSelection>` 
+
+   :param amplitude:   Amplitude value
+   :type amplitude: :ref:`float <>` 
+
+   :param step_delay:   Step delay value
+   :type step_delay: :ref:`float <>` 
+
+   :param duration:   Duration (in seconds)
+   :type duration: :ref:`float <>` 
+
+.. _ActuatorConfigRampResponse:
+
+.. py:class:: RampResponse
+
+    Ramp response
+
+   :canonical: kortex_api.autogen.messages.ActuatorConfig_pb2.RampResponse
+
+   :param loop_selection:   ControlLoopSelection enum
+   :type loop_selection: :ref:`ControlLoopSelection <ActuatorConfigControlLoopSelection>` 
+
+   :param slope:   Slope value
+   :type slope: :ref:`float <>` 
+
+   :param ramp_delay:   Ramp delay value
+   :type ramp_delay: :ref:`float <>` 
+
+   :param duration:   Duration (in seconds)
+   :type duration: :ref:`float <>` 
+
+.. _ActuatorConfigCustomDataSelection:
+
+.. py:class:: CustomDataSelection
+
+    Selected custom data channels content
+
+   :canonical: kortex_api.autogen.messages.ActuatorConfig_pb2.CustomDataSelection
+
+   :param channel:   16 channels maximum
+   :type channel: :ref:`CustomDataIndex <ActuatorConfigCustomDataIndex>` [ ]
+
+.. _ActuatorConfigCommandModeInformation:
+
+.. py:class:: CommandModeInformation
+
+    Command mode
+
+   :canonical: kortex_api.autogen.messages.ActuatorConfig_pb2.CommandModeInformation
+
+   :param command_mode:   Command mode
+   :type command_mode: :ref:`CommandMode <ActuatorConfigCommandMode>` 
+
+.. _ActuatorConfigServoing:
+
+.. py:class:: Servoing
+
+    Enables/disables servoing
+
+   :canonical: kortex_api.autogen.messages.ActuatorConfig_pb2.Servoing
+
+   :param enabled:   Servoing enabled
+   :type enabled: :ref:`bool <>` 
+
+.. _ActuatorConfigPositionCommand:
+
+.. py:class:: PositionCommand
+
+    Angular position command for an actuator
+
+   :canonical: kortex_api.autogen.messages.ActuatorConfig_pb2.PositionCommand
+
+   :param position:   Position value (degrees)
+   :type position: :ref:`float <>` 
+
+   :param velocity:   Velocity value (degrees per second)
+   :type velocity: :ref:`float <>` 
+
+   :param acceleration:   Acceleration value (degrees per second^2)
+   :type acceleration: :ref:`float <>` 
+
+.. _ActuatorConfigCoggingFeedforwardModeInformation:
+
+.. py:class:: CoggingFeedforwardModeInformation
+
+    Cogging feedforward mode
+
+   :canonical: kortex_api.autogen.messages.ActuatorConfig_pb2.CoggingFeedforwardModeInformation
+
+   :param cogging_feedforward_mode:   Cogging feedforward mode
+   :type cogging_feedforward_mode: :ref:`CoggingFeedforwardMode <ActuatorConfigCoggingFeedforwardMode>` 
+
+.. _ActuatorConfigLookupTableReadData:
+
+.. py:class:: LookupTableReadData
+
+    Lookup table parameters to read with
+
+   :canonical: kortex_api.autogen.messages.ActuatorConfig_pb2.LookupTableReadData
+
+   :param table_selection:   Lookup table selection
+   :type table_selection: :ref:`LookupTableSelection <ActuatorConfigLookupTableSelection>` 
+
+   :param table_offset:   Offset of data in table
+   :type table_offset: :ref:`int <>` 
+
+   :param table_length:   Length of calibration data
+   :type table_length: :ref:`int <>` 
+
+   :param data_selection:   Lookup table data selection
+   :type data_selection: :ref:`LookupTableDataSelection <ActuatorConfigLookupTableDataSelection>` 
+
+.. _ActuatorConfigLookupTableWriteData:
+
+.. py:class:: LookupTableWriteData
+
+    Lookup table data to write and parameters
+
+   :canonical: kortex_api.autogen.messages.ActuatorConfig_pb2.LookupTableWriteData
+
+   :param table_selection:   Lookup table selection
+   :type table_selection: :ref:`LookupTableSelection <ActuatorConfigLookupTableSelection>` 
+
+   :param table_offset:   Offset of data in table
+   :type table_offset: :ref:`int <>` 
+
+   :param table_length:   Length of calibration data
+   :type table_length: :ref:`int <>` 
+
+   :param data:   Lookup table data
+   :type data: :ref:`LookupTableData <ActuatorConfigLookupTableData>` 
+
+   :param data_selection:   Lookup table data selection
+   :type data_selection: :ref:`LookupTableDataSelection <ActuatorConfigLookupTableDataSelection>` 
+
+.. _ActuatorConfigLookupTableData:
+
+.. py:class:: LookupTableData
+
+    Lookup table data
+
+   :canonical: kortex_api.autogen.messages.ActuatorConfig_pb2.LookupTableData
+
+   :param data:   Lookup data array (max 128)
+   :type data: :ref:`bytes <>` 
+
+   :param size:   Lookup data array size
+   :type size: :ref:`int <>` 
+
+.. _ActuatorConfigLookupTableSelectionForNVM:
+
+.. py:class:: LookupTableSelectionForNVM
+
+    Lookup table selection to access NVM
+
+   :canonical: kortex_api.autogen.messages.ActuatorConfig_pb2.LookupTableSelectionForNVM
+
+   :param table_selection:   Lookup table selection
+   :type table_selection: :ref:`LookupTableSelection <ActuatorConfigLookupTableSelection>` 
+
+.. _ActuatorConfigFourierModelData:
+
+.. py:class:: FourierModelData
+
+    Fourier model data
+
+   :canonical: kortex_api.autogen.messages.ActuatorConfig_pb2.FourierModelData
+
+   :param frequencies:   Frequencies
+   :type frequencies: :ref:`float <>` [ ]
+
+   :param offsets:   Offsets
+   :type offsets: :ref:`float <>` [ ]
+
+   :param amplitudes:   Amplitudes
+   :type amplitudes: :ref:`float <>` [ ]
+
+.. _ActuatorConfigFourierModelReadSelection:
+
+.. py:class:: FourierModelReadSelection
+
+    Fourier model parameters to read with
+
+   :canonical: kortex_api.autogen.messages.ActuatorConfig_pb2.FourierModelReadSelection
+
+   :param model_selection:   Fourier model selection
+   :type model_selection: :ref:`FourierModelSelection <ActuatorConfigFourierModelSelection>` 
+
+.. _ActuatorConfigFourierModelWriteData:
+
+.. py:class:: FourierModelWriteData
+
+    Fourier model to write
+
+   :canonical: kortex_api.autogen.messages.ActuatorConfig_pb2.FourierModelWriteData
+
+   :param model_selection:   Fourier model selection
+   :type model_selection: :ref:`FourierModelSelection <ActuatorConfigFourierModelSelection>` 
+
+   :param model_data:   Fourier model data
+   :type model_data: :ref:`FourierModelData <ActuatorConfigFourierModelData>` 
+
+.. _ActuatorConfigGearboxHysteresisCalibrationData:
+
+.. py:class:: GearboxHysteresisCalibrationData
+
+    Gearbox hysteresis calibration data
+
+   :canonical: kortex_api.autogen.messages.ActuatorConfig_pb2.GearboxHysteresisCalibrationData
+
+   :param friction_coulomb:   Friction
+   :type friction_coulomb: :ref:`float <>` 
+
+   :param spring_ratio:   Spring ratio
+   :type spring_ratio: :ref:`float <>` 
+
+.. _ActuatorConfigJointPositionSensorOffset:
+
+.. py:class:: JointPositionSensorOffset
+
+    Joint position sensor offset
+
+   :canonical: kortex_api.autogen.messages.ActuatorConfig_pb2.JointPositionSensorOffset
+
+   :param offset:   Sensor offset
+   :type offset: :ref:`float <>` 
+
+.. _ActuatorConfigMotorPositionToJointPositionSensorOffset:
+
+.. py:class:: MotorPositionToJointPositionSensorOffset
+
+    Offset between motor and joint position sensors
+
+   :canonical: kortex_api.autogen.messages.ActuatorConfig_pb2.MotorPositionToJointPositionSensorOffset
+
+   :param offset:   Sensor to sensor offset
+   :type offset: :ref:`float <>` 
+
+.. _ActuatorConfigMotorPowerFilterPeriod:
+
+.. py:class:: MotorPowerFilterPeriod
+
+    Motor power measurement filter period
+
+   :canonical: kortex_api.autogen.messages.ActuatorConfig_pb2.MotorPowerFilterPeriod
+
+   :param period:   Filter period (milliseconds)
+   :type period: :ref:`int <>` 
+
+.. _ActuatorConfigCurrentOffset:
+
+.. py:class:: CurrentOffset
+
+    Current offset of a current sensor
+
+   :canonical: kortex_api.autogen.messages.ActuatorConfig_pb2.CurrentOffset
+
+   :param phase:   Phase of the current sensor to set offset for (index 0 to 2)
+   :type phase: :ref:`int <>` 
+
+   :param offset:   Current sensor offset (Amps)
+   :type offset: :ref:`float <>` 
+
+.. _ActuatorConfigJointEncoderFaults:
+
+.. py:class:: JointEncoderFaults
+
+    Joint encoder faults
+
+   :canonical: kortex_api.autogen.messages.ActuatorConfig_pb2.JointEncoderFaults
+
+   :param warnings:   Warnings (bitmask)
+   :type warnings: :ref:`int <>` 
+
+   :param errors:   Errors (bitmask)
+   :type errors: :ref:`int <>` 
+
+.. _ActuatorConfigMotorParameters:
+
+.. py:class:: MotorParameters
+
+    Motor parameters
+
+   :canonical: kortex_api.autogen.messages.ActuatorConfig_pb2.MotorParameters
+
+   :param rotor_inertia:   Rotor inertia (kilograms meters^squared)
+   :type rotor_inertia: :ref:`float <>` 
+
+.. _ActuatorConfigGearboxParameters:
+
+.. py:class:: GearboxParameters
+
+    Gearbox parameters
+
+   :canonical: kortex_api.autogen.messages.ActuatorConfig_pb2.GearboxParameters
+
+   :param gear_ratio:   Gear ratio
+   :type gear_ratio: :ref:`float <>` 

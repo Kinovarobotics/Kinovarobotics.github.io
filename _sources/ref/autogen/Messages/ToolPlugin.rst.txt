@@ -1,0 +1,136 @@
+================================
+ToolPlugin
+================================
+    
+.. py:currentmodule:: kortex_api.autogen
+
+.. _ToolPluginToolHandle:
+
+.. py:class:: ToolHandle
+
+    Tool identifier
+
+   :canonical: kortex_api.autogen.messages.ToolPlugin_pb2.ToolHandle
+
+   :param identifier:   Tool identifier
+   :type identifier: :ref:`str <>` 
+
+.. _ToolPluginToolHandleList:
+
+.. py:class:: ToolHandleList
+
+    List of identifier
+
+   :canonical: kortex_api.autogen.messages.ToolPlugin_pb2.ToolHandleList
+
+   :param handles:   Handles list
+   :type handles: :ref:`ToolHandle <ToolPluginToolHandle>` [ ]
+
+.. _ToolPluginToolInformation:
+
+.. py:class:: ToolInformation
+
+    Tool's information
+
+   :canonical: kortex_api.autogen.messages.ToolPlugin_pb2.ToolInformation
+
+   :param handle:   Tool handle
+   :type handle: :ref:`ToolHandle <ToolPluginToolHandle>` 
+
+   :param mass:   The mass
+   :type mass: :ref:`float <>` 
+
+   :param transform:   The tool transform
+   :type transform: :ref:`CartesianTransform <ControlConfigCartesianTransform>` 
+
+   :param center_of_mass:   The tool center of mass
+   :type center_of_mass: :ref:`Position <ControlConfigPosition>` 
+
+   :param open_action_handle:   Identifier of the action that opens the tool
+   :type open_action_handle: :ref:`ActionDescriptionHandle <PluginActionDescriptionHandle>` 
+
+   :param close_action_handle:   Identifier of the action that closes the tool
+   :type close_action_handle: :ref:`ActionDescriptionHandle <PluginActionDescriptionHandle>` 
+
+   :param inertia:   Tool's inertia
+   :type inertia: :ref:`SymmetricMatrix3x3 <CommonSymmetricMatrix3x3>` 
+
+   :param tool_plugin_type:   The tool plugin type
+   :type tool_plugin_type: :ref:`ToolPluginType <ToolPluginToolPluginType>` 
+
+   :param feedback_schema:   The JSON schema of the feedback that will be returned by GetToolFeedback()
+   :type feedback_schema: :ref:`CustomData <CommonCustomData>` 
+
+   :param connection_state:   The connection state of the tool
+   :type connection_state: :ref:`ToolConnectionState <ToolPluginToolConnectionState>` 
+
+   :param plugin_handle:   Identifies from which plugin this tool comes from, if applicable
+   :type plugin_handle: :ref:`PluginHandle <PluginManagerPluginHandle>` 
+
+   :param friendly_name:   Tool friendly name
+   :type friendly_name: :ref:`str <>` 
+
+   :param is_active:   Indicates if the tool is part of the active tool list
+   :type is_active: :ref:`bool <>` 
+
+   :param active_index:   Index of the tool in the active tool list. It is 0 if the tool is not active, and 1 is the tool nearest to the flange.
+   :type active_index: :ref:`int <>` 
+
+.. _ToolPluginToolInformationList:
+
+.. py:class:: ToolInformationList
+
+    List of tool information
+
+   :canonical: kortex_api.autogen.messages.ToolPlugin_pb2.ToolInformationList
+
+   :param tools_information:   Tool information list
+   :type tools_information: :ref:`ToolInformation <ToolPluginToolInformation>` [ ]
+
+.. _ToolPluginJogMessage:
+
+.. py:class:: JogMessage
+
+    Jog command directive
+
+   :canonical: kortex_api.autogen.messages.ToolPlugin_pb2.JogMessage
+
+   :param handle:   Tool Handle
+   :type handle: :ref:`ToolHandle <ToolPluginToolHandle>` 
+
+   :param jog_value:   Relative intensity to apply [-100 , 100]
+   :type jog_value: :ref:`int <>` 
+
+.. _ToolPluginMoveMessage:
+
+.. py:class:: MoveMessage
+
+    Move command directive
+
+   :canonical: kortex_api.autogen.messages.ToolPlugin_pb2.MoveMessage
+
+   :param handle:   Tool handle
+   :type handle: :ref:`ToolHandle <ToolPluginToolHandle>` 
+
+   :param target_position:   Target position [-100 , 100]
+   :type target_position: :ref:`int <>` 
+
+.. _ToolPluginToolInformationNotification:
+
+.. py:class:: ToolInformationNotification
+
+    Notification about a tool information event
+
+   :canonical: kortex_api.autogen.messages.ToolPlugin_pb2.ToolInformationNotification
+
+   :param tool_information:   The new tool information
+   :type tool_information: :ref:`ToolInformation <ToolPluginToolInformation>` 
+
+   :param timestamp:   This field is deprecated and will be removed in a future release
+   :type timestamp: :ref:`Timestamp <CommonTimestamp>` 
+
+   :param event:   Information about this notification's event
+   :type event: :ref:`ToolInformationEvent <ToolPluginToolInformationEvent>` 
+
+   :param generic_info:   Generic notification information
+   :type generic_info: :ref:`NotificationInformation <CommonNotificationInformation>` 

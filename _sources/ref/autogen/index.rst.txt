@@ -1,0 +1,12 @@
+Autogen
+====================
+
+.. toctree::
+    :maxdepth: 1
+    :caption: Modules:
+    :titlesonly:
+
+    Enums/index
+    Services/index
+    Messages/index
+    Notifications

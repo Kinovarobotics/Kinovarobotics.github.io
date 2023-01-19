@@ -1,0 +1,86 @@
+================================
+SafetyFunctionsJointLimits
+================================
+    
+.. py:currentmodule:: kortex_api.autogen
+
+.. _SafetyFunctionsJointLimitsJointPositionInfo:
+
+.. py:class:: JointPositionInfo
+
+    Joint Position information
+
+   :canonical: kortex_api.autogen.messages.SafetyFunctionsJointLimits_pb2.JointPositionInfo
+
+   :param index:   Joint index (0-based)
+   :type index: :ref:`int <>` 
+
+.. _SafetyFunctionsJointLimitsJointSpeedInfo:
+
+.. py:class:: JointSpeedInfo
+
+    Joint Speed information
+
+   :canonical: kortex_api.autogen.messages.SafetyFunctionsJointLimits_pb2.JointSpeedInfo
+
+   :param index:   Joint index (0-based)
+   :type index: :ref:`int <>` 
+
+   :param mode:   Safety system mode (normal or reduced)
+   :type mode: :ref:`SafetySystemMode <SafetyFunctionsJointLimitsSafetySystemMode>` 
+
+   :param with_margin:   True for limits adapted with margins
+   :type with_margin: :ref:`bool <>` 
+
+.. _SafetyFunctionsJointLimitsJointPositionLimits:
+
+.. py:class:: JointPositionLimits
+
+    Joint position limits
+
+   :canonical: kortex_api.autogen.messages.SafetyFunctionsJointLimits_pb2.JointPositionLimits
+
+   :param info:   Joint info
+   :type info: :ref:`JointPositionInfo <SafetyFunctionsJointLimitsJointPositionInfo>` 
+
+   :param upper_limit:   Joint position upper limit in degrees (°)
+   :type upper_limit: :ref:`float <>` 
+
+   :param lower_limit:   Joint position lower limit in degrees (°)
+   :type lower_limit: :ref:`float <>` 
+
+.. _SafetyFunctionsJointLimitsJointSpeedLimit:
+
+.. py:class:: JointSpeedLimit
+
+    Joint speed limit
+
+   :canonical: kortex_api.autogen.messages.SafetyFunctionsJointLimits_pb2.JointSpeedLimit
+
+   :param info:   Joint info
+   :type info: :ref:`JointSpeedInfo <SafetyFunctionsJointLimitsJointSpeedInfo>` 
+
+   :param limit:   Joint speed limit in degrees/second (°/s)
+   :type limit: :ref:`float <>` 
+
+.. _SafetyFunctionsJointLimitsJointPositionLimitsList:
+
+.. py:class:: JointPositionLimitsList
+
+    Array of position limits for all joints
+
+   :canonical: kortex_api.autogen.messages.SafetyFunctionsJointLimits_pb2.JointPositionLimitsList
+
+   :param joints_position_limits:   List of safety joint position limits (max of 7 joints/limits)
+   :type joints_position_limits: :ref:`JointPositionLimits <SafetyFunctionsJointLimitsJointPositionLimits>` [ ]
+
+.. _SafetyFunctionsJointLimitsJointSpeedLimitList:
+
+.. py:class:: JointSpeedLimitList
+
+    Array of speed limit for all joints
+
+   :canonical: kortex_api.autogen.messages.SafetyFunctionsJointLimits_pb2.JointSpeedLimitList
+
+   :param joints_speed_limit:   List of safety joint speed limits (max of 14 limits: 7 joints for each safety system mode)
+   :type joints_speed_limit: :ref:`JointSpeedLimit <SafetyFunctionsJointLimitsJointSpeedLimit>` [ ]

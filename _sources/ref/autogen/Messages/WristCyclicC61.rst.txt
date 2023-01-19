@@ -1,0 +1,179 @@
+================================
+WristCyclicC61
+================================
+    
+.. py:currentmodule:: kortex_api.autogen
+
+.. _WristCyclicC61Command:
+
+.. py:class:: Command
+
+    Wrist module command
+
+   :canonical: kortex_api.autogen.messages.WristCyclicC61_pb2.Command
+
+   :param command_id:   MessageId
+   :type command_id: :ref:`MessageId <WristCyclicMessageId>` 
+
+   :param flags:   Flags
+   :type flags: :ref:`int <>` 
+
+   :param digital_outputs_state:   Digital output(s) state bitmask (see WristDigitalIOMask); bit set = High state, bit reset = Low state
+   :type digital_outputs_state: :ref:`int <>` 
+
+   :param analog_output_a_channel_1_value:   Analog output value of M8 Connector A channel 1; [0.0, 10.0V] in voltage mode and [0.0, 25.0mA] in current mode
+   :type analog_output_a_channel_1_value: :ref:`float <>` 
+
+   :param analog_output_a_channel_2_value:   Analog output value of M8 Connector A channel 2; [0.0, 10.0V] in voltage mode and [0.0, 25.0mA] in current mode
+   :type analog_output_a_channel_2_value: :ref:`float <>` 
+
+   :param analog_output_b_channel_1_value:   Analog output value of M8 Connector B channel 1; [0.0, 10.0V] in voltage mode and [0.0, 25.0mA] in current mode
+   :type analog_output_b_channel_1_value: :ref:`float <>` 
+
+   :param analog_output_b_channel_2_value:   Analog output value of M8 Connector B channel 2; [0.0, 10.0V] in voltage mode and [0.0, 25.0mA] in current mode
+   :type analog_output_b_channel_2_value: :ref:`float <>` 
+
+   :param led_ring_rgb:   Wrist LED ring color, RGB format, 8 bits per color
+   :type led_ring_rgb: :ref:`int <>` 
+
+   :param led_ring_blink_frequency:   Wrist LED ring blink frequency (in Hertz); 0 for steady
+   :type led_ring_blink_frequency: :ref:`int <>` 
+
+.. _WristCyclicC61Feedback:
+
+.. py:class:: Feedback
+
+    Defines the feedback provided by wrist module
+
+   :canonical: kortex_api.autogen.messages.WristCyclicC61_pb2.Feedback
+
+   :param feedback_id:   MessageId
+   :type feedback_id: :ref:`MessageId <WristCyclicMessageId>` 
+
+   :param status_flags:   Status flags
+   :type status_flags: :ref:`int <>` 
+
+   :param buttons_state:   Wrist buttons state bitmask (see WristButtonMask); bit set = button pressed, bit reset = button released
+   :type buttons_state: :ref:`int <>` 
+
+   :param digital_inputs_state:   Digital input(s) state bitmask (see WristDigitalIOMask); bit set = high state, bit reset = low state
+   :type digital_inputs_state: :ref:`int <>` 
+
+   :param analog_input_a_channel_1_value:   Analog input value of M8 connector A channel 1
+   :type analog_input_a_channel_1_value: :ref:`float <>` 
+
+   :param analog_input_a_channel_2_value:   Analog input value of M8 connector A channel 2
+   :type analog_input_a_channel_2_value: :ref:`float <>` 
+
+   :param analog_input_b_channel_1_value:   Analog input value of M8 connector B channel 1
+   :type analog_input_b_channel_1_value: :ref:`float <>` 
+
+   :param analog_input_b_channel_2_value:   Analog input value of M8 cConnector B channel 2
+   :type analog_input_b_channel_2_value: :ref:`float <>` 
+
+   :param force_x:   Force value along the X-Axis within the wrist coordinate system (in Newton)
+   :type force_x: :ref:`float <>` 
+
+   :param force_y:   Force value along the Y-Axis within the wrist coordinate system (in Newton)
+   :type force_y: :ref:`float <>` 
+
+   :param force_z:   Force value along the Z-Axis within the wrist coordinate system (in Newton)
+   :type force_z: :ref:`float <>` 
+
+   :param torque_x:   Torque value about the X-Axis within the wrist coordinate system (in Newton-meters)
+   :type torque_x: :ref:`float <>` 
+
+   :param torque_y:   Torque value about the Y-Axis within the wrist coordinate system (in Newton-meters)
+   :type torque_y: :ref:`float <>` 
+
+   :param torque_z:   Torque value about the Z-Axis within the wrist coordinate system (in Newton-meters)
+   :type torque_z: :ref:`float <>` 
+
+   :param imu_acceleration_x:   IMU measured acceleration (X-Axis) of the wrist (in meters per second ^ squared)
+   :type imu_acceleration_x: :ref:`float <>` 
+
+   :param imu_acceleration_y:   IMU measured acceleration (Y-Axis) of the wrist (in meters per second ^ squared)
+   :type imu_acceleration_y: :ref:`float <>` 
+
+   :param imu_acceleration_z:   IMU measured acceleration (Z-Axis) of the wrist (in meters per second ^ squared)
+   :type imu_acceleration_z: :ref:`float <>` 
+
+   :param imu_angular_velocity_x:   IMU measured angular velocity (X-Axis) of the wrist (in degrees per second)
+   :type imu_angular_velocity_x: :ref:`float <>` 
+
+   :param imu_angular_velocity_y:   IMU measured angular velocity (Y-Axis) of the wrist (in degrees per second)
+   :type imu_angular_velocity_y: :ref:`float <>` 
+
+   :param imu_angular_velocity_z:   IMU measured angular velocity (Z-Axis) of the wrist (in degrees per second)
+   :type imu_angular_velocity_z: :ref:`float <>` 
+
+   :param voltage:   Voltage of the main board (in Volt)
+   :type voltage: :ref:`float <>` 
+
+   :param temperature_core:   Microcontroller temperature (in degrees Celsius)
+   :type temperature_core: :ref:`float <>` 
+
+   :param fault_bank_a:   Wrist Bank A Faults
+   :type fault_bank_a: :ref:`int <>` 
+
+   :param fault_bank_b:   Wrist Bank B Faults
+   :type fault_bank_b: :ref:`int <>` 
+
+.. _WristCyclicC61CustomData:
+
+.. py:class:: CustomData
+
+    Custom development data, content varies according to debugging needs
+
+   :canonical: kortex_api.autogen.messages.WristCyclicC61_pb2.CustomData
+
+   :param custom_data_id:   MessageId
+   :type custom_data_id: :ref:`MessageId <WristCyclicMessageId>` 
+
+   :param custom_data_0:   Custom data word 0
+   :type custom_data_0: :ref:`int <>` 
+
+   :param custom_data_1:   Custom data word 1
+   :type custom_data_1: :ref:`int <>` 
+
+   :param custom_data_2:   Custom data word 2
+   :type custom_data_2: :ref:`int <>` 
+
+   :param custom_data_3:   Custom data word 3
+   :type custom_data_3: :ref:`int <>` 
+
+   :param custom_data_4:   Custom data word 4
+   :type custom_data_4: :ref:`int <>` 
+
+   :param custom_data_5:   Custom data word 5
+   :type custom_data_5: :ref:`int <>` 
+
+   :param custom_data_6:   Custom data word 6
+   :type custom_data_6: :ref:`int <>` 
+
+   :param custom_data_7:   Custom data word 7
+   :type custom_data_7: :ref:`int <>` 
+
+   :param custom_data_8:   Custom data word 8
+   :type custom_data_8: :ref:`int <>` 
+
+   :param custom_data_9:   Custom data word 9
+   :type custom_data_9: :ref:`int <>` 
+
+   :param custom_data_10:   Custom data word 10
+   :type custom_data_10: :ref:`int <>` 
+
+   :param custom_data_11:   Custom data word 11
+   :type custom_data_11: :ref:`int <>` 
+
+   :param custom_data_12:   Custom data word 12
+   :type custom_data_12: :ref:`int <>` 
+
+   :param custom_data_13:   Custom data word 13
+   :type custom_data_13: :ref:`int <>` 
+
+   :param custom_data_14:   Custom data word 14
+   :type custom_data_14: :ref:`int <>` 
+
+   :param custom_data_15:   Custom data word 15
+   :type custom_data_15: :ref:`int <>` 

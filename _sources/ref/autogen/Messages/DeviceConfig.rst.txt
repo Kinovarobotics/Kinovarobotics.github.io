@@ -1,0 +1,321 @@
+================================
+DeviceConfig
+================================
+    
+.. py:currentmodule:: kortex_api.autogen
+
+.. _DeviceConfigDeviceType:
+
+.. py:class:: DeviceType
+
+    Device type
+
+   :canonical: kortex_api.autogen.messages.DeviceConfig_pb2.DeviceType
+
+   :param device_type:   Device type
+   :type device_type: :ref:`DeviceTypes <CommonDeviceTypes>` 
+
+.. _DeviceConfigRunMode:
+
+.. py:class:: RunMode
+
+    Run mode
+
+   :canonical: kortex_api.autogen.messages.DeviceConfig_pb2.RunMode
+
+   :param run_mode:   Run mode
+   :type run_mode: :ref:`RunModes <DeviceConfigRunModes>` 
+
+.. _DeviceConfigFirmwareVersion:
+
+.. py:class:: FirmwareVersion
+
+    Firmware version for the device
+
+   :canonical: kortex_api.autogen.messages.DeviceConfig_pb2.FirmwareVersion
+
+   :param firmware_version:   Firmware version
+   :type firmware_version: :ref:`int <>` 
+
+.. _DeviceConfigBootloaderVersion:
+
+.. py:class:: BootloaderVersion
+
+    Bootloader version for the device
+
+   :canonical: kortex_api.autogen.messages.DeviceConfig_pb2.BootloaderVersion
+
+   :param bootloader_version:   Bootloader version
+   :type bootloader_version: :ref:`int <>` 
+
+.. _DeviceConfigModelNumber:
+
+.. py:class:: ModelNumber
+
+    Model number for the device
+
+   :canonical: kortex_api.autogen.messages.DeviceConfig_pb2.ModelNumber
+
+   :param model_number:   Model number of size 25 including null character
+   :type model_number: :ref:`str <>` 
+
+.. _DeviceConfigPartNumber:
+
+.. py:class:: PartNumber
+
+    Part number for the device
+
+   :canonical: kortex_api.autogen.messages.DeviceConfig_pb2.PartNumber
+
+   :param part_number:   Part number of size 25 including null character
+   :type part_number: :ref:`str <>` 
+
+.. _DeviceConfigSerialNumber:
+
+.. py:class:: SerialNumber
+
+    Serial number for the device
+
+   :canonical: kortex_api.autogen.messages.DeviceConfig_pb2.SerialNumber
+
+   :param serial_number:   Serial number of size 25 including null character
+   :type serial_number: :ref:`str <>` 
+
+.. _DeviceConfigMACAddress:
+
+.. py:class:: MACAddress
+
+    MAC address for the device
+
+   :canonical: kortex_api.autogen.messages.DeviceConfig_pb2.MACAddress
+
+   :param mac_address:   MAC address
+   :type mac_address: :ref:`bytes <>` 
+
+.. _DeviceConfigIPv4Settings:
+
+.. py:class:: IPv4Settings
+
+    IPv4 settings for the device, including address, subnet mask, and default gateway
+
+   :canonical: kortex_api.autogen.messages.DeviceConfig_pb2.IPv4Settings
+
+   :param ipv4_address:   IPv4Address
+   :type ipv4_address: :ref:`int <>` 
+
+   :param ipv4_subnet_mask:   IPv4SubnetMask
+   :type ipv4_subnet_mask: :ref:`int <>` 
+
+   :param ipv4_default_gateway:   IPv4DefaultGateway
+   :type ipv4_default_gateway: :ref:`int <>` 
+
+.. _DeviceConfigPartNumberRevision:
+
+.. py:class:: PartNumberRevision
+
+    Part number revision for the device
+
+   :canonical: kortex_api.autogen.messages.DeviceConfig_pb2.PartNumberRevision
+
+   :param part_number_revision:   Part number revision
+   :type part_number_revision: :ref:`str <>` 
+
+.. _DeviceConfigRebootRqst:
+
+.. py:class:: RebootRqst
+
+    Reboot request with bootloader delay
+
+   :canonical: kortex_api.autogen.messages.DeviceConfig_pb2.RebootRqst
+
+   :param delay:   Bootloader delay
+   :type delay: :ref:`int <>` 
+
+.. _DeviceConfigDiagnosticBank:
+
+.. py:class:: DiagnosticBank
+
+    Message to specify a diagnostic bank
+
+   :canonical: kortex_api.autogen.messages.DeviceConfig_pb2.DiagnosticBank
+
+   :param bank:  
+   :type bank: :ref:`DiagnosticBank <CommonDiagnosticBank>` 
+
+.. _DeviceConfigDiagnosticInformation:
+
+.. py:class:: DiagnosticInformation
+
+    Information about a specific diagnostic
+
+   :canonical: kortex_api.autogen.messages.DeviceConfig_pb2.DiagnosticInformation
+
+   :param handle:   Diagnostic handle that this information is about
+   :type handle: :ref:`DiagnosticHandle <CommonDiagnosticHandle>` 
+
+   :param can_change_diagnostic_state:   True if related diagnostic configuration can be modified
+   :type can_change_diagnostic_state: :ref:`bool <>` 
+
+   :param has_warning_threshold:   True if diagnostic status can go in Warning
+   :type has_warning_threshold: :ref:`bool <>` 
+
+   :param has_error_threshold:   True if diagnostic status can go in Error
+   :type has_error_threshold: :ref:`bool <>` 
+
+   :param limit_type:   Diagnostic limit type
+   :type limit_type: :ref:`DiagnosticLimitType <DeviceConfigDiagnosticLimitType>` 
+
+   :param default_warning_threshold:   Default warning threshold (if 'limit_type' is either MINIMAL_LIMIT or MAXIMAL_LIMIT and 'has_warning_threshold' is true)
+   :type default_warning_threshold: :ref:`float <>` 
+
+   :param default_error_threshold:   Default error threshold (if 'limit_type' is either MINIMAL_LIMIT or MAXIMAL_LIMIT and 'has_error_threshold' is true)
+   :type default_error_threshold: :ref:`float <>` 
+
+   :param upper_hard_limit:   Maximal threshold value (if 'limit_type' is either MINIMAL_LIMIT or MAXIMAL_LIMIT)
+   :type upper_hard_limit: :ref:`float <>` 
+
+   :param lower_hard_limit:   Minimal threshold value (if 'limit_type' is either MINIMAL_LIMIT or MAXIMAL_LIMIT)
+   :type lower_hard_limit: :ref:`float <>` 
+
+   :param status:   Current diagnostic status
+   :type status: :ref:`DiagnosticStatusValue <CommonDiagnosticStatusValue>` 
+
+   :param unit:   Unit that the diagnostic status is in
+   :type unit: :ref:`Unit <CommonUnit>` 
+
+.. _DeviceConfigDiagnosticInformationList:
+
+.. py:class:: DiagnosticInformationList
+
+    Array of diagnostic information
+
+   :canonical: kortex_api.autogen.messages.DeviceConfig_pb2.DiagnosticInformationList
+
+   :param information:  
+   :type information: :ref:`DiagnosticInformation <DeviceConfigDiagnosticInformation>` [ ]
+
+.. _DeviceConfigDiagnosticEnable:
+
+.. py:class:: DiagnosticEnable
+
+    Enable or disable a specific diagnostic
+
+   :canonical: kortex_api.autogen.messages.DeviceConfig_pb2.DiagnosticEnable
+
+   :param handle:   Handle to diagnostic to enable or disable
+   :type handle: :ref:`DiagnosticHandle <CommonDiagnosticHandle>` 
+
+   :param enable:   Diagnostic enable state
+   :type enable: :ref:`bool <>` 
+
+.. _DeviceConfigDiagnosticThreshold:
+
+.. py:class:: DiagnosticThreshold
+
+    Configure threshold of a specific diagnostic
+
+   :canonical: kortex_api.autogen.messages.DeviceConfig_pb2.DiagnosticThreshold
+
+   :param handle:   Identifies diagnostic to configure
+   :type handle: :ref:`DiagnosticHandle <CommonDiagnosticHandle>` 
+
+   :param value:   Diagnostic threshold value
+   :type value: :ref:`float <>` 
+
+.. _DeviceConfigDiagnosticConfiguration:
+
+.. py:class:: DiagnosticConfiguration
+
+    Configuration for a diagnostic
+
+   :canonical: kortex_api.autogen.messages.DeviceConfig_pb2.DiagnosticConfiguration
+
+   :param handle:   Handle to diagnostic to configure
+   :type handle: :ref:`DiagnosticHandle <CommonDiagnosticHandle>` 
+
+   :param error_threshold:   Diagnostic error threshold value
+   :type error_threshold: :ref:`float <>` 
+
+   :param warning_threshold:   Diagnostic warning threshold value
+   :type warning_threshold: :ref:`float <>` 
+
+   :param enable:   Diagnostic enable state
+   :type enable: :ref:`DiagnosticEnable <DeviceConfigDiagnosticEnable>` 
+
+.. _DeviceConfigDiagnosticConfigurationList:
+
+.. py:class:: DiagnosticConfigurationList
+
+    Array of diagnostic configurations
+
+   :canonical: kortex_api.autogen.messages.DeviceConfig_pb2.DiagnosticConfigurationList
+
+   :param configuration:   Diagnostic configuration
+   :type configuration: :ref:`DiagnosticConfiguration <DeviceConfigDiagnosticConfiguration>` [ ]
+
+.. _DeviceConfigDiagnosticStatus:
+
+.. py:class:: DiagnosticStatus
+
+    Diagnostic status
+
+   :canonical: kortex_api.autogen.messages.DeviceConfig_pb2.DiagnosticStatus
+
+   :param value:   Diagnostic status (e.g. in error, warning or normal state)
+   :type value: :ref:`DiagnosticStatusValue <CommonDiagnosticStatusValue>` 
+
+.. _DeviceConfigCalibrationParameter:
+
+.. py:class:: CalibrationParameter
+
+    Single calibration parameter information
+
+   :canonical: kortex_api.autogen.messages.DeviceConfig_pb2.CalibrationParameter
+
+   :param calibration_parameter_identifier:   Calibration parameter identifier
+   :type calibration_parameter_identifier: :ref:`int <>` 
+
+   :param int signedIntValue:   Signed int calibration value.. Part of the ``value`` `Oneof <https://developers.google.com/protocol-buffers/docs/reference/python-generated#oneof>`_.
+
+   :param int unsignedIntValue:   Unsigned int calibration value.. Part of the ``value`` `Oneof <https://developers.google.com/protocol-buffers/docs/reference/python-generated#oneof>`_.
+
+   :param float floatValue:   Float calibration value.. Part of the ``value`` `Oneof <https://developers.google.com/protocol-buffers/docs/reference/python-generated#oneof>`_.
+
+.. _DeviceConfigCalibration:
+
+.. py:class:: Calibration
+
+    Calibration information to push to device
+
+   :canonical: kortex_api.autogen.messages.DeviceConfig_pb2.Calibration
+
+   :param calibration_item:   Item to calibrate
+   :type calibration_item: :ref:`CalibrationItem <DeviceConfigCalibrationItem>` 
+
+   :param calibration_parameter:   Parameters associated to calibration item
+   :type calibration_parameter: :ref:`CalibrationParameter <DeviceConfigCalibrationParameter>` [ ]
+
+.. _DeviceConfigCalibrationElement:
+
+.. py:class:: CalibrationElement
+
+    Calibration element
+
+   :canonical: kortex_api.autogen.messages.DeviceConfig_pb2.CalibrationElement
+
+   :param calibration_item:   Item to get status
+   :type calibration_item: :ref:`CalibrationItem <DeviceConfigCalibrationItem>` 
+
+.. _DeviceConfigCalibrationResult:
+
+.. py:class:: CalibrationResult
+
+    Result of a calibration
+
+   :canonical: kortex_api.autogen.messages.DeviceConfig_pb2.CalibrationResult
+
+   :param calibration_status:   Calibration status
+   :type calibration_status: :ref:`CalibrationStatus <DeviceConfigCalibrationStatus>` 
+
+   :param calibration_details:   Additional information (used when status is in fault)
+   :type calibration_details: :ref:`int <>` 

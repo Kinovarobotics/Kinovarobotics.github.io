@@ -1,0 +1,93 @@
+================================
+SerialCommunication
+================================
+    
+.. py:currentmodule:: kortex_api.autogen
+
+.. _SerialCommunicationBaudRate:
+
+.. py:class:: BaudRate
+
+     Admissible baud rates
+
+    :canonical: kortex_api.autogen.messages.SerialCommunication_pb2.BaudRate
+    .. py:attribute:: BAUD_RATE_UNSPECIFIED (0):   Unspecified baud rate
+
+    .. py:attribute:: BAUD_RATE_4800 (1):   4800 bps
+
+    .. py:attribute:: BAUD_RATE_9600 (2):   9600 bps
+
+    .. py:attribute:: BAUD_RATE_19200 (3):   19200 bps
+
+    .. py:attribute:: BAUD_RATE_38400 (4):   38400 bps
+
+    .. py:attribute:: BAUD_RATE_57600 (5):   57600 bps
+
+    .. py:attribute:: BAUD_RATE_115200 (6):   115200 bps
+
+    .. py:attribute:: BAUD_RATE_230400 (7):   230400 bps
+
+    .. py:attribute:: BAUD_RATE_460800 (8):   460800 bps
+
+    .. py:attribute:: BAUD_RATE_921600 (9):   921600 bps
+
+    .. py:attribute:: BAUD_RATE_1000000 (10):   1000000 bps
+
+    .. py:attribute:: BAUD_RATE_1382400 (11):   1382400 bps
+
+    .. py:attribute:: BAUD_RATE_1612800 (12):   1612800 bps
+
+    .. py:attribute:: BAUD_RATE_1843200 (13):   1843200 bps
+
+    .. py:attribute:: BAUD_RATE_2073600 (14):   2073600 bps
+
+    .. py:attribute:: BAUD_RATE_2188800 (15):   2188800 bps
+
+    .. py:attribute:: BAUD_RATE_2246400 (16):   2246400 bps
+
+.. _SerialCommunicationWordLength:
+
+.. py:class:: WordLength
+
+     Admissible word lengths
+
+    :canonical: kortex_api.autogen.messages.SerialCommunication_pb2.WordLength
+    .. py:attribute:: WORD_LENGTH_UNSPECIFIED (0):   Unspecified word length
+
+    .. py:attribute:: WORD_LENGTH_7 (1):   7 bits
+
+    .. py:attribute:: WORD_LENGTH_8 (2):   8 bits
+
+    .. py:attribute:: WORD_LENGTH_9 (3):   9 bits
+
+.. _SerialCommunicationStopBits:
+
+.. py:class:: StopBits
+
+     Admissible stop bits
+
+    :canonical: kortex_api.autogen.messages.SerialCommunication_pb2.StopBits
+    .. py:attribute:: STOP_BITS_UNSPECIFIED (0):   Unspecified stop bits
+
+    .. py:attribute:: STOP_BITS_0_5 (1):   0.5 stop bit
+
+    .. py:attribute:: STOP_BITS_1 (2):   1 stop bit
+
+    .. py:attribute:: STOP_BITS_1_5 (3):   1.5 stop bits
+
+    .. py:attribute:: STOP_BITS_2 (4):   2 stop bits
+
+.. _SerialCommunicationParity:
+
+.. py:class:: Parity
+
+     Admissible parity mode
+
+    :canonical: kortex_api.autogen.messages.SerialCommunication_pb2.Parity
+    .. py:attribute:: PARITY_UNSPECIFIED (0):   Unspecified parity
+
+    .. py:attribute:: PARITY_NONE (1):   No parity
+
+    .. py:attribute:: PARITY_ODD (2):   Odd parity
+
+    .. py:attribute:: PARITY_EVEN (3):   Even parity

@@ -1,0 +1,841 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Errors &mdash; Kortex API  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/dark_mode_css/general.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/dark_mode_css/dark.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/sphinx_highlight.js"></script>
+        <script src="../../../_static/dark_mode_js/default_dark.js"></script>
+        <script src="../../../_static/dark_mode_js/theme_switcher.js"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="EventBroker" href="EventBroker.html" />
+    <link rel="prev" title="EditingContext" href="EditingContext.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> Kortex API
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption" role="heading"><span class="caption-text">Getting started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../getting_started/installation.html">Install the API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../getting_started/api_mechanism.html">Get to know it</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../getting_started/code_examples.html">See what you can do (examples)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../getting_started/error_management.html">Managing problems</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">API</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Python API Reference</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../RouterClient.html">RouterClient</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../SessionManager.html">SessionManager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../MqttTransport.html">MqttTransport</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../UDPTransport.html">UDPTransport</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Constants.html">Constants</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../exceptions/index.html">Exceptions</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">Autogen</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="index.html">Enums</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="ActuatorConfig.html">ActuatorConfig</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ActuatorCyclic.html">ActuatorCyclic</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Base.html">Base</a></li>
+<li class="toctree-l4"><a class="reference internal" href="BaseCyclic.html">BaseCyclic</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Common.html">Common</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ControlConfig.html">ControlConfig</a></li>
+<li class="toctree-l4"><a class="reference internal" href="DeviceConfig.html">DeviceConfig</a></li>
+<li class="toctree-l4"><a class="reference internal" href="DeviceManager.html">DeviceManager</a></li>
+<li class="toctree-l4"><a class="reference internal" href="EditingContext.html">EditingContext</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Errors</a></li>
+<li class="toctree-l4"><a class="reference internal" href="EventBroker.html">EventBroker</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Frame.html">Frame</a></li>
+<li class="toctree-l4"><a class="reference internal" href="IndustrialIO.html">IndustrialIO</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Modbus.html">Modbus</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Plugin.html">Plugin</a></li>
+<li class="toctree-l4"><a class="reference internal" href="PluginManager.html">PluginManager</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ProductConfiguration.html">ProductConfiguration</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ProgramConfig.html">ProgramConfig</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ProgramRunner.html">ProgramRunner</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ProtectionZone.html">ProtectionZone</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SafetyControlUnitConfig.html">SafetyControlUnitConfig</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SafetyFunctions.html">SafetyFunctions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SafetyFunctionsCommon.html">SafetyFunctionsCommon</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SafetyIO.html">SafetyIO</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SerialCommunication.html">SerialCommunication</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Session.html">Session</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ToolManager.html">ToolManager</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ToolPlugin.html">ToolPlugin</a></li>
+<li class="toctree-l4"><a class="reference internal" href="VariableManager.html">VariableManager</a></li>
+<li class="toctree-l4"><a class="reference internal" href="WristConfigC61.html">WristConfigC61</a></li>
+<li class="toctree-l4"><a class="reference internal" href="WristCyclic.html">WristCyclic</a></li>
+<li class="toctree-l4"><a class="reference internal" href="WristCyclicC61.html">WristCyclicC61</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../Services/index.html">Services</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Messages/index.html">Messages</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Notifications.html">Notifications</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Kortex API</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../index.html">Python API Reference</a> &raquo;</li>
+        
+          <li><a href="../index.html">Autogen</a> &raquo;</li>
+        
+          <li><a href="index.html">Enums</a> &raquo;</li>
+        
+      <li>Errors</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../_sources/ref/autogen/Enums/Errors.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="errors">
+<h1>Errors<a class="headerlink" href="#errors" title="Permalink to this heading">¶</a></h1>
+<span class="target" id="errorserrorcodes"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.ErrorCodes">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ErrorCodes</span></span><a class="headerlink" href="#kortex_api.autogen.ErrorCodes" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Possible error codes</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.Errors_pb2.ErrorCodes</p>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">ERROR_NONE</span> <span class="pre">(0):</span>&#160;&#160; <span class="pre">No</span> <span class="pre">error</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">ERROR_PROTOCOL_SERVER</span> <span class="pre">(1):</span>&#160;&#160; <span class="pre">Protocol</span> <span class="pre">server</span> <span class="pre">error</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">ERROR_PROTOCOL_CLIENT</span> <span class="pre">(2):</span>&#160;&#160; <span class="pre">Protocol</span> <span class="pre">client</span> <span class="pre">error</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">ERROR_DEVICE</span> <span class="pre">(3):</span>&#160;&#160; <span class="pre">Device</span> <span class="pre">error</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">ERROR_INTERNAL</span> <span class="pre">(4):</span>&#160;&#160; <span class="pre">Internal</span> <span class="pre">error</span></span></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<span class="target" id="errorssuberrorcodes"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.SubErrorCodes">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">SubErrorCodes</span></span><a class="headerlink" href="#kortex_api.autogen.SubErrorCodes" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Possible sub-error codes</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.Errors_pb2.SubErrorCodes</p>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">SUB_ERROR_NONE</span> <span class="pre">(0):</span>&#160;&#160; <span class="pre">No</span> <span class="pre">sub</span> <span class="pre">error</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="kortex_api.autogen.SubErrorCodes.METHOD_FAILED">
+<span class="sig-name descname"><span class="pre">METHOD_FAILED</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">1):</span>&#160;&#160; <span class="pre">Method</span> <span class="pre">returned</span> <span class="pre">a</span> <span class="pre">failure</span> <span class="pre">status</span> <span class="pre">(generic</span> <span class="pre">error</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kortex_api.autogen.SubErrorCodes.METHOD_FAILED" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">UNIMPLEMENTED</span> <span class="pre">(2):</span>&#160;&#160; <span class="pre">Unimplemented</span> <span class="pre">method</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">INVALID_PARAM</span> <span class="pre">(3):</span>&#160;&#160; <span class="pre">Invalid</span> <span class="pre">parameter</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">UNSUPPORTED_SERVICE</span> <span class="pre">(4):</span>&#160;&#160; <span class="pre">Service</span> <span class="pre">not</span> <span class="pre">recognized</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">UNSUPPORTED_METHOD</span> <span class="pre">(5):</span>&#160;&#160; <span class="pre">Method</span> <span class="pre">not</span> <span class="pre">recognized</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">TOO_LARGE_ENCODED_FRAME_BUFFER</span> <span class="pre">(6):</span>&#160;&#160; <span class="pre">Encoded</span> <span class="pre">frame</span> <span class="pre">bigger</span> <span class="pre">than</span> <span class="pre">what</span> <span class="pre">transport</span> <span class="pre">permits</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">FRAME_ENCODING_ERR</span> <span class="pre">(7):</span>&#160;&#160; <span class="pre">Unable</span> <span class="pre">to</span> <span class="pre">encode</span> <span class="pre">frame</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">FRAME_DECODING_ERR</span> <span class="pre">(8):</span>&#160;&#160; <span class="pre">Unable</span> <span class="pre">to</span> <span class="pre">decode</span> <span class="pre">frame</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">INCOMPATIBLE_HEADER_VERSION</span> <span class="pre">(9):</span>&#160;&#160; <span class="pre">Frame</span> <span class="pre">header</span> <span class="pre">version</span> <span class="pre">differs</span> <span class="pre">from</span> <span class="pre">what</span> <span class="pre">is</span> <span class="pre">expected</span> <span class="pre">and</span> <span class="pre">is</span> <span class="pre">considered</span> <span class="pre">incompatible</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">UNSUPPORTED_FRAME_TYPE</span> <span class="pre">(10):</span>&#160;&#160; <span class="pre">Unrecognized</span> <span class="pre">frame</span> <span class="pre">type</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">UNREGISTERED_NOTIFICATION_RECEIVED</span> <span class="pre">(11):</span>&#160;&#160; <span class="pre">Server</span> <span class="pre">receiving</span> <span class="pre">unregistered</span> <span class="pre">notification</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">INVALID_SESSION</span> <span class="pre">(12):</span>&#160;&#160; <span class="pre">Session</span> <span class="pre">not</span> <span class="pre">recognized</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">PAYLOAD_DECODING_ERR</span> <span class="pre">(13):</span>&#160;&#160; <span class="pre">Unable</span> <span class="pre">to</span> <span class="pre">decode</span> <span class="pre">payload</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">UNREGISTERED_FRAME_RECEIVED</span> <span class="pre">(14):</span>&#160;&#160; <span class="pre">Client</span> <span class="pre">received</span> <span class="pre">a</span> <span class="pre">response</span> <span class="pre">for</span> <span class="pre">which</span> <span class="pre">it</span> <span class="pre">did</span> <span class="pre">not</span> <span class="pre">send</span> <span class="pre">an</span> <span class="pre">RPC</span> <span class="pre">call</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">INVALID_PASSWORD</span> <span class="pre">(15):</span>&#160;&#160; <span class="pre">Password</span> <span class="pre">does</span> <span class="pre">not</span> <span class="pre">match</span> <span class="pre">specified</span> <span class="pre">user</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">USER_NOT_FOUND</span> <span class="pre">(16):</span>&#160;&#160; <span class="pre">Unrecognized</span> <span class="pre">user</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">ENTITY_NOT_FOUND</span> <span class="pre">(17):</span>&#160;&#160; <span class="pre">Cannot</span> <span class="pre">find</span> <span class="pre">entity</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">ROBOT_MOVEMENT_IN_PROGRESS</span> <span class="pre">(18):</span>&#160;&#160; <span class="pre">Robot</span> <span class="pre">refuses</span> <span class="pre">new</span> <span class="pre">control</span> <span class="pre">command</span> <span class="pre">because</span> <span class="pre">robot</span> <span class="pre">movement</span> <span class="pre">in</span> <span class="pre">progress</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">ROBOT_NOT_MOVING</span> <span class="pre">(19):</span>&#160;&#160; <span class="pre">Robot</span> <span class="pre">refuses</span> <span class="pre">stop</span> <span class="pre">command</span> <span class="pre">because</span> <span class="pre">robot</span> <span class="pre">is</span> <span class="pre">not</span> <span class="pre">moving</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">NO_MORE_STORAGE_SPACE</span> <span class="pre">(20):</span>&#160;&#160; <span class="pre">Unable</span> <span class="pre">to</span> <span class="pre">execute</span> <span class="pre">because</span> <span class="pre">no</span> <span class="pre">more</span> <span class="pre">storage</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">ROBOT_NOT_READY</span> <span class="pre">(21):</span>&#160;&#160; <span class="pre">Robot</span> <span class="pre">initialization</span> <span class="pre">is</span> <span class="pre">not</span> <span class="pre">complete</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">ROBOT_IN_FAULT</span> <span class="pre">(22):</span>&#160;&#160; <span class="pre">Robot</span> <span class="pre">in</span> <span class="pre">fault</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">ROBOT_IN_MAINTENANCE</span> <span class="pre">(23):</span>&#160;&#160; <span class="pre">Robot</span> <span class="pre">in</span> <span class="pre">maintenance</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">ROBOT_IN_UPDATE_MODE</span> <span class="pre">(24):</span>&#160;&#160; <span class="pre">Robot</span> <span class="pre">in</span> <span class="pre">update</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">ROBOT_IN_EMERGENCY_STOP</span> <span class="pre">(25):</span>&#160;&#160; <span class="pre">Robot</span> <span class="pre">in</span> <span class="pre">emergency</span> <span class="pre">stop</span> <span class="pre">state</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">SINGLE_LEVEL_SERVOING</span> <span class="pre">(26):</span>&#160;&#160; <span class="pre">Robot</span> <span class="pre">is</span> <span class="pre">in</span> <span class="pre">single-level</span> <span class="pre">servoing</span> <span class="pre">mode</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">LOW_LEVEL_SERVOING</span> <span class="pre">(27):</span>&#160;&#160; <span class="pre">Robot</span> <span class="pre">is</span> <span class="pre">in</span> <span class="pre">low-level</span> <span class="pre">servoing</span> <span class="pre">mode</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">MAPPING_GROUP_NON_ROOT</span> <span class="pre">(28):</span>&#160;&#160; <span class="pre">Trying</span> <span class="pre">to</span> <span class="pre">add</span> <span class="pre">a</span> <span class="pre">non-root</span> <span class="pre">MapGroup</span> <span class="pre">to</span> <span class="pre">Mapping</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">MAPPING_INVALID_GROUP</span> <span class="pre">(29):</span>&#160;&#160; <span class="pre">Trying</span> <span class="pre">to</span> <span class="pre">add</span> <span class="pre">an</span> <span class="pre">invalid</span> <span class="pre">or</span> <span class="pre">non-existent</span> <span class="pre">MapGroup</span> <span class="pre">to</span> <span class="pre">Mapping</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">MAPPING_INVALID_MAP</span> <span class="pre">(30):</span>&#160;&#160; <span class="pre">Trying</span> <span class="pre">to</span> <span class="pre">add</span> <span class="pre">an</span> <span class="pre">invalid</span> <span class="pre">or</span> <span class="pre">non-existent</span> <span class="pre">Map</span> <span class="pre">to</span> <span class="pre">Mapping</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">MAP_GROUP_INVALID_MAP</span> <span class="pre">(31):</span>&#160;&#160; <span class="pre">Trying</span> <span class="pre">to</span> <span class="pre">add</span> <span class="pre">an</span> <span class="pre">invalid</span> <span class="pre">or</span> <span class="pre">non-existent</span> <span class="pre">Map</span> <span class="pre">to</span> <span class="pre">MapGroup</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">MAP_GROUP_INVALID_PARENT</span> <span class="pre">(32):</span>&#160;&#160; <span class="pre">Trying</span> <span class="pre">to</span> <span class="pre">add</span> <span class="pre">a</span> <span class="pre">MapGroup</span> <span class="pre">under</span> <span class="pre">an</span> <span class="pre">invalid</span> <span class="pre">parent</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">MAP_GROUP_INVALID_CHILD</span> <span class="pre">(33):</span>&#160;&#160; <span class="pre">Trying</span> <span class="pre">to</span> <span class="pre">add</span> <span class="pre">an</span> <span class="pre">invalid</span> <span class="pre">or</span> <span class="pre">non-existent</span> <span class="pre">to</span> <span class="pre">MapGroup</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">MAP_GROUP_INVALID_MOVE</span> <span class="pre">(34):</span>&#160;&#160; <span class="pre">Trying</span> <span class="pre">to</span> <span class="pre">change</span> <span class="pre">a</span> <span class="pre">MapGroup's</span> <span class="pre">parent:</span> <span class="pre">move</span> <span class="pre">not</span> <span class="pre">supported</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">MAP_IN_USE</span> <span class="pre">(35):</span>&#160;&#160; <span class="pre">Deleting</span> <span class="pre">a</span> <span class="pre">Map</span> <span class="pre">used</span> <span class="pre">in</span> <span class="pre">a</span> <span class="pre">Mapping</span> <span class="pre">or</span> <span class="pre">MapGroup</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">WIFI_CONNECT_ERROR</span> <span class="pre">(36):</span>&#160;&#160; <span class="pre">Unable</span> <span class="pre">to</span> <span class="pre">connect</span> <span class="pre">to</span> <span class="pre">specified</span> <span class="pre">Wifi</span> <span class="pre">network</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">UNSUPPORTED_NETWORK_TYPE</span> <span class="pre">(37):</span>&#160;&#160; <span class="pre">Unsupported</span> <span class="pre">network</span> <span class="pre">type</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">TOO_LARGE_ENCODED_PAYLOAD_BUFFER</span> <span class="pre">(38):</span>&#160;&#160; <span class="pre">Encoded</span> <span class="pre">payload</span> <span class="pre">bigger</span> <span class="pre">than</span> <span class="pre">what</span> <span class="pre">transport</span> <span class="pre">permits</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">UPDATE_PERMISSION_DENIED</span> <span class="pre">(39):</span>&#160;&#160; <span class="pre">Attempting</span> <span class="pre">update</span> <span class="pre">command</span> <span class="pre">on</span> <span class="pre">non-updatable</span> <span class="pre">entity</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">DELETE_PERMISSION_DENIED</span> <span class="pre">(40):</span>&#160;&#160; <span class="pre">Attempting</span> <span class="pre">delete</span> <span class="pre">command</span> <span class="pre">on</span> <span class="pre">non-deletable</span> <span class="pre">entity</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">DATABASE_ERROR</span> <span class="pre">(41):</span>&#160;&#160; <span class="pre">Internal</span> <span class="pre">DB</span> <span class="pre">error</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">UNSUPPORTED_OPTION</span> <span class="pre">(42):</span>&#160;&#160; <span class="pre">Option</span> <span class="pre">not</span> <span class="pre">supported</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">UNSUPPORTED_RESOLUTION</span> <span class="pre">(43):</span>&#160;&#160; <span class="pre">Resolution</span> <span class="pre">not</span> <span class="pre">supported</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">UNSUPPORTED_FRAME_RATE</span> <span class="pre">(44):</span>&#160;&#160; <span class="pre">Frame</span> <span class="pre">rate</span> <span class="pre">not</span> <span class="pre">supported</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">UNSUPPORTED_BIT_RATE</span> <span class="pre">(45):</span>&#160;&#160; <span class="pre">Bit</span> <span class="pre">rate</span> <span class="pre">not</span> <span class="pre">supported</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="kortex_api.autogen.SubErrorCodes.UNSUPPORTED_ACTION">
+<span class="sig-name descname"><span class="pre">UNSUPPORTED_ACTION</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">46):</span>&#160;&#160; <span class="pre">Action</span> <span class="pre">not</span> <span class="pre">supported</span> <span class="pre">(generic</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">when</span> <span class="pre">an</span> <span class="pre">action</span> <span class="pre">is</span> <span class="pre">not</span> <span class="pre">supported</span> <span class="pre">for</span> <span class="pre">a</span> <span class="pre">particular</span> <span class="pre">item</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kortex_api.autogen.SubErrorCodes.UNSUPPORTED_ACTION" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">UNSUPPORTED_FOCUS_ACTION</span> <span class="pre">(47):</span>&#160;&#160; <span class="pre">Focus</span> <span class="pre">action</span> <span class="pre">not</span> <span class="pre">supported</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">VALUE_IS_ABOVE_MAXIMUM</span> <span class="pre">(48):</span>&#160;&#160; <span class="pre">Specified</span> <span class="pre">value</span> <span class="pre">is</span> <span class="pre">above</span> <span class="pre">the</span> <span class="pre">supported</span> <span class="pre">maximum</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">VALUE_IS_BELOW_MINIMUM</span> <span class="pre">(49):</span>&#160;&#160; <span class="pre">Specified</span> <span class="pre">value</span> <span class="pre">is</span> <span class="pre">below</span> <span class="pre">the</span> <span class="pre">supported</span> <span class="pre">minimum</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">DEVICE_DISCONNECTED</span> <span class="pre">(50):</span>&#160;&#160; <span class="pre">Device</span> <span class="pre">is</span> <span class="pre">not</span> <span class="pre">connected</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">DEVICE_NOT_READY</span> <span class="pre">(51):</span>&#160;&#160; <span class="pre">Device</span> <span class="pre">is</span> <span class="pre">not</span> <span class="pre">ready</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">INVALID_DEVICE</span> <span class="pre">(52):</span>&#160;&#160; <span class="pre">Device</span> <span class="pre">id</span> <span class="pre">is</span> <span class="pre">invalid</span> <span class="pre">during</span> <span class="pre">bridging</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">SAFETY_THRESHOLD_REACHED</span> <span class="pre">(53):</span>&#160;&#160; <span class="pre">Safety</span> <span class="pre">threshold</span> <span class="pre">is</span> <span class="pre">reached</span> <span class="pre">therefore</span> <span class="pre">safety</span> <span class="pre">is</span> <span class="pre">on</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">INVALID_USER_SESSION_ACCESS</span> <span class="pre">(54):</span>&#160;&#160; <span class="pre">Service</span> <span class="pre">or</span> <span class="pre">function</span> <span class="pre">access</span> <span class="pre">not</span> <span class="pre">allowed:</span> <span class="pre">out</span> <span class="pre">of</span> <span class="pre">session</span> <span class="pre">or</span> <span class="pre">level</span> <span class="pre">access</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">CONTROL_MANUAL_STOP</span> <span class="pre">(55):</span>&#160;&#160; <span class="pre">Manually</span> <span class="pre">stopped</span> <span class="pre">sequence</span> <span class="pre">or</span> <span class="pre">action</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">CONTROL_OUTSIDE_WORKSPACE</span> <span class="pre">(56):</span>&#160;&#160; <span class="pre">Commanded</span> <span class="pre">Cartesian</span> <span class="pre">position</span> <span class="pre">is</span> <span class="pre">outside</span> <span class="pre">of</span> <span class="pre">robot</span> <span class="pre">workspace</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="kortex_api.autogen.SubErrorCodes.CONTROL_ACTUATOR_COUNT_MISMATCH">
+<span class="sig-name descname"><span class="pre">CONTROL_ACTUATOR_COUNT_MISMATCH</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">57):</span>&#160;&#160; <span class="pre">Number</span> <span class="pre">of</span> <span class="pre">constraint</span> <span class="pre">sent</span> <span class="pre">does</span> <span class="pre">not</span> <span class="pre">correspond</span> <span class="pre">to</span> <span class="pre">number</span> <span class="pre">of</span> <span class="pre">actuator</span> <span class="pre">(ex:</span> <span class="pre">joint</span> <span class="pre">speed</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kortex_api.autogen.SubErrorCodes.CONTROL_ACTUATOR_COUNT_MISMATCH" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">CONTROL_INVALID_DURATION</span> <span class="pre">(58):</span>&#160;&#160; <span class="pre">Duration</span> <span class="pre">constraint</span> <span class="pre">is</span> <span class="pre">too</span> <span class="pre">short.</span> <span class="pre">The</span> <span class="pre">robot</span> <span class="pre">would</span> <span class="pre">need</span> <span class="pre">out</span> <span class="pre">of</span> <span class="pre">limit</span> <span class="pre">speeds/accelerations</span> <span class="pre">to</span> <span class="pre">reach</span> <span class="pre">this</span> <span class="pre">duration.</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">CONTROL_INVALID_SPEED</span> <span class="pre">(59):</span>&#160;&#160; <span class="pre">Speed</span> <span class="pre">constraint</span> <span class="pre">is</span> <span class="pre">negative</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="kortex_api.autogen.SubErrorCodes.CONTROL_LARGE_SPEED">
+<span class="sig-name descname"><span class="pre">CONTROL_LARGE_SPEED</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">60):</span>&#160;&#160; <span class="pre">Speed</span> <span class="pre">constraint</span> <span class="pre">is</span> <span class="pre">too</span> <span class="pre">high</span> <span class="pre">(exceed</span> <span class="pre">speed</span> <span class="pre">limit</span> <span class="pre">of</span> <span class="pre">leads</span> <span class="pre">to</span> <span class="pre">high</span> <span class="pre">acceleration</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kortex_api.autogen.SubErrorCodes.CONTROL_LARGE_SPEED" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">CONTROL_INVALID_ACCELERATION</span> <span class="pre">(61):</span>&#160;&#160; <span class="pre">Speed</span> <span class="pre">constraint</span> <span class="pre">is</span> <span class="pre">too</span> <span class="pre">high</span> <span class="pre">or</span> <span class="pre">duration</span> <span class="pre">constraint</span> <span class="pre">too</span> <span class="pre">short</span> <span class="pre">and</span> <span class="pre">leads</span> <span class="pre">to</span> <span class="pre">high</span> <span class="pre">acceleration</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">CONTROL_INVALID_TIME_STEP</span> <span class="pre">(62):</span>&#160;&#160; <span class="pre">Refresh</span> <span class="pre">rate</span> <span class="pre">is</span> <span class="pre">smaller</span> <span class="pre">than</span> <span class="pre">the</span> <span class="pre">duration</span> <span class="pre">of</span> <span class="pre">the</span> <span class="pre">trajectory</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">CONTROL_LARGE_SIZE</span> <span class="pre">(63):</span>&#160;&#160; <span class="pre">Duration</span> <span class="pre">of</span> <span class="pre">the</span> <span class="pre">trajectory</span> <span class="pre">is</span> <span class="pre">more</span> <span class="pre">than</span> <span class="pre">100s.</span> <span class="pre">The</span> <span class="pre">length</span> <span class="pre">of</span> <span class="pre">the</span> <span class="pre">trajectory</span> <span class="pre">is</span> <span class="pre">limited</span> <span class="pre">to</span> <span class="pre">100000</span> <span class="pre">points</span> <span class="pre">to</span> <span class="pre">avoid</span> <span class="pre">saturating</span> <span class="pre">the</span> <span class="pre">base</span> <span class="pre">memory.</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">CONTROL_WRONG_MODE</span> <span class="pre">(64):</span>&#160;&#160; <span class="pre">Control</span> <span class="pre">mode</span> <span class="pre">is</span> <span class="pre">not</span> <span class="pre">a</span> <span class="pre">trajectory</span> <span class="pre">mode</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">CONTROL_JOINT_POSITION_LIMIT</span> <span class="pre">(65):</span>&#160;&#160; <span class="pre">Commanded</span> <span class="pre">configuration</span> <span class="pre">contains</span> <span class="pre">at</span> <span class="pre">least</span> <span class="pre">one</span> <span class="pre">actuator</span> <span class="pre">which</span> <span class="pre">is</span> <span class="pre">out</span> <span class="pre">of</span> <span class="pre">its</span> <span class="pre">physical</span> <span class="pre">limits</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">CONTROL_NO_FILE_IN_MEMORY</span> <span class="pre">(66):</span>&#160;&#160; <span class="pre">Trajectory</span> <span class="pre">is</span> <span class="pre">not</span> <span class="pre">computed</span> <span class="pre">and</span> <span class="pre">try</span> <span class="pre">to</span> <span class="pre">be</span> <span class="pre">started</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">CONTROL_INDEX_OUT_OF_TRAJECTORY</span> <span class="pre">(67):</span>&#160;&#160; <span class="pre">Attempting</span> <span class="pre">to</span> <span class="pre">read</span> <span class="pre">a</span> <span class="pre">point</span> <span class="pre">of</span> <span class="pre">the</span> <span class="pre">trajectory</span> <span class="pre">with</span> <span class="pre">an</span> <span class="pre">index</span> <span class="pre">higher</span> <span class="pre">than</span> <span class="pre">the</span> <span class="pre">number</span> <span class="pre">of</span> <span class="pre">point</span> <span class="pre">in</span> <span class="pre">trajectory</span> <span class="pre">point</span> <span class="pre">list.</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">CONTROL_ALREADY_RUNNING</span> <span class="pre">(68):</span>&#160;&#160; <span class="pre">Trajectory</span> <span class="pre">is</span> <span class="pre">already</span> <span class="pre">running</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">CONTROL_WRONG_STARTING_POINT</span> <span class="pre">(69):</span>&#160;&#160; <span class="pre">Robot</span> <span class="pre">is</span> <span class="pre">not</span> <span class="pre">on</span> <span class="pre">the</span> <span class="pre">first</span> <span class="pre">point</span> <span class="pre">of</span> <span class="pre">the</span> <span class="pre">trajectory</span> <span class="pre">when</span> <span class="pre">we</span> <span class="pre">try</span> <span class="pre">to</span> <span class="pre">start</span> <span class="pre">the</span> <span class="pre">trajectory.</span> <span class="pre">This</span> <span class="pre">can</span> <span class="pre">happen</span> <span class="pre">if</span> <span class="pre">there</span> <span class="pre">is</span> <span class="pre">a</span> <span class="pre">motion</span> <span class="pre">between</span> <span class="pre">the</span> <span class="pre">moment</span> <span class="pre">when</span> <span class="pre">trajectory</span> <span class="pre">is</span> <span class="pre">computed</span> <span class="pre">and</span> <span class="pre">when</span> <span class="pre">it</span> <span class="pre">is</span> <span class="pre">started.</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">CONTROL_CARTESIAN_CANNOT_START</span> <span class="pre">(70):</span>&#160;&#160; <span class="pre">Cannot</span> <span class="pre">start</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">CONTROL_UNDEFINED_CONSTRAINT</span> <span class="pre">(71):</span>&#160;&#160; <span class="pre">Kontrol</span> <span class="pre">library</span> <span class="pre">is</span> <span class="pre">not</span> <span class="pre">initialized</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">CONTROL_UNINITIALIZED</span> <span class="pre">(72):</span>&#160;&#160; <span class="pre">Contraint</span> <span class="pre">sent</span> <span class="pre">is</span> <span class="pre">not</span> <span class="pre">defined</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">CONTROL_NO_ACTION</span> <span class="pre">(73):</span>&#160;&#160; <span class="pre">Action</span> <span class="pre">does</span> <span class="pre">not</span> <span class="pre">exist</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">CONTROL_UNDEFINED</span> <span class="pre">(74):</span>&#160;&#160; <span class="pre">Undefined</span> <span class="pre">error</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">WRONG_SERVOING_MODE</span> <span class="pre">(75):</span>&#160;&#160; <span class="pre">Robot</span> <span class="pre">is</span> <span class="pre">in</span> <span class="pre">not</span> <span class="pre">in</span> <span class="pre">the</span> <span class="pre">right</span> <span class="pre">servoing</span> <span class="pre">mode</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">CONTROL_WRONG_STARTING_SPEED</span> <span class="pre">(76):</span>&#160;&#160; <span class="pre">Robot</span> <span class="pre">is</span> <span class="pre">not</span> <span class="pre">at</span> <span class="pre">the</span> <span class="pre">right</span> <span class="pre">speed</span> <span class="pre">when</span> <span class="pre">starting</span> <span class="pre">a</span> <span class="pre">new</span> <span class="pre">trajectory.</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">USERNAME_LENGTH_EXCEEDED</span> <span class="pre">(100):</span>&#160;&#160; <span class="pre">User</span> <span class="pre">profile</span> <span class="pre">username</span> <span class="pre">length</span> <span class="pre">exceeds</span> <span class="pre">maximum</span> <span class="pre">allowed</span> <span class="pre">length</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">FIRSTNAME_LENGTH_EXCEEDED</span> <span class="pre">(101):</span>&#160;&#160; <span class="pre">User</span> <span class="pre">profile</span> <span class="pre">first</span> <span class="pre">name</span> <span class="pre">length</span> <span class="pre">exceeds</span> <span class="pre">maximum</span> <span class="pre">allowed</span> <span class="pre">length</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">LASTNAME_LENGTH_EXCEEDED</span> <span class="pre">(102):</span>&#160;&#160; <span class="pre">User</span> <span class="pre">profile</span> <span class="pre">last</span> <span class="pre">name</span> <span class="pre">length</span> <span class="pre">exceeds</span> <span class="pre">maximum</span> <span class="pre">allowed</span> <span class="pre">length</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">PASSWORD_LENGTH_EXCEEDED</span> <span class="pre">(103):</span>&#160;&#160; <span class="pre">User</span> <span class="pre">profile</span> <span class="pre">password</span> <span class="pre">length</span> <span class="pre">exceeds</span> <span class="pre">maximum</span> <span class="pre">allowed</span> <span class="pre">length</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">USERNAME_ALREADY_EXISTS</span> <span class="pre">(104):</span>&#160;&#160; <span class="pre">User</span> <span class="pre">profile</span> <span class="pre">username</span> <span class="pre">already</span> <span class="pre">in</span> <span class="pre">use</span> <span class="pre">by</span> <span class="pre">another</span> <span class="pre">profile</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">USERNAME_EMPTY</span> <span class="pre">(105):</span>&#160;&#160; <span class="pre">User</span> <span class="pre">profile</span> <span class="pre">empty</span> <span class="pre">username</span> <span class="pre">not</span> <span class="pre">allowed</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">PASSWORD_NOT_CHANGED</span> <span class="pre">(106):</span>&#160;&#160; <span class="pre">Change</span> <span class="pre">password</span> <span class="pre">both</span> <span class="pre">passwords</span> <span class="pre">are</span> <span class="pre">the</span> <span class="pre">same</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">MAXIMUM_USER_PROFILES_USED</span> <span class="pre">(107):</span>&#160;&#160; <span class="pre">Maximum</span> <span class="pre">number</span> <span class="pre">of</span> <span class="pre">user</span> <span class="pre">profiles</span> <span class="pre">in</span> <span class="pre">use</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">ROUTER_UNVAILABLE</span> <span class="pre">(108):</span>&#160;&#160; <span class="pre">The</span> <span class="pre">client</span> <span class="pre">router</span> <span class="pre">is</span> <span class="pre">currently</span> <span class="pre">unavailable.</span> <span class="pre">This</span> <span class="pre">can</span> <span class="pre">happen</span> <span class="pre">if</span> <span class="pre">an</span> <span class="pre">API</span> <span class="pre">method</span> <span class="pre">is</span> <span class="pre">called</span> <span class="pre">after</span> <span class="pre">the</span> <span class="pre">router</span> <span class="pre">has</span> <span class="pre">been</span> <span class="pre">deactivated</span> <span class="pre">via</span> <span class="pre">the</span> <span class="pre">method</span> <span class="pre">SetActivationStatus.</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">ADDRESS_NOT_IN_VALID_RANGE</span> <span class="pre">(120):</span>&#160;&#160; <span class="pre">IP</span> <span class="pre">Address</span> <span class="pre">not</span> <span class="pre">valid</span> <span class="pre">against</span> <span class="pre">netmask</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">ADDRESS_NOT_CONFIGURABLE</span> <span class="pre">(121):</span>&#160;&#160; <span class="pre">IP</span> <span class="pre">Address</span> <span class="pre">not</span> <span class="pre">configurable</span> <span class="pre">on</span> <span class="pre">specified</span> <span class="pre">interface</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">SESSION_NOT_IN_CONTROL</span> <span class="pre">(130):</span>&#160;&#160; <span class="pre">Trying</span> <span class="pre">to</span> <span class="pre">perform</span> <span class="pre">command</span> <span class="pre">from</span> <span class="pre">a</span> <span class="pre">non-controlling</span> <span class="pre">session</span> <span class="pre">in</span> <span class="pre">single-level</span> <span class="pre">mode</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">METHOD_TIMEOUT</span> <span class="pre">(131):</span>&#160;&#160; <span class="pre">Timeout</span> <span class="pre">occured</span> <span class="pre">during</span> <span class="pre">method</span> <span class="pre">execution</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">UNSUPPORTED_ROBOT_CONFIGURATION</span> <span class="pre">(132):</span>&#160;&#160; <span class="pre">Product</span> <span class="pre">Configuration</span> <span class="pre">setter</span> <span class="pre">method</span> <span class="pre">failed</span> <span class="pre">because</span> <span class="pre">changing</span> <span class="pre">this</span> <span class="pre">parameter</span> <span class="pre">is</span> <span class="pre">unsupported</span> <span class="pre">on</span> <span class="pre">your</span> <span class="pre">robot</span> <span class="pre">model</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">NVRAM_READ_FAIL</span> <span class="pre">(133):</span>&#160;&#160; <span class="pre">Failed</span> <span class="pre">to</span> <span class="pre">read</span> <span class="pre">in</span> <span class="pre">NVRAM.</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">NVRAM_WRITE_FAIL</span> <span class="pre">(134):</span>&#160;&#160; <span class="pre">Failed</span> <span class="pre">to</span> <span class="pre">write</span> <span class="pre">in</span> <span class="pre">NVRAM.</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">NETWORK_NO_ADDRESS_ASSIGNED</span> <span class="pre">(135):</span>&#160;&#160; <span class="pre">The</span> <span class="pre">specified</span> <span class="pre">interface</span> <span class="pre">has</span> <span class="pre">no</span> <span class="pre">assigned</span> <span class="pre">IP</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">READ_PERMISSION_DENIED</span> <span class="pre">(136):</span>&#160;&#160; <span class="pre">Attempting</span> <span class="pre">read</span> <span class="pre">command</span> <span class="pre">on</span> <span class="pre">unreadable</span> <span class="pre">entity</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">CONTROLLER_INVALID_MAPPING</span> <span class="pre">(137):</span>&#160;&#160; <span class="pre">Attempting</span> <span class="pre">to</span> <span class="pre">assign</span> <span class="pre">an</span> <span class="pre">unsuited</span> <span class="pre">mapping</span> <span class="pre">to</span> <span class="pre">controller</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">ACTION_IN_USE</span> <span class="pre">(138):</span>&#160;&#160; <span class="pre">Attempting</span> <span class="pre">to</span> <span class="pre">delete</span> <span class="pre">an</span> <span class="pre">Action</span> <span class="pre">used</span> <span class="pre">by</span> <span class="pre">another</span> <span class="pre">entity</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="kortex_api.autogen.SubErrorCodes.SEND_FAILED">
+<span class="sig-name descname"><span class="pre">SEND_FAILED</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">139):</span>&#160;&#160; <span class="pre">An</span> <span class="pre">error</span> <span class="pre">occured</span> <span class="pre">when</span> <span class="pre">trying</span> <span class="pre">to</span> <span class="pre">send</span> <span class="pre">the</span> <span class="pre">message</span> <span class="pre">(Transport</span> <span class="pre">error</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kortex_api.autogen.SubErrorCodes.SEND_FAILED" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">CONTROL_WAYPOINT_TRAJECTORY_ABORTED</span> <span class="pre">(140):</span>&#160;&#160; <span class="pre">Waypoint</span> <span class="pre">trajectory</span> <span class="pre">sequence</span> <span class="pre">aborted</span> <span class="pre">by</span> <span class="pre">kontrol</span> <span class="pre">library</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">CONTROL_PERMISSION_DENIED</span> <span class="pre">(141):</span>&#160;&#160; <span class="pre">Permission</span> <span class="pre">to</span> <span class="pre">execute</span> <span class="pre">a</span> <span class="pre">routine</span> <span class="pre">from</span> <span class="pre">the</span> <span class="pre">kontrol</span> <span class="pre">interface</span> <span class="pre">denied</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">COLLISION_DETECTED</span> <span class="pre">(142):</span>&#160;&#160; <span class="pre">A</span> <span class="pre">collision</span> <span class="pre">was</span> <span class="pre">detected</span> <span class="pre">by</span> <span class="pre">the</span> <span class="pre">robot</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">WRONG_MODE</span> <span class="pre">(143):</span>&#160;&#160; <span class="pre">The</span> <span class="pre">method</span> <span class="pre">failed</span> <span class="pre">because</span> <span class="pre">the</span> <span class="pre">robot</span> <span class="pre">is</span> <span class="pre">not</span> <span class="pre">in</span> <span class="pre">the</span> <span class="pre">correct</span> <span class="pre">mode</span></span></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="EventBroker.html" class="btn btn-neutral float-right" title="EventBroker" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="EditingContext.html" class="btn btn-neutral float-left" title="EditingContext" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2022, Kinova.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

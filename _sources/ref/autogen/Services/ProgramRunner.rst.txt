@@ -1,0 +1,339 @@
+================================
+ProgramRunner
+================================
+    
+.. py:currentmodule:: kortex_api.autogen
+
+.. py:class:: ProgramRunnerClient
+        
+    :canonical: kortex_api.autogen.client_stubs.ProgramRunnerClientRpc
+
+    .. py:method:: __init__(router, namespace = None)
+
+        Constructs a ProgramRunnerClient with an initialized :class:`~kortex_api.RouterClient.RouterClient` and an optional namespace.
+
+        :param RouterClient router: :class:`~kortex_api.RouterClient.RouterClient` used for the communication
+        :param string namespace: Optional namespace on which to initialize the ProgramRunnerClient (defaults to ``None``)
+
+    .. py:method:: IsAlive (timeoutMs: int = 1000)
+        
+        Returns ``True`` if the Service Server is detected online before ``timeoutMs`` is expired, ``False`` otherwise.
+        
+        :param unsigned int timeoutMs: The maximum time to wait for an answer from the server 
+        :rtype: bool
+
+
+        .. _ProgramRunnerClientCreateProgram:
+
+    .. py:method:: CreateProgram (program, deviceId = 0, options = RouterClientSendOptions())
+        
+        | The ``CONFIGURE`` permission is necessary to call this RPC.
+        |
+        | Create a program.
+        | 
+        | If the program is not valid, an INVALID_PARAM error is thrown.
+        | 
+
+
+        :param program:  
+        :type program: :ref:`Program <ProgramConfigProgram>`
+
+        :param int deviceId: Device's Id called by rpc (optional)
+        :param RouterClientSendOptions options: Router options for sending the message
+ 
+        :rtype: ProgramHandle
+
+        .. _ProgramRunnerClientDeleteProgram:
+
+    .. py:method:: DeleteProgram (programhandle, deviceId = 0, options = RouterClientSendOptions())
+        
+        | The ``CONFIGURE`` permission is necessary to call this RPC.
+        |
+        | Delete a program.
+        | 
+        | If the program to delete is running, an ERROR_DEVICE error is thrown.
+        | 
+
+
+        :param programhandle:  
+        :type programhandle: :ref:`ProgramHandle <CommonProgramHandle>`
+
+        :param int deviceId: Device's Id called by rpc (optional)
+        :param RouterClientSendOptions options: Router options for sending the message
+
+        .. _ProgramRunnerClientReadAllPluginActions:
+
+    .. py:method:: ReadAllPluginActions (, deviceId = 0, options = RouterClientSendOptions())
+        
+        | The ``READ_ONLY`` permission is necessary to call this RPC.
+        |
+        | Fetch all available plugin actions descriptors.
+
+        :param int deviceId: Device's Id called by rpc (optional)
+        :param RouterClientSendOptions options: Router options for sending the message
+ 
+        :rtype: ActionList
+
+        .. _ProgramRunnerClientReadAllPrograms:
+
+    .. py:method:: ReadAllPrograms (, deviceId = 0, options = RouterClientSendOptions())
+        
+        | The ``READ_ONLY`` permission is necessary to call this RPC.
+        |
+        | Read all programs.
+
+        :param int deviceId: Device's Id called by rpc (optional)
+        :param RouterClientSendOptions options: Router options for sending the message
+ 
+        :rtype: ProgramList
+
+        .. _ProgramRunnerClientReadProgram:
+
+    .. py:method:: ReadProgram (programhandle, deviceId = 0, options = RouterClientSendOptions())
+        
+        | The ``READ_ONLY`` permission is necessary to call this RPC.
+        |
+        | Read a program.
+
+
+        :param programhandle:  
+        :type programhandle: :ref:`ProgramHandle <CommonProgramHandle>`
+
+        :param int deviceId: Device's Id called by rpc (optional)
+        :param RouterClientSendOptions options: Router options for sending the message
+ 
+        :rtype: Program
+
+        .. _ProgramRunnerClientUpdateProgram:
+
+    .. py:method:: UpdateProgram (program, deviceId = 0, options = RouterClientSendOptions())
+        
+        | The ``CONFIGURE`` permission is necessary to call this RPC.
+        |
+        | Update an existing program.
+        | 
+        | If the program is not valid, an INVALID_PARAM error is thrown.
+        | 
+
+
+        :param program:  
+        :type program: :ref:`Program <ProgramConfigProgram>`
+
+        :param int deviceId: Device's Id called by rpc (optional)
+        :param RouterClientSendOptions options: Router options for sending the message
+ 
+        :rtype: Program
+
+        .. _ProgramRunnerClientExportProgram:
+
+    .. py:method:: ExportProgram (programhandle, deviceId = 0, options = RouterClientSendOptions())
+        
+        | The ``READ_ONLY`` permission is necessary to call this RPC.
+        |
+        | Export a program from Runner.
+
+
+        :param programhandle:  
+        :type programhandle: :ref:`ProgramHandle <CommonProgramHandle>`
+
+        :param int deviceId: Device's Id called by rpc (optional)
+        :param RouterClientSendOptions options: Router options for sending the message
+ 
+        :rtype: ProgramJSON
+
+        .. _ProgramRunnerClientImportProgram:
+
+    .. py:method:: ImportProgram (programjson, deviceId = 0, options = RouterClientSendOptions())
+        
+        | The ``CONFIGURE`` permission is necessary to call this RPC.
+        |
+        | Import a program to Runner.
+
+
+        :param programjson:  
+        :type programjson: :ref:`ProgramJSON <ProgramConfigProgramJSON>`
+
+        :param int deviceId: Device's Id called by rpc (optional)
+        :param RouterClientSendOptions options: Router options for sending the message
+ 
+        :rtype: ProgramHandle
+
+        .. _ProgramRunnerClientGetStatus:
+
+    .. py:method:: GetStatus (, deviceId = 0, options = RouterClientSendOptions())
+        
+        | The ``READ_ONLY`` permission is necessary to call this RPC.
+        |
+        | Returns the current status.
+
+        :param int deviceId: Device's Id called by rpc (optional)
+        :param RouterClientSendOptions options: Router options for sending the message
+ 
+        :rtype: StatusInformation
+
+        .. _ProgramRunnerClientPause:
+
+    .. py:method:: Pause (, deviceId = 0, options = RouterClientSendOptions())
+        
+        | The ``OPERATE`` permission is necessary to call this RPC.
+        |
+        | Pause an ongoing Program or Action.
+
+        :param int deviceId: Device's Id called by rpc (optional)
+        :param RouterClientSendOptions options: Router options for sending the message
+
+        .. _ProgramRunnerClientResume:
+
+    .. py:method:: Resume (runnablehandle, deviceId = 0, options = RouterClientSendOptions())
+        
+        | The ``OPERATE`` permission is necessary to call this RPC.
+        |
+        | Resume a paused Program or Action.
+        | The input argument RunnableHandle is unused, use a default RunnableHandle to make the call.
+        | 
+        | If runner status is STATUS_PAUSED_AUTOMATIC_RESUME, an ERROR_DEVICE error is thrown.
+        | If the operating mode is different as it was when the program was started, an INVALID_PARAM error is thrown.
+        | 
+
+
+        :param runnablehandle:  
+        :type runnablehandle: :ref:`RunnableHandle <ProgramRunnerRunnableHandle>`
+
+        :param int deviceId: Device's Id called by rpc (optional)
+        :param RouterClientSendOptions options: Router options for sending the message
+
+        .. _ProgramRunnerClientStart:
+
+    .. py:method:: Start (programstartconfiguration, deviceId = 0, options = RouterClientSendOptions())
+        
+        | The ``OPERATE`` permission is necessary to call this RPC.
+        |
+        | Start a program.
+        | The Arm State must be powered ON.
+        | The Operating Mode must be HOLD_TO_RUN or AUTO.
+        | 
+        | To avoid the INVALID_PARAM error, the action_handle is not set, the program_handle is set,
+        | the program is valid and the operating mode is HOLD_TO_RUN or AUTO.
+        | If it is AUTO, the program must be validated.
+        | 
+
+
+        :param programstartconfiguration:  
+        :type programstartconfiguration: :ref:`ProgramStartConfiguration <ProgramRunnerProgramStartConfiguration>`
+
+        :param int deviceId: Device's Id called by rpc (optional)
+        :param RouterClientSendOptions options: Router options for sending the message
+
+        .. _ProgramRunnerClientStop:
+
+    .. py:method:: Stop (, deviceId = 0, options = RouterClientSendOptions())
+        
+        | The ``OPERATE`` permission is necessary to call this RPC.
+        |
+        | Stop an ongoing Program or Action.
+        | 
+        | If the status is neither paused nor running or if it is stopping or idle, an ERROR_DEVICE error is thrown.
+        | 
+
+        :param int deviceId: Device's Id called by rpc (optional)
+        :param RouterClientSendOptions options: Router options for sending the message
+
+        .. _OnNotificationProgramRunnerClientStateChangeTopic:
+
+    .. py:method:: OnNotificationStateChangeTopic(callback, notificationoptions)
+    
+        | The ``READ_ONLY`` permission is necessary to call this RPC.
+        |
+        | Subscribes to state event notifications
+
+        :param callback: Function callback taking a :class:`Kinova.Api.ProgramRunner.StateChangeNotification` as only argument, and returning ``None``.
+        :type callback: function
+        :param NotificationOptions notificationoptions: Notification options
+        :rtype: NotificationHandle
+
+        .. _OnNotificationProgramRunnerClientStatusChangeTopic:
+
+    .. py:method:: OnNotificationStatusChangeTopic(callback, notificationoptions)
+    
+        | The ``READ_ONLY`` permission is necessary to call this RPC.
+        |
+        | Subscribes to status event notifications
+
+        :param callback: Function callback taking a :class:`Kinova.Api.ProgramRunner.StatusChangeNotification` as only argument, and returning ``None``.
+        :type callback: function
+        :param NotificationOptions notificationoptions: Notification options
+        :rtype: NotificationHandle
+
+        .. _OnNotificationProgramRunnerClientConfigurationChangeTopic:
+
+    .. py:method:: OnNotificationConfigurationChangeTopic(callback, notificationoptions)
+    
+        | The ``READ_ONLY`` permission is necessary to call this RPC.
+        |
+        | Subscribes to Configuration change topic on programs
+
+        :param callback: Function callback taking a :class:`Kinova.Api.ProgramConfig.ConfigurationChangeNotification` as only argument, and returning ``None``.
+        :type callback: function
+        :param NotificationOptions notificationoptions: Notification options
+        :rtype: NotificationHandle
+
+        .. _OnNotificationProgramRunnerClientExecutionEventTopic:
+
+    .. py:method:: OnNotificationExecutionEventTopic(callback, notificationoptions)
+    
+        | The ``READ_ONLY`` permission is necessary to call this RPC.
+        |
+        | Subscribes to program execution event notifications
+
+        :param callback: Function callback taking a :class:`Kinova.Api.ProgramRunner.ExecutionEventNotification` as only argument, and returning ``None``.
+        :type callback: function
+        :param NotificationOptions notificationoptions: Notification options
+        :rtype: NotificationHandle
+
+        .. _ProgramRunnerClientUnsubscribe:
+
+    .. py:method:: Unsubscribe (notificationhandle, deviceId = 0, options = RouterClientSendOptions())
+        
+        | The ``READ_ONLY`` permission is necessary to call this RPC.
+        |
+        | Unsubscribes client from receiving notifications for the specified topic
+
+
+        :param notificationhandle:  
+        :type notificationhandle: :ref:`NotificationHandle <CommonNotificationHandle>`
+
+        :param int deviceId: Device's Id called by rpc (optional)
+        :param RouterClientSendOptions options: Router options for sending the message
+
+        .. _ProgramRunnerClientStartActions:
+
+    .. py:method:: StartActions (actionsstartconfiguration, deviceId = 0, options = RouterClientSendOptions())
+        
+        | The ``OPERATE`` permission is necessary to call this RPC.
+        |
+        | Start specified actions of a program.
+        | 
+        | If action_handle or program_handle is not set, the program is not valid or the operating mode is not HOLD_TO_RUN, an INVALID_PARAM error is thrown.
+        | 
+
+
+        :param actionsstartconfiguration:  
+        :type actionsstartconfiguration: :ref:`ActionsStartConfiguration <ProgramRunnerActionsStartConfiguration>`
+
+        :param int deviceId: Device's Id called by rpc (optional)
+        :param RouterClientSendOptions options: Router options for sending the message
+
+        .. _ProgramRunnerClientValidateProgram:
+
+    .. py:method:: ValidateProgram (programvalidationconfiguration, deviceId = 0, options = RouterClientSendOptions())
+        
+        | The ``CONFIGURE`` permission is necessary to call this RPC.
+        |
+        | Validate a program.
+
+
+        :param programvalidationconfiguration:  
+        :type programvalidationconfiguration: :ref:`ProgramValidationConfiguration <ProgramRunnerProgramValidationConfiguration>`
+
+        :param int deviceId: Device's Id called by rpc (optional)
+        :param RouterClientSendOptions options: Router options for sending the message

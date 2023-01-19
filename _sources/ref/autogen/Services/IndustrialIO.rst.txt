@@ -1,0 +1,379 @@
+================================
+IndustrialIO
+================================
+    
+.. py:currentmodule:: kortex_api.autogen
+
+.. py:class:: IndustrialIOClient
+        
+    :canonical: kortex_api.autogen.client_stubs.IndustrialIOClientRpc
+
+    .. py:method:: __init__(router, namespace = None)
+
+        Constructs a IndustrialIOClient with an initialized :class:`~kortex_api.RouterClient.RouterClient` and an optional namespace.
+
+        :param RouterClient router: :class:`~kortex_api.RouterClient.RouterClient` used for the communication
+        :param string namespace: Optional namespace on which to initialize the IndustrialIOClient (defaults to ``None``)
+
+    .. py:method:: IsAlive (timeoutMs: int = 1000)
+        
+        Returns ``True`` if the Service Server is detected online before ``timeoutMs`` is expired, ``False`` otherwise.
+        
+        :param unsigned int timeoutMs: The maximum time to wait for an answer from the server 
+        :rtype: bool
+
+
+        .. _IndustrialIOClientSetDigitalOutputConfiguration:
+
+    .. py:method:: SetDigitalOutputConfiguration (digitaloutputconfiguration, deviceId = 0, options = RouterClientSendOptions())
+        
+        | The ``CONFIGURE`` permission is necessary to call this RPC.
+        |
+        | Configures a digital output channel.
+        | The channel.identifier must be between 1 and 8.
+        | An ERROR_INTERNAL will be thrown if the I/O board is not powered up.
+        | 
+
+
+        :param digitaloutputconfiguration:  
+        :type digitaloutputconfiguration: :ref:`DigitalOutputConfiguration <IndustrialIODigitalOutputConfiguration>`
+
+        :param int deviceId: Device's Id called by rpc (optional)
+        :param RouterClientSendOptions options: Router options for sending the message
+
+        .. _IndustrialIOClientGetDigitalOutputConfiguration:
+
+    .. py:method:: GetDigitalOutputConfiguration (digitalchannelidentifier, deviceId = 0, options = RouterClientSendOptions())
+        
+        | The ``READ_ONLY`` permission is necessary to call this RPC.
+        |
+        | Retrieves a digital output configuration for a specific channel.
+        | The identifier must be between 1 and 8.
+        | An ERROR_INTERNAL will be thrown if the I/O board is not powered up.
+        | 
+
+
+        :param digitalchannelidentifier:  
+        :type digitalchannelidentifier: :ref:`DigitalChannelIdentifier <IndustrialIODigitalChannelIdentifier>`
+
+        :param int deviceId: Device's Id called by rpc (optional)
+        :param RouterClientSendOptions options: Router options for sending the message
+ 
+        :rtype: DigitalOutputConfiguration
+
+        .. _IndustrialIOClientSetDigitalOutputHighState:
+
+    .. py:method:: SetDigitalOutputHighState (digitalchannelidentifier, deviceId = 0, options = RouterClientSendOptions())
+        
+        | The ``CONFIGURE`` permission is necessary to call this RPC.
+        |
+        | Sets a digital output channel to a high state.
+        | The identifier must be between 1 and 8.
+        | An ERROR_INTERNAL will be thrown if the I/O board is not powered up.
+        | 
+
+
+        :param digitalchannelidentifier:  
+        :type digitalchannelidentifier: :ref:`DigitalChannelIdentifier <IndustrialIODigitalChannelIdentifier>`
+
+        :param int deviceId: Device's Id called by rpc (optional)
+        :param RouterClientSendOptions options: Router options for sending the message
+
+        .. _IndustrialIOClientSetDigitalOutputLowState:
+
+    .. py:method:: SetDigitalOutputLowState (digitalchannelidentifier, deviceId = 0, options = RouterClientSendOptions())
+        
+        | The ``CONFIGURE`` permission is necessary to call this RPC.
+        |
+        | Sets a digital output channel to a low state.
+        | The identifier must be between 1 and 8.
+        | An ERROR_INTERNAL will be thrown if the I/O board is not powered up.
+        | 
+
+
+        :param digitalchannelidentifier:  
+        :type digitalchannelidentifier: :ref:`DigitalChannelIdentifier <IndustrialIODigitalChannelIdentifier>`
+
+        :param int deviceId: Device's Id called by rpc (optional)
+        :param RouterClientSendOptions options: Router options for sending the message
+
+        .. _IndustrialIOClientGetDigitalOutputInfo:
+
+    .. py:method:: GetDigitalOutputInfo (digitalchannelidentifier, deviceId = 0, options = RouterClientSendOptions())
+        
+        | The ``READ_ONLY`` permission is necessary to call this RPC.
+        |
+        | Retrieves a digital output channel information.
+        | The identifier must be between 1 and 8.
+        | An ERROR_INTERNAL will be thrown if the I/O board is not powered up.
+        | 
+
+
+        :param digitalchannelidentifier:  
+        :type digitalchannelidentifier: :ref:`DigitalChannelIdentifier <IndustrialIODigitalChannelIdentifier>`
+
+        :param int deviceId: Device's Id called by rpc (optional)
+        :param RouterClientSendOptions options: Router options for sending the message
+ 
+        :rtype: DigitalOutputInfo
+
+        .. _IndustrialIOClientGetAllDigitalOutputInfo:
+
+    .. py:method:: GetAllDigitalOutputInfo (, deviceId = 0, options = RouterClientSendOptions())
+        
+        | The ``READ_ONLY`` permission is necessary to call this RPC.
+        |
+        | Retrieves all digital output channel information.
+        | An ERROR_INTERNAL will be thrown if the I/O board is not powered up.
+        | 
+
+        :param int deviceId: Device's Id called by rpc (optional)
+        :param RouterClientSendOptions options: Router options for sending the message
+ 
+        :rtype: DigitalOutputInfoList
+
+        .. _IndustrialIOClientSetDigitalInputConfiguration:
+
+    .. py:method:: SetDigitalInputConfiguration (digitalinputconfiguration, deviceId = 0, options = RouterClientSendOptions())
+        
+        | The ``CONFIGURE`` permission is necessary to call this RPC.
+        |
+        | Configures a digital input channel.
+        | The channel.identifier must be between 1 and 8.
+        | An ERROR_INTERNAL will be thrown if the I/O board is not powered up.
+        | 
+
+
+        :param digitalinputconfiguration:  
+        :type digitalinputconfiguration: :ref:`DigitalInputConfiguration <IndustrialIODigitalInputConfiguration>`
+
+        :param int deviceId: Device's Id called by rpc (optional)
+        :param RouterClientSendOptions options: Router options for sending the message
+
+        .. _IndustrialIOClientGetDigitalInputConfiguration:
+
+    .. py:method:: GetDigitalInputConfiguration (digitalchannelidentifier, deviceId = 0, options = RouterClientSendOptions())
+        
+        | The ``READ_ONLY`` permission is necessary to call this RPC.
+        |
+        | Retrieves a digital input configuration for a specific channel.
+        | The identifier must be between 1 and 8.
+        | An ERROR_INTERNAL will be thrown if the I/O board is not powered up.
+        | 
+
+
+        :param digitalchannelidentifier:  
+        :type digitalchannelidentifier: :ref:`DigitalChannelIdentifier <IndustrialIODigitalChannelIdentifier>`
+
+        :param int deviceId: Device's Id called by rpc (optional)
+        :param RouterClientSendOptions options: Router options for sending the message
+ 
+        :rtype: DigitalInputConfiguration
+
+        .. _IndustrialIOClientGetDigitalInputInfo:
+
+    .. py:method:: GetDigitalInputInfo (digitalchannelidentifier, deviceId = 0, options = RouterClientSendOptions())
+        
+        | The ``READ_ONLY`` permission is necessary to call this RPC.
+        |
+        | Retrieves a digital input channel information.
+        | The identifier must be between 1 and 8.
+        | An ERROR_INTERNAL will be thrown if the I/O board is not powered up.
+        | 
+
+
+        :param digitalchannelidentifier:  
+        :type digitalchannelidentifier: :ref:`DigitalChannelIdentifier <IndustrialIODigitalChannelIdentifier>`
+
+        :param int deviceId: Device's Id called by rpc (optional)
+        :param RouterClientSendOptions options: Router options for sending the message
+ 
+        :rtype: DigitalInputInfo
+
+        .. _IndustrialIOClientGetAllDigitalInputInfo:
+
+    .. py:method:: GetAllDigitalInputInfo (, deviceId = 0, options = RouterClientSendOptions())
+        
+        | The ``READ_ONLY`` permission is necessary to call this RPC.
+        |
+        | Retrieves all digital input channel informaion.
+        | An ERROR_INTERNAL will be thrown if the I/O board is not powered up.
+        | 
+
+        :param int deviceId: Device's Id called by rpc (optional)
+        :param RouterClientSendOptions options: Router options for sending the message
+ 
+        :rtype: DigitalInputInfoList
+
+        .. _IndustrialIOClientSetAnalogIOConfiguration:
+
+    .. py:method:: SetAnalogIOConfiguration (analogioconfiguration, deviceId = 0, options = RouterClientSendOptions())
+        
+        | The ``CONFIGURE`` permission is necessary to call this RPC.
+        |
+        | Configures an analog input/output channel.
+        | An ERROR_INTERNAL will be thrown if the I/O board is not powered up.
+        | 
+
+
+        :param analogioconfiguration:  
+        :type analogioconfiguration: :ref:`AnalogIOConfiguration <IndustrialIOAnalogIOConfiguration>`
+
+        :param int deviceId: Device's Id called by rpc (optional)
+        :param RouterClientSendOptions options: Router options for sending the message
+
+        .. _IndustrialIOClientGetAnalogIOConfiguration:
+
+    .. py:method:: GetAnalogIOConfiguration (analogiochannelidentifier, deviceId = 0, options = RouterClientSendOptions())
+        
+        | The ``READ_ONLY`` permission is necessary to call this RPC.
+        |
+        | Retrieves an analog input/output configuration for a specific channel.
+        | An ERROR_INTERNAL will be thrown if the I/O board is not powered up.
+        | 
+
+
+        :param analogiochannelidentifier:  
+        :type analogiochannelidentifier: :ref:`AnalogIOChannelIdentifier <IndustrialIOAnalogIOChannelIdentifier>`
+
+        :param int deviceId: Device's Id called by rpc (optional)
+        :param RouterClientSendOptions options: Router options for sending the message
+ 
+        :rtype: AnalogIOConfiguration
+
+        .. _IndustrialIOClientSetAnalogValue:
+
+    .. py:method:: SetAnalogValue (analogoutput, deviceId = 0, options = RouterClientSendOptions())
+        
+        | The ``CONFIGURE`` permission is necessary to call this RPC.
+        |
+        | Sets an analog value on a channel.
+        | The dac_value is the value to set, either in V or mA.
+        | An ERROR_INTERNAL will be thrown if the I/O board is not powered up.
+        | An ERROR_INTERNAL will be thrown if the channel is not configured as an output also.
+        | An ERROR_DEVICE, ENTITY_NOT_FOUND will be thrown if the dac_value is out of bounds. The exception message will contain the limits.
+        | 
+
+
+        :param analogoutput:  
+        :type analogoutput: :ref:`AnalogOutput <IndustrialIOAnalogOutput>`
+
+        :param int deviceId: Device's Id called by rpc (optional)
+        :param RouterClientSendOptions options: Router options for sending the message
+
+        .. _IndustrialIOClientGetAnalogIOInfo:
+
+    .. py:method:: GetAnalogIOInfo (analogiochannelidentifier, deviceId = 0, options = RouterClientSendOptions())
+        
+        | The ``READ_ONLY`` permission is necessary to call this RPC.
+        |
+        | Retrieves an analog input/output channel information.
+        | An ERROR_INTERNAL will be thrown if the I/O board is not powered up.
+        | 
+
+
+        :param analogiochannelidentifier:  
+        :type analogiochannelidentifier: :ref:`AnalogIOChannelIdentifier <IndustrialIOAnalogIOChannelIdentifier>`
+
+        :param int deviceId: Device's Id called by rpc (optional)
+        :param RouterClientSendOptions options: Router options for sending the message
+ 
+        :rtype: AnalogIOInfo
+
+        .. _IndustrialIOClientGetAllAnalogIOInfo:
+
+    .. py:method:: GetAllAnalogIOInfo (, deviceId = 0, options = RouterClientSendOptions())
+        
+        | The ``READ_ONLY`` permission is necessary to call this RPC.
+        |
+        | Retrieves all analog input/output channel information.
+        | An ERROR_INTERNAL will be thrown if the I/O board is not powered up.
+        | 
+
+        :param int deviceId: Device's Id called by rpc (optional)
+        :param RouterClientSendOptions options: Router options for sending the message
+ 
+        :rtype: AnalogIOInfoList
+
+        .. _IndustrialIOClientClearFaults:
+
+    .. py:method:: ClearFaults (, deviceId = 0, options = RouterClientSendOptions())
+        
+        | The ``CONFIGURE`` permission is necessary to call this RPC.
+        |
+        | Clears digital and analog I/O faults.
+        | An ERROR_INTERNAL will be thrown if the I/O board is not powered up.
+        | 
+
+        :param int deviceId: Device's Id called by rpc (optional)
+        :param RouterClientSendOptions options: Router options for sending the message
+
+        .. _IndustrialIOClientUnsubscribe:
+
+    .. py:method:: Unsubscribe (notificationhandle, deviceId = 0, options = RouterClientSendOptions())
+        
+        | The ``READ_ONLY`` permission is necessary to call this RPC.
+        |
+        | Unsubscribes client from receiving notifications for the specified topic.
+
+
+        :param notificationhandle:  
+        :type notificationhandle: :ref:`NotificationHandle <CommonNotificationHandle>`
+
+        :param int deviceId: Device's Id called by rpc (optional)
+        :param RouterClientSendOptions options: Router options for sending the message
+
+        .. _OnNotificationIndustrialIOClientDigitalOutputChangeTopic:
+
+    .. py:method:: OnNotificationDigitalOutputChangeTopic(callback, notificationoptions)
+    
+        | The ``READ_ONLY`` permission is necessary to call this RPC.
+        |
+        | Subscribes to digital output change topic for notifications.
+
+        :param callback: Function callback taking a :class:`DigitalOutputChangeNotification` as only argument, and returning ``None``.
+        :type callback: function
+        :param NotificationOptions notificationoptions: Notification options
+        :rtype: NotificationHandle
+
+        .. _OnNotificationIndustrialIOClientDigitalInputChangeTopic:
+
+    .. py:method:: OnNotificationDigitalInputChangeTopic(callback, notificationoptions)
+    
+        | The ``READ_ONLY`` permission is necessary to call this RPC.
+        |
+        | Subscribes to digital input change topic for notifications.
+
+        :param callback: Function callback taking a :class:`DigitalInputChangeNotification` as only argument, and returning ``None``.
+        :type callback: function
+        :param NotificationOptions notificationoptions: Notification options
+        :rtype: NotificationHandle
+
+        .. _OnNotificationIndustrialIOClientAnalogIOChangeTopic:
+
+    .. py:method:: OnNotificationAnalogIOChangeTopic(callback, notificationoptions)
+    
+        | The ``READ_ONLY`` permission is necessary to call this RPC.
+        |
+        | Subscribes to analog input/output change topic for notifications.
+
+        :param callback: Function callback taking a :class:`AnalogIOChangeNotification` as only argument, and returning ``None``.
+        :type callback: function
+        :param NotificationOptions notificationoptions: Notification options
+        :rtype: NotificationHandle
+
+        .. _OnNotificationIndustrialIOClientWristAnalogIOChangeTopic:
+
+    .. py:method:: OnNotificationWristAnalogIOChangeTopic(callback, notificationoptions)
+    
+        | The ``READ_ONLY`` permission is necessary to call this RPC.
+        |
+        | Subscribes to wrist's analog configuration change topic for notifications.
+        | This notification is only emitted when the Industrial I/O Plugin changes the wrist's configuration.
+        | It's not emitted when the analog value changes.
+        | 
+
+        :param callback: Function callback taking a :class:`AnalogIOChangeNotification` as only argument, and returning ``None``.
+        :type callback: function
+        :param NotificationOptions notificationoptions: Notification options
+        :rtype: NotificationHandle

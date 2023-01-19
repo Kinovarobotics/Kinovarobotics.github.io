@@ -1,0 +1,157 @@
+================================
+WristConfigC61
+================================
+    
+.. py:currentmodule:: kortex_api.autogen
+
+.. _WristConfigC61ServiceVersion:
+
+.. py:class:: ServiceVersion
+
+     Identifies WristConfigC61 service current version
+
+    :canonical: kortex_api.autogen.messages.WristConfigC61_pb2.ServiceVersion
+    .. py:attribute:: RESERVED_0 (0):   Reserved
+
+    .. py:attribute:: CURRENT_VERSION (1):   Current version
+
+.. _WristConfigC61RS485PortId:
+
+.. py:class:: RS485PortId
+
+     Admissible RS485 ports
+
+    :canonical: kortex_api.autogen.messages.WristConfigC61_pb2.RS485PortId
+    .. py:attribute:: RS485_PORT_UNSPECIFIED (0):   Unspecified RS485 port
+
+    .. py:attribute:: RS485_PORT_FLANGE (1):   RS485 port located on flange contacts
+
+    .. py:attribute:: RS485_PORT_M8A (2):   RS485 port located on the M8A connector (currently not available)
+
+.. _WristConfigC61LinkWristDiagnosticIdentifierBankA:
+
+.. py:class:: LinkWristDiagnosticIdentifierBankA
+
+    
+
+    :canonical: kortex_api.autogen.messages.WristConfigC61_pb2.LinkWristDiagnosticIdentifierBankA
+    .. py:attribute:: LINK_WRIST_BANK_A_UNSPECIFIED_DIAGNOSTIC_IDENTIFIER (0):   0x0 - Unspecified Link actuator safety MCU diagnostic bank A identifier
+
+    .. py:attribute:: LINK_WRIST_BANK_A_STARTUP_SELF_TESTS_TIMED_OUT (1):   0x1 - Startup self tests timed out
+
+    .. py:attribute:: LINK_WRIST_BANK_A_MCU_CORE_GENERAL_PURPOSE_REGISTERS (2):   0x2 - Test of general purpose registers
+
+    .. py:attribute:: LINK_WRIST_BANK_A_MCU_CORE_ARITHMETIC_FUNCTIONS (4):   0x4 - Test of arithmetic functions
+
+    .. py:attribute:: LINK_WRIST_BANK_A_MCU_CORE_MULTIPLIER_FUNCTIONS (8):   0x8 - Test of multiplier functions
+
+    .. py:attribute:: LINK_WRIST_BANK_A_MCU_CORE_CONTROL_FLOW_INSTRUCTIONS (16):   0x10 - Test of control flow instructions
+
+    .. py:attribute:: LINK_WRIST_BANK_A_MCU_CORE_LOAD_STORE_UNIT (32):   0x20 - Test of load/store unit(s)
+
+    .. py:attribute:: LINK_WRIST_BANK_A_MCU_CORE_SHIFT_ROTATE_FUNCTIONS (64):   0x40 - Test of shift and rotate functions
+
+    .. py:attribute:: LINK_WRIST_BANK_A_MCU_CORE_STACK_POINTER (128):   0x80 - Test of stack pointer
+
+    .. py:attribute:: LINK_WRIST_BANK_A_MCU_CORE_PIPELINE_FUNCTIONS (256):   0x100 - Test of pipeline functions
+
+    .. py:attribute:: LINK_WRIST_BANK_A_MCU_CORE_FPU_REGISTERS_BANK (512):   0x200 - Test of FPU registers bank
+
+    .. py:attribute:: LINK_WRIST_BANK_A_MCU_CORE_FPU_SINGLE_PRECISION_FUNCTIONS (1024):   0x400 - Test of FPU single precision functions
+
+    .. py:attribute:: LINK_WRIST_BANK_A_MCU_CORE_CACHE_MANAGEMENT_LOGIC (2048):   0x800 - Test of cache management logic
+
+    .. py:attribute:: LINK_WRIST_BANK_A_MCU_RAM_BIST_FAULT (4096):   0x1000 - MCU RAM BIST fault
+
+    .. py:attribute:: LINK_WRIST_BANK_A_VMON_48V_OVERVOLTAGE (8192):   0x2000 - Voltage monitoring 48V overvoltage
+
+    .. py:attribute:: LINK_WRIST_BANK_A_VMON_48V_UNDERVOLTAGE (16384):   0x4000 - Voltage monitoring 48V undervoltage
+
+    .. py:attribute:: LINK_WRIST_BANK_A_VMON_10V_OVERVOLTAGE (32768):   0x8000 - Voltage monitoring 10V overvoltage
+
+    .. py:attribute:: LINK_WRIST_BANK_A_VMON_10V_UNDERVOLTAGE (65536):   0x10000 - Voltage monitoring 10V undervoltage
+
+    .. py:attribute:: LINK_WRIST_BANK_A_VMON_2V5_OVERVOLTAGE (131072):   0x20000 - Voltage monitoring 2V5 overvoltage
+
+    .. py:attribute:: LINK_WRIST_BANK_A_VMON_2V5_UNDERVOLTAGE (262144):   0x40000 - Voltage monitoring 2V5 undervoltage
+
+    .. py:attribute:: LINK_WRIST_BANK_A_POWER_GOOD_24V_FAILURE (524288):   0x80000 - Test Voltage 24V
+
+    .. py:attribute:: LINK_WRIST_BANK_A_VMON_3V3_OVERVOLTAGE (1048576):   0x100000 - Voltage monitoring 3V3 overvoltage
+
+    .. py:attribute:: LINK_WRIST_BANK_A_VMON_3V3_UNDERVOLTAGE (2097152):   0x200000 - Voltage monitoring 3V3 undervoltage
+
+    .. py:attribute:: LINK_WRIST_BANK_A_POWER_GOOD_3V3_FAILURE (4194304):   0x400000 - Test Voltage 3V3
+
+    .. py:attribute:: LINK_WRIST_BANK_A_POWER_GOOD_2V5_FAILURE (8388608):   0x800000 - Test Voltage 2V5
+
+    .. py:attribute:: LINK_WRIST_BANK_A_M8A_24V_CURRENT_LIMITER_FAULT (16777216):   0x1000000 - Test overcurrent protection for M8A connector
+
+    .. py:attribute:: LINK_WRIST_BANK_A_M8B_24V_CURRENT_LIMITER_FAULT (33554432):   0x2000000 - Test overcurrent protection for M8B connector
+
+.. _WristConfigC61LinkWristDiagnosticIdentifierBankB:
+
+.. py:class:: LinkWristDiagnosticIdentifierBankB
+
+    
+
+    :canonical: kortex_api.autogen.messages.WristConfigC61_pb2.LinkWristDiagnosticIdentifierBankB
+    .. py:attribute:: LINK_WRIST_BANK_B_UNSPECIFIED_DIAGNOSTIC_IDENTIFIER (0):   0x0 - Unspecified Link actuator safety MCU diagnostic bank A identifier
+
+    .. py:attribute:: LINK_WRIST_BANK_B_M8_ANALOG_IO_CONFIGURATION_FAILED (1):   0x1 - Test AIO configuration
+
+    .. py:attribute:: LINK_WRIST_BANK_B_M8_ANALOG_IO_FAULT_DETECTED (2):   0x2 - Test state of the wrist ADC
+
+    .. py:attribute:: LINK_WRIST_BANK_B_M8A_ANALOG_IO_CHANNEL_1_FAULT_DETECTED (4):   0x4 - Test M8A AIO channel 1
+
+    .. py:attribute:: LINK_WRIST_BANK_B_M8A_ANALOG_IO_CHANNEL_2_FAULT_DETECTED (8):   0x8 - Test M8A AIO channel 2
+
+    .. py:attribute:: LINK_WRIST_BANK_B_M8B_ANALOG_IO_CHANNEL_1_FAULT_DETECTED (16):   0x10 - Test M8B AIO channel 1
+
+    .. py:attribute:: LINK_WRIST_BANK_B_M8B_ANALOG_IO_CHANNEL_2_FAULT_DETECTED (32):   0x20 - Test M8B AIO channel 2
+
+    .. py:attribute:: LINK_WRIST_BANK_B_M8A_DIGITAL_IO_CONFIGURATION_FAILED (64):   0x40 - Test M8A DIO configuration
+
+    .. py:attribute:: LINK_WRIST_BANK_B_M8B_DIGITAL_IO_CONFIGURATION_FAILED (128):   0x80 - Test M8B DIO configuration
+
+    .. py:attribute:: LINK_WRIST_BANK_B_M8A_DIGITAL_IO_SPI_COMMUNICATION_FAILURE (256):   0x100 - Test M8A DIO SPI communication
+
+    .. py:attribute:: LINK_WRIST_BANK_B_M8B_DIGITAL_IO_SPI_COMMUNICATION_FAILURE (512):   0x200 - Test M8B DIO SPI communication
+
+    .. py:attribute:: LINK_WRIST_BANK_B_M8A_DIGITAL_IO_THERMAL_SHUTDOWN (1024):   0x400 - Test M8A thermal shutdown occurrence
+
+    .. py:attribute:: LINK_WRIST_BANK_B_M8B_DIGITAL_IO_THERMAL_SHUTDOWN (2048):   0x800 - Test M8B thermal shutdown occurrence
+
+    .. py:attribute:: LINK_WRIST_BANK_B_M8A_DIGITAL_IO_OVERCURRENT (4096):   0x1000 - Test M8A overcurrent occurrence
+
+    .. py:attribute:: LINK_WRIST_BANK_B_M8B_DIGITAL_IO_OVERCURRENT (8192):   0x2000 - Test M8B overcurrent occurrence
+
+    .. py:attribute:: LINK_WRIST_BANK_B_M8A_DIGITAL_IO_ABOVE_VDD (16384):   0x4000 - Test M8A DIO voltage after debounce time
+
+    .. py:attribute:: LINK_WRIST_BANK_B_M8B_DIGITAL_IO_ABOVE_VDD (32768):   0x8000 - Test M8B DIO voltage after debounce time
+
+    .. py:attribute:: LINK_WRIST_BANK_B_M8A_DIGITAL_IO_SUPPLY_ERROR (65536):   0x10000 - Test M8A DIO supply voltage
+
+    .. py:attribute:: LINK_WRIST_BANK_B_M8B_DIGITAL_IO_SUPPLY_ERROR (131072):   0x20000 - Test M8B DIO supply voltage
+
+    .. py:attribute:: LINK_WRIST_BANK_B_FT_ADC_CONFIGURATION_FAILED (262144):   0x40000 - Test FT ADC IC configuration failure
+
+    .. py:attribute:: LINK_WRIST_BANK_B_FT_CALIBRATION_MISSING_OR_CORRUPTED (524288):   0x80000 - Test calibration data validity
+
+    .. py:attribute:: LINK_WRIST_BANK_B_FT_TEMPERATURE_TOO_HIGH (1048576):   0x100000 - Monitoring sensor temperature
+
+    .. py:attribute:: LINK_WRIST_BANK_B_FT_FT_TEMPERATURE_TOO_LOW (2097152):   0x200000 - Monitoring sensor temperature
+
+    .. py:attribute:: LINK_WRIST_BANK_B_FT_FT_ADC_SATURATION_DETECTED (4194304):   0x400000 - Monitoring saturation event on FT ADC
+
+    .. py:attribute:: LINK_WRIST_BANK_B_FT_FT_ADC_SAMPLING_ERROR (8388608):   0x800000 - Test sampling of FT ADC
+
+    .. py:attribute:: LINK_WRIST_BANK_B_CORE_TEMPERATURE_TOO_HIGH (16777216):   0x1000000 - Core temperature Monitoring too high
+
+    .. py:attribute:: LINK_WRIST_BANK_B_CORE_TEMPERATURE_TOO_LOW (33554432):   0x2000000 - Core temperature Monitoring too low
+
+    .. py:attribute:: LINK_WRIST_BANK_B_EEPROM_CORRUPTED (67108864):   0x4000000 - Monitoring EEPROM data integrity
+
+    .. py:attribute:: LINK_WRIST_BANK_B_SAFE_COMM_FAILURE (134217728):   0x8000000 - Monitoring communication between wrist and SCU
+
+    .. py:attribute:: LINK_WRIST_BANK_B_WATCHDOG_RESET_OCCURRED (268435456):   0x10000000 - Monitoring independent and window watchdog event

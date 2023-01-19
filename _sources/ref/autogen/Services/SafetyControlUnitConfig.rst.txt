@@ -1,0 +1,65 @@
+================================
+SafetyControlUnitConfig
+================================
+    
+.. py:currentmodule:: kortex_api.autogen
+
+.. py:class:: SafetyControlUnitConfigClient
+        
+    :canonical: kortex_api.autogen.client_stubs.SafetyControlUnit.SafetyControlUnitConfigClientRpc
+
+    .. py:method:: __init__(router, namespace = None)
+
+        Constructs a SafetyControlUnitConfigClient with an initialized :class:`~kortex_api.RouterClient.RouterClient` and an optional namespace.
+
+        :param RouterClient router: :class:`~kortex_api.RouterClient.RouterClient` used for the communication
+        :param string namespace: Optional namespace on which to initialize the SafetyControlUnitConfigClient (defaults to ``None``)
+
+    .. py:method:: IsAlive (timeoutMs: int = 1000)
+        
+        Returns ``True`` if the Service Server is detected online before ``timeoutMs`` is expired, ``False`` otherwise.
+        
+        :param unsigned int timeoutMs: The maximum time to wait for an answer from the server 
+        :rtype: bool
+
+
+        .. _SafetyControlUnitConfigClientGetMpuSafetyParametersChecksum:
+
+    .. py:method:: GetMpuSafetyParametersChecksum (, deviceId = 0, options = RouterClientSendOptions())
+        
+        | The ``READ_ONLY`` permission is necessary to call this RPC.
+        |
+        | Gets safety parameters checksum from MPU
+
+        :param int deviceId: Device's Id called by rpc (optional)
+        :param RouterClientSendOptions options: Router options for sending the message
+ 
+        :rtype: CRC32Checksum
+
+        .. _OnNotificationSafetyControlUnitConfigClientSafetyParametersChecksumChangeTopic:
+
+    .. py:method:: OnNotificationSafetyParametersChecksumChangeTopic(callback, notificationoptions)
+    
+        | The ``READ_ONLY`` permission is necessary to call this RPC.
+        |
+        | Subscribes to safety parameters checksum change topic for notifications
+
+        :param callback: Function callback taking a :class:`SafetyParametersChecksumChangeNotification` as only argument, and returning ``None``.
+        :type callback: function
+        :param NotificationOptions notificationoptions: Notification options
+        :rtype: NotificationHandle
+
+        .. _SafetyControlUnitConfigClientUnsubscribe:
+
+    .. py:method:: Unsubscribe (notificationhandle, deviceId = 0, options = RouterClientSendOptions())
+        
+        | The ``READ_ONLY`` permission is necessary to call this RPC.
+        |
+        | Unsubscribes client from receiving notifications for the specified topic
+
+
+        :param notificationhandle:  
+        :type notificationhandle: :ref:`NotificationHandle <CommonNotificationHandle>`
+
+        :param int deviceId: Device's Id called by rpc (optional)
+        :param RouterClientSendOptions options: Router options for sending the message

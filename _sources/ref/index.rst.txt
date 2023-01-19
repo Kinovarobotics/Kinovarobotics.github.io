@@ -1,0 +1,15 @@
+Python API Reference
+====================
+
+.. toctree::
+    :maxdepth: 2
+    :caption: Modules:
+
+    RouterClient
+    SessionManager
+    MqttTransport
+    UDPTransport
+    Constants
+    exceptions/index
+    autogen/index
+

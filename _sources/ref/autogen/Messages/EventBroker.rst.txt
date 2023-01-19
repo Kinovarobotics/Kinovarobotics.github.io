@@ -1,0 +1,78 @@
+================================
+EventBroker
+================================
+    
+.. py:currentmodule:: kortex_api.autogen
+
+.. _EventBrokerEventHandle:
+
+.. py:class:: EventHandle
+
+    Unique handle to identify an Event
+
+   :canonical: kortex_api.autogen.messages.EventBroker_pb2.EventHandle
+
+   :param identifier:   Identifier
+   :type identifier: :ref:`int <>` 
+
+.. _EventBrokerEvent:
+
+.. py:class:: Event
+
+    Event
+
+   :canonical: kortex_api.autogen.messages.EventBroker_pb2.Event
+
+   :param handle:   Handle of the Event
+   :type handle: :ref:`EventHandle <EventBrokerEventHandle>` 
+
+   :param event_info:   Information contained in the Event
+   :type event_info: :ref:`NotificationInformation <CommonNotificationInformation>` 
+
+   :param source:   Source of the Event
+   :type source: :ref:`str <>` 
+
+   :param title:   Title of the notification
+   :type title: :ref:`str <>` 
+
+   :param explanation:   Optional explanation for the notification (supports HTML)
+   :type explanation: :ref:`str <>` 
+
+   :param suggestion:   Optional suggestion for the notification (supports HTML)
+   :type suggestion: :ref:`str <>` 
+
+   :param code:   Error code
+   :type code: :ref:`int <>` 
+
+.. _EventBrokerEventList:
+
+.. py:class:: EventList
+
+    List of Events
+
+   :canonical: kortex_api.autogen.messages.EventBroker_pb2.EventList
+
+   :param events:   Events
+   :type events: :ref:`Event <EventBrokerEvent>` [ ]
+
+.. _EventBrokerEventNotification:
+
+.. py:class:: EventNotification
+
+    Notification about an event
+
+   :canonical: kortex_api.autogen.messages.EventBroker_pb2.EventNotification
+
+   :param event:   Event to notify about
+   :type event: :ref:`Event <EventBrokerEvent>` 
+
+.. _EventBrokerGetEventsParameter:
+
+.. py:class:: GetEventsParameter
+
+    Parameter to the GetEvents RPC
+
+   :canonical: kortex_api.autogen.messages.EventBroker_pb2.GetEventsParameter
+
+   :param size:   Maximum number of events to be returned
+   :type size: :ref:`int <>` 

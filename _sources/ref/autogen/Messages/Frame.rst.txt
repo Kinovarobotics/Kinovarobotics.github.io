@@ -1,0 +1,70 @@
+================================
+Frame
+================================
+    
+.. py:currentmodule:: kortex_api.autogen
+
+.. _FrameFrame:
+
+.. py:class:: Frame
+
+    Defines a Frame format including its header and payload
+
+   :canonical: kortex_api.autogen.messages.Frame_pb2.Frame
+
+   :param header:  
+   :type header: :ref:`Header <FrameHeader>` 
+
+   :param payload:  
+   :type payload: :ref:`bytes <>` 
+
+.. _FrameHeader:
+
+.. py:class:: Header
+
+    Defines the frame header
+
+   :canonical: kortex_api.autogen.messages.Frame_pb2.Header
+
+   :param frame_info:   Includes frame type, device handle identifier, error code and sub error code
+   :type frame_info: :ref:`int <>` 
+
+   :param message_info:   Includes session identifier and message identifier 
+   :type message_info: :ref:`int <>` 
+
+   :param service_info:   Includes service version, service identifier and function identifier
+   :type service_info: :ref:`int <>` 
+
+   :param payload_info:   Includes payload length
+   :type payload_info: :ref:`int <>` 
+
+.. _FrameError:
+
+.. py:class:: Error
+
+    Defines an error message
+
+   :canonical: kortex_api.autogen.messages.Frame_pb2.Error
+
+   :param error_code:   Error code. Please refer to Errors.proto for list of error codes
+   :type error_code: :ref:`ErrorCodes <FrameErrorCodes>` 
+
+   :param error_sub_code:   Sub error code. Please refer to Errors.proto for list of sub error codes
+   :type error_sub_code: :ref:`int <>` 
+
+   :param error_sub_string:   For internal usage
+   :type error_sub_string: :ref:`str <>` 
+
+.. _FramePayloadFrameTypeRaw:
+
+.. py:class:: PayloadFrameTypeRaw
+
+    Defines a raw message 
+
+   :canonical: kortex_api.autogen.messages.Frame_pb2.PayloadFrameTypeRaw
+
+   :param topic:   Topic used as information on the raw message
+   :type topic: :ref:`str <>` 
+
+   :param payload:   Deferred real payload of the message
+   :type payload: :ref:`bytes <>` 

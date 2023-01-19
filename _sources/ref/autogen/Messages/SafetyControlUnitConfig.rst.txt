@@ -1,0 +1,114 @@
+================================
+SafetyControlUnitConfig
+================================
+    
+.. py:currentmodule:: kortex_api.autogen
+
+.. _SafetyControlUnitConfigArmCalibration:
+
+.. py:class:: ArmCalibration
+
+    Arm calibration
+
+   :canonical: kortex_api.autogen.messages.SafetyControlUnitConfig_pb2.ArmCalibration
+
+   :param frame_calibrations:   calibration for each frame
+   :type frame_calibrations: :ref:`FrameCalibration <SafetyControlUnitConfigFrameCalibration>` [ ]
+
+.. _SafetyControlUnitConfigFrameCalibration:
+
+.. py:class:: FrameCalibration
+
+    Frame calibration
+
+   :canonical: kortex_api.autogen.messages.SafetyControlUnitConfig_pb2.FrameCalibration
+
+   :param geometric_calibration_matrix:   geometric calibration for a single frame
+   :type geometric_calibration_matrix: :ref:`GeometricCalibrationMatrix <SafetyControlUnitConfigGeometricCalibrationMatrix>` 
+
+   :param elasto_static_calibration_matrix:   elasto-static calibration for a single frame
+   :type elasto_static_calibration_matrix: :ref:`ElastoStaticCalibrationMatrix <SafetyControlUnitConfigElastoStaticCalibrationMatrix>` 
+
+.. _SafetyControlUnitConfigGeometricCalibrationMatrix:
+
+.. py:class:: GeometricCalibrationMatrix
+
+    Geometric calibration matrix
+
+   :canonical: kortex_api.autogen.messages.SafetyControlUnitConfig_pb2.GeometricCalibrationMatrix
+
+   :param m00:   m00 value
+   :type m00: :ref:`float <>` 
+
+   :param m10:   m10 value
+   :type m10: :ref:`float <>` 
+
+   :param m20:   m20 value
+   :type m20: :ref:`float <>` 
+
+   :param m01:   m01 value
+   :type m01: :ref:`float <>` 
+
+   :param m11:   m11 value
+   :type m11: :ref:`float <>` 
+
+   :param m21:   m21 value
+   :type m21: :ref:`float <>` 
+
+   :param m02:   m02 value
+   :type m02: :ref:`float <>` 
+
+   :param m12:   m12 value
+   :type m12: :ref:`float <>` 
+
+   :param m22:   m22 value
+   :type m22: :ref:`float <>` 
+
+   :param m03:   m03 value
+   :type m03: :ref:`float <>` 
+
+   :param m13:   m13 value
+   :type m13: :ref:`float <>` 
+
+   :param m23:   m23 value
+   :type m23: :ref:`float <>` 
+
+.. _SafetyControlUnitConfigElastoStaticCalibrationMatrix:
+
+.. py:class:: ElastoStaticCalibrationMatrix
+
+    Elasto-static calibration matrix
+
+   :canonical: kortex_api.autogen.messages.SafetyControlUnitConfig_pb2.ElastoStaticCalibrationMatrix
+
+   :param cx:   cx value
+   :type cx: :ref:`float <>` 
+
+   :param cy:   cy value
+   :type cy: :ref:`float <>` 
+
+   :param cz:   cz value
+   :type cz: :ref:`float <>` 
+
+   :param crx:   crx value
+   :type crx: :ref:`float <>` 
+
+   :param cry:   cry value
+   :type cry: :ref:`float <>` 
+
+   :param crz:   crz value
+   :type crz: :ref:`float <>` 
+
+.. _SafetyControlUnitConfigSafetyParametersChecksumChangeNotification:
+
+.. py:class:: SafetyParametersChecksumChangeNotification
+
+    Notification about a safety parameters checksum change event
+
+   :canonical: kortex_api.autogen.messages.SafetyControlUnitConfig_pb2.SafetyParametersChecksumChangeNotification
+
+   :param safety_parameters_checksum:   New Safety parameters checksum
+   :type safety_parameters_checksum: :ref:`CRC32Checksum <CommonCRC32Checksum>` 
+
+   :param generic_info:   Generic notification information
+   :type generic_info: :ref:`NotificationInformation <CommonNotificationInformation>` 

@@ -1,0 +1,161 @@
+================================
+PluginManager
+================================
+    
+.. py:currentmodule:: kortex_api.autogen
+
+.. _PluginManagerPluginHandle:
+
+.. py:class:: PluginHandle
+
+    Handle for a Plugin instance
+
+   :canonical: kortex_api.autogen.messages.PluginManager_pb2.PluginHandle
+
+   :param identifier:   Unique identifier
+   :type identifier: :ref:`str <>` 
+
+.. _PluginManagerInstallationOptions:
+
+.. py:class:: InstallationOptions
+
+    Options when updating a plugin
+
+   :canonical: kortex_api.autogen.messages.PluginManager_pb2.InstallationOptions
+
+   :param clear_data:   When true, this flag ensures all configuration data pertaining to the plugin is erased before installation/update
+   :type clear_data: :ref:`bool <>` 
+
+   :param file_id:   File ID to install the plugin from (optional)
+   :type file_id: :ref:`FileId <CommonFileId>` 
+
+.. _PluginManagerPluginInfo:
+
+.. py:class:: PluginInfo
+
+   
+
+   :canonical: kortex_api.autogen.messages.PluginManager_pb2.PluginInfo
+
+   :param handle:   Unique handle to the plugin
+   :type handle: :ref:`PluginHandle <PluginManagerPluginHandle>` 
+
+   :param meta_data:   Manifest file contents for the Plugin
+   :type meta_data: :ref:`MetaData <PluginMetaData>` 
+
+   :param installation_type:   Installation type
+   :type installation_type: :ref:`InstallationType <PluginManagerInstallationType>` 
+
+   :param configuration:   Configuration data
+   :type configuration: :ref:`Configuration <PluginConfiguration>` 
+
+   :param configuration_schema:   Configuration schema
+   :type configuration_schema: :ref:`ConfigurationSchema <PluginConfigurationSchema>` 
+
+   :param actions:   Actions exposed by the plugin
+   :type actions: :ref:`ActionDescription <PluginActionDescription>` [ ]
+
+   :param container_state:   Plugin container current state
+   :type container_state: :ref:`ContainerState <PluginManagerContainerState>` 
+
+   :param plugin_state:   Plugin application current state
+   :type plugin_state: :ref:`Status <PluginStatus>` 
+
+   :param visualizers:   Visualizers exposed by the plugin
+   :type visualizers: :ref:`Visualizer <PluginVisualizer>` [ ]
+
+   :param feedback_schema:   Feedback schema
+   :type feedback_schema: :ref:`FeedbackSchema <PluginFeedbackSchema>` 
+
+.. _PluginManagerPluginUpdatedNotification:
+
+.. py:class:: PluginUpdatedNotification
+
+   
+
+   :canonical: kortex_api.autogen.messages.PluginManager_pb2.PluginUpdatedNotification
+
+   :param handle:   Unique handle
+   :type handle: :ref:`PluginHandle <PluginManagerPluginHandle>` 
+
+   :param timestamp:   This field is deprecated and will be removed in a future release
+   :type timestamp: :ref:`Timestamp <CommonTimestamp>` 
+
+   :param generic_info:   Generic notification information
+   :type generic_info: :ref:`NotificationInformation <CommonNotificationInformation>` 
+
+   :param PluginInfo plugin_info:   Plugin information. Filled when a new plugin is detected.. Part of the ``updated_info`` `Oneof <https://developers.google.com/protocol-buffers/docs/reference/python-generated#oneof>`_.
+
+   :param ContainerState container_state:   Container state was updated. Part of the ``updated_info`` `Oneof <https://developers.google.com/protocol-buffers/docs/reference/python-generated#oneof>`_.
+
+   :param Status plugin_state:   Plugin state was updated. Part of the ``updated_info`` `Oneof <https://developers.google.com/protocol-buffers/docs/reference/python-generated#oneof>`_.
+
+   :param Configuration configuration:   Configuration data was updated. Part of the ``updated_info`` `Oneof <https://developers.google.com/protocol-buffers/docs/reference/python-generated#oneof>`_.
+
+   :param ConfigurationSchema configuration_schema:   Configuration schema was updated. Part of the ``updated_info`` `Oneof <https://developers.google.com/protocol-buffers/docs/reference/python-generated#oneof>`_.
+
+   :param ActionDescription action_description:   An Action description was updated. Part of the ``updated_info`` `Oneof <https://developers.google.com/protocol-buffers/docs/reference/python-generated#oneof>`_.
+
+   :param bool is_removed:   The Plugin was removed from the plugins list. Part of the ``updated_info`` `Oneof <https://developers.google.com/protocol-buffers/docs/reference/python-generated#oneof>`_.
+
+   :param ActionDescriptionList action_list:   The whole Action description list was updated. Part of the ``updated_info`` `Oneof <https://developers.google.com/protocol-buffers/docs/reference/python-generated#oneof>`_.
+
+   :param Visualizer visualizer:   A Visualizer was updated. Part of the ``updated_info`` `Oneof <https://developers.google.com/protocol-buffers/docs/reference/python-generated#oneof>`_.
+
+   :param VisualizerList visualizer_list:   The whole Visualizer list was updated. Part of the ``updated_info`` `Oneof <https://developers.google.com/protocol-buffers/docs/reference/python-generated#oneof>`_.
+
+   :param FeedbackSchema feedback_schema:   Feedback schema was updated. Part of the ``updated_info`` `Oneof <https://developers.google.com/protocol-buffers/docs/reference/python-generated#oneof>`_.
+
+.. _PluginManagerPluginInstallationNotification:
+
+.. py:class:: PluginInstallationNotification
+
+   
+
+   :canonical: kortex_api.autogen.messages.PluginManager_pb2.PluginInstallationNotification
+
+   :param handle:   Unique handle (filled if installation succeded)
+   :type handle: :ref:`PluginHandle <PluginManagerPluginHandle>` 
+
+   :param package_name:   Package name for the installed plugin
+   :type package_name: :ref:`str <>` 
+
+   :param event:   Installation event
+   :type event: :ref:`PluginInstallationEvent <PluginManagerPluginInstallationEvent>` 
+
+   :param details:   Details on the event
+   :type details: :ref:`str <>` 
+
+   :param timestamp:   This field is deprecated and will be removed in a future release
+   :type timestamp: :ref:`Timestamp <CommonTimestamp>` 
+
+   :param generic_info:   Generic notification information
+   :type generic_info: :ref:`NotificationInformation <CommonNotificationInformation>` 
+
+.. _PluginManagerPluginInfoList:
+
+.. py:class:: PluginInfoList
+
+   
+
+   :canonical: kortex_api.autogen.messages.PluginManager_pb2.PluginInfoList
+
+   :param plugin_info_list:  
+   :type plugin_info_list: :ref:`PluginInfo <PluginManagerPluginInfo>` [ ]
+
+.. _PluginManagerPluginScanResponse:
+
+.. py:class:: PluginScanResponse
+
+    This is the scan response message a plugin sends internally when pinged by the PluginManager
+
+   :canonical: kortex_api.autogen.messages.PluginManager_pb2.PluginScanResponse
+
+   :param meta_data:   Plugin meta-data
+   :type meta_data: :ref:`MetaData <PluginMetaData>` 
+
+   :param broker_address:   Broker IP address which the Plugin is connected to
+   :type broker_address: :ref:`str <>` 
+
+   :param handle:   Unique handle
+   :type handle: :ref:`PluginHandle <PluginManagerPluginHandle>` 

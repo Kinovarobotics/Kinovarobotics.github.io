@@ -1,0 +1,260 @@
+================================
+BaseCyclic
+================================
+    
+.. py:currentmodule:: kortex_api.autogen
+
+.. _BaseCyclicBaseFeedback:
+
+.. py:class:: BaseFeedback
+
+    Defines the feedback provided by the base
+
+   :canonical: kortex_api.autogen.messages.BaseCyclic_pb2.BaseFeedback
+
+   :param active_state_connection_identifier:   Connection identifier of the last processed command which triggered an arm state change
+   :type active_state_connection_identifier: :ref:`int <>` 
+
+   :param active_state:   Active state of the arm
+   :type active_state: :ref:`ArmState <CommonArmState>` 
+
+   :param arm_voltage:   Arm voltage (in Volts)
+   :type arm_voltage: :ref:`float <>` 
+
+   :param arm_current:   Arm current (in Amperes)
+   :type arm_current: :ref:`float <>` 
+
+   :param temperature_cpu:   CPU temperature (in degree Celsius)
+   :type temperature_cpu: :ref:`float <>` 
+
+   :param temperature_ambient:   Ambient temperature (in degree Celsius)
+   :type temperature_ambient: :ref:`float <>` 
+
+   :param imu_acceleration_x:   IMU Measured acceleration (X-Axis) of the base (in meters per second squared)
+   :type imu_acceleration_x: :ref:`float <>` 
+
+   :param imu_acceleration_y:   IMU Measured acceleration (Y-Axis) of the base (in meters per second squared)
+   :type imu_acceleration_y: :ref:`float <>` 
+
+   :param imu_acceleration_z:   IMU Measured acceleration (Z-Axis) of the base (in meters per second squared)
+   :type imu_acceleration_z: :ref:`float <>` 
+
+   :param imu_angular_velocity_x:   IMU Measured angular velocity (X-Axis) of the base (in degrees per second)
+   :type imu_angular_velocity_x: :ref:`float <>` 
+
+   :param imu_angular_velocity_y:   IMU Measured angular velocity (Y-Axis) of the base (in degrees per second)
+   :type imu_angular_velocity_y: :ref:`float <>` 
+
+   :param imu_angular_velocity_z:   IMU Measured angular velocity (Z-Axis) of the base (in degrees per second)
+   :type imu_angular_velocity_z: :ref:`float <>` 
+
+   :param tool_pose_x:   Measured Cartesian position (X-Axis) of the tool (in meters)
+   :type tool_pose_x: :ref:`float <>` 
+
+   :param tool_pose_y:   Measured Cartesian position (Y-Axis) of the tool (in meters)
+   :type tool_pose_y: :ref:`float <>` 
+
+   :param tool_pose_z:   Measured Cartesian position (Z-Axis) of the tool (in meters)
+   :type tool_pose_z: :ref:`float <>` 
+
+   :param tool_pose_theta_x:   Measured Cartesian orientation (X-Axis) of the tool (in degrees)
+   :type tool_pose_theta_x: :ref:`float <>` 
+
+   :param tool_pose_theta_y:   Measured Cartesian orientation (Y-Axis) of the tool (in degrees)
+   :type tool_pose_theta_y: :ref:`float <>` 
+
+   :param tool_pose_theta_z:   Measured Cartesian orientation (Z-Axis) of the tool (in degrees)
+   :type tool_pose_theta_z: :ref:`float <>` 
+
+   :param tool_twist_linear_x:   Measured Cartesian linear velocity (X-Axis) of the tool (in meters per second)
+   :type tool_twist_linear_x: :ref:`float <>` 
+
+   :param tool_twist_linear_y:   Measured Cartesian linear velocity (Y-Axis) of the tool (in meters per second)
+   :type tool_twist_linear_y: :ref:`float <>` 
+
+   :param tool_twist_linear_z:   Measured Cartesian linear velocity (Z-Axis) of the tool (in meters per second)
+   :type tool_twist_linear_z: :ref:`float <>` 
+
+   :param tool_twist_angular_x:   Measured Cartesian angular velocity (X-Axis) of the tool (in degrees per second)
+   :type tool_twist_angular_x: :ref:`float <>` 
+
+   :param tool_twist_angular_y:   Measured Cartesian angular velocity (Y-Axis) of the tool (in degrees per second)
+   :type tool_twist_angular_y: :ref:`float <>` 
+
+   :param tool_twist_angular_z:   Measured Cartesian angular velocity (Z-Axis) of the tool (in degrees per second)
+   :type tool_twist_angular_z: :ref:`float <>` 
+
+   :param tool_external_wrench_force_x:   Computed force in X-Axis from external wrench (in Newtons)
+   :type tool_external_wrench_force_x: :ref:`float <>` 
+
+   :param tool_external_wrench_force_y:   Computed force in Y-Axis from external wrench (in Newtons)
+   :type tool_external_wrench_force_y: :ref:`float <>` 
+
+   :param tool_external_wrench_force_z:   Computed force in Z-Axis from external wrench (in Newtons)
+   :type tool_external_wrench_force_z: :ref:`float <>` 
+
+   :param tool_external_wrench_torque_x:   Computed torque about X-axis from external wrench (in Newton-meters)
+   :type tool_external_wrench_torque_x: :ref:`float <>` 
+
+   :param tool_external_wrench_torque_y:   Computed torque about Y-axis from external wrench (in Newton-meters)
+   :type tool_external_wrench_torque_y: :ref:`float <>` 
+
+   :param tool_external_wrench_torque_z:   Computed torque about Z-axis from external wrench (in Newton-meters)
+   :type tool_external_wrench_torque_z: :ref:`float <>` 
+
+   :param fault_bank_a:   The arm fault flags bank A (see Base.BaseDiagnosticIdentifierBankA)
+   :type fault_bank_a: :ref:`int <>` 
+
+   :param fault_bank_b:   The arm fault flags bank B (see Base.BaseDiagnosticIdentifierBankB)
+   :type fault_bank_b: :ref:`int <>` 
+
+   :param warning_bank_a:   The arm warning flags bank A
+   :type warning_bank_a: :ref:`int <>` 
+
+   :param warning_bank_b:   The arm warning flags bank B
+   :type warning_bank_b: :ref:`int <>` 
+
+   :param commanded_tool_pose_x:   Commanded Cartesian position (X-Axis) of the tool (in meters)
+   :type commanded_tool_pose_x: :ref:`float <>` 
+
+   :param commanded_tool_pose_y:   Commanded Cartesian position (Y-Axis) of the tool (in meters)
+   :type commanded_tool_pose_y: :ref:`float <>` 
+
+   :param commanded_tool_pose_z:   Commanded Cartesian position (Z-Axis) of the tool (in meters)
+   :type commanded_tool_pose_z: :ref:`float <>` 
+
+   :param commanded_tool_pose_theta_x:   Commanded Cartesian orientation (X-Axis) of the tool (in degrees)
+   :type commanded_tool_pose_theta_x: :ref:`float <>` 
+
+   :param commanded_tool_pose_theta_y:   Commanded Cartesian orientation (Y-Axis) of the tool (in degrees)
+   :type commanded_tool_pose_theta_y: :ref:`float <>` 
+
+   :param commanded_tool_pose_theta_z:   Commanded Cartesian orientation (Z-Axis) of the tool (in degrees)
+   :type commanded_tool_pose_theta_z: :ref:`float <>` 
+
+   :param operating_mode:   Current operating mode of the arm (only applicable if active_state is operational or recovery)
+   :type operating_mode: :ref:`OperatingModeType <CommonOperatingModeType>` 
+
+   :param enabling_device_state:   Current enabling device state. True is pressed, false if released
+   :type enabling_device_state: :ref:`bool <>` 
+
+   :param scu_fault_bank_a:   The SCU diagnostic flags bank A (see Base.LinkSCUDiagnosticIdentifierBankA)
+   :type scu_fault_bank_a: :ref:`int <>` 
+
+   :param scu_fault_bank_b:   The SCU diagnostic flags bank B (see Base.LinkSCUDiagnosticIdentifierBankB)
+   :type scu_fault_bank_b: :ref:`int <>` 
+
+   :param scu_fault_bank_c:   The SCU diagnostic flags bank C (see Base.LinkSCUDiagnosticIdentifierBankC)
+   :type scu_fault_bank_c: :ref:`int <>` 
+
+   :param scu_fault_bank_d:   The SCU diagnostic flags bank D (see Base.LinkSCUDiagnosticIdentifierBankD)
+   :type scu_fault_bank_d: :ref:`int <>` 
+
+   :param flange_pose:   Measured Pose of the flange
+   :type flange_pose: :ref:`Pose <BasePose>` 
+
+   :param is_emergency_stop_activated:   Emergency stop state. True if pressed, false otherwise
+   :type is_emergency_stop_activated: :ref:`bool <>` 
+
+   :param active_payload:   Active Payload (in kg)
+   :type active_payload: :ref:`float <>` 
+
+   :param state_bank:   State of the robot arm (see Base.LinkStateIdentifierBank)
+   :type state_bank: :ref:`int <>` 
+
+.. _BaseCyclicFieldCustomType:
+
+.. py:class:: FieldCustomType
+
+    Custom data field
+
+   :canonical: kortex_api.autogen.messages.BaseCyclic_pb2.FieldCustomType
+
+   :param command_list:   Command list
+   :type command_list: :ref:`CustomType <BaseCyclicCustomType>` [ ]
+
+.. _BaseCyclicFieldCustomData:
+
+.. py:class:: FieldCustomData
+
+    Custom data field
+
+   :canonical: kortex_api.autogen.messages.BaseCyclic_pb2.FieldCustomData
+
+   :param float float:   Float. Part of the ``values`` `Oneof <https://developers.google.com/protocol-buffers/docs/reference/python-generated#oneof>`_.
+
+   :param int fix32:   Fixed32. Part of the ``values`` `Oneof <https://developers.google.com/protocol-buffers/docs/reference/python-generated#oneof>`_.
+
+   :param int int32:   Int32. Part of the ``values`` `Oneof <https://developers.google.com/protocol-buffers/docs/reference/python-generated#oneof>`_.
+
+   :param int uint32:   Unit32. Part of the ``values`` `Oneof <https://developers.google.com/protocol-buffers/docs/reference/python-generated#oneof>`_.
+
+   :param bool bool:   Bool. Part of the ``values`` `Oneof <https://developers.google.com/protocol-buffers/docs/reference/python-generated#oneof>`_.
+
+.. _BaseCyclicRepeatedFieldCustomData:
+
+.. py:class:: RepeatedFieldCustomData
+
+   
+
+   :canonical: kortex_api.autogen.messages.BaseCyclic_pb2.RepeatedFieldCustomData
+
+   :param data:   Data
+   :type data: :ref:`FieldCustomData <BaseCyclicFieldCustomData>` [ ]
+
+.. _BaseCyclicCustomData:
+
+.. py:class:: CustomData
+
+    Custom development data, content varies according to debug needs
+
+   :canonical: kortex_api.autogen.messages.BaseCyclic_pb2.CustomData
+
+   :param frame_id:   Frame ID
+   :type frame_id: :ref:`int <>` 
+
+   :param custom_datas:   Custom data
+   :type custom_datas: :ref:`RepeatedFieldCustomData <BaseCyclicRepeatedFieldCustomData>` [ ]
+
+   :param actuators_custom_data:   Actuator custom data
+   :type actuators_custom_data: :ref:`CustomData <ActuatorCyclicCustomData>` [ ]
+
+   :param wrist_custom_data:   Wrist module custom data
+   :type wrist_custom_data: :ref:`CustomData <WristCyclicCustomData>` 
+
+.. _BaseCyclicCommand:
+
+.. py:class:: Command
+
+    Defines a command provided to robot devices (actuators and interface)
+
+   :canonical: kortex_api.autogen.messages.BaseCyclic_pb2.Command
+
+   :param frame_id:   Frame ID
+   :type frame_id: :ref:`int <>` 
+
+   :param actuators:   Actuator command
+   :type actuators: :ref:`Command <ActuatorCyclicCommand>` [ ]
+
+   :param wrist:   Wrist module command
+   :type wrist: :ref:`Command <WristCyclicCommand>` 
+
+.. _BaseCyclicFeedback:
+
+.. py:class:: Feedback
+
+    Defines the feedback provided by robot devices (base, actuators and interface)
+
+   :canonical: kortex_api.autogen.messages.BaseCyclic_pb2.Feedback
+
+   :param frame_id:   Frame ID
+   :type frame_id: :ref:`int <>` 
+
+   :param base:   Base feedback
+   :type base: :ref:`BaseFeedback <BaseCyclicBaseFeedback>` 
+
+   :param actuators:   Actuator feedback
+   :type actuators: :ref:`Feedback <ActuatorCyclicFeedback>` [ ]
+
+   :param wrist:   Wrist module feedback
+   :type wrist: :ref:`Feedback <WristCyclicFeedback>` 

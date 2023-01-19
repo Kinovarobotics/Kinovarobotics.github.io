@@ -1,0 +1,109 @@
+================================
+SafetyIO
+================================
+    
+.. py:currentmodule:: kortex_api.autogen
+
+.. _SafetyIOServiceVersion:
+
+.. py:class:: ServiceVersion
+
+     Identifies SafetyIO service current version
+
+    :canonical: kortex_api.autogen.messages.SafetyIO_pb2.ServiceVersion
+    .. py:attribute:: RESERVED_0 (0):   Reserved
+
+    .. py:attribute:: CURRENT_VERSION (1):   Current version
+
+.. _SafetyIOSafetyIOType:
+
+.. py:class:: SafetyIOType
+
+     Safety functions status
+
+    :canonical: kortex_api.autogen.messages.SafetyIO_pb2.SafetyIOType
+    .. py:attribute:: SAFETY_IO_TYPE_UNSPECIFIED (0):   Unspecified status
+
+    .. py:attribute:: SAFETY_IO_TYPE_INPUT (1):   Safety input type
+
+    .. py:attribute:: SAFETY_IO_TYPE_OUTPUT (2):   Safety output type
+
+.. _SafetyIOSafetyInputFunction:
+
+.. py:class:: SafetyInputFunction
+
+     Safety input functions
+
+    :canonical: kortex_api.autogen.messages.SafetyIO_pb2.SafetyInputFunction
+    .. py:attribute:: SAFETY_INPUT_FUNCTION_UNASSIGNED (0):   Unassigned function
+
+    .. py:attribute:: SAFETY_INPUT_FUNCTION_PROTECTIVE_STOP_MANUAL_RESET (1):   Protective stop with manual reset
+
+    .. py:attribute:: SAFETY_INPUT_FUNCTION_PROTECTIVE_STOP_RESET (2):   Protective stop reset (resume for manual reset)
+
+    .. py:attribute:: SAFETY_INPUT_FUNCTION_PROTECTIVE_STOP_AUTOMATIC_RESET (3):   Protective stop with automatic reset
+
+    .. py:attribute:: SAFETY_INPUT_FUNCTION_REDUCED_MODE (4):   Reduced mode
+
+    .. py:attribute:: SAFETY_INPUT_FUNCTION_ENABLING_DEVICE (5):   Enabling device
+
+    .. py:attribute:: SAFETY_INPUT_FUNCTION_ACKNOWLEDGE (6):   Acknowledge function
+
+.. _SafetyIOSafetyOutputEvent:
+
+.. py:class:: SafetyOutputEvent
+
+     Safety output event
+
+    :canonical: kortex_api.autogen.messages.SafetyIO_pb2.SafetyOutputEvent
+    .. py:attribute:: SAFETY_OUTPUT_EVENT_UNASSIGNED (0):   Unassigned event
+
+    .. py:attribute:: SAFETY_OUTPUT_EVENT_EMERGENCY_STOP (1):   Emergency stop event
+
+    .. py:attribute:: SAFETY_OUTPUT_EVENT_PROTECTIVE_STOP (2):   Protective stop event
+
+    .. py:attribute:: SAFETY_OUTPUT_EVENT_MONITORED_STOP (3):   Monitored stop event
+
+    .. py:attribute:: SAFETY_OUTPUT_EVENT_ARM_MOVING (4):   Arm moving event
+
+    .. py:attribute:: SAFETY_OUTPUT_EVENT_NORMAL_SPEED_MODE (5):   Normal speed mode event
+
+    .. py:attribute:: SAFETY_OUTPUT_EVENT_DRIVE_POWER (6):   Drive power event
+
+.. _SafetyIOSafetyIOChannelStatusType:
+
+.. py:class:: SafetyIOChannelStatusType
+
+     Safety io channel status
+
+    :canonical: kortex_api.autogen.messages.SafetyIO_pb2.SafetyIOChannelStatusType
+    .. py:attribute:: SAFETY_IO_CHANNEL_STATUS_UNSPECIFIED (0):   0x0 - Unspecified status
+
+    .. py:attribute:: SAFETY_IO_CHANNEL_STATUS_0_TRIGGERED (1):   0x1 - Channel 0 triggered
+
+    .. py:attribute:: SAFETY_IO_CHANNEL_STATUS_1_TRIGGERED (2):   0x2 - Channel 1 triggered
+
+    .. py:attribute:: SAFETY_IO_CHANNEL_STATUS_2_TRIGGERED (4):   0x4 - Channel 2 triggered
+
+    .. py:attribute:: SAFETY_IO_CHANNEL_STATUS_3_TRIGGERED (8):   0x8 - Channel 3 triggered
+
+    .. py:attribute:: SAFETY_IO_CHANNEL_STATUS_4_TRIGGERED (16):   0x10 - Channel 4 triggered
+
+    .. py:attribute:: SAFETY_IO_CHANNEL_STATUS_5_TRIGGERED (32):   0x20 - Channel 5 triggered
+
+    .. py:attribute:: SAFETY_IO_CHANNEL_STATUS_6_TRIGGERED (64):   0x40 - Channel 6 triggered
+
+    .. py:attribute:: SAFETY_IO_CHANNEL_STATUS_7_TRIGGERED (128):   0x80 - Channel 7 triggered
+
+.. _SafetyIOSafetyIOChangeEvent:
+
+.. py:class:: SafetyIOChangeEvent
+
+     Safety io change event
+
+    :canonical: kortex_api.autogen.messages.SafetyIO_pb2.SafetyIOChangeEvent
+    .. py:attribute:: SAFETY_IO_CHANGE_EVENT_UNSPECIFIED (0):   Unspecified change event
+
+    .. py:attribute:: SAFETY_IO_CHANGE_EVENT_CONFIG (1):   Safety io status change event
+
+    .. py:attribute:: SAFETY_IO_CHANGE_EVENT_STATUS (2):   Safety io config change event

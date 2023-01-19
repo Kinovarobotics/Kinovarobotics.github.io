@@ -1,0 +1,1845 @@
+================================
+Base
+================================
+    
+.. py:currentmodule:: kortex_api.autogen
+
+.. _BaseArmCalibrationStatus:
+
+.. py:class:: ArmCalibrationStatus
+
+    Arm calibration status
+
+   :canonical: kortex_api.autogen.messages.Base_pb2.ArmCalibrationStatus
+
+   :param status:   Arm calibration status
+   :type status: :ref:`ArmCalibrationStatusType <BaseArmCalibrationStatusType>` 
+
+.. _BaseArmCalibrationStatusChangeNotification:
+
+.. py:class:: ArmCalibrationStatusChangeNotification
+
+    Arm calibration status change notification
+
+   :canonical: kortex_api.autogen.messages.Base_pb2.ArmCalibrationStatusChangeNotification
+
+   :param status:   Arm calibration status concerned by the change
+   :type status: :ref:`ArmCalibrationStatusType <BaseArmCalibrationStatusType>` 
+
+   :param generic_info:   Generic notification information
+   :type generic_info: :ref:`NotificationInformation <CommonNotificationInformation>` 
+
+.. _BaseFSReadArgs:
+
+.. py:class:: FSReadArgs
+
+    File system read argument
+
+   :canonical: kortex_api.autogen.messages.Base_pb2.FSReadArgs
+
+   :param path:   File path
+   :type path: :ref:`FSPath <CommonFSPath>` 
+
+   :param offset:   Byte offset from beginning of file.
+   :type offset: :ref:`int <>` 
+
+   :param len:   Number of bytes to read.
+   :type len: :ref:`int <>` 
+
+.. _BaseFSReadData:
+
+.. py:class:: FSReadData
+
+    File system read data
+
+   :canonical: kortex_api.autogen.messages.Base_pb2.FSReadData
+
+   :param data:   Data to read
+   :type data: :ref:`bytes <>` 
+
+.. _BaseFSWriteArgs:
+
+.. py:class:: FSWriteArgs
+
+    File system write argument
+
+   :canonical: kortex_api.autogen.messages.Base_pb2.FSWriteArgs
+
+   :param path:   File path
+   :type path: :ref:`FSPath <CommonFSPath>` 
+
+   :param append:   Append data to end of file if true. File is replaced if false. False by default.
+   :type append: :ref:`bool <>` 
+
+   :param data:   Data to write.
+   :type data: :ref:`bytes <>` 
+
+.. _BaseFSListArgs:
+
+.. py:class:: FSListArgs
+
+    File system list argument
+
+   :canonical: kortex_api.autogen.messages.Base_pb2.FSListArgs
+
+   :param path:   File path
+   :type path: :ref:`FSPath <CommonFSPath>` 
+
+   :param recursive:   Perform recursive listing (default to false)
+   :type recursive: :ref:`bool <>` 
+
+   :param extension:   File extension filter (default all extensions).
+   :type extension: :ref:`str <>` 
+
+.. _BaseFullUserProfile:
+
+.. py:class:: FullUserProfile
+
+    Information about a user, together with a password. Full set of information needed to create a user profile.
+
+   :canonical: kortex_api.autogen.messages.Base_pb2.FullUserProfile
+
+   :param user_profile:   Information about the user, including its username.
+   :type user_profile: :ref:`UserProfile <BaseUserProfile>` 
+
+   :param password:   User's password
+   :type password: :ref:`str <>` 
+
+.. _BaseUserProfile:
+
+.. py:class:: UserProfile
+
+    Information about a user
+
+   :canonical: kortex_api.autogen.messages.Base_pb2.UserProfile
+
+   :param handle:   User handle (no need to set it with CreateUserProfile())
+   :type handle: :ref:`UserProfileHandle <CommonUserProfileHandle>` 
+
+   :param username:   Username, which is used to connect to robot (or login via Web App)
+   :type username: :ref:`str <>` 
+
+   :param firstname:   User's first name
+   :type firstname: :ref:`str <>` 
+
+   :param lastname:   User's last name
+   :type lastname: :ref:`str <>` 
+
+   :param application_data:   Application data (reserved for use by Web App)
+   :type application_data: :ref:`str <>` 
+
+   :param roles:   User roles (read only)
+   :type roles: :ref:`UserRole <CommonUserRole>` [ ]
+
+.. _BaseUserProfileList:
+
+.. py:class:: UserProfileList
+
+    Array of user profiles
+
+   :canonical: kortex_api.autogen.messages.Base_pb2.UserProfileList
+
+   :param user_profiles:   User profile
+   :type user_profiles: :ref:`UserProfile <BaseUserProfile>` [ ]
+
+.. _BaseUserList:
+
+.. py:class:: UserList
+
+    Array of user profile handles
+
+   :canonical: kortex_api.autogen.messages.Base_pb2.UserList
+
+   :param user_handles:   User handle
+   :type user_handles: :ref:`UserProfileHandle <CommonUserProfileHandle>` [ ]
+
+.. _BasePasswordChange:
+
+.. py:class:: PasswordChange
+
+    Information required to change user password
+
+   :canonical: kortex_api.autogen.messages.Base_pb2.PasswordChange
+
+   :param handle:   User handle
+   :type handle: :ref:`UserProfileHandle <CommonUserProfileHandle>` 
+
+   :param old_password:   Current password
+   :type old_password: :ref:`str <>` 
+
+   :param new_password:   New password
+   :type new_password: :ref:`str <>` 
+
+.. _BaseActionHandle:
+
+.. py:class:: ActionHandle
+
+    Reference to a specific action
+
+   :canonical: kortex_api.autogen.messages.Base_pb2.ActionHandle
+
+   :param identifier:   Action identifier
+   :type identifier: :ref:`int <>` 
+
+   :param action_type:   Action type
+   :type action_type: :ref:`ActionType <BaseActionType>` 
+
+   :param permission:   Permission of specified Action entity. Must use 'Kinova.Api.Common.Permission' enum.
+   :type permission: :ref:`int <>` 
+
+.. _BaseRequestedActionType:
+
+.. py:class:: RequestedActionType
+
+    Message used for requesting all action instances of a specific action type
+
+   :canonical: kortex_api.autogen.messages.Base_pb2.RequestedActionType
+
+   :param action_type:   Action type
+   :type action_type: :ref:`ActionType <BaseActionType>` 
+
+.. _BaseAction:
+
+.. py:class:: Action
+
+    Defines an action. An action is some task performed on the robot.
+
+   :canonical: kortex_api.autogen.messages.Base_pb2.Action
+
+   :param handle:   Reference to the action (useful when updating an existing action)
+   :type handle: :ref:`ActionHandle <BaseActionHandle>` 
+
+   :param name:   Action friendly name
+   :type name: :ref:`str <>` 
+
+   :param application_data:   Application data (reserved for use by Web App)
+   :type application_data: :ref:`str <>` 
+
+   :param TwistCommand send_twist_command:   Control the tool in velocity. Part of the ``action_parameters`` `Oneof <https://developers.google.com/protocol-buffers/docs/reference/python-generated#oneof>`_.
+
+   :param JointSpeeds send_joint_speeds:   Action to control each joint speed. Part of the ``action_parameters`` `Oneof <https://developers.google.com/protocol-buffers/docs/reference/python-generated#oneof>`_.
+
+   :param HandGuidingMode toggle_hand_guiding_mode:   Enable or disable the Hand-Guiding mode. Part of the ``action_parameters`` `Oneof <https://developers.google.com/protocol-buffers/docs/reference/python-generated#oneof>`_.
+
+   :param SwitchControlMapping switch_control_mapping:   Switch the active controller map. Part of the ``action_parameters`` `Oneof <https://developers.google.com/protocol-buffers/docs/reference/python-generated#oneof>`_.
+
+   :param JointNavigationDirection navigate_joints:   Select the next actuator to control in a map. Part of the ``action_parameters`` `Oneof <https://developers.google.com/protocol-buffers/docs/reference/python-generated#oneof>`_.
+
+   :param NavigationDirection navigate_mappings:   Select a different map. Part of the ``action_parameters`` `Oneof <https://developers.google.com/protocol-buffers/docs/reference/python-generated#oneof>`_.
+
+   :param ChangeTwist change_twist:   Change tool twist. Part of the ``action_parameters`` `Oneof <https://developers.google.com/protocol-buffers/docs/reference/python-generated#oneof>`_.
+
+   :param ChangeJointSpeeds change_joint_speeds:   Change the joint speeds individually. Part of the ``action_parameters`` `Oneof <https://developers.google.com/protocol-buffers/docs/reference/python-generated#oneof>`_.
+
+   :param QuickStop apply_quick_stop:   Apply robot quick stop. Part of the ``action_parameters`` `Oneof <https://developers.google.com/protocol-buffers/docs/reference/python-generated#oneof>`_.
+
+   :param Faults clear_faults:   Clear faults. Robot will be able to move if there is no more fault (see BaseCyclic.BaseFeedback.[fault_bank_a | fault_bank_b]). Part of the ``action_parameters`` `Oneof <https://developers.google.com/protocol-buffers/docs/reference/python-generated#oneof>`_.
+
+   :param ActionHandle execute_action:   Execute an existing action. Part of the ``action_parameters`` `Oneof <https://developers.google.com/protocol-buffers/docs/reference/python-generated#oneof>`_.
+
+   :param Stop stop_action:   Stop movement. Part of the ``action_parameters`` `Oneof <https://developers.google.com/protocol-buffers/docs/reference/python-generated#oneof>`_.
+
+   :param PreComputedJointTrajectory play_pre_computed_trajectory:   Play a pre-computed joint trajectory. Part of the ``action_parameters`` `Oneof <https://developers.google.com/protocol-buffers/docs/reference/python-generated#oneof>`_.
+
+   :param WaypointList execute_waypoint_list:   Execute a trajectory defined by a series of waypoints. Part of the ``action_parameters`` `Oneof <https://developers.google.com/protocol-buffers/docs/reference/python-generated#oneof>`_.
+
+   :param ChangePayloadParameters change_payload_parameters:   Change payload parameters. Part of the ``action_parameters`` `Oneof <https://developers.google.com/protocol-buffers/docs/reference/python-generated#oneof>`_.
+
+.. _BaseSwitchControlMapping:
+
+.. py:class:: SwitchControlMapping
+
+    Action parameter to switch the active controller map
+
+   :canonical: kortex_api.autogen.messages.Base_pb2.SwitchControlMapping
+
+   :param controller_identifier:   Identifier of the controller for which changing the active map is requested
+   :type controller_identifier: :ref:`int <>` 
+
+   :param map_group_handle:   Reference to the map group for which the active map needs to change
+   :type map_group_handle: :ref:`MapGroupHandle <BaseMapGroupHandle>` 
+
+   :param map_handle:   Reference to new active map
+   :type map_handle: :ref:`MapHandle <BaseMapHandle>` 
+
+.. _BaseChangePayloadParameters:
+
+.. py:class:: ChangePayloadParameters
+
+    Action to change the payload parameters
+
+   :canonical: kortex_api.autogen.messages.Base_pb2.ChangePayloadParameters
+
+   :param mass:   Payload mass in kilogram
+   :type mass: :ref:`float <>` 
+
+   :param inertia:   Payload inertia in kilogram square meter
+   :type inertia: :ref:`SymmetricMatrix3x3 <CommonSymmetricMatrix3x3>` 
+
+   :param center_of_mass:   Payload center of mass in meter
+   :type center_of_mass: :ref:`CartesianVector <CommonCartesianVector>` 
+
+.. _BaseChangeTwist:
+
+.. py:class:: ChangeTwist
+
+    Action to change the maximum Cartesian velocity by a specific increment
+
+   :canonical: kortex_api.autogen.messages.Base_pb2.ChangeTwist
+
+   :param linear:   Linear Cartesian velocity increment (in meters per second)
+   :type linear: :ref:`float <>` 
+
+   :param angular:   Angular Cartesian velocity increment (in degrees per second)
+   :type angular: :ref:`float <>` 
+
+.. _BaseChangeJointSpeeds:
+
+.. py:class:: ChangeJointSpeeds
+
+    Action to change the maximum angular velocity per joint by a specific increment
+
+   :canonical: kortex_api.autogen.messages.Base_pb2.ChangeJointSpeeds
+
+   :param joint_speeds:   Joint speeds
+   :type joint_speeds: :ref:`JointSpeeds <BaseJointSpeeds>` 
+
+.. _BaseQuickStop:
+
+.. py:class:: QuickStop
+
+    Action to force a quick stop of the robot
+
+   :canonical: kortex_api.autogen.messages.Base_pb2.QuickStop
+
+.. _BaseFaults:
+
+.. py:class:: Faults
+
+    Action to clear faults
+
+   :canonical: kortex_api.autogen.messages.Base_pb2.Faults
+
+.. _BaseStop:
+
+.. py:class:: Stop
+
+    Action to stop robot movement This message is deprecated and will be removed in a future release.
+
+   :canonical: kortex_api.autogen.messages.Base_pb2.Stop
+
+.. _BaseActionList:
+
+.. py:class:: ActionList
+
+    Array of actions
+
+   :canonical: kortex_api.autogen.messages.Base_pb2.ActionList
+
+   :param action_list:   Action
+   :type action_list: :ref:`Action <BaseAction>` [ ]
+
+.. _BaseSsid:
+
+.. py:class:: Ssid
+
+    Wi-Fi SSID
+
+   :canonical: kortex_api.autogen.messages.Base_pb2.Ssid
+
+   :param identifier:   Wi-Fi Service Set Identifier
+   :type identifier: :ref:`str <>` 
+
+.. _BaseCommunicationInterfaceConfiguration:
+
+.. py:class:: CommunicationInterfaceConfiguration
+
+    Configuration information for enabling or disabling a specific communication interface (e.g. Wi-Fi, Wired Ethernet) This message may be removed in a future release. It has been moved to Network service.
+
+   :canonical: kortex_api.autogen.messages.Base_pb2.CommunicationInterfaceConfiguration
+
+   :param type:   Network type (e.g. Wi-Fi, Wired Ethernet)
+   :type type: :ref:`NetworkType <BaseNetworkType>` 
+
+   :param enable:   Enable configuration. Set to true to enable network, false otherwise
+   :type enable: :ref:`bool <>` 
+
+.. _BaseNetworkHandle:
+
+.. py:class:: NetworkHandle
+
+    Reference to a network This is used in various RPC calls. Will be moved out of base.proto eventually.
+
+   :canonical: kortex_api.autogen.messages.Base_pb2.NetworkHandle
+
+   :param type:   Network type
+   :type type: :ref:`NetworkType <BaseNetworkType>` 
+
+.. _BaseIPv4Configuration:
+
+.. py:class:: IPv4Configuration
+
+    IPv4 configuration information This message may be removed in a future release. It has been moved to Network service.
+
+   :canonical: kortex_api.autogen.messages.Base_pb2.IPv4Configuration
+
+   :param ip_address:   IPv4 address
+   :type ip_address: :ref:`int <>` 
+
+   :param subnet_mask:   IPv4 subnet mask
+   :type subnet_mask: :ref:`int <>` 
+
+   :param default_gateway:   Gateway IPv4 address
+   :type default_gateway: :ref:`int <>` 
+
+   :param dhcp_enabled:   Enable automatic (DHCP) IPv4 configuration. Set to true to enable DHCP instead of static configuration.
+   :type dhcp_enabled: :ref:`bool <>` 
+
+.. _BaseIPv4Information:
+
+.. py:class:: IPv4Information
+
+    Information about an IPv4 endpoint This message may be removed in a future release. It has been moved to Network service.
+
+   :canonical: kortex_api.autogen.messages.Base_pb2.IPv4Information
+
+   :param ip_address:   IPv4 address
+   :type ip_address: :ref:`int <>` 
+
+   :param subnet_mask:   IPv4 subnet mask
+   :type subnet_mask: :ref:`int <>` 
+
+   :param default_gateway:   Gateway IPv4 address
+   :type default_gateway: :ref:`int <>` 
+
+.. _BaseFullIPv4Configuration:
+
+.. py:class:: FullIPv4Configuration
+
+    IPv4 configuration for a specific network This message may be removed in a future release. It has been moved to Network service.
+
+   :canonical: kortex_api.autogen.messages.Base_pb2.FullIPv4Configuration
+
+   :param handle:   Network handle
+   :type handle: :ref:`NetworkHandle <BaseNetworkHandle>` 
+
+   :param ipv4_configuration:   IPv4 configuration
+   :type ipv4_configuration: :ref:`IPv4Configuration <BaseIPv4Configuration>` 
+
+.. _BaseWifiInformation:
+
+.. py:class:: WifiInformation
+
+    Information about a specific Wi-Fi network This message may be removed in a future release. It has been moved to Network service.
+
+   :canonical: kortex_api.autogen.messages.Base_pb2.WifiInformation
+
+   :param ssid:   SSID
+   :type ssid: :ref:`Ssid <BaseSsid>` 
+
+   :param security_type:   Wi-Fi security type
+   :type security_type: :ref:`int <>` 
+
+   :param encryption_type:   Wi-Fi encryption type
+   :type encryption_type: :ref:`int <>` 
+
+   :param signal_quality:   Wi-Fi signal quality
+   :type signal_quality: :ref:`SignalQuality <BaseSignalQuality>` 
+
+   :param signal_strength:   Wi-Fi signal power in dBm
+   :type signal_strength: :ref:`int <>` 
+
+   :param frequency:   Wi-Fi operating frequency (channel) in MHz
+   :type frequency: :ref:`int <>` 
+
+   :param channel:   Wi-Fi operating channel
+   :type channel: :ref:`int <>` 
+
+.. _BaseWifiInformationList:
+
+.. py:class:: WifiInformationList
+
+    Array of information about different Wi-Fi networks This message may be removed in a future release. It has been moved to Network service.
+
+   :canonical: kortex_api.autogen.messages.Base_pb2.WifiInformationList
+
+   :param wifi_information_list:   Wi-Fi information
+   :type wifi_information_list: :ref:`WifiInformation <BaseWifiInformation>` [ ]
+
+.. _BaseWifiConfiguration:
+
+.. py:class:: WifiConfiguration
+
+    Wi-Fi connection configuration This message may be removed in a future release. It has been moved to Network service.
+
+   :canonical: kortex_api.autogen.messages.Base_pb2.WifiConfiguration
+
+   :param ssid:   SSID
+   :type ssid: :ref:`Ssid <BaseSsid>` 
+
+   :param security_key:   Security key to used when connecting to Wi-Fi network
+   :type security_key: :ref:`str <>` 
+
+   :param connect_automatically:   Connection mode. Set to true so robot automatically connects to this Wi-Fi network at bootup, false otherwise
+   :type connect_automatically: :ref:`bool <>` 
+
+.. _BaseWifiConfigurationList:
+
+.. py:class:: WifiConfigurationList
+
+    Array of Wi-Fi connection configuration for different networks This message may be removed in a future release. It has been moved to Network service.
+
+   :canonical: kortex_api.autogen.messages.Base_pb2.WifiConfigurationList
+
+   :param wifi_configuration_list:   Wi-Fi configurations
+   :type wifi_configuration_list: :ref:`WifiConfiguration <BaseWifiConfiguration>` [ ]
+
+.. _BaseRotationMatrixRow:
+
+.. py:class:: RotationMatrixRow
+
+    This message will be removed in a future release. It has been moved to Common service.
+
+   :canonical: kortex_api.autogen.messages.Base_pb2.RotationMatrixRow
+
+   :param column1:   Value between -1.0 and 1.0
+   :type column1: :ref:`float <>` 
+
+   :param column2:   Value between -1.0 and 1.0
+   :type column2: :ref:`float <>` 
+
+   :param column3:   Value between -1.0 and 1.0
+   :type column3: :ref:`float <>` 
+
+.. _BaseRotationMatrix:
+
+.. py:class:: RotationMatrix
+
+    This message will be removed in a future release. It has been moved to Common service.
+
+   :canonical: kortex_api.autogen.messages.Base_pb2.RotationMatrix
+
+   :param row1:   First rotation matrix row
+   :type row1: :ref:`RotationMatrixRow <BaseRotationMatrixRow>` 
+
+   :param row2:   Second rotation matrix row
+   :type row2: :ref:`RotationMatrixRow <BaseRotationMatrixRow>` 
+
+   :param row3:   Third rotation matrix row
+   :type row3: :ref:`RotationMatrixRow <BaseRotationMatrixRow>` 
+
+.. _BaseConfigurationChangeNotification:
+
+.. py:class:: ConfigurationChangeNotification
+
+    Representation of a configuration change event
+
+   :canonical: kortex_api.autogen.messages.Base_pb2.ConfigurationChangeNotification
+
+   :param event:   Configuration event
+   :type event: :ref:`ConfigurationNotificationEvent <BaseConfigurationNotificationEvent>` 
+
+   :param generic_info:   Generic notification information
+   :type generic_info: :ref:`NotificationInformation <CommonNotificationInformation>` 
+
+   :param ActionHandle action_handle:   Action for which the configuration changed. Part of the ``configuration_change`` `Oneof <https://developers.google.com/protocol-buffers/docs/reference/python-generated#oneof>`_.
+
+   :param MappingHandle mapping_handle:   Mapping for which the configuration changed. Part of the ``configuration_change`` `Oneof <https://developers.google.com/protocol-buffers/docs/reference/python-generated#oneof>`_.
+
+   :param MapGroupHandle map_group_handle:   Map group for which the configuration changed. Part of the ``configuration_change`` `Oneof <https://developers.google.com/protocol-buffers/docs/reference/python-generated#oneof>`_.
+
+   :param MapHandle map_handle:   Map for which the configuration changed. Part of the ``configuration_change`` `Oneof <https://developers.google.com/protocol-buffers/docs/reference/python-generated#oneof>`_.
+
+   :param UserProfileHandle user_profile_handle:   User Profile for which the configuration changed. Part of the ``configuration_change`` `Oneof <https://developers.google.com/protocol-buffers/docs/reference/python-generated#oneof>`_.
+
+   :param DiagnosticHandle diagnostic_handle:   Diagnostic for which the configuration changed. Part of the ``configuration_change`` `Oneof <https://developers.google.com/protocol-buffers/docs/reference/python-generated#oneof>`_.
+
+   :param NetworkHandle network_handle:   Network element for which the configuration changed. Part of the ``configuration_change`` `Oneof <https://developers.google.com/protocol-buffers/docs/reference/python-generated#oneof>`_.
+
+   :param Ssid ssid:   Wi-Fi instance for which the configuration changed. Part of the ``configuration_change`` `Oneof <https://developers.google.com/protocol-buffers/docs/reference/python-generated#oneof>`_.
+
+   :param ControllerHandle controller_handle:   Controller instance for which the configuration changed. Part of the ``configuration_change`` `Oneof <https://developers.google.com/protocol-buffers/docs/reference/python-generated#oneof>`_.
+
+.. _BaseServoingModeInformation:
+
+.. py:class:: ServoingModeInformation
+
+    Information about the servoing mode
+
+   :canonical: kortex_api.autogen.messages.Base_pb2.ServoingModeInformation
+
+   :param servoing_mode:   Servoing mode
+   :type servoing_mode: :ref:`ServoingMode <BaseServoingMode>` 
+
+.. _BaseUpdatingModeInformation:
+
+.. py:class:: UpdatingModeInformation
+
+    Information about the updating mode
+
+   :canonical: kortex_api.autogen.messages.Base_pb2.UpdatingModeInformation
+
+   :param updating_mode:   Updating mode
+   :type updating_mode: :ref:`UpdatingMode <BaseUpdatingMode>` 
+
+   :param device_handle:   Device matching updating mode (if applicable)
+   :type device_handle: :ref:`DeviceHandle <CommonDeviceHandle>` 
+
+   :param local_file_uid:   Local file unique identifier (optional)
+   :type local_file_uid: :ref:`FileId <CommonFileId>` 
+
+.. _BaseOperatingModeNotification:
+
+.. py:class:: OperatingModeNotification
+
+    Notification when the operating mode has changed
+
+   :canonical: kortex_api.autogen.messages.Base_pb2.OperatingModeNotification
+
+   :param operating_mode:   New operating mode
+   :type operating_mode: :ref:`OperatingModeType <CommonOperatingModeType>` 
+
+   :param generic_info:   Generic notification information
+   :type generic_info: :ref:`NotificationInformation <CommonNotificationInformation>` 
+
+.. _BaseUpdatingModeNotification:
+
+.. py:class:: UpdatingModeNotification
+
+    Notification about a single updating mode event
+
+   :canonical: kortex_api.autogen.messages.Base_pb2.UpdatingModeNotification
+
+   :param updating_mode:   New updating mode
+   :type updating_mode: :ref:`UpdatingMode <BaseUpdatingMode>` 
+
+   :param device_handle:   Device matching updating mode (if applicable)
+   :type device_handle: :ref:`DeviceHandle <CommonDeviceHandle>` 
+
+   :param generic_info:   Generic notification information
+   :type generic_info: :ref:`NotificationInformation <CommonNotificationInformation>` 
+
+.. _BaseServoingModeNotification:
+
+.. py:class:: ServoingModeNotification
+
+    Notification about a single servoing mode event
+
+   :canonical: kortex_api.autogen.messages.Base_pb2.ServoingModeNotification
+
+   :param servoing_mode:   New servoing mode
+   :type servoing_mode: :ref:`ServoingMode <BaseServoingMode>` 
+
+   :param generic_info:   Generic notification information
+   :type generic_info: :ref:`NotificationInformation <CommonNotificationInformation>` 
+
+.. _BaseControllerHandle:
+
+.. py:class:: ControllerHandle
+
+    Reference to a specific controller device
+
+   :canonical: kortex_api.autogen.messages.Base_pb2.ControllerHandle
+
+   :param type:   Controller device type
+   :type type: :ref:`ControllerType <BaseControllerType>` 
+
+   :param controller_identifier:   Controller device identifier
+   :type controller_identifier: :ref:`int <>` 
+
+.. _BaseControllerElementHandle:
+
+.. py:class:: ControllerElementHandle
+
+    Reference ro a specific button (or axis) of a controller device
+
+   :canonical: kortex_api.autogen.messages.Base_pb2.ControllerElementHandle
+
+   :param controller_handle:   Controller handle
+   :type controller_handle: :ref:`ControllerHandle <BaseControllerHandle>` 
+
+   :param int button:   Button identifier (only set if 'button' controller event, otherwise zero). Part of the ``identifier`` `Oneof <https://developers.google.com/protocol-buffers/docs/reference/python-generated#oneof>`_.
+
+   :param int axis:   Axis identifier (only set if 'axis' controller event, otherwise zero). Part of the ``identifier`` `Oneof <https://developers.google.com/protocol-buffers/docs/reference/python-generated#oneof>`_.
+
+.. _BaseControllerNotification:
+
+.. py:class:: ControllerNotification
+
+    Notification about a single controller event
+
+   :canonical: kortex_api.autogen.messages.Base_pb2.ControllerNotification
+
+   :param generic_info:   Generic notification information
+   :type generic_info: :ref:`NotificationInformation <CommonNotificationInformation>` 
+
+   :param ControllerState controller_state:   Used to indicate if a controller connection or disconnection event occured. Part of the ``state`` `Oneof <https://developers.google.com/protocol-buffers/docs/reference/python-generated#oneof>`_.
+
+   :param ControllerElementState controller_element:   Used to indicate if a specific button (or axis) was pressed (or moved). Part of the ``state`` `Oneof <https://developers.google.com/protocol-buffers/docs/reference/python-generated#oneof>`_.
+
+.. _BaseControllerList:
+
+.. py:class:: ControllerList
+
+    Array of references to different controllers
+
+   :canonical: kortex_api.autogen.messages.Base_pb2.ControllerList
+
+   :param handles:   Controller handle
+   :type handles: :ref:`ControllerHandle <BaseControllerHandle>` [ ]
+
+.. _BaseControllerState:
+
+.. py:class:: ControllerState
+
+    Indicates if a specific controller is connected (or disconnected)
+
+   :canonical: kortex_api.autogen.messages.Base_pb2.ControllerState
+
+   :param handle:   Controller identifier
+   :type handle: :ref:`ControllerHandle <BaseControllerHandle>` 
+
+   :param event_type:   Type of controller event that occured
+   :type event_type: :ref:`ControllerEventType <BaseControllerEventType>` 
+
+.. _BaseControllerElementState:
+
+.. py:class:: ControllerElementState
+
+    Indicates if a specific button (or axis) was pressed (or moved)
+
+   :canonical: kortex_api.autogen.messages.Base_pb2.ControllerElementState
+
+   :param handle:   Controller element handle
+   :type handle: :ref:`ControllerElementHandle <BaseControllerElementHandle>` 
+
+   :param event_type:   Type of controller element event that occured
+   :type event_type: :ref:`ControllerElementEventType <BaseControllerElementEventType>` 
+
+   :param axis_value:   Axis value (set between -1.0 and 1.0); only set if 'axis' controller element, otherwise set to zero
+   :type axis_value: :ref:`float <>` 
+
+.. _BaseActionNotification:
+
+.. py:class:: ActionNotification
+
+    Notification about a single action event
+
+   :canonical: kortex_api.autogen.messages.Base_pb2.ActionNotification
+
+   :param action_event:   Action event type
+   :type action_event: :ref:`ActionEvent <BaseActionEvent>` 
+
+   :param handle:   Identifies the action for which this event occured
+   :type handle: :ref:`ActionHandle <BaseActionHandle>` 
+
+   :param abort_details:   Details if action_event is equal to ACTION_ABORT
+   :type abort_details: :ref:`SubErrorCodes <BaseSubErrorCodes>` 
+
+   :param trajectory_info:   Additional information from the current action
+   :type trajectory_info: :ref:`TrajectoryInfo <BaseTrajectoryInfo>` [ ]
+
+   :param generic_info:   Generic notification information
+   :type generic_info: :ref:`NotificationInformation <CommonNotificationInformation>` 
+
+.. _BaseTrajectoryInfo:
+
+.. py:class:: TrajectoryInfo
+
+    Additional trajectory information
+
+   :canonical: kortex_api.autogen.messages.Base_pb2.TrajectoryInfo
+
+   :param trajectory_info_type:   Trajectory information type
+   :type trajectory_info_type: :ref:`TrajectoryInfoType <BaseTrajectoryInfoType>` 
+
+   :param waypoint_index:   Waypoint index (if applicable)
+   :type waypoint_index: :ref:`int <>` 
+
+   :param joint_index:   Joint index (if applicable)
+   :type joint_index: :ref:`int <>` 
+
+.. _BaseRobotEventNotification:
+
+.. py:class:: RobotEventNotification
+
+    Notification about a single robot event
+
+   :canonical: kortex_api.autogen.messages.Base_pb2.RobotEventNotification
+
+   :param event:   Robot event type
+   :type event: :ref:`RobotEvent <BaseRobotEvent>` 
+
+   :param handle:   Identifier of the hardware device connected or disconnected
+   :type handle: :ref:`DeviceHandle <CommonDeviceHandle>` 
+
+   :param generic_info:   Generic notification information
+   :type generic_info: :ref:`NotificationInformation <CommonNotificationInformation>` 
+
+.. _BaseFactoryNotification:
+
+.. py:class:: FactoryNotification
+
+    Notification about a single factory event
+
+   :canonical: kortex_api.autogen.messages.Base_pb2.FactoryNotification
+
+   :param event:   Event type
+   :type event: :ref:`FactoryEvent <BaseFactoryEvent>` 
+
+   :param generic_info:   Generic notification information
+   :type generic_info: :ref:`NotificationInformation <CommonNotificationInformation>` 
+
+.. _BaseConfigurationChangeNotificationList:
+
+.. py:class:: ConfigurationChangeNotificationList
+
+    Array of configuration change notifications
+
+   :canonical: kortex_api.autogen.messages.Base_pb2.ConfigurationChangeNotificationList
+
+   :param notifications:   Notification
+   :type notifications: :ref:`ConfigurationChangeNotification <BaseConfigurationChangeNotification>` [ ]
+
+.. _BaseOperatingModeNotificationList:
+
+.. py:class:: OperatingModeNotificationList
+
+    Array of operating mode notifications This message will be removed in a future release. It has been renamed UpdatingModeNotificationList.
+
+   :canonical: kortex_api.autogen.messages.Base_pb2.OperatingModeNotificationList
+
+   :param notifications:   Notification
+   :type notifications: :ref:`OperatingModeNotification <BaseOperatingModeNotification>` [ ]
+
+.. _BaseUpdatingModeNotificationList:
+
+.. py:class:: UpdatingModeNotificationList
+
+    Array of updating mode notifications
+
+   :canonical: kortex_api.autogen.messages.Base_pb2.UpdatingModeNotificationList
+
+   :param notifications:   Notification
+   :type notifications: :ref:`UpdatingModeNotification <BaseUpdatingModeNotification>` [ ]
+
+.. _BaseServoingModeNotificationList:
+
+.. py:class:: ServoingModeNotificationList
+
+    Array of servoing mode notifications
+
+   :canonical: kortex_api.autogen.messages.Base_pb2.ServoingModeNotificationList
+
+   :param notifications:   Notification
+   :type notifications: :ref:`ServoingModeNotification <BaseServoingModeNotification>` [ ]
+
+.. _BaseDiagnosticNotificationList:
+
+.. py:class:: DiagnosticNotificationList
+
+    Array of diagnostic notifications
+
+   :canonical: kortex_api.autogen.messages.Base_pb2.DiagnosticNotificationList
+
+   :param notifications:   Notification
+   :type notifications: :ref:`DiagnosticNotification <CommonDiagnosticNotification>` [ ]
+
+.. _BaseControllerNotificationList:
+
+.. py:class:: ControllerNotificationList
+
+    Array of controller notifications
+
+   :canonical: kortex_api.autogen.messages.Base_pb2.ControllerNotificationList
+
+   :param notifications:   Notifications
+   :type notifications: :ref:`ControllerNotification <BaseControllerNotification>` [ ]
+
+.. _BaseActionNotificationList:
+
+.. py:class:: ActionNotificationList
+
+    Array of action notifications
+
+   :canonical: kortex_api.autogen.messages.Base_pb2.ActionNotificationList
+
+   :param notifications:   Notification
+   :type notifications: :ref:`ActionNotification <BaseActionNotification>` [ ]
+
+.. _BaseRobotEventNotificationList:
+
+.. py:class:: RobotEventNotificationList
+
+    Array of robot event notifications
+
+   :canonical: kortex_api.autogen.messages.Base_pb2.RobotEventNotificationList
+
+   :param notifications:   Notification
+   :type notifications: :ref:`RobotEventNotification <BaseRobotEventNotification>` [ ]
+
+.. _BaseMappingHandle:
+
+.. py:class:: MappingHandle
+
+    Reference to a specific Mapping
+
+   :canonical: kortex_api.autogen.messages.Base_pb2.MappingHandle
+
+   :param identifier:   Mapping identifier
+   :type identifier: :ref:`int <>` 
+
+   :param permission:   Permission of specified mapping entity. Must use 'Kinova.Api.Common.Permission' enum.
+   :type permission: :ref:`int <>` 
+
+.. _BaseControllerEvent:
+
+.. py:class:: ControllerEvent
+
+    A controller event
+
+   :canonical: kortex_api.autogen.messages.Base_pb2.ControllerEvent
+
+   :param input_type:   Type of controller input that caused the event_identifier
+   :type input_type: :ref:`ControllerInputType <BaseControllerInputType>` 
+
+   :param behavior:   Controller behavior that occured
+   :type behavior: :ref:`ControllerBehavior <BaseControllerBehavior>` 
+
+   :param input_identifier:   Controller input that caused the event
+   :type input_identifier: :ref:`int <>` 
+
+.. _BaseGpioEvent:
+
+.. py:class:: GpioEvent
+
+    A GPIO event
+
+   :canonical: kortex_api.autogen.messages.Base_pb2.GpioEvent
+
+   :param input_type:   Type of controller input that caused the event_identifier
+   :type input_type: :ref:`ControllerInputType <BaseControllerInputType>` 
+
+   :param input_identifier:   GPIO PIN ID that caused the event
+   :type input_identifier: :ref:`int <>` 
+
+.. _BaseMapEvent:
+
+.. py:class:: MapEvent
+
+    A map event
+
+   :canonical: kortex_api.autogen.messages.Base_pb2.MapEvent
+
+   :param name:   Map event friendly name
+   :type name: :ref:`str <>` 
+
+   :param GpioEvent gpio_event:   Mapped GPIO event. Part of the ``events`` `Oneof <https://developers.google.com/protocol-buffers/docs/reference/python-generated#oneof>`_.
+
+   :param ControllerEvent controller_event:   Mapped controller event. Part of the ``events`` `Oneof <https://developers.google.com/protocol-buffers/docs/reference/python-generated#oneof>`_.
+
+.. _BaseMapElement:
+
+.. py:class:: MapElement
+
+    Associates an event to an action
+
+   :canonical: kortex_api.autogen.messages.Base_pb2.MapElement
+
+   :param event:   Map event that occured
+   :type event: :ref:`MapEvent <BaseMapEvent>` 
+
+   :param action:   Action to invoke upon event occurence
+   :type action: :ref:`Action <BaseAction>` 
+
+   :param name:   Map element friendly name
+   :type name: :ref:`str <>` 
+
+.. _BaseMap:
+
+.. py:class:: Map
+
+    A map as an array of map elements
+
+   :canonical: kortex_api.autogen.messages.Base_pb2.Map
+
+   :param handle:   Map handle (do not set on createMap() call)
+   :type handle: :ref:`MapHandle <BaseMapHandle>` 
+
+   :param name:   Map friendly name
+   :type name: :ref:`str <>` 
+
+   :param elements:   Array of map elements
+   :type elements: :ref:`MapElement <BaseMapElement>` [ ]
+
+.. _BaseMapHandle:
+
+.. py:class:: MapHandle
+
+    Reference to a specific map
+
+   :canonical: kortex_api.autogen.messages.Base_pb2.MapHandle
+
+   :param identifier:   Identifier
+   :type identifier: :ref:`int <>` 
+
+   :param permission:   Permission of specified map entity. Must use 'Kinova.Api.Common.Permission' enum.
+   :type permission: :ref:`int <>` 
+
+.. _BaseMapGroupHandle:
+
+.. py:class:: MapGroupHandle
+
+    Reference to a specific map group (not implemented yet)
+
+   :canonical: kortex_api.autogen.messages.Base_pb2.MapGroupHandle
+
+   :param identifier:   Identifier
+   :type identifier: :ref:`int <>` 
+
+   :param permission:   Permission of specified map group entity. Must use 'Kinova.Api.Common.Permission' enum.
+   :type permission: :ref:`int <>` 
+
+.. _BaseMapGroup:
+
+.. py:class:: MapGroup
+
+     All information about a map group including the list of maps that it contains and its  relationship versus other map groups (not implemented yet) 
+
+   :canonical: kortex_api.autogen.messages.Base_pb2.MapGroup
+
+   :param group_handle:   Map group handle (do not set on createMapGroup() call)
+   :type group_handle: :ref:`MapGroupHandle <BaseMapGroupHandle>` 
+
+   :param name:   Map group friendly name
+   :type name: :ref:`str <>` 
+
+   :param related_mapping_handle:   Mapping that this map group belongs to
+   :type related_mapping_handle: :ref:`MappingHandle <BaseMappingHandle>` 
+
+   :param parent_group_handle:   Parent map group (if any)
+   :type parent_group_handle: :ref:`MapGroupHandle <BaseMapGroupHandle>` 
+
+   :param children_map_group_handles:   Children map groups (if any)
+   :type children_map_group_handles: :ref:`MapGroupHandle <BaseMapGroupHandle>` [ ]
+
+   :param map_handles:   Array of maps that are included in this map group
+   :type map_handles: :ref:`MapHandle <BaseMapHandle>` [ ]
+
+   :param application_data:   Application data (reserved for use by Web App)
+   :type application_data: :ref:`str <>` 
+
+.. _BaseMapGroupList:
+
+.. py:class:: MapGroupList
+
+    Array of map groups (not implemented yet)
+
+   :canonical: kortex_api.autogen.messages.Base_pb2.MapGroupList
+
+   :param map_groups:   Map group
+   :type map_groups: :ref:`MapGroup <BaseMapGroup>` [ ]
+
+.. _BaseMapping:
+
+.. py:class:: Mapping
+
+     All information about a mapping including the controller to which it is associated,  the array of map groups it contains, the currently active map group, the array of maps it contains  and the currently active map 
+
+   :canonical: kortex_api.autogen.messages.Base_pb2.Mapping
+
+   :param handle:   Mapping handle (do not set on createMapping() call)
+   :type handle: :ref:`MappingHandle <BaseMappingHandle>` 
+
+   :param name:   Mapping friendly name
+   :type name: :ref:`str <>` 
+
+   :param controller_identifier:   Associated controller identifier
+   :type controller_identifier: :ref:`int <>` 
+
+   :param active_map_group_handle:   Currently active map group (not implemented yet)
+   :type active_map_group_handle: :ref:`MapGroupHandle <BaseMapGroupHandle>` 
+
+   :param map_group_handles:   Array of associated map groups (not implemented yet)
+   :type map_group_handles: :ref:`MapGroupHandle <BaseMapGroupHandle>` [ ]
+
+   :param active_map_handle:   Currently active map
+   :type active_map_handle: :ref:`MapHandle <BaseMapHandle>` 
+
+   :param map_handles:   Array of associated maps
+   :type map_handles: :ref:`MapHandle <BaseMapHandle>` [ ]
+
+   :param application_data:   Application data (reserved for use by Web App)
+   :type application_data: :ref:`str <>` 
+
+.. _BasePose:
+
+.. py:class:: Pose
+
+     A Cartesian tool pose (position and orientation).  Orientation is defined as a sequence of three Euler angles using x-y-z Tait-Bryan extrinsic convention.  That is, rotation around fixed X-axis, then rotation around fixed Y-axis, then rotation around fixed Z-axis. 
+
+   :canonical: kortex_api.autogen.messages.Base_pb2.Pose
+
+   :param x:   X position (in meters)
+   :type x: :ref:`float <>` 
+
+   :param y:   Y position (in meters)
+   :type y: :ref:`float <>` 
+
+   :param z:   Z position (in meters)
+   :type z: :ref:`float <>` 
+
+   :param theta_x:   Theta X orientation (in degrees)
+   :type theta_x: :ref:`float <>` 
+
+   :param theta_y:   Theta Y orienation (in degrees)
+   :type theta_y: :ref:`float <>` 
+
+   :param theta_z:   Theta Z orientation (in degrees)
+   :type theta_z: :ref:`float <>` 
+
+.. _BaseWrench:
+
+.. py:class:: Wrench
+
+    A wrench (force and torque)
+
+   :canonical: kortex_api.autogen.messages.Base_pb2.Wrench
+
+   :param force_x:   Linear X force (Newtons or ratio between -1.0 and 1.0 if used with Joystick command)
+   :type force_x: :ref:`float <>` 
+
+   :param force_y:   Linear Y force (Newtons or ratio between -1.0 and 1.0 if used with Joystick command)
+   :type force_y: :ref:`float <>` 
+
+   :param force_z:   Linear Z force (Newtons or ratio between -1.0 and 1.0 if used with Joystick command)
+   :type force_z: :ref:`float <>` 
+
+   :param torque_x:   Angular X torque (Newton-meters or ratio between -1.0 and 1.0 if used with Joystick command)
+   :type torque_x: :ref:`float <>` 
+
+   :param torque_y:   Angular Y torque (Newton-meters or ratio between -1.0 and 1.0 if used with Joystick command)
+   :type torque_y: :ref:`float <>` 
+
+   :param torque_z:   Angular Z torque (Newton-meters or ratio between -1.0 and 1.0 if used with Joystick command)
+   :type torque_z: :ref:`float <>` 
+
+.. _BaseTwist:
+
+.. py:class:: Twist
+
+    A twist (linear and angular velocity).
+
+   :canonical: kortex_api.autogen.messages.Base_pb2.Twist
+
+   :param linear_x:   Linear X velocity  (m/s or ratio between -1.0 and 1.0 if used with joystick command)
+   :type linear_x: :ref:`float <>` 
+
+   :param linear_y:   Linear Y velocity  (m/s or ratio between -1.0 and 1.0 if used with joystick command)
+   :type linear_y: :ref:`float <>` 
+
+   :param linear_z:   Linear Z velocity  (m/s or ratio between -1.0 and 1.0 if used with joystick command)
+   :type linear_z: :ref:`float <>` 
+
+   :param angular_x:   Angular X velocity (deg/s or ratio between -1.0 and 1.0 if used with joystick command)
+   :type angular_x: :ref:`float <>` 
+
+   :param angular_y:   Angular Y velocity (deg/s or ratio between -1.0 and 1.0 if used with joystick command)
+   :type angular_y: :ref:`float <>` 
+
+   :param angular_z:   Angular Z velocity (deg/s or ratio between -1.0 and 1.0 if used with joystick command)
+   :type angular_z: :ref:`float <>` 
+
+.. _BaseHandGuiding:
+
+.. py:class:: HandGuiding
+
+    An Hand-Guiding mode
+
+   :canonical: kortex_api.autogen.messages.Base_pb2.HandGuiding
+
+   :param hand_guiding_mode:   mode
+   :type hand_guiding_mode: :ref:`HandGuidingMode <BaseHandGuidingMode>` 
+
+.. _BaseTwistCommand:
+
+.. py:class:: TwistCommand
+
+    A twist command to be applied to the tool
+
+   :canonical: kortex_api.autogen.messages.Base_pb2.TwistCommand
+
+   :param reference_frame:   The reference frame used for the twist command
+   :type reference_frame: :ref:`CartesianReferenceFrame <CommonCartesianReferenceFrame>` 
+
+   :param twist:   Twist value
+   :type twist: :ref:`Twist <BaseTwist>` 
+
+   :param duration:   Duration constraint. If not 0, allows to set a limit (in seconds) to the TwistCommand
+   :type duration: :ref:`float <>` 
+
+.. _BaseJointAngles:
+
+.. py:class:: JointAngles
+
+    An array of joint angles
+
+   :canonical: kortex_api.autogen.messages.Base_pb2.JointAngles
+
+   :param joint_angles:   Array of joint angles
+   :type joint_angles: :ref:`JointAngle <BaseJointAngle>` [ ]
+
+.. _BaseJointAngle:
+
+.. py:class:: JointAngle
+
+    Angle value of a specific joint
+
+   :canonical: kortex_api.autogen.messages.Base_pb2.JointAngle
+
+   :param joint_identifier:   Joint identifier
+   :type joint_identifier: :ref:`int <>` 
+
+   :param value:   Position (in degrees)
+   :type value: :ref:`float <>` 
+
+.. _BaseJointSpeeds:
+
+.. py:class:: JointSpeeds
+
+    An array of joints speeds
+
+   :canonical: kortex_api.autogen.messages.Base_pb2.JointSpeeds
+
+   :param joint_speeds:   Array of joint speeds
+   :type joint_speeds: :ref:`JointSpeed <BaseJointSpeed>` [ ]
+
+   :param duration:   Duration constraint. If not 0, allows to set a limit (in seconds) common to every joint specified in 'joint_speeds'
+   :type duration: :ref:`float <>` 
+
+.. _BaseJointSpeed:
+
+.. py:class:: JointSpeed
+
+    Speed of a specific joint
+
+   :canonical: kortex_api.autogen.messages.Base_pb2.JointSpeed
+
+   :param joint_identifier:   Joint identifier
+   :type joint_identifier: :ref:`int <>` 
+
+   :param value:   Joint speed (in degrees per second)
+   :type value: :ref:`float <>` 
+
+.. _BaseJointTorques:
+
+.. py:class:: JointTorques
+
+    An array of joint torques
+
+   :canonical: kortex_api.autogen.messages.Base_pb2.JointTorques
+
+   :param joint_torques:   Array of joint torque.
+   :type joint_torques: :ref:`JointTorque <BaseJointTorque>` [ ]
+
+   :param duration:   Duration constraint. If not 0, allows to set a limit (in seconds) common to every joint specified in 'joint_torques' (not implemented yet)
+   :type duration: :ref:`int <>` 
+
+.. _BaseJointTorque:
+
+.. py:class:: JointTorque
+
+    joint torque for a specified joint
+
+   :canonical: kortex_api.autogen.messages.Base_pb2.JointTorque
+
+   :param joint_identifier:   Joint identifier
+   :type joint_identifier: :ref:`int <>` 
+
+   :param value:   Joint speed (in Newton*meters)
+   :type value: :ref:`float <>` 
+
+   :param duration:   Duration constraint. If not 0, allows to set a limit (in seconds) to the JointTorque (not implemented yet)
+   :type duration: :ref:`int <>` 
+
+.. _BaseControllerConfiguration:
+
+.. py:class:: ControllerConfiguration
+
+    Controller configuration information
+
+   :canonical: kortex_api.autogen.messages.Base_pb2.ControllerConfiguration
+
+   :param handle:   Controller identifier
+   :type handle: :ref:`ControllerHandle <BaseControllerHandle>` 
+
+   :param name:   Controller friendly name
+   :type name: :ref:`str <>` 
+
+   :param active_mapping_handle:   Mapping that is active on this controller
+   :type active_mapping_handle: :ref:`MappingHandle <BaseMappingHandle>` 
+
+   :param analog_input_identifier_enum:   Name that identifies the enum used to interpret the ‘analog_input_identifier’ field (for example in ControllerEvent). Thus 'analog_input_identifier_enum' shall take the name of an existing enum (ex. XboxOneAnalogInputIdentifier)
+   :type analog_input_identifier_enum: :ref:`str <>` 
+
+   :param digital_input_identifier_enum:   Name that identifies the enum used to interpret the ‘digital_input_identifier’ field (for example in ControllerEvent). Thus 'digital_input_identifier_enum' shall take the name of an existing enum (ex. XboxOneDigitalInputIdentifier, WristDigitalInputIdentifier)
+   :type digital_input_identifier_enum: :ref:`str <>` 
+
+.. _BaseControllerConfigurationList:
+
+.. py:class:: ControllerConfigurationList
+
+    Controller configuration information for multiple controllers
+
+   :canonical: kortex_api.autogen.messages.Base_pb2.ControllerConfigurationList
+
+   :param controller_configurations:   List of controller configurations
+   :type controller_configurations: :ref:`ControllerConfiguration <BaseControllerConfiguration>` [ ]
+
+.. _BaseActuatorInformation:
+
+.. py:class:: ActuatorInformation
+
+    A count of the number of actuators in the robot
+
+   :canonical: kortex_api.autogen.messages.Base_pb2.ActuatorInformation
+
+   :param count:   Number of actuators
+   :type count: :ref:`int <>` 
+
+.. _BaseArmStateInformation:
+
+.. py:class:: ArmStateInformation
+
+    Information about the arm state
+
+   :canonical: kortex_api.autogen.messages.Base_pb2.ArmStateInformation
+
+   :param active_state:   Arm active state
+   :type active_state: :ref:`ArmState <CommonArmState>` 
+
+   :param connection:   Connection information of the last processed command which triggered an arm state change
+   :type connection: :ref:`Connection <CommonConnection>` 
+
+.. _BaseArmStateNotification:
+
+.. py:class:: ArmStateNotification
+
+    Notification about a single arm state event
+
+   :canonical: kortex_api.autogen.messages.Base_pb2.ArmStateNotification
+
+   :param active_state:   New arm state
+   :type active_state: :ref:`ArmState <CommonArmState>` 
+
+   :param generic_info:   Generic notification information
+   :type generic_info: :ref:`NotificationInformation <CommonNotificationInformation>` 
+
+.. _BasePreComputedJointTrajectory:
+
+.. py:class:: PreComputedJointTrajectory
+
+    Pre-computed joint trajectory subject to specified continuity constraints. The starting point of the trajectory must have an elapsed time of 0 ms and the angular values must reflect the current state of the robot. The robot control libraries will validate the trajectory fulfills the specified continuity constraints before playing the trajectory.
+
+   :canonical: kortex_api.autogen.messages.Base_pb2.PreComputedJointTrajectory
+
+   :param mode:   Trajectory continuity mode
+   :type mode: :ref:`TrajectoryContinuityMode <BaseTrajectoryContinuityMode>` 
+
+   :param trajectory_elements:   List of pre-computed elements composing the trajectory.
+   :type trajectory_elements: :ref:`PreComputedJointTrajectoryElement <BasePreComputedJointTrajectoryElement>` [ ]
+
+.. _BasePreComputedJointTrajectoryElement:
+
+.. py:class:: PreComputedJointTrajectoryElement
+
+    Set of angle, speed, acceleration, and elapsed time values for each joint for a given 1 ms interval. A PreComputedJointTrajectory is made up of a series of these elements.
+
+   :canonical: kortex_api.autogen.messages.Base_pb2.PreComputedJointTrajectoryElement
+
+   :param joint_angles:   Angles values for all joints (in degrees)
+   :type joint_angles: :ref:`float <>` [ ]
+
+   :param joint_speeds:   Speed values for all joints (in degrees per second)
+   :type joint_speeds: :ref:`float <>` [ ]
+
+   :param joint_accelerations:   Acceleration values for all joints (in degrees per second^2)
+   :type joint_accelerations: :ref:`float <>` [ ]
+
+   :param time_from_start:   Absolute elaspsed time since initial point (in seconds)
+   :type time_from_start: :ref:`float <>` 
+
+.. _BaseTrajectoryErrorElement:
+
+.. py:class:: TrajectoryErrorElement
+
+    Details for a single trajectory validation error
+
+   :canonical: kortex_api.autogen.messages.Base_pb2.TrajectoryErrorElement
+
+   :param error_type:   Error type
+   :type error_type: :ref:`TrajectoryErrorType <BaseTrajectoryErrorType>` 
+
+   :param error_value:   Erroneous value
+   :type error_value: :ref:`float <>` 
+
+   :param min_value:   Minimum permitted value
+   :type min_value: :ref:`float <>` 
+
+   :param max_value:   Maximum permitted value
+   :type max_value: :ref:`float <>` 
+
+   :param index:   Actuator index
+   :type index: :ref:`int <>` 
+
+   :param message:   Clarification message for the error
+   :type message: :ref:`str <>` 
+
+   :param waypoint_index:   Waypoint index (if it applies)
+   :type waypoint_index: :ref:`int <>` 
+
+.. _BaseTrajectoryErrorReport:
+
+.. py:class:: TrajectoryErrorReport
+
+    Report collecting information on different validation errors for a particular trajectory
+
+   :canonical: kortex_api.autogen.messages.Base_pb2.TrajectoryErrorReport
+
+   :param trajectory_error_elements:  
+   :type trajectory_error_elements: :ref:`TrajectoryErrorElement <BaseTrajectoryErrorElement>` [ ]
+
+.. _BaseWaypointValidationReport:
+
+.. py:class:: WaypointValidationReport
+
+    Waypoint Validation results
+
+   :canonical: kortex_api.autogen.messages.Base_pb2.WaypointValidationReport
+
+   :param trajectory_error_report:   Report on the validation, the waypoint list is valid if empty
+   :type trajectory_error_report: :ref:`TrajectoryErrorReport <BaseTrajectoryErrorReport>` 
+
+   :param optimal_waypoint_list:   Validated Waypoint List with optimal blending radius if the option was set
+   :type optimal_waypoint_list: :ref:`WaypointList <BaseWaypointList>` 
+
+.. _BaseWaypoint:
+
+.. py:class:: Waypoint
+
+    A waypoint describing part of a trajectory.
+
+   :canonical: kortex_api.autogen.messages.Base_pb2.Waypoint
+
+   :param name:   Waypoint friendly name
+   :type name: :ref:`str <>` 
+
+   :param AngularWaypoint angular_waypoint:  . Part of the ``type_of_waypoint`` `Oneof <https://developers.google.com/protocol-buffers/docs/reference/python-generated#oneof>`_.
+
+   :param CartesianWaypoint cartesian_waypoint:  . Part of the ``type_of_waypoint`` `Oneof <https://developers.google.com/protocol-buffers/docs/reference/python-generated#oneof>`_.
+
+.. _BaseAngularWaypoint:
+
+.. py:class:: AngularWaypoint
+
+    An angular Waypoint
+
+   :canonical: kortex_api.autogen.messages.Base_pb2.AngularWaypoint
+
+   :param angles:   Target position (in deg)
+   :type angles: :ref:`float <>` [ ]
+
+   :param maximum_velocities:   Maximum velocities for each actuator (in deg/s) during movement (optional)
+   :type maximum_velocities: :ref:`float <>` [ ]
+
+   :param maximum_accelerations:   Maximum accelerations for each actuator (in deg/s^2) during movement (optional)
+   :type maximum_accelerations: :ref:`float <>` [ ]
+
+   :param float duration:   Duration to reach this waypoint from the previous position (in seconds). Part of the ``constraint`` `Oneof <https://developers.google.com/protocol-buffers/docs/reference/python-generated#oneof>`_.
+
+   :param float blending:   Blending value (from 0 to 1, 1 being the optimal blending). Part of the ``constraint`` `Oneof <https://developers.google.com/protocol-buffers/docs/reference/python-generated#oneof>`_.
+
+.. _BaseCartesianWaypoint:
+
+.. py:class:: CartesianWaypoint
+
+    A Cartesian Waypoint
+
+   :canonical: kortex_api.autogen.messages.Base_pb2.CartesianWaypoint
+
+   :param pose:   Target Cartesian Pose
+   :type pose: :ref:`Pose <BasePose>` 
+
+   :param reference_frame:   The reference frame used for the goal Pose
+   :type reference_frame: :ref:`CartesianReferenceFrame <CommonCartesianReferenceFrame>` 
+
+   :param maximum_linear_velocity:   Maximum linear velocity (in m/s) during movement (optional)
+   :type maximum_linear_velocity: :ref:`float <>` 
+
+   :param maximum_angular_velocity:   Maximum angular velocity (in deg/s) during movement (optional)
+   :type maximum_angular_velocity: :ref:`float <>` 
+
+   :param blending_radius:   Blending radius (in m) to use for the movement (if this waypoint is not an endpoint).
+   :type blending_radius: :ref:`float <>` 
+
+   :param maximum_linear_acceleration:   Maximum linear acceleration (in m/s^2) during movement (optional)
+   :type maximum_linear_acceleration: :ref:`float <>` 
+
+   :param maximum_angular_acceleration:   Maximum angular acceleration (in deg/s^2) during movement (optional)
+   :type maximum_angular_acceleration: :ref:`float <>` 
+
+.. _BaseWaypointList:
+
+.. py:class:: WaypointList
+
+    A waypoint list
+
+   :canonical: kortex_api.autogen.messages.Base_pb2.WaypointList
+
+   :param waypoints:   Array of waypoints
+   :type waypoints: :ref:`Waypoint <BaseWaypoint>` [ ]
+
+   :param duration:   Duration of the waypoint list (in seconds). If unspecified or equal to 0, optimal duration is assumed.
+   :type duration: :ref:`float <>` 
+
+   :param use_optimal_blending:   At validation if this value is true, the waypoint list with optimal blending will be returned.
+   :type use_optimal_blending: :ref:`bool <>` 
+
+.. _BaseKinematicTrajectoryConstraints:
+
+.. py:class:: KinematicTrajectoryConstraints
+
+    Angular and Cartesian kinematic constraints (maximum velocities)
+
+   :canonical: kortex_api.autogen.messages.Base_pb2.KinematicTrajectoryConstraints
+
+   :param angular_velocities:   Angular velocities for each actuator (in deg/s)
+   :type angular_velocities: :ref:`float <>` [ ]
+
+   :param linear_velocity:   Linear velocity (in m/s)
+   :type linear_velocity: :ref:`float <>` 
+
+   :param angular_velocity:   Angular velocity (in deg/s)
+   :type angular_velocity: :ref:`float <>` 
+
+.. _BaseFirmwareBundleVersions:
+
+.. py:class:: FirmwareBundleVersions
+
+    Firmware bundle versions including main firmware bundle version and components versions
+
+   :canonical: kortex_api.autogen.messages.Base_pb2.FirmwareBundleVersions
+
+   :param main_bundle_version:   Version of the main bundle
+   :type main_bundle_version: :ref:`str <>` 
+
+   :param components_versions:   List containing all components of the bundle
+   :type components_versions: :ref:`FirmwareComponentVersion <BaseFirmwareComponentVersion>` [ ]
+
+.. _BaseFirmwareComponentVersion:
+
+.. py:class:: FirmwareComponentVersion
+
+    Individual component with its version
+
+   :canonical: kortex_api.autogen.messages.Base_pb2.FirmwareComponentVersion
+
+   :param name:   Name of the component
+   :type name: :ref:`str <>` 
+
+   :param version:   Version of the component
+   :type version: :ref:`str <>` 
+
+   :param device_id:   Device id of the component
+   :type device_id: :ref:`int <>` 
+
+.. _BaseIKData:
+
+.. py:class:: IKData
+
+    Input needed for the calculation of inverse kinematics
+
+   :canonical: kortex_api.autogen.messages.Base_pb2.IKData
+
+   :param cartesian_pose:   Cartesian pose of the end effector used to calculate the corresponding joint angles
+   :type cartesian_pose: :ref:`Pose <BasePose>` 
+
+   :param guess:   Initial guess for the joint angles
+   :type guess: :ref:`JointAngles <BaseJointAngles>` 
+
+.. _BaseHandGuidingModeNotification:
+
+.. py:class:: HandGuidingModeNotification
+
+    Notification about an Hand-Guiding mode change event
+
+   :canonical: kortex_api.autogen.messages.Base_pb2.HandGuidingModeNotification
+
+   :param hand_guiding_mode:   Active Hand-Guiding mode
+   :type hand_guiding_mode: :ref:`HandGuidingMode <BaseHandGuidingMode>` 
+
+   :param generic_info:   Generic notification information
+   :type generic_info: :ref:`NotificationInformation <CommonNotificationInformation>` 
+
+.. _BaseEnablingDeviceNotification:
+
+.. py:class:: EnablingDeviceNotification
+
+    Notification about an enabling device state change event
+
+   :canonical: kortex_api.autogen.messages.Base_pb2.EnablingDeviceNotification
+
+   :param event:   Enabling device event
+   :type event: :ref:`EnablingDeviceEvent <BaseEnablingDeviceEvent>` 
+
+   :param enabling_device_type:   Enabling device type
+   :type enabling_device_type: :ref:`EnablingDeviceType <BaseEnablingDeviceType>` 
+
+   :param generic_info:   Generic notification information
+   :type generic_info: :ref:`NotificationInformation <CommonNotificationInformation>` 
+
+.. _BaseInverseKinematicsEvent:
+
+.. py:class:: InverseKinematicsEvent
+
+    Inverse kinematics event
+
+   :canonical: kortex_api.autogen.messages.Base_pb2.InverseKinematicsEvent
+
+   :param event:   Inverse kinematic event type
+   :type event: :ref:`InverseKinematicsEventType <BaseInverseKinematicsEventType>` 
+
+   :param best_iteration:   Best iteration from inverse kinematic calculation
+   :type best_iteration: :ref:`int <>` 
+
+   :param position_error:   Position error from inverse kinematic calculation (meters)
+   :type position_error: :ref:`float <>` 
+
+   :param orientation_error:   Orientation error from inverse kinematic calculation (degrees)
+   :type orientation_error: :ref:`float <>` 
+
+.. _BaseJointLimitEvent:
+
+.. py:class:: JointLimitEvent
+
+    Joint limit event
+
+   :canonical: kortex_api.autogen.messages.Base_pb2.JointLimitEvent
+
+   :param event:   Joint limit event type
+   :type event: :ref:`JointLimitEventType <BaseJointLimitEventType>` 
+
+   :param joint_limit:   Id and value of joints limit reached
+   :type joint_limit: :ref:`JointAngle <BaseJointAngle>` [ ]
+
+.. _BaseProtectionZoneEvent:
+
+.. py:class:: ProtectionZoneEvent
+
+    Protection zone event
+
+   :canonical: kortex_api.autogen.messages.Base_pb2.ProtectionZoneEvent
+
+   :param event:   Protection zone event type
+   :type event: :ref:`ProtectionZoneEventType <BaseProtectionZoneEventType>` 
+
+   :param element:   Protection zone element type
+   :type element: :ref:`ProtectionZoneElementType <BaseProtectionZoneElementType>` 
+
+   :param identifier:   Protection zone identifier
+   :type identifier: :ref:`int <>` 
+
+   :param link_index:   Link index
+   :type link_index: :ref:`int <>` 
+
+.. _BaseCollisionEvent:
+
+.. py:class:: CollisionEvent
+
+    Collision event
+
+   :canonical: kortex_api.autogen.messages.Base_pb2.CollisionEvent
+
+   :param event:   Collision event type
+   :type event: :ref:`CollisionEventType <BaseCollisionEventType>` 
+
+   :param joint_indexes:   Indexes of the joints that have been involved in the collision
+   :type joint_indexes: :ref:`int <>` [ ]
+
+.. _BaseCartesianLimitEvent:
+
+.. py:class:: CartesianLimitEvent
+
+    Cartesian limit event
+
+   :canonical: kortex_api.autogen.messages.Base_pb2.CartesianLimitEvent
+
+   :param event:   Cartesian limit event type
+   :type event: :ref:`CartesianLimitEventType <BaseCartesianLimitEventType>` 
+
+   :param cartesian_limit:   Value of Cartesian limit reached
+   :type cartesian_limit: :ref:`float <>` 
+
+.. _BaseMotionNotificationEvent:
+
+.. py:class:: MotionNotificationEvent
+
+    Motion notification event
+
+   :canonical: kortex_api.autogen.messages.Base_pb2.MotionNotificationEvent
+
+   :param InverseKinematicsEvent inverse_kinematics_event:   Inverse kinematics event. Part of the ``motion_event`` `Oneof <https://developers.google.com/protocol-buffers/docs/reference/python-generated#oneof>`_.
+
+   :param JointLimitEvent joint_limit_event:   Joint limit event. Part of the ``motion_event`` `Oneof <https://developers.google.com/protocol-buffers/docs/reference/python-generated#oneof>`_.
+
+   :param ProtectionZoneEvent protection_zone_event:   Protection zone event. Part of the ``motion_event`` `Oneof <https://developers.google.com/protocol-buffers/docs/reference/python-generated#oneof>`_.
+
+   :param CollisionEvent collision_event:   Collision event. Part of the ``motion_event`` `Oneof <https://developers.google.com/protocol-buffers/docs/reference/python-generated#oneof>`_.
+
+   :param TrajectoryErrorElement trajectory_report_event:   trajectory report event. Part of the ``motion_event`` `Oneof <https://developers.google.com/protocol-buffers/docs/reference/python-generated#oneof>`_.
+
+   :param CartesianLimitEvent cartesian_limit_event:   Cartesian limit event. Part of the ``motion_event`` `Oneof <https://developers.google.com/protocol-buffers/docs/reference/python-generated#oneof>`_.
+
+   :param float overcurrent_value:   Last overcurrent value. Part of the ``motion_event`` `Oneof <https://developers.google.com/protocol-buffers/docs/reference/python-generated#oneof>`_.
+
+   :param bool trajectory_execution_failure:   The trajectory execution failed. Part of the ``motion_event`` `Oneof <https://developers.google.com/protocol-buffers/docs/reference/python-generated#oneof>`_.
+
+.. _BaseMotionNotification:
+
+.. py:class:: MotionNotification
+
+    Motion Notification
+
+   :canonical: kortex_api.autogen.messages.Base_pb2.MotionNotification
+
+   :param events:   Motion notification list
+   :type events: :ref:`MotionNotificationEvent <BaseMotionNotificationEvent>` [ ]
+
+   :param generic_info:   Generic notification information
+   :type generic_info: :ref:`NotificationInformation <CommonNotificationInformation>` 
+
+.. _BaseProgramRequestNotification:
+
+.. py:class:: ProgramRequestNotification
+
+    Notification about a program request event
+
+   :canonical: kortex_api.autogen.messages.Base_pb2.ProgramRequestNotification
+
+   :param program_request:   Program request
+   :type program_request: :ref:`ProgramRequestEventType <BaseProgramRequestEventType>` 
+
+   :param generic_info:   Generic notification information
+   :type generic_info: :ref:`NotificationInformation <CommonNotificationInformation>` 
+
+.. _BaseRemoteAccessHandle:
+
+.. py:class:: RemoteAccessHandle
+
+    Remote Access handle
+
+   :canonical: kortex_api.autogen.messages.Base_pb2.RemoteAccessHandle
+
+   :param identifier:   Identifier for the Remote Access
+   :type identifier: :ref:`int <>` 
+
+.. _BaseEnableRemoteAccessArgs:
+
+.. py:class:: EnableRemoteAccessArgs
+
+    Args for Remote Access Enable RPC
+
+   :canonical: kortex_api.autogen.messages.Base_pb2.EnableRemoteAccessArgs
+
+   :param handle:   Handle of the enabled Remote Access
+   :type handle: :ref:`RemoteAccessHandle <BaseRemoteAccessHandle>` 
+
+   :param key:   Key for key-protected remote accesses (optional)
+   :type key: :ref:`str <>` 
+
+.. _BaseIptablesRule:
+
+.. py:class:: IptablesRule
+
+    Iptables rule
+
+   :canonical: kortex_api.autogen.messages.Base_pb2.IptablesRule
+
+   :param chain:   Chain to apply the rule
+   :type chain: :ref:`str <>` 
+
+   :param parameters:   Parameters for the iptables rule
+   :type parameters: :ref:`str <>` 
+
+.. _BaseRemoteAccessInfo:
+
+.. py:class:: RemoteAccessInfo
+
+    Remote Access information
+
+   :canonical: kortex_api.autogen.messages.Base_pb2.RemoteAccessInfo
+
+   :param handle:   Handle for the Remote Access
+   :type handle: :ref:`RemoteAccessHandle <BaseRemoteAccessHandle>` 
+
+   :param description:   Description of the Remote Access
+   :type description: :ref:`str <>` 
+
+   :param is_enabled:   Status of the Remote Access (enabled or not)
+   :type is_enabled: :ref:`bool <>` 
+
+   :param is_key_required:   Indicates if the Remote Access enabling requires a key
+   :type is_key_required: :ref:`bool <>` 
+
+.. _BaseRemoteAccessInfoList:
+
+.. py:class:: RemoteAccessInfoList
+
+    Array of all Remote Access Information
+
+   :canonical: kortex_api.autogen.messages.Base_pb2.RemoteAccessInfoList
+
+   :param remote_access_info:   List of Remote Accesses
+   :type remote_access_info: :ref:`RemoteAccessInfo <BaseRemoteAccessInfo>` [ ]
+
+.. _BaseRemoteAccessParameters:
+
+.. py:class:: RemoteAccessParameters
+
+    Remote Access parameters
+
+   :canonical: kortex_api.autogen.messages.Base_pb2.RemoteAccessParameters
+
+   :param remote_access_info:   Remote Access information
+   :type remote_access_info: :ref:`RemoteAccessInfo <BaseRemoteAccessInfo>` 
+
+   :param iptables_rules:   List of Remote Access related iptables rules
+   :type iptables_rules: :ref:`IptablesRule <BaseIptablesRule>` [ ]
+
+.. _BaseRemoteAccessChangeNotification:
+
+.. py:class:: RemoteAccessChangeNotification
+
+    Remote Access change Notification
+
+   :canonical: kortex_api.autogen.messages.Base_pb2.RemoteAccessChangeNotification
+
+   :param remote_access_info:   Remote Access information concerned by the change
+   :type remote_access_info: :ref:`RemoteAccessInfo <BaseRemoteAccessInfo>` 
+
+   :param generic_info:   Generic notification information
+   :type generic_info: :ref:`NotificationInformation <CommonNotificationInformation>` 
+
+.. _BaseAcknowledgeActionNotification:
+
+.. py:class:: AcknowledgeActionNotification
+
+    Notification about an Acknowledge action event
+
+   :canonical: kortex_api.autogen.messages.Base_pb2.AcknowledgeActionNotification
+
+   :param event:   Acknowledge action event
+   :type event: :ref:`AcknowledgeActionEvent <BaseAcknowledgeActionEvent>` 
+
+   :param generic_info:   Generic notification information
+   :type generic_info: :ref:`NotificationInformation <CommonNotificationInformation>` 

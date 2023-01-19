@@ -1,0 +1,209 @@
+================================
+VariableManager
+================================
+    
+.. py:currentmodule:: kortex_api.autogen
+
+.. py:class:: VariableManagerClient
+        
+    :canonical: kortex_api.autogen.client_stubs.VariableManagerClientRpc
+
+    .. py:method:: __init__(router, namespace = None)
+
+        Constructs a VariableManagerClient with an initialized :class:`~kortex_api.RouterClient.RouterClient` and an optional namespace.
+
+        :param RouterClient router: :class:`~kortex_api.RouterClient.RouterClient` used for the communication
+        :param string namespace: Optional namespace on which to initialize the VariableManagerClient (defaults to ``None``)
+
+    .. py:method:: IsAlive (timeoutMs: int = 1000)
+        
+        Returns ``True`` if the Service Server is detected online before ``timeoutMs`` is expired, ``False`` otherwise.
+        
+        :param unsigned int timeoutMs: The maximum time to wait for an answer from the server 
+        :rtype: bool
+
+
+        .. _VariableManagerClientSetVariable:
+
+    .. py:method:: SetVariable (variable, deviceId = 0, options = RouterClientSendOptions())
+        
+        | The ``CONFIGURE`` permission is necessary to call this RPC.
+        |
+        | Modifies or adds a variable.
+        | 
+        | An INVALID_PARAM exception is thrown if the variable or namespace identifiers contain anything else than a-Z, 0-9 and _.
+        | A METHOD_FAILED exception is thrown if the variable to set is a system variable.
+        | 
+
+
+        :param variable:  
+        :type variable: :ref:`Variable <VariableManagerVariable>`
+
+        :param int deviceId: Device's Id called by rpc (optional)
+        :param RouterClientSendOptions options: Router options for sending the message
+ 
+        :rtype: VariableHandle
+
+        .. _VariableManagerClientGetVariable:
+
+    .. py:method:: GetVariable (variablehandle, deviceId = 0, options = RouterClientSendOptions())
+        
+        | The ``READ_ONLY`` permission is necessary to call this RPC.
+        |
+        | Gets a variable.
+        | 
+        | An ENTITY_NOT_FOUND exception is thrown if the variable does not exist.
+        | 
+
+
+        :param variablehandle:  
+        :type variablehandle: :ref:`VariableHandle <VariableManagerVariableHandle>`
+
+        :param int deviceId: Device's Id called by rpc (optional)
+        :param RouterClientSendOptions options: Router options for sending the message
+ 
+        :rtype: Variable
+
+        .. _VariableManagerClientDeleteVariable:
+
+    .. py:method:: DeleteVariable (variablehandle, deviceId = 0, options = RouterClientSendOptions())
+        
+        | The ``CONFIGURE`` permission is necessary to call this RPC.
+        |
+        | Deletes a variable.
+        | To be deleted, the variable must exist and not contain flags.
+        | 
+        | An ENTITY_NOT_FOUND exception is thrown if the variable does not exist.
+        | A METHOD_FAILED exception is thrown if the variable to set is a system variable.
+        | 
+
+
+        :param variablehandle:  
+        :type variablehandle: :ref:`VariableHandle <VariableManagerVariableHandle>`
+
+        :param int deviceId: Device's Id called by rpc (optional)
+        :param RouterClientSendOptions options: Router options for sending the message
+
+        .. _VariableManagerClientGetAllVariables:
+
+    .. py:method:: GetAllVariables (namespacehandle, deviceId = 0, options = RouterClientSendOptions())
+        
+        | The ``READ_ONLY`` permission is necessary to call this RPC.
+        |
+        | Get all variables from namespace.
+
+
+        :param namespacehandle:  
+        :type namespacehandle: :ref:`NamespaceHandle <VariableManagerNamespaceHandle>`
+
+        :param int deviceId: Device's Id called by rpc (optional)
+        :param RouterClientSendOptions options: Router options for sending the message
+ 
+        :rtype: NamespaceVariables
+
+        .. _VariableManagerClientGetAllNamespaces:
+
+    .. py:method:: GetAllNamespaces (namespacehandle, deviceId = 0, options = RouterClientSendOptions())
+        
+        | The ``READ_ONLY`` permission is necessary to call this RPC.
+        |
+        | Get all sub namespaces from a specific namespace.
+
+
+        :param namespacehandle:  
+        :type namespacehandle: :ref:`NamespaceHandle <VariableManagerNamespaceHandle>`
+
+        :param int deviceId: Device's Id called by rpc (optional)
+        :param RouterClientSendOptions options: Router options for sending the message
+ 
+        :rtype: Namespaces
+
+        .. _VariableManagerClientDeleteNamespace:
+
+    .. py:method:: DeleteNamespace (deletenamespacehandle, deviceId = 0, options = RouterClientSendOptions())
+        
+        | The ``CONFIGURE`` permission is necessary to call this RPC.
+        |
+        | Deletes a namespace and its sub namespaces.
+
+
+        :param deletenamespacehandle:  
+        :type deletenamespacehandle: :ref:`DeleteNamespaceHandle <VariableManagerDeleteNamespaceHandle>`
+
+        :param int deviceId: Device's Id called by rpc (optional)
+        :param RouterClientSendOptions options: Router options for sending the message
+
+        .. _VariableManagerClientGetAllVariableJsonSchemas:
+
+    .. py:method:: GetAllVariableJsonSchemas (, deviceId = 0, options = RouterClientSendOptions())
+        
+        | The ``READ_ONLY`` permission is necessary to call this RPC.
+        |
+        | Get all variable JSON schemas available on robot (base & plugin schemas).
+
+        :param int deviceId: Device's Id called by rpc (optional)
+        :param RouterClientSendOptions options: Router options for sending the message
+ 
+        :rtype: VariableJsonSchemaList
+
+        .. _OnNotificationVariableManagerClientVariableChangeTopic:
+
+    .. py:method:: OnNotificationVariableChangeTopic(callback, notificationoptions)
+    
+        | The ``READ_ONLY`` permission is necessary to call this RPC.
+        |
+        | Subscribes to Configuration change topic on variables
+
+        :param callback: Function callback taking a :class:`Kinova.Api.VariableManager.ConfigurationChangeNotification` as only argument, and returning ``None``.
+        :type callback: function
+        :param NotificationOptions notificationoptions: Notification options
+        :rtype: NotificationHandle
+
+        .. _VariableManagerClientUnsubscribe:
+
+    .. py:method:: Unsubscribe (notificationhandle, deviceId = 0, options = RouterClientSendOptions())
+        
+        | The ``READ_ONLY`` permission is necessary to call this RPC.
+        |
+        | Unsubscribes client from receiving notifications for the specified topic
+
+
+        :param notificationhandle:  
+        :type notificationhandle: :ref:`NotificationHandle <CommonNotificationHandle>`
+
+        :param int deviceId: Device's Id called by rpc (optional)
+        :param RouterClientSendOptions options: Router options for sending the message
+
+        .. _VariableManagerClientInterpolate:
+
+    .. py:method:: Interpolate (interpolatestring, deviceId = 0, options = RouterClientSendOptions())
+        
+        | The ``OPERATE`` permission is necessary to call this RPC.
+        |
+        | Interpolate variables in a string.
+        | 
+        | An INVALID_PARAM exception is thrown if the input is not json-parsable.
+        | An ERROR_DEVICE exception is thrown if the interpolation fails (ex. a variable does not exist).
+        | 
+
+
+        :param interpolatestring:  
+        :type interpolatestring: :ref:`InterpolateString <VariableManagerInterpolateString>`
+
+        :param int deviceId: Device's Id called by rpc (optional)
+        :param RouterClientSendOptions options: Router options for sending the message
+ 
+        :rtype: InterpolateString
+
+        .. _OnNotificationVariableManagerClientVariableJsonSchemasChangedTopic:
+
+    .. py:method:: OnNotificationVariableJsonSchemasChangedTopic(callback, notificationoptions)
+    
+        | The ``READ_ONLY`` permission is necessary to call this RPC.
+        |
+        | Subscribes to variable JSON schemas changes notification
+
+        :param callback: Function callback taking a :class:`Kinova.Api.VariableManager.VariableJsonSchemasChangeNotification` as only argument, and returning ``None``.
+        :type callback: function
+        :param NotificationOptions notificationoptions: Notification options
+        :rtype: NotificationHandle

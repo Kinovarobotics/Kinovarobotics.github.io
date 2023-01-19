@@ -1,0 +1,432 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>PluginManager &mdash; Kortex API  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/dark_mode_css/general.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/dark_mode_css/dark.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/sphinx_highlight.js"></script>
+        <script src="../../../_static/dark_mode_js/default_dark.js"></script>
+        <script src="../../../_static/dark_mode_js/theme_switcher.js"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="ProductConfiguration" href="ProductConfiguration.html" />
+    <link rel="prev" title="Plugin" href="Plugin.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> Kortex API
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption" role="heading"><span class="caption-text">Getting started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../getting_started/installation.html">Install the API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../getting_started/api_mechanism.html">Get to know it</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../getting_started/code_examples.html">See what you can do (examples)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../getting_started/error_management.html">Managing problems</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">API</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Python API Reference</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../RouterClient.html">RouterClient</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../SessionManager.html">SessionManager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../MqttTransport.html">MqttTransport</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../UDPTransport.html">UDPTransport</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Constants.html">Constants</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../exceptions/index.html">Exceptions</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">Autogen</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../Enums/index.html">Enums</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Services/index.html">Services</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="index.html">Messages</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="ActuatorConfig.html">ActuatorConfig</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ActuatorCyclic.html">ActuatorCyclic</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Base.html">Base</a></li>
+<li class="toctree-l4"><a class="reference internal" href="BaseCyclic.html">BaseCyclic</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Common.html">Common</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ControlConfig.html">ControlConfig</a></li>
+<li class="toctree-l4"><a class="reference internal" href="DeviceConfig.html">DeviceConfig</a></li>
+<li class="toctree-l4"><a class="reference internal" href="DeviceManager.html">DeviceManager</a></li>
+<li class="toctree-l4"><a class="reference internal" href="EditingContext.html">EditingContext</a></li>
+<li class="toctree-l4"><a class="reference internal" href="EventBroker.html">EventBroker</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Frame.html">Frame</a></li>
+<li class="toctree-l4"><a class="reference internal" href="IndustrialIO.html">IndustrialIO</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Modbus.html">Modbus</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Plugin.html">Plugin</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">PluginManager</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ProductConfiguration.html">ProductConfiguration</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ProgramConfig.html">ProgramConfig</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ProgramRunner.html">ProgramRunner</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ProtectionZone.html">ProtectionZone</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SafetyControlUnitConfig.html">SafetyControlUnitConfig</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SafetyFunctions.html">SafetyFunctions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SafetyFunctionsCommon.html">SafetyFunctionsCommon</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SafetyFunctionsElbow.html">SafetyFunctionsElbow</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SafetyFunctionsJointLimits.html">SafetyFunctionsJointLimits</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SafetyFunctionsToolCenterPoint.html">SafetyFunctionsToolCenterPoint</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SafetyIO.html">SafetyIO</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Session.html">Session</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ToolManager.html">ToolManager</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ToolPlugin.html">ToolPlugin</a></li>
+<li class="toctree-l4"><a class="reference internal" href="VariableManager.html">VariableManager</a></li>
+<li class="toctree-l4"><a class="reference internal" href="WristConfigC61.html">WristConfigC61</a></li>
+<li class="toctree-l4"><a class="reference internal" href="WristCyclicC61.html">WristCyclicC61</a></li>
+<li class="toctree-l4"><a class="reference internal" href="WristCyclicCommon.html">WristCyclicCommon</a></li>
+<li class="toctree-l4"><a class="reference internal" href="WristCyclicGeneric.html">WristCyclicGeneric</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../Notifications.html">Notifications</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Kortex API</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../index.html">Python API Reference</a> &raquo;</li>
+        
+          <li><a href="../index.html">Autogen</a> &raquo;</li>
+        
+          <li><a href="index.html">Messages</a> &raquo;</li>
+        
+      <li>PluginManager</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../_sources/ref/autogen/Messages/PluginManager.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="pluginmanager">
+<h1>PluginManager<a class="headerlink" href="#pluginmanager" title="Permalink to this heading">¶</a></h1>
+<span class="target" id="pluginmanagerpluginhandle"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.PluginHandle">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">PluginHandle</span></span><a class="headerlink" href="#kortex_api.autogen.PluginHandle" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Handle for a Plugin instance</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.PluginManager_pb2.PluginHandle</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><p><strong>identifier</strong> (<span class="xref std std-ref">str</span>) – Unique identifier</p>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="pluginmanagerinstallationoptions"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.InstallationOptions">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">InstallationOptions</span></span><a class="headerlink" href="#kortex_api.autogen.InstallationOptions" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Options when updating a plugin</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.PluginManager_pb2.InstallationOptions</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>clear_data</strong> (<span class="xref std std-ref">bool</span>) – When true, this flag ensures all configuration data pertaining to the plugin is erased before installation/update</p></li>
+<li><p><strong>file_id</strong> (<a class="reference internal" href="Common.html#commonfileid"><span class="std std-ref">FileId</span></a>) – File ID to install the plugin from (optional)</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="pluginmanagerplugininfo"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.PluginInfo">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">PluginInfo</span></span><a class="headerlink" href="#kortex_api.autogen.PluginInfo" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.PluginManager_pb2.PluginInfo</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>handle</strong> (<a class="reference internal" href="#pluginmanagerpluginhandle"><span class="std std-ref">PluginHandle</span></a>) – Unique handle to the plugin</p></li>
+<li><p><strong>meta_data</strong> (<a class="reference internal" href="Plugin.html#pluginmetadata"><span class="std std-ref">MetaData</span></a>) – Manifest file contents for the Plugin</p></li>
+<li><p><strong>installation_type</strong> (<a class="reference internal" href="../Enums/PluginManager.html#pluginmanagerinstallationtype"><span class="std std-ref">InstallationType</span></a>) – Installation type</p></li>
+<li><p><strong>configuration</strong> (<a class="reference internal" href="Plugin.html#pluginconfiguration"><span class="std std-ref">Configuration</span></a>) – Configuration data</p></li>
+<li><p><strong>configuration_schema</strong> (<a class="reference internal" href="Plugin.html#pluginconfigurationschema"><span class="std std-ref">ConfigurationSchema</span></a>) – Configuration schema</p></li>
+<li><p><strong>actions</strong> (<a class="reference internal" href="Plugin.html#pluginactiondescription"><span class="std std-ref">ActionDescription</span></a> [ ]) – Actions exposed by the plugin</p></li>
+<li><p><strong>container_state</strong> (<a class="reference internal" href="../Enums/PluginManager.html#pluginmanagercontainerstate"><span class="std std-ref">ContainerState</span></a>) – Plugin container current state</p></li>
+<li><p><strong>plugin_state</strong> (<a class="reference internal" href="Plugin.html#pluginstatus"><span class="std std-ref">Status</span></a>) – Plugin application current state</p></li>
+<li><p><strong>visualizers</strong> (<a class="reference internal" href="Plugin.html#pluginvisualizer"><span class="std std-ref">Visualizer</span></a> [ ]) – Visualizers exposed by the plugin</p></li>
+<li><p><strong>feedback_schema</strong> (<a class="reference internal" href="Plugin.html#pluginfeedbackschema"><span class="std std-ref">FeedbackSchema</span></a>) – Feedback schema</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="pluginmanagerpluginupdatednotification"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.PluginUpdatedNotification">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">PluginUpdatedNotification</span></span><a class="headerlink" href="#kortex_api.autogen.PluginUpdatedNotification" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.PluginManager_pb2.PluginUpdatedNotification</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>handle</strong> (<a class="reference internal" href="#pluginmanagerpluginhandle"><span class="std std-ref">PluginHandle</span></a>) – Unique handle</p></li>
+<li><p><strong>timestamp</strong> (<a class="reference internal" href="Common.html#commontimestamp"><span class="std std-ref">Timestamp</span></a>) – This field is deprecated and will be removed in a future release</p></li>
+<li><p><strong>generic_info</strong> (<a class="reference internal" href="Common.html#commonnotificationinformation"><span class="std std-ref">NotificationInformation</span></a>) – Generic notification information</p></li>
+<li><p><strong>plugin_info</strong> (<a class="reference internal" href="#kortex_api.autogen.PluginInfo" title="kortex_api.autogen.PluginInfo"><em>PluginInfo</em></a>) – Plugin information. Filled when a new plugin is detected.. Part of the <code class="docutils literal notranslate"><span class="pre">updated_info</span></code> <a class="reference external" href="https://developers.google.com/protocol-buffers/docs/reference/python-generated#oneof">Oneof</a>.</p></li>
+<li><p><strong>container_state</strong> (<a class="reference internal" href="../Enums/PluginManager.html#kortex_api.autogen.ContainerState" title="kortex_api.autogen.ContainerState"><em>ContainerState</em></a>) – <p>Container state was updated. Part of the <code class="docutils literal notranslate"><span class="pre">updated_info</span></code> <a class="reference external" href="https://developers.google.com/protocol-buffers/docs/reference/python-generated#oneof">Oneof</a>.</p>
+</p></li>
+<li><p><strong>plugin_state</strong> (<a class="reference internal" href="Plugin.html#kortex_api.autogen.Status" title="kortex_api.autogen.Status"><em>Status</em></a>) – <p>Plugin state was updated. Part of the <code class="docutils literal notranslate"><span class="pre">updated_info</span></code> <a class="reference external" href="https://developers.google.com/protocol-buffers/docs/reference/python-generated#oneof">Oneof</a>.</p>
+</p></li>
+<li><p><strong>configuration</strong> (<a class="reference internal" href="Plugin.html#kortex_api.autogen.Configuration" title="kortex_api.autogen.Configuration"><em>Configuration</em></a>) – <p>Configuration data was updated. Part of the <code class="docutils literal notranslate"><span class="pre">updated_info</span></code> <a class="reference external" href="https://developers.google.com/protocol-buffers/docs/reference/python-generated#oneof">Oneof</a>.</p>
+</p></li>
+<li><p><strong>configuration_schema</strong> (<a class="reference internal" href="Plugin.html#kortex_api.autogen.ConfigurationSchema" title="kortex_api.autogen.ConfigurationSchema"><em>ConfigurationSchema</em></a>) – <p>Configuration schema was updated. Part of the <code class="docutils literal notranslate"><span class="pre">updated_info</span></code> <a class="reference external" href="https://developers.google.com/protocol-buffers/docs/reference/python-generated#oneof">Oneof</a>.</p>
+</p></li>
+<li><p><strong>action_description</strong> (<a class="reference internal" href="Plugin.html#kortex_api.autogen.ActionDescription" title="kortex_api.autogen.ActionDescription"><em>ActionDescription</em></a>) – <p>An Action description was updated. Part of the <code class="docutils literal notranslate"><span class="pre">updated_info</span></code> <a class="reference external" href="https://developers.google.com/protocol-buffers/docs/reference/python-generated#oneof">Oneof</a>.</p>
+</p></li>
+<li><p><strong>is_removed</strong> (<em>bool</em>) – <p>The Plugin was removed from the plugins list. Part of the <code class="docutils literal notranslate"><span class="pre">updated_info</span></code> <a class="reference external" href="https://developers.google.com/protocol-buffers/docs/reference/python-generated#oneof">Oneof</a>.</p>
+</p></li>
+<li><p><strong>action_list</strong> (<a class="reference internal" href="Plugin.html#kortex_api.autogen.ActionDescriptionList" title="kortex_api.autogen.ActionDescriptionList"><em>ActionDescriptionList</em></a>) – <p>The whole Action description list was updated. Part of the <code class="docutils literal notranslate"><span class="pre">updated_info</span></code> <a class="reference external" href="https://developers.google.com/protocol-buffers/docs/reference/python-generated#oneof">Oneof</a>.</p>
+</p></li>
+<li><p><strong>visualizer</strong> (<a class="reference internal" href="Plugin.html#kortex_api.autogen.Visualizer" title="kortex_api.autogen.Visualizer"><em>Visualizer</em></a>) – <p>A Visualizer was updated. Part of the <code class="docutils literal notranslate"><span class="pre">updated_info</span></code> <a class="reference external" href="https://developers.google.com/protocol-buffers/docs/reference/python-generated#oneof">Oneof</a>.</p>
+</p></li>
+<li><p><strong>visualizer_list</strong> (<a class="reference internal" href="Plugin.html#kortex_api.autogen.VisualizerList" title="kortex_api.autogen.VisualizerList"><em>VisualizerList</em></a>) – <p>The whole Visualizer list was updated. Part of the <code class="docutils literal notranslate"><span class="pre">updated_info</span></code> <a class="reference external" href="https://developers.google.com/protocol-buffers/docs/reference/python-generated#oneof">Oneof</a>.</p>
+</p></li>
+<li><p><strong>feedback_schema</strong> (<a class="reference internal" href="Plugin.html#kortex_api.autogen.FeedbackSchema" title="kortex_api.autogen.FeedbackSchema"><em>FeedbackSchema</em></a>) – <p>Feedback schema was updated. Part of the <code class="docutils literal notranslate"><span class="pre">updated_info</span></code> <a class="reference external" href="https://developers.google.com/protocol-buffers/docs/reference/python-generated#oneof">Oneof</a>.</p>
+</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="pluginmanagerplugininstallationnotification"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.PluginInstallationNotification">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">PluginInstallationNotification</span></span><a class="headerlink" href="#kortex_api.autogen.PluginInstallationNotification" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.PluginManager_pb2.PluginInstallationNotification</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>handle</strong> (<a class="reference internal" href="#pluginmanagerpluginhandle"><span class="std std-ref">PluginHandle</span></a>) – Unique handle (filled if installation succeded)</p></li>
+<li><p><strong>package_name</strong> (<span class="xref std std-ref">str</span>) – Package name for the installed plugin</p></li>
+<li><p><strong>event</strong> (<a class="reference internal" href="../Enums/PluginManager.html#pluginmanagerplugininstallationevent"><span class="std std-ref">PluginInstallationEvent</span></a>) – Installation event</p></li>
+<li><p><strong>details</strong> (<span class="xref std std-ref">str</span>) – Details on the event</p></li>
+<li><p><strong>timestamp</strong> (<a class="reference internal" href="Common.html#commontimestamp"><span class="std std-ref">Timestamp</span></a>) – This field is deprecated and will be removed in a future release</p></li>
+<li><p><strong>generic_info</strong> (<a class="reference internal" href="Common.html#commonnotificationinformation"><span class="std std-ref">NotificationInformation</span></a>) – Generic notification information</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="pluginmanagerplugininfolist"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.PluginInfoList">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">PluginInfoList</span></span><a class="headerlink" href="#kortex_api.autogen.PluginInfoList" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.PluginManager_pb2.PluginInfoList</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><p><strong>plugin_info_list</strong> (<a class="reference internal" href="#pluginmanagerplugininfo"><span class="std std-ref">PluginInfo</span></a> [ ]) – </p>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="pluginmanagerpluginscanresponse"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.PluginScanResponse">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">PluginScanResponse</span></span><a class="headerlink" href="#kortex_api.autogen.PluginScanResponse" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>This is the scan response message a plugin sends internally when pinged by the PluginManager</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.PluginManager_pb2.PluginScanResponse</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>meta_data</strong> (<a class="reference internal" href="Plugin.html#pluginmetadata"><span class="std std-ref">MetaData</span></a>) – Plugin meta-data</p></li>
+<li><p><strong>broker_address</strong> (<span class="xref std std-ref">str</span>) – Broker IP address which the Plugin is connected to</p></li>
+<li><p><strong>handle</strong> (<a class="reference internal" href="#pluginmanagerpluginhandle"><span class="std std-ref">PluginHandle</span></a>) – Unique handle</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="ProductConfiguration.html" class="btn btn-neutral float-right" title="ProductConfiguration" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="Plugin.html" class="btn btn-neutral float-left" title="Plugin" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2022, Kinova.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

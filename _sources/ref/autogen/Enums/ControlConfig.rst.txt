@@ -1,0 +1,144 @@
+================================
+ControlConfig
+================================
+    
+.. py:currentmodule:: kortex_api.autogen
+
+.. _ControlConfigServiceVersion:
+
+.. py:class:: ServiceVersion
+
+     Identifies ControlConfig current version
+
+    :canonical: kortex_api.autogen.messages.ControlConfig_pb2.ServiceVersion
+    .. py:attribute:: RESERVED_0 (0):   Reserved
+
+    .. py:attribute:: CURRENT_VERSION (1):   Current version
+
+.. _ControlConfigControlConfigurationEvent:
+
+.. py:class:: ControlConfigurationEvent
+
+     Admissible control configuration events
+
+    :canonical: kortex_api.autogen.messages.ControlConfig_pb2.ControlConfigurationEvent
+    .. py:attribute:: UNSPECIFIED_CONTROL_CONFIGURATION_EVENT (0):   Unspecified control configuration event
+
+    .. py:attribute:: ANGLE_UNIT_CHANGED (1):   Angle unit changed event
+
+    .. py:attribute:: GRAVITY_VECTOR_CHANGED (2):   Gravity vector changed event
+
+    .. py:attribute:: JOINT_HAND_GUIDING_CONFIGURATION_CHANGED (4):   Joint Hand-Guiding configuration changed event
+
+    .. py:attribute:: NULL_HAND_GUIDING_CONFIGURATION_CHANGED (5):   Null Hand-Guiding configuration changed event
+
+    .. py:attribute:: CARTESIAN_HAND_GUIDING_CONFIGURATION_CHANGED (6):   Cartesian Hand-Guiding configuration changed event
+
+    .. py:attribute:: JOINT_TORQUE_HYBRID_CONFIGURATION_CHANGED (7):   Joint torque hybrid configuraiton changed event
+
+    .. py:attribute:: WRENCH_COMMAND_NORMAL_CONFIGURATION_CHANGED (8):   Wrench commmand normal configuration changed event
+
+    .. py:attribute:: WRENCH_COMMAND_RESTRICTED_CONFIGURATION_CHANGED (9):   Wrench command restricted configuration changed event
+
+    .. py:attribute:: CONTROL_CONFIGURATION_FACTORY_RESTORED (10):   Control configuration factory restored event
+
+    .. py:attribute:: TOOL_CONFIGURATION_CHANGED (11):   Tool configuration event
+
+    .. py:attribute:: PAYLOAD_CONFIGURATION_CHANGED (12):   Payload configuration event
+
+    .. py:attribute:: CARTESIAN_REFERENCE_CHANGED (13):   Cartesian reference event
+
+    .. py:attribute:: CHANGE_CONTROL_MODE_FAILED (14):   Control mode change fail event
+
+    .. py:attribute:: LOCKED_CARTESIAN_AXIS_CHANGED (15):   Locked Cartesian axis event
+
+    .. py:attribute:: JOINT_SPEED_SOFT_LIMITS_CHANGED (16):   Joint speed software limits changed event
+
+    .. py:attribute:: TWIST_LINEAR_SOFT_LIMIT_CHANGED (17):   Linear speed software limit changed event
+
+    .. py:attribute:: TWIST_ANGULAR_SOFT_LIMIT_CHANGED (18):   Angular speed software limit changed event
+
+    .. py:attribute:: JOINT_ACCELERATION_SOFT_LIMITS_CHANGED (19):   Joint acceleration software limits changed event
+
+    .. py:attribute:: DESIRED_TWIST_LINEAR_SPEED_CHANGED (20):   Desired joystick twist linear speed changed event
+
+    .. py:attribute:: DESIRED_TWIST_ANGULAR_SPEED_CHANGED (21):   Desired joystick twist angular speed changed event
+
+    .. py:attribute:: DESIRED_JOINT_SPEED_CHANGED (22):   Desired joystick joint speed changed event
+
+    .. py:attribute:: JOINT_POSITION_SOFT_LIMITS_CHANGED (23):   Joint position software limits changed event
+
+    .. py:attribute:: ELBOW_LINEAR_SOFT_LIMIT_CHANGED (24):   Linear elbow speed software limit changed event
+
+    .. py:attribute:: ZERO_EXTERNAL_WRENCH_FROM_FT_SENSOR_APPLIED (25):   Zero external wrench from force torque sensor applied event
+
+    .. py:attribute:: TCP_TRANSLATION_SPEED_SATURATION_CHANGED (26):   Tcp translation speed saturation changed event
+
+    .. py:attribute:: COLLISION_DETECTION_LIMITS_CONFIGURATION_CHANGED (27):   Collision detection limits configuration changed event
+
+    .. py:attribute:: ENERGY_LIMITS_CONFIGURATION_CHANGED (28):   Energy limits configuration changed event
+
+.. _ControlConfigControlMode:
+
+.. py:class:: ControlMode
+
+     Admissible robot control modes
+
+    :canonical: kortex_api.autogen.messages.ControlConfig_pb2.ControlMode
+    .. py:attribute:: UNSPECIFIED_CONTROL_MODE (0):   Unspecified control mode
+
+    .. py:attribute:: ANGULAR_JOYSTICK (1):   Angular joystick mode
+
+    .. py:attribute:: CARTESIAN_JOYSTICK (2):   Cartesian joystick mode
+
+    .. py:attribute:: ANGULAR_TRAJECTORY (4):   Angular trajectory mode
+
+    .. py:attribute:: CARTESIAN_TRAJECTORY (5):   Cartesian trajectory mode
+
+    .. py:attribute:: CARTESIAN_HAND_GUIDING (6):   Cartesian Hand-Guiding mode
+
+    .. py:attribute:: JOINT_HAND_GUIDING (7):   Joint Hand-Guiding mode
+
+    .. py:attribute:: NULL_SPACE_HAND_GUIDING (8):   Null space mode
+
+    .. py:attribute:: JOINT_WAYPOINT_TRAJECTORY (9):   Joint waypoint trajectory mode
+
+    .. py:attribute:: FORCE_CONTROL (10):   Force control mode
+
+    .. py:attribute:: FORCE_CONTROL_MOTION_RESTRICTED (11):   Force control motion restricted mode
+
+    .. py:attribute:: CARTESIAN_WAYPOINT_TRAJECTORY (12):   Cartesian waypoint trajectory mode
+
+    .. py:attribute:: IDLE (13):   Idle
+
+.. _ControlConfigControlModeReportType:
+
+.. py:class:: ControlModeReportType
+
+     Control mode report type
+
+    :canonical: kortex_api.autogen.messages.ControlConfig_pb2.ControlModeReportType
+    .. py:attribute:: UNSPECIFIED_CONTROL_MODE_REPORT_TYPE (0):   Unspecified control mode report type
+
+    .. py:attribute:: CONTROL_MODE_REPORT_OUTSIDE_WORKSPACE (1):   The arm is outside of the workspace of the new control mode
+
+    .. py:attribute:: CONTROL_MODE_REPORT_STOPPING (2):   The robot is in the process of stopping
+
+    .. py:attribute:: CONTROL_MODE_REPORT_CLOSE_TO_SINGULARITY (3):   The arm is close to a singularity
+
+    .. py:attribute:: CONTROL_MODE_REPORT_INVALID_FORCE_TORQUE_DATA (4):   Force torque data is invalid. This might be caused by the absence or a malfunction of the force torque sensor
+
+.. _ControlConfigCollisionSensingActivationMode:
+
+.. py:class:: CollisionSensingActivationMode
+
+     Collision sensing activation mode (deprecated)
+
+    :canonical: kortex_api.autogen.messages.ControlConfig_pb2.CollisionSensingActivationMode
+    .. py:attribute:: COLLISION_SENSING_ACTIVATION_MODE_UNSPECIFIED (0):   Unspecified collision sensing activation mode
+
+    .. py:attribute:: COLLISION_SENSING_ACTIVATION_MODE_DISABLED (1):   Collision sensing disabled
+
+    .. py:attribute:: COLLISION_SENSING_ACTIVATION_MODE_REDUCED_ONLY (2):   Collision sensing enabled only in reduced mode
+
+    .. py:attribute:: COLLISION_SENSING_ACTIVATION_MODE_ENABLED (3):   Collision sensing enabled

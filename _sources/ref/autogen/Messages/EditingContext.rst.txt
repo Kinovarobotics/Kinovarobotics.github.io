@@ -1,0 +1,36 @@
+================================
+EditingContext
+================================
+    
+.. py:currentmodule:: kortex_api.autogen
+
+.. _EditingContextContext:
+
+.. py:class:: Context
+
+    Description of the editing context object itself
+
+   :canonical: kortex_api.autogen.messages.EditingContext_pb2.Context
+
+   :param session_id:   Session ID
+   :type session_id: :ref:`ContextSessionIdentifier <EditingContextContextSessionIdentifier>` 
+
+   :param record_id:   Record identifier
+   :type record_id: :ref:`int <>` 
+
+   :param editing_context_type:   Editing context type
+   :type editing_context_type: :ref:`EditingContextType <EditingContextEditingContextType>` 
+
+   :param additional_context_info:   JSON object containing additional context info (optional)
+   :type additional_context_info: :ref:`str <>` 
+
+.. _EditingContextContextSessionIdentifier:
+
+.. py:class:: ContextSessionIdentifier
+
+    Context session identifier object
+
+   :canonical: kortex_api.autogen.messages.EditingContext_pb2.ContextSessionIdentifier
+
+   :param session_id:   Session ID
+   :type session_id: :ref:`int <>` 

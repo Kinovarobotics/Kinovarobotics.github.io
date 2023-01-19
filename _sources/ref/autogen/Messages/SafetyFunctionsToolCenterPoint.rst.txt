@@ -1,0 +1,117 @@
+================================
+SafetyFunctionsToolCenterPoint
+================================
+    
+.. py:currentmodule:: kortex_api.autogen
+
+.. _SafetyFunctionsToolCenterPointTcpInfo:
+
+.. py:class:: TcpInfo
+
+    Tool center point information
+
+   :canonical: kortex_api.autogen.messages.SafetyFunctionsToolCenterPoint_pb2.TcpInfo
+
+   :param mode:   Safety system mode (normal or reduced)
+   :type mode: :ref:`SafetySystemMode <SafetyFunctionsToolCenterPointSafetySystemMode>` 
+
+   :param with_margin:   True for limits adapted with margins
+   :type with_margin: :ref:`bool <>` 
+
+.. _SafetyFunctionsToolCenterPointTcpOrientation:
+
+.. py:class:: TcpOrientation
+
+    Tool center point orientation
+
+   :canonical: kortex_api.autogen.messages.SafetyFunctionsToolCenterPoint_pb2.TcpOrientation
+
+   :param x:   X-axis position in degrees (°)
+   :type x: :ref:`float <>` 
+
+   :param y:   Y-axis position in degrees (°)
+   :type y: :ref:`float <>` 
+
+   :param z:   Z-axis position in degrees (°)
+   :type z: :ref:`float <>` 
+
+.. _SafetyFunctionsToolCenterPointTcpSpeedLimits:
+
+.. py:class:: TcpSpeedLimits
+
+    Tool center point speed limits
+
+   :canonical: kortex_api.autogen.messages.SafetyFunctionsToolCenterPoint_pb2.TcpSpeedLimits
+
+   :param info:   Tool center point information
+   :type info: :ref:`TcpInfo <SafetyFunctionsToolCenterPointTcpInfo>` 
+
+   :param translation_limit:   Tool center point translation speed limit in meters/second (m/s)
+   :type translation_limit: :ref:`float <>` 
+
+   :param orientation_limit:   Tool center point orientation speed limit in degrees/second (°/s)
+   :type orientation_limit: :ref:`float <>` 
+
+.. _SafetyFunctionsToolCenterPointTcpForceLimit:
+
+.. py:class:: TcpForceLimit
+
+    Tool center point force limit
+
+   :canonical: kortex_api.autogen.messages.SafetyFunctionsToolCenterPoint_pb2.TcpForceLimit
+
+   :param info:   Tool center point information
+   :type info: :ref:`TcpInfo <SafetyFunctionsToolCenterPointTcpInfo>` 
+
+   :param limit:   Tool center point force limit in newtons (N)
+   :type limit: :ref:`float <>` 
+
+.. _SafetyFunctionsToolCenterPointTcpOrientationLimits:
+
+.. py:class:: TcpOrientationLimits
+
+    Tool center point orientation limits
+
+   :canonical: kortex_api.autogen.messages.SafetyFunctionsToolCenterPoint_pb2.TcpOrientationLimits
+
+   :param info:   Tool center point information
+   :type info: :ref:`TcpInfo <SafetyFunctionsToolCenterPointTcpInfo>` 
+
+   :param upper_limit:   Tool center point orientation upper limit
+   :type upper_limit: :ref:`TcpOrientation <SafetyFunctionsToolCenterPointTcpOrientation>` 
+
+   :param lower_limit:   Tool center point orientation lower limit
+   :type lower_limit: :ref:`TcpOrientation <SafetyFunctionsToolCenterPointTcpOrientation>` 
+
+.. _SafetyFunctionsToolCenterPointTcpSpeedLimitsList:
+
+.. py:class:: TcpSpeedLimitsList
+
+    Array of tool center point speed limits (for each safety system mode)
+
+   :canonical: kortex_api.autogen.messages.SafetyFunctionsToolCenterPoint_pb2.TcpSpeedLimitsList
+
+   :param tcp_speed_limits:   List of tool center point speed limits (for each safety system mode)
+   :type tcp_speed_limits: :ref:`TcpSpeedLimits <SafetyFunctionsToolCenterPointTcpSpeedLimits>` [ ]
+
+.. _SafetyFunctionsToolCenterPointTcpForceLimitList:
+
+.. py:class:: TcpForceLimitList
+
+    Array of tool center point force limit (for each safety system mode)
+
+   :canonical: kortex_api.autogen.messages.SafetyFunctionsToolCenterPoint_pb2.TcpForceLimitList
+
+   :param tcp_force_limit:   List of tool center point force limit (for each safety system mode)
+   :type tcp_force_limit: :ref:`TcpForceLimit <SafetyFunctionsToolCenterPointTcpForceLimit>` [ ]
+
+.. _SafetyFunctionsToolCenterPointTcpOrientationLimitsList:
+
+.. py:class:: TcpOrientationLimitsList
+
+    Array of tool center point orientation limits (for each safety system mode)
+
+   :canonical: kortex_api.autogen.messages.SafetyFunctionsToolCenterPoint_pb2.TcpOrientationLimitsList
+
+   :param tcp_orientation_limits:   List of tool center point orientation limits (for each safety system mode)
+   :type tcp_orientation_limits: :ref:`TcpOrientationLimits <SafetyFunctionsToolCenterPointTcpOrientationLimits>` [ ]

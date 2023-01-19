@@ -1,0 +1,35 @@
+================================
+WristCyclicGeneric
+================================
+    
+.. py:currentmodule:: kortex_api.autogen
+
+.. _WristCyclicGenericCommand:
+
+.. py:class:: Command
+
+    Interface module command
+
+   :canonical: kortex_api.autogen.messages.WristCyclicGeneric_pb2.Command
+
+   :param Command c61:   Link 6 wrist. Part of the ``wrist_type`` `Oneof <https://developers.google.com/protocol-buffers/docs/reference/python-generated#oneof>`_.
+
+.. _WristCyclicGenericFeedback:
+
+.. py:class:: Feedback
+
+    Defines the feedback provided by interface module
+
+   :canonical: kortex_api.autogen.messages.WristCyclicGeneric_pb2.Feedback
+
+   :param Feedback c61:   Link 6 wrist. Part of the ``wrist_type`` `Oneof <https://developers.google.com/protocol-buffers/docs/reference/python-generated#oneof>`_.
+
+.. _WristCyclicGenericCustomData:
+
+.. py:class:: CustomData
+
+    TODO : Do we need hw-specific custom data fields or all the same would suffice? Custom development data, content varies according to debugging needs
+
+   :canonical: kortex_api.autogen.messages.WristCyclicGeneric_pb2.CustomData
+
+   :param CustomData c61:   Link 6 wrist. Part of the ``wrist_type`` `Oneof <https://developers.google.com/protocol-buffers/docs/reference/python-generated#oneof>`_.

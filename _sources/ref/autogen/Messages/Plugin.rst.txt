@@ -1,0 +1,431 @@
+================================
+Plugin
+================================
+    
+.. py:currentmodule:: kortex_api.autogen
+
+.. _PluginStateTransitionResponse:
+
+.. py:class:: StateTransitionResponse
+
+   
+
+   :canonical: kortex_api.autogen.messages.Plugin_pb2.StateTransitionResponse
+
+   :param response:  
+   :type response: :ref:`StateTransitionResponseType <PluginStateTransitionResponseType>` 
+
+.. _PluginStatus:
+
+.. py:class:: Status
+
+    Status of the Plugin
+
+   :canonical: kortex_api.autogen.messages.Plugin_pb2.Status
+
+   :param state:   State of the plugin
+   :type state: :ref:`State <PluginState>` 
+
+   :param details:   Additional information on the state
+   :type details: :ref:`str <>` 
+
+.. _PluginMetaData:
+
+.. py:class:: MetaData
+
+    Versioned data in a given type
+
+   :canonical: kortex_api.autogen.messages.Plugin_pb2.MetaData
+
+   :param friendly_name:   Friendly name
+   :type friendly_name: :ref:`str <>` 
+
+   :param package_name:   Conan package name
+   :type package_name: :ref:`str <>` 
+
+   :param version:   Semantic version
+   :type version: :ref:`str <>` 
+
+   :param author:   Author of the plugin
+   :type author: :ref:`str <>` 
+
+   :param company:   Company
+   :type company: :ref:`str <>` 
+
+   :param docker_image:   Tag of the Docker image the plugin runs in 
+   :type docker_image: :ref:`str <>` 
+
+   :param additional_data:   JSON formated as string representing additional meta-data parameters
+   :type additional_data: :ref:`str <>` 
+
+   :param type:   Type of plugin
+   :type type: :ref:`PluginType <PluginPluginType>` 
+
+.. _PluginConfiguration:
+
+.. py:class:: Configuration
+
+    Versioned data in a given type
+
+   :canonical: kortex_api.autogen.messages.Plugin_pb2.Configuration
+
+   :param type:   Type of serialization for the "data" field
+   :type type: :ref:`DataType <PluginDataType>` 
+
+   :param data:   Data for the configuration in a serialized format
+   :type data: :ref:`str <>` 
+
+   :param version:   Version number for "data" format
+   :type version: :ref:`str <>` 
+
+.. _PluginConfigurationSchema:
+
+.. py:class:: ConfigurationSchema
+
+    Versioned schemas for the configuration in a given type
+
+   :canonical: kortex_api.autogen.messages.Plugin_pb2.ConfigurationSchema
+
+   :param type:   Type of serialization for the "data" field
+   :type type: :ref:`DataType <PluginDataType>` 
+
+   :param data_schema:   Data schema for the configuration in a serialized format
+   :type data_schema: :ref:`str <>` 
+
+   :param ui_schema:   UI schema for the configuration in a serialized format (optional)
+   :type ui_schema: :ref:`str <>` 
+
+   :param version:   Version number for "data" format
+   :type version: :ref:`str <>` 
+
+   :param layout_schema:   Layout schema for the configuration in a serialized format (optional)
+   :type layout_schema: :ref:`str <>` 
+
+.. _PluginActionDescriptionList:
+
+.. py:class:: ActionDescriptionList
+
+    List of Action types descriptions
+
+   :canonical: kortex_api.autogen.messages.Plugin_pb2.ActionDescriptionList
+
+   :param actions:  
+   :type actions: :ref:`ActionDescription <PluginActionDescription>` [ ]
+
+.. _PluginActionDescription:
+
+.. py:class:: ActionDescription
+
+    Action Type description
+
+   :canonical: kortex_api.autogen.messages.Plugin_pb2.ActionDescription
+
+   :param handle:   Handle of the Action Description
+   :type handle: :ref:`ActionDescriptionHandle <PluginActionDescriptionHandle>` 
+
+   :param can_be_paused:   True if the Action supports the PauseAction and ResumeAction methods 
+   :type can_be_paused: :ref:`bool <>` 
+
+   :param can_be_cancelled:   True if the Action supports the StopAction method 
+   :type can_be_cancelled: :ref:`bool <>` 
+
+   :param serialization_type:   Type of serialization for the "schema" fields
+   :type serialization_type: :ref:`DataType <PluginDataType>` 
+
+   :param input_schema:   Data Schema of input data to supply the Action when starting it, in a serialized format
+   :type input_schema: :ref:`str <>` 
+
+   :param output_schema:   Data Schema of outputted data by the Action when it ends, in a serialized format
+   :type output_schema: :ref:`str <>` 
+
+   :param input_ui_schema:   UI Schema of input data, in a serialized format (optional)
+   :type input_ui_schema: :ref:`str <>` 
+
+   :param output_ui_schema:   UI Schema of output data, in a serialized format (optional)
+   :type output_ui_schema: :ref:`str <>` 
+
+   :param version:   Action version
+   :type version: :ref:`int <>` 
+
+   :param input_layout_schema:   Layout Schema of input data, in a serialized format (optional)
+   :type input_layout_schema: :ref:`str <>` 
+
+   :param output_layout_schema:   Layout Schema of output data, in a serialized format (optional)
+   :type output_layout_schema: :ref:`str <>` 
+
+   :param branch_count_property:   Property Name in input_schema-respected JSON object to use for branching strategy:
+   :type branch_count_property: :ref:`str <>` 
+
+   :param setup_on_load:   True if the Action needs to be setup/teardown upon load/unload of a Program
+   :type setup_on_load: :ref:`bool <>` 
+
+   :param icon:   Specifies the icon
+   :type icon: :ref:`Icon <CommonIcon>` 
+
+   :param icon_label_path:   Optional JSON pointer to a value from the action input that we want to
+   :type icon_label_path: :ref:`str <>` 
+
+   :param friendly_name:   Friendly name for the action type
+   :type friendly_name: :ref:`str <>` 
+
+   :param can_be_started_asynchronously:   True if Action supports being launched asynchronously by the Program Runner
+   :type can_be_started_asynchronously: :ref:`bool <>` 
+
+.. _PluginActionDescriptionHandle:
+
+.. py:class:: ActionDescriptionHandle
+
+    Handle for an Action Description
+
+   :canonical: kortex_api.autogen.messages.Plugin_pb2.ActionDescriptionHandle
+
+   :param identifier:   Type of the Action
+   :type identifier: :ref:`str <>` 
+
+.. _PluginAction:
+
+.. py:class:: Action
+
+    Plugin Action instance
+
+   :canonical: kortex_api.autogen.messages.Plugin_pb2.Action
+
+   :param name:   Friendly name for this Action
+   :type name: :ref:`str <>` 
+
+   :param action_identifier:   Handle of this Action in the Database (optional)
+   :type action_identifier: :ref:`ActionHandle <CommonActionHandle>` 
+
+   :param program_identifier:   Handle of the Program this Action belongs to in the Database (optional)
+   :type program_identifier: :ref:`ProgramHandle <CommonProgramHandle>` 
+
+   :param handle:   Handle of the Action Description
+   :type handle: :ref:`ActionDescriptionHandle <PluginActionDescriptionHandle>` 
+
+   :param serialization_type:   Type of serialization for the "input" field
+   :type serialization_type: :ref:`DataType <PluginDataType>` 
+
+   :param input:   Input data to supply the Action when starting it, in a serialized format
+   :type input: :ref:`str <>` 
+
+.. _PluginUiTrigger:
+
+.. py:class:: UiTrigger
+
+    Trigger associated to element defined in UI schema that can be sent to plugins and actions
+
+   :canonical: kortex_api.autogen.messages.Plugin_pb2.UiTrigger
+
+   :param path:   JSON path of the element in the form
+   :type path: :ref:`str <>` 
+
+   :param name:   Name of the trigger
+   :type name: :ref:`str <>` 
+
+.. _PluginActionTrigger:
+
+.. py:class:: ActionTrigger
+
+   
+
+   :canonical: kortex_api.autogen.messages.Plugin_pb2.ActionTrigger
+
+   :param action:   Action to update  
+   :type action: :ref:`Action <PluginAction>` 
+
+   :param GlobalTrigger global_trigger:  . Part of the ``trigger`` `Oneof <https://developers.google.com/protocol-buffers/docs/reference/python-generated#oneof>`_.
+
+   :param UiTrigger ui_trigger:  . Part of the ``trigger`` `Oneof <https://developers.google.com/protocol-buffers/docs/reference/python-generated#oneof>`_.
+
+.. _PluginConfigurationTrigger:
+
+.. py:class:: ConfigurationTrigger
+
+   
+
+   :canonical: kortex_api.autogen.messages.Plugin_pb2.ConfigurationTrigger
+
+   :param GlobalTrigger global_trigger:  . Part of the ``trigger`` `Oneof <https://developers.google.com/protocol-buffers/docs/reference/python-generated#oneof>`_.
+
+   :param UiTrigger ui_trigger:  . Part of the ``trigger`` `Oneof <https://developers.google.com/protocol-buffers/docs/reference/python-generated#oneof>`_.
+
+.. _PluginJSONFieldFeedback:
+
+.. py:class:: JSONFieldFeedback
+
+    Field in a JSON to provide feedback for, with level and optional message to show
+
+   :canonical: kortex_api.autogen.messages.Plugin_pb2.JSONFieldFeedback
+
+   :param path:   Path to the JSON field
+   :type path: :ref:`str <>` 
+
+   :param level:   Feedback level
+   :type level: :ref:`FieldFeedbackLevel <PluginFieldFeedbackLevel>` 
+
+   :param message:   Optional message to show with the field feedback
+   :type message: :ref:`str <>` 
+
+.. _PluginActionInstanceHandle:
+
+.. py:class:: ActionInstanceHandle
+
+    Plugin Action instance handle. This is created upon starting an Action and destroyed whenever the Action ends.
+
+   :canonical: kortex_api.autogen.messages.Plugin_pb2.ActionInstanceHandle
+
+   :param identifier:  
+   :type identifier: :ref:`int <>` 
+
+.. _PluginStateNotification:
+
+.. py:class:: StateNotification
+
+    Notification about a state change event
+
+   :canonical: kortex_api.autogen.messages.Plugin_pb2.StateNotification
+
+   :param state:   New state
+   :type state: :ref:`State <PluginState>` 
+
+   :param details:   Additional information on the state
+   :type details: :ref:`str <>` 
+
+   :param generic_info:   Generic notification information
+   :type generic_info: :ref:`NotificationInformation <CommonNotificationInformation>` 
+
+.. _PluginConfigurationChangeNotification:
+
+.. py:class:: ConfigurationChangeNotification
+
+    Notification about a configuration change event
+
+   :canonical: kortex_api.autogen.messages.Plugin_pb2.ConfigurationChangeNotification
+
+   :param configuration:   Configuration event
+   :type configuration: :ref:`Configuration <PluginConfiguration>` 
+
+   :param generic_info:   Generic notification information
+   :type generic_info: :ref:`NotificationInformation <CommonNotificationInformation>` 
+
+.. _PluginActionNotification:
+
+.. py:class:: ActionNotification
+
+    Notification about a single action event
+
+   :canonical: kortex_api.autogen.messages.Plugin_pb2.ActionNotification
+
+   :param action_event:   Action event type
+   :type action_event: :ref:`ActionEvent <PluginActionEvent>` 
+
+   :param instance_handle:   Identifies the action instance for which this event occured
+   :type instance_handle: :ref:`ActionInstanceHandle <PluginActionInstanceHandle>` 
+
+   :param application_data:   Contains the output (JSON) if ACTION_END or a string if ACTION_ABORT or ACTION_FEEDBACK
+   :type application_data: :ref:`str <>` 
+
+   :param field_feedbacks:   Field feedbacks in the Action form (optional)
+   :type field_feedbacks: :ref:`JSONFieldFeedback <PluginJSONFieldFeedback>` [ ]
+
+   :param handle:   Handle of this Action in the Database (optional)
+   :type handle: :ref:`ActionHandle <CommonActionHandle>` 
+
+   :param generic_info:   Generic notification information
+   :type generic_info: :ref:`NotificationInformation <CommonNotificationInformation>` 
+
+.. _PluginInfoChangeNotification:
+
+.. py:class:: InfoChangeNotification
+
+    Notification sent whenever information on the plugin itself changes (excludes current state, current configuration and current action being played)
+
+   :canonical: kortex_api.autogen.messages.Plugin_pb2.InfoChangeNotification
+
+   :param generic_info:   Generic notification information
+   :type generic_info: :ref:`NotificationInformation <CommonNotificationInformation>` 
+
+   :param ConfigurationSchema configuration_schema:   The updated Configuration Schema. Part of the ``updated_info`` `Oneof <https://developers.google.com/protocol-buffers/docs/reference/python-generated#oneof>`_.
+
+   :param ActionDescription action_description:   The updated ActionDescription. Filled when only one ActionDescription has been updated.. Part of the ``updated_info`` `Oneof <https://developers.google.com/protocol-buffers/docs/reference/python-generated#oneof>`_.
+
+   :param ActionDescriptionList action_list:   The updated ActionDescriptionList. Filled when one or more ActionDescription's have been added/removed from the list.. Part of the ``updated_info`` `Oneof <https://developers.google.com/protocol-buffers/docs/reference/python-generated#oneof>`_.
+
+   :param Visualizer visualizer:   The updated Visualizer. Filled when only one Visualizer has been updated.. Part of the ``updated_info`` `Oneof <https://developers.google.com/protocol-buffers/docs/reference/python-generated#oneof>`_.
+
+   :param VisualizerList visualizer_list:   The updated VisualizerList. Filled when one or more Visualizer's have been added/removed from the list.. Part of the ``updated_info`` `Oneof <https://developers.google.com/protocol-buffers/docs/reference/python-generated#oneof>`_.
+
+   :param FeedbackSchema feedback_schema:   The updated FeedbackSchema. Part of the ``updated_info`` `Oneof <https://developers.google.com/protocol-buffers/docs/reference/python-generated#oneof>`_.
+
+.. _PluginVisualizer:
+
+.. py:class:: Visualizer
+
+    Information about a Visualizer the plugin can offer 
+
+   :canonical: kortex_api.autogen.messages.Plugin_pb2.Visualizer
+
+   :param name:   Friendly name
+   :type name: :ref:`str <>` 
+
+   :param url:   URL at which the visualizer is available
+   :type url: :ref:`str <>` 
+
+.. _PluginVisualizerList:
+
+.. py:class:: VisualizerList
+
+    Visualizer list
+
+   :canonical: kortex_api.autogen.messages.Plugin_pb2.VisualizerList
+
+   :param visualizers:   List of visualizers
+   :type visualizers: :ref:`Visualizer <PluginVisualizer>` [ ]
+
+.. _PluginFeedback:
+
+.. py:class:: Feedback
+
+    Feedback data
+
+   :canonical: kortex_api.autogen.messages.Plugin_pb2.Feedback
+
+   :param type:   Type of serialization for the "data" field
+   :type type: :ref:`DataType <PluginDataType>` 
+
+   :param data:   Data for the feedback in a serialized format
+   :type data: :ref:`str <>` 
+
+.. _PluginFeedbackSchema:
+
+.. py:class:: FeedbackSchema
+
+    Schemas for the feedback in a given type
+
+   :canonical: kortex_api.autogen.messages.Plugin_pb2.FeedbackSchema
+
+   :param type:   Type of serialization for the "data" field
+   :type type: :ref:`DataType <PluginDataType>` 
+
+   :param data_schema:   Data schema for the feedback in a serialized format
+   :type data_schema: :ref:`str <>` 
+
+   :param ui_schema:   UI schema for the feedback in a serialized format (optional)
+   :type ui_schema: :ref:`str <>` 
+
+   :param layout_schema:   Layout schema for the feedback in a serialized format (optional)
+   :type layout_schema: :ref:`str <>` 
+
+.. _PluginActionValidationResult:
+
+.. py:class:: ActionValidationResult
+
+    Action validation result
+
+   :canonical: kortex_api.autogen.messages.Plugin_pb2.ActionValidationResult
+
+   :param is_ok:   True if Action passed validation, false otherwise
+   :type is_ok: :ref:`bool <>` 
+
+   :param field_feedbacks:   Contains a list of fields for which feedback is provided
+   :type field_feedbacks: :ref:`JSONFieldFeedback <PluginJSONFieldFeedback>` [ ]

@@ -1,0 +1,1770 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Common &mdash; Kortex API  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/dark_mode_css/general.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/dark_mode_css/dark.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/sphinx_highlight.js"></script>
+        <script src="../../../_static/dark_mode_js/default_dark.js"></script>
+        <script src="../../../_static/dark_mode_js/theme_switcher.js"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="ControlConfig" href="ControlConfig.html" />
+    <link rel="prev" title="BaseCyclic" href="BaseCyclic.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> Kortex API
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption" role="heading"><span class="caption-text">Getting started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../getting_started/installation.html">Install the API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../getting_started/api_mechanism.html">Get to know it</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../getting_started/code_examples.html">See what you can do (examples)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../getting_started/error_management.html">Managing problems</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">API</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Python API Reference</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../RouterClient.html">RouterClient</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../SessionManager.html">SessionManager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../MqttTransport.html">MqttTransport</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../UDPTransport.html">UDPTransport</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Constants.html">Constants</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../exceptions/index.html">Exceptions</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">Autogen</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="index.html">Enums</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="ActuatorConfig.html">ActuatorConfig</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ActuatorCyclic.html">ActuatorCyclic</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Base.html">Base</a></li>
+<li class="toctree-l4"><a class="reference internal" href="BaseCyclic.html">BaseCyclic</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Common</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ControlConfig.html">ControlConfig</a></li>
+<li class="toctree-l4"><a class="reference internal" href="DeviceConfig.html">DeviceConfig</a></li>
+<li class="toctree-l4"><a class="reference internal" href="DeviceManager.html">DeviceManager</a></li>
+<li class="toctree-l4"><a class="reference internal" href="EditingContext.html">EditingContext</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Errors.html">Errors</a></li>
+<li class="toctree-l4"><a class="reference internal" href="EventBroker.html">EventBroker</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Frame.html">Frame</a></li>
+<li class="toctree-l4"><a class="reference internal" href="IndustrialIO.html">IndustrialIO</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Modbus.html">Modbus</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Plugin.html">Plugin</a></li>
+<li class="toctree-l4"><a class="reference internal" href="PluginManager.html">PluginManager</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ProductConfiguration.html">ProductConfiguration</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ProgramConfig.html">ProgramConfig</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ProgramRunner.html">ProgramRunner</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ProtectionZone.html">ProtectionZone</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SafetyControlUnitConfig.html">SafetyControlUnitConfig</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SafetyFunctions.html">SafetyFunctions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SafetyFunctionsCommon.html">SafetyFunctionsCommon</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SafetyIO.html">SafetyIO</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SerialCommunication.html">SerialCommunication</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Session.html">Session</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ToolManager.html">ToolManager</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ToolPlugin.html">ToolPlugin</a></li>
+<li class="toctree-l4"><a class="reference internal" href="VariableManager.html">VariableManager</a></li>
+<li class="toctree-l4"><a class="reference internal" href="WristConfigC61.html">WristConfigC61</a></li>
+<li class="toctree-l4"><a class="reference internal" href="WristCyclic.html">WristCyclic</a></li>
+<li class="toctree-l4"><a class="reference internal" href="WristCyclicC61.html">WristCyclicC61</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../Services/index.html">Services</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Messages/index.html">Messages</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Notifications.html">Notifications</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Kortex API</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../index.html">Python API Reference</a> &raquo;</li>
+        
+          <li><a href="../index.html">Autogen</a> &raquo;</li>
+        
+          <li><a href="index.html">Enums</a> &raquo;</li>
+        
+      <li>Common</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../_sources/ref/autogen/Enums/Common.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="common">
+<h1>Common<a class="headerlink" href="#common" title="Permalink to this heading">¶</a></h1>
+<span class="target" id="commondevicetypes"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.DeviceTypes">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">DeviceTypes</span></span><a class="headerlink" href="#kortex_api.autogen.DeviceTypes" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Admissible device types</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.Common_pb2.DeviceTypes</p>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">UNSPECIFIED_DEVICE_TYPE</span> <span class="pre">(0):</span>&#160;&#160; <span class="pre">Unspecified</span> <span class="pre">device</span> <span class="pre">type</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">BASE</span> <span class="pre">(1):</span>&#160;&#160; <span class="pre">Base</span> <span class="pre">module</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">VISION</span> <span class="pre">(2):</span>&#160;&#160; <span class="pre">Vision</span> <span class="pre">module</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">BIG_ACTUATOR</span> <span class="pre">(3):</span>&#160;&#160; <span class="pre">Big</span> <span class="pre">actuator</span> <span class="pre">module</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">SMALL_ACTUATOR</span> <span class="pre">(4):</span>&#160;&#160; <span class="pre">Small</span> <span class="pre">actuator</span> <span class="pre">module</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">INTERCONNECT</span> <span class="pre">(5):</span>&#160;&#160; <span class="pre">Interface</span> <span class="pre">module</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">GRIPPER</span> <span class="pre">(6):</span>&#160;&#160; <span class="pre">Gripper</span> <span class="pre">module</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">MEDIUM_ACTUATOR</span> <span class="pre">(7):</span>&#160;&#160; <span class="pre">Medium</span> <span class="pre">actuator</span> <span class="pre">module</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">XBIG_ACTUATOR</span> <span class="pre">(8):</span>&#160;&#160; <span class="pre">XBig</span> <span class="pre">actuator</span> <span class="pre">module</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">ACTUATOR_SAFETY_MCU</span> <span class="pre">(9):</span>&#160;&#160; <span class="pre">Actuator</span> <span class="pre">safety</span> <span class="pre">MCU</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">SCU</span> <span class="pre">(10):</span>&#160;&#160; <span class="pre">Safety</span> <span class="pre">Control</span> <span class="pre">Unit</span> <span class="pre">module</span></span></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<span class="target" id="commondiagnosticstatusvalue"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.DiagnosticStatusValue">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">DiagnosticStatusValue</span></span><a class="headerlink" href="#kortex_api.autogen.DiagnosticStatusValue" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Admissible diagnostic statuses</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.Common_pb2.DiagnosticStatusValue</p>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">DIAGNOSTIC_STATUS_UNSPECIFIED</span> <span class="pre">(0):</span>&#160;&#160; <span class="pre">Unspecified</span> <span class="pre">diagnostic</span> <span class="pre">status</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">DIAGNOSTIC_STATUS_WARNING</span> <span class="pre">(1):</span>&#160;&#160; <span class="pre">Warning</span> <span class="pre">diagnostic</span> <span class="pre">reached</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">DIAGNOSTIC_STATUS_ERROR</span> <span class="pre">(2):</span>&#160;&#160; <span class="pre">Error</span> <span class="pre">diagnostic</span> <span class="pre">reached</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">DIAGNOSTIC_STATUS_NORMAL</span> <span class="pre">(3):</span>&#160;&#160; <span class="pre">Diagnostic</span> <span class="pre">is</span> <span class="pre">off</span></span></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<span class="target" id="commonpermission"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.Permission">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Permission</span></span><a class="headerlink" href="#kortex_api.autogen.Permission" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Admissible permissions. Used as bitfields</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.Common_pb2.Permission</p>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">NO_PERMISSION</span> <span class="pre">(0):</span>&#160;&#160; <span class="pre">No</span> <span class="pre">permission</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">READ_PERMISSION</span> <span class="pre">(1):</span>&#160;&#160; <span class="pre">Read</span> <span class="pre">permission.</span> <span class="pre">Refers</span> <span class="pre">to</span> <span class="pre">an</span> <span class="pre">entity</span> <span class="pre">that</span> <span class="pre">can</span> <span class="pre">be</span> <span class="pre">read</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">UPDATE_PERMISSION</span> <span class="pre">(2):</span>&#160;&#160; <span class="pre">Update</span> <span class="pre">permission.</span> <span class="pre">Refers</span> <span class="pre">to</span> <span class="pre">an</span> <span class="pre">entity</span> <span class="pre">that</span> <span class="pre">can</span> <span class="pre">be</span> <span class="pre">modified</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">DELETE_PERMISSION</span> <span class="pre">(4):</span>&#160;&#160; <span class="pre">Delete</span> <span class="pre">permission.</span> <span class="pre">Refers</span> <span class="pre">to</span> <span class="pre">an</span> <span class="pre">entity</span> <span class="pre">that</span> <span class="pre">can</span> <span class="pre">be</span> <span class="pre">deleted</span></span></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<span class="target" id="commonnotificationtype"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.NotificationType">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">NotificationType</span></span><a class="headerlink" href="#kortex_api.autogen.NotificationType" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Admissible notification types</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.Common_pb2.NotificationType</p>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">NOTIFICATION_TYPE_UNSPECIFIED</span> <span class="pre">(0):</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="kortex_api.autogen.NotificationType.NOTIFICATION_TYPE_FIX_RATE">
+<span class="sig-name descname"><span class="pre">NOTIFICATION_TYPE_FIX_RATE</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">2):</span>&#160;&#160; <span class="pre">Fix</span> <span class="pre">rate</span> <span class="pre">notification.</span> <span class="pre">Refers</span> <span class="pre">to</span> <span class="pre">a</span> <span class="pre">notification</span> <span class="pre">sent</span> <span class="pre">at</span> <span class="pre">a</span> <span class="pre">predetermined</span> <span class="pre">fix</span> <span class="pre">rate</span> <span class="pre">(not</span> <span class="pre">implemented</span> <span class="pre">yet</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kortex_api.autogen.NotificationType.NOTIFICATION_TYPE_FIX_RATE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">NOTIFICATION_TYPE_EVENT</span> <span class="pre">(3):</span>&#160;&#160; <span class="pre">Event</span> <span class="pre">type</span> <span class="pre">notification.</span> <span class="pre">Refers</span> <span class="pre">to</span> <span class="pre">a</span> <span class="pre">notification</span> <span class="pre">sent</span> <span class="pre">in</span> <span class="pre">response</span> <span class="pre">to</span> <span class="pre">an</span> <span class="pre">event</span></span></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<span class="target" id="commonunit"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.Unit">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Unit</span></span><a class="headerlink" href="#kortex_api.autogen.Unit" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Admissible units used throughout API methods</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.Common_pb2.Unit</p>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">UNSPECIFIED_UNIT</span> <span class="pre">(0):</span>&#160;&#160; <span class="pre">Unspecified</span> <span class="pre">unit</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">CELSIUS</span> <span class="pre">(1):</span>&#160;&#160; <span class="pre">Degree</span> <span class="pre">Celsius</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">AMPERE</span> <span class="pre">(2):</span>&#160;&#160; <span class="pre">Ampere</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">VOLT</span> <span class="pre">(3):</span>&#160;&#160; <span class="pre">Volt</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">METER_PER_SECOND</span> <span class="pre">(4):</span>&#160;&#160; <span class="pre">Meter</span> <span class="pre">per</span> <span class="pre">second</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">DEGREE_PER_SECOND</span> <span class="pre">(5):</span>&#160;&#160; <span class="pre">Degree</span> <span class="pre">per</span> <span class="pre">second</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">METER_PER_SECOND_2</span> <span class="pre">(6):</span>&#160;&#160; <span class="pre">Meter</span> <span class="pre">per</span> <span class="pre">second</span> <span class="pre">squared</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">DEGREE_PER_SECOND_2</span> <span class="pre">(7):</span>&#160;&#160; <span class="pre">Degree</span> <span class="pre">per</span> <span class="pre">second</span> <span class="pre">squared</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">NEWTON</span> <span class="pre">(8):</span>&#160;&#160; <span class="pre">Newton</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">NEWTON_METER</span> <span class="pre">(9):</span>&#160;&#160; <span class="pre">Newton</span> <span class="pre">*</span> <span class="pre">meter</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">KILOGRAM</span> <span class="pre">(10):</span>&#160;&#160; <span class="pre">Kilogram</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">DEGREE</span> <span class="pre">(11):</span>&#160;&#160; <span class="pre">Degree</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">TICK</span> <span class="pre">(12):</span>&#160;&#160; <span class="pre">Tick</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">DEGREE_PER_MILLISECOND</span> <span class="pre">(13):</span>&#160;&#160; <span class="pre">Degre</span> <span class="pre">per</span> <span class="pre">millisecond</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="kortex_api.autogen.Unit.MICROSECOND">
+<span class="sig-name descname"><span class="pre">MICROSECOND</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">14):</span>&#160;&#160; <span class="pre">Microsecond</span> <span class="pre">(us</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kortex_api.autogen.Unit.MICROSECOND" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<span class="target" id="commondiagnosticbank"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.DiagnosticBank">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">DiagnosticBank</span></span><a class="headerlink" href="#kortex_api.autogen.DiagnosticBank" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.Common_pb2.DiagnosticBank</p>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">UNSPECIFIED_DIAGNOSTIC_BANK</span> <span class="pre">(0):</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">DIAGNOSTIC_BANK_A</span> <span class="pre">(1):</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">DIAGNOSTIC_BANK_B</span> <span class="pre">(2):</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">DIAGNOSTIC_BANK_C</span> <span class="pre">(3):</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">DIAGNOSTIC_BANK_D</span> <span class="pre">(4):</span></span></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<span class="target" id="commonuserpermission"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.UserPermission">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">UserPermission</span></span><a class="headerlink" href="#kortex_api.autogen.UserPermission" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>User permissions associated with User Roles</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.Common_pb2.UserPermission</p>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">USER_PERMISSION_UNSPECIFIED</span> <span class="pre">(0):</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">USER_PERMISSION_OPERATE</span> <span class="pre">(1):</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">USER_PERMISSION_CONFIGURE</span> <span class="pre">(2):</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">USER_PERMISSION_SAFETIES</span> <span class="pre">(3):</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">USER_PERMISSION_SYSTEM</span> <span class="pre">(4):</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">USER_PERMISSION_READ_ONLY</span> <span class="pre">(5):</span></span></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<span class="target" id="commonconnectiontype"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.ConnectionType">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ConnectionType</span></span><a class="headerlink" href="#kortex_api.autogen.ConnectionType" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.Common_pb2.ConnectionType</p>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">CONNECTION_TYPE_UNSPECIFIED</span> <span class="pre">(0):</span>&#160;&#160; <span class="pre">Unspecified</span> <span class="pre">connection</span> <span class="pre">type</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">CONNECTION_TYPE_MQTT_TCP</span> <span class="pre">(1):</span>&#160;&#160; <span class="pre">MQTT</span> <span class="pre">connection</span> <span class="pre">through</span> <span class="pre">TCP</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">CONNECTION_TYPE_MQTT_WEBSOCKET</span> <span class="pre">(2):</span>&#160;&#160; <span class="pre">MQTT</span> <span class="pre">connection</span> <span class="pre">through</span> <span class="pre">Websocket</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">CONNECTION_TYPE_UDP</span> <span class="pre">(3):</span>&#160;&#160; <span class="pre">UDP</span> <span class="pre">connection</span></span></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<span class="target" id="commonarmstate"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.ArmState">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ArmState</span></span><a class="headerlink" href="#kortex_api.autogen.ArmState" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Admissible robot arm states</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.Common_pb2.ArmState</p>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">ARMSTATE_UNSPECIFIED</span> <span class="pre">(0):</span>&#160;&#160; <span class="pre">Unspecified</span> <span class="pre">arm</span> <span class="pre">state</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">ARMSTATE_BASE_INITIALIZATION</span> <span class="pre">(1):</span>&#160;&#160; <span class="pre">Cannot</span> <span class="pre">be</span> <span class="pre">reported</span> <span class="pre">as</span> <span class="pre">the</span> <span class="pre">Base</span> <span class="pre">initialization</span> <span class="pre">must</span> <span class="pre">be</span> <span class="pre">completed</span> <span class="pre">before</span> <span class="pre">allowing</span> <span class="pre">user</span> <span class="pre">connection.</span> <span class="pre">This</span> <span class="pre">state</span> <span class="pre">is</span> <span class="pre">deprecated</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">ARMSTATE_IDLE</span> <span class="pre">(2):</span>&#160;&#160; <span class="pre">Arm</span> <span class="pre">is</span> <span class="pre">in</span> <span class="pre">idle</span> <span class="pre">mode</span> <span class="pre">waiting</span> <span class="pre">to</span> <span class="pre">be</span> <span class="pre">initialized</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">ARMSTATE_INITIALIZATION</span> <span class="pre">(3):</span>&#160;&#160; <span class="pre">Arm</span> <span class="pre">is</span> <span class="pre">being</span> <span class="pre">initialized</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">ARMSTATE_IN_FAULT</span> <span class="pre">(4):</span>&#160;&#160; <span class="pre">Arm</span> <span class="pre">is</span> <span class="pre">in</span> <span class="pre">fault</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">ARMSTATE_MAINTENANCE</span> <span class="pre">(5):</span>&#160;&#160; <span class="pre">Arm</span> <span class="pre">is</span> <span class="pre">in</span> <span class="pre">maintenance</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">ARMSTATE_SERVOING_LOW_LEVEL</span> <span class="pre">(6):</span>&#160;&#160; <span class="pre">Arm</span> <span class="pre">is</span> <span class="pre">in</span> <span class="pre">low-level</span> <span class="pre">servoing</span> <span class="pre">mode</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">ARMSTATE_SERVOING_READY</span> <span class="pre">(7):</span>&#160;&#160; <span class="pre">Arm</span> <span class="pre">is</span> <span class="pre">ready</span> <span class="pre">to</span> <span class="pre">be</span> <span class="pre">controlled.</span> <span class="pre">This</span> <span class="pre">state</span> <span class="pre">will</span> <span class="pre">eventually</span> <span class="pre">be</span> <span class="pre">deprecated</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">ARMSTATE_SERVOING_PLAYING_SEQUENCE</span> <span class="pre">(8):</span>&#160;&#160; <span class="pre">Arm</span> <span class="pre">is</span> <span class="pre">currently</span> <span class="pre">being</span> <span class="pre">controlled</span> <span class="pre">via</span> <span class="pre">a</span> <span class="pre">sequence.</span> <span class="pre">This</span> <span class="pre">state</span> <span class="pre">will</span> <span class="pre">eventually</span> <span class="pre">be</span> <span class="pre">deprecated</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">ARMSTATE_SERVOING_MANUALLY_CONTROLLED</span> <span class="pre">(9):</span>&#160;&#160; <span class="pre">Arm</span> <span class="pre">is</span> <span class="pre">currently</span> <span class="pre">being</span> <span class="pre">controlled</span> <span class="pre">manually.</span> <span class="pre">This</span> <span class="pre">state</span> <span class="pre">will</span> <span class="pre">eventually</span> <span class="pre">be</span> <span class="pre">deprecated</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">ARMSTATE_BRAKE_RELEASING</span> <span class="pre">(10):</span>&#160;&#160; <span class="pre">Arm</span> <span class="pre">brakes</span> <span class="pre">are</span> <span class="pre">released</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">ARMSTATE_POSITION_UNKNOWN</span> <span class="pre">(11):</span>&#160;&#160; <span class="pre">Arm</span> <span class="pre">joint</span> <span class="pre">positions</span> <span class="pre">are</span> <span class="pre">unknown.</span> <span class="pre">This</span> <span class="pre">state</span> <span class="pre">is</span> <span class="pre">deprecated</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">ARMSTATE_ARM_OPERATIONAL</span> <span class="pre">(12):</span>&#160;&#160; <span class="pre">Arm</span> <span class="pre">is</span> <span class="pre">operational</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">ARMSTATE_RECOVERY</span> <span class="pre">(13):</span>&#160;&#160; <span class="pre">Arm</span> <span class="pre">is</span> <span class="pre">recovering</span> <span class="pre">from</span> <span class="pre">a</span> <span class="pre">fault</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">ARMSTATE_CONTROLLER_INITIALIZATION</span> <span class="pre">(14):</span>&#160;&#160; <span class="pre">State</span> <span class="pre">in</span> <span class="pre">which</span> <span class="pre">the</span> <span class="pre">mpu</span> <span class="pre">is</span> <span class="pre">doing</span> <span class="pre">its</span> <span class="pre">self</span> <span class="pre">test</span> <span class="pre">and</span> <span class="pre">updating</span> <span class="pre">the</span> <span class="pre">safety</span> <span class="pre">control</span> <span class="pre">unit</span> <span class="pre">firmware</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">ARMSTATE_WAIT_FOR_POSITION_CONFIRMATION</span> <span class="pre">(15):</span>&#160;&#160; <span class="pre">Arm</span> <span class="pre">is</span> <span class="pre">waiting</span> <span class="pre">for</span> <span class="pre">the</span> <span class="pre">user</span> <span class="pre">to</span> <span class="pre">confirm</span> <span class="pre">that</span> <span class="pre">its</span> <span class="pre">position</span> <span class="pre">is</span> <span class="pre">valid</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">ARMSTATE_IN_FAULT_POWERED_OFF</span> <span class="pre">(16):</span>&#160;&#160; <span class="pre">Arm</span> <span class="pre">is</span> <span class="pre">in</span> <span class="pre">fault</span> <span class="pre">and</span> <span class="pre">powered</span> <span class="pre">off</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">ARMSTATE_IN_UNRECOVERABLE_FAULT</span> <span class="pre">(17):</span>&#160;&#160; <span class="pre">Arm</span> <span class="pre">is</span> <span class="pre">in</span> <span class="pre">unrecoverable</span> <span class="pre">fault</span></span></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<span class="target" id="commonoperatingmodetype"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.OperatingModeType">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">OperatingModeType</span></span><a class="headerlink" href="#kortex_api.autogen.OperatingModeType" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Operating mode type</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.Common_pb2.OperatingModeType</p>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">OPERATING_MODE_UNSPECIFIED</span> <span class="pre">(0):</span>&#160;&#160; <span class="pre">Unspecified</span> <span class="pre">operating</span> <span class="pre">mode</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">OPERATING_MODE_JOG_MANUAL</span> <span class="pre">(1):</span>&#160;&#160; <span class="pre">Jog</span> <span class="pre">manual</span> <span class="pre">operating</span> <span class="pre">mode</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">OPERATING_MODE_HAND_GUIDING</span> <span class="pre">(2):</span>&#160;&#160; <span class="pre">Hand</span> <span class="pre">guiding</span> <span class="pre">operating</span> <span class="pre">mode</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">OPERATING_MODE_HOLD_TO_RUN</span> <span class="pre">(3):</span>&#160;&#160; <span class="pre">Hold</span> <span class="pre">to</span> <span class="pre">run</span> <span class="pre">operating</span> <span class="pre">mode</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">OPERATING_MODE_AUTO</span> <span class="pre">(4):</span>&#160;&#160; <span class="pre">Automatic</span> <span class="pre">operating</span> <span class="pre">mode</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">OPERATING_MODE_MONITORED_STOP</span> <span class="pre">(5):</span>&#160;&#160; <span class="pre">Monitored</span> <span class="pre">stop</span> <span class="pre">operating</span> <span class="pre">mode</span></span></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<span class="target" id="commonuartspeed"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.UARTSpeed">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">UARTSpeed</span></span><a class="headerlink" href="#kortex_api.autogen.UARTSpeed" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Admissible UART baudrates This enum is deprecated and will be removed in a future release. It will be replaced with “Kinova.Api.SerialCommunication.BaudRate”.</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.Common_pb2.UARTSpeed</p>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">UART_SPEED_UNSPECIFIED</span> <span class="pre">(0):</span>&#160;&#160; <span class="pre">Unspecified</span> <span class="pre">UART</span> <span class="pre">speed</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">UART_SPEED_4800</span> <span class="pre">(1):</span>&#160;&#160; <span class="pre">4800</span> <span class="pre">bps</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">UART_SPEED_9600</span> <span class="pre">(2):</span>&#160;&#160; <span class="pre">9600</span> <span class="pre">bps</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">UART_SPEED_19200</span> <span class="pre">(3):</span>&#160;&#160; <span class="pre">19200</span> <span class="pre">bps</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">UART_SPEED_38400</span> <span class="pre">(4):</span>&#160;&#160; <span class="pre">38400</span> <span class="pre">bps</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">UART_SPEED_57600</span> <span class="pre">(5):</span>&#160;&#160; <span class="pre">57600</span> <span class="pre">bps</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">UART_SPEED_115200</span> <span class="pre">(6):</span>&#160;&#160; <span class="pre">115200</span> <span class="pre">bps</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">UART_SPEED_230400</span> <span class="pre">(7):</span>&#160;&#160; <span class="pre">230400</span> <span class="pre">bps</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">UART_SPEED_460800</span> <span class="pre">(8):</span>&#160;&#160; <span class="pre">460800</span> <span class="pre">bps</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">UART_SPEED_921600</span> <span class="pre">(9):</span>&#160;&#160; <span class="pre">921600</span> <span class="pre">bps</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">UART_SPEED_1382400</span> <span class="pre">(10):</span>&#160;&#160; <span class="pre">1382400</span> <span class="pre">bps</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">UART_SPEED_1612800</span> <span class="pre">(11):</span>&#160;&#160; <span class="pre">1612800</span> <span class="pre">bps</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">UART_SPEED_1843200</span> <span class="pre">(12):</span>&#160;&#160; <span class="pre">1843200</span> <span class="pre">bps</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">UART_SPEED_2073600</span> <span class="pre">(13):</span>&#160;&#160; <span class="pre">2073600</span> <span class="pre">bps</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">UART_SPEED_2188800</span> <span class="pre">(14):</span>&#160;&#160; <span class="pre">2188800</span> <span class="pre">bps</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">UART_SPEED_2246400</span> <span class="pre">(15):</span>&#160;&#160; <span class="pre">2246400</span> <span class="pre">bps</span></span></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<span class="target" id="commonuartwordlength"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.UARTWordLength">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">UARTWordLength</span></span><a class="headerlink" href="#kortex_api.autogen.UARTWordLength" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Admissible UART word lengths This enum is deprecated and will be removed in a future release. It will be replaced with “Kinova.Api.SerialCommunication.WordLength”.</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.Common_pb2.UARTWordLength</p>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">UART_WORD_LENGTH_UNSPECIFIED</span> <span class="pre">(0):</span>&#160;&#160; <span class="pre">Unspecified</span> <span class="pre">UART</span> <span class="pre">word</span> <span class="pre">length</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">UART_WORD_LENGTH_7</span> <span class="pre">(1):</span>&#160;&#160; <span class="pre">7</span> <span class="pre">bits</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">UART_WORD_LENGTH_8</span> <span class="pre">(2):</span>&#160;&#160; <span class="pre">8</span> <span class="pre">bits</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">UART_WORD_LENGTH_9</span> <span class="pre">(3):</span>&#160;&#160; <span class="pre">9</span> <span class="pre">bits</span></span></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<span class="target" id="commonuartstopbits"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.UARTStopBits">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">UARTStopBits</span></span><a class="headerlink" href="#kortex_api.autogen.UARTStopBits" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Admissible UART stop bits This enum is deprecated and will be removed in a future release. It will be replaced with “Kinova.Api.SerialCommunication.StopBits”.</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.Common_pb2.UARTStopBits</p>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">UART_STOP_BITS_UNSPECIFIED</span> <span class="pre">(0):</span>&#160;&#160; <span class="pre">Unspecified</span> <span class="pre">UART</span> <span class="pre">stop</span> <span class="pre">bits</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">UART_STOP_BITS_0_5</span> <span class="pre">(1):</span>&#160;&#160; <span class="pre">0.5</span> <span class="pre">stop</span> <span class="pre">bit</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">UART_STOP_BITS_1</span> <span class="pre">(2):</span>&#160;&#160; <span class="pre">1</span> <span class="pre">stop</span> <span class="pre">bit</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">UART_STOP_BITS_1_5</span> <span class="pre">(3):</span>&#160;&#160; <span class="pre">1.5</span> <span class="pre">stop</span> <span class="pre">bits</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">UART_STOP_BITS_2</span> <span class="pre">(4):</span>&#160;&#160; <span class="pre">2</span> <span class="pre">stop</span> <span class="pre">bits</span></span></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<span class="target" id="commonuartparity"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.UARTParity">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">UARTParity</span></span><a class="headerlink" href="#kortex_api.autogen.UARTParity" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Admissible UART parity mode This enum is deprecated and will be removed in a future release. It will be replaced with “Kinova.Api.SerialCommunication.Parity”.</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.Common_pb2.UARTParity</p>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">UART_PARITY_UNSPECIFIED</span> <span class="pre">(0):</span>&#160;&#160; <span class="pre">Unspecified</span> <span class="pre">UART</span> <span class="pre">parity</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">UART_PARITY_NONE</span> <span class="pre">(1):</span>&#160;&#160; <span class="pre">No</span> <span class="pre">parity</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">UART_PARITY_ODD</span> <span class="pre">(2):</span>&#160;&#160; <span class="pre">Odd</span> <span class="pre">parity</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">UART_PARITY_EVEN</span> <span class="pre">(3):</span>&#160;&#160; <span class="pre">Even</span> <span class="pre">parity</span></span></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<span class="target" id="commoncartesianreferenceframe"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.CartesianReferenceFrame">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">CartesianReferenceFrame</span></span><a class="headerlink" href="#kortex_api.autogen.CartesianReferenceFrame" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Admissible Cartesian reference frame modes</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.Common_pb2.CartesianReferenceFrame</p>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">CARTESIAN_REFERENCE_FRAME_UNSPECIFIED</span> <span class="pre">(0):</span>&#160;&#160; <span class="pre">Unspecified</span> <span class="pre">Cartesian</span> <span class="pre">reference</span> <span class="pre">frame</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">CARTESIAN_REFERENCE_FRAME_MIXED</span> <span class="pre">(1):</span>&#160;&#160; <span class="pre">Mixed</span> <span class="pre">reference</span> <span class="pre">frame</span> <span class="pre">where</span> <span class="pre">translation</span> <span class="pre">reference</span> <span class="pre">=</span> <span class="pre">base</span> <span class="pre">and</span>&#160; <span class="pre">orientation</span> <span class="pre">reference</span> <span class="pre">=</span> <span class="pre">tool</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">CARTESIAN_REFERENCE_FRAME_TOOL</span> <span class="pre">(2):</span>&#160;&#160; <span class="pre">Tool</span> <span class="pre">reference</span> <span class="pre">frame</span> <span class="pre">where</span> <span class="pre">translation</span> <span class="pre">reference</span> <span class="pre">=</span> <span class="pre">tool</span> <span class="pre">and</span> <span class="pre">orientation</span> <span class="pre">reference</span> <span class="pre">=</span> <span class="pre">tool</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">CARTESIAN_REFERENCE_FRAME_BASE</span> <span class="pre">(3):</span>&#160;&#160; <span class="pre">Base</span> <span class="pre">reference</span> <span class="pre">frame</span> <span class="pre">where</span> <span class="pre">the</span> <span class="pre">translation</span> <span class="pre">reference</span> <span class="pre">=</span> <span class="pre">base</span> <span class="pre">and</span> <span class="pre">orientation</span> <span class="pre">reference</span> <span class="pre">=</span> <span class="pre">base</span></span></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<span class="target" id="commoncountrycodeidentifier"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.CountryCodeIdentifier">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">CountryCodeIdentifier</span></span><a class="headerlink" href="#kortex_api.autogen.CountryCodeIdentifier" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Supported ISO3166 country identifiers</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.Common_pb2.CountryCodeIdentifier</p>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">UNSPECIFIED_COUNTRY_CODE</span> <span class="pre">(0):</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">UNITED_ARAB_EMIRATES_AE</span> <span class="pre">(1):</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">ANTIGUA_AND_BARBUDA_AG</span> <span class="pre">(2):</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">ANGUILLA_AI</span> <span class="pre">(3):</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">ALBANIA_AL</span> <span class="pre">(4):</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">AMERICAN_SAMOA_AS</span> <span class="pre">(5):</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">AUSTRIA_AT</span> <span class="pre">(6):</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">AUSTRALIA_AU</span> <span class="pre">(7):</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">ARUBA_AW</span> <span class="pre">(8):</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">AZERBAIJAN_AZ</span> <span class="pre">(9):</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">BOSNIA_AND_HERZEGOVINA_BA</span> <span class="pre">(10):</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">BANGLADESH_BD</span> <span class="pre">(11):</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">BELGIUM_BE</span> <span class="pre">(12):</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">BULGARIA_BG</span> <span class="pre">(13):</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">BAHRAIN_BH</span> <span class="pre">(14):</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">BERMUDA_BM</span> <span class="pre">(15):</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">BRUNEI_DARUSSALAM_BN</span> <span class="pre">(16):</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">BRAZIL_BR</span> <span class="pre">(17):</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">BAHAMAS_BS</span> <span class="pre">(18):</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">BELARUS_BY</span> <span class="pre">(19):</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">SWITZERLAND_CH</span> <span class="pre">(20):</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">CANADA_CA</span> <span class="pre">(21):</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">CHINA_CN</span> <span class="pre">(22):</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">COLOMBIA_CO</span> <span class="pre">(23):</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">COSTA_RICA_CR</span> <span class="pre">(24):</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">CYPRUS_CY</span> <span class="pre">(25):</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">CZECH_REPUBLIC_CZ</span> <span class="pre">(26):</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">GERMANY_DE</span> <span class="pre">(27):</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">DENMARK_DK</span> <span class="pre">(28):</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">ECUADOR_EC</span> <span class="pre">(29):</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">ESTONIA_EE</span> <span class="pre">(30):</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">EGYPT_EG</span> <span class="pre">(31):</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">SPAIN_ES</span> <span class="pre">(32):</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">ETHIOPIA_ET</span> <span class="pre">(33):</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">FINLAND_FI</span> <span class="pre">(34):</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">FRANCE_FR</span> <span class="pre">(35):</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">UNITED_KINGDOM_GB</span> <span class="pre">(36):</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">GRENADA_GD</span> <span class="pre">(37):</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">FRENCH_GUIANA_GF</span> <span class="pre">(38):</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">GUADELOUPE_GP</span> <span class="pre">(39):</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">GREECE_GR</span> <span class="pre">(40):</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">GUATEMALA_GT</span> <span class="pre">(41):</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">GUAM_GU</span> <span class="pre">(42):</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">HONG_KONG_HK</span> <span class="pre">(43):</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">CROATIA_HR</span> <span class="pre">(44):</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">HUNGARY_HU</span> <span class="pre">(45):</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">INDIA_IN</span> <span class="pre">(46):</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">INDONESIA_ID</span> <span class="pre">(47):</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">IRELAND_IE</span> <span class="pre">(48):</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">ISRAEL_IL</span> <span class="pre">(49):</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">ICELAND_IS</span> <span class="pre">(50):</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">ITALY_IT</span> <span class="pre">(51):</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">JORDAN_JO</span> <span class="pre">(52):</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">JAPAN_JP</span> <span class="pre">(53):</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">CAMBODIA_KH</span> <span class="pre">(54):</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">REPUBLIC_OF_KOREA_KR</span> <span class="pre">(55):</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">KUWAIT_KW</span> <span class="pre">(56):</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">CAYMAN_ISLANDS_KY</span> <span class="pre">(57):</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">LAO_PDR_LA</span> <span class="pre">(58):</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">LEBANON_LB</span> <span class="pre">(59):</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">LIECHTENSTEIN_LI</span> <span class="pre">(60):</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">SRI_LANKA_LK</span> <span class="pre">(61):</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">LESOTHO_LS</span> <span class="pre">(62):</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">LITHUANIA_LT</span> <span class="pre">(63):</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">LUXEMBOURG_LU</span> <span class="pre">(64):</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">LATVIA_LV</span> <span class="pre">(65):</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">MOROCCO_MA</span> <span class="pre">(66):</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">MONACO_MC</span> <span class="pre">(67):</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">MOLDOVA_MD</span> <span class="pre">(68):</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">MONTENEGRO_ME</span> <span class="pre">(69):</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">REPUBLIC_OF_MACEDONIA_MK</span> <span class="pre">(70):</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">MONGOLIA_MN</span> <span class="pre">(71):</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">MARTINIQUE_MQ</span> <span class="pre">(72):</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">MAURITANIA_MR</span> <span class="pre">(73):</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">MALTA_MT</span> <span class="pre">(74):</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">MAURITIUS_MU</span> <span class="pre">(75):</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">MALDIVES_MV</span> <span class="pre">(76):</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">MALAWI_MW</span> <span class="pre">(77):</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">MEXICO_MX</span> <span class="pre">(78):</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">MALAYSIA_MY</span> <span class="pre">(79):</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">NICARAGUA_NI</span> <span class="pre">(80):</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">NETHERLANDS_NL</span> <span class="pre">(81):</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">NORWAY_NO</span> <span class="pre">(82):</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">NEW_ZEALAND_NZ</span> <span class="pre">(83):</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">OMAN_OM</span> <span class="pre">(84):</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">PANAMA_PA</span> <span class="pre">(85):</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">PERU_PE</span> <span class="pre">(86):</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">PHILIPPINES_PH</span> <span class="pre">(87):</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">POLAND_PL</span> <span class="pre">(88):</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">PUERTO_RICO_PR</span> <span class="pre">(89):</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">PORTUGAL_PT</span> <span class="pre">(90):</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">PARAGUAY_PY</span> <span class="pre">(91):</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">REUNION_RE</span> <span class="pre">(92):</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">ROMANIA_RO</span> <span class="pre">(93):</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">SERBIA_RS</span> <span class="pre">(94):</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">RUSSIAN_FEDERATION_RU</span> <span class="pre">(95):</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">SWEDEN_SE</span> <span class="pre">(96):</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">SINGAPORE_SI</span> <span class="pre">(97):</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">SLOVAKIA_SK</span> <span class="pre">(98):</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">EL_SALVADOR_SV</span> <span class="pre">(99):</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">THAILAND_TH</span> <span class="pre">(100):</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">TUNISIA_TN</span> <span class="pre">(101):</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">TURKEY_TR</span> <span class="pre">(102):</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">TRINIDAD_AND_TOBAGO_TT</span> <span class="pre">(103):</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">TAIWAN_PROVINCE_OF_CHINA_TW</span> <span class="pre">(104):</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">UKRAINE_UA</span> <span class="pre">(105):</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">UNITED_STATES_US</span> <span class="pre">(106):</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">HOLY_SEE_VATICAN_CITY_STATE_VA</span> <span class="pre">(107):</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">BOLIVARIAN_REPUBLIC_OF_VENEZUELA_VE</span> <span class="pre">(108):</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">BRITISH_VIRGIN_ISLANDS_VG</span> <span class="pre">(109):</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">VIETNAM_VN</span> <span class="pre">(110):</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">MAYOTTE_YT</span> <span class="pre">(111):</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">SOUTH_AFRICA_ZA</span> <span class="pre">(112):</span></span></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<span class="target" id="commondatatype"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.DataType">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">DataType</span></span><a class="headerlink" href="#kortex_api.autogen.DataType" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Data Type for configurations</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.Common_pb2.DataType</p>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">CONFIGURATION_TYPE_UNSPECIFIED</span> <span class="pre">(0):</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">CONFIGURATION_TYPE_JSON</span> <span class="pre">(1):</span></span></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<span class="target" id="commonicontype"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.IconType">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">IconType</span></span><a class="headerlink" href="#kortex_api.autogen.IconType" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Icon Type for Icon</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.Common_pb2.IconType</p>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">ICON_TYPE_UNSPECIFIED</span> <span class="pre">(0):</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">ICON_TYPE_SVG</span> <span class="pre">(1):</span></span></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<span class="target" id="commonconfigurationnotificationevent"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.ConfigurationNotificationEvent">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ConfigurationNotificationEvent</span></span><a class="headerlink" href="#kortex_api.autogen.ConfigurationNotificationEvent" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Admissible configuration events</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.Common_pb2.ConfigurationNotificationEvent</p>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">UNSPECIFIED_CONFIGURATION_EVENT</span> <span class="pre">(0):</span>&#160;&#160; <span class="pre">Unspecified</span> <span class="pre">configuration</span> <span class="pre">event</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">CONFIGURATION_UPDATED</span> <span class="pre">(1):</span>&#160;&#160; <span class="pre">Configuration</span> <span class="pre">deleted</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">CONFIGURATION_DELETED</span> <span class="pre">(2):</span>&#160;&#160; <span class="pre">Configuration</span> <span class="pre">updated</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">CONFIGURATION_DELETED_ALL</span> <span class="pre">(3):</span>&#160;&#160; <span class="pre">All</span> <span class="pre">configurations</span> <span class="pre">deleted</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">CONFIGURATION_CREATED</span> <span class="pre">(4):</span>&#160;&#160; <span class="pre">Configuration</span> <span class="pre">created</span></span></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<span class="target" id="commonfiletype"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.FileType">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">FileType</span></span><a class="headerlink" href="#kortex_api.autogen.FileType" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>File type</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.Common_pb2.FileType</p>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">FILETYPE_UNSPECIFIED</span> <span class="pre">(0):</span>&#160;&#160; <span class="pre">No</span> <span class="pre">information</span> <span class="pre">provided</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">FILETYPE_SWU</span> <span class="pre">(1):</span>&#160;&#160; <span class="pre">Robot</span> <span class="pre">upgrade</span> <span class="pre">file</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">FILETYPE_KP</span> <span class="pre">(2):</span>&#160;&#160; <span class="pre">Plugin</span> <span class="pre">upgrade</span> <span class="pre">file</span></span></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<span class="target" id="commonfsitemtype"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.FSItemType">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">FSItemType</span></span><a class="headerlink" href="#kortex_api.autogen.FSItemType" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Files system item type</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.Common_pb2.FSItemType</p>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">UNSPECIFIED_FSITEMTYPE</span> <span class="pre">(0):</span>&#160;&#160; <span class="pre">Unspecified</span> <span class="pre">File</span> <span class="pre">system</span> <span class="pre">item</span> <span class="pre">type</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">FSITEMTYPE_FILE</span> <span class="pre">(1):</span>&#160;&#160; <span class="pre">File</span> <span class="pre">item</span> <span class="pre">type</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">FSITEMTYPE_DIRECTORY</span> <span class="pre">(2):</span>&#160;&#160; <span class="pre">Directory</span> <span class="pre">item</span> <span class="pre">type</span></span></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<span class="target" id="commonnotificationseverity"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.NotificationSeverity">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">NotificationSeverity</span></span><a class="headerlink" href="#kortex_api.autogen.NotificationSeverity" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Notification severity level</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.Common_pb2.NotificationSeverity</p>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">NOTIF_DEBUG</span> <span class="pre">(0):</span>&#160;&#160; <span class="pre">Debugging</span> <span class="pre">stuff</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">NOTIF_INFO</span> <span class="pre">(1):</span>&#160;&#160; <span class="pre">Information</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">NOTIF_WARNING</span> <span class="pre">(2):</span>&#160;&#160; <span class="pre">A</span> <span class="pre">warning</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">NOTIF_ERROR</span> <span class="pre">(3):</span>&#160;&#160; <span class="pre">An</span> <span class="pre">error</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">NOTIF_CRITICAL</span> <span class="pre">(4):</span>&#160;&#160; <span class="pre">A</span> <span class="pre">critical</span> <span class="pre">error</span></span></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="ControlConfig.html" class="btn btn-neutral float-right" title="ControlConfig" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="BaseCyclic.html" class="btn btn-neutral float-left" title="BaseCyclic" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2022, Kinova.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

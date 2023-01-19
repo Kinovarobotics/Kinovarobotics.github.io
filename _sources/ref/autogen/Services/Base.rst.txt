@@ -1,0 +1,1136 @@
+================================
+Base
+================================
+    
+.. py:currentmodule:: kortex_api.autogen
+
+.. py:class:: BaseClient
+        
+    :canonical: kortex_api.autogen.client_stubs.BaseClientRpc
+
+    .. py:method:: __init__(router, namespace = None)
+
+        Constructs a BaseClient with an initialized :class:`~kortex_api.RouterClient.RouterClient` and an optional namespace.
+
+        :param RouterClient router: :class:`~kortex_api.RouterClient.RouterClient` used for the communication
+        :param string namespace: Optional namespace on which to initialize the BaseClient (defaults to ``None``)
+
+    .. py:method:: IsAlive (timeoutMs: int = 1000)
+        
+        Returns ``True`` if the Service Server is detected online before ``timeoutMs`` is expired, ``False`` otherwise.
+        
+        :param unsigned int timeoutMs: The maximum time to wait for an answer from the server 
+        :rtype: bool
+
+
+        .. _BaseClientCreateUserProfile:
+
+    .. py:method:: CreateUserProfile (fulluserprofile, deviceId = 0, options = RouterClientSendOptions())
+        
+        | The ``CONFIGURE`` permission is necessary to call this RPC.
+        |
+        | Creates a user profile and returns a handle to the profile.
+        | The created user profile will always have the "Operator" role, who has the READ_ONLY and OPERATE user permissions.
+        | The handle.permission field is a bitmask of Common.Permission values. A permission of 7 should always be used.
+        | The username cannot be empty.
+        | The username, first name and last name cannot exceed 50 characters in length.
+        | The password cannot exceed 103 characters in length.
+        | There cannot be more than 107 user profiles created.
+        | Two user profiles cannot have the same username.
+        | 
+
+
+        :param fulluserprofile:  
+        :type fulluserprofile: :ref:`FullUserProfile <BaseFullUserProfile>`
+
+        :param int deviceId: Device's Id called by rpc (optional)
+        :param RouterClientSendOptions options: Router options for sending the message
+ 
+        :rtype: UserProfileHandle
+
+        .. _BaseClientUpdateUserProfile:
+
+    .. py:method:: UpdateUserProfile (userprofile, deviceId = 0, options = RouterClientSendOptions())
+        
+        | The ``CONFIGURE`` permission is necessary to call this RPC.
+        |
+        | Updates an existing user profile.
+        | The handle.identifier parameter must be set to a valid identifier.
+        | The username cannot already be in use by another user profile.
+        | The same username, password, first name and last name length constraints as CreateUserProfile apply for this RPC.
+        | 
+
+
+        :param userprofile:  
+        :type userprofile: :ref:`UserProfile <BaseUserProfile>`
+
+        :param int deviceId: Device's Id called by rpc (optional)
+        :param RouterClientSendOptions options: Router options for sending the message
+
+        .. _BaseClientReadUserProfile:
+
+    .. py:method:: ReadUserProfile (userprofilehandle, deviceId = 0, options = RouterClientSendOptions())
+        
+        | The ``CONFIGURE`` permission is necessary to call this RPC.
+        |
+        | Retrieves an existing user profile
+
+
+        :param userprofilehandle:  
+        :type userprofilehandle: :ref:`UserProfileHandle <CommonUserProfileHandle>`
+
+        :param int deviceId: Device's Id called by rpc (optional)
+        :param RouterClientSendOptions options: Router options for sending the message
+ 
+        :rtype: UserProfile
+
+        .. _BaseClientDeleteUserProfile:
+
+    .. py:method:: DeleteUserProfile (userprofilehandle, deviceId = 0, options = RouterClientSendOptions())
+        
+        | The ``CONFIGURE`` permission is necessary to call this RPC.
+        |
+        | Deletes an existing user profile.
+        | The handle.identifier parameter must be set to a valid identifier.
+        | The handle.permission of the user profile to delete must include the DELETE_PERMISSION.
+        | 
+
+
+        :param userprofilehandle:  
+        :type userprofilehandle: :ref:`UserProfileHandle <CommonUserProfileHandle>`
+
+        :param int deviceId: Device's Id called by rpc (optional)
+        :param RouterClientSendOptions options: Router options for sending the message
+
+        .. _BaseClientReadAllUserProfiles:
+
+    .. py:method:: ReadAllUserProfiles (, deviceId = 0, options = RouterClientSendOptions())
+        
+        | The ``OPERATE`` permission is necessary to call this RPC.
+        |
+        | Retrieves all user profiles
+
+        :param int deviceId: Device's Id called by rpc (optional)
+        :param RouterClientSendOptions options: Router options for sending the message
+ 
+        :rtype: UserProfileList
+
+        .. _BaseClientReadAllUsers:
+
+    .. py:method:: ReadAllUsers (, deviceId = 0, options = RouterClientSendOptions())
+        
+        | The ``CONFIGURE`` permission is necessary to call this RPC.
+        |
+        | Retrieves the list of all user profile handles
+
+        :param int deviceId: Device's Id called by rpc (optional)
+        :param RouterClientSendOptions options: Router options for sending the message
+ 
+        :rtype: UserList
+
+        .. _BaseClientChangePassword:
+
+    .. py:method:: ChangePassword (passwordchange, deviceId = 0, options = RouterClientSendOptions())
+        
+        | The ``CONFIGURE`` permission is necessary to call this RPC.
+        |
+        | Changes the password of an existing user.
+        | The handle.identifier parameter must be set to a valid identifier.
+        | The old_password parameter must match the user's current password.
+        | 
+
+
+        :param passwordchange:  
+        :type passwordchange: :ref:`PasswordChange <BasePasswordChange>`
+
+        :param int deviceId: Device's Id called by rpc (optional)
+        :param RouterClientSendOptions options: Router options for sending the message
+
+        .. _BaseClientExecuteAction:
+
+    .. py:method:: ExecuteAction (action, deviceId = 0, options = RouterClientSendOptions())
+        
+        | The ``OPERATE`` permission is necessary to call this RPC.
+        |
+        | Commands the robot to execute the specified action.
+        | This RPC cannot be called when the operating mode is OPERATING_MODE_JOG_MANUAL.
+        | This RPC will be ignored if it is called when the operating mode is OPERATING_MODE_MONITORED_STOP.
+        | A ROBOT_NOT_MOVING exception "Failed to execute action: The Enabling device must be pressed for the arm to move" is thrown if the operating mode is OPERATING_MODE_HOLD_TO_RUN and the enabling device is not pressed when the action starts running.
+        | A DEVICE_DISCONNECTED exception "Stopping motion failed for Session ID <session ID>: No Arm Detected" is thrown if the arm is not powered on.
+        | Most of the action types are no longer supported. All action types that are not detailed below will return an UNSUPPORTED_ACTION exception "Unsupported action type: <type ID of action> in action "<name of action>"".
+        | 
+        | send_twist_command:
+        | - If the input twist is higher than the set arm limits, the command does not return an error or warning but the twists do not exceed the set limits.
+        | - If the arm is given a twist command in a direction it can't move in, it will try to move which can induce movement in other directions as well.
+        | - If the twist is too high, the induced acceleration may cause the arm to falsely detect a collision.
+        | - The action will not stop after the time specified in the duration parameter of the TwistCommand object.
+        | 
+        | send_joint_speeds:
+        | - The JointSpeed objects' input parameter "identifier" should be an integer between 0 and 5, defining the index of the joint to control.
+        | - If not all 6 joint speeds have been defined, then the undefined ones are set as 0.
+        | 
+        | execute_waypoint_list:has to be an integer
+        | - A METHOD_FAILED exception "The waypoint list is empty" will be thrown if the list of waypoints is empty or no argument has been passed to the WaypointList object.
+        | - If a waypoint is out of reach, the robot will not execute the waypoint list and it will send a warning message "Invalid Waypoint - Out of Robot Workspace".
+        | - The action will not stop after the time specified in the duration parameter of the WaypointList object.
+        | 
+        | change_payload_parameters:
+        | - The input parameter mass of ChangePayloadParameters has to be between 0 and 9 kg.
+        | - The input parameter center_of_mass should have values between -1 and 1.
+        | - The input parameter inertia should have diagonal values (I :sub:`xx`,I :sub:`yy`,I :sub:`zz`) between 0 and 1, and cross-product element values (I :sub:`xy`,I :sub:`xz`,I :sub:`yz`) between -1 and 1.
+        | - If any value is outside its range, the action will be ignored and no value will be changed.
+        | 
+        | switch_control_mapping:
+        | - This action type is not to be used.
+        | 
+        | play_pre_computed_trajectory:
+        | - This action type is to be deprecated.
+        | - The elements of the list of PreComputedJointTRajectoryElement objects should be spaced by 1ms increments.
+        | - The action will be ignored if the trajectory elements do not form a coherent path, given the time spacing of 1ms.
+        | 
+        | execute_action:
+        | - This action type is deprecated.
+        | 
+
+
+        :param action:  
+        :type action: :ref:`Action <BaseAction>`
+
+        :param int deviceId: Device's Id called by rpc (optional)
+        :param RouterClientSendOptions options: Router options for sending the message
+
+        .. _BaseClientPauseAction:
+
+    .. py:method:: PauseAction (, deviceId = 0, options = RouterClientSendOptions())
+        
+        | The ``OPERATE`` permission is necessary to call this RPC.
+        |
+        | Pauses the currently executed action. ResumeAction can be invoked afterwards.
+        | Pausing an action sets the operating the operating mode to OPERATING_MODE_MONITORED_STOP.
+        | A ROBOT_NOT_MOVING exception "Failed to pause action: The Enabling device must be pressed for the arm to move" is thrown when the operating mode is OPERATING_MODE_HOLD_TO_RUN and the enabling device is not pressed.
+        | A DEVICE_DISCONNECTED exception "Failed to pause action: No Arm Detected" is thrown if the arm is not powered on.
+        | 
+
+        :param int deviceId: Device's Id called by rpc (optional)
+        :param RouterClientSendOptions options: Router options for sending the message
+
+        .. _BaseClientStopAction:
+
+    .. py:method:: StopAction (, deviceId = 0, options = RouterClientSendOptions())
+        
+        | The ``OPERATE`` permission is necessary to call this RPC.
+        |
+        | Stops the currently executed action. ResumeAction cannot be invoked afterwards.
+        | An INVALID_PARAM exception "Failed to stop action: Argument Invalid" is thrown if the operating mode is OPERATING_MODE_MONITORED_STOP.
+        | A ROBOT_NOT_MOVING exception "Failed to stop action: The Enabling device must be pressed for the arm to move" is thrown when the operating mode is OPERATING_MODE_HOLD_TO_RUN and the enabling device is not pressed.
+        | A ROBOT_NOT_MOVING exception "Failed to stop action: Trying to stop, pause or resume an action that is not started" is thrown if no action is started before the RPC is called.
+        | A DEVICE_DISCONNECTED exception "Failed to stop action: No Arm Detected" is thrown if the arm is not powered on.
+        | 
+
+        :param int deviceId: Device's Id called by rpc (optional)
+        :param RouterClientSendOptions options: Router options for sending the message
+
+        .. _BaseClientResumeAction:
+
+    .. py:method:: ResumeAction (, deviceId = 0, options = RouterClientSendOptions())
+        
+        | The ``OPERATE`` permission is necessary to call this RPC.
+        |
+        | Resumes execution of the currently paused action.
+        | This RPC can only be called when the operating mode is OPERATING_MODE_AUTO.
+        | An INVALID_PARAM exception "Failed to resume action: Argument Invalid" is thrown if the operating mode is OPERATING_MODE_MONITORED_STOP.
+        | A METHOD_FAILED exception "Failed to resume action: Action failed" is thrown if the operating mode is OPERATING_MODE_HOLD_TO_RUN.
+        | A DEVICE_DISCONNECTED exception "Failed to resume action: No Arm Detected" is thrown if the arm is not powered on.
+        | 
+
+        :param int deviceId: Device's Id called by rpc (optional)
+        :param RouterClientSendOptions options: Router options for sending the message
+
+        .. _BaseClientGetIPv4Configuration:
+
+    .. py:method:: GetIPv4Configuration (networkhandle, deviceId = 0, options = RouterClientSendOptions())
+        
+        | The ``READ_ONLY`` permission is necessary to call this RPC.
+        |
+        | Retrieves the IPv4 network configuration for the specified network adapter
+
+
+        :param networkhandle:  
+        :type networkhandle: :ref:`NetworkHandle <BaseNetworkHandle>`
+
+        :param int deviceId: Device's Id called by rpc (optional)
+        :param RouterClientSendOptions options: Router options for sending the message
+ 
+        :rtype: IPv4Configuration
+
+        .. _BaseClientSetIPv4Configuration:
+
+    .. py:method:: SetIPv4Configuration (fullipv4configuration, deviceId = 0, options = RouterClientSendOptions())
+        
+        | The ``CONFIGURE`` permission is necessary to call this RPC.
+        |
+        | Modifies the IPv4 network configuration for the specified network adapter
+
+
+        :param fullipv4configuration:  
+        :type fullipv4configuration: :ref:`FullIPv4Configuration <BaseFullIPv4Configuration>`
+
+        :param int deviceId: Device's Id called by rpc (optional)
+        :param RouterClientSendOptions options: Router options for sending the message
+
+        .. _BaseClientUnsubscribe:
+
+    .. py:method:: Unsubscribe (notificationhandle, deviceId = 0, options = RouterClientSendOptions())
+        
+        | The ``READ_ONLY`` permission is necessary to call this RPC.
+        |
+        | Unsubscribes client from receiving notifications for the specified topic
+
+
+        :param notificationhandle:  
+        :type notificationhandle: :ref:`NotificationHandle <CommonNotificationHandle>`
+
+        :param int deviceId: Device's Id called by rpc (optional)
+        :param RouterClientSendOptions options: Router options for sending the message
+
+        .. _OnNotificationBaseClientConfigurationChangeTopic:
+
+    .. py:method:: OnNotificationConfigurationChangeTopic(callback, notificationoptions)
+    
+        | The ``READ_ONLY`` permission is necessary to call this RPC.
+        |
+        | Subscribes to configuration change topic for notifications
+
+        :param callback: Function callback taking a :class:`ConfigurationChangeNotification` as only argument, and returning ``None``.
+        :type callback: function
+        :param NotificationOptions notificationoptions: Notification options
+        :rtype: NotificationHandle
+
+        .. _OnNotificationBaseClientOperatingModeTopic:
+
+    .. py:method:: OnNotificationOperatingModeTopic(callback, notificationoptions)
+    
+        | The ``READ_ONLY`` permission is necessary to call this RPC.
+        |
+        | Subscribes to operating mode topic for notifications
+
+        :param callback: Function callback taking a :class:`OperatingModeNotification` as only argument, and returning ``None``.
+        :type callback: function
+        :param NotificationOptions notificationoptions: Notification options
+        :rtype: NotificationHandle
+
+        .. _OnNotificationBaseClientControllerTopic:
+
+    .. py:method:: OnNotificationControllerTopic(callback, notificationoptions)
+    
+        | The ``READ_ONLY`` permission is necessary to call this RPC.
+        |
+        | Subscribes to controller topic for notifications
+
+        :param callback: Function callback taking a :class:`ControllerNotification` as only argument, and returning ``None``.
+        :type callback: function
+        :param NotificationOptions notificationoptions: Notification options
+        :rtype: NotificationHandle
+
+        .. _OnNotificationBaseClientActionTopic:
+
+    .. py:method:: OnNotificationActionTopic(callback, notificationoptions)
+    
+        | The ``READ_ONLY`` permission is necessary to call this RPC.
+        |
+        | Subscribes to action topic for notifications
+
+        :param callback: Function callback taking a :class:`ActionNotification` as only argument, and returning ``None``.
+        :type callback: function
+        :param NotificationOptions notificationoptions: Notification options
+        :rtype: NotificationHandle
+
+        .. _OnNotificationBaseClientRobotEventTopic:
+
+    .. py:method:: OnNotificationRobotEventTopic(callback, notificationoptions)
+    
+        | The ``READ_ONLY`` permission is necessary to call this RPC.
+        |
+        | Subscribes to robot event topic for notifications
+
+        :param callback: Function callback taking a :class:`RobotEventNotification` as only argument, and returning ``None``.
+        :type callback: function
+        :param NotificationOptions notificationoptions: Notification options
+        :rtype: NotificationHandle
+
+        .. _BaseClientStop:
+
+    .. py:method:: Stop (, deviceId = 0, options = RouterClientSendOptions())
+        
+        | The ``OPERATE`` permission is necessary to call this RPC.
+        |
+        | Stops robot movement
+
+        :param int deviceId: Device's Id called by rpc (optional)
+        :param RouterClientSendOptions options: Router options for sending the message
+
+        .. _BaseClientGetMeasuredCartesianPose:
+
+    .. py:method:: GetMeasuredCartesianPose (, deviceId = 0, options = RouterClientSendOptions())
+        
+        | The ``READ_ONLY`` permission is necessary to call this RPC.
+        |
+        | Retrieves the current computed tool pose (position and orientation) for the robot
+
+        :param int deviceId: Device's Id called by rpc (optional)
+        :param RouterClientSendOptions options: Router options for sending the message
+ 
+        :rtype: Pose
+
+        .. _BaseClientSendTwistJoystickCommand:
+
+    .. py:method:: SendTwistJoystickCommand (twistcommand, deviceId = 0, options = RouterClientSendOptions())
+        
+        | The ``OPERATE`` permission is necessary to call this RPC.
+        |
+        | Sends a twist (screw consisting of linear and angular velocity) joystick command to be applied to the tool.
+        | The twist values sent to this call are expected to be a ratio of the maximum value (between -1.0/+1.0).
+        | This RPC can only be sent while the robot is in Jog Manual.
+        | A ROBOT_NOT_MOVING error will be thrown if the Enabling Device is not pressed.
+        | 
+
+
+        :param twistcommand:  
+        :type twistcommand: :ref:`TwistCommand <BaseTwistCommand>`
+
+        :param int deviceId: Device's Id called by rpc (optional)
+        :param RouterClientSendOptions options: Router options for sending the message
+
+        .. _BaseClientSendTwistCommand:
+
+    .. py:method:: SendTwistCommand (twistcommand, deviceId = 0, options = RouterClientSendOptions())
+        
+        | The ``OPERATE`` permission is necessary to call this RPC.
+        |
+        | Sends a twist (screw consisting of linear and angular velocity) command to be applied to the tool.
+        | This RPC can only be sent while the robot is in Jog Manual.
+        | A ROBOT_NOT_MOVING error will be thrown if the Enabling Device is not pressed.
+        | 
+
+
+        :param twistcommand:  
+        :type twistcommand: :ref:`TwistCommand <BaseTwistCommand>`
+
+        :param int deviceId: Device's Id called by rpc (optional)
+        :param RouterClientSendOptions options: Router options for sending the message
+
+        .. _BaseClientGetMeasuredJointAngles:
+
+    .. py:method:: GetMeasuredJointAngles (, deviceId = 0, options = RouterClientSendOptions())
+        
+        | The ``READ_ONLY`` permission is necessary to call this RPC.
+        |
+        | Retrieves the currently measured joint angles for each joint
+
+        :param int deviceId: Device's Id called by rpc (optional)
+        :param RouterClientSendOptions options: Router options for sending the message
+ 
+        :rtype: JointAngles
+
+        .. _BaseClientSendJointSpeedsCommand:
+
+    .. py:method:: SendJointSpeedsCommand (jointspeeds, deviceId = 0, options = RouterClientSendOptions())
+        
+        | The ``OPERATE`` permission is necessary to call this RPC.
+        |
+        | Sends a set of joint speed commands to all joints with one command. Joint speed commmands must be sent to all joints.
+        | If you do not want to move some of the joints, simply send a speed value of 0 degrees / second for that joint.
+        | This RPC can only be sent while the robot is in Jog Manual.
+        | A ROBOT_NOT_MOVING error will be thrown if the Enabling Device is not pressed.
+        | 
+
+
+        :param jointspeeds:  
+        :type jointspeeds: :ref:`JointSpeeds <BaseJointSpeeds>`
+
+        :param int deviceId: Device's Id called by rpc (optional)
+        :param RouterClientSendOptions options: Router options for sending the message
+
+        .. _BaseClientSendSelectedJointSpeedCommand:
+
+    .. py:method:: SendSelectedJointSpeedCommand (jointspeed, deviceId = 0, options = RouterClientSendOptions())
+        
+        | The ``OPERATE`` permission is necessary to call this RPC.
+        |
+        | Sends a speed command for a specific joint.
+        | This RPC can only be sent while the robot is in Jog Manual.
+        | A ROBOT_NOT_MOVING error will be thrown if the Enabling Device is not pressed.
+        | 
+
+
+        :param jointspeed:  
+        :type jointspeed: :ref:`JointSpeed <BaseJointSpeed>`
+
+        :param int deviceId: Device's Id called by rpc (optional)
+        :param RouterClientSendOptions options: Router options for sending the message
+
+        .. _BaseClientApplyQuickStop:
+
+    .. py:method:: ApplyQuickStop (, deviceId = 0, options = RouterClientSendOptions())
+        
+        | The ``OPERATE`` permission is necessary to call this RPC.
+        |
+        | Applies a category 2 stop to the robot and puts it back in Monitored Stop state.
+
+        :param int deviceId: Device's Id called by rpc (optional)
+        :param RouterClientSendOptions options: Router options for sending the message
+
+        .. _BaseClientClearFaults:
+
+    .. py:method:: ClearFaults (, deviceId = 0, options = RouterClientSendOptions())
+        
+        | The ``OPERATE`` permission is necessary to call this RPC.
+        |
+        | Clears robot fault state. Robot is permitted to move again.
+
+        :param int deviceId: Device's Id called by rpc (optional)
+        :param RouterClientSendOptions options: Router options for sending the message
+
+        .. _BaseClientGetServoingMode:
+
+    .. py:method:: GetServoingMode (, deviceId = 0, options = RouterClientSendOptions())
+        
+        | The ``READ_ONLY`` permission is necessary to call this RPC.
+        |
+        | Retrieves current servoing mode
+
+        :param int deviceId: Device's Id called by rpc (optional)
+        :param RouterClientSendOptions options: Router options for sending the message
+ 
+        :rtype: ServoingModeInformation
+
+        .. _OnNotificationBaseClientServoingModeTopic:
+
+    .. py:method:: OnNotificationServoingModeTopic(callback, notificationoptions)
+    
+        | The ``READ_ONLY`` permission is necessary to call this RPC.
+        |
+        | Subscribes to servoing mode topic for notifications
+
+        :param callback: Function callback taking a :class:`ServoingModeNotification` as only argument, and returning ``None``.
+        :type callback: function
+        :param NotificationOptions notificationoptions: Notification options
+        :rtype: NotificationHandle
+
+        .. _BaseClientRestoreFactorySettings:
+
+    .. py:method:: RestoreFactorySettings (, deviceId = 0, options = RouterClientSendOptions())
+        
+        | The ``CONFIGURE`` permission is necessary to call this RPC.
+        |
+        | Deletes all configurations and reverts settings to their factory defaults (except network settings)
+
+        :param int deviceId: Device's Id called by rpc (optional)
+        :param RouterClientSendOptions options: Router options for sending the message
+
+        .. _BaseClientReboot:
+
+    .. py:method:: Reboot (, deviceId = 0, options = RouterClientSendOptions())
+        
+        | The ``OPERATE`` permission is necessary to call this RPC.
+        |
+        | Reboots the controller
+
+        :param int deviceId: Device's Id called by rpc (optional)
+        :param RouterClientSendOptions options: Router options for sending the message
+
+        .. _OnNotificationBaseClientFactoryTopic:
+
+    .. py:method:: OnNotificationFactoryTopic(callback, notificationoptions)
+    
+        | The ``READ_ONLY`` permission is necessary to call this RPC.
+        |
+        | Subscribes to factory topic for notifications
+
+        :param callback: Function callback taking a :class:`FactoryNotification` as only argument, and returning ``None``.
+        :type callback: function
+        :param NotificationOptions notificationoptions: Notification options
+        :rtype: NotificationHandle
+
+        .. _BaseClientGetActuatorCount:
+
+    .. py:method:: GetActuatorCount (, deviceId = 0, options = RouterClientSendOptions())
+        
+        | The ``READ_ONLY`` permission is necessary to call this RPC.
+        |
+        | Retrieves the number of actuators in the robot
+
+        :param int deviceId: Device's Id called by rpc (optional)
+        :param RouterClientSendOptions options: Router options for sending the message
+ 
+        :rtype: ActuatorInformation
+
+        .. _BaseClientGetArmState:
+
+    .. py:method:: GetArmState (, deviceId = 0, options = RouterClientSendOptions())
+        
+        | The ``READ_ONLY`` permission is necessary to call this RPC.
+        |
+        | Retrieves current robot arm state
+
+        :param int deviceId: Device's Id called by rpc (optional)
+        :param RouterClientSendOptions options: Router options for sending the message
+ 
+        :rtype: ArmStateInformation
+
+        .. _OnNotificationBaseClientArmStateTopic:
+
+    .. py:method:: OnNotificationArmStateTopic(callback, notificationoptions)
+    
+        | The ``READ_ONLY`` permission is necessary to call this RPC.
+        |
+        | Subscribes to robot arm state notifications
+
+        :param callback: Function callback taking a :class:`ArmStateNotification` as only argument, and returning ``None``.
+        :type callback: function
+        :param NotificationOptions notificationoptions: Notification options
+        :rtype: NotificationHandle
+
+        .. _BaseClientGetIPv4Information:
+
+    .. py:method:: GetIPv4Information (networkhandle, deviceId = 0, options = RouterClientSendOptions())
+        
+        | The ``READ_ONLY`` permission is necessary to call this RPC.
+        |
+        | Retrieves the IPv4 network information for the specified network adapter
+
+
+        :param networkhandle:  
+        :type networkhandle: :ref:`NetworkHandle <BaseNetworkHandle>`
+
+        :param int deviceId: Device's Id called by rpc (optional)
+        :param RouterClientSendOptions options: Router options for sending the message
+ 
+        :rtype: IPv4Information
+
+        .. _BaseClientSendJointSpeedsJoystickCommand:
+
+    .. py:method:: SendJointSpeedsJoystickCommand (jointspeeds, deviceId = 0, options = RouterClientSendOptions())
+        
+        | The ``OPERATE`` permission is necessary to call this RPC.
+        |
+        | Sends the desired joystick speeds to all joints with one command.
+        | The speed values sent to this call are expected to be a ratio of the maximum value (between -1.0/+1.0)
+        | Speeds must be sent to all joints. If you don't want to move some of the joints, send a value of 0.
+        | This RPC can only be sent while the robot is in Jog Manual.
+        | A ROBOT_NOT_MOVING error will be thrown if the Enabling Device is not pressed.
+        | 
+
+
+        :param jointspeeds:  
+        :type jointspeeds: :ref:`JointSpeeds <BaseJointSpeeds>`
+
+        :param int deviceId: Device's Id called by rpc (optional)
+        :param RouterClientSendOptions options: Router options for sending the message
+
+        .. _BaseClientSendSelectedJointSpeedJoystickCommand:
+
+    .. py:method:: SendSelectedJointSpeedJoystickCommand (jointspeed, deviceId = 0, options = RouterClientSendOptions())
+        
+        | The ``OPERATE`` permission is necessary to call this RPC.
+        |
+        | Sends a joystick speed for a specific joint.
+        | The speed value sent to this call is expected to be a ratio of the maximum value (between -1.0/+1.0)
+        | This RPC can only be sent while the robot is in Jog Manual.
+        | A ROBOT_NOT_MOVING error will be thrown if the Enabling Device is not pressed.
+        | 
+
+
+        :param jointspeed:  
+        :type jointspeed: :ref:`JointSpeed <BaseJointSpeed>`
+
+        :param int deviceId: Device's Id called by rpc (optional)
+        :param RouterClientSendOptions options: Router options for sending the message
+
+        .. _BaseClientPlayPreComputedJointTrajectory:
+
+    .. py:method:: PlayPreComputedJointTrajectory (precomputedjointtrajectory, deviceId = 0, options = RouterClientSendOptions())
+        
+        | The ``OPERATE`` permission is necessary to call this RPC.
+        |
+        | Plays a pre-computed angular trajectory
+
+
+        :param precomputedjointtrajectory:  
+        :type precomputedjointtrajectory: :ref:`PreComputedJointTrajectory <BasePreComputedJointTrajectory>`
+
+        :param int deviceId: Device's Id called by rpc (optional)
+        :param RouterClientSendOptions options: Router options for sending the message
+
+        .. _BaseClientGetProductConfiguration:
+
+    .. py:method:: GetProductConfiguration (, deviceId = 0, options = RouterClientSendOptions())
+        
+        | The ``READ_ONLY`` permission is necessary to call this RPC.
+        |
+        | Retrieves product configuration information
+
+        :param int deviceId: Device's Id called by rpc (optional)
+        :param RouterClientSendOptions options: Router options for sending the message
+ 
+        :rtype: CompleteProductConfiguration
+
+        .. _BaseClientGetTrajectoryErrorReport:
+
+    .. py:method:: GetTrajectoryErrorReport (, deviceId = 0, options = RouterClientSendOptions())
+        
+        | The ``READ_ONLY`` permission is necessary to call this RPC.
+        |
+        | Obtains trajectory error report listing errors for rejected trajectory.
+        | Provides some feedback on why the trajectory could not be completed.
+        | 
+
+        :param int deviceId: Device's Id called by rpc (optional)
+        :param RouterClientSendOptions options: Router options for sending the message
+ 
+        :rtype: TrajectoryErrorReport
+
+        .. _BaseClientGetFirmwareBundleVersions:
+
+    .. py:method:: GetFirmwareBundleVersions (, deviceId = 0, options = RouterClientSendOptions())
+        
+        | The ``READ_ONLY`` permission is necessary to call this RPC.
+        |
+        | Retrieves current firmware bundle versions
+
+        :param int deviceId: Device's Id called by rpc (optional)
+        :param RouterClientSendOptions options: Router options for sending the message
+ 
+        :rtype: FirmwareBundleVersions
+
+        .. _BaseClientExecuteWaypointTrajectory:
+
+    .. py:method:: ExecuteWaypointTrajectory (waypointlist, deviceId = 0, options = RouterClientSendOptions())
+        
+        | The ``OPERATE`` permission is necessary to call this RPC.
+        |
+        | Executes a trajectory defined by a series of waypoints in joint space or in Cartesian space
+
+
+        :param waypointlist:  
+        :type waypointlist: :ref:`WaypointList <BaseWaypointList>`
+
+        :param int deviceId: Device's Id called by rpc (optional)
+        :param RouterClientSendOptions options: Router options for sending the message
+
+        .. _BaseClientValidateWaypointList:
+
+    .. py:method:: ValidateWaypointList (waypointlist, deviceId = 0, options = RouterClientSendOptions())
+        
+        | The ``OPERATE`` permission is necessary to call this RPC.
+        |
+        | Validate a waypoint list, returns an empty trajectory error report list if the waypoint list is valid.
+        | If the use_optimal_blending option is true, a waypoint list with optimal blending will be returned.
+        | 
+
+
+        :param waypointlist:  
+        :type waypointlist: :ref:`WaypointList <BaseWaypointList>`
+
+        :param int deviceId: Device's Id called by rpc (optional)
+        :param RouterClientSendOptions options: Router options for sending the message
+ 
+        :rtype: WaypointValidationReport
+
+        .. _BaseClientComputeForwardKinematics:
+
+    .. py:method:: ComputeForwardKinematics (jointangles, deviceId = 0, options = RouterClientSendOptions())
+        
+        | The ``OPERATE`` permission is necessary to call this RPC.
+        |
+        | Get the forward kinematics given specified angular positions of actuators
+
+
+        :param jointangles:  
+        :type jointangles: :ref:`JointAngles <BaseJointAngles>`
+
+        :param int deviceId: Device's Id called by rpc (optional)
+        :param RouterClientSendOptions options: Router options for sending the message
+ 
+        :rtype: Pose
+
+        .. _BaseClientComputeInverseKinematics:
+
+    .. py:method:: ComputeInverseKinematics (ikdata, deviceId = 0, options = RouterClientSendOptions())
+        
+        | The ``OPERATE`` permission is necessary to call this RPC.
+        |
+        | Get the inverse kinematics given a specified cartesian pose and guess of joint angles
+
+
+        :param ikdata:  
+        :type ikdata: :ref:`IKData <BaseIKData>`
+
+        :param int deviceId: Device's Id called by rpc (optional)
+        :param RouterClientSendOptions options: Router options for sending the message
+ 
+        :rtype: JointAngles
+
+        .. _BaseClientActivateRobot:
+
+    .. py:method:: ActivateRobot (, deviceId = 0, options = RouterClientSendOptions())
+        
+        | The ``OPERATE`` permission is necessary to call this RPC.
+        |
+        | Activates the robot.
+        | This function will return after the command is sent, not after the arm is properly activated.
+        | Subscribe to the ArmStateTopic to be notified of the robot's current activation status.
+        | A METHOD_FAILED error will be thrown if the robot was powered off less than 8 seconds ago. Activating the robot can only be done more than 8 seconds after the last power off.
+        | A WRONG_MODE error will be thrown if the robot is already activated.
+        | 
+
+        :param int deviceId: Device's Id called by rpc (optional)
+        :param RouterClientSendOptions options: Router options for sending the message
+
+        .. _OnNotificationBaseClientUpdatingModeTopic:
+
+    .. py:method:: OnNotificationUpdatingModeTopic(callback, notificationoptions)
+    
+        | The ``READ_ONLY`` permission is necessary to call this RPC.
+        |
+        | Subscribes to updating mode topic for notifications
+
+        :param callback: Function callback taking a :class:`UpdatingModeNotification` as only argument, and returning ``None``.
+        :type callback: function
+        :param NotificationOptions notificationoptions: Notification options
+        :rtype: NotificationHandle
+
+        .. _BaseClientSetUpdatingMode:
+
+    .. py:method:: SetUpdatingMode (updatingmodeinformation, deviceId = 0, options = RouterClientSendOptions())
+        
+        | The ``CONFIGURE`` permission is necessary to call this RPC.
+        |
+        | Sets a new updating mode. Only Maintenance, Update and Run modes are permitted.
+
+
+        :param updatingmodeinformation:  
+        :type updatingmodeinformation: :ref:`UpdatingModeInformation <BaseUpdatingModeInformation>`
+
+        :param int deviceId: Device's Id called by rpc (optional)
+        :param RouterClientSendOptions options: Router options for sending the message
+
+        .. _BaseClientGetUpdatingMode:
+
+    .. py:method:: GetUpdatingMode (, deviceId = 0, options = RouterClientSendOptions())
+        
+        | The ``READ_ONLY`` permission is necessary to call this RPC.
+        |
+        | Retrieves current updating mode
+
+        :param int deviceId: Device's Id called by rpc (optional)
+        :param RouterClientSendOptions options: Router options for sending the message
+ 
+        :rtype: UpdatingModeInformation
+
+        .. _BaseClientSelectOperatingMode:
+
+    .. py:method:: SelectOperatingMode (modeselection, deviceId = 0, options = RouterClientSendOptions())
+        
+        | The ``OPERATE`` permission is necessary to call this RPC.
+        |
+        | Select the operating mode
+        | There is a small transition period (about 1 ms) when switching operating modes where the value of the current operating mode is temporarily set as OPERATING_MODE_MONITORED_STOP.
+        | If a call that checks the current operating mode is made from the API shortly after this RPC has been called, it might return OPERATING_MODE_MONITORED_STOP instead of the correct operating mode.
+        | 
+        | When the arm is in ARMSTATE_RECOVERY, no exceptions are thrown but the command is ignored
+        | 
+        | A DEVICE_DISCONNECTED exception "Stopping motion failed for Session ID <session ID>: No Arm Detected" will be thrown if the arm is powered off.
+        | A ROBOT_NOT_READY exception "Stopping motion failed for Session ID <session ID>: Arm Initialization In Progress" if the arm is initializing.
+        | A METHOD_FAILED exception "Failed to change the operating mode : Unknown Event" if the arm is in fault (either powered on or off).
+        | A WRONG_MODE exception "Failed to change the operating mode : Invalid operating mode" will be thrown if the parameter is OPERATING_MODE_HAND_GUIDING.
+        | A WRONG_MODE exception "Failed to change the operating mode : Invalid transition between two operating modes" will be thrown if the parameter is not an admissible mode to transition into from the current operating mode.
+        | 
+        | From the operating mode OPERATING_MODE_MONITORED_STOP, the admissible transitions are to the operating modes:
+        | - OPERATING_MODE_MONITORED_STOP
+        | - OPERATING_MODE_HOLD_TO_RUN
+        | - OPERATING_MODE_AUTO
+        | - OPERATING_MODE_JOG_MANUAL
+        | 
+        | From the operating mode OPERATING_MODE_HOLD_TO_RUN, the admissible transitions are to the operating modes:
+        | - OPERATING_MODE_MONITORED_STOP
+        | - OPERATING_MODE_AUTO
+        | - OPERATING_MODE_JOG_MANUAL
+        | 
+        | From the operating mode OPERATING_MODE_AUTO, the admissible transitions are to the operating modes:
+        | - OPERATING_MODE_MONITORED_STOP
+        | - OPERATING_MODE_HOLD_TO_RUN
+        | 
+        | From the operating mode OPERATING_MODE_JOG_MANUAL, the admissible transitions are to the operating modes:
+        | - OPERATING_MODE_MONITORED_STOP
+        | - OPERATING_MODE_HOLD_TO_RUN
+        | - OPERATING_MODE_JOG_MANUAL
+        | 
+        | 
+
+
+        :param modeselection:  
+        :type modeselection: :ref:`ModeSelection <CommonModeSelection>`
+
+        :param int deviceId: Device's Id called by rpc (optional)
+        :param RouterClientSendOptions options: Router options for sending the message
+
+        .. _BaseClientExitRecoveryState:
+
+    .. py:method:: ExitRecoveryState (, deviceId = 0, options = RouterClientSendOptions())
+        
+        | The ``OPERATE`` permission is necessary to call this RPC.
+        |
+        | Exit the recovery state after clearing a fault
+        | This RPC should be called when the Arm State is ARMSTATE_RECOVERY.
+        | A WRONG_MODE exception "Arm is not in recovery mode" is thrown if the arm is not in recovery mode
+        | A METHOD_FAILED exception "Arm is still in restricted area - can't exit recovery mode" will be thrown if the arm is not out of the protection zone when the RPC is called
+        | 
+
+        :param int deviceId: Device's Id called by rpc (optional)
+        :param RouterClientSendOptions options: Router options for sending the message
+
+        .. _BaseClientDeactivateRobot:
+
+    .. py:method:: DeactivateRobot (, deviceId = 0, options = RouterClientSendOptions())
+        
+        | The ``OPERATE`` permission is necessary to call this RPC.
+        |
+        | Deactivates the robot.
+
+        :param int deviceId: Device's Id called by rpc (optional)
+        :param RouterClientSendOptions options: Router options for sending the message
+
+        .. _BaseClientGetCurrentOperatingMode:
+
+    .. py:method:: GetCurrentOperatingMode (, deviceId = 0, options = RouterClientSendOptions())
+        
+        | The ``READ_ONLY`` permission is necessary to call this RPC.
+        |
+        | Retrieves the current robot operating mode
+
+        :param int deviceId: Device's Id called by rpc (optional)
+        :param RouterClientSendOptions options: Router options for sending the message
+ 
+        :rtype: ModeSelection
+
+        .. _BaseClientReadAllUserRoles:
+
+    .. py:method:: ReadAllUserRoles (, deviceId = 0, options = RouterClientSendOptions())
+        
+        | The ``CONFIGURE`` permission is necessary to call this RPC.
+        |
+        | Retrieves the list of existing User Roles
+
+        :param int deviceId: Device's Id called by rpc (optional)
+        :param RouterClientSendOptions options: Router options for sending the message
+ 
+        :rtype: UserRoleList
+
+        .. _BaseClientSetHandGuidingMode:
+
+    .. py:method:: SetHandGuidingMode (handguiding, deviceId = 0, options = RouterClientSendOptions())
+        
+        | The ``OPERATE`` permission is necessary to call this RPC.
+        |
+        | Set the Hand-Guiding
+        | This RPC can be called even if the arm is powered off
+        | An INVALID_PARAM exception "Invalid hand-guiding type" is thrown if the hand guiding mode is not CARTESIAN or JOINT.
+        | 
+
+
+        :param handguiding:  
+        :type handguiding: :ref:`HandGuiding <BaseHandGuiding>`
+
+        :param int deviceId: Device's Id called by rpc (optional)
+        :param RouterClientSendOptions options: Router options for sending the message
+
+        .. _BaseClientGetHandGuidingMode:
+
+    .. py:method:: GetHandGuidingMode (, deviceId = 0, options = RouterClientSendOptions())
+        
+        | The ``READ_ONLY`` permission is necessary to call this RPC.
+        |
+        | Get the Hand-Guiding mode that will be active while hand guiding
+
+        :param int deviceId: Device's Id called by rpc (optional)
+        :param RouterClientSendOptions options: Router options for sending the message
+ 
+        :rtype: HandGuiding
+
+        .. _OnNotificationBaseClientHandGuidingModeTopic:
+
+    .. py:method:: OnNotificationHandGuidingModeTopic(callback, notificationoptions)
+    
+        | The ``READ_ONLY`` permission is necessary to call this RPC.
+        |
+        | Subscribes to Hand-Guiding mode topic for notifications
+
+        :param callback: Function callback taking a :class:`HandGuidingModeNotification` as only argument, and returning ``None``.
+        :type callback: function
+        :param NotificationOptions notificationoptions: Notification options
+        :rtype: NotificationHandle
+
+        .. _OnNotificationBaseClientEnablingDeviceTopic:
+
+    .. py:method:: OnNotificationEnablingDeviceTopic(callback, notificationoptions)
+    
+        | The ``READ_ONLY`` permission is necessary to call this RPC.
+        |
+        | Subscribes to enabling device topic for notifications
+
+        :param callback: Function callback taking a :class:`EnablingDeviceNotification` as only argument, and returning ``None``.
+        :type callback: function
+        :param NotificationOptions notificationoptions: Notification options
+        :rtype: NotificationHandle
+
+        .. _OnNotificationBaseClientMotionTopic:
+
+    .. py:method:: OnNotificationMotionTopic(callback, notificationoptions)
+    
+        | The ``READ_ONLY`` permission is necessary to call this RPC.
+        |
+        | Subscribes to motion topic for notifications
+
+        :param callback: Function callback taking a :class:`MotionNotification` as only argument, and returning ``None``.
+        :type callback: function
+        :param NotificationOptions notificationoptions: Notification options
+        :rtype: NotificationHandle
+
+        .. _BaseClientGetLastRecordedJointAngles:
+
+    .. py:method:: GetLastRecordedJointAngles (, deviceId = 0, options = RouterClientSendOptions())
+        
+        | The ``READ_ONLY`` permission is necessary to call this RPC.
+        |
+        | Gets the last recorded joint angles
+
+        :param int deviceId: Device's Id called by rpc (optional)
+        :param RouterClientSendOptions options: Router options for sending the message
+ 
+        :rtype: JointAngles
+
+        .. _OnNotificationBaseClientProgramRequestTopic:
+
+    .. py:method:: OnNotificationProgramRequestTopic(callback, notificationoptions)
+    
+        | The ``READ_ONLY`` permission is necessary to call this RPC.
+        |
+        | Subscribes to program request topic for notifications
+
+        :param callback: Function callback taking a :class:`ProgramRequestNotification` as only argument, and returning ``None``.
+        :type callback: function
+        :param NotificationOptions notificationoptions: Notification options
+        :rtype: NotificationHandle
+
+        .. _BaseClientGetStorageList:
+
+    .. py:method:: GetStorageList (, deviceId = 0, options = RouterClientSendOptions())
+        
+        | The ``CONFIGURE`` permission is necessary to call this RPC.
+        |
+        | Get available storage mount points
+
+        :param int deviceId: Device's Id called by rpc (optional)
+        :param RouterClientSendOptions options: Router options for sending the message
+ 
+        :rtype: StorageMountPointList
+
+        .. _BaseClientFileSystemList:
+
+    .. py:method:: FileSystemList (fslistargs, deviceId = 0, options = RouterClientSendOptions())
+        
+        | The ``CONFIGURE`` permission is necessary to call this RPC.
+        |
+        | Perform file system item list (files and directories) from given path.
+
+
+        :param fslistargs:  
+        :type fslistargs: :ref:`FSListArgs <BaseFSListArgs>`
+
+        :param int deviceId: Device's Id called by rpc (optional)
+        :param RouterClientSendOptions options: Router options for sending the message
+ 
+        :rtype: FSItemList
+
+        .. _BaseClientFileWrite:
+
+    .. py:method:: FileWrite (fswriteargs, deviceId = 0, options = RouterClientSendOptions())
+        
+        | The ``CONFIGURE`` permission is necessary to call this RPC.
+        |
+        | Write text data to a file specified by given path. Directories are created if they do not exist.
+
+
+        :param fswriteargs:  
+        :type fswriteargs: :ref:`FSWriteArgs <BaseFSWriteArgs>`
+
+        :param int deviceId: Device's Id called by rpc (optional)
+        :param RouterClientSendOptions options: Router options for sending the message
+
+        .. _BaseClientFileRead:
+
+    .. py:method:: FileRead (fsreadargs, deviceId = 0, options = RouterClientSendOptions())
+        
+        | The ``CONFIGURE`` permission is necessary to call this RPC.
+        |
+        | Read text data from file specified by given path.
+
+
+        :param fsreadargs:  
+        :type fsreadargs: :ref:`FSReadArgs <BaseFSReadArgs>`
+
+        :param int deviceId: Device's Id called by rpc (optional)
+        :param RouterClientSendOptions options: Router options for sending the message
+ 
+        :rtype: FSReadData
+
+        .. _BaseClientRestoreNeutralArmCalibration:
+
+    .. py:method:: RestoreNeutralArmCalibration (, deviceId = 0, options = RouterClientSendOptions())
+        
+        | The ``CONFIGURE`` permission is necessary to call this RPC.
+        |
+        | Restores arm calibration to neutral
+
+        :param int deviceId: Device's Id called by rpc (optional)
+        :param RouterClientSendOptions options: Router options for sending the message
+
+        .. _BaseClientGetArmCalibrationStatus:
+
+    .. py:method:: GetArmCalibrationStatus (, deviceId = 0, options = RouterClientSendOptions())
+        
+        | The ``READ_ONLY`` permission is necessary to call this RPC.
+        |
+        | Gets arm calibration status
+
+        :param int deviceId: Device's Id called by rpc (optional)
+        :param RouterClientSendOptions options: Router options for sending the message
+ 
+        :rtype: ArmCalibrationStatus
+
+        .. _OnNotificationBaseClientArmCalibrationStatusChangeTopic:
+
+    .. py:method:: OnNotificationArmCalibrationStatusChangeTopic(callback, notificationoptions)
+    
+        | The ``READ_ONLY`` permission is necessary to call this RPC.
+        |
+        | Subscribes to arm calibration status change topic for notifications
+
+        :param callback: Function callback taking a :class:`ArmCalibrationStatusChangeNotification` as only argument, and returning ``None``.
+        :type callback: function
+        :param NotificationOptions notificationoptions: Notification options
+        :rtype: NotificationHandle
+
+        .. _OnNotificationBaseClientAcknowledgeActionTopic:
+
+    .. py:method:: OnNotificationAcknowledgeActionTopic(callback, notificationoptions)
+    
+        | The ``READ_ONLY`` permission is necessary to call this RPC.
+        |
+        | Subscribes to acknowledge action topic for notifications
+
+        :param callback: Function callback taking a :class:`AcknowledgeActionNotification` as only argument, and returning ``None``.
+        :type callback: function
+        :param NotificationOptions notificationoptions: Notification options
+        :rtype: NotificationHandle

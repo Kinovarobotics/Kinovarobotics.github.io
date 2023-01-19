@@ -1,0 +1,420 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>ToolPlugin &mdash; Kortex API  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/dark_mode_css/general.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/dark_mode_css/dark.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/sphinx_highlight.js"></script>
+        <script src="../../../_static/dark_mode_js/default_dark.js"></script>
+        <script src="../../../_static/dark_mode_js/theme_switcher.js"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="VariableManager" href="VariableManager.html" />
+    <link rel="prev" title="ToolManager" href="ToolManager.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> Kortex API
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption" role="heading"><span class="caption-text">Getting started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../getting_started/installation.html">Install the API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../getting_started/api_mechanism.html">Get to know it</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../getting_started/code_examples.html">See what you can do (examples)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../getting_started/error_management.html">Managing problems</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">API</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Python API Reference</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../RouterClient.html">RouterClient</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../SessionManager.html">SessionManager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../MqttTransport.html">MqttTransport</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../UDPTransport.html">UDPTransport</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Constants.html">Constants</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../exceptions/index.html">Exceptions</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">Autogen</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../Enums/index.html">Enums</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Services/index.html">Services</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="index.html">Messages</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="ActuatorConfig.html">ActuatorConfig</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ActuatorCyclic.html">ActuatorCyclic</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Base.html">Base</a></li>
+<li class="toctree-l4"><a class="reference internal" href="BaseCyclic.html">BaseCyclic</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Common.html">Common</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ControlConfig.html">ControlConfig</a></li>
+<li class="toctree-l4"><a class="reference internal" href="DeviceConfig.html">DeviceConfig</a></li>
+<li class="toctree-l4"><a class="reference internal" href="DeviceManager.html">DeviceManager</a></li>
+<li class="toctree-l4"><a class="reference internal" href="EditingContext.html">EditingContext</a></li>
+<li class="toctree-l4"><a class="reference internal" href="EventBroker.html">EventBroker</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Frame.html">Frame</a></li>
+<li class="toctree-l4"><a class="reference internal" href="IndustrialIO.html">IndustrialIO</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Modbus.html">Modbus</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Plugin.html">Plugin</a></li>
+<li class="toctree-l4"><a class="reference internal" href="PluginManager.html">PluginManager</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ProductConfiguration.html">ProductConfiguration</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ProgramConfig.html">ProgramConfig</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ProgramRunner.html">ProgramRunner</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ProtectionZone.html">ProtectionZone</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SafetyControlUnitConfig.html">SafetyControlUnitConfig</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SafetyFunctions.html">SafetyFunctions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SafetyFunctionsCommon.html">SafetyFunctionsCommon</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SafetyFunctionsElbow.html">SafetyFunctionsElbow</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SafetyFunctionsJointLimits.html">SafetyFunctionsJointLimits</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SafetyFunctionsToolCenterPoint.html">SafetyFunctionsToolCenterPoint</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SafetyIO.html">SafetyIO</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Session.html">Session</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ToolManager.html">ToolManager</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">ToolPlugin</a></li>
+<li class="toctree-l4"><a class="reference internal" href="VariableManager.html">VariableManager</a></li>
+<li class="toctree-l4"><a class="reference internal" href="WristConfigC61.html">WristConfigC61</a></li>
+<li class="toctree-l4"><a class="reference internal" href="WristCyclicC61.html">WristCyclicC61</a></li>
+<li class="toctree-l4"><a class="reference internal" href="WristCyclicCommon.html">WristCyclicCommon</a></li>
+<li class="toctree-l4"><a class="reference internal" href="WristCyclicGeneric.html">WristCyclicGeneric</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../Notifications.html">Notifications</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Kortex API</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../index.html">Python API Reference</a> &raquo;</li>
+        
+          <li><a href="../index.html">Autogen</a> &raquo;</li>
+        
+          <li><a href="index.html">Messages</a> &raquo;</li>
+        
+      <li>ToolPlugin</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../_sources/ref/autogen/Messages/ToolPlugin.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="toolplugin">
+<h1>ToolPlugin<a class="headerlink" href="#toolplugin" title="Permalink to this heading">¶</a></h1>
+<span class="target" id="toolplugintoolhandle"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.ToolHandle">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ToolHandle</span></span><a class="headerlink" href="#kortex_api.autogen.ToolHandle" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Tool identifier</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.ToolPlugin_pb2.ToolHandle</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><p><strong>identifier</strong> (<span class="xref std std-ref">str</span>) – Tool identifier</p>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="toolplugintoolhandlelist"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.ToolHandleList">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ToolHandleList</span></span><a class="headerlink" href="#kortex_api.autogen.ToolHandleList" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>List of identifier</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.ToolPlugin_pb2.ToolHandleList</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><p><strong>handles</strong> (<a class="reference internal" href="#toolplugintoolhandle"><span class="std std-ref">ToolHandle</span></a> [ ]) – Handles list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="toolplugintoolinformation"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.ToolInformation">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ToolInformation</span></span><a class="headerlink" href="#kortex_api.autogen.ToolInformation" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Tool’s information</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.ToolPlugin_pb2.ToolInformation</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>handle</strong> (<a class="reference internal" href="#toolplugintoolhandle"><span class="std std-ref">ToolHandle</span></a>) – Tool handle</p></li>
+<li><p><strong>mass</strong> (<span class="xref std std-ref">float</span>) – The mass</p></li>
+<li><p><strong>transform</strong> (<a class="reference internal" href="ControlConfig.html#controlconfigcartesiantransform"><span class="std std-ref">CartesianTransform</span></a>) – The tool transform</p></li>
+<li><p><strong>center_of_mass</strong> (<a class="reference internal" href="ControlConfig.html#controlconfigposition"><span class="std std-ref">Position</span></a>) – The tool center of mass</p></li>
+<li><p><strong>open_action_handle</strong> (<a class="reference internal" href="Plugin.html#pluginactiondescriptionhandle"><span class="std std-ref">ActionDescriptionHandle</span></a>) – Identifier of the action that opens the tool</p></li>
+<li><p><strong>close_action_handle</strong> (<a class="reference internal" href="Plugin.html#pluginactiondescriptionhandle"><span class="std std-ref">ActionDescriptionHandle</span></a>) – Identifier of the action that closes the tool</p></li>
+<li><p><strong>inertia</strong> (<a class="reference internal" href="Common.html#commonsymmetricmatrix3x3"><span class="std std-ref">SymmetricMatrix3x3</span></a>) – Tool’s inertia</p></li>
+<li><p><strong>tool_plugin_type</strong> (<a class="reference internal" href="../Enums/ToolPlugin.html#toolplugintoolplugintype"><span class="std std-ref">ToolPluginType</span></a>) – The tool plugin type</p></li>
+<li><p><strong>feedback_schema</strong> (<a class="reference internal" href="Common.html#commoncustomdata"><span class="std std-ref">CustomData</span></a>) – The JSON schema of the feedback that will be returned by GetToolFeedback()</p></li>
+<li><p><strong>connection_state</strong> (<a class="reference internal" href="../Enums/ToolPlugin.html#toolplugintoolconnectionstate"><span class="std std-ref">ToolConnectionState</span></a>) – The connection state of the tool</p></li>
+<li><p><strong>plugin_handle</strong> (<a class="reference internal" href="PluginManager.html#pluginmanagerpluginhandle"><span class="std std-ref">PluginHandle</span></a>) – Identifies from which plugin this tool comes from, if applicable</p></li>
+<li><p><strong>friendly_name</strong> (<span class="xref std std-ref">str</span>) – Tool friendly name</p></li>
+<li><p><strong>is_active</strong> (<span class="xref std std-ref">bool</span>) – Indicates if the tool is part of the active tool list</p></li>
+<li><p><strong>active_index</strong> (<span class="xref std std-ref">int</span>) – Index of the tool in the active tool list. It is 0 if the tool is not active, and 1 is the tool nearest to the flange.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="toolplugintoolinformationlist"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.ToolInformationList">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ToolInformationList</span></span><a class="headerlink" href="#kortex_api.autogen.ToolInformationList" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>List of tool information</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.ToolPlugin_pb2.ToolInformationList</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><p><strong>tools_information</strong> (<a class="reference internal" href="#toolplugintoolinformation"><span class="std std-ref">ToolInformation</span></a> [ ]) – Tool information list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="toolpluginjogmessage"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.JogMessage">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">JogMessage</span></span><a class="headerlink" href="#kortex_api.autogen.JogMessage" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Jog command directive</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.ToolPlugin_pb2.JogMessage</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>handle</strong> (<a class="reference internal" href="#toolplugintoolhandle"><span class="std std-ref">ToolHandle</span></a>) – Tool Handle</p></li>
+<li><p><strong>jog_value</strong> (<span class="xref std std-ref">int</span>) – Relative intensity to apply [-100 , 100]</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="toolpluginmovemessage"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.MoveMessage">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">MoveMessage</span></span><a class="headerlink" href="#kortex_api.autogen.MoveMessage" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Move command directive</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.ToolPlugin_pb2.MoveMessage</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>handle</strong> (<a class="reference internal" href="#toolplugintoolhandle"><span class="std std-ref">ToolHandle</span></a>) – Tool handle</p></li>
+<li><p><strong>target_position</strong> (<span class="xref std std-ref">int</span>) – Target position [-100 , 100]</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="toolplugintoolinformationnotification"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.ToolInformationNotification">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ToolInformationNotification</span></span><a class="headerlink" href="#kortex_api.autogen.ToolInformationNotification" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Notification about a tool information event</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.ToolPlugin_pb2.ToolInformationNotification</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>tool_information</strong> (<a class="reference internal" href="#toolplugintoolinformation"><span class="std std-ref">ToolInformation</span></a>) – The new tool information</p></li>
+<li><p><strong>timestamp</strong> (<a class="reference internal" href="Common.html#commontimestamp"><span class="std std-ref">Timestamp</span></a>) – This field is deprecated and will be removed in a future release</p></li>
+<li><p><strong>event</strong> (<a class="reference internal" href="../Enums/ToolPlugin.html#toolplugintoolinformationevent"><span class="std std-ref">ToolInformationEvent</span></a>) – Information about this notification’s event</p></li>
+<li><p><strong>generic_info</strong> (<a class="reference internal" href="Common.html#commonnotificationinformation"><span class="std std-ref">NotificationInformation</span></a>) – Generic notification information</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="VariableManager.html" class="btn btn-neutral float-right" title="VariableManager" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="ToolManager.html" class="btn btn-neutral float-left" title="ToolManager" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2022, Kinova.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

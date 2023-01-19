@@ -1,0 +1,114 @@
+================================
+ActuatorCyclic
+================================
+    
+.. py:currentmodule:: kortex_api.autogen
+
+.. _ActuatorCyclicServiceVersion:
+
+.. py:class:: ServiceVersion
+
+     Identifies ActuatorCyclic service current version
+
+    :canonical: kortex_api.autogen.messages.ActuatorCyclic_pb2.ServiceVersion
+    .. py:attribute:: RESERVED_0 (0):   Reserved
+
+    .. py:attribute:: CURRENT_VERSION (1):   Current version
+
+.. _ActuatorCyclicCommandFlags:
+
+.. py:class:: CommandFlags
+
+     Identifies actuator commands
+
+    :canonical: kortex_api.autogen.messages.ActuatorCyclic_pb2.CommandFlags
+    .. py:attribute:: NO_COMMAND (0):   0x0 Default value
+
+    .. py:attribute:: SERVO_ENABLE (1):   0x1 Servoing mode is enabled
+
+    .. py:attribute:: BRAKE_DISABLE (2):   0x2 Brake normally applied, 1 disables brake
+
+    .. py:attribute:: CLEAR_MAJOR_FAULT (4):   0x4 Clear the major fault flag (See StatusFlags)
+
+    .. py:attribute:: CLEAR_MINOR_FAULT (8):   0x8 Clear the minor fault flag (See StatusFlags)
+
+    .. py:attribute:: PROTECTIVE_STOP (16):   0x10 Protective stop has been activated
+
+    .. py:attribute:: FORCE_BRAKE_RELEASE (32):   0x20 Force a brake release
+
+    .. py:attribute:: IGNORE (64):   0x40 ignore the other CommandFlag bits
+
+    .. py:attribute:: LOW_GAINS (128):   0x80 Use a set of specific gain value used by the joint Hand-Guiding mode
+
+    .. py:attribute:: LED_0 (256):   0x100 Activate LED 0 (interface module buttons 0)
+
+    .. py:attribute:: LED_1 (512):   0x200 Activate LED 1 (interface module buttons 1)
+
+    .. py:attribute:: TORQUE_AS_CURRENT_FFW (1024):   0x400 Forces "torque as a current feedforward" control mode
+
+.. _ActuatorCyclicStatusFlags:
+
+.. py:class:: StatusFlags
+
+     Identifies actuator status
+
+    :canonical: kortex_api.autogen.messages.ActuatorCyclic_pb2.StatusFlags
+    .. py:attribute:: UNKNOWN_STATUS (0):   0x0 Unknown status 
+
+    .. py:attribute:: RAM_SELF_TEST_SUCCESS (1):   0x1 Actuator RAM self-test succeded
+
+    .. py:attribute:: STABILIZED (16):   0x10 Actuator is in a stable state
+
+    .. py:attribute:: MOTOR_INDEXED (32):   0x20 Position sensor is indexed
+
+    .. py:attribute:: MOTOR_INDEXING (64):   0x40 Position sensor is indexing
+
+    .. py:attribute:: JOINT_INDEXED (128):   0x80 Reserved
+
+    .. py:attribute:: JOINT_INDEXING (256):   0x100 Reserved
+
+    .. py:attribute:: HIGH_PRECISION (512):   0x200 Reserved
+
+    .. py:attribute:: BRAKING (1024):   0x400 The actuator is braking
+
+    .. py:attribute:: SERVOING (2048):   0x800 The actuator is in servoing mode
+
+    .. py:attribute:: MAJOR_FAULT (4096):   0x1000 A major fault has occurred
+
+    .. py:attribute:: MINOR_FAULT (8192):   0x2000 A minor fault has occurred
+
+    .. py:attribute:: CALIBRATED_TORQUE (16384):   0x4000 The torque sensor is calibrated
+
+    .. py:attribute:: CALIBRATED_MAG_SENSOR (32768):   0x8000 The magnetic sensor is calibrated
+
+    .. py:attribute:: CALIBRATED_ZERO (65536):   0x10000 The zero position calibration has been performed
+
+    .. py:attribute:: GPIO_0 (131072):   0x20000 Reserved
+
+    .. py:attribute:: GPIO_1 (262144):   0x40000 Reserved
+
+    .. py:attribute:: CS_QUASI_STATIC_CONTACT (524288):   0x80000 Reserved
+
+    .. py:attribute:: CS_TRANSIENT_CONTACT (1048576):   0x100000 Reserved
+
+    .. py:attribute:: VFD_HALL_SYNC (2097152):   0x200000 Reserved
+
+    .. py:attribute:: VFD_INDEXED (4194304):   0x400000 Reserved
+
+    .. py:attribute:: DRIVE_BOARD_READY (8388608):   0x800000 Reserved
+
+    .. py:attribute:: CALIBRATED_CURRENT (16777216):   0x1000000 Current sensor is calibrated
+
+    .. py:attribute:: CALIBRATED_MOTOR (33554432):   0x2000000 Motor is calibrated
+
+    .. py:attribute:: SW0_ACTIVE (67108864):   0x4000000 Status of interface module buttons 0
+
+    .. py:attribute:: SW1_ACTIVE (134217728):   0x8000000 Status of interface module buttons 1
+
+    .. py:attribute:: GRIPPER_DETECTED (268435456):   0x10000000 A gripper is detected
+
+    .. py:attribute:: BRAKE_RELEASED (536870912):   0x20000000 Brake is released
+
+    .. py:attribute:: BRAKE_RELEASE_FAILED (1073741824):   0x40000000 Actuator failed to release brake
+
+    .. py:attribute:: BOOT_POSITION_SYNC_FAIL (-2147483648):   0x80000000 Actuator position at boot does not match with previous position

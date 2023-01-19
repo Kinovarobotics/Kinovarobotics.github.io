@@ -1,0 +1,283 @@
+================================
+Plugin
+================================
+    
+.. py:currentmodule:: kortex_api.autogen
+
+.. py:class:: PluginClient
+        
+    :canonical: kortex_api.autogen.client_stubs.PluginClientRpc
+
+    .. py:method:: __init__(router, namespace)
+
+        Constructs a PluginClient with an initialized :class:`~kortex_api.RouterClient.RouterClient` and a namespace.
+
+        :param RouterClient router: :class:`~kortex_api.RouterClient.RouterClient` used for the communication
+        :param string namespace: Namespace on which to initialize the PluginClient
+
+    .. py:method:: IsAlive (timeoutMs: int = 1000)
+        
+        Returns ``True`` if the Service Server is detected online before ``timeoutMs`` is expired, ``False`` otherwise.
+        
+        :param unsigned int timeoutMs: The maximum time to wait for an answer from the server 
+        :rtype: bool
+
+
+        .. _PluginClientGetStatus:
+
+    .. py:method:: GetStatus (, deviceId = 0, options = RouterClientSendOptions())
+        
+        | The ``READ_ONLY`` permission is necessary to call this RPC.
+        |
+        
+
+        :param int deviceId: Device's Id called by rpc (optional)
+        :param RouterClientSendOptions options: Router options for sending the message
+ 
+        :rtype: Status
+
+        .. _PluginClientGetMetaData:
+
+    .. py:method:: GetMetaData (, deviceId = 0, options = RouterClientSendOptions())
+        
+        | The ``READ_ONLY`` permission is necessary to call this RPC.
+        |
+        | Get the plugin's meta data
+
+        :param int deviceId: Device's Id called by rpc (optional)
+        :param RouterClientSendOptions options: Router options for sending the message
+ 
+        :rtype: MetaData
+
+        .. _PluginClientGetConfiguration:
+
+    .. py:method:: GetConfiguration (, deviceId = 0, options = RouterClientSendOptions())
+        
+        | The ``READ_ONLY`` permission is necessary to call this RPC.
+        |
+        | Get the plugin's current configuration
+
+        :param int deviceId: Device's Id called by rpc (optional)
+        :param RouterClientSendOptions options: Router options for sending the message
+ 
+        :rtype: Configuration
+
+        .. _PluginClientGetConfigurationSchema:
+
+    .. py:method:: GetConfigurationSchema (, deviceId = 0, options = RouterClientSendOptions())
+        
+        | The ``READ_ONLY`` permission is necessary to call this RPC.
+        |
+        | Get the plugin's current configuration schema
+
+        :param int deviceId: Device's Id called by rpc (optional)
+        :param RouterClientSendOptions options: Router options for sending the message
+ 
+        :rtype: ConfigurationSchema
+
+        .. _PluginClientSetConfiguration:
+
+    .. py:method:: SetConfiguration (configuration, deviceId = 0, options = RouterClientSendOptions())
+        
+        | The ``CONFIGURE`` permission is necessary to call this RPC.
+        |
+        | Set the plugin's configuration
+
+
+        :param configuration:  
+        :type configuration: :ref:`Configuration <PluginConfiguration>`
+
+        :param int deviceId: Device's Id called by rpc (optional)
+        :param RouterClientSendOptions options: Router options for sending the message
+
+        .. _PluginClientResetConfiguration:
+
+    .. py:method:: ResetConfiguration (, deviceId = 0, options = RouterClientSendOptions())
+        
+        | The ``CONFIGURE`` permission is necessary to call this RPC.
+        |
+        | Set the plugin's configuration to its default configuration
+
+        :param int deviceId: Device's Id called by rpc (optional)
+        :param RouterClientSendOptions options: Router options for sending the message
+
+        .. _PluginClientGetActionTypes:
+
+    .. py:method:: GetActionTypes (, deviceId = 0, options = RouterClientSendOptions())
+        
+        | The ``READ_ONLY`` permission is necessary to call this RPC.
+        |
+        | Get Plugin's available Action Types list
+
+        :param int deviceId: Device's Id called by rpc (optional)
+        :param RouterClientSendOptions options: Router options for sending the message
+ 
+        :rtype: ActionDescriptionList
+
+        .. _PluginClientStartAction:
+
+    .. py:method:: StartAction (action, deviceId = 0, options = RouterClientSendOptions())
+        
+        | The ``OPERATE`` permission is necessary to call this RPC.
+        |
+        | Start an Action
+
+
+        :param action:  
+        :type action: :ref:`Action <PluginAction>`
+
+        :param int deviceId: Device's Id called by rpc (optional)
+        :param RouterClientSendOptions options: Router options for sending the message
+ 
+        :rtype: ActionInstanceHandle
+
+        .. _PluginClientPauseAction:
+
+    .. py:method:: PauseAction (actioninstancehandle, deviceId = 0, options = RouterClientSendOptions())
+        
+        | The ``OPERATE`` permission is necessary to call this RPC.
+        |
+        | Pause an ongoing Action
+
+
+        :param actioninstancehandle:  
+        :type actioninstancehandle: :ref:`ActionInstanceHandle <PluginActionInstanceHandle>`
+
+        :param int deviceId: Device's Id called by rpc (optional)
+        :param RouterClientSendOptions options: Router options for sending the message
+
+        .. _PluginClientResumeAction:
+
+    .. py:method:: ResumeAction (actioninstancehandle, deviceId = 0, options = RouterClientSendOptions())
+        
+        | The ``OPERATE`` permission is necessary to call this RPC.
+        |
+        | Resume a paused Action
+
+
+        :param actioninstancehandle:  
+        :type actioninstancehandle: :ref:`ActionInstanceHandle <PluginActionInstanceHandle>`
+
+        :param int deviceId: Device's Id called by rpc (optional)
+        :param RouterClientSendOptions options: Router options for sending the message
+
+        .. _PluginClientStopAction:
+
+    .. py:method:: StopAction (actioninstancehandle, deviceId = 0, options = RouterClientSendOptions())
+        
+        | The ``OPERATE`` permission is necessary to call this RPC.
+        |
+        | Stop an ongoing Action
+
+
+        :param actioninstancehandle:  
+        :type actioninstancehandle: :ref:`ActionInstanceHandle <PluginActionInstanceHandle>`
+
+        :param int deviceId: Device's Id called by rpc (optional)
+        :param RouterClientSendOptions options: Router options for sending the message
+
+        .. _OnNotificationPluginClientStateTopic:
+
+    .. py:method:: OnNotificationStateTopic(callback, notificationoptions)
+    
+        | The ``READ_ONLY`` permission is necessary to call this RPC.
+        |
+        | Subscribes to State change topic for the Plugin
+
+        :param callback: Function callback taking a :class:`Kinova.Api.Plugin.StateNotification` as only argument, and returning ``None``.
+        :type callback: function
+        :param NotificationOptions notificationoptions: Notification options
+        :rtype: NotificationHandle
+
+        .. _OnNotificationPluginClientConfigurationChangeTopic:
+
+    .. py:method:: OnNotificationConfigurationChangeTopic(callback, notificationoptions)
+    
+        | The ``READ_ONLY`` permission is necessary to call this RPC.
+        |
+        | Subscribes to Configuration change topic for the Plugin
+
+        :param callback: Function callback taking a :class:`Kinova.Api.Plugin.ConfigurationChangeNotification` as only argument, and returning ``None``.
+        :type callback: function
+        :param NotificationOptions notificationoptions: Notification options
+        :rtype: NotificationHandle
+
+        .. _OnNotificationPluginClientActionTopic:
+
+    .. py:method:: OnNotificationActionTopic(callback, notificationoptions)
+    
+        | The ``READ_ONLY`` permission is necessary to call this RPC.
+        |
+        | Subscribes to Action notifications for the Plugin
+
+        :param callback: Function callback taking a :class:`Kinova.Api.Plugin.ActionNotification` as only argument, and returning ``None``.
+        :type callback: function
+        :param NotificationOptions notificationoptions: Notification options
+        :rtype: NotificationHandle
+
+        .. _PluginClientUnsubscribe:
+
+    .. py:method:: Unsubscribe (notificationhandle, deviceId = 0, options = RouterClientSendOptions())
+        
+        | The ``READ_ONLY`` permission is necessary to call this RPC.
+        |
+        | Unsubscribes client from receiving notifications for the specified topic
+
+
+        :param notificationhandle:  
+        :type notificationhandle: :ref:`NotificationHandle <CommonNotificationHandle>`
+
+        :param int deviceId: Device's Id called by rpc (optional)
+        :param RouterClientSendOptions options: Router options for sending the message
+
+        .. _PluginClientGetVisualizers:
+
+    .. py:method:: GetVisualizers (, deviceId = 0, options = RouterClientSendOptions())
+        
+        | The ``READ_ONLY`` permission is necessary to call this RPC.
+        |
+        | Getter for the visualizers the Plugin offers
+
+        :param int deviceId: Device's Id called by rpc (optional)
+        :param RouterClientSendOptions options: Router options for sending the message
+ 
+        :rtype: VisualizerList
+
+        .. _OnNotificationPluginClientInfoChangeTopic:
+
+    .. py:method:: OnNotificationInfoChangeTopic(callback, notificationoptions)
+    
+        | The ``READ_ONLY`` permission is necessary to call this RPC.
+        |
+        | Subscribes to Info change topic for the Plugin
+
+        :param callback: Function callback taking a :class:`Kinova.Api.Plugin.InfoChangeNotification` as only argument, and returning ``None``.
+        :type callback: function
+        :param NotificationOptions notificationoptions: Notification options
+        :rtype: NotificationHandle
+
+        .. _PluginClientGetFeedback:
+
+    .. py:method:: GetFeedback (, deviceId = 0, options = RouterClientSendOptions())
+        
+        | The ``READ_ONLY`` permission is necessary to call this RPC.
+        |
+        | Get the plugin's current feedback
+
+        :param int deviceId: Device's Id called by rpc (optional)
+        :param RouterClientSendOptions options: Router options for sending the message
+ 
+        :rtype: Feedback
+
+        .. _PluginClientGetFeedbackSchema:
+
+    .. py:method:: GetFeedbackSchema (, deviceId = 0, options = RouterClientSendOptions())
+        
+        | The ``READ_ONLY`` permission is necessary to call this RPC.
+        |
+        | Get the plugin's current feedback schema
+
+        :param int deviceId: Device's Id called by rpc (optional)
+        :param RouterClientSendOptions options: Router options for sending the message
+ 
+        :rtype: FeedbackSchema

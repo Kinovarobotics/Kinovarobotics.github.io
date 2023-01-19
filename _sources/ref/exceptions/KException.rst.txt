@@ -1,0 +1,6 @@
+KException
+==========
+
+.. automodule:: kortex_api.exceptions.KException
+    :members:
+    :undoc-members:

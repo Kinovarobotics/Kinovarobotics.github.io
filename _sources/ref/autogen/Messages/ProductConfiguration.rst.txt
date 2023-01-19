@@ -1,0 +1,49 @@
+================================
+ProductConfiguration
+================================
+    
+.. py:currentmodule:: kortex_api.autogen
+
+.. _ProductConfigurationCompleteProductConfiguration:
+
+.. py:class:: CompleteProductConfiguration
+
+    Complete configuration for a given device
+
+   :canonical: kortex_api.autogen.messages.ProductConfiguration_pb2.CompleteProductConfiguration
+
+   :param kin:   Kinova Identification Number of the device
+   :type kin: :ref:`str <>` 
+
+   :param model:   Model of the device
+   :type model: :ref:`ModelId <ProductConfigurationModelId>` 
+
+   :param country_code:   Country code for the device
+   :type country_code: :ref:`CountryCode <CommonCountryCode>` 
+
+   :param assembly_plant:   Assembly plant of the device
+   :type assembly_plant: :ref:`str <>` 
+
+   :param model_year:   Year of the model
+   :type model_year: :ref:`str <>` 
+
+   :param degree_of_freedom:   Number of DOF for the device
+   :type degree_of_freedom: :ref:`int <>` 
+
+   :param base_type:   Type of base for the device
+   :type base_type: :ref:`BaseType <ProductConfigurationBaseType>` 
+
+   :param end_effector_type:   End-effector type of the device
+   :type end_effector_type: :ref:`EndEffectorType <ProductConfigurationEndEffectorType>` 
+
+   :param vision_module_type:   Vision module type of the device
+   :type vision_module_type: :ref:`VisionModuleType <ProductConfigurationVisionModuleType>` 
+
+   :param interface_module_type:   Interface module type of the device
+   :type interface_module_type: :ref:`InterfaceModuleType <ProductConfigurationInterfaceModuleType>` 
+
+   :param arm_laterality:   Arm laterality of the device
+   :type arm_laterality: :ref:`ArmLaterality <ProductConfigurationArmLaterality>` 
+
+   :param wrist_type:   Wrist type of the device
+   :type wrist_type: :ref:`WristType <ProductConfigurationWristType>` 

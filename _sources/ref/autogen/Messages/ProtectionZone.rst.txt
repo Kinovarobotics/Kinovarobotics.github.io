@@ -1,0 +1,162 @@
+================================
+ProtectionZone
+================================
+    
+.. py:currentmodule:: kortex_api.autogen
+
+.. _ProtectionZoneProtectionZoneHandle:
+
+.. py:class:: ProtectionZoneHandle
+
+    Reference to a specific protection zone
+
+   :canonical: kortex_api.autogen.messages.ProtectionZone_pb2.ProtectionZoneHandle
+
+   :param identifier:   Protection zone identifier
+   :type identifier: :ref:`int <>` 
+
+   :param permission:   Permission of specified Proctection zone entity. Must use 'Kinova.Api.Common.Permission' enum.
+   :type permission: :ref:`int <>` 
+
+.. _ProtectionZoneCartesianLimitation:
+
+.. py:class:: CartesianLimitation
+
+    Translation and orientation limits for a specified limit type for Cartesian configuration This message is deprecated and will be removed in a future release.
+
+   :canonical: kortex_api.autogen.messages.ProtectionZone_pb2.CartesianLimitation
+
+   :param type:   Limitation type
+   :type type: :ref:`LimitationType <ProtectionZoneLimitationType>` 
+
+   :param translation:   Translation limitation
+   :type translation: :ref:`float <>` 
+
+   :param orientation:   Orientation limitation
+   :type orientation: :ref:`float <>` 
+
+.. _ProtectionZoneZoneShape:
+
+.. py:class:: ZoneShape
+
+    Protection zone shape description
+
+   :canonical: kortex_api.autogen.messages.ProtectionZone_pb2.ZoneShape
+
+   :param shape_type:   Shape type
+   :type shape_type: :ref:`ShapeType <ProtectionZoneShapeType>` 
+
+   :param origin:   Origin of the protection zone shape from reference (in meters)
+   :type origin: :ref:`Position <ControlConfigPosition>` 
+
+   :param orientation:   Rotation matrix to provide shape orientation
+   :type orientation: :ref:`RotationMatrix <CommonRotationMatrix>` 
+
+   :param dimensions:   Shape size measurement (in meters). If rectangular prism: x, y and z dimensions. If cylinder: radius and height. If sphere: radius
+   :type dimensions: :ref:`float <>` [ ]
+
+   :param envelope_thickness:   This field is deprecated and will be removed in a future release
+   :type envelope_thickness: :ref:`float <>` 
+
+.. _ProtectionZoneToolSphere:
+
+.. py:class:: ToolSphere
+
+    Tool sphere
+
+   :canonical: kortex_api.autogen.messages.ProtectionZone_pb2.ToolSphere
+
+   :param center:   Center of tool sphere (in meters)
+   :type center: :ref:`Position <ControlConfigPosition>` 
+
+   :param radius:   Radius of tool sphere (in meters)
+   :type radius: :ref:`float <>` 
+
+.. _ProtectionZoneProtectionZoneConfig:
+
+.. py:class:: ProtectionZoneConfig
+
+    Protection zone configuration
+
+   :canonical: kortex_api.autogen.messages.ProtectionZone_pb2.ProtectionZoneConfig
+
+   :param handle:   Protection zone handle
+   :type handle: :ref:`ProtectionZoneHandle <ProtectionZoneProtectionZoneHandle>` 
+
+   :param name:   Protection zone friendly name
+   :type name: :ref:`str <>` 
+
+   :param application_data:   Application data (reserved for use by Web App)
+   :type application_data: :ref:`str <>` 
+
+   :param is_enabled:   True if protection zone is enabled, false otherwise
+   :type is_enabled: :ref:`bool <>` 
+
+   :param shape:   Protection zone shape
+   :type shape: :ref:`ZoneShape <ProtectionZoneZoneShape>` 
+
+   :param limitations:   This field is deprecated and will be removed in a future release
+   :type limitations: :ref:`CartesianLimitation <ProtectionZoneCartesianLimitation>` [ ]
+
+   :param envelope_limitations:   This field is deprecated and will be removed in a future release
+   :type envelope_limitations: :ref:`CartesianLimitation <ProtectionZoneCartesianLimitation>` [ ]
+
+.. _ProtectionZoneProtectionZoneConfigList:
+
+.. py:class:: ProtectionZoneConfigList
+
+    Array of protection zones
+
+   :canonical: kortex_api.autogen.messages.ProtectionZone_pb2.ProtectionZoneConfigList
+
+   :param protection_zones:   Protection zone
+   :type protection_zones: :ref:`ProtectionZoneConfig <ProtectionZoneProtectionZoneConfig>` [ ]
+
+.. _ProtectionZoneProtectionZoneChangeNotification:
+
+.. py:class:: ProtectionZoneChangeNotification
+
+    Representation of a protection zone change event
+
+   :canonical: kortex_api.autogen.messages.ProtectionZone_pb2.ProtectionZoneChangeNotification
+
+   :param event:   Configuration event
+   :type event: :ref:`ConfigurationNotificationEvent <CommonConfigurationNotificationEvent>` 
+
+   :param timestamp:   This field is deprecated and will be removed in a future release
+   :type timestamp: :ref:`Timestamp <CommonTimestamp>` 
+
+   :param user_handle:   This field is deprecated and will be removed in a future release
+   :type user_handle: :ref:`UserProfileHandle <CommonUserProfileHandle>` 
+
+   :param connection:   This field is deprecated and will be removed in a future release
+   :type connection: :ref:`Connection <CommonConnection>` 
+
+   :param protection_zone_handle:   Protection zone for which the configuration changed
+   :type protection_zone_handle: :ref:`ProtectionZoneHandle <ProtectionZoneProtectionZoneHandle>` 
+
+   :param generic_info:   Generic notification information
+   :type generic_info: :ref:`NotificationInformation <CommonNotificationInformation>` 
+
+.. _ProtectionZoneToolSphereChangeNotification:
+
+.. py:class:: ToolSphereChangeNotification
+
+    Representation of a tool sphere change event
+
+   :canonical: kortex_api.autogen.messages.ProtectionZone_pb2.ToolSphereChangeNotification
+
+   :param tool_sphere:   Tool sphere information
+   :type tool_sphere: :ref:`ToolSphere <ProtectionZoneToolSphere>` 
+
+   :param timestamp:   This field is deprecated and will be removed in a future release
+   :type timestamp: :ref:`Timestamp <CommonTimestamp>` 
+
+   :param user_handle:   This field is deprecated and will be removed in a future release
+   :type user_handle: :ref:`UserProfileHandle <CommonUserProfileHandle>` 
+
+   :param connection:   This field is deprecated and will be removed in a future release
+   :type connection: :ref:`Connection <CommonConnection>` 
+
+   :param generic_info:   Generic notification information
+   :type generic_info: :ref:`NotificationInformation <CommonNotificationInformation>` 

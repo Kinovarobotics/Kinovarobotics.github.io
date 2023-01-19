@@ -1,0 +1,82 @@
+================================
+DeviceConfig
+================================
+    
+.. py:currentmodule:: kortex_api.autogen
+
+.. _DeviceConfigServiceVersion:
+
+.. py:class:: ServiceVersion
+
+     Identifies DeviceConfig current version
+
+    :canonical: kortex_api.autogen.messages.DeviceConfig_pb2.ServiceVersion
+    .. py:attribute:: RESERVED_0 (0):   Reserved
+
+    .. py:attribute:: CURRENT_VERSION (1):   Current version
+
+.. _DeviceConfigRunModes:
+
+.. py:class:: RunModes
+
+     Options for the run mode for the device
+
+    :canonical: kortex_api.autogen.messages.DeviceConfig_pb2.RunModes
+    .. py:attribute:: RUN_MODE (0):  
+
+    .. py:attribute:: CALIBRATION_MODE (1):   calibration mode
+
+    .. py:attribute:: CONFIGURATION_MODE (2):   configuration mode
+
+    .. py:attribute:: DEBUG_MODE (3):   debug mode
+
+    .. py:attribute:: TUNING_MODE (4):   tuning mode
+
+.. _DeviceConfigCalibrationItem:
+
+.. py:class:: CalibrationItem
+
+     Admissible calibration items
+
+    :canonical: kortex_api.autogen.messages.DeviceConfig_pb2.CalibrationItem
+    .. py:attribute:: UNSPECIFIED_CALIBRATION_ITEM (0):   Unspecified calibration item
+
+    .. py:attribute:: COGGING (1):   Cogging calibration
+
+    .. py:attribute:: MAGNETIC (2):   Magnetic sensors calibration
+
+    .. py:attribute:: MOTOR (3):   Motor calibration
+
+    .. py:attribute:: POSITION_RANGE (4):   Position range calibration
+
+.. _DeviceConfigCalibrationStatus:
+
+.. py:class:: CalibrationStatus
+
+     Admissible calibration status
+
+    :canonical: kortex_api.autogen.messages.DeviceConfig_pb2.CalibrationStatus
+    .. py:attribute:: UNSPECIFIED_CALIBRATION_STATUS (0):   Unspecified calibration status
+
+    .. py:attribute:: NOT_CALIBRATED (1):   Calibration is not done
+
+    .. py:attribute:: IN_PROGRESS (2):   Calibration is in progress
+
+    .. py:attribute:: CALIBRATED (3):   Calibration was successfully completed
+
+    .. py:attribute:: IN_FAULT (4):   Calibration failed
+
+.. _DeviceConfigDiagnosticLimitType:
+
+.. py:class:: DiagnosticLimitType
+
+     Types of diagnostics limits
+
+    :canonical: kortex_api.autogen.messages.DeviceConfig_pb2.DiagnosticLimitType
+    .. py:attribute:: DIAGNOSTIC_LIMIT_TYPE_UNSPECIFIED (0):  
+
+    .. py:attribute:: DIAGNOSTIC_LIMIT_TYPE_MINIMAL (1):   Diagnostic that will activate below a certain Minimum threshold (e.g. Minimum temperature diagnostic)
+
+    .. py:attribute:: DIAGNOSTIC_LIMIT_TYPE_MAXIMAL (2):   Diagnostic that will activate above a certain Maximum threshold (e.g. Maximum voltage diagnostic)
+
+    .. py:attribute:: DIAGNOSTIC_LIMIT_TYPE_EVENT (3):   Diagnostic that will activate in reaction to a specific event (e.g. motor drive fault)

@@ -1,0 +1,372 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Notifications &mdash; Kortex API  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/dark_mode_css/general.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/dark_mode_css/dark.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/sphinx_highlight.js"></script>
+        <script src="../../_static/dark_mode_js/default_dark.js"></script>
+        <script src="../../_static/dark_mode_js/theme_switcher.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="prev" title="WristCyclicGeneric" href="Messages/WristCyclicGeneric.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> Kortex API
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption" role="heading"><span class="caption-text">Getting started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../getting_started/installation.html">Install the API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../getting_started/api_mechanism.html">Get to know it</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../getting_started/code_examples.html">See what you can do (examples)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../getting_started/error_management.html">Managing problems</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">API</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Python API Reference</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../RouterClient.html">RouterClient</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../SessionManager.html">SessionManager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../MqttTransport.html">MqttTransport</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../UDPTransport.html">UDPTransport</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Constants.html">Constants</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../exceptions/index.html">Exceptions</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">Autogen</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="Enums/index.html">Enums</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Services/index.html">Services</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Messages/index.html">Messages</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Notifications</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#kortex_api.autogen.ProtectionZoneClient"><code class="docutils literal notranslate"><span class="pre">ProtectionZoneClient</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#kortex_api.autogen.EventBrokerClient"><code class="docutils literal notranslate"><span class="pre">EventBrokerClient</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#kortex_api.autogen.ToolManagerClient"><code class="docutils literal notranslate"><span class="pre">ToolManagerClient</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#kortex_api.autogen.ControlConfigClient"><code class="docutils literal notranslate"><span class="pre">ControlConfigClient</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#kortex_api.autogen.IndustrialIOClient"><code class="docutils literal notranslate"><span class="pre">IndustrialIOClient</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#kortex_api.autogen.BaseClient"><code class="docutils literal notranslate"><span class="pre">BaseClient</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#kortex_api.autogen.VariableManagerClient"><code class="docutils literal notranslate"><span class="pre">VariableManagerClient</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#kortex_api.autogen.PluginClient"><code class="docutils literal notranslate"><span class="pre">PluginClient</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#kortex_api.autogen.ToolPluginClient"><code class="docutils literal notranslate"><span class="pre">ToolPluginClient</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#kortex_api.autogen.PluginManagerClient"><code class="docutils literal notranslate"><span class="pre">PluginManagerClient</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#kortex_api.autogen.ProgramRunnerClient"><code class="docutils literal notranslate"><span class="pre">ProgramRunnerClient</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#kortex_api.autogen.SafetyIOClient"><code class="docutils literal notranslate"><span class="pre">SafetyIOClient</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#kortex_api.autogen.SafetyControlUnitConfigClient"><code class="docutils literal notranslate"><span class="pre">SafetyControlUnitConfigClient</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#kortex_api.autogen.SafetyFunctionsClient"><code class="docutils literal notranslate"><span class="pre">SafetyFunctionsClient</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Kortex API</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../index.html">Python API Reference</a> &raquo;</li>
+        
+          <li><a href="index.html">Autogen</a> &raquo;</li>
+        
+      <li>Notifications</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../_sources/ref/autogen/Notifications.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="notifications">
+<h1>Notifications<a class="headerlink" href="#notifications" title="Permalink to this heading">¶</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.ProtectionZoneClient">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ProtectionZoneClient</span></span><a class="headerlink" href="#kortex_api.autogen.ProtectionZoneClient" title="Permalink to this definition">¶</a></dt>
+<dd><p><a class="reference internal" href="Services/ProtectionZone.html#onnotificationprotectionzoneclientprotectionzonechangetopic"><span class="std std-ref">OnNotificationProtectionZoneChangeTopic</span></a> :      Subscribes to protection zone change topic for notifications</p>
+<p><a class="reference internal" href="Services/ProtectionZone.html#onnotificationprotectionzoneclienttoolspherechangetopic"><span class="std std-ref">OnNotificationToolSphereChangeTopic</span></a> :      Subscribes to tool sphere change topic for notifications</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.EventBrokerClient">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">EventBrokerClient</span></span><a class="headerlink" href="#kortex_api.autogen.EventBrokerClient" title="Permalink to this definition">¶</a></dt>
+<dd><p><a class="reference internal" href="Services/EventBroker.html#onnotificationeventbrokerclienteventtopic"><span class="std std-ref">OnNotificationEventTopic</span></a> :      Subscribes to new events notifications</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.ToolManagerClient">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ToolManagerClient</span></span><a class="headerlink" href="#kortex_api.autogen.ToolManagerClient" title="Permalink to this definition">¶</a></dt>
+<dd><p><a class="reference internal" href="Services/ToolManager.html#onnotificationtoolmanagerclientactivetoolinformationchangedtopic"><span class="std std-ref">OnNotificationActiveToolInformationChangedTopic</span></a> :      Subscribes to tool information notifications</p>
+<p><a class="reference internal" href="Services/ToolManager.html#onnotificationtoolmanagerclienttoolinformationtopic"><span class="std std-ref">OnNotificationToolInformationTopic</span></a> :      Subscribes to custom tool notifications</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.ControlConfigClient">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ControlConfigClient</span></span><a class="headerlink" href="#kortex_api.autogen.ControlConfigClient" title="Permalink to this definition">¶</a></dt>
+<dd><p><a class="reference internal" href="Services/ControlConfig.html#onnotificationcontrolconfigclientcontrolconfigurationtopic"><span class="std std-ref">OnNotificationControlConfigurationTopic</span></a> :      Subscribes to control configuration notifications</p>
+<p><a class="reference internal" href="Services/ControlConfig.html#onnotificationcontrolconfigclientcontrolmodetopic"><span class="std std-ref">OnNotificationControlModeTopic</span></a> :      Subscribes to control mode topic for notifications</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.IndustrialIOClient">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">IndustrialIOClient</span></span><a class="headerlink" href="#kortex_api.autogen.IndustrialIOClient" title="Permalink to this definition">¶</a></dt>
+<dd><p><a class="reference internal" href="Services/IndustrialIO.html#onnotificationindustrialioclientdigitaloutputchangetopic"><span class="std std-ref">OnNotificationDigitalOutputChangeTopic</span></a> :      Subscribes to digital output change topic for notifications.</p>
+<p><a class="reference internal" href="Services/IndustrialIO.html#onnotificationindustrialioclientdigitalinputchangetopic"><span class="std std-ref">OnNotificationDigitalInputChangeTopic</span></a> :      Subscribes to digital input change topic for notifications.</p>
+<p><a class="reference internal" href="Services/IndustrialIO.html#onnotificationindustrialioclientanalogiochangetopic"><span class="std std-ref">OnNotificationAnalogIOChangeTopic</span></a> :      Subscribes to analog input/output change topic for notifications.</p>
+<p><a class="reference internal" href="Services/IndustrialIO.html#onnotificationindustrialioclientwristanalogiochangetopic"><span class="std std-ref">OnNotificationWristAnalogIOChangeTopic</span></a> :       Subscribes to wrist’s analog configuration change topic for notifications.      This notification is only emitted when the Industrial I/O Plugin changes the wrist’s configuration.      It’s not emitted when the analog value changes.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.BaseClient">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">BaseClient</span></span><a class="headerlink" href="#kortex_api.autogen.BaseClient" title="Permalink to this definition">¶</a></dt>
+<dd><p><a class="reference internal" href="Services/Base.html#onnotificationbaseclientconfigurationchangetopic"><span class="std std-ref">OnNotificationConfigurationChangeTopic</span></a> :      Subscribes to configuration change topic for notifications</p>
+<p><a class="reference internal" href="Services/Base.html#onnotificationbaseclientoperatingmodetopic"><span class="std std-ref">OnNotificationOperatingModeTopic</span></a> :      Subscribes to operating mode topic for notifications</p>
+<p><a class="reference internal" href="Services/Base.html#onnotificationbaseclientcontrollertopic"><span class="std std-ref">OnNotificationControllerTopic</span></a> :      Subscribes to controller topic for notifications</p>
+<p><a class="reference internal" href="Services/Base.html#onnotificationbaseclientactiontopic"><span class="std std-ref">OnNotificationActionTopic</span></a> :      Subscribes to action topic for notifications</p>
+<p><a class="reference internal" href="Services/Base.html#onnotificationbaseclientroboteventtopic"><span class="std std-ref">OnNotificationRobotEventTopic</span></a> :      Subscribes to robot event topic for notifications</p>
+<p><a class="reference internal" href="Services/Base.html#onnotificationbaseclientservoingmodetopic"><span class="std std-ref">OnNotificationServoingModeTopic</span></a> :      Subscribes to servoing mode topic for notifications</p>
+<p><a class="reference internal" href="Services/Base.html#onnotificationbaseclientfactorytopic"><span class="std std-ref">OnNotificationFactoryTopic</span></a> :      Subscribes to factory topic for notifications</p>
+<p><a class="reference internal" href="Services/Base.html#onnotificationbaseclientarmstatetopic"><span class="std std-ref">OnNotificationArmStateTopic</span></a> :      Subscribes to robot arm state notifications</p>
+<p><a class="reference internal" href="Services/Base.html#onnotificationbaseclientupdatingmodetopic"><span class="std std-ref">OnNotificationUpdatingModeTopic</span></a> :      Subscribes to updating mode topic for notifications</p>
+<p><a class="reference internal" href="Services/Base.html#onnotificationbaseclienthandguidingmodetopic"><span class="std std-ref">OnNotificationHandGuidingModeTopic</span></a> :      Subscribes to Hand-Guiding mode topic for notifications</p>
+<p><a class="reference internal" href="Services/Base.html#onnotificationbaseclientenablingdevicetopic"><span class="std std-ref">OnNotificationEnablingDeviceTopic</span></a> :      Subscribes to enabling device topic for notifications</p>
+<p><a class="reference internal" href="Services/Base.html#onnotificationbaseclientmotiontopic"><span class="std std-ref">OnNotificationMotionTopic</span></a> :      Subscribes to motion topic for notifications</p>
+<p><a class="reference internal" href="Services/Base.html#onnotificationbaseclientprogramrequesttopic"><span class="std std-ref">OnNotificationProgramRequestTopic</span></a> :      Subscribes to program request topic for notifications</p>
+<p><a class="reference internal" href="Services/Base.html#onnotificationbaseclientarmcalibrationstatuschangetopic"><span class="std std-ref">OnNotificationArmCalibrationStatusChangeTopic</span></a> :      Subscribes to arm calibration status change topic for notifications</p>
+<p><a class="reference internal" href="Services/Base.html#onnotificationbaseclientacknowledgeactiontopic"><span class="std std-ref">OnNotificationAcknowledgeActionTopic</span></a> :      Subscribes to acknowledge action topic for notifications</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.VariableManagerClient">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">VariableManagerClient</span></span><a class="headerlink" href="#kortex_api.autogen.VariableManagerClient" title="Permalink to this definition">¶</a></dt>
+<dd><p><a class="reference internal" href="Services/VariableManager.html#onnotificationvariablemanagerclientvariablechangetopic"><span class="std std-ref">OnNotificationVariableChangeTopic</span></a> :      Subscribes to Configuration change topic on variables</p>
+<p><a class="reference internal" href="Services/VariableManager.html#onnotificationvariablemanagerclientvariablejsonschemaschangedtopic"><span class="std std-ref">OnNotificationVariableJsonSchemasChangedTopic</span></a> :      Subscribes to variable JSON schemas changes notification</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.PluginClient">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">PluginClient</span></span><a class="headerlink" href="#kortex_api.autogen.PluginClient" title="Permalink to this definition">¶</a></dt>
+<dd><p><a class="reference internal" href="Services/Plugin.html#onnotificationpluginclientstatetopic"><span class="std std-ref">OnNotificationStateTopic</span></a> :      Subscribes to State change topic for the Plugin</p>
+<p><a class="reference internal" href="Services/Plugin.html#onnotificationpluginclientconfigurationchangetopic"><span class="std std-ref">OnNotificationConfigurationChangeTopic</span></a> :      Subscribes to Configuration change topic for the Plugin</p>
+<p><a class="reference internal" href="Services/Plugin.html#onnotificationpluginclientactiontopic"><span class="std std-ref">OnNotificationActionTopic</span></a> :      Subscribes to Action notifications for the Plugin</p>
+<p><a class="reference internal" href="Services/Plugin.html#onnotificationpluginclientinfochangetopic"><span class="std std-ref">OnNotificationInfoChangeTopic</span></a> :      Subscribes to Info change topic for the Plugin</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.ToolPluginClient">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ToolPluginClient</span></span><a class="headerlink" href="#kortex_api.autogen.ToolPluginClient" title="Permalink to this definition">¶</a></dt>
+<dd><p><a class="reference internal" href="Services/ToolPlugin.html#onnotificationtoolpluginclienttoolinformationtopic"><span class="std std-ref">OnNotificationToolInformationTopic</span></a> :      Subscribes to tool information notifications</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.PluginManagerClient">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">PluginManagerClient</span></span><a class="headerlink" href="#kortex_api.autogen.PluginManagerClient" title="Permalink to this definition">¶</a></dt>
+<dd><p><a class="reference internal" href="Services/PluginManager.html#onnotificationpluginmanagerclientpluginupdatedtopic"><span class="std std-ref">OnNotificationPluginUpdatedTopic</span></a> :      Notification of plugin update events</p>
+<p><a class="reference internal" href="Services/PluginManager.html#onnotificationpluginmanagerclientplugininstallationtopic"><span class="std std-ref">OnNotificationPluginInstallationTopic</span></a> :      Notification of plugin installation events</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.ProgramRunnerClient">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ProgramRunnerClient</span></span><a class="headerlink" href="#kortex_api.autogen.ProgramRunnerClient" title="Permalink to this definition">¶</a></dt>
+<dd><p><a class="reference internal" href="Services/ProgramRunner.html#onnotificationprogramrunnerclientstatechangetopic"><span class="std std-ref">OnNotificationStateChangeTopic</span></a> :      Subscribes to state event notifications</p>
+<p><a class="reference internal" href="Services/ProgramRunner.html#onnotificationprogramrunnerclientstatuschangetopic"><span class="std std-ref">OnNotificationStatusChangeTopic</span></a> :      Subscribes to status event notifications</p>
+<p><a class="reference internal" href="Services/ProgramRunner.html#onnotificationprogramrunnerclientconfigurationchangetopic"><span class="std std-ref">OnNotificationConfigurationChangeTopic</span></a> :      Subscribes to Configuration change topic on programs</p>
+<p><a class="reference internal" href="Services/ProgramRunner.html#onnotificationprogramrunnerclientexecutioneventtopic"><span class="std std-ref">OnNotificationExecutionEventTopic</span></a> :      Subscribes to program execution event notifications</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.SafetyIOClient">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">SafetyIOClient</span></span><a class="headerlink" href="#kortex_api.autogen.SafetyIOClient" title="Permalink to this definition">¶</a></dt>
+<dd><p><a class="reference internal" href="Services/SafetyIO.html#onnotificationsafetyioclientsafetyiochangetopic"><span class="std std-ref">OnNotificationSafetyIOChangeTopic</span></a> :      Subscribes to safety io change topic for notifications</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.SafetyControlUnitConfigClient">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">SafetyControlUnitConfigClient</span></span><a class="headerlink" href="#kortex_api.autogen.SafetyControlUnitConfigClient" title="Permalink to this definition">¶</a></dt>
+<dd><p><a class="reference internal" href="Services/SafetyControlUnitConfig.html#onnotificationsafetycontrolunitconfigclientsafetyparameterschecksumchangetopic"><span class="std std-ref">OnNotificationSafetyParametersChecksumChangeTopic</span></a> :      Subscribes to safety parameters checksum change topic for notifications</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.SafetyFunctionsClient">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">SafetyFunctionsClient</span></span><a class="headerlink" href="#kortex_api.autogen.SafetyFunctionsClient" title="Permalink to this definition">¶</a></dt>
+<dd><p><a class="reference internal" href="Services/SafetyFunctions.html#onnotificationsafetyfunctionsclientsafetyfunctionchangetopic"><span class="std std-ref">OnNotificationSafetyFunctionChangeTopic</span></a> :      Subscribes to safety function change topic for notifications</p>
+<p><a class="reference internal" href="Services/SafetyFunctions.html#onnotificationsafetyfunctionsclientsafetymodechangetopic"><span class="std std-ref">OnNotificationSafetyModeChangeTopic</span></a> :      Subscribes to safety function change topic for notifications</p>
+<p><a class="reference internal" href="Services/SafetyFunctions.html#onnotificationsafetyfunctionsclientprotectivestopchangetopic"><span class="std std-ref">OnNotificationProtectiveStopChangeTopic</span></a> :      Subscribes to protective stop change topic for notifications</p>
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="Messages/WristCyclicGeneric.html" class="btn btn-neutral float-left" title="WristCyclicGeneric" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2022, Kinova.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

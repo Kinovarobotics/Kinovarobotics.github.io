@@ -1,0 +1,643 @@
+================================
+Common
+================================
+    
+.. py:currentmodule:: kortex_api.autogen
+
+.. _CommonDeviceTypes:
+
+.. py:class:: DeviceTypes
+
+     Admissible device types
+
+    :canonical: kortex_api.autogen.messages.Common_pb2.DeviceTypes
+    .. py:attribute:: UNSPECIFIED_DEVICE_TYPE (0):   Unspecified device type
+
+    .. py:attribute:: BASE (1):   Base module
+
+    .. py:attribute:: VISION (2):   Vision module
+
+    .. py:attribute:: BIG_ACTUATOR (3):   Big actuator module
+
+    .. py:attribute:: SMALL_ACTUATOR (4):   Small actuator module
+
+    .. py:attribute:: INTERCONNECT (5):   Interface module
+
+    .. py:attribute:: GRIPPER (6):   Gripper module
+
+    .. py:attribute:: MEDIUM_ACTUATOR (7):   Medium actuator module
+
+    .. py:attribute:: XBIG_ACTUATOR (8):   XBig actuator module
+
+    .. py:attribute:: ACTUATOR_SAFETY_MCU (9):   Actuator safety MCU
+
+    .. py:attribute:: SCU (10):   Safety Control Unit module
+
+.. _CommonDiagnosticStatusValue:
+
+.. py:class:: DiagnosticStatusValue
+
+     Admissible diagnostic statuses
+
+    :canonical: kortex_api.autogen.messages.Common_pb2.DiagnosticStatusValue
+    .. py:attribute:: DIAGNOSTIC_STATUS_UNSPECIFIED (0):   Unspecified diagnostic status
+
+    .. py:attribute:: DIAGNOSTIC_STATUS_WARNING (1):   Warning diagnostic reached
+
+    .. py:attribute:: DIAGNOSTIC_STATUS_ERROR (2):   Error diagnostic reached
+
+    .. py:attribute:: DIAGNOSTIC_STATUS_NORMAL (3):   Diagnostic is off
+
+.. _CommonPermission:
+
+.. py:class:: Permission
+
+     Admissible permissions. Used as bitfields
+
+    :canonical: kortex_api.autogen.messages.Common_pb2.Permission
+    .. py:attribute:: NO_PERMISSION (0):   No permission
+
+    .. py:attribute:: READ_PERMISSION (1):   Read permission. Refers to an entity that can be read
+
+    .. py:attribute:: UPDATE_PERMISSION (2):   Update permission. Refers to an entity that can be modified
+
+    .. py:attribute:: DELETE_PERMISSION (4):   Delete permission. Refers to an entity that can be deleted
+
+.. _CommonNotificationType:
+
+.. py:class:: NotificationType
+
+     Admissible notification types
+
+    :canonical: kortex_api.autogen.messages.Common_pb2.NotificationType
+    .. py:attribute:: NOTIFICATION_TYPE_UNSPECIFIED (0):  
+
+    .. py:attribute:: NOTIFICATION_TYPE_FIX_RATE (2):   Fix rate notification. Refers to a notification sent at a predetermined fix rate (not implemented yet)
+
+    .. py:attribute:: NOTIFICATION_TYPE_EVENT (3):   Event type notification. Refers to a notification sent in response to an event
+
+.. _CommonUnit:
+
+.. py:class:: Unit
+
+     Admissible units used throughout API methods
+
+    :canonical: kortex_api.autogen.messages.Common_pb2.Unit
+    .. py:attribute:: UNSPECIFIED_UNIT (0):   Unspecified unit
+
+    .. py:attribute:: CELSIUS (1):   Degree Celsius
+
+    .. py:attribute:: AMPERE (2):   Ampere
+
+    .. py:attribute:: VOLT (3):   Volt
+
+    .. py:attribute:: METER_PER_SECOND (4):   Meter per second
+
+    .. py:attribute:: DEGREE_PER_SECOND (5):   Degree per second
+
+    .. py:attribute:: METER_PER_SECOND_2 (6):   Meter per second squared
+
+    .. py:attribute:: DEGREE_PER_SECOND_2 (7):   Degree per second squared
+
+    .. py:attribute:: NEWTON (8):   Newton
+
+    .. py:attribute:: NEWTON_METER (9):   Newton * meter
+
+    .. py:attribute:: KILOGRAM (10):   Kilogram
+
+    .. py:attribute:: DEGREE (11):   Degree
+
+    .. py:attribute:: TICK (12):   Tick
+
+    .. py:attribute:: DEGREE_PER_MILLISECOND (13):   Degre per millisecond
+
+    .. py:attribute:: MICROSECOND (14):   Microsecond (us)
+
+.. _CommonDiagnosticBank:
+
+.. py:class:: DiagnosticBank
+
+    
+
+    :canonical: kortex_api.autogen.messages.Common_pb2.DiagnosticBank
+    .. py:attribute:: UNSPECIFIED_DIAGNOSTIC_BANK (0):  
+
+    .. py:attribute:: DIAGNOSTIC_BANK_A (1):  
+
+    .. py:attribute:: DIAGNOSTIC_BANK_B (2):  
+
+    .. py:attribute:: DIAGNOSTIC_BANK_C (3):  
+
+    .. py:attribute:: DIAGNOSTIC_BANK_D (4):  
+
+.. _CommonUserPermission:
+
+.. py:class:: UserPermission
+
+     User permissions associated with User Roles
+
+    :canonical: kortex_api.autogen.messages.Common_pb2.UserPermission
+    .. py:attribute:: USER_PERMISSION_UNSPECIFIED (0):  
+
+    .. py:attribute:: USER_PERMISSION_OPERATE (1):  
+
+    .. py:attribute:: USER_PERMISSION_CONFIGURE (2):  
+
+    .. py:attribute:: USER_PERMISSION_SAFETIES (3):  
+
+    .. py:attribute:: USER_PERMISSION_SYSTEM (4):  
+
+    .. py:attribute:: USER_PERMISSION_READ_ONLY (5):  
+
+.. _CommonConnectionType:
+
+.. py:class:: ConnectionType
+
+    
+
+    :canonical: kortex_api.autogen.messages.Common_pb2.ConnectionType
+    .. py:attribute:: CONNECTION_TYPE_UNSPECIFIED (0):   Unspecified connection type
+
+    .. py:attribute:: CONNECTION_TYPE_MQTT_TCP (1):   MQTT connection through TCP
+
+    .. py:attribute:: CONNECTION_TYPE_MQTT_WEBSOCKET (2):   MQTT connection through Websocket
+
+    .. py:attribute:: CONNECTION_TYPE_UDP (3):   UDP connection
+
+.. _CommonArmState:
+
+.. py:class:: ArmState
+
+     Admissible robot arm states
+
+    :canonical: kortex_api.autogen.messages.Common_pb2.ArmState
+    .. py:attribute:: ARMSTATE_UNSPECIFIED (0):   Unspecified arm state
+
+    .. py:attribute:: ARMSTATE_BASE_INITIALIZATION (1):   Cannot be reported as the Base initialization must be completed before allowing user connection. This state is deprecated
+
+    .. py:attribute:: ARMSTATE_IDLE (2):   Arm is in idle mode waiting to be initialized
+
+    .. py:attribute:: ARMSTATE_INITIALIZATION (3):   Arm is being initialized
+
+    .. py:attribute:: ARMSTATE_IN_FAULT (4):   Arm is in fault
+
+    .. py:attribute:: ARMSTATE_MAINTENANCE (5):   Arm is in maintenance
+
+    .. py:attribute:: ARMSTATE_SERVOING_LOW_LEVEL (6):   Arm is in low-level servoing mode
+
+    .. py:attribute:: ARMSTATE_SERVOING_READY (7):   Arm is ready to be controlled. This state will eventually be deprecated
+
+    .. py:attribute:: ARMSTATE_SERVOING_PLAYING_SEQUENCE (8):   Arm is currently being controlled via a sequence. This state will eventually be deprecated
+
+    .. py:attribute:: ARMSTATE_SERVOING_MANUALLY_CONTROLLED (9):   Arm is currently being controlled manually. This state will eventually be deprecated
+
+    .. py:attribute:: ARMSTATE_BRAKE_RELEASING (10):   Arm brakes are released
+
+    .. py:attribute:: ARMSTATE_POSITION_UNKNOWN (11):   Arm joint positions are unknown. This state is deprecated
+
+    .. py:attribute:: ARMSTATE_ARM_OPERATIONAL (12):   Arm is operational
+
+    .. py:attribute:: ARMSTATE_RECOVERY (13):   Arm is recovering from a fault
+
+    .. py:attribute:: ARMSTATE_CONTROLLER_INITIALIZATION (14):   State in which the mpu is doing its self test and updating the safety control unit firmware
+
+    .. py:attribute:: ARMSTATE_WAIT_FOR_POSITION_CONFIRMATION (15):   Arm is waiting for the user to confirm that its position is valid
+
+    .. py:attribute:: ARMSTATE_IN_FAULT_POWERED_OFF (16):   Arm is in fault and powered off
+
+    .. py:attribute:: ARMSTATE_IN_UNRECOVERABLE_FAULT (17):   Arm is in unrecoverable fault
+
+.. _CommonOperatingModeType:
+
+.. py:class:: OperatingModeType
+
+     Operating mode type
+
+    :canonical: kortex_api.autogen.messages.Common_pb2.OperatingModeType
+    .. py:attribute:: OPERATING_MODE_UNSPECIFIED (0):   Unspecified operating mode
+
+    .. py:attribute:: OPERATING_MODE_JOG_MANUAL (1):   Jog manual operating mode
+
+    .. py:attribute:: OPERATING_MODE_HAND_GUIDING (2):   Hand guiding operating mode
+
+    .. py:attribute:: OPERATING_MODE_HOLD_TO_RUN (3):   Hold to run operating mode
+
+    .. py:attribute:: OPERATING_MODE_AUTO (4):   Automatic operating mode
+
+    .. py:attribute:: OPERATING_MODE_MONITORED_STOP (5):   Monitored stop operating mode
+
+.. _CommonUARTSpeed:
+
+.. py:class:: UARTSpeed
+
+     Admissible UART baudrates This enum is deprecated and will be removed in a future release. It will be replaced with "Kinova.Api.SerialCommunication.BaudRate".
+
+    :canonical: kortex_api.autogen.messages.Common_pb2.UARTSpeed
+    .. py:attribute:: UART_SPEED_UNSPECIFIED (0):   Unspecified UART speed
+
+    .. py:attribute:: UART_SPEED_4800 (1):   4800 bps
+
+    .. py:attribute:: UART_SPEED_9600 (2):   9600 bps
+
+    .. py:attribute:: UART_SPEED_19200 (3):   19200 bps
+
+    .. py:attribute:: UART_SPEED_38400 (4):   38400 bps
+
+    .. py:attribute:: UART_SPEED_57600 (5):   57600 bps
+
+    .. py:attribute:: UART_SPEED_115200 (6):   115200 bps
+
+    .. py:attribute:: UART_SPEED_230400 (7):   230400 bps
+
+    .. py:attribute:: UART_SPEED_460800 (8):   460800 bps
+
+    .. py:attribute:: UART_SPEED_921600 (9):   921600 bps
+
+    .. py:attribute:: UART_SPEED_1382400 (10):   1382400 bps
+
+    .. py:attribute:: UART_SPEED_1612800 (11):   1612800 bps
+
+    .. py:attribute:: UART_SPEED_1843200 (12):   1843200 bps
+
+    .. py:attribute:: UART_SPEED_2073600 (13):   2073600 bps
+
+    .. py:attribute:: UART_SPEED_2188800 (14):   2188800 bps
+
+    .. py:attribute:: UART_SPEED_2246400 (15):   2246400 bps
+
+.. _CommonUARTWordLength:
+
+.. py:class:: UARTWordLength
+
+     Admissible UART word lengths This enum is deprecated and will be removed in a future release. It will be replaced with "Kinova.Api.SerialCommunication.WordLength".
+
+    :canonical: kortex_api.autogen.messages.Common_pb2.UARTWordLength
+    .. py:attribute:: UART_WORD_LENGTH_UNSPECIFIED (0):   Unspecified UART word length
+
+    .. py:attribute:: UART_WORD_LENGTH_7 (1):   7 bits
+
+    .. py:attribute:: UART_WORD_LENGTH_8 (2):   8 bits
+
+    .. py:attribute:: UART_WORD_LENGTH_9 (3):   9 bits
+
+.. _CommonUARTStopBits:
+
+.. py:class:: UARTStopBits
+
+     Admissible UART stop bits This enum is deprecated and will be removed in a future release. It will be replaced with "Kinova.Api.SerialCommunication.StopBits".
+
+    :canonical: kortex_api.autogen.messages.Common_pb2.UARTStopBits
+    .. py:attribute:: UART_STOP_BITS_UNSPECIFIED (0):   Unspecified UART stop bits
+
+    .. py:attribute:: UART_STOP_BITS_0_5 (1):   0.5 stop bit
+
+    .. py:attribute:: UART_STOP_BITS_1 (2):   1 stop bit
+
+    .. py:attribute:: UART_STOP_BITS_1_5 (3):   1.5 stop bits
+
+    .. py:attribute:: UART_STOP_BITS_2 (4):   2 stop bits
+
+.. _CommonUARTParity:
+
+.. py:class:: UARTParity
+
+     Admissible UART parity mode This enum is deprecated and will be removed in a future release. It will be replaced with "Kinova.Api.SerialCommunication.Parity".
+
+    :canonical: kortex_api.autogen.messages.Common_pb2.UARTParity
+    .. py:attribute:: UART_PARITY_UNSPECIFIED (0):   Unspecified UART parity
+
+    .. py:attribute:: UART_PARITY_NONE (1):   No parity
+
+    .. py:attribute:: UART_PARITY_ODD (2):   Odd parity
+
+    .. py:attribute:: UART_PARITY_EVEN (3):   Even parity
+
+.. _CommonCartesianReferenceFrame:
+
+.. py:class:: CartesianReferenceFrame
+
+      Admissible Cartesian reference frame modes
+
+    :canonical: kortex_api.autogen.messages.Common_pb2.CartesianReferenceFrame
+    .. py:attribute:: CARTESIAN_REFERENCE_FRAME_UNSPECIFIED (0):   Unspecified Cartesian reference frame
+
+    .. py:attribute:: CARTESIAN_REFERENCE_FRAME_MIXED (1):   Mixed reference frame where translation reference = base and  orientation reference = tool
+
+    .. py:attribute:: CARTESIAN_REFERENCE_FRAME_TOOL (2):   Tool reference frame where translation reference = tool and orientation reference = tool
+
+    .. py:attribute:: CARTESIAN_REFERENCE_FRAME_BASE (3):   Base reference frame where the translation reference = base and orientation reference = base
+
+.. _CommonCountryCodeIdentifier:
+
+.. py:class:: CountryCodeIdentifier
+
+     Supported ISO3166 country identifiers
+
+    :canonical: kortex_api.autogen.messages.Common_pb2.CountryCodeIdentifier
+    .. py:attribute:: UNSPECIFIED_COUNTRY_CODE (0):  
+
+    .. py:attribute:: UNITED_ARAB_EMIRATES_AE (1):  
+
+    .. py:attribute:: ANTIGUA_AND_BARBUDA_AG (2):  
+
+    .. py:attribute:: ANGUILLA_AI (3):  
+
+    .. py:attribute:: ALBANIA_AL (4):  
+
+    .. py:attribute:: AMERICAN_SAMOA_AS (5):  
+
+    .. py:attribute:: AUSTRIA_AT (6):  
+
+    .. py:attribute:: AUSTRALIA_AU (7):  
+
+    .. py:attribute:: ARUBA_AW (8):  
+
+    .. py:attribute:: AZERBAIJAN_AZ (9):  
+
+    .. py:attribute:: BOSNIA_AND_HERZEGOVINA_BA (10):  
+
+    .. py:attribute:: BANGLADESH_BD (11):  
+
+    .. py:attribute:: BELGIUM_BE (12):  
+
+    .. py:attribute:: BULGARIA_BG (13):  
+
+    .. py:attribute:: BAHRAIN_BH (14):  
+
+    .. py:attribute:: BERMUDA_BM (15):  
+
+    .. py:attribute:: BRUNEI_DARUSSALAM_BN (16):  
+
+    .. py:attribute:: BRAZIL_BR (17):  
+
+    .. py:attribute:: BAHAMAS_BS (18):  
+
+    .. py:attribute:: BELARUS_BY (19):  
+
+    .. py:attribute:: SWITZERLAND_CH (20):  
+
+    .. py:attribute:: CANADA_CA (21):  
+
+    .. py:attribute:: CHINA_CN (22):  
+
+    .. py:attribute:: COLOMBIA_CO (23):  
+
+    .. py:attribute:: COSTA_RICA_CR (24):  
+
+    .. py:attribute:: CYPRUS_CY (25):  
+
+    .. py:attribute:: CZECH_REPUBLIC_CZ (26):  
+
+    .. py:attribute:: GERMANY_DE (27):  
+
+    .. py:attribute:: DENMARK_DK (28):  
+
+    .. py:attribute:: ECUADOR_EC (29):  
+
+    .. py:attribute:: ESTONIA_EE (30):  
+
+    .. py:attribute:: EGYPT_EG (31):  
+
+    .. py:attribute:: SPAIN_ES (32):  
+
+    .. py:attribute:: ETHIOPIA_ET (33):  
+
+    .. py:attribute:: FINLAND_FI (34):  
+
+    .. py:attribute:: FRANCE_FR (35):  
+
+    .. py:attribute:: UNITED_KINGDOM_GB (36):  
+
+    .. py:attribute:: GRENADA_GD (37):  
+
+    .. py:attribute:: FRENCH_GUIANA_GF (38):  
+
+    .. py:attribute:: GUADELOUPE_GP (39):  
+
+    .. py:attribute:: GREECE_GR (40):  
+
+    .. py:attribute:: GUATEMALA_GT (41):  
+
+    .. py:attribute:: GUAM_GU (42):  
+
+    .. py:attribute:: HONG_KONG_HK (43):  
+
+    .. py:attribute:: CROATIA_HR (44):  
+
+    .. py:attribute:: HUNGARY_HU (45):  
+
+    .. py:attribute:: INDIA_IN (46):  
+
+    .. py:attribute:: INDONESIA_ID (47):  
+
+    .. py:attribute:: IRELAND_IE (48):  
+
+    .. py:attribute:: ISRAEL_IL (49):  
+
+    .. py:attribute:: ICELAND_IS (50):  
+
+    .. py:attribute:: ITALY_IT (51):  
+
+    .. py:attribute:: JORDAN_JO (52):  
+
+    .. py:attribute:: JAPAN_JP (53):  
+
+    .. py:attribute:: CAMBODIA_KH (54):  
+
+    .. py:attribute:: REPUBLIC_OF_KOREA_KR (55):  
+
+    .. py:attribute:: KUWAIT_KW (56):  
+
+    .. py:attribute:: CAYMAN_ISLANDS_KY (57):  
+
+    .. py:attribute:: LAO_PDR_LA (58):  
+
+    .. py:attribute:: LEBANON_LB (59):  
+
+    .. py:attribute:: LIECHTENSTEIN_LI (60):  
+
+    .. py:attribute:: SRI_LANKA_LK (61):  
+
+    .. py:attribute:: LESOTHO_LS (62):  
+
+    .. py:attribute:: LITHUANIA_LT (63):  
+
+    .. py:attribute:: LUXEMBOURG_LU (64):  
+
+    .. py:attribute:: LATVIA_LV (65):  
+
+    .. py:attribute:: MOROCCO_MA (66):  
+
+    .. py:attribute:: MONACO_MC (67):  
+
+    .. py:attribute:: MOLDOVA_MD (68):  
+
+    .. py:attribute:: MONTENEGRO_ME (69):  
+
+    .. py:attribute:: REPUBLIC_OF_MACEDONIA_MK (70):  
+
+    .. py:attribute:: MONGOLIA_MN (71):  
+
+    .. py:attribute:: MARTINIQUE_MQ (72):  
+
+    .. py:attribute:: MAURITANIA_MR (73):  
+
+    .. py:attribute:: MALTA_MT (74):  
+
+    .. py:attribute:: MAURITIUS_MU (75):  
+
+    .. py:attribute:: MALDIVES_MV (76):  
+
+    .. py:attribute:: MALAWI_MW (77):  
+
+    .. py:attribute:: MEXICO_MX (78):  
+
+    .. py:attribute:: MALAYSIA_MY (79):  
+
+    .. py:attribute:: NICARAGUA_NI (80):  
+
+    .. py:attribute:: NETHERLANDS_NL (81):  
+
+    .. py:attribute:: NORWAY_NO (82):  
+
+    .. py:attribute:: NEW_ZEALAND_NZ (83):  
+
+    .. py:attribute:: OMAN_OM (84):  
+
+    .. py:attribute:: PANAMA_PA (85):  
+
+    .. py:attribute:: PERU_PE (86):  
+
+    .. py:attribute:: PHILIPPINES_PH (87):  
+
+    .. py:attribute:: POLAND_PL (88):  
+
+    .. py:attribute:: PUERTO_RICO_PR (89):  
+
+    .. py:attribute:: PORTUGAL_PT (90):  
+
+    .. py:attribute:: PARAGUAY_PY (91):  
+
+    .. py:attribute:: REUNION_RE (92):  
+
+    .. py:attribute:: ROMANIA_RO (93):  
+
+    .. py:attribute:: SERBIA_RS (94):  
+
+    .. py:attribute:: RUSSIAN_FEDERATION_RU (95):  
+
+    .. py:attribute:: SWEDEN_SE (96):  
+
+    .. py:attribute:: SINGAPORE_SI (97):  
+
+    .. py:attribute:: SLOVAKIA_SK (98):  
+
+    .. py:attribute:: EL_SALVADOR_SV (99):  
+
+    .. py:attribute:: THAILAND_TH (100):  
+
+    .. py:attribute:: TUNISIA_TN (101):  
+
+    .. py:attribute:: TURKEY_TR (102):  
+
+    .. py:attribute:: TRINIDAD_AND_TOBAGO_TT (103):  
+
+    .. py:attribute:: TAIWAN_PROVINCE_OF_CHINA_TW (104):  
+
+    .. py:attribute:: UKRAINE_UA (105):  
+
+    .. py:attribute:: UNITED_STATES_US (106):  
+
+    .. py:attribute:: HOLY_SEE_VATICAN_CITY_STATE_VA (107):  
+
+    .. py:attribute:: BOLIVARIAN_REPUBLIC_OF_VENEZUELA_VE (108):  
+
+    .. py:attribute:: BRITISH_VIRGIN_ISLANDS_VG (109):  
+
+    .. py:attribute:: VIETNAM_VN (110):  
+
+    .. py:attribute:: MAYOTTE_YT (111):  
+
+    .. py:attribute:: SOUTH_AFRICA_ZA (112):  
+
+.. _CommonDataType:
+
+.. py:class:: DataType
+
+     Data Type for configurations
+
+    :canonical: kortex_api.autogen.messages.Common_pb2.DataType
+    .. py:attribute:: CONFIGURATION_TYPE_UNSPECIFIED (0):  
+
+    .. py:attribute:: CONFIGURATION_TYPE_JSON (1):  
+
+.. _CommonIconType:
+
+.. py:class:: IconType
+
+     Icon Type for Icon
+
+    :canonical: kortex_api.autogen.messages.Common_pb2.IconType
+    .. py:attribute:: ICON_TYPE_UNSPECIFIED (0):  
+
+    .. py:attribute:: ICON_TYPE_SVG (1):  
+
+.. _CommonConfigurationNotificationEvent:
+
+.. py:class:: ConfigurationNotificationEvent
+
+     Admissible configuration events
+
+    :canonical: kortex_api.autogen.messages.Common_pb2.ConfigurationNotificationEvent
+    .. py:attribute:: UNSPECIFIED_CONFIGURATION_EVENT (0):   Unspecified configuration event
+
+    .. py:attribute:: CONFIGURATION_UPDATED (1):   Configuration deleted
+
+    .. py:attribute:: CONFIGURATION_DELETED (2):   Configuration updated
+
+    .. py:attribute:: CONFIGURATION_DELETED_ALL (3):   All configurations deleted
+
+    .. py:attribute:: CONFIGURATION_CREATED (4):   Configuration created
+
+.. _CommonFileType:
+
+.. py:class:: FileType
+
+     File type
+
+    :canonical: kortex_api.autogen.messages.Common_pb2.FileType
+    .. py:attribute:: FILETYPE_UNSPECIFIED (0):   No information provided
+
+    .. py:attribute:: FILETYPE_SWU (1):   Robot upgrade file
+
+    .. py:attribute:: FILETYPE_KP (2):   Plugin upgrade file
+
+.. _CommonFSItemType:
+
+.. py:class:: FSItemType
+
+     Files system item type
+
+    :canonical: kortex_api.autogen.messages.Common_pb2.FSItemType
+    .. py:attribute:: UNSPECIFIED_FSITEMTYPE (0):   Unspecified File system item type
+
+    .. py:attribute:: FSITEMTYPE_FILE (1):   File item type
+
+    .. py:attribute:: FSITEMTYPE_DIRECTORY (2):   Directory item type
+
+.. _CommonNotificationSeverity:
+
+.. py:class:: NotificationSeverity
+
+     Notification severity level
+
+    :canonical: kortex_api.autogen.messages.Common_pb2.NotificationSeverity
+    .. py:attribute:: NOTIF_DEBUG (0):   Debugging stuff
+
+    .. py:attribute:: NOTIF_INFO (1):   Information
+
+    .. py:attribute:: NOTIF_WARNING (2):   A warning
+
+    .. py:attribute:: NOTIF_ERROR (3):   An error
+
+    .. py:attribute:: NOTIF_CRITICAL (4):   A critical error

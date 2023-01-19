@@ -1,0 +1,128 @@
+================================
+EventBroker
+================================
+    
+.. py:currentmodule:: kortex_api.autogen
+
+.. py:class:: EventBrokerClient
+        
+    :canonical: kortex_api.autogen.client_stubs.EventBrokerClientRpc
+
+    .. py:method:: __init__(router, namespace = None)
+
+        Constructs a EventBrokerClient with an initialized :class:`~kortex_api.RouterClient.RouterClient` and an optional namespace.
+
+        :param RouterClient router: :class:`~kortex_api.RouterClient.RouterClient` used for the communication
+        :param string namespace: Optional namespace on which to initialize the EventBrokerClient (defaults to ``None``)
+
+    .. py:method:: IsAlive (timeoutMs: int = 1000)
+        
+        Returns ``True`` if the Service Server is detected online before ``timeoutMs`` is expired, ``False`` otherwise.
+        
+        :param unsigned int timeoutMs: The maximum time to wait for an answer from the server 
+        :rtype: bool
+
+
+        .. _EventBrokerClientLogEvent:
+
+    .. py:method:: LogEvent (event, deviceId = 0, options = RouterClientSendOptions())
+        
+        | The ``OPERATE`` permission is necessary to call this RPC.
+        |
+        | Log an event
+
+
+        :param event:  
+        :type event: :ref:`Event <EventBrokerEvent>`
+
+        :param int deviceId: Device's Id called by rpc (optional)
+        :param RouterClientSendOptions options: Router options for sending the message
+
+        .. _EventBrokerClientLogEvents:
+
+    .. py:method:: LogEvents (eventlist, deviceId = 0, options = RouterClientSendOptions())
+        
+        | The ``OPERATE`` permission is necessary to call this RPC.
+        |
+        | Log a list of events
+
+
+        :param eventlist:  
+        :type eventlist: :ref:`EventList <EventBrokerEventList>`
+
+        :param int deviceId: Device's Id called by rpc (optional)
+        :param RouterClientSendOptions options: Router options for sending the message
+
+        .. _EventBrokerClientGetEvents:
+
+    .. py:method:: GetEvents (geteventsparameter, deviceId = 0, options = RouterClientSendOptions())
+        
+        | The ``READ_ONLY`` permission is necessary to call this RPC.
+        |
+        | Get the list of persisted events
+
+
+        :param geteventsparameter:  
+        :type geteventsparameter: :ref:`GetEventsParameter <EventBrokerGetEventsParameter>`
+
+        :param int deviceId: Device's Id called by rpc (optional)
+        :param RouterClientSendOptions options: Router options for sending the message
+ 
+        :rtype: EventList
+
+        .. _EventBrokerClientClearEvent:
+
+    .. py:method:: ClearEvent (eventhandle, deviceId = 0, options = RouterClientSendOptions())
+        
+        | The ``CONFIGURE`` permission is necessary to call this RPC.
+        |
+        | Clear one persisted event
+        | Error thrown (ERROR_INTERNAL, METHOD_FAILED) if the input parameter EventHandle is not from an event that has been previously logged
+        | or if it has already been cleared.
+        | 
+
+
+        :param eventhandle:  
+        :type eventhandle: :ref:`EventHandle <EventBrokerEventHandle>`
+
+        :param int deviceId: Device's Id called by rpc (optional)
+        :param RouterClientSendOptions options: Router options for sending the message
+
+        .. _EventBrokerClientClearAllEvents:
+
+    .. py:method:: ClearAllEvents (, deviceId = 0, options = RouterClientSendOptions())
+        
+        | The ``CONFIGURE`` permission is necessary to call this RPC.
+        |
+        | Clear all persisted events
+
+        :param int deviceId: Device's Id called by rpc (optional)
+        :param RouterClientSendOptions options: Router options for sending the message
+
+        .. _OnNotificationEventBrokerClientEventTopic:
+
+    .. py:method:: OnNotificationEventTopic(callback, notificationoptions)
+    
+        | The ``READ_ONLY`` permission is necessary to call this RPC.
+        |
+        | Subscribes to new events notifications
+
+        :param callback: Function callback taking a :class:`Kinova.Api.EventBroker.EventNotification` as only argument, and returning ``None``.
+        :type callback: function
+        :param NotificationOptions notificationoptions: Notification options
+        :rtype: NotificationHandle
+
+        .. _EventBrokerClientUnsubscribe:
+
+    .. py:method:: Unsubscribe (notificationhandle, deviceId = 0, options = RouterClientSendOptions())
+        
+        | The ``READ_ONLY`` permission is necessary to call this RPC.
+        |
+        | Unsubscribes client from receiving notifications for the specified topic
+
+
+        :param notificationhandle:  
+        :type notificationhandle: :ref:`NotificationHandle <CommonNotificationHandle>`
+
+        :param int deviceId: Device's Id called by rpc (optional)
+        :param RouterClientSendOptions options: Router options for sending the message

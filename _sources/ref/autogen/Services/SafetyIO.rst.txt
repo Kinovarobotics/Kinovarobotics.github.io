@@ -1,0 +1,125 @@
+================================
+SafetyIO
+================================
+    
+.. py:currentmodule:: kortex_api.autogen
+
+.. py:class:: SafetyIOClient
+        
+    :canonical: kortex_api.autogen.client_stubs.SafetyIO.SafetyIOClientRpc
+
+    .. py:method:: __init__(router, namespace = None)
+
+        Constructs a SafetyIOClient with an initialized :class:`~kortex_api.RouterClient.RouterClient` and an optional namespace.
+
+        :param RouterClient router: :class:`~kortex_api.RouterClient.RouterClient` used for the communication
+        :param string namespace: Optional namespace on which to initialize the SafetyIOClient (defaults to ``None``)
+
+    .. py:method:: IsAlive (timeoutMs: int = 1000)
+        
+        Returns ``True`` if the Service Server is detected online before ``timeoutMs`` is expired, ``False`` otherwise.
+        
+        :param unsigned int timeoutMs: The maximum time to wait for an answer from the server 
+        :rtype: bool
+
+
+        .. _SafetyIOClientSetSafetyIOConfiguration:
+
+    .. py:method:: SetSafetyIOConfiguration (safetyioconfiguration, deviceId = 0, options = RouterClientSendOptions())
+        
+        | The ``SAFETIES`` permission is necessary to call this RPC.
+        |
+        | Sets a safety io
+
+
+        :param safetyioconfiguration:  
+        :type safetyioconfiguration: :ref:`SafetyIOConfiguration <SafetyIOSafetyIOConfiguration>`
+
+        :param int deviceId: Device's Id called by rpc (optional)
+        :param RouterClientSendOptions options: Router options for sending the message
+
+        .. _SafetyIOClientSetAllSafetyIOConfiguration:
+
+    .. py:method:: SetAllSafetyIOConfiguration (safetyioconfigurationlist, deviceId = 0, options = RouterClientSendOptions())
+        
+        | The ``SAFETIES`` permission is necessary to call this RPC.
+        |
+        | Sets all safeties io
+
+
+        :param safetyioconfigurationlist:  
+        :type safetyioconfigurationlist: :ref:`SafetyIOConfigurationList <SafetyIOSafetyIOConfigurationList>`
+
+        :param int deviceId: Device's Id called by rpc (optional)
+        :param RouterClientSendOptions options: Router options for sending the message
+
+        .. _SafetyIOClientGetSafetyIOConfiguration:
+
+    .. py:method:: GetSafetyIOConfiguration (safetyioinfo, deviceId = 0, options = RouterClientSendOptions())
+        
+        | The ``READ_ONLY`` permission is necessary to call this RPC.
+        |
+        | Retrieves a safety io
+
+
+        :param safetyioinfo:  
+        :type safetyioinfo: :ref:`SafetyIOInfo <SafetyIOSafetyIOInfo>`
+
+        :param int deviceId: Device's Id called by rpc (optional)
+        :param RouterClientSendOptions options: Router options for sending the message
+ 
+        :rtype: SafetyIOConfiguration
+
+        .. _SafetyIOClientGetAllSafetyIOConfiguration:
+
+    .. py:method:: GetAllSafetyIOConfiguration (, deviceId = 0, options = RouterClientSendOptions())
+        
+        | The ``READ_ONLY`` permission is necessary to call this RPC.
+        |
+        | Retrieves all safeties io
+
+        :param int deviceId: Device's Id called by rpc (optional)
+        :param RouterClientSendOptions options: Router options for sending the message
+ 
+        :rtype: SafetyIOConfigurationList
+
+        .. _SafetyIOClientGetSafetyIOStatus:
+
+    .. py:method:: GetSafetyIOStatus (, deviceId = 0, options = RouterClientSendOptions())
+        
+        | The ``READ_ONLY`` permission is necessary to call this RPC.
+        |
+        | Retrieves bitmask of safety functions status
+
+        :param int deviceId: Device's Id called by rpc (optional)
+        :param RouterClientSendOptions options: Router options for sending the message
+ 
+        :rtype: SafetyIOChannelStatus
+
+        .. _OnNotificationSafetyIOClientSafetyIOChangeTopic:
+
+    .. py:method:: OnNotificationSafetyIOChangeTopic(callback, notificationoptions)
+    
+        | The ``READ_ONLY`` permission is necessary to call this RPC.
+        |
+        | Subscribes to safety io change topic for notifications
+
+        :param callback: Function callback taking a :class:`SafetyIOChangeNotification` as only argument, and returning ``None``.
+        :type callback: function
+        :param NotificationOptions notificationoptions: Notification options
+        :rtype: NotificationHandle
+
+        .. _SafetyIOClientUnsubscribe:
+
+    .. py:method:: Unsubscribe (notificationhandle, deviceId = 0, options = RouterClientSendOptions())
+        
+        | The ``READ_ONLY`` permission is necessary to call this RPC.
+        |
+        | Unsubscribes client from receiving notifications for the specified topic
+
+
+        :param notificationhandle:  
+        :type notificationhandle: :ref:`NotificationHandle <CommonNotificationHandle>`
+
+        :param int deviceId: Device's Id called by rpc (optional)
+        :param RouterClientSendOptions options: Router options for sending the message

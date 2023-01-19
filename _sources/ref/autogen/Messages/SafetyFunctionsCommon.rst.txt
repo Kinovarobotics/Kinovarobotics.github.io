@@ -1,0 +1,171 @@
+================================
+SafetyFunctionsCommon
+================================
+    
+.. py:currentmodule:: kortex_api.autogen
+
+.. _SafetyFunctionsCommonSafetySystem:
+
+.. py:class:: SafetySystem
+
+    Reference to a safety system mode
+
+   :canonical: kortex_api.autogen.messages.SafetyFunctionsCommon_pb2.SafetySystem
+
+   :param mode:   Safety system mode
+   :type mode: :ref:`SafetySystemMode <SafetyFunctionsCommonSafetySystemMode>` 
+
+.. _SafetyFunctionsCommonSafetyFunction:
+
+.. py:class:: SafetyFunction
+
+    Reference to a specific safety function
+
+   :canonical: kortex_api.autogen.messages.SafetyFunctionsCommon_pb2.SafetyFunction
+
+   :param safety_function_type:   Safety function type
+   :type safety_function_type: :ref:`SafetyFunctionType <SafetyFunctionsCommonSafetyFunctionType>` 
+
+.. _SafetyFunctionsCommonSafetyFunctionsStatus:
+
+.. py:class:: SafetyFunctionsStatus
+
+    Reference to a safety function status type
+
+   :canonical: kortex_api.autogen.messages.SafetyFunctionsCommon_pb2.SafetyFunctionsStatus
+
+   :param safety_functions_status:   Safety function status (bitmask)
+   :type safety_functions_status: :ref:`SafetyFunctionsStatusType <SafetyFunctionsCommonSafetyFunctionsStatusType>` 
+
+   :param safety_function_triggered_details:   Additional details
+   :type safety_function_triggered_details: :ref:`TriggeredSafetyFunctionDetails <SafetyFunctionsCommonTriggeredSafetyFunctionDetails>` [ ]
+
+.. _SafetyFunctionsCommonProtectiveStopStatus:
+
+.. py:class:: ProtectiveStopStatus
+
+    Reference to a protective stop status type
+
+   :canonical: kortex_api.autogen.messages.SafetyFunctionsCommon_pb2.ProtectiveStopStatus
+
+   :param protective_stop_status:   Protective stop status (bitmask)
+   :type protective_stop_status: :ref:`ProtectiveStopStatusType <SafetyFunctionsCommonProtectiveStopStatusType>` 
+
+.. _SafetyFunctionsCommonSafetyFunctionChangeNotification:
+
+.. py:class:: SafetyFunctionChangeNotification
+
+    Notification about a safety function change event
+
+   :canonical: kortex_api.autogen.messages.SafetyFunctionsCommon_pb2.SafetyFunctionChangeNotification
+
+   :param event:   Event triggered
+   :type event: :ref:`SafetyFunctionChangeEvent <SafetyFunctionsCommonSafetyFunctionChangeEvent>` 
+
+   :param timestamp:   This field is deprecated and will be removed in a future release
+   :type timestamp: :ref:`Timestamp <CommonTimestamp>` 
+
+   :param user_handle:   This field is deprecated and will be removed in a future release
+   :type user_handle: :ref:`UserProfileHandle <CommonUserProfileHandle>` 
+
+   :param generic_info:   Generic notification information
+   :type generic_info: :ref:`NotificationInformation <CommonNotificationInformation>` 
+
+.. _SafetyFunctionsCommonSafetyModeChangeNotification:
+
+.. py:class:: SafetyModeChangeNotification
+
+    Notification about a safety mode change event
+
+   :canonical: kortex_api.autogen.messages.SafetyFunctionsCommon_pb2.SafetyModeChangeNotification
+
+   :param old_mode:   Old safety mode
+   :type old_mode: :ref:`SafetySystemMode <SafetyFunctionsCommonSafetySystemMode>` 
+
+   :param new_mode:   New safety mode
+   :type new_mode: :ref:`SafetySystemMode <SafetyFunctionsCommonSafetySystemMode>` 
+
+   :param timestamp:   This field is deprecated and will be removed in a future release
+   :type timestamp: :ref:`Timestamp <CommonTimestamp>` 
+
+   :param user_handle:   This field is deprecated and will be removed in a future release
+   :type user_handle: :ref:`UserProfileHandle <CommonUserProfileHandle>` 
+
+   :param generic_info:   Generic notification information
+   :type generic_info: :ref:`NotificationInformation <CommonNotificationInformation>` 
+
+.. _SafetyFunctionsCommonProtectiveStopChangeNotification:
+
+.. py:class:: ProtectiveStopChangeNotification
+
+    Notification about a protective stop change event
+
+   :canonical: kortex_api.autogen.messages.SafetyFunctionsCommon_pb2.ProtectiveStopChangeNotification
+
+   :param protective_stop_status:   Protective stop status
+   :type protective_stop_status: :ref:`ProtectiveStopStatusType <SafetyFunctionsCommonProtectiveStopStatusType>` 
+
+   :param timestamp:   This field is deprecated and will be removed in a future release
+   :type timestamp: :ref:`Timestamp <CommonTimestamp>` 
+
+   :param user_handle:   This field is deprecated and will be removed in a future release
+   :type user_handle: :ref:`UserProfileHandle <CommonUserProfileHandle>` 
+
+   :param generic_info:   Generic notification information
+   :type generic_info: :ref:`NotificationInformation <CommonNotificationInformation>` 
+
+.. _SafetyFunctionsCommonTriggeredSafetyFunctionDetails:
+
+.. py:class:: TriggeredSafetyFunctionDetails
+
+    Safety function additional details
+
+   :canonical: kortex_api.autogen.messages.SafetyFunctionsCommon_pb2.TriggeredSafetyFunctionDetails
+
+   :param JointPositionSafetyFunctionDetails joint_position_details:   Triggered joint position safety function details (SF03). Part of the ``safety_function_details`` `Oneof <https://developers.google.com/protocol-buffers/docs/reference/python-generated#oneof>`_.
+
+   :param JointSpeedSafetyFunctionDetails joint_speed_details:   Triggered joint speed safety function details (SF04). Part of the ``safety_function_details`` `Oneof <https://developers.google.com/protocol-buffers/docs/reference/python-generated#oneof>`_.
+
+   :param TcpElbowSpeedSafetyFunctionDetails tcp_elbow_speed_details:   Triggered TCP elbow speed details (SF07). Part of the ``safety_function_details`` `Oneof <https://developers.google.com/protocol-buffers/docs/reference/python-generated#oneof>`_.
+
+.. _SafetyFunctionsCommonJointPositionSafetyFunctionDetails:
+
+.. py:class:: JointPositionSafetyFunctionDetails
+
+    Joint position safety function additional details (SF03) 
+
+   :canonical: kortex_api.autogen.messages.SafetyFunctionsCommon_pb2.JointPositionSafetyFunctionDetails
+
+   :param joint_id:   Joint id
+   :type joint_id: :ref:`int <>` 
+
+   :param joint_position:   Joint position (degrees)
+   :type joint_position: :ref:`float <>` 
+
+.. _SafetyFunctionsCommonJointSpeedSafetyFunctionDetails:
+
+.. py:class:: JointSpeedSafetyFunctionDetails
+
+    Joint speed safety function additional details (SF04) 
+
+   :canonical: kortex_api.autogen.messages.SafetyFunctionsCommon_pb2.JointSpeedSafetyFunctionDetails
+
+   :param joint_id:   Joint id
+   :type joint_id: :ref:`int <>` 
+
+   :param joint_speed:   Joint Speed (degrees/s)
+   :type joint_speed: :ref:`float <>` 
+
+.. _SafetyFunctionsCommonTcpElbowSpeedSafetyFunctionDetails:
+
+.. py:class:: TcpElbowSpeedSafetyFunctionDetails
+
+    TCP/Elbow speed safety function additional details (SF07) 
+
+   :canonical: kortex_api.autogen.messages.SafetyFunctionsCommon_pb2.TcpElbowSpeedSafetyFunctionDetails
+
+   :param type:   TCP or Elbow type that triggered the safety function 
+   :type type: :ref:`TcpElbowSafetyFunctionType <SafetyFunctionsCommonTcpElbowSafetyFunctionType>` 
+
+   :param speed:   Speed that triggered the safety function (m/s)
+   :type speed: :ref:`float <>` 

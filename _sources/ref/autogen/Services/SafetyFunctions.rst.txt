@@ -1,0 +1,398 @@
+================================
+SafetyFunctions
+================================
+    
+.. py:currentmodule:: kortex_api.autogen
+
+.. py:class:: SafetyFunctionsClient
+        
+    :canonical: kortex_api.autogen.client_stubs.SafetyFunctions.SafetyFunctionsClientRpc
+
+    .. py:method:: __init__(router, namespace = None)
+
+        Constructs a SafetyFunctionsClient with an initialized :class:`~kortex_api.RouterClient.RouterClient` and an optional namespace.
+
+        :param RouterClient router: :class:`~kortex_api.RouterClient.RouterClient` used for the communication
+        :param string namespace: Optional namespace on which to initialize the SafetyFunctionsClient (defaults to ``None``)
+
+    .. py:method:: IsAlive (timeoutMs: int = 1000)
+        
+        Returns ``True`` if the Service Server is detected online before ``timeoutMs`` is expired, ``False`` otherwise.
+        
+        :param unsigned int timeoutMs: The maximum time to wait for an answer from the server 
+        :rtype: bool
+
+
+        .. _SafetyFunctionsClientSetJointPositionLimits:
+
+    .. py:method:: SetJointPositionLimits (jointpositionlimits, deviceId = 0, options = RouterClientSendOptions())
+        
+        | The ``SAFETIES`` permission is necessary to call this RPC.
+        |
+        | Sets a safety joint position limits
+
+
+        :param jointpositionlimits:  
+        :type jointpositionlimits: :ref:`JointPositionLimits <SafetyFunctionsJointPositionLimits>`
+
+        :param int deviceId: Device's Id called by rpc (optional)
+        :param RouterClientSendOptions options: Router options for sending the message
+
+        .. _SafetyFunctionsClientSetAllJointPositionLimits:
+
+    .. py:method:: SetAllJointPositionLimits (jointpositionlimitslist, deviceId = 0, options = RouterClientSendOptions())
+        
+        | The ``SAFETIES`` permission is necessary to call this RPC.
+        |
+        | Sets all safeties joint position limits for every safety system mode of each joint
+
+
+        :param jointpositionlimitslist:  
+        :type jointpositionlimitslist: :ref:`JointPositionLimitsList <SafetyFunctionsJointPositionLimitsList>`
+
+        :param int deviceId: Device's Id called by rpc (optional)
+        :param RouterClientSendOptions options: Router options for sending the message
+
+        .. _SafetyFunctionsClientGetJointPositionLimits:
+
+    .. py:method:: GetJointPositionLimits (jointpositioninfo, deviceId = 0, options = RouterClientSendOptions())
+        
+        | The ``READ_ONLY`` permission is necessary to call this RPC.
+        |
+        | Retrieves a safety joint position limits for a specific identifier and safety mode
+
+
+        :param jointpositioninfo:  
+        :type jointpositioninfo: :ref:`JointPositionInfo <SafetyFunctionsJointPositionInfo>`
+
+        :param int deviceId: Device's Id called by rpc (optional)
+        :param RouterClientSendOptions options: Router options for sending the message
+ 
+        :rtype: JointPositionLimits
+
+        .. _SafetyFunctionsClientGetAllJointPositionLimits:
+
+    .. py:method:: GetAllJointPositionLimits (, deviceId = 0, options = RouterClientSendOptions())
+        
+        | The ``READ_ONLY`` permission is necessary to call this RPC.
+        |
+        | Retrieves all safeties joint position limits for every safety system mode
+
+        :param int deviceId: Device's Id called by rpc (optional)
+        :param RouterClientSendOptions options: Router options for sending the message
+ 
+        :rtype: JointPositionLimitsList
+
+        .. _SafetyFunctionsClientSetJointSpeedLimit:
+
+    .. py:method:: SetJointSpeedLimit (jointspeedlimit, deviceId = 0, options = RouterClientSendOptions())
+        
+        | The ``SAFETIES`` permission is necessary to call this RPC.
+        |
+        | Sets a safety joint speed limit
+
+
+        :param jointspeedlimit:  
+        :type jointspeedlimit: :ref:`JointSpeedLimit <SafetyFunctionsJointSpeedLimit>`
+
+        :param int deviceId: Device's Id called by rpc (optional)
+        :param RouterClientSendOptions options: Router options for sending the message
+
+        .. _SafetyFunctionsClientSetAllJointSpeedLimit:
+
+    .. py:method:: SetAllJointSpeedLimit (jointspeedlimitlist, deviceId = 0, options = RouterClientSendOptions())
+        
+        | The ``SAFETIES`` permission is necessary to call this RPC.
+        |
+        | Sets all safeties joint speed limit for every safety system mode of each joint
+
+
+        :param jointspeedlimitlist:  
+        :type jointspeedlimitlist: :ref:`JointSpeedLimitList <SafetyFunctionsJointSpeedLimitList>`
+
+        :param int deviceId: Device's Id called by rpc (optional)
+        :param RouterClientSendOptions options: Router options for sending the message
+
+        .. _SafetyFunctionsClientGetJointSpeedLimit:
+
+    .. py:method:: GetJointSpeedLimit (jointspeedinfo, deviceId = 0, options = RouterClientSendOptions())
+        
+        | The ``READ_ONLY`` permission is necessary to call this RPC.
+        |
+        | Retrieves a safety joint speed limit for a specific identifier and safety mode
+
+
+        :param jointspeedinfo:  
+        :type jointspeedinfo: :ref:`JointSpeedInfo <SafetyFunctionsJointSpeedInfo>`
+
+        :param int deviceId: Device's Id called by rpc (optional)
+        :param RouterClientSendOptions options: Router options for sending the message
+ 
+        :rtype: JointSpeedLimit
+
+        .. _SafetyFunctionsClientGetAllJointSpeedLimit:
+
+    .. py:method:: GetAllJointSpeedLimit (, deviceId = 0, options = RouterClientSendOptions())
+        
+        | The ``READ_ONLY`` permission is necessary to call this RPC.
+        |
+        | Retrieves all safeties joint speed limit for every safety system mode
+
+        :param int deviceId: Device's Id called by rpc (optional)
+        :param RouterClientSendOptions options: Router options for sending the message
+ 
+        :rtype: JointSpeedLimitList
+
+        .. _SafetyFunctionsClientUnsubscribe:
+
+    .. py:method:: Unsubscribe (notificationhandle, deviceId = 0, options = RouterClientSendOptions())
+        
+        | The ``READ_ONLY`` permission is necessary to call this RPC.
+        |
+        | Unsubscribes client from receiving notifications for the specified topic
+
+
+        :param notificationhandle:  
+        :type notificationhandle: :ref:`NotificationHandle <CommonNotificationHandle>`
+
+        :param int deviceId: Device's Id called by rpc (optional)
+        :param RouterClientSendOptions options: Router options for sending the message
+
+        .. _OnNotificationSafetyFunctionsClientSafetyFunctionChangeTopic:
+
+    .. py:method:: OnNotificationSafetyFunctionChangeTopic(callback, notificationoptions)
+    
+        | The ``READ_ONLY`` permission is necessary to call this RPC.
+        |
+        | Subscribes to safety function change topic for notifications
+
+        :param callback: Function callback taking a :class:`SafetyFunctionChangeNotification` as only argument, and returning ``None``.
+        :type callback: function
+        :param NotificationOptions notificationoptions: Notification options
+        :rtype: NotificationHandle
+
+        .. _SafetyFunctionsClientGetSafetyFunctionsStatus:
+
+    .. py:method:: GetSafetyFunctionsStatus (, deviceId = 0, options = RouterClientSendOptions())
+        
+        | The ``READ_ONLY`` permission is necessary to call this RPC.
+        |
+        | Retrieves bitmask of safety functions status
+
+        :param int deviceId: Device's Id called by rpc (optional)
+        :param RouterClientSendOptions options: Router options for sending the message
+ 
+        :rtype: SafetyFunctionsStatus
+
+        .. _SafetyFunctionsClientSetTcpSpeedLimits:
+
+    .. py:method:: SetTcpSpeedLimits (tcpspeedlimits, deviceId = 0, options = RouterClientSendOptions())
+        
+        | The ``SAFETIES`` permission is necessary to call this RPC.
+        |
+        | Sets a safety tool center point speed limits
+
+
+        :param tcpspeedlimits:  
+        :type tcpspeedlimits: :ref:`TcpSpeedLimits <SafetyFunctionsTcpSpeedLimits>`
+
+        :param int deviceId: Device's Id called by rpc (optional)
+        :param RouterClientSendOptions options: Router options for sending the message
+
+        .. _SafetyFunctionsClientSetAllTcpSpeedLimits:
+
+    .. py:method:: SetAllTcpSpeedLimits (tcpspeedlimitslist, deviceId = 0, options = RouterClientSendOptions())
+        
+        | The ``SAFETIES`` permission is necessary to call this RPC.
+        |
+        | Sets all safeties tool center point speed limits for each safety system mode
+
+
+        :param tcpspeedlimitslist:  
+        :type tcpspeedlimitslist: :ref:`TcpSpeedLimitsList <SafetyFunctionsTcpSpeedLimitsList>`
+
+        :param int deviceId: Device's Id called by rpc (optional)
+        :param RouterClientSendOptions options: Router options for sending the message
+
+        .. _SafetyFunctionsClientGetTcpSpeedLimits:
+
+    .. py:method:: GetTcpSpeedLimits (tcpinfo, deviceId = 0, options = RouterClientSendOptions())
+        
+        | The ``READ_ONLY`` permission is necessary to call this RPC.
+        |
+        | Retrieves a safety tool center point speed limits for a specific safety mode
+
+
+        :param tcpinfo:  
+        :type tcpinfo: :ref:`TcpInfo <SafetyFunctionsTcpInfo>`
+
+        :param int deviceId: Device's Id called by rpc (optional)
+        :param RouterClientSendOptions options: Router options for sending the message
+ 
+        :rtype: TcpSpeedLimits
+
+        .. _SafetyFunctionsClientGetAllTcpSpeedLimits:
+
+    .. py:method:: GetAllTcpSpeedLimits (, deviceId = 0, options = RouterClientSendOptions())
+        
+        | The ``READ_ONLY`` permission is necessary to call this RPC.
+        |
+        | Retrieves all safeties tool center point speed limits for all safety modes
+
+        :param int deviceId: Device's Id called by rpc (optional)
+        :param RouterClientSendOptions options: Router options for sending the message
+ 
+        :rtype: TcpSpeedLimitsList
+
+        .. _SafetyFunctionsClientSetElbowSpeedLimit:
+
+    .. py:method:: SetElbowSpeedLimit (elbowspeedlimit, deviceId = 0, options = RouterClientSendOptions())
+        
+        | The ``SAFETIES`` permission is necessary to call this RPC.
+        |
+        | Sets a safety elbow speed limit
+
+
+        :param elbowspeedlimit:  
+        :type elbowspeedlimit: :ref:`ElbowSpeedLimit <SafetyFunctionsElbowSpeedLimit>`
+
+        :param int deviceId: Device's Id called by rpc (optional)
+        :param RouterClientSendOptions options: Router options for sending the message
+
+        .. _SafetyFunctionsClientSetAllElbowSpeedLimit:
+
+    .. py:method:: SetAllElbowSpeedLimit (elbowspeedlimitlist, deviceId = 0, options = RouterClientSendOptions())
+        
+        | The ``SAFETIES`` permission is necessary to call this RPC.
+        |
+        | Sets all safeties elbow speed limit for each safety system mode
+
+
+        :param elbowspeedlimitlist:  
+        :type elbowspeedlimitlist: :ref:`ElbowSpeedLimitList <SafetyFunctionsElbowSpeedLimitList>`
+
+        :param int deviceId: Device's Id called by rpc (optional)
+        :param RouterClientSendOptions options: Router options for sending the message
+
+        .. _SafetyFunctionsClientGetElbowSpeedLimit:
+
+    .. py:method:: GetElbowSpeedLimit (elbowinfo, deviceId = 0, options = RouterClientSendOptions())
+        
+        | The ``READ_ONLY`` permission is necessary to call this RPC.
+        |
+        | Retrieves a safety elbow speed limit for a specific safety mode
+
+
+        :param elbowinfo:  
+        :type elbowinfo: :ref:`ElbowInfo <SafetyFunctionsElbowInfo>`
+
+        :param int deviceId: Device's Id called by rpc (optional)
+        :param RouterClientSendOptions options: Router options for sending the message
+ 
+        :rtype: ElbowSpeedLimit
+
+        .. _SafetyFunctionsClientGetAllElbowSpeedLimit:
+
+    .. py:method:: GetAllElbowSpeedLimit (, deviceId = 0, options = RouterClientSendOptions())
+        
+        | The ``READ_ONLY`` permission is necessary to call this RPC.
+        |
+        | Retrieves all safeties elbow speed limit for all safety modes
+
+        :param int deviceId: Device's Id called by rpc (optional)
+        :param RouterClientSendOptions options: Router options for sending the message
+ 
+        :rtype: ElbowSpeedLimitList
+
+        .. _SafetyFunctionsClientGetSafetyFunctionsLimitsRange:
+
+    .. py:method:: GetSafetyFunctionsLimitsRange (, deviceId = 0, options = RouterClientSendOptions())
+        
+        | The ``READ_ONLY`` permission is necessary to call this RPC.
+        |
+        | Retrieves all limits range of all safety functions for each system safety mode
+
+        :param int deviceId: Device's Id called by rpc (optional)
+        :param RouterClientSendOptions options: Router options for sending the message
+ 
+        :rtype: SafetyFunctionsLimits
+
+        .. _SafetyFunctionsClientGetSafetyFunctionsLimits:
+
+    .. py:method:: GetSafetyFunctionsLimits (, deviceId = 0, options = RouterClientSendOptions())
+        
+        | The ``READ_ONLY`` permission is necessary to call this RPC.
+        |
+        | Retrieves all limits of all safety functions for each system safety mode
+
+        :param int deviceId: Device's Id called by rpc (optional)
+        :param RouterClientSendOptions options: Router options for sending the message
+ 
+        :rtype: SafetyFunctionsLimits
+
+        .. _SafetyFunctionsClientGetSafetySystemMode:
+
+    .. py:method:: GetSafetySystemMode (, deviceId = 0, options = RouterClientSendOptions())
+        
+        | The ``READ_ONLY`` permission is necessary to call this RPC.
+        |
+        | Retrieves current safety system mode
+
+        :param int deviceId: Device's Id called by rpc (optional)
+        :param RouterClientSendOptions options: Router options for sending the message
+ 
+        :rtype: SafetySystem
+
+        .. _SafetyFunctionsClientSetSafetySystemMode:
+
+    .. py:method:: SetSafetySystemMode (safetysystem, deviceId = 0, options = RouterClientSendOptions())
+        
+        | The ``OPERATE`` permission is necessary to call this RPC.
+        |
+        | Sets the current safety mode
+
+
+        :param safetysystem:  
+        :type safetysystem: :ref:`SafetySystem <SafetyFunctionsSafetySystem>`
+
+        :param int deviceId: Device's Id called by rpc (optional)
+        :param RouterClientSendOptions options: Router options for sending the message
+
+        .. _OnNotificationSafetyFunctionsClientSafetyModeChangeTopic:
+
+    .. py:method:: OnNotificationSafetyModeChangeTopic(callback, notificationoptions)
+    
+        | The ``READ_ONLY`` permission is necessary to call this RPC.
+        |
+        | Subscribes to safety function change topic for notifications
+
+        :param callback: Function callback taking a :class:`SafetyModeChangeNotification` as only argument, and returning ``None``.
+        :type callback: function
+        :param NotificationOptions notificationoptions: Notification options
+        :rtype: NotificationHandle
+
+        .. _SafetyFunctionsClientGetProtectiveStopStatus:
+
+    .. py:method:: GetProtectiveStopStatus (, deviceId = 0, options = RouterClientSendOptions())
+        
+        | The ``READ_ONLY`` permission is necessary to call this RPC.
+        |
+        | Retrieves current protective stop status
+
+        :param int deviceId: Device's Id called by rpc (optional)
+        :param RouterClientSendOptions options: Router options for sending the message
+ 
+        :rtype: ProtectiveStopStatus
+
+        .. _OnNotificationSafetyFunctionsClientProtectiveStopChangeTopic:
+
+    .. py:method:: OnNotificationProtectiveStopChangeTopic(callback, notificationoptions)
+    
+        | The ``READ_ONLY`` permission is necessary to call this RPC.
+        |
+        | Subscribes to protective stop change topic for notifications
+
+        :param callback: Function callback taking a :class:`ProtectiveStopChangeNotification` as only argument, and returning ``None``.
+        :type callback: function
+        :param NotificationOptions notificationoptions: Notification options
+        :rtype: NotificationHandle

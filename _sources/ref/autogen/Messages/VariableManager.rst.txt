@@ -1,0 +1,197 @@
+================================
+VariableManager
+================================
+    
+.. py:currentmodule:: kortex_api.autogen
+
+.. _VariableManagerVariableJsonSchema:
+
+.. py:class:: VariableJsonSchema
+
+    Variable JSON Schema
+
+   :canonical: kortex_api.autogen.messages.VariableManager_pb2.VariableJsonSchema
+
+   :param schema_key:   The schema unique key
+   :type schema_key: :ref:`str <>` 
+
+   :param json_schema:   The parseable json schema string
+   :type json_schema: :ref:`str <>` 
+
+   :param friendly_name:   The schema friendly name
+   :type friendly_name: :ref:`str <>` 
+
+.. _VariableManagerVariableJsonSchemaList:
+
+.. py:class:: VariableJsonSchemaList
+
+    Variable JSON Schema List
+
+   :canonical: kortex_api.autogen.messages.VariableManager_pb2.VariableJsonSchemaList
+
+   :param json_schemas:   The variable JSON schema list
+   :type json_schemas: :ref:`VariableJsonSchema <VariableManagerVariableJsonSchema>` [ ]
+
+.. _VariableManagerVariableHandle:
+
+.. py:class:: VariableHandle
+
+    Variable Handle
+
+   :canonical: kortex_api.autogen.messages.VariableManager_pb2.VariableHandle
+
+   :param namespace_handle:   Namespace handle
+   :type namespace_handle: :ref:`NamespaceHandle <VariableManagerNamespaceHandle>` 
+
+   :param identifier:   Variable identifier
+   :type identifier: :ref:`str <>` 
+
+.. _VariableManagerVariable:
+
+.. py:class:: Variable
+
+    Variable Instance
+
+   :canonical: kortex_api.autogen.messages.VariableManager_pb2.Variable
+
+   :param handle:   Variable Handle
+   :type handle: :ref:`VariableHandle <VariableManagerVariableHandle>` 
+
+   :param type:   Variable Type
+   :type type: :ref:`VariableType <VariableManagerVariableType>` 
+
+   :param bool_value:   Boolean value (only filled if type is VARIABLE_TYPE_BOOL)
+   :type bool_value: :ref:`bool <>` 
+
+   :param number_value:   Number value  (only filled if type is VARIABLE_TYPE_NUMBER)
+   :type number_value: :ref:`float <>` 
+
+   :param string_value:   String value  (only filled if type is VARIABLE_TYPE_STRING)
+   :type string_value: :ref:`str <>` 
+
+   :param json_value:   JSON value    (only filled if type is VARIABLE_TYPE_JSON)
+   :type json_value: :ref:`str <>` 
+
+   :param schema_key:   Schema key to use to type/describe a json variable. (only filled if type is VARIABLE_TYPE_JSON)
+   :type schema_key: :ref:`str <>` 
+
+   :param flags:   Flags indicating special variables such as: home, retract, packaging. More could be added in the future.
+   :type flags: :ref:`str <>` [ ]
+
+   :param is_system:   True if variable is system variable
+   :type is_system: :ref:`bool <>` 
+
+   :param unit:   Variable unit. (only filled if type is VARIABLE_TYPE_NUMBER)
+   :type unit: :ref:`str <>` 
+
+.. _VariableManagerNamespaceHandle:
+
+.. py:class:: NamespaceHandle
+
+    Namespace Handle
+
+   :canonical: kortex_api.autogen.messages.VariableManager_pb2.NamespaceHandle
+
+   :param identifier:   Namespace identifier
+   :type identifier: :ref:`str <>` 
+
+.. _VariableManagerNamespaces:
+
+.. py:class:: Namespaces
+
+    Namespaces
+
+   :canonical: kortex_api.autogen.messages.VariableManager_pb2.Namespaces
+
+   :param namespaces:   Namespaces
+   :type namespaces: :ref:`NamespaceHandle <VariableManagerNamespaceHandle>` [ ]
+
+.. _VariableManagerDeleteNamespaceHandle:
+
+.. py:class:: DeleteNamespaceHandle
+
+    Delete Namespace Handle
+
+   :canonical: kortex_api.autogen.messages.VariableManager_pb2.DeleteNamespaceHandle
+
+   :param handle:   Namespace Handle
+   :type handle: :ref:`NamespaceHandle <VariableManagerNamespaceHandle>` 
+
+   :param recursive:   Indicates if we execute recursive deletion to sub-namespaces.
+   :type recursive: :ref:`bool <>` 
+
+.. _VariableManagerNamespaceVariables:
+
+.. py:class:: NamespaceVariables
+
+    Namespace Variables
+
+   :canonical: kortex_api.autogen.messages.VariableManager_pb2.NamespaceVariables
+
+   :param handle:   Namespace Handle
+   :type handle: :ref:`NamespaceHandle <VariableManagerNamespaceHandle>` 
+
+   :param variables:   List of variables within the namespace
+   :type variables: :ref:`Variable <VariableManagerVariable>` [ ]
+
+.. _VariableManagerNamespaceVariablesList:
+
+.. py:class:: NamespaceVariablesList
+
+    List of Namespace Variables
+
+   :canonical: kortex_api.autogen.messages.VariableManager_pb2.NamespaceVariablesList
+
+   :param namespace_variables:   Namespace variables
+   :type namespace_variables: :ref:`NamespaceVariables <VariableManagerNamespaceVariables>` [ ]
+
+.. _VariableManagerConfigurationChangeNotification:
+
+.. py:class:: ConfigurationChangeNotification
+
+    Notification about a change in the configuration of variables & namespaces
+
+   :canonical: kortex_api.autogen.messages.VariableManager_pb2.ConfigurationChangeNotification
+
+   :param event:   Event triggered
+   :type event: :ref:`ConfigurationChangeEvent <VariableManagerConfigurationChangeEvent>` 
+
+   :param timestamp:   This field is deprecated and will be removed in a future release
+   :type timestamp: :ref:`Timestamp <CommonTimestamp>` 
+
+   :param user_handle:   This field is deprecated and will be removed in a future release
+   :type user_handle: :ref:`UserProfileHandle <CommonUserProfileHandle>` 
+
+   :param generic_info:   Generic notification information
+   :type generic_info: :ref:`NotificationInformation <CommonNotificationInformation>` 
+
+   :param NamespaceVariablesList changed_variables:   List of changed variables by namespace. Part of the ``event_info`` `Oneof <https://developers.google.com/protocol-buffers/docs/reference/python-generated#oneof>`_.
+
+   :param NamespaceVariablesList deleted_variables:   List of deleted variables by namespace. Part of the ``event_info`` `Oneof <https://developers.google.com/protocol-buffers/docs/reference/python-generated#oneof>`_.
+
+   :param Namespaces deleted_namespaces:   List of deleted namespaces. Part of the ``event_info`` `Oneof <https://developers.google.com/protocol-buffers/docs/reference/python-generated#oneof>`_.
+
+.. _VariableManagerVariableJsonSchemasChangeNotification:
+
+.. py:class:: VariableJsonSchemasChangeNotification
+
+    Notification about an update in the avaialble variable JSON schemas
+
+   :canonical: kortex_api.autogen.messages.VariableManager_pb2.VariableJsonSchemasChangeNotification
+
+   :param json_schemas_list:   The variable JSON schema list
+   :type json_schemas_list: :ref:`VariableJsonSchemaList <VariableManagerVariableJsonSchemaList>` 
+
+   :param generic_info:   Generic notification information
+   :type generic_info: :ref:`NotificationInformation <CommonNotificationInformation>` 
+
+.. _VariableManagerInterpolateString:
+
+.. py:class:: InterpolateString
+
+    String to interpolate
+
+   :canonical: kortex_api.autogen.messages.VariableManager_pb2.InterpolateString
+
+   :param interpolate_string:   String to interpolate
+   :type interpolate_string: :ref:`str <>` 

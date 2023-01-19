@@ -1,0 +1,492 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>SafetyFunctionsCommon &mdash; Kortex API  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/dark_mode_css/general.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/dark_mode_css/dark.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/sphinx_highlight.js"></script>
+        <script src="../../../_static/dark_mode_js/default_dark.js"></script>
+        <script src="../../../_static/dark_mode_js/theme_switcher.js"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="SafetyFunctionsElbow" href="SafetyFunctionsElbow.html" />
+    <link rel="prev" title="SafetyFunctions" href="SafetyFunctions.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> Kortex API
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption" role="heading"><span class="caption-text">Getting started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../getting_started/installation.html">Install the API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../getting_started/api_mechanism.html">Get to know it</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../getting_started/code_examples.html">See what you can do (examples)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../getting_started/error_management.html">Managing problems</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">API</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Python API Reference</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../RouterClient.html">RouterClient</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../SessionManager.html">SessionManager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../MqttTransport.html">MqttTransport</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../UDPTransport.html">UDPTransport</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Constants.html">Constants</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../exceptions/index.html">Exceptions</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">Autogen</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../Enums/index.html">Enums</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Services/index.html">Services</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="index.html">Messages</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="ActuatorConfig.html">ActuatorConfig</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ActuatorCyclic.html">ActuatorCyclic</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Base.html">Base</a></li>
+<li class="toctree-l4"><a class="reference internal" href="BaseCyclic.html">BaseCyclic</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Common.html">Common</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ControlConfig.html">ControlConfig</a></li>
+<li class="toctree-l4"><a class="reference internal" href="DeviceConfig.html">DeviceConfig</a></li>
+<li class="toctree-l4"><a class="reference internal" href="DeviceManager.html">DeviceManager</a></li>
+<li class="toctree-l4"><a class="reference internal" href="EditingContext.html">EditingContext</a></li>
+<li class="toctree-l4"><a class="reference internal" href="EventBroker.html">EventBroker</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Frame.html">Frame</a></li>
+<li class="toctree-l4"><a class="reference internal" href="IndustrialIO.html">IndustrialIO</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Modbus.html">Modbus</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Plugin.html">Plugin</a></li>
+<li class="toctree-l4"><a class="reference internal" href="PluginManager.html">PluginManager</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ProductConfiguration.html">ProductConfiguration</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ProgramConfig.html">ProgramConfig</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ProgramRunner.html">ProgramRunner</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ProtectionZone.html">ProtectionZone</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SafetyControlUnitConfig.html">SafetyControlUnitConfig</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SafetyFunctions.html">SafetyFunctions</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">SafetyFunctionsCommon</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SafetyFunctionsElbow.html">SafetyFunctionsElbow</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SafetyFunctionsJointLimits.html">SafetyFunctionsJointLimits</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SafetyFunctionsToolCenterPoint.html">SafetyFunctionsToolCenterPoint</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SafetyIO.html">SafetyIO</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Session.html">Session</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ToolManager.html">ToolManager</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ToolPlugin.html">ToolPlugin</a></li>
+<li class="toctree-l4"><a class="reference internal" href="VariableManager.html">VariableManager</a></li>
+<li class="toctree-l4"><a class="reference internal" href="WristConfigC61.html">WristConfigC61</a></li>
+<li class="toctree-l4"><a class="reference internal" href="WristCyclicC61.html">WristCyclicC61</a></li>
+<li class="toctree-l4"><a class="reference internal" href="WristCyclicCommon.html">WristCyclicCommon</a></li>
+<li class="toctree-l4"><a class="reference internal" href="WristCyclicGeneric.html">WristCyclicGeneric</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../Notifications.html">Notifications</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Kortex API</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../index.html">Python API Reference</a> &raquo;</li>
+        
+          <li><a href="../index.html">Autogen</a> &raquo;</li>
+        
+          <li><a href="index.html">Messages</a> &raquo;</li>
+        
+      <li>SafetyFunctionsCommon</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../_sources/ref/autogen/Messages/SafetyFunctionsCommon.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="safetyfunctionscommon">
+<h1>SafetyFunctionsCommon<a class="headerlink" href="#safetyfunctionscommon" title="Permalink to this heading">¶</a></h1>
+<span class="target" id="safetyfunctionscommonsafetysystem"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.SafetySystem">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">SafetySystem</span></span><a class="headerlink" href="#kortex_api.autogen.SafetySystem" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Reference to a safety system mode</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.SafetyFunctionsCommon_pb2.SafetySystem</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><p><strong>mode</strong> (<a class="reference internal" href="../Enums/SafetyFunctionsCommon.html#safetyfunctionscommonsafetysystemmode"><span class="std std-ref">SafetySystemMode</span></a>) – Safety system mode</p>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="safetyfunctionscommonsafetyfunction"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.SafetyFunction">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">SafetyFunction</span></span><a class="headerlink" href="#kortex_api.autogen.SafetyFunction" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Reference to a specific safety function</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.SafetyFunctionsCommon_pb2.SafetyFunction</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><p><strong>safety_function_type</strong> (<a class="reference internal" href="../Enums/SafetyFunctionsCommon.html#safetyfunctionscommonsafetyfunctiontype"><span class="std std-ref">SafetyFunctionType</span></a>) – Safety function type</p>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="safetyfunctionscommonsafetyfunctionsstatus"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.SafetyFunctionsStatus">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">SafetyFunctionsStatus</span></span><a class="headerlink" href="#kortex_api.autogen.SafetyFunctionsStatus" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Reference to a safety function status type</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.SafetyFunctionsCommon_pb2.SafetyFunctionsStatus</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>safety_functions_status</strong> (<a class="reference internal" href="../Enums/SafetyFunctionsCommon.html#safetyfunctionscommonsafetyfunctionsstatustype"><span class="std std-ref">SafetyFunctionsStatusType</span></a>) – Safety function status (bitmask)</p></li>
+<li><p><strong>safety_function_triggered_details</strong> (<a class="reference internal" href="#safetyfunctionscommontriggeredsafetyfunctiondetails"><span class="std std-ref">TriggeredSafetyFunctionDetails</span></a> [ ]) – Additional details</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="safetyfunctionscommonprotectivestopstatus"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.ProtectiveStopStatus">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ProtectiveStopStatus</span></span><a class="headerlink" href="#kortex_api.autogen.ProtectiveStopStatus" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Reference to a protective stop status type</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.SafetyFunctionsCommon_pb2.ProtectiveStopStatus</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><p><strong>protective_stop_status</strong> (<a class="reference internal" href="../Enums/SafetyFunctionsCommon.html#safetyfunctionscommonprotectivestopstatustype"><span class="std std-ref">ProtectiveStopStatusType</span></a>) – Protective stop status (bitmask)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="safetyfunctionscommonsafetyfunctionchangenotification"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.SafetyFunctionChangeNotification">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">SafetyFunctionChangeNotification</span></span><a class="headerlink" href="#kortex_api.autogen.SafetyFunctionChangeNotification" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Notification about a safety function change event</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.SafetyFunctionsCommon_pb2.SafetyFunctionChangeNotification</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>event</strong> (<a class="reference internal" href="../Enums/SafetyFunctionsCommon.html#safetyfunctionscommonsafetyfunctionchangeevent"><span class="std std-ref">SafetyFunctionChangeEvent</span></a>) – Event triggered</p></li>
+<li><p><strong>timestamp</strong> (<a class="reference internal" href="Common.html#commontimestamp"><span class="std std-ref">Timestamp</span></a>) – This field is deprecated and will be removed in a future release</p></li>
+<li><p><strong>user_handle</strong> (<a class="reference internal" href="Common.html#commonuserprofilehandle"><span class="std std-ref">UserProfileHandle</span></a>) – This field is deprecated and will be removed in a future release</p></li>
+<li><p><strong>generic_info</strong> (<a class="reference internal" href="Common.html#commonnotificationinformation"><span class="std std-ref">NotificationInformation</span></a>) – Generic notification information</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="safetyfunctionscommonsafetymodechangenotification"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.SafetyModeChangeNotification">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">SafetyModeChangeNotification</span></span><a class="headerlink" href="#kortex_api.autogen.SafetyModeChangeNotification" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Notification about a safety mode change event</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.SafetyFunctionsCommon_pb2.SafetyModeChangeNotification</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>old_mode</strong> (<a class="reference internal" href="../Enums/SafetyFunctionsCommon.html#safetyfunctionscommonsafetysystemmode"><span class="std std-ref">SafetySystemMode</span></a>) – Old safety mode</p></li>
+<li><p><strong>new_mode</strong> (<a class="reference internal" href="../Enums/SafetyFunctionsCommon.html#safetyfunctionscommonsafetysystemmode"><span class="std std-ref">SafetySystemMode</span></a>) – New safety mode</p></li>
+<li><p><strong>timestamp</strong> (<a class="reference internal" href="Common.html#commontimestamp"><span class="std std-ref">Timestamp</span></a>) – This field is deprecated and will be removed in a future release</p></li>
+<li><p><strong>user_handle</strong> (<a class="reference internal" href="Common.html#commonuserprofilehandle"><span class="std std-ref">UserProfileHandle</span></a>) – This field is deprecated and will be removed in a future release</p></li>
+<li><p><strong>generic_info</strong> (<a class="reference internal" href="Common.html#commonnotificationinformation"><span class="std std-ref">NotificationInformation</span></a>) – Generic notification information</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="safetyfunctionscommonprotectivestopchangenotification"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.ProtectiveStopChangeNotification">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ProtectiveStopChangeNotification</span></span><a class="headerlink" href="#kortex_api.autogen.ProtectiveStopChangeNotification" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Notification about a protective stop change event</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.SafetyFunctionsCommon_pb2.ProtectiveStopChangeNotification</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>protective_stop_status</strong> (<a class="reference internal" href="../Enums/SafetyFunctionsCommon.html#safetyfunctionscommonprotectivestopstatustype"><span class="std std-ref">ProtectiveStopStatusType</span></a>) – Protective stop status</p></li>
+<li><p><strong>timestamp</strong> (<a class="reference internal" href="Common.html#commontimestamp"><span class="std std-ref">Timestamp</span></a>) – This field is deprecated and will be removed in a future release</p></li>
+<li><p><strong>user_handle</strong> (<a class="reference internal" href="Common.html#commonuserprofilehandle"><span class="std std-ref">UserProfileHandle</span></a>) – This field is deprecated and will be removed in a future release</p></li>
+<li><p><strong>generic_info</strong> (<a class="reference internal" href="Common.html#commonnotificationinformation"><span class="std std-ref">NotificationInformation</span></a>) – Generic notification information</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="safetyfunctionscommontriggeredsafetyfunctiondetails"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.TriggeredSafetyFunctionDetails">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">TriggeredSafetyFunctionDetails</span></span><a class="headerlink" href="#kortex_api.autogen.TriggeredSafetyFunctionDetails" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Safety function additional details</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.SafetyFunctionsCommon_pb2.TriggeredSafetyFunctionDetails</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>joint_position_details</strong> (<a class="reference internal" href="#kortex_api.autogen.JointPositionSafetyFunctionDetails" title="kortex_api.autogen.JointPositionSafetyFunctionDetails"><em>JointPositionSafetyFunctionDetails</em></a>) – Triggered joint position safety function details (SF03). Part of the <code class="docutils literal notranslate"><span class="pre">safety_function_details</span></code> <a class="reference external" href="https://developers.google.com/protocol-buffers/docs/reference/python-generated#oneof">Oneof</a>.</p></li>
+<li><p><strong>joint_speed_details</strong> (<a class="reference internal" href="#kortex_api.autogen.JointSpeedSafetyFunctionDetails" title="kortex_api.autogen.JointSpeedSafetyFunctionDetails"><em>JointSpeedSafetyFunctionDetails</em></a>) – <p>Triggered joint speed safety function details (SF04). Part of the <code class="docutils literal notranslate"><span class="pre">safety_function_details</span></code> <a class="reference external" href="https://developers.google.com/protocol-buffers/docs/reference/python-generated#oneof">Oneof</a>.</p>
+</p></li>
+<li><p><strong>tcp_elbow_speed_details</strong> (<a class="reference internal" href="#kortex_api.autogen.TcpElbowSpeedSafetyFunctionDetails" title="kortex_api.autogen.TcpElbowSpeedSafetyFunctionDetails"><em>TcpElbowSpeedSafetyFunctionDetails</em></a>) – <p>Triggered TCP elbow speed details (SF07). Part of the <code class="docutils literal notranslate"><span class="pre">safety_function_details</span></code> <a class="reference external" href="https://developers.google.com/protocol-buffers/docs/reference/python-generated#oneof">Oneof</a>.</p>
+</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="safetyfunctionscommonjointpositionsafetyfunctiondetails"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.JointPositionSafetyFunctionDetails">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">JointPositionSafetyFunctionDetails</span></span><a class="headerlink" href="#kortex_api.autogen.JointPositionSafetyFunctionDetails" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Joint position safety function additional details (SF03)</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.SafetyFunctionsCommon_pb2.JointPositionSafetyFunctionDetails</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>joint_id</strong> (<span class="xref std std-ref">int</span>) – Joint id</p></li>
+<li><p><strong>joint_position</strong> (<span class="xref std std-ref">float</span>) – Joint position (degrees)</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="safetyfunctionscommonjointspeedsafetyfunctiondetails"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.JointSpeedSafetyFunctionDetails">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">JointSpeedSafetyFunctionDetails</span></span><a class="headerlink" href="#kortex_api.autogen.JointSpeedSafetyFunctionDetails" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Joint speed safety function additional details (SF04)</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.SafetyFunctionsCommon_pb2.JointSpeedSafetyFunctionDetails</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>joint_id</strong> (<span class="xref std std-ref">int</span>) – Joint id</p></li>
+<li><p><strong>joint_speed</strong> (<span class="xref std std-ref">float</span>) – Joint Speed (degrees/s)</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="safetyfunctionscommontcpelbowspeedsafetyfunctiondetails"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.TcpElbowSpeedSafetyFunctionDetails">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">TcpElbowSpeedSafetyFunctionDetails</span></span><a class="headerlink" href="#kortex_api.autogen.TcpElbowSpeedSafetyFunctionDetails" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>TCP/Elbow speed safety function additional details (SF07)</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.SafetyFunctionsCommon_pb2.TcpElbowSpeedSafetyFunctionDetails</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>type</strong> (<a class="reference internal" href="../Enums/SafetyFunctionsCommon.html#safetyfunctionscommontcpelbowsafetyfunctiontype"><span class="std std-ref">TcpElbowSafetyFunctionType</span></a>) – TCP or Elbow type that triggered the safety function</p></li>
+<li><p><strong>speed</strong> (<span class="xref std std-ref">float</span>) – Speed that triggered the safety function (m/s)</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="SafetyFunctionsElbow.html" class="btn btn-neutral float-right" title="SafetyFunctionsElbow" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="SafetyFunctions.html" class="btn btn-neutral float-left" title="SafetyFunctions" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2022, Kinova.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

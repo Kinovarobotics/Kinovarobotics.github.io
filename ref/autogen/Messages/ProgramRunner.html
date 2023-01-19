@@ -1,0 +1,691 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>ProgramRunner &mdash; Kortex API  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/dark_mode_css/general.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/dark_mode_css/dark.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/sphinx_highlight.js"></script>
+        <script src="../../../_static/dark_mode_js/default_dark.js"></script>
+        <script src="../../../_static/dark_mode_js/theme_switcher.js"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="ProtectionZone" href="ProtectionZone.html" />
+    <link rel="prev" title="ProgramConfig" href="ProgramConfig.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> Kortex API
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption" role="heading"><span class="caption-text">Getting started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../getting_started/installation.html">Install the API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../getting_started/api_mechanism.html">Get to know it</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../getting_started/code_examples.html">See what you can do (examples)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../getting_started/error_management.html">Managing problems</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">API</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Python API Reference</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../RouterClient.html">RouterClient</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../SessionManager.html">SessionManager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../MqttTransport.html">MqttTransport</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../UDPTransport.html">UDPTransport</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Constants.html">Constants</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../exceptions/index.html">Exceptions</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">Autogen</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../Enums/index.html">Enums</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Services/index.html">Services</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="index.html">Messages</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="ActuatorConfig.html">ActuatorConfig</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ActuatorCyclic.html">ActuatorCyclic</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Base.html">Base</a></li>
+<li class="toctree-l4"><a class="reference internal" href="BaseCyclic.html">BaseCyclic</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Common.html">Common</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ControlConfig.html">ControlConfig</a></li>
+<li class="toctree-l4"><a class="reference internal" href="DeviceConfig.html">DeviceConfig</a></li>
+<li class="toctree-l4"><a class="reference internal" href="DeviceManager.html">DeviceManager</a></li>
+<li class="toctree-l4"><a class="reference internal" href="EditingContext.html">EditingContext</a></li>
+<li class="toctree-l4"><a class="reference internal" href="EventBroker.html">EventBroker</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Frame.html">Frame</a></li>
+<li class="toctree-l4"><a class="reference internal" href="IndustrialIO.html">IndustrialIO</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Modbus.html">Modbus</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Plugin.html">Plugin</a></li>
+<li class="toctree-l4"><a class="reference internal" href="PluginManager.html">PluginManager</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ProductConfiguration.html">ProductConfiguration</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ProgramConfig.html">ProgramConfig</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">ProgramRunner</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ProtectionZone.html">ProtectionZone</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SafetyControlUnitConfig.html">SafetyControlUnitConfig</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SafetyFunctions.html">SafetyFunctions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SafetyFunctionsCommon.html">SafetyFunctionsCommon</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SafetyFunctionsElbow.html">SafetyFunctionsElbow</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SafetyFunctionsJointLimits.html">SafetyFunctionsJointLimits</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SafetyFunctionsToolCenterPoint.html">SafetyFunctionsToolCenterPoint</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SafetyIO.html">SafetyIO</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Session.html">Session</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ToolManager.html">ToolManager</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ToolPlugin.html">ToolPlugin</a></li>
+<li class="toctree-l4"><a class="reference internal" href="VariableManager.html">VariableManager</a></li>
+<li class="toctree-l4"><a class="reference internal" href="WristConfigC61.html">WristConfigC61</a></li>
+<li class="toctree-l4"><a class="reference internal" href="WristCyclicC61.html">WristCyclicC61</a></li>
+<li class="toctree-l4"><a class="reference internal" href="WristCyclicCommon.html">WristCyclicCommon</a></li>
+<li class="toctree-l4"><a class="reference internal" href="WristCyclicGeneric.html">WristCyclicGeneric</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../Notifications.html">Notifications</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Kortex API</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../index.html">Python API Reference</a> &raquo;</li>
+        
+          <li><a href="../index.html">Autogen</a> &raquo;</li>
+        
+          <li><a href="index.html">Messages</a> &raquo;</li>
+        
+      <li>ProgramRunner</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../_sources/ref/autogen/Messages/ProgramRunner.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="programrunner">
+<h1>ProgramRunner<a class="headerlink" href="#programrunner" title="Permalink to this heading">¶</a></h1>
+<span class="target" id="programrunnerstatechangenotification"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.StateChangeNotification">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">StateChangeNotification</span></span><a class="headerlink" href="#kortex_api.autogen.StateChangeNotification" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Describes state change notification</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.ProgramRunner_pb2.StateChangeNotification</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>sequence</strong> (<a class="reference internal" href="#programrunnerstatesequence"><span class="std std-ref">StateSequence</span></a>) – Sequence of actions executed when a program is playing</p></li>
+<li><p><strong>timestamp</strong> (<a class="reference internal" href="Common.html#commontimestamp"><span class="std std-ref">Timestamp</span></a>) – This field is deprecated and will be removed in a future release</p></li>
+<li><p><strong>connection</strong> (<a class="reference internal" href="Common.html#commonconnection"><span class="std std-ref">Connection</span></a>) – This field is deprecated and will be removed in a future release</p></li>
+<li><p><strong>generic_info</strong> (<a class="reference internal" href="Common.html#commonnotificationinformation"><span class="std std-ref">NotificationInformation</span></a>) – Generic notification information</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="programrunnervariablestate"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.VariableState">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">VariableState</span></span><a class="headerlink" href="#kortex_api.autogen.VariableState" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Describes the state of a variable</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.ProgramRunner_pb2.VariableState</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>identifier</strong> (<span class="xref std std-ref">str</span>) – Variable unique identifier</p></li>
+<li><p><strong>value</strong> (<span class="xref std std-ref">str</span>) – Current value</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="programrunnerstatusinformation"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.StatusInformation">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">StatusInformation</span></span><a class="headerlink" href="#kortex_api.autogen.StatusInformation" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Describes the status of the Runner</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.ProgramRunner_pb2.StatusInformation</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>status</strong> (<a class="reference internal" href="../Enums/ProgramRunner.html#programrunnerstatus"><span class="std std-ref">Status</span></a>) – Current status of the Runner</p></li>
+<li><p><strong>current_handles</strong> (<a class="reference internal" href="#programrunnercontextualizedrunnablehandles"><span class="std std-ref">ContextualizedRunnableHandles</span></a>) – Handles to identify what is running or paused</p></li>
+<li><p><strong>start_operating_mode</strong> (<a class="reference internal" href="../Enums/Common.html#commonoperatingmodetype"><span class="std std-ref">OperatingModeType</span></a>) – Operating mode at program start. Is OPERATING_MODE_UNSPECIFIED when runner status is STATUS_IDLE.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="programrunnerstatuschangenotification"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.StatusChangeNotification">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">StatusChangeNotification</span></span><a class="headerlink" href="#kortex_api.autogen.StatusChangeNotification" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Status event that is sent when program runner status changed. Use GetStatus for initial status discovery</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.ProgramRunner_pb2.StatusChangeNotification</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>status_info</strong> (<a class="reference internal" href="#programrunnerstatusinformation"><span class="std std-ref">StatusInformation</span></a>) – New status info</p></li>
+<li><p><strong>timestamp</strong> (<a class="reference internal" href="Common.html#commontimestamp"><span class="std std-ref">Timestamp</span></a>) – This field is deprecated and will be removed in a future release</p></li>
+<li><p><strong>connection</strong> (<a class="reference internal" href="Common.html#commonconnection"><span class="std std-ref">Connection</span></a>) – This field is deprecated and will be removed in a future release</p></li>
+<li><p><strong>generic_info</strong> (<a class="reference internal" href="Common.html#commonnotificationinformation"><span class="std std-ref">NotificationInformation</span></a>) – Generic notification information</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="programrunnerexecutioneventnotification"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.ExecutionEventNotification">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ExecutionEventNotification</span></span><a class="headerlink" href="#kortex_api.autogen.ExecutionEventNotification" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Notification about a program execution event</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.ProgramRunner_pb2.ExecutionEventNotification</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>event</strong> (<a class="reference internal" href="../Enums/ProgramRunner.html#programrunnerexecutionevent"><span class="std std-ref">ExecutionEvent</span></a>) – Occured event</p></li>
+<li><p><strong>handle</strong> (<a class="reference internal" href="#programrunnerrunnablehandle"><span class="std std-ref">RunnableHandle</span></a>) – Handle to identify what is the runnable that is affected by the notification</p></li>
+<li><p><strong>payload</strong> (<span class="xref std std-ref">str</span>) – Generic payload (JSON) whose content depends on the event. Can be a feedback, a reason or an output depending on the event</p></li>
+<li><p><strong>timestamp</strong> (<a class="reference internal" href="Common.html#commontimestamp"><span class="std std-ref">Timestamp</span></a>) – This field is deprecated and will be removed in a future release</p></li>
+<li><p><strong>connection</strong> (<a class="reference internal" href="Common.html#commonconnection"><span class="std std-ref">Connection</span></a>) – This field is deprecated and will be removed in a future release</p></li>
+<li><p><strong>field_feedbacks</strong> (<a class="reference internal" href="Plugin.html#pluginjsonfieldfeedback"><span class="std std-ref">JSONFieldFeedback</span></a> [ ]) – Field feedbacks in the Action form at runtime (optional)</p></li>
+<li><p><strong>generic_info</strong> (<a class="reference internal" href="Common.html#commonnotificationinformation"><span class="std std-ref">NotificationInformation</span></a>) – Generic notification information</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="programrunneractionlist"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.ActionList">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ActionList</span></span><a class="headerlink" href="#kortex_api.autogen.ActionList" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>List of all available actions</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.ProgramRunner_pb2.ActionList</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><p><strong>actionList</strong> (<a class="reference internal" href="#programrunnerpluginaction"><span class="std std-ref">PluginAction</span></a> [ ]) – </p>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="programrunnerrunnablehandle"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.RunnableHandle">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">RunnableHandle</span></span><a class="headerlink" href="#kortex_api.autogen.RunnableHandle" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Handle to identify a runnable</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.ProgramRunner_pb2.RunnableHandle</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>action_handle</strong> (<a class="reference internal" href="Common.html#commonactionhandle"><span class="std std-ref">ActionHandle</span></a>) – Handle of the action</p></li>
+<li><p><strong>program_handle</strong> (<a class="reference internal" href="Common.html#commonprogramhandle"><span class="std std-ref">ProgramHandle</span></a>) – Handle of the program</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="programrunnercontextualizedactionhandle"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.ContextualizedActionHandle">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ContextualizedActionHandle</span></span><a class="headerlink" href="#kortex_api.autogen.ContextualizedActionHandle" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Handle to identify a contextualized action</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.ProgramRunner_pb2.ContextualizedActionHandle</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>handle</strong> (<a class="reference internal" href="Common.html#commonactionhandle"><span class="std std-ref">ActionHandle</span></a>) – Handle of the action</p></li>
+<li><p><strong>context_action_ids</strong> (<span class="xref std std-ref">int</span> [ ]) – This context is used to differentiate actions running in SubPrograms</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="programrunnerrunnablehandles"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.RunnableHandles">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">RunnableHandles</span></span><a class="headerlink" href="#kortex_api.autogen.RunnableHandles" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Handles to identify the runnables</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.ProgramRunner_pb2.RunnableHandles</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>action_handles</strong> (<a class="reference internal" href="Common.html#commonactionhandle"><span class="std std-ref">ActionHandle</span></a> [ ]) – Handles of the actions</p></li>
+<li><p><strong>program_handle</strong> (<a class="reference internal" href="Common.html#commonprogramhandle"><span class="std std-ref">ProgramHandle</span></a>) – Handle of the program</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="programrunnercontextualizedrunnablehandles"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.ContextualizedRunnableHandles">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ContextualizedRunnableHandles</span></span><a class="headerlink" href="#kortex_api.autogen.ContextualizedRunnableHandles" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Handles to identify the contextualized runnables</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.ProgramRunner_pb2.ContextualizedRunnableHandles</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>action_handles</strong> (<a class="reference internal" href="#programrunnercontextualizedactionhandle"><span class="std std-ref">ContextualizedActionHandle</span></a> [ ]) – Handles of the actions</p></li>
+<li><p><strong>program_handle</strong> (<a class="reference internal" href="Common.html#commonprogramhandle"><span class="std std-ref">ProgramHandle</span></a>) – Handle of the program</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="programrunnerprogramstartconfiguration"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.ProgramStartConfiguration">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ProgramStartConfiguration</span></span><a class="headerlink" href="#kortex_api.autogen.ProgramStartConfiguration" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Program start configuration</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.ProgramRunner_pb2.ProgramStartConfiguration</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>debug_mode</strong> (<span class="xref std std-ref">bool</span>) – Is the program running in debug mode</p></li>
+<li><p><strong>handle</strong> (<a class="reference internal" href="#programrunnerrunnablehandle"><span class="std std-ref">RunnableHandle</span></a>) – Handle to identify what is the runnable</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="programrunneractionsstartconfiguration"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.ActionsStartConfiguration">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ActionsStartConfiguration</span></span><a class="headerlink" href="#kortex_api.autogen.ActionsStartConfiguration" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Actions start configuration</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.ProgramRunner_pb2.ActionsStartConfiguration</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>debug_mode</strong> (<span class="xref std std-ref">bool</span>) – Are the actions running in debug mode</p></li>
+<li><p><strong>handle</strong> (<a class="reference internal" href="#programrunnerrunnablehandles"><span class="std std-ref">RunnableHandles</span></a>) – Handles to identify what are the runnables</p></li>
+<li><p><strong>variables</strong> (<a class="reference internal" href="VariableManager.html#variablemanagervariable"><span class="std std-ref">Variable</span></a> [ ]) – Variables required to operate the actions</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="programrunnerprogramvalidationconfiguration"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.ProgramValidationConfiguration">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ProgramValidationConfiguration</span></span><a class="headerlink" href="#kortex_api.autogen.ProgramValidationConfiguration" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Program validation configuration</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.ProgramRunner_pb2.ProgramValidationConfiguration</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>is_valid</strong> (<span class="xref std std-ref">bool</span>) – True if the program is valid, false otherwise</p></li>
+<li><p><strong>program_handle</strong> (<a class="reference internal" href="Common.html#commonprogramhandle"><span class="std std-ref">ProgramHandle</span></a>) – Handle of the program</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="programrunnerpluginaction"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.PluginAction">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">PluginAction</span></span><a class="headerlink" href="#kortex_api.autogen.PluginAction" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Plugin Action</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.ProgramRunner_pb2.PluginAction</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>handle</strong> (<a class="reference internal" href="ProgramConfig.html#programconfigpluginactionhandle"><span class="std std-ref">PluginActionHandle</span></a>) – Handle to uniquely identify a plugin action</p></li>
+<li><p><strong>description</strong> (<a class="reference internal" href="Plugin.html#pluginactiondescription"><span class="std std-ref">ActionDescription</span></a>) – Properties describing the action</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="programrunnerstateevent"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.StateEvent">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">StateEvent</span></span><a class="headerlink" href="#kortex_api.autogen.StateEvent" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>State event</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.ProgramRunner_pb2.StateEvent</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>payload</strong> (<span class="xref std std-ref">str</span>) – Generic payload (JSON) that changes depending on its type</p></li>
+<li><p><strong>timestamp</strong> (<a class="reference internal" href="Common.html#commontimestamp"><span class="std std-ref">Timestamp</span></a>) – Event timestamp</p></li>
+<li><p><strong>type</strong> (<a class="reference internal" href="../Enums/ProgramRunner.html#programrunnerstateeventtype"><span class="std std-ref">StateEventType</span></a>) – Event type</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="programrunnerstateactionsnapshot"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.StateActionSnapshot">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">StateActionSnapshot</span></span><a class="headerlink" href="#kortex_api.autogen.StateActionSnapshot" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>State action snapshot</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.ProgramRunner_pb2.StateActionSnapshot</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>state</strong> (<span class="xref std std-ref">str</span>) – Generic action state (JSON) that changes depending on action type</p></li>
+<li><p><strong>timestamp</strong> (<a class="reference internal" href="Common.html#commontimestamp"><span class="std std-ref">Timestamp</span></a>) – Snapshot timestamp</p></li>
+<li><p><strong>variables</strong> (<a class="reference internal" href="#programrunnervariablestate"><span class="std std-ref">VariableState</span></a> [ ]) – Values of the variables when taking the snapshot</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="programrunnerstateactionstats"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.StateActionStats">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">StateActionStats</span></span><a class="headerlink" href="#kortex_api.autogen.StateActionStats" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>State action stats</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.ProgramRunner_pb2.StateActionStats</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>execution_duration</strong> (<span class="xref std std-ref">int</span>) – Duration (in milliseconds) of the execution of the action (without pre/post-processing)</p></li>
+<li><p><strong>failure_count</strong> (<span class="xref std std-ref">int</span>) – Number of times a failure occured</p></li>
+<li><p><strong>pause_count</strong> (<span class="xref std std-ref">int</span>) – Number of times an action has been paused</p></li>
+<li><p><strong>pause_duration</strong> (<span class="xref std std-ref">int</span>) – How long (in milliseconds) an action has been paused</p></li>
+<li><p><strong>play_count</strong> (<span class="xref std std-ref">int</span>) – Number of times the action has been played</p></li>
+<li><p><strong>play_duration</strong> (<span class="xref std std-ref">int</span>) – How long (in milliseconds) an action has been playing</p></li>
+<li><p><strong>plugin_start_confirmation</strong> (<span class="xref std std-ref">int</span>) – How long (in milliseconds) a plugin action has been waiting for the confirmation that it started</p></li>
+<li><p><strong>total_duration</strong> (<span class="xref std std-ref">int</span>) – How long (in milliseconds) an action has been running</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="programrunnerstateaction"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.StateAction">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">StateAction</span></span><a class="headerlink" href="#kortex_api.autogen.StateAction" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>State action - all the events/snapshots/stats collected during the execution of an action</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.ProgramRunner_pb2.StateAction</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>handle</strong> (<a class="reference internal" href="#programrunnercontextualizedactionhandle"><span class="std std-ref">ContextualizedActionHandle</span></a>) – Action handle</p></li>
+<li><p><strong>index</strong> (<span class="xref std std-ref">int</span>) – Action index</p></li>
+<li><p><strong>events</strong> (<a class="reference internal" href="#programrunnerstateevent"><span class="std std-ref">StateEvent</span></a> [ ]) – list of events that occured during the execution of an action</p></li>
+<li><p><strong>snapshot_start</strong> (<a class="reference internal" href="#programrunnerstateactionsnapshot"><span class="std std-ref">StateActionSnapshot</span></a>) – snapshot taken at the start of the action</p></li>
+<li><p><strong>snapshot_end</strong> (<a class="reference internal" href="#programrunnerstateactionsnapshot"><span class="std std-ref">StateActionSnapshot</span></a>) – snapshot taken at the end of the action</p></li>
+<li><p><strong>stats</strong> (<a class="reference internal" href="#programrunnerstateactionstats"><span class="std std-ref">StateActionStats</span></a>) – stats collected during the execution of the action</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="programrunnerstatesequencestats"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.StateSequenceStats">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">StateSequenceStats</span></span><a class="headerlink" href="#kortex_api.autogen.StateSequenceStats" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Sequence stats</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.ProgramRunner_pb2.StateSequenceStats</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>average_time_between_actions</strong> (<span class="xref std std-ref">int</span>) – Sequencer’s average time between 2 actions (milliseconds)</p></li>
+<li><p><strong>average_time_plugin_start_confirmation</strong> (<span class="xref std std-ref">int</span>) – Average time between the moment the sequencer starts a plugin action and the moment it receives a confirmation that the plugin started (milliseconds)</p></li>
+<li><p><strong>average_time_waypoint_initialization</strong> (<span class="xref std std-ref">int</span>) – Average time between the moment the sequencer receives a start confirmation for a waypoint action and the moment the robot actually starts to move (milliseconds)</p></li>
+<li><p><strong>average_time_action_processing</strong> (<span class="xref std std-ref">int</span>) – Average time it takes for the pre/post-processing of an action</p></li>
+<li><p><strong>duration</strong> (<span class="xref std std-ref">int</span>) – Total duration of the sequence (milliseconds)</p></li>
+<li><p><strong>end</strong> (<a class="reference internal" href="Common.html#commontimestamp"><span class="std std-ref">Timestamp</span></a>) – Sequence end timestamp</p></li>
+<li><p><strong>start</strong> (<a class="reference internal" href="Common.html#commontimestamp"><span class="std std-ref">Timestamp</span></a>) – Sequence start timestamp</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="programrunnerstatesequence"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.StateSequence">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">StateSequence</span></span><a class="headerlink" href="#kortex_api.autogen.StateSequence" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>State sequence - list of actions with an identifier</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.ProgramRunner_pb2.StateSequence</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>identifier</strong> (<span class="xref std std-ref">str</span>) – Sequence identifier</p></li>
+<li><p><strong>actions</strong> (<a class="reference internal" href="#programrunnerstateaction"><span class="std std-ref">StateAction</span></a> [ ]) – Actions that were played during the execution of a program</p></li>
+<li><p><strong>init_variables</strong> (<a class="reference internal" href="#programrunnervariablestate"><span class="std std-ref">VariableState</span></a> [ ]) – Initial values of the variables when the program starts to play</p></li>
+<li><p><strong>pre_play_events</strong> (<a class="reference internal" href="#programrunnerstateevent"><span class="std std-ref">StateEvent</span></a> [ ]) – Events that were captured before the first action is started</p></li>
+<li><p><strong>stats</strong> (<a class="reference internal" href="#programrunnerstatesequencestats"><span class="std std-ref">StateSequenceStats</span></a>) – Sequence stats</p></li>
+<li><p><strong>is_main</strong> (<span class="xref std std-ref">bool</span>) – True if it is the main sequence of the program, otherwise (ex: thread) false</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="ProtectionZone.html" class="btn btn-neutral float-right" title="ProtectionZone" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="ProgramConfig.html" class="btn btn-neutral float-left" title="ProgramConfig" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2022, Kinova.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

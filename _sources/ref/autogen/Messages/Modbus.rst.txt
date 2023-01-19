@@ -1,0 +1,120 @@
+================================
+Modbus
+================================
+    
+.. py:currentmodule:: kortex_api.autogen
+
+.. _ModbusSingleCoilWriteRequest:
+
+.. py:class:: SingleCoilWriteRequest
+
+   
+
+   :canonical: kortex_api.autogen.messages.Modbus_pb2.SingleCoilWriteRequest
+
+   :param address:   Address of coil (16-bit)
+   :type address: :ref:`int <>` 
+
+   :param coil_value:   Value to force/write: 0 for off and 1 for on
+   :type coil_value: :ref:`bool <>` 
+
+.. _ModbusMultipleCoilsWriteRequest:
+
+.. py:class:: MultipleCoilsWriteRequest
+
+   
+
+   :canonical: kortex_api.autogen.messages.Modbus_pb2.MultipleCoilsWriteRequest
+
+   :param address:   Address of first coil to force/write (16-bit)
+   :type address: :ref:`int <>` 
+
+   :param coils_count:   Number of coils to force/write (16-bit)
+   :type coils_count: :ref:`int <>` 
+
+   :param coil_values:   Coil values (8 coil values per byte)
+   :type coil_values: :ref:`bool <>` [ ]
+
+.. _ModbusSingleRegisterWriteRequest:
+
+.. py:class:: SingleRegisterWriteRequest
+
+   
+
+   :canonical: kortex_api.autogen.messages.Modbus_pb2.SingleRegisterWriteRequest
+
+   :param address:   Address of holding register to preset/write (16-bit)
+   :type address: :ref:`int <>` 
+
+   :param register_value:   New value of the holding register (16-bit)
+   :type register_value: :ref:`int <>` 
+
+.. _ModbusMultipleRegistersWriteRequest:
+
+.. py:class:: MultipleRegistersWriteRequest
+
+   
+
+   :canonical: kortex_api.autogen.messages.Modbus_pb2.MultipleRegistersWriteRequest
+
+   :param address:   Address of first holding register to preset/write (16-bit)
+   :type address: :ref:`int <>` 
+
+   :param registers_count:   Number of holding registers to preset/write (16-bit)
+   :type registers_count: :ref:`int <>` 
+
+   :param register_values:   New values of holding registers (16 bits per register)
+   :type register_values: :ref:`int <>` [ ]
+
+.. _ModbusReadRequest:
+
+.. py:class:: ReadRequest
+
+   
+
+   :canonical: kortex_api.autogen.messages.Modbus_pb2.ReadRequest
+
+   :param address:   Address of first data input to read (16-bit)
+   :type address: :ref:`int <>` 
+
+   :param data_count:   Number of data inputs to read (16-bit)
+   :type data_count: :ref:`int <>` 
+
+.. _ModbusReadCoilResponse:
+
+.. py:class:: ReadCoilResponse
+
+   
+
+   :canonical: kortex_api.autogen.messages.Modbus_pb2.ReadCoilResponse
+
+   :param coil_values:   Data input values (8 coils/discrete inputs per byte)
+   :type coil_values: :ref:`bool <>` [ ]
+
+.. _ModbusReadRegisterResponse:
+
+.. py:class:: ReadRegisterResponse
+
+   
+
+   :canonical: kortex_api.autogen.messages.Modbus_pb2.ReadRegisterResponse
+
+   :param register_values:   Register values (16 bits per register)
+   :type register_values: :ref:`int <>` [ ]
+
+.. _ModbusConnectionParameters:
+
+.. py:class:: ConnectionParameters
+
+   
+
+   :canonical: kortex_api.autogen.messages.Modbus_pb2.ConnectionParameters
+
+   :param ip_address:   IP address of the desired target.
+   :type ip_address: :ref:`str <>` 
+
+   :param port:   Port of the desired target.
+   :type port: :ref:`int <>` 
+
+   :param modbus_device_id:   Desired target device.
+   :type modbus_device_id: :ref:`int <>` 

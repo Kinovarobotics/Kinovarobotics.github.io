@@ -1,0 +1,40 @@
+.. Kortex API documentation master file, created by
+   sphinx-quickstart on Wed Aug  3 15:26:06 2022.
+   You can adapt this file completely to your liking, but it should at least
+   contain the root `toctree` directive.
+Documentation
++++++++++++++
+
+Welcome to the KINOVA® KORTEX™ API documentation. If you are a newcomer, feel free to check our :doc:`installation procedure <getting_started/installation>`.
+Once this is done, a good starting point would be the getting started section. It includes the :doc:`API mechanism <getting_started/api_mechanism>`,
+the :doc:`error management <getting_started/error_management>` and some :doc:`code examples <getting_started/error_management>`.
+
+This API uses `Google Protocol Buffer <https://developers.google.com/protocol-buffers/docs/reference/python-generated>`_ message objects1 to exchange data between client and server.
+
+`Google Protocol Buffer <https://developers.google.com/protocol-buffers/docs/reference/python-generated>`_ offers structured data objects with standard methods for each member field:
+
+* structured, nested objects
+* basic types and collections
+* getter/setter methods on basic types
+* iterators, dimension and appending methods on collections
+* many helpers (e.g. serialize/deserialize, I/O functions)
+
+When using the Kortex API a developer will need to understand the `Google Protocol Buffer <https://developers.google.com/protocol-buffers/docs/reference/python-generated>`_ feature set to maximize their efficiency.
+
+.. toctree::
+   :maxdepth: 2
+   :hidden:
+   :caption: Getting started
+
+   Install the API <getting_started/installation>
+   Get to know it <getting_started/api_mechanism>
+   See what you can do (examples) <getting_started/code_examples>
+   Managing problems <getting_started/error_management>
+
+.. toctree::
+   :maxdepth: 2
+   :hidden:
+   :caption: API
+
+   ref/index
+

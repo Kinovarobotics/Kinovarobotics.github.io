@@ -1,0 +1,513 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>SafetyIO &mdash; Kortex API  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/dark_mode_css/general.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/dark_mode_css/dark.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/sphinx_highlight.js"></script>
+        <script src="../../../_static/dark_mode_js/default_dark.js"></script>
+        <script src="../../../_static/dark_mode_js/theme_switcher.js"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="SerialCommunication" href="SerialCommunication.html" />
+    <link rel="prev" title="SafetyFunctionsCommon" href="SafetyFunctionsCommon.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> Kortex API
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption" role="heading"><span class="caption-text">Getting started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../getting_started/installation.html">Install the API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../getting_started/api_mechanism.html">Get to know it</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../getting_started/code_examples.html">See what you can do (examples)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../getting_started/error_management.html">Managing problems</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">API</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Python API Reference</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../RouterClient.html">RouterClient</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../SessionManager.html">SessionManager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../MqttTransport.html">MqttTransport</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../UDPTransport.html">UDPTransport</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Constants.html">Constants</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../exceptions/index.html">Exceptions</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">Autogen</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="index.html">Enums</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="ActuatorConfig.html">ActuatorConfig</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ActuatorCyclic.html">ActuatorCyclic</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Base.html">Base</a></li>
+<li class="toctree-l4"><a class="reference internal" href="BaseCyclic.html">BaseCyclic</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Common.html">Common</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ControlConfig.html">ControlConfig</a></li>
+<li class="toctree-l4"><a class="reference internal" href="DeviceConfig.html">DeviceConfig</a></li>
+<li class="toctree-l4"><a class="reference internal" href="DeviceManager.html">DeviceManager</a></li>
+<li class="toctree-l4"><a class="reference internal" href="EditingContext.html">EditingContext</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Errors.html">Errors</a></li>
+<li class="toctree-l4"><a class="reference internal" href="EventBroker.html">EventBroker</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Frame.html">Frame</a></li>
+<li class="toctree-l4"><a class="reference internal" href="IndustrialIO.html">IndustrialIO</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Modbus.html">Modbus</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Plugin.html">Plugin</a></li>
+<li class="toctree-l4"><a class="reference internal" href="PluginManager.html">PluginManager</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ProductConfiguration.html">ProductConfiguration</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ProgramConfig.html">ProgramConfig</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ProgramRunner.html">ProgramRunner</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ProtectionZone.html">ProtectionZone</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SafetyControlUnitConfig.html">SafetyControlUnitConfig</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SafetyFunctions.html">SafetyFunctions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SafetyFunctionsCommon.html">SafetyFunctionsCommon</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">SafetyIO</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SerialCommunication.html">SerialCommunication</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Session.html">Session</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ToolManager.html">ToolManager</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ToolPlugin.html">ToolPlugin</a></li>
+<li class="toctree-l4"><a class="reference internal" href="VariableManager.html">VariableManager</a></li>
+<li class="toctree-l4"><a class="reference internal" href="WristConfigC61.html">WristConfigC61</a></li>
+<li class="toctree-l4"><a class="reference internal" href="WristCyclic.html">WristCyclic</a></li>
+<li class="toctree-l4"><a class="reference internal" href="WristCyclicC61.html">WristCyclicC61</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../Services/index.html">Services</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Messages/index.html">Messages</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Notifications.html">Notifications</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Kortex API</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../index.html">Python API Reference</a> &raquo;</li>
+        
+          <li><a href="../index.html">Autogen</a> &raquo;</li>
+        
+          <li><a href="index.html">Enums</a> &raquo;</li>
+        
+      <li>SafetyIO</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../_sources/ref/autogen/Enums/SafetyIO.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="safetyio">
+<h1>SafetyIO<a class="headerlink" href="#safetyio" title="Permalink to this heading">¶</a></h1>
+<span class="target" id="safetyioserviceversion"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.ServiceVersion">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ServiceVersion</span></span><a class="headerlink" href="#kortex_api.autogen.ServiceVersion" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Identifies SafetyIO service current version</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.SafetyIO_pb2.ServiceVersion</p>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">RESERVED_0</span> <span class="pre">(0):</span>&#160;&#160; <span class="pre">Reserved</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">CURRENT_VERSION</span> <span class="pre">(1):</span>&#160;&#160; <span class="pre">Current</span> <span class="pre">version</span></span></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<span class="target" id="safetyiosafetyiotype"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.SafetyIOType">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">SafetyIOType</span></span><a class="headerlink" href="#kortex_api.autogen.SafetyIOType" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Safety functions status</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.SafetyIO_pb2.SafetyIOType</p>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">SAFETY_IO_TYPE_UNSPECIFIED</span> <span class="pre">(0):</span>&#160;&#160; <span class="pre">Unspecified</span> <span class="pre">status</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">SAFETY_IO_TYPE_INPUT</span> <span class="pre">(1):</span>&#160;&#160; <span class="pre">Safety</span> <span class="pre">input</span> <span class="pre">type</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">SAFETY_IO_TYPE_OUTPUT</span> <span class="pre">(2):</span>&#160;&#160; <span class="pre">Safety</span> <span class="pre">output</span> <span class="pre">type</span></span></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<span class="target" id="safetyiosafetyinputfunction"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.SafetyInputFunction">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">SafetyInputFunction</span></span><a class="headerlink" href="#kortex_api.autogen.SafetyInputFunction" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Safety input functions</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.SafetyIO_pb2.SafetyInputFunction</p>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">SAFETY_INPUT_FUNCTION_UNASSIGNED</span> <span class="pre">(0):</span>&#160;&#160; <span class="pre">Unassigned</span> <span class="pre">function</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">SAFETY_INPUT_FUNCTION_PROTECTIVE_STOP_MANUAL_RESET</span> <span class="pre">(1):</span>&#160;&#160; <span class="pre">Protective</span> <span class="pre">stop</span> <span class="pre">with</span> <span class="pre">manual</span> <span class="pre">reset</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="kortex_api.autogen.SafetyInputFunction.SAFETY_INPUT_FUNCTION_PROTECTIVE_STOP_RESET">
+<span class="sig-name descname"><span class="pre">SAFETY_INPUT_FUNCTION_PROTECTIVE_STOP_RESET</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">2):</span>&#160;&#160; <span class="pre">Protective</span> <span class="pre">stop</span> <span class="pre">reset</span> <span class="pre">(resume</span> <span class="pre">for</span> <span class="pre">manual</span> <span class="pre">reset</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kortex_api.autogen.SafetyInputFunction.SAFETY_INPUT_FUNCTION_PROTECTIVE_STOP_RESET" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">SAFETY_INPUT_FUNCTION_PROTECTIVE_STOP_AUTOMATIC_RESET</span> <span class="pre">(3):</span>&#160;&#160; <span class="pre">Protective</span> <span class="pre">stop</span> <span class="pre">with</span> <span class="pre">automatic</span> <span class="pre">reset</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">SAFETY_INPUT_FUNCTION_REDUCED_MODE</span> <span class="pre">(4):</span>&#160;&#160; <span class="pre">Reduced</span> <span class="pre">mode</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">SAFETY_INPUT_FUNCTION_ENABLING_DEVICE</span> <span class="pre">(5):</span>&#160;&#160; <span class="pre">Enabling</span> <span class="pre">device</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">SAFETY_INPUT_FUNCTION_ACKNOWLEDGE</span> <span class="pre">(6):</span>&#160;&#160; <span class="pre">Acknowledge</span> <span class="pre">function</span></span></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<span class="target" id="safetyiosafetyoutputevent"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.SafetyOutputEvent">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">SafetyOutputEvent</span></span><a class="headerlink" href="#kortex_api.autogen.SafetyOutputEvent" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Safety output event</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.SafetyIO_pb2.SafetyOutputEvent</p>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">SAFETY_OUTPUT_EVENT_UNASSIGNED</span> <span class="pre">(0):</span>&#160;&#160; <span class="pre">Unassigned</span> <span class="pre">event</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">SAFETY_OUTPUT_EVENT_EMERGENCY_STOP</span> <span class="pre">(1):</span>&#160;&#160; <span class="pre">Emergency</span> <span class="pre">stop</span> <span class="pre">event</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">SAFETY_OUTPUT_EVENT_PROTECTIVE_STOP</span> <span class="pre">(2):</span>&#160;&#160; <span class="pre">Protective</span> <span class="pre">stop</span> <span class="pre">event</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">SAFETY_OUTPUT_EVENT_MONITORED_STOP</span> <span class="pre">(3):</span>&#160;&#160; <span class="pre">Monitored</span> <span class="pre">stop</span> <span class="pre">event</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">SAFETY_OUTPUT_EVENT_ARM_MOVING</span> <span class="pre">(4):</span>&#160;&#160; <span class="pre">Arm</span> <span class="pre">moving</span> <span class="pre">event</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">SAFETY_OUTPUT_EVENT_NORMAL_SPEED_MODE</span> <span class="pre">(5):</span>&#160;&#160; <span class="pre">Normal</span> <span class="pre">speed</span> <span class="pre">mode</span> <span class="pre">event</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">SAFETY_OUTPUT_EVENT_DRIVE_POWER</span> <span class="pre">(6):</span>&#160;&#160; <span class="pre">Drive</span> <span class="pre">power</span> <span class="pre">event</span></span></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<span class="target" id="safetyiosafetyiochannelstatustype"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.SafetyIOChannelStatusType">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">SafetyIOChannelStatusType</span></span><a class="headerlink" href="#kortex_api.autogen.SafetyIOChannelStatusType" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Safety io channel status</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.SafetyIO_pb2.SafetyIOChannelStatusType</p>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">SAFETY_IO_CHANNEL_STATUS_UNSPECIFIED</span> <span class="pre">(0):</span>&#160;&#160; <span class="pre">0x0</span> <span class="pre">-</span> <span class="pre">Unspecified</span> <span class="pre">status</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">SAFETY_IO_CHANNEL_STATUS_0_TRIGGERED</span> <span class="pre">(1):</span>&#160;&#160; <span class="pre">0x1</span> <span class="pre">-</span> <span class="pre">Channel</span> <span class="pre">0</span> <span class="pre">triggered</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">SAFETY_IO_CHANNEL_STATUS_1_TRIGGERED</span> <span class="pre">(2):</span>&#160;&#160; <span class="pre">0x2</span> <span class="pre">-</span> <span class="pre">Channel</span> <span class="pre">1</span> <span class="pre">triggered</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">SAFETY_IO_CHANNEL_STATUS_2_TRIGGERED</span> <span class="pre">(4):</span>&#160;&#160; <span class="pre">0x4</span> <span class="pre">-</span> <span class="pre">Channel</span> <span class="pre">2</span> <span class="pre">triggered</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">SAFETY_IO_CHANNEL_STATUS_3_TRIGGERED</span> <span class="pre">(8):</span>&#160;&#160; <span class="pre">0x8</span> <span class="pre">-</span> <span class="pre">Channel</span> <span class="pre">3</span> <span class="pre">triggered</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">SAFETY_IO_CHANNEL_STATUS_4_TRIGGERED</span> <span class="pre">(16):</span>&#160;&#160; <span class="pre">0x10</span> <span class="pre">-</span> <span class="pre">Channel</span> <span class="pre">4</span> <span class="pre">triggered</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">SAFETY_IO_CHANNEL_STATUS_5_TRIGGERED</span> <span class="pre">(32):</span>&#160;&#160; <span class="pre">0x20</span> <span class="pre">-</span> <span class="pre">Channel</span> <span class="pre">5</span> <span class="pre">triggered</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">SAFETY_IO_CHANNEL_STATUS_6_TRIGGERED</span> <span class="pre">(64):</span>&#160;&#160; <span class="pre">0x40</span> <span class="pre">-</span> <span class="pre">Channel</span> <span class="pre">6</span> <span class="pre">triggered</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">SAFETY_IO_CHANNEL_STATUS_7_TRIGGERED</span> <span class="pre">(128):</span>&#160;&#160; <span class="pre">0x80</span> <span class="pre">-</span> <span class="pre">Channel</span> <span class="pre">7</span> <span class="pre">triggered</span></span></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<span class="target" id="safetyiosafetyiochangeevent"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.SafetyIOChangeEvent">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">SafetyIOChangeEvent</span></span><a class="headerlink" href="#kortex_api.autogen.SafetyIOChangeEvent" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Safety io change event</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.SafetyIO_pb2.SafetyIOChangeEvent</p>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">SAFETY_IO_CHANGE_EVENT_UNSPECIFIED</span> <span class="pre">(0):</span>&#160;&#160; <span class="pre">Unspecified</span> <span class="pre">change</span> <span class="pre">event</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">SAFETY_IO_CHANGE_EVENT_CONFIG</span> <span class="pre">(1):</span>&#160;&#160; <span class="pre">Safety</span> <span class="pre">io</span> <span class="pre">status</span> <span class="pre">change</span> <span class="pre">event</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">SAFETY_IO_CHANGE_EVENT_STATUS</span> <span class="pre">(2):</span>&#160;&#160; <span class="pre">Safety</span> <span class="pre">io</span> <span class="pre">config</span> <span class="pre">change</span> <span class="pre">event</span></span></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="SerialCommunication.html" class="btn btn-neutral float-right" title="SerialCommunication" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="SafetyFunctionsCommon.html" class="btn btn-neutral float-left" title="SafetyFunctionsCommon" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2022, Kinova.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

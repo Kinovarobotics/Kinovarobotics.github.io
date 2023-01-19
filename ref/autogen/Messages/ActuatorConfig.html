@@ -1,0 +1,886 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>ActuatorConfig &mdash; Kortex API  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/dark_mode_css/general.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/dark_mode_css/dark.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/sphinx_highlight.js"></script>
+        <script src="../../../_static/dark_mode_js/default_dark.js"></script>
+        <script src="../../../_static/dark_mode_js/theme_switcher.js"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="ActuatorCyclic" href="ActuatorCyclic.html" />
+    <link rel="prev" title="Messages" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> Kortex API
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption" role="heading"><span class="caption-text">Getting started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../getting_started/installation.html">Install the API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../getting_started/api_mechanism.html">Get to know it</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../getting_started/code_examples.html">See what you can do (examples)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../getting_started/error_management.html">Managing problems</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">API</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Python API Reference</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../RouterClient.html">RouterClient</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../SessionManager.html">SessionManager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../MqttTransport.html">MqttTransport</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../UDPTransport.html">UDPTransport</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Constants.html">Constants</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../exceptions/index.html">Exceptions</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">Autogen</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../Enums/index.html">Enums</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Services/index.html">Services</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="index.html">Messages</a><ul class="current">
+<li class="toctree-l4 current"><a class="current reference internal" href="#">ActuatorConfig</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ActuatorCyclic.html">ActuatorCyclic</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Base.html">Base</a></li>
+<li class="toctree-l4"><a class="reference internal" href="BaseCyclic.html">BaseCyclic</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Common.html">Common</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ControlConfig.html">ControlConfig</a></li>
+<li class="toctree-l4"><a class="reference internal" href="DeviceConfig.html">DeviceConfig</a></li>
+<li class="toctree-l4"><a class="reference internal" href="DeviceManager.html">DeviceManager</a></li>
+<li class="toctree-l4"><a class="reference internal" href="EditingContext.html">EditingContext</a></li>
+<li class="toctree-l4"><a class="reference internal" href="EventBroker.html">EventBroker</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Frame.html">Frame</a></li>
+<li class="toctree-l4"><a class="reference internal" href="IndustrialIO.html">IndustrialIO</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Modbus.html">Modbus</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Plugin.html">Plugin</a></li>
+<li class="toctree-l4"><a class="reference internal" href="PluginManager.html">PluginManager</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ProductConfiguration.html">ProductConfiguration</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ProgramConfig.html">ProgramConfig</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ProgramRunner.html">ProgramRunner</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ProtectionZone.html">ProtectionZone</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SafetyControlUnitConfig.html">SafetyControlUnitConfig</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SafetyFunctions.html">SafetyFunctions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SafetyFunctionsCommon.html">SafetyFunctionsCommon</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SafetyFunctionsElbow.html">SafetyFunctionsElbow</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SafetyFunctionsJointLimits.html">SafetyFunctionsJointLimits</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SafetyFunctionsToolCenterPoint.html">SafetyFunctionsToolCenterPoint</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SafetyIO.html">SafetyIO</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Session.html">Session</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ToolManager.html">ToolManager</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ToolPlugin.html">ToolPlugin</a></li>
+<li class="toctree-l4"><a class="reference internal" href="VariableManager.html">VariableManager</a></li>
+<li class="toctree-l4"><a class="reference internal" href="WristConfigC61.html">WristConfigC61</a></li>
+<li class="toctree-l4"><a class="reference internal" href="WristCyclicC61.html">WristCyclicC61</a></li>
+<li class="toctree-l4"><a class="reference internal" href="WristCyclicCommon.html">WristCyclicCommon</a></li>
+<li class="toctree-l4"><a class="reference internal" href="WristCyclicGeneric.html">WristCyclicGeneric</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../Notifications.html">Notifications</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Kortex API</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../index.html">Python API Reference</a> &raquo;</li>
+        
+          <li><a href="../index.html">Autogen</a> &raquo;</li>
+        
+          <li><a href="index.html">Messages</a> &raquo;</li>
+        
+      <li>ActuatorConfig</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../_sources/ref/autogen/Messages/ActuatorConfig.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="actuatorconfig">
+<h1>ActuatorConfig<a class="headerlink" href="#actuatorconfig" title="Permalink to this heading">¶</a></h1>
+<span class="target" id="actuatorconfigaxisposition"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.AxisPosition">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">AxisPosition</span></span><a class="headerlink" href="#kortex_api.autogen.AxisPosition" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Axis position</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.ActuatorConfig_pb2.AxisPosition</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><p><strong>position</strong> (<span class="xref std std-ref">float</span>) – Axis position (degrees)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="actuatorconfigaxisoffsets"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.AxisOffsets">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">AxisOffsets</span></span><a class="headerlink" href="#kortex_api.autogen.AxisOffsets" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Axis offsets</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.ActuatorConfig_pb2.AxisOffsets</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>absolute_offset</strong> (<span class="xref std std-ref">float</span>) – Absolute offset value (degrees)</p></li>
+<li><p><strong>relative_offset</strong> (<span class="xref std std-ref">float</span>) – Relative offset value (degrees)</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="actuatorconfigtorquecalibration"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.TorqueCalibration">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">TorqueCalibration</span></span><a class="headerlink" href="#kortex_api.autogen.TorqueCalibration" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Torque calibration settings</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.ActuatorConfig_pb2.TorqueCalibration</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>global_gain</strong> (<span class="xref std std-ref">float</span>) – Global gain value</p></li>
+<li><p><strong>global_offset</strong> (<span class="xref std std-ref">float</span>) – Global offset value</p></li>
+<li><p><strong>gain</strong> (<span class="xref std std-ref">float</span> [ ]) – Gain (index 0 to 3)</p></li>
+<li><p><strong>offset</strong> (<span class="xref std std-ref">float</span> [ ]) – Offset (index 0 to 3)</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="actuatorconfigtorqueoffset"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.TorqueOffset">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">TorqueOffset</span></span><a class="headerlink" href="#kortex_api.autogen.TorqueOffset" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Defines torque offset</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.ActuatorConfig_pb2.TorqueOffset</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><p><strong>torque_offset</strong> (<span class="xref std std-ref">float</span>) – Torque offset value</p>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="actuatorconfigcontrolmodeinformation"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.ControlModeInformation">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ControlModeInformation</span></span><a class="headerlink" href="#kortex_api.autogen.ControlModeInformation" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Control mode information</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.ActuatorConfig_pb2.ControlModeInformation</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><p><strong>control_mode</strong> (<a class="reference internal" href="../Enums/ActuatorConfig.html#actuatorconfigcontrolmode"><span class="std std-ref">ControlMode</span></a>) – Control mode</p>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="actuatorconfigcontrolloop"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.ControlLoop">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ControlLoop</span></span><a class="headerlink" href="#kortex_api.autogen.ControlLoop" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Control loop</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.ActuatorConfig_pb2.ControlLoop</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><p><strong>control_loop</strong> (<span class="xref std std-ref">int</span>) – Use ControlLoopSelection enum values to form bitmask</p>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="actuatorconfigloopselection"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.LoopSelection">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">LoopSelection</span></span><a class="headerlink" href="#kortex_api.autogen.LoopSelection" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Defines the loop selection</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.ActuatorConfig_pb2.LoopSelection</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><p><strong>loop_selection</strong> (<a class="reference internal" href="../Enums/ActuatorConfig.html#actuatorconfigcontrolloopselection"><span class="std std-ref">ControlLoopSelection</span></a>) – ControlLoopSelection enum</p>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="actuatorconfigvectordriveparameters"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.VectorDriveParameters">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">VectorDriveParameters</span></span><a class="headerlink" href="#kortex_api.autogen.VectorDriveParameters" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Field-oriented control PI controller gain values</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.ActuatorConfig_pb2.VectorDriveParameters</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>kpq</strong> (<span class="xref std std-ref">float</span>) – Quadrature axis current proportional gain</p></li>
+<li><p><strong>kiq</strong> (<span class="xref std std-ref">float</span>) – Quadrature axis current integral gain</p></li>
+<li><p><strong>kpd</strong> (<span class="xref std std-ref">float</span>) – Direct axis current proportional gain</p></li>
+<li><p><strong>kid</strong> (<span class="xref std std-ref">float</span>) – Direct axis current integral gain</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="actuatorconfigencoderderivativeparameters"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.EncoderDerivativeParameters">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">EncoderDerivativeParameters</span></span><a class="headerlink" href="#kortex_api.autogen.EncoderDerivativeParameters" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Variable window derivative parameters</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.ActuatorConfig_pb2.EncoderDerivativeParameters</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>max_window_width</strong> (<span class="xref std std-ref">int</span>) – Maximum window width</p></li>
+<li><p><strong>min_angle</strong> (<span class="xref std std-ref">float</span>) – Minimum angle for derivative (degrees)</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="actuatorconfigcontrolloopparameters"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.ControlLoopParameters">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ControlLoopParameters</span></span><a class="headerlink" href="#kortex_api.autogen.ControlLoopParameters" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Control loop parameters (discrete transfer function)</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.ActuatorConfig_pb2.ControlLoopParameters</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>loop_selection</strong> (<a class="reference internal" href="../Enums/ActuatorConfig.html#actuatorconfigcontrolloopselection"><span class="std std-ref">ControlLoopSelection</span></a>) – ControlLoopSelection enum</p></li>
+<li><p><strong>error_saturation</strong> (<span class="xref std std-ref">float</span>) – Error saturation value</p></li>
+<li><p><strong>output_saturation</strong> (<span class="xref std std-ref">float</span>) – Output saturation value</p></li>
+<li><p><strong>kAz</strong> (<span class="xref std std-ref">float</span> [ ]) – KAz (index 0 to 4): denominator gains A1 to A5</p></li>
+<li><p><strong>kBz</strong> (<span class="xref std std-ref">float</span> [ ]) – KBz (index 0 to 5): numerator gains B0 to B5</p></li>
+<li><p><strong>error_dead_band</strong> (<span class="xref std std-ref">float</span>) – Error dead band value</p></li>
+<li><p><strong>k_p</strong> (<span class="xref std std-ref">float</span>) – Proportional gain</p></li>
+<li><p><strong>k_i</strong> (<span class="xref std std-ref">float</span>) – Integral gain</p></li>
+<li><p><strong>k_d</strong> (<span class="xref std std-ref">float</span>) – Derivative gain</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="actuatorconfigfrequencyresponse"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.FrequencyResponse">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">FrequencyResponse</span></span><a class="headerlink" href="#kortex_api.autogen.FrequencyResponse" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Frequency response</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.ActuatorConfig_pb2.FrequencyResponse</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>loop_selection</strong> (<a class="reference internal" href="../Enums/ActuatorConfig.html#actuatorconfigcontrolloopselection"><span class="std std-ref">ControlLoopSelection</span></a>) – ControlLoopSelection enum</p></li>
+<li><p><strong>min_frequency</strong> (<span class="xref std std-ref">float</span>) – Minimum frequency value</p></li>
+<li><p><strong>max_frequency</strong> (<span class="xref std std-ref">float</span>) – Maximum frequency value</p></li>
+<li><p><strong>amplitude</strong> (<span class="xref std std-ref">float</span>) – Amplitude value</p></li>
+<li><p><strong>duration</strong> (<span class="xref std std-ref">float</span>) – Duration (in seconds)</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="actuatorconfigstepresponse"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.StepResponse">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">StepResponse</span></span><a class="headerlink" href="#kortex_api.autogen.StepResponse" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Step response</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.ActuatorConfig_pb2.StepResponse</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>loop_selection</strong> (<a class="reference internal" href="../Enums/ActuatorConfig.html#actuatorconfigcontrolloopselection"><span class="std std-ref">ControlLoopSelection</span></a>) – ControlLoopSelection enum</p></li>
+<li><p><strong>amplitude</strong> (<span class="xref std std-ref">float</span>) – Amplitude value</p></li>
+<li><p><strong>step_delay</strong> (<span class="xref std std-ref">float</span>) – Step delay value</p></li>
+<li><p><strong>duration</strong> (<span class="xref std std-ref">float</span>) – Duration (in seconds)</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="actuatorconfigrampresponse"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.RampResponse">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">RampResponse</span></span><a class="headerlink" href="#kortex_api.autogen.RampResponse" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Ramp response</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.ActuatorConfig_pb2.RampResponse</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>loop_selection</strong> (<a class="reference internal" href="../Enums/ActuatorConfig.html#actuatorconfigcontrolloopselection"><span class="std std-ref">ControlLoopSelection</span></a>) – ControlLoopSelection enum</p></li>
+<li><p><strong>slope</strong> (<span class="xref std std-ref">float</span>) – Slope value</p></li>
+<li><p><strong>ramp_delay</strong> (<span class="xref std std-ref">float</span>) – Ramp delay value</p></li>
+<li><p><strong>duration</strong> (<span class="xref std std-ref">float</span>) – Duration (in seconds)</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="actuatorconfigcustomdataselection"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.CustomDataSelection">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">CustomDataSelection</span></span><a class="headerlink" href="#kortex_api.autogen.CustomDataSelection" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Selected custom data channels content</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.ActuatorConfig_pb2.CustomDataSelection</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><p><strong>channel</strong> (<a class="reference internal" href="../Enums/ActuatorConfig.html#actuatorconfigcustomdataindex"><span class="std std-ref">CustomDataIndex</span></a> [ ]) – 16 channels maximum</p>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="actuatorconfigcommandmodeinformation"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.CommandModeInformation">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">CommandModeInformation</span></span><a class="headerlink" href="#kortex_api.autogen.CommandModeInformation" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Command mode</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.ActuatorConfig_pb2.CommandModeInformation</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><p><strong>command_mode</strong> (<a class="reference internal" href="../Enums/ActuatorConfig.html#actuatorconfigcommandmode"><span class="std std-ref">CommandMode</span></a>) – Command mode</p>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="actuatorconfigservoing"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.Servoing">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Servoing</span></span><a class="headerlink" href="#kortex_api.autogen.Servoing" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Enables/disables servoing</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.ActuatorConfig_pb2.Servoing</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><p><strong>enabled</strong> (<span class="xref std std-ref">bool</span>) – Servoing enabled</p>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="actuatorconfigpositioncommand"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.PositionCommand">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">PositionCommand</span></span><a class="headerlink" href="#kortex_api.autogen.PositionCommand" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Angular position command for an actuator</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.ActuatorConfig_pb2.PositionCommand</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>position</strong> (<span class="xref std std-ref">float</span>) – Position value (degrees)</p></li>
+<li><p><strong>velocity</strong> (<span class="xref std std-ref">float</span>) – Velocity value (degrees per second)</p></li>
+<li><p><strong>acceleration</strong> (<span class="xref std std-ref">float</span>) – Acceleration value (degrees per second^2)</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="actuatorconfigcoggingfeedforwardmodeinformation"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.CoggingFeedforwardModeInformation">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">CoggingFeedforwardModeInformation</span></span><a class="headerlink" href="#kortex_api.autogen.CoggingFeedforwardModeInformation" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Cogging feedforward mode</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.ActuatorConfig_pb2.CoggingFeedforwardModeInformation</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><p><strong>cogging_feedforward_mode</strong> (<a class="reference internal" href="../Enums/ActuatorConfig.html#actuatorconfigcoggingfeedforwardmode"><span class="std std-ref">CoggingFeedforwardMode</span></a>) – Cogging feedforward mode</p>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="actuatorconfiglookuptablereaddata"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.LookupTableReadData">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">LookupTableReadData</span></span><a class="headerlink" href="#kortex_api.autogen.LookupTableReadData" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Lookup table parameters to read with</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.ActuatorConfig_pb2.LookupTableReadData</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>table_selection</strong> (<a class="reference internal" href="../Enums/ActuatorConfig.html#actuatorconfiglookuptableselection"><span class="std std-ref">LookupTableSelection</span></a>) – Lookup table selection</p></li>
+<li><p><strong>table_offset</strong> (<span class="xref std std-ref">int</span>) – Offset of data in table</p></li>
+<li><p><strong>table_length</strong> (<span class="xref std std-ref">int</span>) – Length of calibration data</p></li>
+<li><p><strong>data_selection</strong> (<a class="reference internal" href="../Enums/ActuatorConfig.html#actuatorconfiglookuptabledataselection"><span class="std std-ref">LookupTableDataSelection</span></a>) – Lookup table data selection</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="actuatorconfiglookuptablewritedata"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.LookupTableWriteData">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">LookupTableWriteData</span></span><a class="headerlink" href="#kortex_api.autogen.LookupTableWriteData" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Lookup table data to write and parameters</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.ActuatorConfig_pb2.LookupTableWriteData</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>table_selection</strong> (<a class="reference internal" href="../Enums/ActuatorConfig.html#actuatorconfiglookuptableselection"><span class="std std-ref">LookupTableSelection</span></a>) – Lookup table selection</p></li>
+<li><p><strong>table_offset</strong> (<span class="xref std std-ref">int</span>) – Offset of data in table</p></li>
+<li><p><strong>table_length</strong> (<span class="xref std std-ref">int</span>) – Length of calibration data</p></li>
+<li><p><strong>data</strong> (<a class="reference internal" href="#actuatorconfiglookuptabledata"><span class="std std-ref">LookupTableData</span></a>) – Lookup table data</p></li>
+<li><p><strong>data_selection</strong> (<a class="reference internal" href="../Enums/ActuatorConfig.html#actuatorconfiglookuptabledataselection"><span class="std std-ref">LookupTableDataSelection</span></a>) – Lookup table data selection</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="actuatorconfiglookuptabledata"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.LookupTableData">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">LookupTableData</span></span><a class="headerlink" href="#kortex_api.autogen.LookupTableData" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Lookup table data</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.ActuatorConfig_pb2.LookupTableData</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>data</strong> (<span class="xref std std-ref">bytes</span>) – Lookup data array (max 128)</p></li>
+<li><p><strong>size</strong> (<span class="xref std std-ref">int</span>) – Lookup data array size</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="actuatorconfiglookuptableselectionfornvm"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.LookupTableSelectionForNVM">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">LookupTableSelectionForNVM</span></span><a class="headerlink" href="#kortex_api.autogen.LookupTableSelectionForNVM" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Lookup table selection to access NVM</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.ActuatorConfig_pb2.LookupTableSelectionForNVM</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><p><strong>table_selection</strong> (<a class="reference internal" href="../Enums/ActuatorConfig.html#actuatorconfiglookuptableselection"><span class="std std-ref">LookupTableSelection</span></a>) – Lookup table selection</p>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="actuatorconfigfouriermodeldata"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.FourierModelData">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">FourierModelData</span></span><a class="headerlink" href="#kortex_api.autogen.FourierModelData" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Fourier model data</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.ActuatorConfig_pb2.FourierModelData</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>frequencies</strong> (<span class="xref std std-ref">float</span> [ ]) – Frequencies</p></li>
+<li><p><strong>offsets</strong> (<span class="xref std std-ref">float</span> [ ]) – Offsets</p></li>
+<li><p><strong>amplitudes</strong> (<span class="xref std std-ref">float</span> [ ]) – Amplitudes</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="actuatorconfigfouriermodelreadselection"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.FourierModelReadSelection">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">FourierModelReadSelection</span></span><a class="headerlink" href="#kortex_api.autogen.FourierModelReadSelection" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Fourier model parameters to read with</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.ActuatorConfig_pb2.FourierModelReadSelection</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><p><strong>model_selection</strong> (<a class="reference internal" href="../Enums/ActuatorConfig.html#actuatorconfigfouriermodelselection"><span class="std std-ref">FourierModelSelection</span></a>) – Fourier model selection</p>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="actuatorconfigfouriermodelwritedata"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.FourierModelWriteData">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">FourierModelWriteData</span></span><a class="headerlink" href="#kortex_api.autogen.FourierModelWriteData" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Fourier model to write</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.ActuatorConfig_pb2.FourierModelWriteData</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>model_selection</strong> (<a class="reference internal" href="../Enums/ActuatorConfig.html#actuatorconfigfouriermodelselection"><span class="std std-ref">FourierModelSelection</span></a>) – Fourier model selection</p></li>
+<li><p><strong>model_data</strong> (<a class="reference internal" href="#actuatorconfigfouriermodeldata"><span class="std std-ref">FourierModelData</span></a>) – Fourier model data</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="actuatorconfiggearboxhysteresiscalibrationdata"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.GearboxHysteresisCalibrationData">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">GearboxHysteresisCalibrationData</span></span><a class="headerlink" href="#kortex_api.autogen.GearboxHysteresisCalibrationData" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Gearbox hysteresis calibration data</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.ActuatorConfig_pb2.GearboxHysteresisCalibrationData</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>friction_coulomb</strong> (<span class="xref std std-ref">float</span>) – Friction</p></li>
+<li><p><strong>spring_ratio</strong> (<span class="xref std std-ref">float</span>) – Spring ratio</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="actuatorconfigjointpositionsensoroffset"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.JointPositionSensorOffset">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">JointPositionSensorOffset</span></span><a class="headerlink" href="#kortex_api.autogen.JointPositionSensorOffset" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Joint position sensor offset</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.ActuatorConfig_pb2.JointPositionSensorOffset</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><p><strong>offset</strong> (<span class="xref std std-ref">float</span>) – Sensor offset</p>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="actuatorconfigmotorpositiontojointpositionsensoroffset"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.MotorPositionToJointPositionSensorOffset">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">MotorPositionToJointPositionSensorOffset</span></span><a class="headerlink" href="#kortex_api.autogen.MotorPositionToJointPositionSensorOffset" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Offset between motor and joint position sensors</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.ActuatorConfig_pb2.MotorPositionToJointPositionSensorOffset</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><p><strong>offset</strong> (<span class="xref std std-ref">float</span>) – Sensor to sensor offset</p>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="actuatorconfigmotorpowerfilterperiod"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.MotorPowerFilterPeriod">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">MotorPowerFilterPeriod</span></span><a class="headerlink" href="#kortex_api.autogen.MotorPowerFilterPeriod" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Motor power measurement filter period</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.ActuatorConfig_pb2.MotorPowerFilterPeriod</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><p><strong>period</strong> (<span class="xref std std-ref">int</span>) – Filter period (milliseconds)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="actuatorconfigcurrentoffset"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.CurrentOffset">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">CurrentOffset</span></span><a class="headerlink" href="#kortex_api.autogen.CurrentOffset" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Current offset of a current sensor</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.ActuatorConfig_pb2.CurrentOffset</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>phase</strong> (<span class="xref std std-ref">int</span>) – Phase of the current sensor to set offset for (index 0 to 2)</p></li>
+<li><p><strong>offset</strong> (<span class="xref std std-ref">float</span>) – Current sensor offset (Amps)</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="actuatorconfigjointencoderfaults"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.JointEncoderFaults">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">JointEncoderFaults</span></span><a class="headerlink" href="#kortex_api.autogen.JointEncoderFaults" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Joint encoder faults</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.ActuatorConfig_pb2.JointEncoderFaults</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>warnings</strong> (<span class="xref std std-ref">int</span>) – Warnings (bitmask)</p></li>
+<li><p><strong>errors</strong> (<span class="xref std std-ref">int</span>) – Errors (bitmask)</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="actuatorconfigmotorparameters"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.MotorParameters">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">MotorParameters</span></span><a class="headerlink" href="#kortex_api.autogen.MotorParameters" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Motor parameters</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.ActuatorConfig_pb2.MotorParameters</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><p><strong>rotor_inertia</strong> (<span class="xref std std-ref">float</span>) – Rotor inertia (kilograms meters^squared)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="actuatorconfiggearboxparameters"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.GearboxParameters">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">GearboxParameters</span></span><a class="headerlink" href="#kortex_api.autogen.GearboxParameters" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Gearbox parameters</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.ActuatorConfig_pb2.GearboxParameters</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><p><strong>gear_ratio</strong> (<span class="xref std std-ref">float</span>) – Gear ratio</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="ActuatorCyclic.html" class="btn btn-neutral float-right" title="ActuatorCyclic" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="index.html" class="btn btn-neutral float-left" title="Messages" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2022, Kinova.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

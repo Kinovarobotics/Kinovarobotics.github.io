@@ -1,0 +1,918 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Common &mdash; Kortex API  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/dark_mode_css/general.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/dark_mode_css/dark.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/sphinx_highlight.js"></script>
+        <script src="../../../_static/dark_mode_js/default_dark.js"></script>
+        <script src="../../../_static/dark_mode_js/theme_switcher.js"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="ControlConfig" href="ControlConfig.html" />
+    <link rel="prev" title="BaseCyclic" href="BaseCyclic.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> Kortex API
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption" role="heading"><span class="caption-text">Getting started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../getting_started/installation.html">Install the API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../getting_started/api_mechanism.html">Get to know it</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../getting_started/code_examples.html">See what you can do (examples)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../getting_started/error_management.html">Managing problems</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">API</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Python API Reference</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../RouterClient.html">RouterClient</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../SessionManager.html">SessionManager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../MqttTransport.html">MqttTransport</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../UDPTransport.html">UDPTransport</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Constants.html">Constants</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../exceptions/index.html">Exceptions</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">Autogen</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../Enums/index.html">Enums</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Services/index.html">Services</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="index.html">Messages</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="ActuatorConfig.html">ActuatorConfig</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ActuatorCyclic.html">ActuatorCyclic</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Base.html">Base</a></li>
+<li class="toctree-l4"><a class="reference internal" href="BaseCyclic.html">BaseCyclic</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Common</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ControlConfig.html">ControlConfig</a></li>
+<li class="toctree-l4"><a class="reference internal" href="DeviceConfig.html">DeviceConfig</a></li>
+<li class="toctree-l4"><a class="reference internal" href="DeviceManager.html">DeviceManager</a></li>
+<li class="toctree-l4"><a class="reference internal" href="EditingContext.html">EditingContext</a></li>
+<li class="toctree-l4"><a class="reference internal" href="EventBroker.html">EventBroker</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Frame.html">Frame</a></li>
+<li class="toctree-l4"><a class="reference internal" href="IndustrialIO.html">IndustrialIO</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Modbus.html">Modbus</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Plugin.html">Plugin</a></li>
+<li class="toctree-l4"><a class="reference internal" href="PluginManager.html">PluginManager</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ProductConfiguration.html">ProductConfiguration</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ProgramConfig.html">ProgramConfig</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ProgramRunner.html">ProgramRunner</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ProtectionZone.html">ProtectionZone</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SafetyControlUnitConfig.html">SafetyControlUnitConfig</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SafetyFunctions.html">SafetyFunctions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SafetyFunctionsCommon.html">SafetyFunctionsCommon</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SafetyFunctionsElbow.html">SafetyFunctionsElbow</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SafetyFunctionsJointLimits.html">SafetyFunctionsJointLimits</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SafetyFunctionsToolCenterPoint.html">SafetyFunctionsToolCenterPoint</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SafetyIO.html">SafetyIO</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Session.html">Session</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ToolManager.html">ToolManager</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ToolPlugin.html">ToolPlugin</a></li>
+<li class="toctree-l4"><a class="reference internal" href="VariableManager.html">VariableManager</a></li>
+<li class="toctree-l4"><a class="reference internal" href="WristConfigC61.html">WristConfigC61</a></li>
+<li class="toctree-l4"><a class="reference internal" href="WristCyclicC61.html">WristCyclicC61</a></li>
+<li class="toctree-l4"><a class="reference internal" href="WristCyclicCommon.html">WristCyclicCommon</a></li>
+<li class="toctree-l4"><a class="reference internal" href="WristCyclicGeneric.html">WristCyclicGeneric</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../Notifications.html">Notifications</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Kortex API</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../index.html">Python API Reference</a> &raquo;</li>
+        
+          <li><a href="../index.html">Autogen</a> &raquo;</li>
+        
+          <li><a href="index.html">Messages</a> &raquo;</li>
+        
+      <li>Common</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../_sources/ref/autogen/Messages/Common.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="common">
+<h1>Common<a class="headerlink" href="#common" title="Permalink to this heading">¶</a></h1>
+<span class="target" id="commondevicehandle"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.DeviceHandle">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">DeviceHandle</span></span><a class="headerlink" href="#kortex_api.autogen.DeviceHandle" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Reference to a specific device</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.Common_pb2.DeviceHandle</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>device_type</strong> (<a class="reference internal" href="../Enums/Common.html#commondevicetypes"><span class="std std-ref">DeviceTypes</span></a>) – Device type</p></li>
+<li><p><strong>device_identifier</strong> (<span class="xref std std-ref">int</span>) – Unique device identifier (used with other services)</p></li>
+<li><p><strong>order</strong> (<span class="xref std std-ref">int</span>) – Unique value indicating the order of that device versus the others to facilitate representation</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="commonempty"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.Empty">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Empty</span></span><a class="headerlink" href="#kortex_api.autogen.Empty" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Message used when no information needs to be exchanged between client application and robot, and vice versa</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.Common_pb2.Empty</p>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="commonnotificationoptions"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.NotificationOptions">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">NotificationOptions</span></span><a class="headerlink" href="#kortex_api.autogen.NotificationOptions" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Specifies options associated to a notification</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.Common_pb2.NotificationOptions</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>type</strong> (<a class="reference internal" href="../Enums/Common.html#commonnotificationtype"><span class="std std-ref">NotificationType</span></a>) – Type of notification</p></li>
+<li><p><strong>rate_m_sec</strong> (<span class="xref std std-ref">int</span>) – Rate value (in meters per second) (if applicable)</p></li>
+<li><p><strong>threshold_value</strong> (<span class="xref std std-ref">float</span>) – Threshold value (if applicable)</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="commondiagnostichandle"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.DiagnosticHandle">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">DiagnosticHandle</span></span><a class="headerlink" href="#kortex_api.autogen.DiagnosticHandle" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Reference to a specific diagnostic</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.Common_pb2.DiagnosticHandle</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>identifier</strong> (<span class="xref std std-ref">int</span>) – Diagnostic identifier</p></li>
+<li><p><strong>bank</strong> (<a class="reference internal" href="../Enums/Common.html#commondiagnosticbank"><span class="std std-ref">DiagnosticBank</span></a>) – Diagnostic bank</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="commonnotificationhandle"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.NotificationHandle">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">NotificationHandle</span></span><a class="headerlink" href="#kortex_api.autogen.NotificationHandle" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Reference to a specific notification topic</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.Common_pb2.NotificationHandle</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><p><strong>identifier</strong> (<span class="xref std std-ref">int</span>) – Notification identifier</p>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="commondiagnosticnotification"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.DiagnosticNotification">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">DiagnosticNotification</span></span><a class="headerlink" href="#kortex_api.autogen.DiagnosticNotification" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Notification about a single diagnostic event</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.Common_pb2.DiagnosticNotification</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>diagnostic_handle</strong> (<a class="reference internal" href="#commondiagnostichandle"><span class="std std-ref">DiagnosticHandle</span></a>) – Diagnostic handle</p></li>
+<li><p><strong>value</strong> (<a class="reference internal" href="../Enums/Common.html#commondiagnosticstatusvalue"><span class="std std-ref">DiagnosticStatusValue</span></a>) – New diagnostic status</p></li>
+<li><p><strong>generic_info</strong> (<a class="reference internal" href="#commonnotificationinformation"><span class="std std-ref">NotificationInformation</span></a>) – Generic notification information</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="commontimestamp"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.Timestamp">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Timestamp</span></span><a class="headerlink" href="#kortex_api.autogen.Timestamp" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Timestamp based on Epoch (00:00:00 Thursday, January 1, 1970)</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.Common_pb2.Timestamp</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>sec</strong> (<span class="xref std std-ref">int</span>) – Number of seconds that have elapsed since Epoch</p></li>
+<li><p><strong>usec</strong> (<span class="xref std std-ref">int</span>) – Number of microseconds that have elapsed since the last second (0-999999)</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="commonuserprofilehandle"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.UserProfileHandle">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">UserProfileHandle</span></span><a class="headerlink" href="#kortex_api.autogen.UserProfileHandle" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Reference to a user profile</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.Common_pb2.UserProfileHandle</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>identifier</strong> (<span class="xref std std-ref">int</span>) – User profile identifier</p></li>
+<li><p><strong>permission</strong> (<span class="xref std std-ref">int</span>) – Must use ‘Permission’ as bitwise (see enum Permission)</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="commonuserrole"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.UserRole">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">UserRole</span></span><a class="headerlink" href="#kortex_api.autogen.UserRole" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>User Role</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.Common_pb2.UserRole</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>identifier</strong> (<span class="xref std std-ref">str</span>) – </p></li>
+<li><p><strong>permissions</strong> (<a class="reference internal" href="../Enums/Common.html#commonuserpermission"><span class="std std-ref">UserPermission</span></a> [ ]) – </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="commonuserrolelist"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.UserRoleList">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">UserRoleList</span></span><a class="headerlink" href="#kortex_api.autogen.UserRoleList" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>User Role List</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.Common_pb2.UserRoleList</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><p><strong>roles</strong> (<a class="reference internal" href="#commonuserrole"><span class="std std-ref">UserRole</span></a> [ ]) – </p>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="commonconnection"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.Connection">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Connection</span></span><a class="headerlink" href="#kortex_api.autogen.Connection" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Connection between a user and the robot</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.Common_pb2.Connection</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>user_handle</strong> (<a class="reference internal" href="#commonuserprofilehandle"><span class="std std-ref">UserProfileHandle</span></a>) – User profile handle. It is equal to 0 if the connection has not created a session.</p></li>
+<li><p><strong>connection_information</strong> (<span class="xref std std-ref">str</span>) – Connection information</p></li>
+<li><p><strong>is_local</strong> (<span class="xref std std-ref">bool</span>) – True if the connection was initiated from within the controller, false if it came from the external interface</p></li>
+<li><p><strong>session_identifier</strong> (<span class="xref std std-ref">int</span>) – Session identifier of the connection. It is equal to 0 if the connection has not created a session.</p></li>
+<li><p><strong>connection_inactivity_timeout</strong> (<span class="xref std std-ref">int</span>) – Inactivity period (in milliseconds) allowed before the robot stops any movement initiated from this session. It is equal to 0 if the connection has not created a session.</p></li>
+<li><p><strong>roles</strong> (<a class="reference internal" href="#commonuserrole"><span class="std std-ref">UserRole</span></a> [ ]) – Roles for the connection. It is empty if the connection has not created a session.</p></li>
+<li><p><strong>connection_type</strong> (<a class="reference internal" href="../Enums/Common.html#commonconnectiontype"><span class="std std-ref">ConnectionType</span></a>) – Connection type</p></li>
+<li><p><strong>is_webapp</strong> (<span class="xref std std-ref">bool</span>) – True if the connection is initiated by a WebApp client, false otherwise</p></li>
+<li><p><strong>username</strong> (<span class="xref std std-ref">str</span>) – Username for the connection, if applicable</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="commonmodeselection"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.ModeSelection">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ModeSelection</span></span><a class="headerlink" href="#kortex_api.autogen.ModeSelection" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Selected mode information</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.Common_pb2.ModeSelection</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><p><strong>operating_mode</strong> (<a class="reference internal" href="../Enums/Common.html#commonoperatingmodetype"><span class="std std-ref">OperatingModeType</span></a>) – Selected operating mode</p>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="commonuartconfiguration"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.UARTConfiguration">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">UARTConfiguration</span></span><a class="headerlink" href="#kortex_api.autogen.UARTConfiguration" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>UART configuration details This message is deprecated and will be removed in a future release.</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.Common_pb2.UARTConfiguration</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>port_id</strong> (<span class="xref std std-ref">int</span>) – UART port identification</p></li>
+<li><p><strong>enabled</strong> (<span class="xref std std-ref">bool</span>) – True if UART device is enabled, false otherwise</p></li>
+<li><p><strong>speed</strong> (<a class="reference internal" href="../Enums/Common.html#commonuartspeed"><span class="std std-ref">UARTSpeed</span></a>) – Speed selection</p></li>
+<li><p><strong>word_length</strong> (<a class="reference internal" href="../Enums/Common.html#commonuartwordlength"><span class="std std-ref">UARTWordLength</span></a>) – Word length</p></li>
+<li><p><strong>stop_bits</strong> (<a class="reference internal" href="../Enums/Common.html#commonuartstopbits"><span class="std std-ref">UARTStopBits</span></a>) – Stop bits</p></li>
+<li><p><strong>parity</strong> (<a class="reference internal" href="../Enums/Common.html#commonuartparity"><span class="std std-ref">UARTParity</span></a>) – Parity mode</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="commonuartdeviceidentification"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.UARTDeviceIdentification">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">UARTDeviceIdentification</span></span><a class="headerlink" href="#kortex_api.autogen.UARTDeviceIdentification" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>UART port id identification This message is deprecated and will be removed in a future release.</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.Common_pb2.UARTDeviceIdentification</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><p><strong>port_id</strong> (<span class="xref std std-ref">int</span>) – UART device port id</p>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="commoncountrycode"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.CountryCode">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">CountryCode</span></span><a class="headerlink" href="#kortex_api.autogen.CountryCode" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Country code</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.Common_pb2.CountryCode</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><p><strong>identifier</strong> (<a class="reference internal" href="../Enums/Common.html#commoncountrycodeidentifier"><span class="std std-ref">CountryCodeIdentifier</span></a>) – ISO3166 country code identifier</p>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="commoncartesianvector"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.CartesianVector">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">CartesianVector</span></span><a class="headerlink" href="#kortex_api.autogen.CartesianVector" title="Permalink to this definition">¶</a></dt>
+<dd><p>A generic vector</p>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.Common_pb2.CartesianVector</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>x</strong> (<span class="xref std std-ref">float</span>) – Component X of the vector</p></li>
+<li><p><strong>y</strong> (<span class="xref std std-ref">float</span>) – Component Y of the vector</p></li>
+<li><p><strong>z</strong> (<span class="xref std std-ref">float</span>) – Component Z of the vector</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="commonactionhandle"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.ActionHandle">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ActionHandle</span></span><a class="headerlink" href="#kortex_api.autogen.ActionHandle" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Program Action handle</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.Common_pb2.ActionHandle</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><p><strong>identifier</strong> (<span class="xref std std-ref">int</span>) – </p>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="commonprogramhandle"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.ProgramHandle">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ProgramHandle</span></span><a class="headerlink" href="#kortex_api.autogen.ProgramHandle" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Program handle</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.Common_pb2.ProgramHandle</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>identifier</strong> (<span class="xref std std-ref">int</span>) – </p></li>
+<li><p><strong>permission</strong> (<span class="xref std std-ref">int</span>) – Program permission. See ‘Kinova.Api.Common.Permission’ enum.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="commonicon"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.Icon">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Icon</span></span><a class="headerlink" href="#kortex_api.autogen.Icon" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Standard Icon Object</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.Common_pb2.Icon</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>type</strong> (<a class="reference internal" href="../Enums/Common.html#commonicontype"><span class="std std-ref">IconType</span></a>) – Specifies the icon type format: SVG or PNG</p></li>
+<li><p><strong>data</strong> (<span class="xref std std-ref">str</span>) – Icon raw image data, either SVG path &lt;path&gt; or Base64 encoded PNG image</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="commoncustomdata"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.CustomData">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">CustomData</span></span><a class="headerlink" href="#kortex_api.autogen.CustomData" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.Common_pb2.CustomData</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>type</strong> (<a class="reference internal" href="../Enums/Common.html#commondatatype"><span class="std std-ref">DataType</span></a>) – Type of serialization for the “data” field</p></li>
+<li><p><strong>data</strong> (<span class="xref std std-ref">str</span>) – The raw data.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="commonrotationmatrixrow"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.RotationMatrixRow">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">RotationMatrixRow</span></span><a class="headerlink" href="#kortex_api.autogen.RotationMatrixRow" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Single row of a 3x3 rotation matrix. To be a valid possible row of a rotation matrix,   the norm of the row must be 1 (the sum of the squares of the row elements has to equal 1).</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.Common_pb2.RotationMatrixRow</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>column1</strong> (<span class="xref std std-ref">float</span>) – Value between -1.0 and 1.0</p></li>
+<li><p><strong>column2</strong> (<span class="xref std std-ref">float</span>) – Value between -1.0 and 1.0</p></li>
+<li><p><strong>column3</strong> (<span class="xref std std-ref">float</span>) – Value between -1.0 and 1.0</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="commonrotationmatrix"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.RotationMatrix">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">RotationMatrix</span></span><a class="headerlink" href="#kortex_api.autogen.RotationMatrix" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Representation of a 3x3 rotation matrix. To be a valid rotation matrix, the rows must be orthonormal   (the rows must each have norm of 1 and the row vectors must be orthogonal to each other).   The determinant of the matrix must also be +1.</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.Common_pb2.RotationMatrix</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>row1</strong> (<a class="reference internal" href="#commonrotationmatrixrow"><span class="std std-ref">RotationMatrixRow</span></a>) – First rotation matrix row</p></li>
+<li><p><strong>row2</strong> (<a class="reference internal" href="#commonrotationmatrixrow"><span class="std std-ref">RotationMatrixRow</span></a>) – Second rotation matrix row</p></li>
+<li><p><strong>row3</strong> (<a class="reference internal" href="#commonrotationmatrixrow"><span class="std std-ref">RotationMatrixRow</span></a>) – Third rotation matrix row</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="commonsymmetricmatrix3x3"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.SymmetricMatrix3x3">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">SymmetricMatrix3x3</span></span><a class="headerlink" href="#kortex_api.autogen.SymmetricMatrix3x3" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Value needed from a 3X3 symmetric matrix</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.Common_pb2.SymmetricMatrix3x3</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>ixx</strong> (<span class="xref std std-ref">float</span>) – ixx value</p></li>
+<li><p><strong>ixy</strong> (<span class="xref std std-ref">float</span>) – ixy value</p></li>
+<li><p><strong>ixz</strong> (<span class="xref std std-ref">float</span>) – ixz value</p></li>
+<li><p><strong>iyy</strong> (<span class="xref std std-ref">float</span>) – iyy value</p></li>
+<li><p><strong>iyz</strong> (<span class="xref std std-ref">float</span>) – iyz value</p></li>
+<li><p><strong>izz</strong> (<span class="xref std std-ref">float</span>) – izz value</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="commonmatrix3x3"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.Matrix3x3">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Matrix3x3</span></span><a class="headerlink" href="#kortex_api.autogen.Matrix3x3" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Value needed from a 3X3 matrix</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.Common_pb2.Matrix3x3</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>ixx</strong> (<span class="xref std std-ref">float</span>) – ixx value</p></li>
+<li><p><strong>ixy</strong> (<span class="xref std std-ref">float</span>) – ixy value</p></li>
+<li><p><strong>ixz</strong> (<span class="xref std std-ref">float</span>) – ixz value</p></li>
+<li><p><strong>iyx</strong> (<span class="xref std std-ref">float</span>) – iyx value</p></li>
+<li><p><strong>iyy</strong> (<span class="xref std std-ref">float</span>) – iyy value</p></li>
+<li><p><strong>iyz</strong> (<span class="xref std std-ref">float</span>) – iyz value</p></li>
+<li><p><strong>izx</strong> (<span class="xref std std-ref">float</span>) – izx value</p></li>
+<li><p><strong>izy</strong> (<span class="xref std std-ref">float</span>) – izy value</p></li>
+<li><p><strong>izz</strong> (<span class="xref std std-ref">float</span>) – izz value</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="commonlocalfiledescriptor"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.LocalFileDescriptor">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">LocalFileDescriptor</span></span><a class="headerlink" href="#kortex_api.autogen.LocalFileDescriptor" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>File informations</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.Common_pb2.LocalFileDescriptor</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>id</strong> (<span class="xref std std-ref">int</span>) – Reference ID for file</p></li>
+<li><p><strong>file_name</strong> (<span class="xref std std-ref">str</span>) – File name</p></li>
+<li><p><strong>size</strong> (<span class="xref std std-ref">int</span>) – File size in bytes</p></li>
+<li><p><strong>type</strong> (<a class="reference internal" href="../Enums/Common.html#commonfiletype"><span class="std std-ref">FileType</span></a>) – File type</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="commonfilelist"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.FileList">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">FileList</span></span><a class="headerlink" href="#kortex_api.autogen.FileList" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>List of file descriptors</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.Common_pb2.FileList</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><p><strong>files</strong> (<a class="reference internal" href="#commonlocalfiledescriptor"><span class="std std-ref">LocalFileDescriptor</span></a> [ ]) – File descriptor list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="commonfileid"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.FileId">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">FileId</span></span><a class="headerlink" href="#kortex_api.autogen.FileId" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>File reference identifier</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.Common_pb2.FileId</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><p><strong>id</strong> (<span class="xref std std-ref">int</span>) – File reference ID</p>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="commonstoragemountpoint"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.StorageMountPoint">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">StorageMountPoint</span></span><a class="headerlink" href="#kortex_api.autogen.StorageMountPoint" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Mount point information corresponding to storage</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.Common_pb2.StorageMountPoint</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>uid</strong> (<span class="xref std std-ref">int</span>) – Mount point unique ID</p></li>
+<li><p><strong>name</strong> (<span class="xref std std-ref">str</span>) – Mount point name</p></li>
+<li><p><strong>full_path</strong> (<span class="xref std std-ref">str</span>) – Mount point full path</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="commonstoragemountpointlist"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.StorageMountPointList">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">StorageMountPointList</span></span><a class="headerlink" href="#kortex_api.autogen.StorageMountPointList" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>List of storage mount points</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.Common_pb2.StorageMountPointList</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><p><strong>mount_points</strong> (<a class="reference internal" href="#commonstoragemountpoint"><span class="std std-ref">StorageMountPoint</span></a> [ ]) – List of mount points</p>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="commonfspath"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.FSPath">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">FSPath</span></span><a class="headerlink" href="#kortex_api.autogen.FSPath" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Path descriptor for removable storage</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.Common_pb2.FSPath</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>path</strong> (<span class="xref std std-ref">str</span>) – Path relative to mount point</p></li>
+<li><p><strong>mount_point_id</strong> (<span class="xref std std-ref">int</span>) – Mount point in which item is found</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="commonfsitem"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.FSItem">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">FSItem</span></span><a class="headerlink" href="#kortex_api.autogen.FSItem" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Filesystem item descriptor</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.Common_pb2.FSItem</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>path</strong> (<a class="reference internal" href="#commonfspath"><span class="std std-ref">FSPath</span></a>) – Item path relative to mount point</p></li>
+<li><p><strong>type</strong> (<a class="reference internal" href="../Enums/Common.html#commonfsitemtype"><span class="std std-ref">FSItemType</span></a>) – Type: file or directory</p></li>
+<li><p><strong>size</strong> (<span class="xref std std-ref">int</span>) – Size in bytes</p></li>
+<li><p><strong>timestamp</strong> (<a class="reference internal" href="#commontimestamp"><span class="std std-ref">Timestamp</span></a>) – Timestamp of last modification</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="commonfsitemlist"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.FSItemList">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">FSItemList</span></span><a class="headerlink" href="#kortex_api.autogen.FSItemList" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>File system item list</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.Common_pb2.FSItemList</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><p><strong>items</strong> (<a class="reference internal" href="#commonfsitem"><span class="std std-ref">FSItem</span></a> [ ]) – File system item list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="commonnotificationinformation"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.NotificationInformation">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">NotificationInformation</span></span><a class="headerlink" href="#kortex_api.autogen.NotificationInformation" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>General informations about a notification</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.Common_pb2.NotificationInformation</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>severity</strong> (<a class="reference internal" href="../Enums/Common.html#commonnotificationseverity"><span class="std std-ref">NotificationSeverity</span></a>) – Severity of the notification</p></li>
+<li><p><strong>timestamp</strong> (<a class="reference internal" href="#commontimestamp"><span class="std std-ref">Timestamp</span></a>) – Event timestamp</p></li>
+<li><p><strong>connection</strong> (<a class="reference internal" href="#commonconnection"><span class="std std-ref">Connection</span></a>) – Connection that caused the event</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="commoncrc32checksum"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.CRC32Checksum">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">CRC32Checksum</span></span><a class="headerlink" href="#kortex_api.autogen.CRC32Checksum" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>CRC-32 checksum</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.Common_pb2.CRC32Checksum</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><p><strong>crc32</strong> (<span class="xref std std-ref">int</span>) – CRC-32 checksum</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="ControlConfig.html" class="btn btn-neutral float-right" title="ControlConfig" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="BaseCyclic.html" class="btn btn-neutral float-left" title="BaseCyclic" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2022, Kinova.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

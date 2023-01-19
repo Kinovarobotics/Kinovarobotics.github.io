@@ -1,0 +1,54 @@
+================================
+EditingContext
+================================
+    
+.. py:currentmodule:: kortex_api.autogen
+
+.. py:class:: EditingContextClient
+        
+    :canonical: kortex_api.autogen.client_stubs.EditingContextClientRpc
+
+    .. py:method:: __init__(router, namespace = None)
+
+        Constructs a EditingContextClient with an initialized :class:`~kortex_api.RouterClient.RouterClient` and an optional namespace.
+
+        :param RouterClient router: :class:`~kortex_api.RouterClient.RouterClient` used for the communication
+        :param string namespace: Optional namespace on which to initialize the EditingContextClient (defaults to ``None``)
+
+    .. py:method:: IsAlive (timeoutMs: int = 1000)
+        
+        Returns ``True`` if the Service Server is detected online before ``timeoutMs`` is expired, ``False`` otherwise.
+        
+        :param unsigned int timeoutMs: The maximum time to wait for an answer from the server 
+        :rtype: bool
+
+
+        .. _EditingContextClientSetEditingContext:
+
+    .. py:method:: SetEditingContext (context, deviceId = 0, options = RouterClientSendOptions())
+        
+        | The ``CONFIGURE`` permission is necessary to call this RPC.
+        |
+        | Add the editing context to the editing context stack
+
+
+        :param context:  
+        :type context: :ref:`Context <EditingContextContext>`
+
+        :param int deviceId: Device's Id called by rpc (optional)
+        :param RouterClientSendOptions options: Router options for sending the message
+
+        .. _EditingContextClientUnsetEditingContext:
+
+    .. py:method:: UnsetEditingContext (contextsessionidentifier, deviceId = 0, options = RouterClientSendOptions())
+        
+        | The ``CONFIGURE`` permission is necessary to call this RPC.
+        |
+        | Remove the editing context from the editing context stack
+
+
+        :param contextsessionidentifier:  
+        :type contextsessionidentifier: :ref:`ContextSessionIdentifier <EditingContextContextSessionIdentifier>`
+
+        :param int deviceId: Device's Id called by rpc (optional)
+        :param RouterClientSendOptions options: Router options for sending the message

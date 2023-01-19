@@ -1,0 +1,185 @@
+================================
+ProgramConfig
+================================
+    
+.. py:currentmodule:: kortex_api.autogen
+
+.. _ProgramConfigAction:
+
+.. py:class:: Action
+
+    Program Action instance
+
+   :canonical: kortex_api.autogen.messages.ProgramConfig_pb2.Action
+
+   :param handle:   Handle to identify the action
+   :type handle: :ref:`ActionHandle <CommonActionHandle>` 
+
+   :param next:   ActionHandle indicating which action is next
+   :type next: :ref:`ActionHandle <CommonActionHandle>` 
+
+   :param name:   Friendly name for the action
+   :type name: :ref:`str <>` 
+
+   :param plugin_action_handle:   Handle to indicate which plugin action this action is implementing (optional)
+   :type plugin_action_handle: :ref:`PluginActionHandle <ProgramConfigPluginActionHandle>` 
+
+   :param configuration:   Execution steps of the action (JSON)
+   :type configuration: :ref:`str <>` 
+
+   :param store_output_to:   Variable in which the action output will be stored (optional)
+   :type store_output_to: :ref:`ActionOutputStorer <ProgramConfigActionOutputStorer>` 
+
+   :param type:   Type of the action
+   :type type: :ref:`ActionType <ProgramConfigActionType>` 
+
+   :param branches:   Array of branches representing the start action of each branch
+   :type branches: :ref:`ActionHandle <CommonActionHandle>` [ ]
+
+   :param blocking:   Indicates if the action is blocking. If set to true, this action must be completed before playing the next action. If set to false, the next action can immediately be played.
+   :type blocking: :ref:`bool <>` 
+
+.. _ProgramConfigActionOutputStorer:
+
+.. py:class:: ActionOutputStorer
+
+    Variable in which the action output will be stored
+
+   :canonical: kortex_api.autogen.messages.ProgramConfig_pb2.ActionOutputStorer
+
+   :param identifier:   Variable identifier
+   :type identifier: :ref:`str <>` 
+
+   :param schema_key:   Key of the schema used to type a json variable
+   :type schema_key: :ref:`str <>` 
+
+   :param type:   Variable type
+   :type type: :ref:`VariableType <VariableManagerVariableType>` 
+
+.. _ProgramConfigPluginActionHandle:
+
+.. py:class:: PluginActionHandle
+
+    Handle to uniquely identify a plugin's action
+
+   :canonical: kortex_api.autogen.messages.ProgramConfig_pb2.PluginActionHandle
+
+   :param action_handle:   Handle to identify an action within the context of a plugin
+   :type action_handle: :ref:`ActionDescriptionHandle <PluginActionDescriptionHandle>` 
+
+   :param plugin_handle:   Handle for the parent plugin of the action
+   :type plugin_handle: :ref:`PluginHandle <PluginManagerPluginHandle>` 
+
+.. _ProgramConfigConfigurationChangeNotification:
+
+.. py:class:: ConfigurationChangeNotification
+
+    Notification about a change in the configuration of Programs
+
+   :canonical: kortex_api.autogen.messages.ProgramConfig_pb2.ConfigurationChangeNotification
+
+   :param event:   Event triggered
+   :type event: :ref:`ConfigurationChangeEvent <ProgramConfigConfigurationChangeEvent>` 
+
+   :param handle:   Handle of affected program
+   :type handle: :ref:`ProgramHandle <CommonProgramHandle>` 
+
+   :param timestamp:   This field is deprecated and will be removed in a future release
+   :type timestamp: :ref:`Timestamp <CommonTimestamp>` 
+
+   :param connection:   This field is deprecated and will be removed in a future release
+   :type connection: :ref:`Connection <CommonConnection>` 
+
+   :param generic_info:   Generic notification information
+   :type generic_info: :ref:`NotificationInformation <CommonNotificationInformation>` 
+
+.. _ProgramConfigProgramVariable:
+
+.. py:class:: ProgramVariable
+
+    Program Variables
+
+   :canonical: kortex_api.autogen.messages.ProgramConfig_pb2.ProgramVariable
+
+   :param variable:   Variable Info
+   :type variable: :ref:`Variable <VariableManagerVariable>` 
+
+   :param bool_default_value:   Default Boolean value (only filled if variable.type is VARIABLE_TYPE_BOOL)
+   :type bool_default_value: :ref:`bool <>` 
+
+   :param number_default_value:   Default Number value  (only filled if variable.type is VARIABLE_TYPE_NUMBER)
+   :type number_default_value: :ref:`float <>` 
+
+   :param string_default_value:   Default String value  (only filled if variable.type is VARIABLE_TYPE_STRING or VARIABLE_TYPE_JSON)
+   :type string_default_value: :ref:`str <>` 
+
+   :param is_persistent:   Indicates if the variable will be persisted in database after the program ends
+   :type is_persistent: :ref:`bool <>` 
+
+   :param is_input:   Indicates if the variable is used as an input of the program
+   :type is_input: :ref:`bool <>` 
+
+   :param is_output:   Indicates if the variable is used as an output of the program
+   :type is_output: :ref:`bool <>` 
+
+   :param is_required:   Indicates if the variable must be set before the program starts (only applies if is_input equals true)
+   :type is_required: :ref:`bool <>` 
+
+   :param has_default_value:   Indicates if the variable has a default value
+   :type has_default_value: :ref:`bool <>` 
+
+.. _ProgramConfigProgram:
+
+.. py:class:: Program
+
+    Program instance
+
+   :canonical: kortex_api.autogen.messages.ProgramConfig_pb2.Program
+
+   :param actions:   Actions of the program
+   :type actions: :ref:`Action <ProgramConfigAction>` [ ]
+
+   :param handle:   Handle to identify the program
+   :type handle: :ref:`ProgramHandle <CommonProgramHandle>` 
+
+   :param name:   Friendly name of the program
+   :type name: :ref:`str <>` 
+
+   :param variables:   List of program variables
+   :type variables: :ref:`ProgramVariable <ProgramConfigProgramVariable>` [ ]
+
+   :param is_validated:   True if the program has been validated, false otherwise
+   :type is_validated: :ref:`bool <>` 
+
+.. _ProgramConfigProgramList:
+
+.. py:class:: ProgramList
+
+    List of programs
+
+   :canonical: kortex_api.autogen.messages.ProgramConfig_pb2.ProgramList
+
+   :param programs:  
+   :type programs: :ref:`Program <ProgramConfigProgram>` [ ]
+
+.. _ProgramConfigProgramJSON:
+
+.. py:class:: ProgramJSON
+
+    Program instance as JSON
+
+   :canonical: kortex_api.autogen.messages.ProgramConfig_pb2.ProgramJSON
+
+   :param payload:   JSON representing a Kinova.Api.ProgramConfig.Program
+   :type payload: :ref:`str <>` 
+
+.. _ProgramConfigProgramOptions:
+
+.. py:class:: ProgramOptions
+
+    Defines the value of the Program options
+
+   :canonical: kortex_api.autogen.messages.ProgramConfig_pb2.ProgramOptions
+
+   :param need_acknowledge_before_run_auto:   True if acknowledge is needed before running a program in automatic mode, false otherwise.
+   :type need_acknowledge_before_run_auto: :ref:`bool <>` 

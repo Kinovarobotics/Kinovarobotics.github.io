@@ -1,0 +1,44 @@
+================================
+ProtectionZone
+================================
+    
+.. py:currentmodule:: kortex_api.autogen
+
+.. _ProtectionZoneServiceVersion:
+
+.. py:class:: ServiceVersion
+
+     Identifies ProtectionZone service current version
+
+    :canonical: kortex_api.autogen.messages.ProtectionZone_pb2.ServiceVersion
+    .. py:attribute:: RESERVED_0 (0):   Reserved
+
+    .. py:attribute:: CURRENT_VERSION (1):   Current version
+
+.. _ProtectionZoneShapeType:
+
+.. py:class:: ShapeType
+
+     Admissible protection zone shape types
+
+    :canonical: kortex_api.autogen.messages.ProtectionZone_pb2.ShapeType
+    .. py:attribute:: SHAPE_TYPE_UNSPECIFIED (0):   Unspecified shape type
+
+    .. py:attribute:: SHAPE_TYPE_CYLINDER (1):   Cylinder shape type
+
+    .. py:attribute:: SHAPE_TYPE_SPHERE (2):   Sphere shape type
+
+    .. py:attribute:: SHAPE_TYPE_RECTANGULAR_PRISM (3):   Rectangular prism shape type
+
+.. _ProtectionZoneLimitationType:
+
+.. py:class:: LimitationType
+
+     Admissible limitation types This enum is deprecated and will be removed in a future release.
+
+    :canonical: kortex_api.autogen.messages.ProtectionZone_pb2.LimitationType
+    .. py:attribute:: LIMITATION_TYPE_UNSPECIFIED (0):   Unspecified limitation
+
+    .. py:attribute:: LIMITATION_TYPE_VELOCITY (1):   Velocity limitation
+
+    .. py:attribute:: LIMITATION_TYPE_TORQUE (2):   Torque limitation

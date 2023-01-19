@@ -1,0 +1,123 @@
+================================
+Plugin
+================================
+    
+.. py:currentmodule:: kortex_api.autogen
+
+.. _PluginServiceVersion:
+
+.. py:class:: ServiceVersion
+
+     Identifies Plugin service current version
+
+    :canonical: kortex_api.autogen.messages.Plugin_pb2.ServiceVersion
+    .. py:attribute:: RESERVED_0 (0):   Reserved
+
+    .. py:attribute:: CURRENT_VERSION (1):   Current version
+
+.. _PluginStateTransitionResponseType:
+
+.. py:class:: StateTransitionResponseType
+
+    
+
+    :canonical: kortex_api.autogen.messages.Plugin_pb2.StateTransitionResponseType
+    .. py:attribute:: STATE_TRANSITION_RESPONSE_UNSPECIFIED (0):  
+
+    .. py:attribute:: STATE_TRANSITION_RESPONSE_ERROR (1):  
+
+    .. py:attribute:: STATE_TRANSITION_RESPONSE_FAILURE (2):  
+
+    .. py:attribute:: STATE_TRANSITION_RESPONSE_SUCCESS (3):  
+
+.. _PluginState:
+
+.. py:class:: State
+
+    
+
+    :canonical: kortex_api.autogen.messages.Plugin_pb2.State
+    .. py:attribute:: STATE_UNSPECIFIED (0):  
+
+    .. py:attribute:: STATE_ERROR (1):  
+
+    .. py:attribute:: STATE_IDLE (2):  
+
+    .. py:attribute:: STATE_READY (3):  
+
+    .. py:attribute:: STATE_ACTIVE (4):  
+
+.. _PluginDataType:
+
+.. py:class:: DataType
+
+     Data Type for configurations and actions configurations
+
+    :canonical: kortex_api.autogen.messages.Plugin_pb2.DataType
+    .. py:attribute:: CONFIGURATION_TYPE_UNSPECIFIED (0):  
+
+    .. py:attribute:: CONFIGURATION_TYPE_JSON (1):  
+
+.. _PluginPluginType:
+
+.. py:class:: PluginType
+
+     Plugin Type for configurations and notifications
+
+    :canonical: kortex_api.autogen.messages.Plugin_pb2.PluginType
+    .. py:attribute:: PLUGIN_TYPE_UNSPECIFIED (0):  
+
+    .. py:attribute:: PLUGIN_TYPE_BASIC (1):  
+
+    .. py:attribute:: PLUGIN_TYPE_TOOL (2):  
+
+.. _PluginGlobalTrigger:
+
+.. py:class:: GlobalTrigger
+
+     Global Triggers that can be sent to plugins and actions
+
+    :canonical: kortex_api.autogen.messages.Plugin_pb2.GlobalTrigger
+    .. py:attribute:: UNSPECIFIED_GLOBAL_TRIGGER (0):   Unspecified Global Trigger
+
+    .. py:attribute:: GLOBAL_TRIGGER_TEACH (1):   Teach Trigger
+
+    .. py:attribute:: GLOBAL_TRIGGER_ACTION_CREATED (2):   Action Created Trigger
+
+.. _PluginFieldFeedbackLevel:
+
+.. py:class:: FieldFeedbackLevel
+
+     Field feedback level
+
+    :canonical: kortex_api.autogen.messages.Plugin_pb2.FieldFeedbackLevel
+    .. py:attribute:: UNSPECIFIED_FIELD_FEEDBACK_LEVEL (0):   Unspecified field feedback level
+
+    .. py:attribute:: FIELD_FEEDBACK_LEVEL_INFO (1):   Info field feedback level
+
+    .. py:attribute:: FIELD_FEEDBACK_LEVEL_WARNING (2):   Warning field feedback level
+
+    .. py:attribute:: FIELD_FEEDBACK_LEVEL_ERROR (3):   Error field feedback level
+
+.. _PluginActionEvent:
+
+.. py:class:: ActionEvent
+
+     Admissible action event types
+
+    :canonical: kortex_api.autogen.messages.Plugin_pb2.ActionEvent
+    .. py:attribute:: UNSPECIFIED_ACTION_EVENT (0):   Unspecified action event
+
+    .. py:attribute:: ACTION_START (1):   Action execution started
+
+    .. py:attribute:: ACTION_END (2):   Action execution end
+
+    .. py:attribute:: ACTION_ABORT (3):   Action execution aborted
+
+    .. py:attribute:: ACTION_CANCEL (4):   Action execution cancelled by a user
+
+    .. py:attribute:: ACTION_PAUSE (5):   Action execution paused
+
+    .. py:attribute:: ACTION_RESUME (6):   Action execution resumed
+
+    .. py:attribute:: ACTION_FEEDBACK (7):   Action provides new feedback

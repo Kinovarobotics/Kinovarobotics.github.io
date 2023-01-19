@@ -1,0 +1,16 @@
+================================
+Session
+================================
+    
+.. py:currentmodule:: kortex_api.autogen
+
+.. _SessionServiceVersion:
+
+.. py:class:: ServiceVersion
+
+     Identifies session service current version
+
+    :canonical: kortex_api.autogen.messages.Session_pb2.ServiceVersion
+    .. py:attribute:: RESERVED_0 (0):   Reserved
+
+    .. py:attribute:: CURRENT_VERSION (1):   Current version

@@ -1,0 +1,58 @@
+================================
+ProgramConfig
+================================
+    
+.. py:currentmodule:: kortex_api.autogen
+
+.. _ProgramConfigServiceVersion:
+
+.. py:class:: ServiceVersion
+
+     Identifies ProgramConfig service current version
+
+    :canonical: kortex_api.autogen.messages.ProgramConfig_pb2.ServiceVersion
+    .. py:attribute:: RESERVED_0 (0):   Reserved
+
+    .. py:attribute:: CURRENT_VERSION (1):   Current version
+
+.. _ProgramConfigActionType:
+
+.. py:class:: ActionType
+
+     All possible action types
+
+    :canonical: kortex_api.autogen.messages.ProgramConfig_pb2.ActionType
+    .. py:attribute:: ACTION_TYPE_UNSPECIFIED (0):  
+
+    .. py:attribute:: ACTION_TYPE_INPUT (1):  
+
+    .. py:attribute:: ACTION_TYPE_CONDITION (2):  
+
+    .. py:attribute:: ACTION_TYPE_LOOP (3):  
+
+    .. py:attribute:: ACTION_TYPE_PLUGIN (4):  
+
+    .. py:attribute:: ACTION_TYPE_SET (5):  
+
+    .. py:attribute:: ACTION_TYPE_WAIT_CONDITION (6):  
+
+    .. py:attribute:: ACTION_TYPE_WAIT_TIME (7):  
+
+    .. py:attribute:: ACTION_TYPE_SUB_PROGRAM (8):  
+
+    .. py:attribute:: ACTION_TYPE_MESSAGE (9):  
+
+.. _ProgramConfigConfigurationChangeEvent:
+
+.. py:class:: ConfigurationChangeEvent
+
+     Configuration Change event
+
+    :canonical: kortex_api.autogen.messages.ProgramConfig_pb2.ConfigurationChangeEvent
+    .. py:attribute:: CONFIGURATION_CHANGE_EVENT_UNSPECIFIED (0):  
+
+    .. py:attribute:: CONFIGURATION_CHANGE_EVENT_CREATED (1):  
+
+    .. py:attribute:: CONFIGURATION_CHANGE_EVENT_DELETED (2):  
+
+    .. py:attribute:: CONFIGURATION_CHANGE_EVENT_UPDATED (3):  

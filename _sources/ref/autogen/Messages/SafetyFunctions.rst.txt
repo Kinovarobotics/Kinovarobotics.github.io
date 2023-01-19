@@ -1,0 +1,34 @@
+================================
+SafetyFunctions
+================================
+    
+.. py:currentmodule:: kortex_api.autogen
+
+.. _SafetyFunctionsSafetyFunctionsLimits:
+
+.. py:class:: SafetyFunctionsLimits
+
+    All safety functions limits for each system safety mode
+
+   :canonical: kortex_api.autogen.messages.SafetyFunctions_pb2.SafetyFunctionsLimits
+
+   :param joint_position_list:   Joint position limits list
+   :type joint_position_list: :ref:`JointPositionLimitsList <SafetyFunctionsJointPositionLimitsList>` 
+
+   :param joint_speed_list:   Joint speed limits list
+   :type joint_speed_list: :ref:`JointSpeedLimitList <SafetyFunctionsJointSpeedLimitList>` 
+
+   :param tcp_speed_list:   Tool center point speed limits list
+   :type tcp_speed_list: :ref:`TcpSpeedLimitsList <SafetyFunctionsTcpSpeedLimitsList>` 
+
+   :param tcp_force_list:   Tool center point force limits list
+   :type tcp_force_list: :ref:`TcpForceLimitList <SafetyFunctionsTcpForceLimitList>` 
+
+   :param tcp_orientation_list:   Tool center point orientation limits list
+   :type tcp_orientation_list: :ref:`TcpOrientationLimitsList <SafetyFunctionsTcpOrientationLimitsList>` 
+
+   :param elbow_speed_list:   Elbow speed limits list
+   :type elbow_speed_list: :ref:`ElbowSpeedLimitList <SafetyFunctionsElbowSpeedLimitList>` 
+
+   :param elbow_force_list:   Elbow force limits list
+   :type elbow_force_list: :ref:`ElbowForceLimitList <SafetyFunctionsElbowForceLimitList>` 

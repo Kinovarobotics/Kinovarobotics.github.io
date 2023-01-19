@@ -1,0 +1,539 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>ActuatorCyclic &mdash; Kortex API  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/dark_mode_css/general.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/dark_mode_css/dark.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/sphinx_highlight.js"></script>
+        <script src="../../../_static/dark_mode_js/default_dark.js"></script>
+        <script src="../../../_static/dark_mode_js/theme_switcher.js"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Base" href="Base.html" />
+    <link rel="prev" title="ActuatorConfig" href="ActuatorConfig.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> Kortex API
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption" role="heading"><span class="caption-text">Getting started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../getting_started/installation.html">Install the API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../getting_started/api_mechanism.html">Get to know it</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../getting_started/code_examples.html">See what you can do (examples)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../getting_started/error_management.html">Managing problems</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">API</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Python API Reference</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../RouterClient.html">RouterClient</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../SessionManager.html">SessionManager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../MqttTransport.html">MqttTransport</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../UDPTransport.html">UDPTransport</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Constants.html">Constants</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../exceptions/index.html">Exceptions</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">Autogen</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="index.html">Enums</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="ActuatorConfig.html">ActuatorConfig</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">ActuatorCyclic</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Base.html">Base</a></li>
+<li class="toctree-l4"><a class="reference internal" href="BaseCyclic.html">BaseCyclic</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Common.html">Common</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ControlConfig.html">ControlConfig</a></li>
+<li class="toctree-l4"><a class="reference internal" href="DeviceConfig.html">DeviceConfig</a></li>
+<li class="toctree-l4"><a class="reference internal" href="DeviceManager.html">DeviceManager</a></li>
+<li class="toctree-l4"><a class="reference internal" href="EditingContext.html">EditingContext</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Errors.html">Errors</a></li>
+<li class="toctree-l4"><a class="reference internal" href="EventBroker.html">EventBroker</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Frame.html">Frame</a></li>
+<li class="toctree-l4"><a class="reference internal" href="IndustrialIO.html">IndustrialIO</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Modbus.html">Modbus</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Plugin.html">Plugin</a></li>
+<li class="toctree-l4"><a class="reference internal" href="PluginManager.html">PluginManager</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ProductConfiguration.html">ProductConfiguration</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ProgramConfig.html">ProgramConfig</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ProgramRunner.html">ProgramRunner</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ProtectionZone.html">ProtectionZone</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SafetyControlUnitConfig.html">SafetyControlUnitConfig</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SafetyFunctions.html">SafetyFunctions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SafetyFunctionsCommon.html">SafetyFunctionsCommon</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SafetyIO.html">SafetyIO</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SerialCommunication.html">SerialCommunication</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Session.html">Session</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ToolManager.html">ToolManager</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ToolPlugin.html">ToolPlugin</a></li>
+<li class="toctree-l4"><a class="reference internal" href="VariableManager.html">VariableManager</a></li>
+<li class="toctree-l4"><a class="reference internal" href="WristConfigC61.html">WristConfigC61</a></li>
+<li class="toctree-l4"><a class="reference internal" href="WristCyclic.html">WristCyclic</a></li>
+<li class="toctree-l4"><a class="reference internal" href="WristCyclicC61.html">WristCyclicC61</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../Services/index.html">Services</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Messages/index.html">Messages</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Notifications.html">Notifications</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Kortex API</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../index.html">Python API Reference</a> &raquo;</li>
+        
+          <li><a href="../index.html">Autogen</a> &raquo;</li>
+        
+          <li><a href="index.html">Enums</a> &raquo;</li>
+        
+      <li>ActuatorCyclic</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../_sources/ref/autogen/Enums/ActuatorCyclic.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="actuatorcyclic">
+<h1>ActuatorCyclic<a class="headerlink" href="#actuatorcyclic" title="Permalink to this heading">¶</a></h1>
+<span class="target" id="actuatorcyclicserviceversion"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.ServiceVersion">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ServiceVersion</span></span><a class="headerlink" href="#kortex_api.autogen.ServiceVersion" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Identifies ActuatorCyclic service current version</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.ActuatorCyclic_pb2.ServiceVersion</p>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">RESERVED_0</span> <span class="pre">(0):</span>&#160;&#160; <span class="pre">Reserved</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">CURRENT_VERSION</span> <span class="pre">(1):</span>&#160;&#160; <span class="pre">Current</span> <span class="pre">version</span></span></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<span class="target" id="actuatorcycliccommandflags"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.CommandFlags">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">CommandFlags</span></span><a class="headerlink" href="#kortex_api.autogen.CommandFlags" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Identifies actuator commands</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.ActuatorCyclic_pb2.CommandFlags</p>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">NO_COMMAND</span> <span class="pre">(0):</span>&#160;&#160; <span class="pre">0x0</span> <span class="pre">Default</span> <span class="pre">value</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">SERVO_ENABLE</span> <span class="pre">(1):</span>&#160;&#160; <span class="pre">0x1</span> <span class="pre">Servoing</span> <span class="pre">mode</span> <span class="pre">is</span> <span class="pre">enabled</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">BRAKE_DISABLE</span> <span class="pre">(2):</span>&#160;&#160; <span class="pre">0x2</span> <span class="pre">Brake</span> <span class="pre">normally</span> <span class="pre">applied,</span> <span class="pre">1</span> <span class="pre">disables</span> <span class="pre">brake</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="kortex_api.autogen.CommandFlags.CLEAR_MAJOR_FAULT">
+<span class="sig-name descname"><span class="pre">CLEAR_MAJOR_FAULT</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">4):</span>&#160;&#160; <span class="pre">0x4</span> <span class="pre">Clear</span> <span class="pre">the</span> <span class="pre">major</span> <span class="pre">fault</span> <span class="pre">flag</span> <span class="pre">(See</span> <span class="pre">StatusFlags</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kortex_api.autogen.CommandFlags.CLEAR_MAJOR_FAULT" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="kortex_api.autogen.CommandFlags.CLEAR_MINOR_FAULT">
+<span class="sig-name descname"><span class="pre">CLEAR_MINOR_FAULT</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">8):</span>&#160;&#160; <span class="pre">0x8</span> <span class="pre">Clear</span> <span class="pre">the</span> <span class="pre">minor</span> <span class="pre">fault</span> <span class="pre">flag</span> <span class="pre">(See</span> <span class="pre">StatusFlags</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kortex_api.autogen.CommandFlags.CLEAR_MINOR_FAULT" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">PROTECTIVE_STOP</span> <span class="pre">(16):</span>&#160;&#160; <span class="pre">0x10</span> <span class="pre">Protective</span> <span class="pre">stop</span> <span class="pre">has</span> <span class="pre">been</span> <span class="pre">activated</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">FORCE_BRAKE_RELEASE</span> <span class="pre">(32):</span>&#160;&#160; <span class="pre">0x20</span> <span class="pre">Force</span> <span class="pre">a</span> <span class="pre">brake</span> <span class="pre">release</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">IGNORE</span> <span class="pre">(64):</span>&#160;&#160; <span class="pre">0x40</span> <span class="pre">ignore</span> <span class="pre">the</span> <span class="pre">other</span> <span class="pre">CommandFlag</span> <span class="pre">bits</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">LOW_GAINS</span> <span class="pre">(128):</span>&#160;&#160; <span class="pre">0x80</span> <span class="pre">Use</span> <span class="pre">a</span> <span class="pre">set</span> <span class="pre">of</span> <span class="pre">specific</span> <span class="pre">gain</span> <span class="pre">value</span> <span class="pre">used</span> <span class="pre">by</span> <span class="pre">the</span> <span class="pre">joint</span> <span class="pre">Hand-Guiding</span> <span class="pre">mode</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="kortex_api.autogen.CommandFlags.LED_0">
+<span class="sig-name descname"><span class="pre">LED_0</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">256):</span>&#160;&#160; <span class="pre">0x100</span> <span class="pre">Activate</span> <span class="pre">LED</span> <span class="pre">0</span> <span class="pre">(interface</span> <span class="pre">module</span> <span class="pre">buttons</span> <span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kortex_api.autogen.CommandFlags.LED_0" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="kortex_api.autogen.CommandFlags.LED_1">
+<span class="sig-name descname"><span class="pre">LED_1</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">512):</span>&#160;&#160; <span class="pre">0x200</span> <span class="pre">Activate</span> <span class="pre">LED</span> <span class="pre">1</span> <span class="pre">(interface</span> <span class="pre">module</span> <span class="pre">buttons</span> <span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kortex_api.autogen.CommandFlags.LED_1" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">TORQUE_AS_CURRENT_FFW</span> <span class="pre">(1024):</span>&#160;&#160; <span class="pre">0x400</span> <span class="pre">Forces</span> <span class="pre">&quot;torque</span> <span class="pre">as</span> <span class="pre">a</span> <span class="pre">current</span> <span class="pre">feedforward&quot;</span> <span class="pre">control</span> <span class="pre">mode</span></span></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<span class="target" id="actuatorcyclicstatusflags"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.StatusFlags">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">StatusFlags</span></span><a class="headerlink" href="#kortex_api.autogen.StatusFlags" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Identifies actuator status</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.ActuatorCyclic_pb2.StatusFlags</p>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">UNKNOWN_STATUS</span> <span class="pre">(0):</span>&#160;&#160; <span class="pre">0x0</span> <span class="pre">Unknown</span> <span class="pre">status</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">RAM_SELF_TEST_SUCCESS</span> <span class="pre">(1):</span>&#160;&#160; <span class="pre">0x1</span> <span class="pre">Actuator</span> <span class="pre">RAM</span> <span class="pre">self-test</span> <span class="pre">succeded</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">STABILIZED</span> <span class="pre">(16):</span>&#160;&#160; <span class="pre">0x10</span> <span class="pre">Actuator</span> <span class="pre">is</span> <span class="pre">in</span> <span class="pre">a</span> <span class="pre">stable</span> <span class="pre">state</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">MOTOR_INDEXED</span> <span class="pre">(32):</span>&#160;&#160; <span class="pre">0x20</span> <span class="pre">Position</span> <span class="pre">sensor</span> <span class="pre">is</span> <span class="pre">indexed</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">MOTOR_INDEXING</span> <span class="pre">(64):</span>&#160;&#160; <span class="pre">0x40</span> <span class="pre">Position</span> <span class="pre">sensor</span> <span class="pre">is</span> <span class="pre">indexing</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">JOINT_INDEXED</span> <span class="pre">(128):</span>&#160;&#160; <span class="pre">0x80</span> <span class="pre">Reserved</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">JOINT_INDEXING</span> <span class="pre">(256):</span>&#160;&#160; <span class="pre">0x100</span> <span class="pre">Reserved</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">HIGH_PRECISION</span> <span class="pre">(512):</span>&#160;&#160; <span class="pre">0x200</span> <span class="pre">Reserved</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">BRAKING</span> <span class="pre">(1024):</span>&#160;&#160; <span class="pre">0x400</span> <span class="pre">The</span> <span class="pre">actuator</span> <span class="pre">is</span> <span class="pre">braking</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">SERVOING</span> <span class="pre">(2048):</span>&#160;&#160; <span class="pre">0x800</span> <span class="pre">The</span> <span class="pre">actuator</span> <span class="pre">is</span> <span class="pre">in</span> <span class="pre">servoing</span> <span class="pre">mode</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">MAJOR_FAULT</span> <span class="pre">(4096):</span>&#160;&#160; <span class="pre">0x1000</span> <span class="pre">A</span> <span class="pre">major</span> <span class="pre">fault</span> <span class="pre">has</span> <span class="pre">occurred</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">MINOR_FAULT</span> <span class="pre">(8192):</span>&#160;&#160; <span class="pre">0x2000</span> <span class="pre">A</span> <span class="pre">minor</span> <span class="pre">fault</span> <span class="pre">has</span> <span class="pre">occurred</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">CALIBRATED_TORQUE</span> <span class="pre">(16384):</span>&#160;&#160; <span class="pre">0x4000</span> <span class="pre">The</span> <span class="pre">torque</span> <span class="pre">sensor</span> <span class="pre">is</span> <span class="pre">calibrated</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">CALIBRATED_MAG_SENSOR</span> <span class="pre">(32768):</span>&#160;&#160; <span class="pre">0x8000</span> <span class="pre">The</span> <span class="pre">magnetic</span> <span class="pre">sensor</span> <span class="pre">is</span> <span class="pre">calibrated</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">CALIBRATED_ZERO</span> <span class="pre">(65536):</span>&#160;&#160; <span class="pre">0x10000</span> <span class="pre">The</span> <span class="pre">zero</span> <span class="pre">position</span> <span class="pre">calibration</span> <span class="pre">has</span> <span class="pre">been</span> <span class="pre">performed</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">GPIO_0</span> <span class="pre">(131072):</span>&#160;&#160; <span class="pre">0x20000</span> <span class="pre">Reserved</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">GPIO_1</span> <span class="pre">(262144):</span>&#160;&#160; <span class="pre">0x40000</span> <span class="pre">Reserved</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">CS_QUASI_STATIC_CONTACT</span> <span class="pre">(524288):</span>&#160;&#160; <span class="pre">0x80000</span> <span class="pre">Reserved</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">CS_TRANSIENT_CONTACT</span> <span class="pre">(1048576):</span>&#160;&#160; <span class="pre">0x100000</span> <span class="pre">Reserved</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">VFD_HALL_SYNC</span> <span class="pre">(2097152):</span>&#160;&#160; <span class="pre">0x200000</span> <span class="pre">Reserved</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">VFD_INDEXED</span> <span class="pre">(4194304):</span>&#160;&#160; <span class="pre">0x400000</span> <span class="pre">Reserved</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">DRIVE_BOARD_READY</span> <span class="pre">(8388608):</span>&#160;&#160; <span class="pre">0x800000</span> <span class="pre">Reserved</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">CALIBRATED_CURRENT</span> <span class="pre">(16777216):</span>&#160;&#160; <span class="pre">0x1000000</span> <span class="pre">Current</span> <span class="pre">sensor</span> <span class="pre">is</span> <span class="pre">calibrated</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">CALIBRATED_MOTOR</span> <span class="pre">(33554432):</span>&#160;&#160; <span class="pre">0x2000000</span> <span class="pre">Motor</span> <span class="pre">is</span> <span class="pre">calibrated</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">SW0_ACTIVE</span> <span class="pre">(67108864):</span>&#160;&#160; <span class="pre">0x4000000</span> <span class="pre">Status</span> <span class="pre">of</span> <span class="pre">interface</span> <span class="pre">module</span> <span class="pre">buttons</span> <span class="pre">0</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">SW1_ACTIVE</span> <span class="pre">(134217728):</span>&#160;&#160; <span class="pre">0x8000000</span> <span class="pre">Status</span> <span class="pre">of</span> <span class="pre">interface</span> <span class="pre">module</span> <span class="pre">buttons</span> <span class="pre">1</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">GRIPPER_DETECTED</span> <span class="pre">(268435456):</span>&#160;&#160; <span class="pre">0x10000000</span> <span class="pre">A</span> <span class="pre">gripper</span> <span class="pre">is</span> <span class="pre">detected</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">BRAKE_RELEASED</span> <span class="pre">(536870912):</span>&#160;&#160; <span class="pre">0x20000000</span> <span class="pre">Brake</span> <span class="pre">is</span> <span class="pre">released</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">BRAKE_RELEASE_FAILED</span> <span class="pre">(1073741824):</span>&#160;&#160; <span class="pre">0x40000000</span> <span class="pre">Actuator</span> <span class="pre">failed</span> <span class="pre">to</span> <span class="pre">release</span> <span class="pre">brake</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">BOOT_POSITION_SYNC_FAIL</span> <span class="pre">(-2147483648):</span>&#160;&#160; <span class="pre">0x80000000</span> <span class="pre">Actuator</span> <span class="pre">position</span> <span class="pre">at</span> <span class="pre">boot</span> <span class="pre">does</span> <span class="pre">not</span> <span class="pre">match</span> <span class="pre">with</span> <span class="pre">previous</span> <span class="pre">position</span></span></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="Base.html" class="btn btn-neutral float-right" title="Base" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="ActuatorConfig.html" class="btn btn-neutral float-left" title="ActuatorConfig" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2022, Kinova.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

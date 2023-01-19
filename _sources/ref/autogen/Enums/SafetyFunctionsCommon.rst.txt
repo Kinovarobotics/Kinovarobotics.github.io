@@ -1,0 +1,121 @@
+================================
+SafetyFunctionsCommon
+================================
+    
+.. py:currentmodule:: kortex_api.autogen
+
+.. _SafetyFunctionsCommonSafetySystemMode:
+
+.. py:class:: SafetySystemMode
+
+     Safety System mode
+
+    :canonical: kortex_api.autogen.messages.SafetyFunctionsCommon_pb2.SafetySystemMode
+    .. py:attribute:: SAFETY_SYSTEM_MODE_UNSPECIFIED (0):   Unspecified mode
+
+    .. py:attribute:: SAFETY_SYSTEM_MODE_NORMAL (1):   Normal mode
+
+    .. py:attribute:: SAFETY_SYSTEM_MODE_REDUCED (2):   Reduced mode
+
+.. _SafetyFunctionsCommonSafetyFunctionType:
+
+.. py:class:: SafetyFunctionType
+
+     Safety function type
+
+    :canonical: kortex_api.autogen.messages.SafetyFunctionsCommon_pb2.SafetyFunctionType
+    .. py:attribute:: SAFETY_FUNCTION_TYPE_UNSPECIFIED (0):   Unspecified type
+
+    .. py:attribute:: SAFETY_FUNCTION_TYPE_JOINT_POSITION (1):   Joint position type
+
+    .. py:attribute:: SAFETY_FUNCTION_TYPE_JOINT_SPEED (2):   Joint speed type
+
+    .. py:attribute:: SAFETY_FUNCTION_TYPE_PROTECTION_ZONE (3):   Protection zone type
+
+    .. py:attribute:: SAFETY_FUNCTION_TYPE_TCP_ELBOW_SPEED (4):   Tool center point and elbow speed type
+
+    .. py:attribute:: SAFETY_FUNCTION_TYPE_TCP_ORIENTATION (5):   Tool center point orientation type
+
+    .. py:attribute:: SAFETY_FUNCTION_TYPE_TCP_ELBOW_FORCE (6):   Tool center point and elbow force type
+
+.. _SafetyFunctionsCommonSafetyFunctionsStatusType:
+
+.. py:class:: SafetyFunctionsStatusType
+
+     Safety functions status
+
+    :canonical: kortex_api.autogen.messages.SafetyFunctionsCommon_pb2.SafetyFunctionsStatusType
+    .. py:attribute:: SAFETY_FUNCTION_STATUS_UNSPECIFIED (0):   0x0 - Unspecified status
+
+    .. py:attribute:: SAFETY_FUNCTION_STATUS_UNDER_MONITORING (1):   0x1 - Safety functions are under monitoring
+
+    .. py:attribute:: SAFETY_FUNCTION_STATUS_EMERGENCY_STOP_TRIGGERED (2):   0x2 - Emergengy stop safety function triggered
+
+    .. py:attribute:: SAFETY_FUNCTION_STATUS_PROTECTIVE_STOP_TRIGGERED (4):   0x4 - Protective stop safety function triggered
+
+    .. py:attribute:: SAFETY_FUNCTION_STATUS_JOINT_POSITION_MONITORING_TRIGGERED (8):   0x8 - Joint position monitoring safety function triggered
+
+    .. py:attribute:: SAFETY_FUNCTION_STATUS_JOINT_SPEED_MONITORING_TRIGGERED (16):   0x10 - Joint speed monitoring safety function triggered
+
+    .. py:attribute:: SAFETY_FUNCTION_STATUS_MONITORED_STOP_TRIGGERED (32):   0x20 - Monitored stop safety function triggered
+
+    .. py:attribute:: SAFETY_FUNCTION_STATUS_PROTECTION_ZONE_MONITORING_TRIGGERED (64):   0x40 - Protection zone monitoring safety function triggered
+
+    .. py:attribute:: SAFETY_FUNCTION_STATUS_TCP_ELBOW_SPEED_MONITORING_TRIGGERED (128):   0x80 - TCP & elbow speed monitoring safety function triggered
+
+    .. py:attribute:: SAFETY_FUNCTION_STATUS_TCP_ORIENTATION_MONITORING_TRIGGERED (256):   0x100 - TCP orientation monitoring safety function triggered
+
+    .. py:attribute:: SAFETY_FUNCTION_STATUS_TCP_ELBOW_FORCE_MONITORING_TRIGGERED (512):   0x200 - TCP & elbow force monitoring safety function triggered
+
+.. _SafetyFunctionsCommonSafetyFunctionChangeEvent:
+
+.. py:class:: SafetyFunctionChangeEvent
+
+     Safety Function Change event
+
+    :canonical: kortex_api.autogen.messages.SafetyFunctionsCommon_pb2.SafetyFunctionChangeEvent
+    .. py:attribute:: SAFETY_FUNCTION_CHANGE_EVENT_UNSPECIFIED (0):   Unspecified change event
+
+    .. py:attribute:: SAFETY_FUNCTION_CHANGE_EVENT_JOINT_POSITION_LIMITS (1):   Joint position limits change event
+
+    .. py:attribute:: SAFETY_FUNCTION_CHANGE_EVENT_JOINT_SPEED_LIMITS (2):   Joint speed limits change event
+
+    .. py:attribute:: SAFETY_FUNCTION_CHANGE_EVENT_PROTECTION_ZONE_LIMITS (3):   Protection zone limits change event
+
+    .. py:attribute:: SAFETY_FUNCTION_CHANGE_EVENT_TCP_SPEED_LIMITS (4):   Tool center point speed limits change event
+
+    .. py:attribute:: SAFETY_FUNCTION_CHANGE_EVENT_ELBOW_SPEED_LIMITS (5):   Elbow speed limits change event
+
+    .. py:attribute:: SAFETY_FUNCTION_CHANGE_EVENT_TCP_ORIENTATION_LIMITS (6):   Tool center point orientation limits change event
+
+    .. py:attribute:: SAFETY_FUNCTION_CHANGE_EVENT_TCP_FORCE_LIMITS (7):   Tool center point force limits change event
+
+    .. py:attribute:: SAFETY_FUNCTION_CHANGE_EVENT_ELBOW_FORCE_LIMITS (8):   Elbow force limits change event
+
+    .. py:attribute:: SAFETY_FUNCTION_CHANGE_EVENT_STATUS (9):   Safety function status change event
+
+.. _SafetyFunctionsCommonProtectiveStopStatusType:
+
+.. py:class:: ProtectiveStopStatusType
+
+     Protective Stop Status type (bitmask)
+
+    :canonical: kortex_api.autogen.messages.SafetyFunctionsCommon_pb2.ProtectiveStopStatusType
+    .. py:attribute:: PROTECTIVE_STOP_STATUS_NOT_TRIGGERED (0):   0x0 - Protective stop not triggered
+
+    .. py:attribute:: PROTECTIVE_STOP_STATUS_AUTOMATIC_TRIGGERED (1):   0x1 - Protective stop automatic triggered
+
+    .. py:attribute:: PROTECTIVE_STOP_STATUS_MANUAL_TRIGGERED (2):   0x2 - Protective stop manual triggered
+
+.. _SafetyFunctionsCommonTcpElbowSafetyFunctionType:
+
+.. py:class:: TcpElbowSafetyFunctionType
+
+     TCP/Elbow speed safety function element type
+
+    :canonical: kortex_api.autogen.messages.SafetyFunctionsCommon_pb2.TcpElbowSafetyFunctionType
+    .. py:attribute:: TCP_ELBOW_SAFETY_FUNCTION_TYPE_UNSPECIFIED (0):   Unspecified element type
+
+    .. py:attribute:: TCP_ELBOW_SAFETY_FUNCTION_TYPE_ELBOW (1):   Elbow speed limit reached 
+
+    .. py:attribute:: TCP_ELBOW_SAFETY_FUNCTION_TYPE_TCP (2):   TCP speed limit reached 

@@ -1,0 +1,104 @@
+================================
+SafetyIO
+================================
+    
+.. py:currentmodule:: kortex_api.autogen
+
+.. _SafetyIOSafetyIOInfo:
+
+.. py:class:: SafetyIOInfo
+
+    Safety io information
+
+   :canonical: kortex_api.autogen.messages.SafetyIO_pb2.SafetyIOInfo
+
+   :param channel:   Safety io channel (0-7)
+   :type channel: :ref:`int <>` 
+
+   :param io_type:   Safety io type (input or output)
+   :type io_type: :ref:`SafetyIOType <SafetyIOSafetyIOType>` 
+
+.. _SafetyIOSafetyInputConfiguration:
+
+.. py:class:: SafetyInputConfiguration
+
+    Safety input configuration
+
+   :canonical: kortex_api.autogen.messages.SafetyIO_pb2.SafetyInputConfiguration
+
+   :param channel:   Safety input channel (0-7)        
+   :type channel: :ref:`int <>` 
+
+   :param input_function:   Safety input function
+   :type input_function: :ref:`SafetyInputFunction <SafetyIOSafetyInputFunction>` 
+
+.. _SafetyIOSafetyOutputConfiguration:
+
+.. py:class:: SafetyOutputConfiguration
+
+    Safety output configuration
+
+   :canonical: kortex_api.autogen.messages.SafetyIO_pb2.SafetyOutputConfiguration
+
+   :param channel:   Safety output channel (0-7)   
+   :type channel: :ref:`int <>` 
+
+   :param output_event:   Safety output event
+   :type output_event: :ref:`SafetyOutputEvent <SafetyIOSafetyOutputEvent>` 
+
+.. _SafetyIOSafetyIOConfiguration:
+
+.. py:class:: SafetyIOConfiguration
+
+    Safety io configuration
+
+   :canonical: kortex_api.autogen.messages.SafetyIO_pb2.SafetyIOConfiguration
+
+   :param SafetyInputConfiguration input_configuration:   Safety input configuration for a channel. Part of the ``configuration_type`` `Oneof <https://developers.google.com/protocol-buffers/docs/reference/python-generated#oneof>`_.
+
+   :param SafetyOutputConfiguration output_configuration:   Safety output configuration for a channel. Part of the ``configuration_type`` `Oneof <https://developers.google.com/protocol-buffers/docs/reference/python-generated#oneof>`_.
+
+.. _SafetyIOSafetyIOConfigurationList:
+
+.. py:class:: SafetyIOConfigurationList
+
+    Array of safety io configuration
+
+   :canonical: kortex_api.autogen.messages.SafetyIO_pb2.SafetyIOConfigurationList
+
+   :param safety_io_configs:   List of safety io configuration
+   :type safety_io_configs: :ref:`SafetyIOConfiguration <SafetyIOSafetyIOConfiguration>` [ ]
+
+.. _SafetyIOSafetyIOChannelStatus:
+
+.. py:class:: SafetyIOChannelStatus
+
+    Reference to a safety io channel status type
+
+   :canonical: kortex_api.autogen.messages.SafetyIO_pb2.SafetyIOChannelStatus
+
+   :param safety_input_status:   Safety input status (bitmask)
+   :type safety_input_status: :ref:`SafetyIOChannelStatusType <SafetyIOSafetyIOChannelStatusType>` 
+
+   :param safety_output_status:   Safety output status (bitmask)
+   :type safety_output_status: :ref:`SafetyIOChannelStatusType <SafetyIOSafetyIOChannelStatusType>` 
+
+.. _SafetyIOSafetyIOChangeNotification:
+
+.. py:class:: SafetyIOChangeNotification
+
+    Notification about a safety io change event
+
+   :canonical: kortex_api.autogen.messages.SafetyIO_pb2.SafetyIOChangeNotification
+
+   :param event:   Event triggered
+   :type event: :ref:`SafetyIOChangeEvent <SafetyIOSafetyIOChangeEvent>` 
+
+   :param timestamp:   This field is deprecated and will be removed in a future release
+   :type timestamp: :ref:`Timestamp <CommonTimestamp>` 
+
+   :param user_handle:   This field is deprecated and will be removed in a future release
+   :type user_handle: :ref:`UserProfileHandle <CommonUserProfileHandle>` 
+
+   :param generic_info:   Generic notification information
+   :type generic_info: :ref:`NotificationInformation <CommonNotificationInformation>` 

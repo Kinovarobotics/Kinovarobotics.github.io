@@ -1,0 +1,1141 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>ControlConfig &mdash; Kortex API  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/dark_mode_css/general.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/dark_mode_css/dark.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/sphinx_highlight.js"></script>
+        <script src="../../../_static/dark_mode_js/default_dark.js"></script>
+        <script src="../../../_static/dark_mode_js/theme_switcher.js"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="DeviceConfig" href="DeviceConfig.html" />
+    <link rel="prev" title="BaseCyclic" href="BaseCyclic.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> Kortex API
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption" role="heading"><span class="caption-text">Getting started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../getting_started/installation.html">Install the API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../getting_started/api_mechanism.html">Get to know it</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../getting_started/code_examples.html">See what you can do (examples)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../getting_started/error_management.html">Managing problems</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">API</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Python API Reference</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../RouterClient.html">RouterClient</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../SessionManager.html">SessionManager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../MqttTransport.html">MqttTransport</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../UDPTransport.html">UDPTransport</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Constants.html">Constants</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../exceptions/index.html">Exceptions</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">Autogen</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../Enums/index.html">Enums</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="index.html">Services</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="ActuatorConfig.html">ActuatorConfig</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ActuatorCyclic.html">ActuatorCyclic</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Base.html">Base</a></li>
+<li class="toctree-l4"><a class="reference internal" href="BaseCyclic.html">BaseCyclic</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">ControlConfig</a></li>
+<li class="toctree-l4"><a class="reference internal" href="DeviceConfig.html">DeviceConfig</a></li>
+<li class="toctree-l4"><a class="reference internal" href="DeviceManager.html">DeviceManager</a></li>
+<li class="toctree-l4"><a class="reference internal" href="EditingContext.html">EditingContext</a></li>
+<li class="toctree-l4"><a class="reference internal" href="EventBroker.html">EventBroker</a></li>
+<li class="toctree-l4"><a class="reference internal" href="IndustrialIO.html">IndustrialIO</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Modbus.html">Modbus</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Plugin.html">Plugin</a></li>
+<li class="toctree-l4"><a class="reference internal" href="PluginManager.html">PluginManager</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ProgramConfig.html">ProgramConfig</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ProgramRunner.html">ProgramRunner</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ProtectionZone.html">ProtectionZone</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SafetyControlUnitConfig.html">SafetyControlUnitConfig</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SafetyFunctions.html">SafetyFunctions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SafetyIO.html">SafetyIO</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Session.html">Session</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ToolManager.html">ToolManager</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ToolPlugin.html">ToolPlugin</a></li>
+<li class="toctree-l4"><a class="reference internal" href="VariableManager.html">VariableManager</a></li>
+<li class="toctree-l4"><a class="reference internal" href="WristConfigC61.html">WristConfigC61</a></li>
+<li class="toctree-l4"><a class="reference internal" href="WristCyclic.html">WristCyclic</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../Messages/index.html">Messages</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Notifications.html">Notifications</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Kortex API</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../index.html">Python API Reference</a> &raquo;</li>
+        
+          <li><a href="../index.html">Autogen</a> &raquo;</li>
+        
+          <li><a href="index.html">Services</a> &raquo;</li>
+        
+      <li>ControlConfig</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../_sources/ref/autogen/Services/ControlConfig.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="controlconfig">
+<h1>ControlConfig<a class="headerlink" href="#controlconfig" title="Permalink to this heading">¶</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.ControlConfigClient">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ControlConfigClient</span></span><a class="headerlink" href="#kortex_api.autogen.ControlConfigClient" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.client_stubs.ControlConfigClientRpc</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="kortex_api.autogen.ControlConfigClient.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">router</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">namespace</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kortex_api.autogen.ControlConfigClient.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Constructs a ControlConfigClient with an initialized <a class="reference internal" href="../../RouterClient.html#kortex_api.RouterClient.RouterClient" title="kortex_api.RouterClient.RouterClient"><code class="xref py py-class docutils literal notranslate"><span class="pre">RouterClient</span></code></a> and an optional namespace.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>router</strong> (<a class="reference internal" href="../../RouterClient.html#kortex_api.RouterClient.RouterClient" title="kortex_api.RouterClient.RouterClient"><em>RouterClient</em></a>) – <a class="reference internal" href="../../RouterClient.html#kortex_api.RouterClient.RouterClient" title="kortex_api.RouterClient.RouterClient"><code class="xref py py-class docutils literal notranslate"><span class="pre">RouterClient</span></code></a> used for the communication</p></li>
+<li><p><strong>namespace</strong> (<em>string</em>) – Optional namespace on which to initialize the ControlConfigClient (defaults to <code class="docutils literal notranslate"><span class="pre">None</span></code>)</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kortex_api.autogen.ControlConfigClient.IsAlive">
+<span class="sig-name descname"><span class="pre">IsAlive</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">timeoutMs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">1000</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kortex_api.autogen.ControlConfigClient.IsAlive" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns <code class="docutils literal notranslate"><span class="pre">True</span></code> if the Service Server is detected online before <code class="docutils literal notranslate"><span class="pre">timeoutMs</span></code> is expired, <code class="docutils literal notranslate"><span class="pre">False</span></code> otherwise.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>timeoutMs</strong> (<em>unsigned int</em>) – The maximum time to wait for an answer from the server</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>bool</p>
+</dd>
+</dl>
+<span class="target" id="controlconfigclientsetgravityvector"></span></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kortex_api.autogen.ControlConfigClient.SetGravityVector">
+<span class="sig-name descname"><span class="pre">SetGravityVector</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">gravityvector</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">deviceId</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">options</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">RouterClientSendOptions()</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kortex_api.autogen.ControlConfigClient.SetGravityVector" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line">The <code class="docutils literal notranslate"><span class="pre">CONFIGURE</span></code> permission is necessary to call this RPC.</div>
+<div class="line"><br /></div>
+<div class="line">Sets global gravity vector in terms of base reference frame.</div>
+<div class="line">The arm must be powered off and not be in an Unrecoverable Fault state, or powered on and be in Monitored Stop state to set the gravity vector.</div>
+<div class="line">This needs to be configured to enable control of the robot in wall or ceiling mounting.</div>
+<div class="line"><br /></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>gravityvector</strong> (<a class="reference internal" href="../Messages/ControlConfig.html#controlconfiggravityvector"><span class="std std-ref">GravityVector</span></a>) – </p></li>
+<li><p><strong>deviceId</strong> (<em>int</em>) – Device’s Id called by rpc (optional)</p></li>
+<li><p><strong>options</strong> (<a class="reference internal" href="../../RouterClient.html#kortex_api.RouterClient.RouterClientSendOptions" title="kortex_api.RouterClient.RouterClientSendOptions"><em>RouterClientSendOptions</em></a>) – Router options for sending the message</p></li>
+</ul>
+</dd>
+</dl>
+<span class="target" id="controlconfigclientgetgravityvector"></span></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kortex_api.autogen.ControlConfigClient.GetGravityVector">
+<span class="sig-name descname"><span class="pre">GetGravityVector</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">deviceId</span> <span class="pre">=</span> <span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">options</span> <span class="pre">=</span> <span class="pre">RouterClientSendOptions()</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kortex_api.autogen.ControlConfigClient.GetGravityVector" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line">The <code class="docutils literal notranslate"><span class="pre">READ_ONLY</span></code> permission is necessary to call this RPC.</div>
+<div class="line"><br /></div>
+<div class="line">Retrieves global gravity vector</div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>deviceId</strong> (<em>int</em>) – Device’s Id called by rpc (optional)</p></li>
+<li><p><strong>options</strong> (<a class="reference internal" href="../../RouterClient.html#kortex_api.RouterClient.RouterClientSendOptions" title="kortex_api.RouterClient.RouterClientSendOptions"><em>RouterClientSendOptions</em></a>) – Router options for sending the message</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="../Messages/ControlConfig.html#kortex_api.autogen.GravityVector" title="kortex_api.autogen.GravityVector">GravityVector</a></p>
+</dd>
+</dl>
+<span class="target" id="controlconfigclientsetpayloadinformation"></span></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kortex_api.autogen.ControlConfigClient.SetPayloadInformation">
+<span class="sig-name descname"><span class="pre">SetPayloadInformation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">payloadinformation</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">deviceId</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">options</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">RouterClientSendOptions()</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kortex_api.autogen.ControlConfigClient.SetPayloadInformation" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line">The <code class="docutils literal notranslate"><span class="pre">CONFIGURE</span></code> permission is necessary to call this RPC.</div>
+<div class="line"><br /></div>
+<div class="line">Sets payload information.</div>
+<div class="line">This needs to be configured so that the controller can take into account the presence of the payload while computing the kinematics of the robot.</div>
+<div class="line">The arm must not be in an Unrecoverable Fault state to set the payload information.</div>
+<div class="line">This RPC will also error with a WRONG_MODE error if a program is playing when it’s called.</div>
+<div class="line"><br /></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>payloadinformation</strong> (<a class="reference internal" href="../Messages/ControlConfig.html#controlconfigpayloadinformation"><span class="std std-ref">PayloadInformation</span></a>) – </p></li>
+<li><p><strong>deviceId</strong> (<em>int</em>) – Device’s Id called by rpc (optional)</p></li>
+<li><p><strong>options</strong> (<a class="reference internal" href="../../RouterClient.html#kortex_api.RouterClient.RouterClientSendOptions" title="kortex_api.RouterClient.RouterClientSendOptions"><em>RouterClientSendOptions</em></a>) – Router options for sending the message</p></li>
+</ul>
+</dd>
+</dl>
+<span class="target" id="controlconfigclientgetpayloadinformation"></span></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kortex_api.autogen.ControlConfigClient.GetPayloadInformation">
+<span class="sig-name descname"><span class="pre">GetPayloadInformation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">deviceId</span> <span class="pre">=</span> <span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">options</span> <span class="pre">=</span> <span class="pre">RouterClientSendOptions()</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kortex_api.autogen.ControlConfigClient.GetPayloadInformation" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line">The <code class="docutils literal notranslate"><span class="pre">READ_ONLY</span></code> permission is necessary to call this RPC.</div>
+<div class="line"><br /></div>
+<div class="line">Retrieves payload information</div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>deviceId</strong> (<em>int</em>) – Device’s Id called by rpc (optional)</p></li>
+<li><p><strong>options</strong> (<a class="reference internal" href="../../RouterClient.html#kortex_api.RouterClient.RouterClientSendOptions" title="kortex_api.RouterClient.RouterClientSendOptions"><em>RouterClientSendOptions</em></a>) – Router options for sending the message</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="../Messages/ControlConfig.html#kortex_api.autogen.PayloadInformation" title="kortex_api.autogen.PayloadInformation">PayloadInformation</a></p>
+</dd>
+</dl>
+<span class="target" id="controlconfigclientgettoolconfiguration"></span></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kortex_api.autogen.ControlConfigClient.GetToolConfiguration">
+<span class="sig-name descname"><span class="pre">GetToolConfiguration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">deviceId</span> <span class="pre">=</span> <span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">options</span> <span class="pre">=</span> <span class="pre">RouterClientSendOptions()</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kortex_api.autogen.ControlConfigClient.GetToolConfiguration" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line">The <code class="docutils literal notranslate"><span class="pre">READ_ONLY</span></code> permission is necessary to call this RPC.</div>
+<div class="line"><br /></div>
+<div class="line">Retrieves the tool configuration</div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>deviceId</strong> (<em>int</em>) – Device’s Id called by rpc (optional)</p></li>
+<li><p><strong>options</strong> (<a class="reference internal" href="../../RouterClient.html#kortex_api.RouterClient.RouterClientSendOptions" title="kortex_api.RouterClient.RouterClientSendOptions"><em>RouterClientSendOptions</em></a>) – Router options for sending the message</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="../Messages/ControlConfig.html#kortex_api.autogen.ToolConfiguration" title="kortex_api.autogen.ToolConfiguration">ToolConfiguration</a></p>
+</dd>
+</dl>
+<span class="target" id="onnotificationcontrolconfigclientcontrolconfigurationtopic"></span></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kortex_api.autogen.ControlConfigClient.OnNotificationControlConfigurationTopic">
+<span class="sig-name descname"><span class="pre">OnNotificationControlConfigurationTopic</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">callback</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">notificationoptions</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kortex_api.autogen.ControlConfigClient.OnNotificationControlConfigurationTopic" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line">The <code class="docutils literal notranslate"><span class="pre">READ_ONLY</span></code> permission is necessary to call this RPC.</div>
+<div class="line"><br /></div>
+<div class="line">Subscribes to control configuration notifications</div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>callback</strong> (<em>function</em>) – Function callback taking a <a class="reference internal" href="../Messages/ControlConfig.html#kortex_api.autogen.ControlConfigurationNotification" title="kortex_api.autogen.ControlConfigurationNotification"><code class="xref py py-class docutils literal notranslate"><span class="pre">ControlConfigurationNotification</span></code></a> as only argument, and returning <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p></li>
+<li><p><strong>notificationoptions</strong> (<a class="reference internal" href="../Messages/Common.html#kortex_api.autogen.NotificationOptions" title="kortex_api.autogen.NotificationOptions"><em>NotificationOptions</em></a>) – Notification options</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="../Messages/Common.html#kortex_api.autogen.NotificationHandle" title="kortex_api.autogen.NotificationHandle">NotificationHandle</a></p>
+</dd>
+</dl>
+<span class="target" id="controlconfigclientunsubscribe"></span></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kortex_api.autogen.ControlConfigClient.Unsubscribe">
+<span class="sig-name descname"><span class="pre">Unsubscribe</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">notificationhandle</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">deviceId</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">options</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">RouterClientSendOptions()</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kortex_api.autogen.ControlConfigClient.Unsubscribe" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line">The <code class="docutils literal notranslate"><span class="pre">CONFIGURE</span></code> permission is necessary to call this RPC.</div>
+<div class="line"><br /></div>
+<div class="line">Unsubscribes client from receiving specified type of notifications</div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>notificationhandle</strong> (<a class="reference internal" href="../Messages/Common.html#commonnotificationhandle"><span class="std std-ref">NotificationHandle</span></a>) – </p></li>
+<li><p><strong>deviceId</strong> (<em>int</em>) – Device’s Id called by rpc (optional)</p></li>
+<li><p><strong>options</strong> (<a class="reference internal" href="../../RouterClient.html#kortex_api.RouterClient.RouterClientSendOptions" title="kortex_api.RouterClient.RouterClientSendOptions"><em>RouterClientSendOptions</em></a>) – Router options for sending the message</p></li>
+</ul>
+</dd>
+</dl>
+<span class="target" id="controlconfigclientsetcartesianreferenceframe"></span></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kortex_api.autogen.ControlConfigClient.SetCartesianReferenceFrame">
+<span class="sig-name descname"><span class="pre">SetCartesianReferenceFrame</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cartesianreferenceframeinfo</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">deviceId</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">options</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">RouterClientSendOptions()</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kortex_api.autogen.ControlConfigClient.SetCartesianReferenceFrame" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line">The <code class="docutils literal notranslate"><span class="pre">CONFIGURE</span></code> permission is necessary to call this RPC.</div>
+<div class="line"><br /></div>
+<div class="line">Defines the reference frame to use with twist commands</div>
+<div class="line">The arm must be powered on to set the reference frame.</div>
+<div class="line"><br /></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>cartesianreferenceframeinfo</strong> (<a class="reference internal" href="../Messages/ControlConfig.html#controlconfigcartesianreferenceframeinfo"><span class="std std-ref">CartesianReferenceFrameInfo</span></a>) – </p></li>
+<li><p><strong>deviceId</strong> (<em>int</em>) – Device’s Id called by rpc (optional)</p></li>
+<li><p><strong>options</strong> (<a class="reference internal" href="../../RouterClient.html#kortex_api.RouterClient.RouterClientSendOptions" title="kortex_api.RouterClient.RouterClientSendOptions"><em>RouterClientSendOptions</em></a>) – Router options for sending the message</p></li>
+</ul>
+</dd>
+</dl>
+<span class="target" id="controlconfigclientgetcartesianreferenceframe"></span></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kortex_api.autogen.ControlConfigClient.GetCartesianReferenceFrame">
+<span class="sig-name descname"><span class="pre">GetCartesianReferenceFrame</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">deviceId</span> <span class="pre">=</span> <span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">options</span> <span class="pre">=</span> <span class="pre">RouterClientSendOptions()</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kortex_api.autogen.ControlConfigClient.GetCartesianReferenceFrame" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line">The <code class="docutils literal notranslate"><span class="pre">READ_ONLY</span></code> permission is necessary to call this RPC.</div>
+<div class="line"><br /></div>
+<div class="line">Retrieves the current reference frame used by the twist commands</div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>deviceId</strong> (<em>int</em>) – Device’s Id called by rpc (optional)</p></li>
+<li><p><strong>options</strong> (<a class="reference internal" href="../../RouterClient.html#kortex_api.RouterClient.RouterClientSendOptions" title="kortex_api.RouterClient.RouterClientSendOptions"><em>RouterClientSendOptions</em></a>) – Router options for sending the message</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="../Messages/ControlConfig.html#kortex_api.autogen.CartesianReferenceFrameInfo" title="kortex_api.autogen.CartesianReferenceFrameInfo">CartesianReferenceFrameInfo</a></p>
+</dd>
+</dl>
+<span class="target" id="controlconfigclientsetlockedcartesianaxes"></span></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kortex_api.autogen.ControlConfigClient.SetLockedCartesianAxes">
+<span class="sig-name descname"><span class="pre">SetLockedCartesianAxes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">axislockconfig</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">deviceId</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">options</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">RouterClientSendOptions()</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kortex_api.autogen.ControlConfigClient.SetLockedCartesianAxes" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line">The <code class="docutils literal notranslate"><span class="pre">CONFIGURE</span></code> permission is necessary to call this RPC.</div>
+<div class="line"><br /></div>
+<div class="line">Apply or remove a lock on some axis.</div>
+<div class="line">control_mode must be CARTESIAN_HAND_GUIDING.</div>
+<div class="line">translation.reference_frame must be CARTESIAN_REFERENCE_FRAME_TOOL or CARTESIAN_REFERENCE_FRAME_BASE.</div>
+<div class="line">orientation.reference_frame must be CARTESIAN_REFERENCE_FRAME_TOOL or CARTESIAN_REFERENCE_FRAME_BASE.</div>
+<div class="line">Both the translation and the orientation reference frames must be supplied and valid.</div>
+<div class="line">translation.axes must contain 0 to 3 vectors. If more than one vector is provided, they must all be perpendicular.</div>
+<div class="line">orientation.axes must contain 0 to 3 vectors. If more than one vector is provided, they must all be perpendicular.</div>
+<div class="line"><br /></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>axislockconfig</strong> (<a class="reference internal" href="../Messages/ControlConfig.html#controlconfigaxislockconfig"><span class="std std-ref">AxisLockConfig</span></a>) – </p></li>
+<li><p><strong>deviceId</strong> (<em>int</em>) – Device’s Id called by rpc (optional)</p></li>
+<li><p><strong>options</strong> (<a class="reference internal" href="../../RouterClient.html#kortex_api.RouterClient.RouterClientSendOptions" title="kortex_api.RouterClient.RouterClientSendOptions"><em>RouterClientSendOptions</em></a>) – Router options for sending the message</p></li>
+</ul>
+</dd>
+</dl>
+<span class="target" id="controlconfigclientgetlockedcartesianaxes"></span></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kortex_api.autogen.ControlConfigClient.GetLockedCartesianAxes">
+<span class="sig-name descname"><span class="pre">GetLockedCartesianAxes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">controlmodeinformation</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">deviceId</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">options</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">RouterClientSendOptions()</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kortex_api.autogen.ControlConfigClient.GetLockedCartesianAxes" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line">The <code class="docutils literal notranslate"><span class="pre">READ_ONLY</span></code> permission is necessary to call this RPC.</div>
+<div class="line"><br /></div>
+<div class="line">Retrieves the locked axis status.</div>
+<div class="line">control_mode must be CARTESIAN_HAND_GUIDING.</div>
+<div class="line"><br /></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>controlmodeinformation</strong> (<a class="reference internal" href="../Messages/ControlConfig.html#controlconfigcontrolmodeinformation"><span class="std std-ref">ControlModeInformation</span></a>) – </p></li>
+<li><p><strong>deviceId</strong> (<em>int</em>) – Device’s Id called by rpc (optional)</p></li>
+<li><p><strong>options</strong> (<a class="reference internal" href="../../RouterClient.html#kortex_api.RouterClient.RouterClientSendOptions" title="kortex_api.RouterClient.RouterClientSendOptions"><em>RouterClientSendOptions</em></a>) – Router options for sending the message</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="../Messages/ControlConfig.html#kortex_api.autogen.AxisLockConfig" title="kortex_api.autogen.AxisLockConfig">AxisLockConfig</a></p>
+</dd>
+</dl>
+<span class="target" id="controlconfigclientgetcontrolmode"></span></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kortex_api.autogen.ControlConfigClient.GetControlMode">
+<span class="sig-name descname"><span class="pre">GetControlMode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">deviceId</span> <span class="pre">=</span> <span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">options</span> <span class="pre">=</span> <span class="pre">RouterClientSendOptions()</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kortex_api.autogen.ControlConfigClient.GetControlMode" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line">The <code class="docutils literal notranslate"><span class="pre">READ_ONLY</span></code> permission is necessary to call this RPC.</div>
+<div class="line"><br /></div>
+<div class="line">Retrieves current control mode</div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>deviceId</strong> (<em>int</em>) – Device’s Id called by rpc (optional)</p></li>
+<li><p><strong>options</strong> (<a class="reference internal" href="../../RouterClient.html#kortex_api.RouterClient.RouterClientSendOptions" title="kortex_api.RouterClient.RouterClientSendOptions"><em>RouterClientSendOptions</em></a>) – Router options for sending the message</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="../Messages/ControlConfig.html#kortex_api.autogen.ControlModeInformation" title="kortex_api.autogen.ControlModeInformation">ControlModeInformation</a></p>
+</dd>
+</dl>
+<span class="target" id="controlconfigclientsetjointspeedsoftlimits"></span></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kortex_api.autogen.ControlConfigClient.SetJointSpeedSoftLimits">
+<span class="sig-name descname"><span class="pre">SetJointSpeedSoftLimits</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">jointspeedsoftlimits</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">deviceId</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">options</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">RouterClientSendOptions()</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kortex_api.autogen.ControlConfigClient.SetJointSpeedSoftLimits" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line">The <a href="#id1"><span class="problematic" id="id2">``</span></a>`` permission is necessary to call this RPC.</div>
+<div class="line"><br /></div>
+<div class="line">Set the software joint speed limits.</div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>jointspeedsoftlimits</strong> (<a class="reference internal" href="../Messages/ControlConfig.html#controlconfigjointspeedsoftlimits"><span class="std std-ref">JointSpeedSoftLimits</span></a>) – </p></li>
+<li><p><strong>deviceId</strong> (<em>int</em>) – Device’s Id called by rpc (optional)</p></li>
+<li><p><strong>options</strong> (<a class="reference internal" href="../../RouterClient.html#kortex_api.RouterClient.RouterClientSendOptions" title="kortex_api.RouterClient.RouterClientSendOptions"><em>RouterClientSendOptions</em></a>) – Router options for sending the message</p></li>
+</ul>
+</dd>
+</dl>
+<span class="target" id="controlconfigclientsettwistlinearsoftlimit"></span></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kortex_api.autogen.ControlConfigClient.SetTwistLinearSoftLimit">
+<span class="sig-name descname"><span class="pre">SetTwistLinearSoftLimit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">twistlinearsoftlimit</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">deviceId</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">options</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">RouterClientSendOptions()</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kortex_api.autogen.ControlConfigClient.SetTwistLinearSoftLimit" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line">The <a href="#id3"><span class="problematic" id="id4">``</span></a>`` permission is necessary to call this RPC.</div>
+<div class="line"><br /></div>
+<div class="line">Set the software twist linear limit.</div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>twistlinearsoftlimit</strong> (<a class="reference internal" href="../Messages/ControlConfig.html#controlconfigtwistlinearsoftlimit"><span class="std std-ref">TwistLinearSoftLimit</span></a>) – </p></li>
+<li><p><strong>deviceId</strong> (<em>int</em>) – Device’s Id called by rpc (optional)</p></li>
+<li><p><strong>options</strong> (<a class="reference internal" href="../../RouterClient.html#kortex_api.RouterClient.RouterClientSendOptions" title="kortex_api.RouterClient.RouterClientSendOptions"><em>RouterClientSendOptions</em></a>) – Router options for sending the message</p></li>
+</ul>
+</dd>
+</dl>
+<span class="target" id="controlconfigclientsettwistangularsoftlimit"></span></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kortex_api.autogen.ControlConfigClient.SetTwistAngularSoftLimit">
+<span class="sig-name descname"><span class="pre">SetTwistAngularSoftLimit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">twistangularsoftlimit</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">deviceId</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">options</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">RouterClientSendOptions()</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kortex_api.autogen.ControlConfigClient.SetTwistAngularSoftLimit" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line">The <a href="#id5"><span class="problematic" id="id6">``</span></a>`` permission is necessary to call this RPC.</div>
+<div class="line"><br /></div>
+<div class="line">Set the software twist angular limit.</div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>twistangularsoftlimit</strong> (<a class="reference internal" href="../Messages/ControlConfig.html#controlconfigtwistangularsoftlimit"><span class="std std-ref">TwistAngularSoftLimit</span></a>) – </p></li>
+<li><p><strong>deviceId</strong> (<em>int</em>) – Device’s Id called by rpc (optional)</p></li>
+<li><p><strong>options</strong> (<a class="reference internal" href="../../RouterClient.html#kortex_api.RouterClient.RouterClientSendOptions" title="kortex_api.RouterClient.RouterClientSendOptions"><em>RouterClientSendOptions</em></a>) – Router options for sending the message</p></li>
+</ul>
+</dd>
+</dl>
+<span class="target" id="controlconfigclientsetjointaccelerationsoftlimits"></span></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kortex_api.autogen.ControlConfigClient.SetJointAccelerationSoftLimits">
+<span class="sig-name descname"><span class="pre">SetJointAccelerationSoftLimits</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">jointaccelerationsoftlimits</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">deviceId</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">options</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">RouterClientSendOptions()</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kortex_api.autogen.ControlConfigClient.SetJointAccelerationSoftLimits" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line">The <a href="#id7"><span class="problematic" id="id8">``</span></a>`` permission is necessary to call this RPC.</div>
+<div class="line"><br /></div>
+<div class="line">Set the software joint acceleration limits.</div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>jointaccelerationsoftlimits</strong> (<a class="reference internal" href="../Messages/ControlConfig.html#controlconfigjointaccelerationsoftlimits"><span class="std std-ref">JointAccelerationSoftLimits</span></a>) – </p></li>
+<li><p><strong>deviceId</strong> (<em>int</em>) – Device’s Id called by rpc (optional)</p></li>
+<li><p><strong>options</strong> (<a class="reference internal" href="../../RouterClient.html#kortex_api.RouterClient.RouterClientSendOptions" title="kortex_api.RouterClient.RouterClientSendOptions"><em>RouterClientSendOptions</em></a>) – Router options for sending the message</p></li>
+</ul>
+</dd>
+</dl>
+<span class="target" id="controlconfigclientgetkinematichardlimits"></span></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kortex_api.autogen.ControlConfigClient.GetKinematicHardLimits">
+<span class="sig-name descname"><span class="pre">GetKinematicHardLimits</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">deviceId</span> <span class="pre">=</span> <span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">options</span> <span class="pre">=</span> <span class="pre">RouterClientSendOptions()</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kortex_api.autogen.ControlConfigClient.GetKinematicHardLimits" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line">The <code class="docutils literal notranslate"><span class="pre">READ_ONLY</span></code> permission is necessary to call this RPC.</div>
+<div class="line"><br /></div>
+<div class="line">Retrieves angular and twist hard limits.</div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>deviceId</strong> (<em>int</em>) – Device’s Id called by rpc (optional)</p></li>
+<li><p><strong>options</strong> (<a class="reference internal" href="../../RouterClient.html#kortex_api.RouterClient.RouterClientSendOptions" title="kortex_api.RouterClient.RouterClientSendOptions"><em>RouterClientSendOptions</em></a>) – Router options for sending the message</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="../Messages/ControlConfig.html#kortex_api.autogen.KinematicLimits" title="kortex_api.autogen.KinematicLimits">KinematicLimits</a></p>
+</dd>
+</dl>
+<span class="target" id="controlconfigclientsetdesiredlineartwist"></span></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kortex_api.autogen.ControlConfigClient.SetDesiredLinearTwist">
+<span class="sig-name descname"><span class="pre">SetDesiredLinearTwist</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">lineartwist</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">deviceId</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">options</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">RouterClientSendOptions()</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kortex_api.autogen.ControlConfigClient.SetDesiredLinearTwist" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line">The <code class="docutils literal notranslate"><span class="pre">CONFIGURE</span></code> permission is necessary to call this RPC.</div>
+<div class="line"><br /></div>
+<div class="line">Sets the desired linear twist when jogging the robot</div>
+<div class="line">A VALUE_ABOVE_MAXIMUM error will be raised if the twist value is above 1.6 m/s.</div>
+<div class="line"><br /></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>lineartwist</strong> (<a class="reference internal" href="../Messages/ControlConfig.html#controlconfiglineartwist"><span class="std std-ref">LinearTwist</span></a>) – </p></li>
+<li><p><strong>deviceId</strong> (<em>int</em>) – Device’s Id called by rpc (optional)</p></li>
+<li><p><strong>options</strong> (<a class="reference internal" href="../../RouterClient.html#kortex_api.RouterClient.RouterClientSendOptions" title="kortex_api.RouterClient.RouterClientSendOptions"><em>RouterClientSendOptions</em></a>) – Router options for sending the message</p></li>
+</ul>
+</dd>
+</dl>
+<span class="target" id="controlconfigclientsetdesiredangulartwist"></span></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kortex_api.autogen.ControlConfigClient.SetDesiredAngularTwist">
+<span class="sig-name descname"><span class="pre">SetDesiredAngularTwist</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">angulartwist</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">deviceId</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">options</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">RouterClientSendOptions()</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kortex_api.autogen.ControlConfigClient.SetDesiredAngularTwist" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line">The <code class="docutils literal notranslate"><span class="pre">CONFIGURE</span></code> permission is necessary to call this RPC.</div>
+<div class="line"><br /></div>
+<div class="line">Sets the desired angular twist when jogging the robot</div>
+<div class="line">A VALUE_ABOVE_MAXIMUM error will be raised if the twist value is above 142.5 deg/s.</div>
+<div class="line"><br /></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>angulartwist</strong> (<a class="reference internal" href="../Messages/ControlConfig.html#controlconfigangulartwist"><span class="std std-ref">AngularTwist</span></a>) – </p></li>
+<li><p><strong>deviceId</strong> (<em>int</em>) – Device’s Id called by rpc (optional)</p></li>
+<li><p><strong>options</strong> (<a class="reference internal" href="../../RouterClient.html#kortex_api.RouterClient.RouterClientSendOptions" title="kortex_api.RouterClient.RouterClientSendOptions"><em>RouterClientSendOptions</em></a>) – Router options for sending the message</p></li>
+</ul>
+</dd>
+</dl>
+<span class="target" id="controlconfigclientsetdesiredjointspeeds"></span></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kortex_api.autogen.ControlConfigClient.SetDesiredJointSpeeds">
+<span class="sig-name descname"><span class="pre">SetDesiredJointSpeeds</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">jointspeeds</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">deviceId</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">options</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">RouterClientSendOptions()</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kortex_api.autogen.ControlConfigClient.SetDesiredJointSpeeds" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line">The <code class="docutils literal notranslate"><span class="pre">CONFIGURE</span></code> permission is necessary to call this RPC.</div>
+<div class="line"><br /></div>
+<div class="line">Sets the desired joint speeds when jogging in angular mode.</div>
+<div class="line">A VALUE_ABOVE_MAXIMUM error will be raised if any of the joint speeds is above its limit.</div>
+<div class="line">The size of the joint_speed parameter must be equal to the number of actuators.</div>
+<div class="line"><br /></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>jointspeeds</strong> (<a class="reference internal" href="../Messages/ControlConfig.html#controlconfigjointspeeds"><span class="std std-ref">JointSpeeds</span></a>) – </p></li>
+<li><p><strong>deviceId</strong> (<em>int</em>) – Device’s Id called by rpc (optional)</p></li>
+<li><p><strong>options</strong> (<a class="reference internal" href="../../RouterClient.html#kortex_api.RouterClient.RouterClientSendOptions" title="kortex_api.RouterClient.RouterClientSendOptions"><em>RouterClientSendOptions</em></a>) – Router options for sending the message</p></li>
+</ul>
+</dd>
+</dl>
+<span class="target" id="controlconfigclientgetdesiredspeeds"></span></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kortex_api.autogen.ControlConfigClient.GetDesiredSpeeds">
+<span class="sig-name descname"><span class="pre">GetDesiredSpeeds</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">deviceId</span> <span class="pre">=</span> <span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">options</span> <span class="pre">=</span> <span class="pre">RouterClientSendOptions()</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kortex_api.autogen.ControlConfigClient.GetDesiredSpeeds" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line">The <code class="docutils literal notranslate"><span class="pre">READ_ONLY</span></code> permission is necessary to call this RPC.</div>
+<div class="line"><br /></div>
+<div class="line">Retrieves the desired joystick speeds</div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>deviceId</strong> (<em>int</em>) – Device’s Id called by rpc (optional)</p></li>
+<li><p><strong>options</strong> (<a class="reference internal" href="../../RouterClient.html#kortex_api.RouterClient.RouterClientSendOptions" title="kortex_api.RouterClient.RouterClientSendOptions"><em>RouterClientSendOptions</em></a>) – Router options for sending the message</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="../Messages/ControlConfig.html#kortex_api.autogen.DesiredSpeeds" title="kortex_api.autogen.DesiredSpeeds">DesiredSpeeds</a></p>
+</dd>
+</dl>
+<span class="target" id="controlconfigclientresetgravityvector"></span></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kortex_api.autogen.ControlConfigClient.ResetGravityVector">
+<span class="sig-name descname"><span class="pre">ResetGravityVector</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">deviceId</span> <span class="pre">=</span> <span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">options</span> <span class="pre">=</span> <span class="pre">RouterClientSendOptions()</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kortex_api.autogen.ControlConfigClient.ResetGravityVector" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line">The <code class="docutils literal notranslate"><span class="pre">CONFIGURE</span></code> permission is necessary to call this RPC.</div>
+<div class="line"><br /></div>
+<div class="line">Resets gravity vector to default values.</div>
+<div class="line">The arm must be powered off and not be in an Unrecoverable Fault state, or powered on and be in Monitored Stop state to set the gravity vector.</div>
+<div class="line">The default values are (x = 0, y = 0, z = -9.81).</div>
+<div class="line"><br /></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>deviceId</strong> (<em>int</em>) – Device’s Id called by rpc (optional)</p></li>
+<li><p><strong>options</strong> (<a class="reference internal" href="../../RouterClient.html#kortex_api.RouterClient.RouterClientSendOptions" title="kortex_api.RouterClient.RouterClientSendOptions"><em>RouterClientSendOptions</em></a>) – Router options for sending the message</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="../Messages/ControlConfig.html#kortex_api.autogen.GravityVector" title="kortex_api.autogen.GravityVector">GravityVector</a></p>
+</dd>
+</dl>
+<span class="target" id="controlconfigclientresetpayloadinformation"></span></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kortex_api.autogen.ControlConfigClient.ResetPayloadInformation">
+<span class="sig-name descname"><span class="pre">ResetPayloadInformation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">deviceId</span> <span class="pre">=</span> <span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">options</span> <span class="pre">=</span> <span class="pre">RouterClientSendOptions()</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kortex_api.autogen.ControlConfigClient.ResetPayloadInformation" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line">The <code class="docutils literal notranslate"><span class="pre">CONFIGURE</span></code> permission is necessary to call this RPC.</div>
+<div class="line"><br /></div>
+<div class="line">Resets payload information to default values.</div>
+<div class="line">This needs to be configured so that the controller can take into account the presence of the payload in computing the dynamics of the robot.</div>
+<div class="line">The arm must not be in an Unrecoverable Fault state to set the payload information.</div>
+<div class="line">This RPC will also error with a WRONG_MODE error if a program is playing when it’s called.</div>
+<div class="line"><br /></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>deviceId</strong> (<em>int</em>) – Device’s Id called by rpc (optional)</p></li>
+<li><p><strong>options</strong> (<a class="reference internal" href="../../RouterClient.html#kortex_api.RouterClient.RouterClientSendOptions" title="kortex_api.RouterClient.RouterClientSendOptions"><em>RouterClientSendOptions</em></a>) – Router options for sending the message</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="../Messages/ControlConfig.html#kortex_api.autogen.PayloadInformation" title="kortex_api.autogen.PayloadInformation">PayloadInformation</a></p>
+</dd>
+</dl>
+<span class="target" id="controlconfigclientresetjointspeedsoftlimits"></span></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kortex_api.autogen.ControlConfigClient.ResetJointSpeedSoftLimits">
+<span class="sig-name descname"><span class="pre">ResetJointSpeedSoftLimits</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">controlmodeinformation</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">deviceId</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">options</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">RouterClientSendOptions()</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kortex_api.autogen.ControlConfigClient.ResetJointSpeedSoftLimits" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line">The <a href="#id9"><span class="problematic" id="id10">``</span></a>`` permission is necessary to call this RPC.</div>
+<div class="line"><br /></div>
+<div class="line">Resets joint speed soft limits to default values</div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>controlmodeinformation</strong> (<a class="reference internal" href="../Messages/ControlConfig.html#controlconfigcontrolmodeinformation"><span class="std std-ref">ControlModeInformation</span></a>) – </p></li>
+<li><p><strong>deviceId</strong> (<em>int</em>) – Device’s Id called by rpc (optional)</p></li>
+<li><p><strong>options</strong> (<a class="reference internal" href="../../RouterClient.html#kortex_api.RouterClient.RouterClientSendOptions" title="kortex_api.RouterClient.RouterClientSendOptions"><em>RouterClientSendOptions</em></a>) – Router options for sending the message</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="../Messages/ControlConfig.html#kortex_api.autogen.JointSpeedSoftLimits" title="kortex_api.autogen.JointSpeedSoftLimits">JointSpeedSoftLimits</a></p>
+</dd>
+</dl>
+<span class="target" id="controlconfigclientresettwistlinearsoftlimit"></span></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kortex_api.autogen.ControlConfigClient.ResetTwistLinearSoftLimit">
+<span class="sig-name descname"><span class="pre">ResetTwistLinearSoftLimit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">controlmodeinformation</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">deviceId</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">options</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">RouterClientSendOptions()</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kortex_api.autogen.ControlConfigClient.ResetTwistLinearSoftLimit" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line">The <a href="#id11"><span class="problematic" id="id12">``</span></a>`` permission is necessary to call this RPC.</div>
+<div class="line"><br /></div>
+<div class="line">Resets twist linear soft limit to default value</div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>controlmodeinformation</strong> (<a class="reference internal" href="../Messages/ControlConfig.html#controlconfigcontrolmodeinformation"><span class="std std-ref">ControlModeInformation</span></a>) – </p></li>
+<li><p><strong>deviceId</strong> (<em>int</em>) – Device’s Id called by rpc (optional)</p></li>
+<li><p><strong>options</strong> (<a class="reference internal" href="../../RouterClient.html#kortex_api.RouterClient.RouterClientSendOptions" title="kortex_api.RouterClient.RouterClientSendOptions"><em>RouterClientSendOptions</em></a>) – Router options for sending the message</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="../Messages/ControlConfig.html#kortex_api.autogen.TwistLinearSoftLimit" title="kortex_api.autogen.TwistLinearSoftLimit">TwistLinearSoftLimit</a></p>
+</dd>
+</dl>
+<span class="target" id="controlconfigclientresettwistangularsoftlimit"></span></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kortex_api.autogen.ControlConfigClient.ResetTwistAngularSoftLimit">
+<span class="sig-name descname"><span class="pre">ResetTwistAngularSoftLimit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">controlmodeinformation</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">deviceId</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">options</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">RouterClientSendOptions()</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kortex_api.autogen.ControlConfigClient.ResetTwistAngularSoftLimit" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line">The <a href="#id13"><span class="problematic" id="id14">``</span></a>`` permission is necessary to call this RPC.</div>
+<div class="line"><br /></div>
+<div class="line">Resets twist angular soft limit to default value</div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>controlmodeinformation</strong> (<a class="reference internal" href="../Messages/ControlConfig.html#controlconfigcontrolmodeinformation"><span class="std std-ref">ControlModeInformation</span></a>) – </p></li>
+<li><p><strong>deviceId</strong> (<em>int</em>) – Device’s Id called by rpc (optional)</p></li>
+<li><p><strong>options</strong> (<a class="reference internal" href="../../RouterClient.html#kortex_api.RouterClient.RouterClientSendOptions" title="kortex_api.RouterClient.RouterClientSendOptions"><em>RouterClientSendOptions</em></a>) – Router options for sending the message</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="../Messages/ControlConfig.html#kortex_api.autogen.TwistAngularSoftLimit" title="kortex_api.autogen.TwistAngularSoftLimit">TwistAngularSoftLimit</a></p>
+</dd>
+</dl>
+<span class="target" id="controlconfigclientresetjointaccelerationsoftlimits"></span></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kortex_api.autogen.ControlConfigClient.ResetJointAccelerationSoftLimits">
+<span class="sig-name descname"><span class="pre">ResetJointAccelerationSoftLimits</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">controlmodeinformation</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">deviceId</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">options</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">RouterClientSendOptions()</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kortex_api.autogen.ControlConfigClient.ResetJointAccelerationSoftLimits" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line">The <a href="#id15"><span class="problematic" id="id16">``</span></a>`` permission is necessary to call this RPC.</div>
+<div class="line"><br /></div>
+<div class="line">Resets joint acceleration soft limits to default values</div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>controlmodeinformation</strong> (<a class="reference internal" href="../Messages/ControlConfig.html#controlconfigcontrolmodeinformation"><span class="std std-ref">ControlModeInformation</span></a>) – </p></li>
+<li><p><strong>deviceId</strong> (<em>int</em>) – Device’s Id called by rpc (optional)</p></li>
+<li><p><strong>options</strong> (<a class="reference internal" href="../../RouterClient.html#kortex_api.RouterClient.RouterClientSendOptions" title="kortex_api.RouterClient.RouterClientSendOptions"><em>RouterClientSendOptions</em></a>) – Router options for sending the message</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="../Messages/ControlConfig.html#kortex_api.autogen.JointAccelerationSoftLimits" title="kortex_api.autogen.JointAccelerationSoftLimits">JointAccelerationSoftLimits</a></p>
+</dd>
+</dl>
+<span class="target" id="onnotificationcontrolconfigclientcontrolmodetopic"></span></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kortex_api.autogen.ControlConfigClient.OnNotificationControlModeTopic">
+<span class="sig-name descname"><span class="pre">OnNotificationControlModeTopic</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">callback</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">notificationoptions</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kortex_api.autogen.ControlConfigClient.OnNotificationControlModeTopic" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line">The <code class="docutils literal notranslate"><span class="pre">READ_ONLY</span></code> permission is necessary to call this RPC.</div>
+<div class="line"><br /></div>
+<div class="line">Subscribes to control mode topic for notifications</div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>callback</strong> (<em>function</em>) – Function callback taking a <a class="reference internal" href="../Messages/ControlConfig.html#kortex_api.autogen.ControlModeNotification" title="kortex_api.autogen.ControlModeNotification"><code class="xref py py-class docutils literal notranslate"><span class="pre">ControlModeNotification</span></code></a> as only argument, and returning <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p></li>
+<li><p><strong>notificationoptions</strong> (<a class="reference internal" href="../Messages/Common.html#kortex_api.autogen.NotificationOptions" title="kortex_api.autogen.NotificationOptions"><em>NotificationOptions</em></a>) – Notification options</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="../Messages/Common.html#kortex_api.autogen.NotificationHandle" title="kortex_api.autogen.NotificationHandle">NotificationHandle</a></p>
+</dd>
+</dl>
+<span class="target" id="controlconfigclientsetjointpositionsoftlimits"></span></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kortex_api.autogen.ControlConfigClient.SetJointPositionSoftLimits">
+<span class="sig-name descname"><span class="pre">SetJointPositionSoftLimits</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">jointpositionsoftlimits</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">deviceId</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">options</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">RouterClientSendOptions()</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kortex_api.autogen.ControlConfigClient.SetJointPositionSoftLimits" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line">The <a href="#id17"><span class="problematic" id="id18">``</span></a>`` permission is necessary to call this RPC.</div>
+<div class="line"><br /></div>
+<div class="line">Set the software joint position limits.</div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>jointpositionsoftlimits</strong> (<a class="reference internal" href="../Messages/ControlConfig.html#controlconfigjointpositionsoftlimits"><span class="std std-ref">JointPositionSoftLimits</span></a>) – </p></li>
+<li><p><strong>deviceId</strong> (<em>int</em>) – Device’s Id called by rpc (optional)</p></li>
+<li><p><strong>options</strong> (<a class="reference internal" href="../../RouterClient.html#kortex_api.RouterClient.RouterClientSendOptions" title="kortex_api.RouterClient.RouterClientSendOptions"><em>RouterClientSendOptions</em></a>) – Router options for sending the message</p></li>
+</ul>
+</dd>
+</dl>
+<span class="target" id="controlconfigclientresetjointpositionsoftlimits"></span></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kortex_api.autogen.ControlConfigClient.ResetJointPositionSoftLimits">
+<span class="sig-name descname"><span class="pre">ResetJointPositionSoftLimits</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">controlmodeinformation</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">deviceId</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">options</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">RouterClientSendOptions()</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kortex_api.autogen.ControlConfigClient.ResetJointPositionSoftLimits" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line">The <a href="#id19"><span class="problematic" id="id20">``</span></a>`` permission is necessary to call this RPC.</div>
+<div class="line"><br /></div>
+<div class="line">Resets joint position soft limits to default values</div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>controlmodeinformation</strong> (<a class="reference internal" href="../Messages/ControlConfig.html#controlconfigcontrolmodeinformation"><span class="std std-ref">ControlModeInformation</span></a>) – </p></li>
+<li><p><strong>deviceId</strong> (<em>int</em>) – Device’s Id called by rpc (optional)</p></li>
+<li><p><strong>options</strong> (<a class="reference internal" href="../../RouterClient.html#kortex_api.RouterClient.RouterClientSendOptions" title="kortex_api.RouterClient.RouterClientSendOptions"><em>RouterClientSendOptions</em></a>) – Router options for sending the message</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="../Messages/ControlConfig.html#kortex_api.autogen.JointPositionSoftLimits" title="kortex_api.autogen.JointPositionSoftLimits">JointPositionSoftLimits</a></p>
+</dd>
+</dl>
+<span class="target" id="controlconfigclientzeroexternalwrenchfromftsensor"></span></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kortex_api.autogen.ControlConfigClient.ZeroExternalWrenchFromFTSensor">
+<span class="sig-name descname"><span class="pre">ZeroExternalWrenchFromFTSensor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">deviceId</span> <span class="pre">=</span> <span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">options</span> <span class="pre">=</span> <span class="pre">RouterClientSendOptions()</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kortex_api.autogen.ControlConfigClient.ZeroExternalWrenchFromFTSensor" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line">The <code class="docutils literal notranslate"><span class="pre">CONFIGURE</span></code> permission is necessary to call this RPC.</div>
+<div class="line"><br /></div>
+<div class="line">Adds a persistent offset to the force torque sensor measurements of external efforts to make them equal to zero.</div>
+<div class="line">This allows to compensate for small measurement errors (for example drift due to temperature).</div>
+<div class="line">The arm must be powered on to set the zero external wrench.</div>
+<div class="line"><br /></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>deviceId</strong> (<em>int</em>) – Device’s Id called by rpc (optional)</p></li>
+<li><p><strong>options</strong> (<a class="reference internal" href="../../RouterClient.html#kortex_api.RouterClient.RouterClientSendOptions" title="kortex_api.RouterClient.RouterClientSendOptions"><em>RouterClientSendOptions</em></a>) – Router options for sending the message</p></li>
+</ul>
+</dd>
+</dl>
+<span class="target" id="controlconfigclientresetexternalwrenchfromftsensor"></span></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kortex_api.autogen.ControlConfigClient.ResetExternalWrenchFromFTSensor">
+<span class="sig-name descname"><span class="pre">ResetExternalWrenchFromFTSensor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">deviceId</span> <span class="pre">=</span> <span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">options</span> <span class="pre">=</span> <span class="pre">RouterClientSendOptions()</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kortex_api.autogen.ControlConfigClient.ResetExternalWrenchFromFTSensor" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line">The <code class="docutils literal notranslate"><span class="pre">CONFIGURE</span></code> permission is necessary to call this RPC.</div>
+<div class="line"><br /></div>
+<div class="line">Resets external wrench from force torque sensor.</div>
+<div class="line">The arm must be powered on to set the zero external wrench.</div>
+<div class="line"><br /></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>deviceId</strong> (<em>int</em>) – Device’s Id called by rpc (optional)</p></li>
+<li><p><strong>options</strong> (<a class="reference internal" href="../../RouterClient.html#kortex_api.RouterClient.RouterClientSendOptions" title="kortex_api.RouterClient.RouterClientSendOptions"><em>RouterClientSendOptions</em></a>) – Router options for sending the message</p></li>
+</ul>
+</dd>
+</dl>
+<span class="target" id="controlconfigclientgettcptranslationspeedsaturation"></span></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kortex_api.autogen.ControlConfigClient.GetTcpTranslationSpeedSaturation">
+<span class="sig-name descname"><span class="pre">GetTcpTranslationSpeedSaturation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">deviceId</span> <span class="pre">=</span> <span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">options</span> <span class="pre">=</span> <span class="pre">RouterClientSendOptions()</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kortex_api.autogen.ControlConfigClient.GetTcpTranslationSpeedSaturation" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line">The <code class="docutils literal notranslate"><span class="pre">READ_ONLY</span></code> permission is necessary to call this RPC.</div>
+<div class="line"><br /></div>
+<div class="line">Gets the tcp translation speed saturation</div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>deviceId</strong> (<em>int</em>) – Device’s Id called by rpc (optional)</p></li>
+<li><p><strong>options</strong> (<a class="reference internal" href="../../RouterClient.html#kortex_api.RouterClient.RouterClientSendOptions" title="kortex_api.RouterClient.RouterClientSendOptions"><em>RouterClientSendOptions</em></a>) – Router options for sending the message</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="../Messages/ControlConfig.html#kortex_api.autogen.LinearTwist" title="kortex_api.autogen.LinearTwist">LinearTwist</a></p>
+</dd>
+</dl>
+<span class="target" id="controlconfigclientgetcollisiondetectionrangeslist"></span></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kortex_api.autogen.ControlConfigClient.GetCollisionDetectionRangesList">
+<span class="sig-name descname"><span class="pre">GetCollisionDetectionRangesList</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">deviceId</span> <span class="pre">=</span> <span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">options</span> <span class="pre">=</span> <span class="pre">RouterClientSendOptions()</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kortex_api.autogen.ControlConfigClient.GetCollisionDetectionRangesList" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line">The <code class="docutils literal notranslate"><span class="pre">READ_ONLY</span></code> permission is necessary to call this RPC.</div>
+<div class="line"><br /></div>
+<div class="line">Retrieves collision detection limits range</div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>deviceId</strong> (<em>int</em>) – Device’s Id called by rpc (optional)</p></li>
+<li><p><strong>options</strong> (<a class="reference internal" href="../../RouterClient.html#kortex_api.RouterClient.RouterClientSendOptions" title="kortex_api.RouterClient.RouterClientSendOptions"><em>RouterClientSendOptions</em></a>) – Router options for sending the message</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="../Messages/ControlConfig.html#kortex_api.autogen.CollisionDetectionRangesList" title="kortex_api.autogen.CollisionDetectionRangesList">CollisionDetectionRangesList</a></p>
+</dd>
+</dl>
+<span class="target" id="controlconfigclientsetallcollisiondetectionlimits"></span></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kortex_api.autogen.ControlConfigClient.SetAllCollisionDetectionLimits">
+<span class="sig-name descname"><span class="pre">SetAllCollisionDetectionLimits</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">collisiondetectionlimitslist</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">deviceId</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">options</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">RouterClientSendOptions()</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kortex_api.autogen.ControlConfigClient.SetAllCollisionDetectionLimits" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line">The <code class="docutils literal notranslate"><span class="pre">CONFIGURE</span></code> permission is necessary to call this RPC.</div>
+<div class="line"><br /></div>
+<div class="line">Sets all collision detection limits and activation mode statuses.</div>
+<div class="line">The arm must be powered off and not be in an Unrecoverable Fault state, or powered on and be in Monitored Stop state to set the limits.</div>
+<div class="line"><br /></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>collisiondetectionlimitslist</strong> (<a class="reference internal" href="../Messages/ControlConfig.html#controlconfigcollisiondetectionlimitslist"><span class="std std-ref">CollisionDetectionLimitsList</span></a>) – </p></li>
+<li><p><strong>deviceId</strong> (<em>int</em>) – Device’s Id called by rpc (optional)</p></li>
+<li><p><strong>options</strong> (<a class="reference internal" href="../../RouterClient.html#kortex_api.RouterClient.RouterClientSendOptions" title="kortex_api.RouterClient.RouterClientSendOptions"><em>RouterClientSendOptions</em></a>) – Router options for sending the message</p></li>
+</ul>
+</dd>
+</dl>
+<span class="target" id="controlconfigclientgetallcollisiondetectionlimits"></span></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kortex_api.autogen.ControlConfigClient.GetAllCollisionDetectionLimits">
+<span class="sig-name descname"><span class="pre">GetAllCollisionDetectionLimits</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">deviceId</span> <span class="pre">=</span> <span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">options</span> <span class="pre">=</span> <span class="pre">RouterClientSendOptions()</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kortex_api.autogen.ControlConfigClient.GetAllCollisionDetectionLimits" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line">The <code class="docutils literal notranslate"><span class="pre">READ_ONLY</span></code> permission is necessary to call this RPC.</div>
+<div class="line"><br /></div>
+<div class="line">Gets all collision detection limits and activation mode statuses</div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>deviceId</strong> (<em>int</em>) – Device’s Id called by rpc (optional)</p></li>
+<li><p><strong>options</strong> (<a class="reference internal" href="../../RouterClient.html#kortex_api.RouterClient.RouterClientSendOptions" title="kortex_api.RouterClient.RouterClientSendOptions"><em>RouterClientSendOptions</em></a>) – Router options for sending the message</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="../Messages/ControlConfig.html#kortex_api.autogen.CollisionDetectionLimitsList" title="kortex_api.autogen.CollisionDetectionLimitsList">CollisionDetectionLimitsList</a></p>
+</dd>
+</dl>
+<span class="target" id="controlconfigclientgetenergylimitsrangeslist"></span></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kortex_api.autogen.ControlConfigClient.GetEnergyLimitsRangesList">
+<span class="sig-name descname"><span class="pre">GetEnergyLimitsRangesList</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">deviceId</span> <span class="pre">=</span> <span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">options</span> <span class="pre">=</span> <span class="pre">RouterClientSendOptions()</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kortex_api.autogen.ControlConfigClient.GetEnergyLimitsRangesList" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line">The <code class="docutils literal notranslate"><span class="pre">READ_ONLY</span></code> permission is necessary to call this RPC.</div>
+<div class="line"><br /></div>
+<div class="line">Retrieves energy limitation ranges</div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>deviceId</strong> (<em>int</em>) – Device’s Id called by rpc (optional)</p></li>
+<li><p><strong>options</strong> (<a class="reference internal" href="../../RouterClient.html#kortex_api.RouterClient.RouterClientSendOptions" title="kortex_api.RouterClient.RouterClientSendOptions"><em>RouterClientSendOptions</em></a>) – Router options for sending the message</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="../Messages/ControlConfig.html#kortex_api.autogen.EnergyLimitsRangesList" title="kortex_api.autogen.EnergyLimitsRangesList">EnergyLimitsRangesList</a></p>
+</dd>
+</dl>
+<span class="target" id="controlconfigclientsetallenergylimits"></span></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kortex_api.autogen.ControlConfigClient.SetAllEnergyLimits">
+<span class="sig-name descname"><span class="pre">SetAllEnergyLimits</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">energylimitslist</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">deviceId</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">options</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">RouterClientSendOptions()</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kortex_api.autogen.ControlConfigClient.SetAllEnergyLimits" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line">The <code class="docutils literal notranslate"><span class="pre">CONFIGURE</span></code> permission is necessary to call this RPC.</div>
+<div class="line"><br /></div>
+<div class="line">Sets all energy limits and activation mode statuses.</div>
+<div class="line">The arm must be powered off and not be in an Unrecoverable Fault state, or powered on and be in Monitored Stop state to set the limits.</div>
+<div class="line"><br /></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>energylimitslist</strong> (<a class="reference internal" href="../Messages/ControlConfig.html#controlconfigenergylimitslist"><span class="std std-ref">EnergyLimitsList</span></a>) – </p></li>
+<li><p><strong>deviceId</strong> (<em>int</em>) – Device’s Id called by rpc (optional)</p></li>
+<li><p><strong>options</strong> (<a class="reference internal" href="../../RouterClient.html#kortex_api.RouterClient.RouterClientSendOptions" title="kortex_api.RouterClient.RouterClientSendOptions"><em>RouterClientSendOptions</em></a>) – Router options for sending the message</p></li>
+</ul>
+</dd>
+</dl>
+<span class="target" id="controlconfigclientgetallenergylimits"></span></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kortex_api.autogen.ControlConfigClient.GetAllEnergyLimits">
+<span class="sig-name descname"><span class="pre">GetAllEnergyLimits</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">deviceId</span> <span class="pre">=</span> <span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">options</span> <span class="pre">=</span> <span class="pre">RouterClientSendOptions()</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kortex_api.autogen.ControlConfigClient.GetAllEnergyLimits" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line">The <code class="docutils literal notranslate"><span class="pre">READ_ONLY</span></code> permission is necessary to call this RPC.</div>
+<div class="line"><br /></div>
+<div class="line">Gets all energy limits and activation mode statuses</div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>deviceId</strong> (<em>int</em>) – Device’s Id called by rpc (optional)</p></li>
+<li><p><strong>options</strong> (<a class="reference internal" href="../../RouterClient.html#kortex_api.RouterClient.RouterClientSendOptions" title="kortex_api.RouterClient.RouterClientSendOptions"><em>RouterClientSendOptions</em></a>) – Router options for sending the message</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="../Messages/ControlConfig.html#kortex_api.autogen.EnergyLimitsList" title="kortex_api.autogen.EnergyLimitsList">EnergyLimitsList</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="DeviceConfig.html" class="btn btn-neutral float-right" title="DeviceConfig" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="BaseCyclic.html" class="btn btn-neutral float-left" title="BaseCyclic" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2022, Kinova.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

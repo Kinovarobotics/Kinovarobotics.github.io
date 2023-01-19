@@ -1,0 +1,268 @@
+================================
+IndustrialIO
+================================
+    
+.. py:currentmodule:: kortex_api.autogen
+
+.. _IndustrialIODigitalChannelIdentifier:
+
+.. py:class:: DigitalChannelIdentifier
+
+    Digital channel identifier
+
+   :canonical: kortex_api.autogen.messages.IndustrialIO_pb2.DigitalChannelIdentifier
+
+   :param identifier:   Digital channel identifier (1-8)
+   :type identifier: :ref:`int <>` 
+
+.. _IndustrialIODigitalOutputConfiguration:
+
+.. py:class:: DigitalOutputConfiguration
+
+    Digital output configuration
+
+   :canonical: kortex_api.autogen.messages.IndustrialIO_pb2.DigitalOutputConfiguration
+
+   :param channel:   Digital channel identifier
+   :type channel: :ref:`DigitalChannelIdentifier <IndustrialIODigitalChannelIdentifier>` 
+
+   :param mode:   Digital output mode
+   :type mode: :ref:`DigitalOutputMode <IndustrialIODigitalOutputMode>` 
+
+.. _IndustrialIODigitalInputConfiguration:
+
+.. py:class:: DigitalInputConfiguration
+
+    Digital input channel configuration
+
+   :canonical: kortex_api.autogen.messages.IndustrialIO_pb2.DigitalInputConfiguration
+
+   :param channel:   Input channel
+   :type channel: :ref:`DigitalChannelIdentifier <IndustrialIODigitalChannelIdentifier>` 
+
+   :param enabled:   True if input channel is enabled, false otherwise
+   :type enabled: :ref:`bool <>` 
+
+   :param wire_break_detection_enable:   True if the wire break detection is enabled, false otherwise
+   :type wire_break_detection_enable: :ref:`bool <>` 
+
+   :param debouncing_filter_enable:   True if debouncing filter is enabled, false otherwise
+   :type debouncing_filter_enable: :ref:`bool <>` 
+
+   :param debounce_delay:   Debounce filter delay
+   :type debounce_delay: :ref:`DebounceFilterDelay <IndustrialIODebounceFilterDelay>` 
+
+.. _IndustrialIOAnalogIOChannelIdentifier:
+
+.. py:class:: AnalogIOChannelIdentifier
+
+    Analog channel identifier
+
+   :canonical: kortex_api.autogen.messages.IndustrialIO_pb2.AnalogIOChannelIdentifier
+
+   :param identifier:   Channel identifier
+   :type identifier: :ref:`AnalogChannelIdentifier <IndustrialIOAnalogChannelIdentifier>` 
+
+.. _IndustrialIOAnalogIOConfiguration:
+
+.. py:class:: AnalogIOConfiguration
+
+    Analog channel configuration
+
+   :canonical: kortex_api.autogen.messages.IndustrialIO_pb2.AnalogIOConfiguration
+
+   :param channel:   Channel identifier
+   :type channel: :ref:`AnalogIOChannelIdentifier <IndustrialIOAnalogIOChannelIdentifier>` 
+
+   :param mode:   Channel mode
+   :type mode: :ref:`AnalogMode <IndustrialIOAnalogMode>` 
+
+.. _IndustrialIODigitalOutputInfo:
+
+.. py:class:: DigitalOutputInfo
+
+    Digital output information of a channel
+
+   :canonical: kortex_api.autogen.messages.IndustrialIO_pb2.DigitalOutputInfo
+
+   :param faults:   Digital output faults (see DigitalOutputFaultIdentifier)
+   :type faults: :ref:`int <>` 
+
+   :param is_channel_in_fault:   Returns true if fault occurred on channel
+   :type is_channel_in_fault: :ref:`bool <>` 
+
+   :param state:   Digital output channel state
+   :type state: :ref:`DigitalPinState <IndustrialIODigitalPinState>` 
+
+.. _IndustrialIODigitalOutputInfoList:
+
+.. py:class:: DigitalOutputInfoList
+
+    Array of digital output information for all channels
+
+   :canonical: kortex_api.autogen.messages.IndustrialIO_pb2.DigitalOutputInfoList
+
+   :param infos:   All digital output channel information (8 channels)
+   :type infos: :ref:`DigitalOutputInfo <IndustrialIODigitalOutputInfo>` [ ]
+
+.. _IndustrialIODigitalOutputChangeNotification:
+
+.. py:class:: DigitalOutputChangeNotification
+
+    Notification about a digital output change event
+
+   :canonical: kortex_api.autogen.messages.IndustrialIO_pb2.DigitalOutputChangeNotification
+
+   :param channel:   Output channel identifier
+   :type channel: :ref:`DigitalChannelIdentifier <IndustrialIODigitalChannelIdentifier>` 
+
+   :param info:   The changed digital output channel information
+   :type info: :ref:`DigitalOutputInfo <IndustrialIODigitalOutputInfo>` 
+
+   :param generic_info:   Generic notification information
+   :type generic_info: :ref:`NotificationInformation <CommonNotificationInformation>` 
+
+.. _IndustrialIODigitalInputInfo:
+
+.. py:class:: DigitalInputInfo
+
+    Digital input information for a channel
+
+   :canonical: kortex_api.autogen.messages.IndustrialIO_pb2.DigitalInputInfo
+
+   :param faults:   Digital input faults (see DigitalInputFaultIdentifier) (not supported with WristConfigC61)
+   :type faults: :ref:`int <>` 
+
+   :param wire_break_detected:   Returns true if a wire break is detected on channel (not supported with WristConfigC61)
+   :type wire_break_detected: :ref:`bool <>` 
+
+   :param enabled:   Returns true if the channel is enabled
+   :type enabled: :ref:`bool <>` 
+
+   :param state:   Digital input channel state
+   :type state: :ref:`DigitalPinState <IndustrialIODigitalPinState>` 
+
+.. _IndustrialIODigitalInputInfoList:
+
+.. py:class:: DigitalInputInfoList
+
+    Array of digital input information for all channels
+
+   :canonical: kortex_api.autogen.messages.IndustrialIO_pb2.DigitalInputInfoList
+
+   :param infos:   All digital input channel information (8 channels)
+   :type infos: :ref:`DigitalInputInfo <IndustrialIODigitalInputInfo>` [ ]
+
+.. _IndustrialIODigitalInputChangeNotification:
+
+.. py:class:: DigitalInputChangeNotification
+
+    Notification about a digital input change event
+
+   :canonical: kortex_api.autogen.messages.IndustrialIO_pb2.DigitalInputChangeNotification
+
+   :param channel:   Input channel identifier
+   :type channel: :ref:`DigitalChannelIdentifier <IndustrialIODigitalChannelIdentifier>` 
+
+   :param info:   The changed digital input channel information
+   :type info: :ref:`DigitalInputInfo <IndustrialIODigitalInputInfo>` 
+
+   :param generic_info:   Generic notification information
+   :type generic_info: :ref:`NotificationInformation <CommonNotificationInformation>` 
+
+.. _IndustrialIOAnalogIOInfo:
+
+.. py:class:: AnalogIOInfo
+
+    Analog input/output information for a channel
+
+   :canonical: kortex_api.autogen.messages.IndustrialIO_pb2.AnalogIOInfo
+
+   :param faults:   Digital input faults (see AnalogIOFaultIdentifier)
+   :type faults: :ref:`int <>` 
+
+   :param dac_value:   DAC value for a channel ([0.0; 11.0V] in voltage mode and [0.0; 25.0mA] in current mode)
+   :type dac_value: :ref:`float <>` 
+
+   :param adc_value:   ADC value for a channel ([0.0; 10.0V] in voltage mode and [0.0; 25.0mA] in current mode)
+   :type adc_value: :ref:`float <>` 
+
+.. _IndustrialIOAnalogIOInfoList:
+
+.. py:class:: AnalogIOInfoList
+
+    Array of analog input/output information for all channels
+
+   :canonical: kortex_api.autogen.messages.IndustrialIO_pb2.AnalogIOInfoList
+
+   :param infos:   All digital input/output channel information (4 channels)
+   :type infos: :ref:`AnalogIOInfo <IndustrialIOAnalogIOInfo>` [ ]
+
+.. _IndustrialIOAnalogIOChangeNotification:
+
+.. py:class:: AnalogIOChangeNotification
+
+    Notification about a analog input/output change event
+
+   :canonical: kortex_api.autogen.messages.IndustrialIO_pb2.AnalogIOChangeNotification
+
+   :param channel:   Analog channel identifier
+   :type channel: :ref:`AnalogIOChannelIdentifier <IndustrialIOAnalogIOChannelIdentifier>` 
+
+   :param info:   The changed analog input/output channel information
+   :type info: :ref:`AnalogIOInfo <IndustrialIOAnalogIOInfo>` 
+
+   :param generic_info:   Generic notification information
+   :type generic_info: :ref:`NotificationInformation <CommonNotificationInformation>` 
+
+   :param mode:   Channel mode
+   :type mode: :ref:`AnalogMode <IndustrialIOAnalogMode>` 
+
+.. _IndustrialIOAnalogOutput:
+
+.. py:class:: AnalogOutput
+
+    Analog output to set on specific channel
+
+   :canonical: kortex_api.autogen.messages.IndustrialIO_pb2.AnalogOutput
+
+   :param channel:   Analog channel identifier
+   :type channel: :ref:`AnalogIOChannelIdentifier <IndustrialIOAnalogIOChannelIdentifier>` 
+
+   :param dac_value:   Dac value to output ([0.0; 11.0V] in voltage mode and [0.0; 25.0mA] in current mode)
+   :type dac_value: :ref:`float <>` 
+
+.. _IndustrialIODigitalIOConfiguration:
+
+.. py:class:: DigitalIOConfiguration
+
+    Digital IO configuration for a channel
+
+   :canonical: kortex_api.autogen.messages.IndustrialIO_pb2.DigitalIOConfiguration
+
+   :param DigitalInputConfiguration input_configuration:   Digital input configuration for a channel. Part of the ``configuration_type`` `Oneof <https://developers.google.com/protocol-buffers/docs/reference/python-generated#oneof>`_.
+
+   :param DigitalOutputConfiguration output_configuration:   Digital output configuration for a channel. Part of the ``configuration_type`` `Oneof <https://developers.google.com/protocol-buffers/docs/reference/python-generated#oneof>`_.
+
+.. _IndustrialIODigitalIOInfo:
+
+.. py:class:: DigitalIOInfo
+
+    Digital IO information for a channel
+
+   :canonical: kortex_api.autogen.messages.IndustrialIO_pb2.DigitalIOInfo
+
+   :param DigitalInputInfo input_info:   Digital input information for a channel. Part of the ``info_type`` `Oneof <https://developers.google.com/protocol-buffers/docs/reference/python-generated#oneof>`_.
+
+   :param DigitalOutputInfo output_info:   Digital output information for a channel. Part of the ``info_type`` `Oneof <https://developers.google.com/protocol-buffers/docs/reference/python-generated#oneof>`_.
+
+.. _IndustrialIODigitalIOInfoList:
+
+.. py:class:: DigitalIOInfoList
+
+    Array of digital IO information for all channels
+
+   :canonical: kortex_api.autogen.messages.IndustrialIO_pb2.DigitalIOInfoList
+
+   :param infos:   All digital IO channel information (8 channels)
+   :type infos: :ref:`DigitalIOInfo <IndustrialIODigitalIOInfo>` [ ]

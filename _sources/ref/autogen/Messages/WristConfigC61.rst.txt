@@ -1,0 +1,53 @@
+================================
+WristConfigC61
+================================
+    
+.. py:currentmodule:: kortex_api.autogen
+
+.. _WristConfigC61RS485Configuration:
+
+.. py:class:: RS485Configuration
+
+    RS485 configuration details
+
+   :canonical: kortex_api.autogen.messages.WristConfigC61_pb2.RS485Configuration
+
+   :param port_id:   RS485 port identification
+   :type port_id: :ref:`RS485PortId <WristConfigC61RS485PortId>` 
+
+   :param enabled:   True if RS485 device is enabled, false otherwise
+   :type enabled: :ref:`bool <>` 
+
+   :param baud_rate:   Baud rate selection
+   :type baud_rate: :ref:`BaudRate <SerialCommunicationBaudRate>` 
+
+   :param word_length:   Word length
+   :type word_length: :ref:`WordLength <SerialCommunicationWordLength>` 
+
+   :param stop_bits:   Stop bits
+   :type stop_bits: :ref:`StopBits <SerialCommunicationStopBits>` 
+
+   :param parity:   Parity mode
+   :type parity: :ref:`Parity <SerialCommunicationParity>` 
+
+.. _WristConfigC61RS485DeviceIdentification:
+
+.. py:class:: RS485DeviceIdentification
+
+    RS485 port id identification
+
+   :canonical: kortex_api.autogen.messages.WristConfigC61_pb2.RS485DeviceIdentification
+
+   :param port_id:   RS485 port id
+   :type port_id: :ref:`RS485PortId <WristConfigC61RS485PortId>` 
+
+.. _WristConfigC61PowerSupply24VState:
+
+.. py:class:: PowerSupply24VState
+
+    Power supply +24V state
+
+   :canonical: kortex_api.autogen.messages.WristConfigC61_pb2.PowerSupply24VState
+
+   :param enabled:   True is enabled, false is disabled
+   :type enabled: :ref:`bool <>` 

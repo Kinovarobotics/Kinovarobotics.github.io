@@ -1,0 +1,24 @@
+================================
+ProgramConfig
+================================
+    
+.. py:currentmodule:: kortex_api.autogen
+
+.. py:class:: ProgramConfigClient
+        
+    :canonical: kortex_api.autogen.client_stubs.ProgramConfigClientRpc
+
+    .. py:method:: __init__(router, namespace = None)
+
+        Constructs a ProgramConfigClient with an initialized :class:`~kortex_api.RouterClient.RouterClient` and an optional namespace.
+
+        :param RouterClient router: :class:`~kortex_api.RouterClient.RouterClient` used for the communication
+        :param string namespace: Optional namespace on which to initialize the ProgramConfigClient (defaults to ``None``)
+
+    .. py:method:: IsAlive (timeoutMs: int = 1000)
+        
+        Returns ``True`` if the Service Server is detected online before ``timeoutMs`` is expired, ``False`` otherwise.
+        
+        :param unsigned int timeoutMs: The maximum time to wait for an answer from the server 
+        :rtype: bool
+

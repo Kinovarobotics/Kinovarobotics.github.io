@@ -1,0 +1,103 @@
+================================
+BaseCyclic
+================================
+    
+.. py:currentmodule:: kortex_api.autogen
+
+.. _BaseCyclicServiceVersion:
+
+.. py:class:: ServiceVersion
+
+     Identifies BaseCyclic current version
+
+    :canonical: kortex_api.autogen.messages.BaseCyclic_pb2.ServiceVersion
+    .. py:attribute:: RESERVED_0 (0):   Reserved
+
+    .. py:attribute:: CURRENT_VERSION (1):   Current version
+
+.. _BaseCyclicCustomType:
+
+.. py:class:: CustomType
+
+     Custom type
+
+    :canonical: kortex_api.autogen.messages.BaseCyclic_pb2.CustomType
+    .. py:attribute:: CUSTOM_KONTROL_INPUT_JOINT_FEEDBACK_POSITION (0):   Input Joint Feedback Position
+
+    .. py:attribute:: CUSTOM_KONTROL_INPUT_JOINT_FEEDBACK_SPEED (1):   Input Joint Feedback Speed
+
+    .. py:attribute:: CUSTOM_KONTROL_INPUT_JOINT_FEEDBACK_ACCELERATION (2):   Input Joint Feedback Acceleration
+
+    .. py:attribute:: CUSTOM_KONTROL_INPUT_JOINT_FEEDBACK_CURRENT (3):   Input Joint Feedback Current
+
+    .. py:attribute:: CUSTOM_KONTROL_INPUT_JOINT_FEEDBACK_TORQUE (4):   Input Joint Feedback Torque
+
+    .. py:attribute:: CUSTOM_KONTROL_INPUT_JOINT_FEEDBACK_TIME (5):   Input Joint Feedback Time
+
+    .. py:attribute:: CUSTOM_KONTROL_INPUT_JOINT_FEEDBACK_SEGMENT (6):   Input Joint Feedback Segment
+
+    .. py:attribute:: CUSTOM_KONTROL_INPUT_CARTESIAN_FEEDBACK_POSE (7):   Input Cartesian Feddback Pose
+
+    .. py:attribute:: CUSTOM_KONTROL_INPUT_CARTESIAN_FEEDBACK_VELOCITY (8):   Input Cartesian Feddback Velocity
+
+    .. py:attribute:: CUSTOM_KONTROL_INPUT_CARTESIAN_FEEDBACK_WRENCH (9):   Input Cartesian Feddback Wrench
+
+    .. py:attribute:: CUSTOM_KONTROL_INPUT_CARTESIAN_FEEDBACK_ELBOWVELOCITY (10):   Input Cartesian Feddback Elbow Velocity
+
+    .. py:attribute:: CUSTOM_KONTROL_INPUT_JOINT_COMMAND_POSITION (11):   Input Joint Command Position
+
+    .. py:attribute:: CUSTOM_KONTROL_INPUT_JOINT_COMMAND_SPEED (12):   Input Joint Command Speed
+
+    .. py:attribute:: CUSTOM_KONTROL_INPUT_JOINT_COMMAND_ACCELERATION (13):   Input Joint Command Acceleration
+
+    .. py:attribute:: CUSTOM_KONTROL_INPUT_JOINT_COMMAND_CURRENT (14):   Input Joint Command Current
+
+    .. py:attribute:: CUSTOM_KONTROL_INPUT_JOINT_COMMAND_TORQUE (15):   Input Joint Command Torque
+
+    .. py:attribute:: CUSTOM_KONTROL_INPUT_JOINT_COMMAND_TIME (16):   Input Joint Command Time
+
+    .. py:attribute:: CUSTOM_KONTROL_INPUT_JOINT_COMMAND_SEGMENT (17):   Input Joint Command Segment
+
+    .. py:attribute:: CUSTOM_KONTROL_INPUT_CARTESIAN_COMMAND_POSE (18):   Input Cartesian Command Pose
+
+    .. py:attribute:: CUSTOM_KONTROL_INPUT_CARTESIAN_COMMAND_VELOCITY (19):   Input Cartesian Command Velocity
+
+    .. py:attribute:: CUSTOM_KONTROL_INPUT_CARTESIAN_COMMAND_WRENCH (20):   Input Cartesian Command Wrench
+
+    .. py:attribute:: CUSTOM_KONTROL_INPUT_CARTESIAN_COMMAND_ELBOWVELOCITY (21):   Input Cartesian Command Elbow Velocity
+
+    .. py:attribute:: CUSTOM_KONTROL_OUTPUT_JOINT_COMMAND_POSITION (22):   Output Joint Command Position
+
+    .. py:attribute:: CUSTOM_KONTROL_OUTPUT_JOINT_COMMAND_SPEED (23):   Output Joint Command Speed
+
+    .. py:attribute:: CUSTOM_KONTROL_OUTPUT_JOINT_COMMAND_ACCELERATION (24):   Output Joint Command Acceleration
+
+    .. py:attribute:: CUSTOM_KONTROL_OUTPUT_JOINT_COMMAND_CURRENT (25):   Output Joint Command Current
+
+    .. py:attribute:: CUSTOM_KONTROL_OUTPUT_JOINT_COMMAND_TORQUE (26):   Output Joint Command Torque
+
+    .. py:attribute:: CUSTOM_KONTROL_OUTPUT_JOINT_COMMAND_TIME (27):   Output Joint Command Time
+
+    .. py:attribute:: CUSTOM_KONTROL_OUTPUT_JOINT_COMMAND_SEGMENT (28):   Output Joint Command Segment
+
+    .. py:attribute:: CUSTOM_KONTROL_OUTPUT_CARTESIAN_INFORMATION_POSE (29):   Output Cartesian Information Pose
+
+    .. py:attribute:: CUSTOM_KONTROL_OUTPUT_CARTESIAN_INFORMATION_VELOCITY (30):   Output Cartesian Information Velocity
+
+    .. py:attribute:: CUSTOM_KONTROL_OUTPUT_CARTESIAN_INFORMATION_WRENCH (31):   Output Cartesian Information Wrench
+
+    .. py:attribute:: CUSTOM_KONTROL_OUTPUT_CARTESIAN_INFORMATION_ELBOWVELOCITY (32):   Output Cartesian Information Elbow Velocity
+
+    .. py:attribute:: CUSTOM_KONTROL_OUTPUT_CARTESIAN_INFORMATION_COMMANDED_POSE (33):   Output Cartesian Information Commanded Pose
+
+    .. py:attribute:: CUSTOM_KONTROL_OUTPUT_CARTESIAN_INFORMATION_COMMANDED_VELOCITY (34):   Output Cartesian Information Commanded Velocity
+
+    .. py:attribute:: CUSTOM_KONTROL_OUTPUT_CARTESIAN_INFORMATION_COMMANDED_WRENCH (35):   Output Cartesian Information Commanded Wrench
+
+    .. py:attribute:: CUSTOM_KONTROL_OUTPUT_CARTESIAN_INFORMATION_COMMANDED_ELBOWVELOCITY (36):   Output Cartesian Information Commanded Elbow Velocity
+
+    .. py:attribute:: CUSTOM_KONTROL_OUTPUT_VECTOR1 (37):   Output Vector1
+
+    .. py:attribute:: CUSTOM_KONTROL_OUTPUT_VECTOR2 (38):   Output Vector2
+
+    .. py:attribute:: CUSTOM_KONTROL_OUTPUT_STATUS (39):   Output Status

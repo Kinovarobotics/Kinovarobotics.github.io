@@ -1,0 +1,197 @@
+================================
+ActuatorCyclic
+================================
+    
+.. py:currentmodule:: kortex_api.autogen
+
+.. _ActuatorCyclicMessageId:
+
+.. py:class:: MessageId
+
+    Provides a message identifier
+
+   :canonical: kortex_api.autogen.messages.ActuatorCyclic_pb2.MessageId
+
+   :param identifier:   Message ID (first 2 bytes : device ID, last 2 bytes : sequence number). By default, set to zero
+   :type identifier: :ref:`int <>` 
+
+.. _ActuatorCyclicCommand:
+
+.. py:class:: Command
+
+    Defines an actuator command
+
+   :canonical: kortex_api.autogen.messages.ActuatorCyclic_pb2.Command
+
+   :param command_id:   MessageId
+   :type command_id: :ref:`MessageId <ActuatorCyclicMessageId>` 
+
+   :param flags:   Command flags (see enum CommandFlags)
+   :type flags: :ref:`int <>` 
+
+   :param position:   Desired position of the actuator (degrees)
+   :type position: :ref:`float <>` 
+
+   :param velocity:   Desired velocity of the actuator (degrees per second)
+   :type velocity: :ref:`float <>` 
+
+   :param torque_joint:   Desired torque of the actuator (Newton-meters)
+   :type torque_joint: :ref:`float <>` 
+
+   :param current_motor:   Desired current of the motor (Amperes)
+   :type current_motor: :ref:`float <>` 
+
+.. _ActuatorCyclicFeedback:
+
+.. py:class:: Feedback
+
+    Status feedback provided by an actuator
+
+   :canonical: kortex_api.autogen.messages.ActuatorCyclic_pb2.Feedback
+
+   :param feedback_id:   MessageId
+   :type feedback_id: :ref:`MessageId <ActuatorCyclicMessageId>` 
+
+   :param status_flags:   Status flags (see enum StatusFlags for the rest)
+   :type status_flags: :ref:`int <>` 
+
+   :param jitter_comm:   Jitter from the communication in μs
+   :type jitter_comm: :ref:`int <>` 
+
+   :param position:   Position of the actuator (degrees)
+   :type position: :ref:`float <>` 
+
+   :param velocity:   Angular velocity of the actuator (degrees per second)
+   :type velocity: :ref:`float <>` 
+
+   :param torque:   Torque of the actuator (Newton meter)
+   :type torque: :ref:`float <>` 
+
+   :param current_motor:   Current of the motor (Amperes)
+   :type current_motor: :ref:`float <>` 
+
+   :param voltage:   Voltage of the main board in (Volt)
+   :type voltage: :ref:`float <>` 
+
+   :param temperature_motor:   Motor temperature (average of the three (3) temperatures (degrees Celsius))
+   :type temperature_motor: :ref:`float <>` 
+
+   :param temperature_core:   Microcontroller temperature in (degrees Celsius)
+   :type temperature_core: :ref:`float <>` 
+
+   :param fault_bank_a:   Main MCU Bank A Faults (see ActuatorConfig.Gen3ActuatorDiagnosticIdentifierBankA and ActuatorConfig.LinkActuatorMainMCUDiagnosticIdentifierBankA)
+   :type fault_bank_a: :ref:`int <>` 
+
+   :param fault_bank_b:   Main MCU Bank B Faults (see ActuatorConfig.LinkActuatorMainMCUDiagnosticIdentifierBankB)
+   :type fault_bank_b: :ref:`int <>` 
+
+   :param warning_bank_a:   Main MCU Bank A Warnings (see ActuatorConfig.Gen3ActuatorDiagnosticIdentifierBankA)
+   :type warning_bank_a: :ref:`int <>` 
+
+   :param warning_bank_b:   Main MCU Bank B Warnings
+   :type warning_bank_b: :ref:`int <>` 
+
+   :param sfty_fault_bank_a:   Safety MCU Bank A Faults (see ActuatorConfig.LinkActuatorSafetyMCUDiagnosticIdentifierBankA)
+   :type sfty_fault_bank_a: :ref:`int <>` 
+
+   :param fault_bank_c:   Main MCU Bank C Faults (see ActuatorConfig.LinkActuatorMainMCUDiagnosticIdentifierBankC)
+   :type fault_bank_c: :ref:`int <>` 
+
+   :param sfty_fault_bank_b:   Safety MCU Bank B Faults (see ActuatorConfig.LinkActuatorSafetyMCUDiagnosticIdentifierBankB)
+   :type sfty_fault_bank_b: :ref:`int <>` 
+
+.. _ActuatorCyclicCustomData:
+
+.. py:class:: CustomData
+
+    Custom development data, content varies according to debug needs
+
+   :canonical: kortex_api.autogen.messages.ActuatorCyclic_pb2.CustomData
+
+   :param custom_data_id:   MessageId
+   :type custom_data_id: :ref:`MessageId <ActuatorCyclicMessageId>` 
+
+   :param custom_data_0:   Custom data word 0
+   :type custom_data_0: :ref:`int <>` 
+
+   :param custom_data_1:   Custom data word 1
+   :type custom_data_1: :ref:`int <>` 
+
+   :param custom_data_2:   Custom data word 2
+   :type custom_data_2: :ref:`int <>` 
+
+   :param custom_data_3:   Custom data word 3
+   :type custom_data_3: :ref:`int <>` 
+
+   :param custom_data_4:   Custom data word 4
+   :type custom_data_4: :ref:`int <>` 
+
+   :param custom_data_5:   Custom data word 5
+   :type custom_data_5: :ref:`int <>` 
+
+   :param custom_data_6:   Custom data word 6
+   :type custom_data_6: :ref:`int <>` 
+
+   :param custom_data_7:   Custom data word 7
+   :type custom_data_7: :ref:`int <>` 
+
+   :param custom_data_8:   Custom data word 8
+   :type custom_data_8: :ref:`int <>` 
+
+   :param custom_data_9:   Custom data word 9
+   :type custom_data_9: :ref:`int <>` 
+
+   :param custom_data_10:   Custom data word 10
+   :type custom_data_10: :ref:`int <>` 
+
+   :param custom_data_11:   Custom data word 11
+   :type custom_data_11: :ref:`int <>` 
+
+   :param custom_data_12:   Custom data word 12
+   :type custom_data_12: :ref:`int <>` 
+
+   :param custom_data_13:   Custom data word 13
+   :type custom_data_13: :ref:`int <>` 
+
+   :param custom_data_14:   Custom data word 14
+   :type custom_data_14: :ref:`int <>` 
+
+   :param custom_data_15:   Custom data word 15
+   :type custom_data_15: :ref:`int <>` 
+
+.. _ActuatorCyclicCustomCommand:
+
+.. py:class:: CustomCommand
+
+    Defines an actuator command with custom inputs for debug needs
+
+   :canonical: kortex_api.autogen.messages.ActuatorCyclic_pb2.CustomCommand
+
+   :param command:   Defines an actuator command
+   :type command: :ref:`Command <ActuatorCyclicCommand>` 
+
+   :param custom_command_0:   Custom float command for development 0
+   :type custom_command_0: :ref:`float <>` 
+
+   :param custom_command_1:   Custom float command for development 1
+   :type custom_command_1: :ref:`float <>` 
+
+   :param custom_command_2:   Custom float command for development 2
+   :type custom_command_2: :ref:`float <>` 
+
+   :param custom_command_3:   Custom float command for development 3
+   :type custom_command_3: :ref:`float <>` 
+
+.. _ActuatorCyclicCustomFeedback:
+
+.. py:class:: CustomFeedback
+
+    Status feedback with custom development data provided by an actuator
+
+   :canonical: kortex_api.autogen.messages.ActuatorCyclic_pb2.CustomFeedback
+
+   :param feedback:   Status feedback provided by an actuator
+   :type feedback: :ref:`Feedback <ActuatorCyclicFeedback>` 
+
+   :param custom_data:   Custom development data, content varies according to debug needs
+   :type custom_data: :ref:`CustomData <ActuatorCyclicCustomData>` 

@@ -1,0 +1,42 @@
+================================
+ToolManager
+================================
+    
+.. py:currentmodule:: kortex_api.autogen
+
+.. _ToolManagerActiveToolNotification:
+
+.. py:class:: ActiveToolNotification
+
+    Notification about the active tool event
+
+   :canonical: kortex_api.autogen.messages.ToolManager_pb2.ActiveToolNotification
+
+   :param tools_information:   Active tool information list
+   :type tools_information: :ref:`ToolInformationList <ToolPluginToolInformationList>` 
+
+   :param timestamp:   This field is deprecated and will be removed in a future release
+   :type timestamp: :ref:`Timestamp <CommonTimestamp>` 
+
+   :param generic_info:   Generic notification information
+   :type generic_info: :ref:`NotificationInformation <CommonNotificationInformation>` 
+
+.. _ToolManagerToolNotification:
+
+.. py:class:: ToolNotification
+
+    Notification about a custom tool event
+
+   :canonical: kortex_api.autogen.messages.ToolManager_pb2.ToolNotification
+
+   :param tool_event:   The tool event (see ToolEvent enum)
+   :type tool_event: :ref:`ToolEvent <ToolManagerToolEvent>` 
+
+   :param tool_information:   Information about this tool
+   :type tool_information: :ref:`ToolInformation <ToolPluginToolInformation>` 
+
+   :param timestamp:   This field is deprecated and will be removed in a future release
+   :type timestamp: :ref:`Timestamp <CommonTimestamp>` 
+
+   :param generic_info:   Generic notification information
+   :type generic_info: :ref:`NotificationInformation <CommonNotificationInformation>` 

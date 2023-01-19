@@ -1,0 +1,37 @@
+================================
+Frame
+================================
+    
+.. py:currentmodule:: kortex_api.autogen
+
+.. _FrameHeaderVersion:
+
+.. py:class:: HeaderVersion
+
+     Current version of the header
+
+    :canonical: kortex_api.autogen.messages.Frame_pb2.HeaderVersion
+    .. py:attribute:: RESERVED_0 (0):  
+
+    .. py:attribute:: CURRENT_VERSION (1):   Current version
+
+.. _FrameFrameTypes:
+
+.. py:class:: FrameTypes
+
+     Admissible frame types
+
+    :canonical: kortex_api.autogen.messages.Frame_pb2.FrameTypes
+    .. py:attribute:: RESERVED (0):  
+
+    .. py:attribute:: MSG_FRAME_REQUEST (1):  
+
+    .. py:attribute:: MSG_FRAME_RAW (2):  
+
+    .. py:attribute:: MSG_FRAME_RESPONSE (3):  
+
+    .. py:attribute:: MSG_FRAME_NOTIFICATION (5):  
+
+    .. py:attribute:: MSG_FRAME_PING (7):  
+
+    .. py:attribute:: MSG_FRAME_PONG (8):  

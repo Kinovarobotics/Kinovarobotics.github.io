@@ -1,0 +1,87 @@
+================================
+Session
+================================
+    
+.. py:currentmodule:: kortex_api.autogen
+
+.. py:class:: SessionClient
+        
+    :canonical: kortex_api.autogen.client_stubs.SessionClientRpc
+
+    .. py:method:: __init__(router, namespace = None)
+
+        Constructs a SessionClient with an initialized :class:`~kortex_api.RouterClient.RouterClient` and an optional namespace.
+
+        :param RouterClient router: :class:`~kortex_api.RouterClient.RouterClient` used for the communication
+        :param string namespace: Optional namespace on which to initialize the SessionClient (defaults to ``None``)
+
+    .. py:method:: IsAlive (timeoutMs: int = 1000)
+        
+        Returns ``True`` if the Service Server is detected online before ``timeoutMs`` is expired, ``False`` otherwise.
+        
+        :param unsigned int timeoutMs: The maximum time to wait for an answer from the server 
+        :rtype: bool
+
+
+        .. _SessionClientCreateSession:
+
+    .. py:method:: CreateSession (createsessioninfo, deviceId = 0, options = RouterClientSendOptions())
+        
+        | The ``READ_ONLY`` permission is necessary to call this RPC.
+        |
+        | Creates a new session on the robot using given values for user name, session timeout value, and password
+
+
+        :param createsessioninfo:  
+        :type createsessioninfo: :ref:`CreateSessionInfo <SessionCreateSessionInfo>`
+
+        :param int deviceId: Device's Id called by rpc (optional)
+        :param RouterClientSendOptions options: Router options for sending the message
+
+        .. _SessionClientCloseSession:
+
+    .. py:method:: CloseSession (, deviceId = 0, options = RouterClientSendOptions())
+        
+        | The ``READ_ONLY`` permission is necessary to call this RPC.
+        |
+        | Closes an existing open session
+
+        :param int deviceId: Device's Id called by rpc (optional)
+        :param RouterClientSendOptions options: Router options for sending the message
+
+        .. _SessionClientKeepAlive:
+
+    .. py:method:: KeepAlive (, deviceId = 0, options = RouterClientSendOptions())
+        
+        | The ``READ_ONLY`` permission is necessary to call this RPC.
+        |
+        | Sends message to robot to keep current session alive
+
+        :param int deviceId: Device's Id called by rpc (optional)
+        :param RouterClientSendOptions options: Router options for sending the message
+
+        .. _SessionClientAddTemporaryUserRole:
+
+    .. py:method:: AddTemporaryUserRole (temporaryrolerequest, deviceId = 0, options = RouterClientSendOptions())
+        
+        | The ``OPERATE`` permission is necessary to call this RPC.
+        |
+        | Adds a temporary role to a user's session
+
+
+        :param temporaryrolerequest:  
+        :type temporaryrolerequest: :ref:`TemporaryRoleRequest <SessionTemporaryRoleRequest>`
+
+        :param int deviceId: Device's Id called by rpc (optional)
+        :param RouterClientSendOptions options: Router options for sending the message
+
+        .. _SessionClientRemoveTemporaryUserRole:
+
+    .. py:method:: RemoveTemporaryUserRole (, deviceId = 0, options = RouterClientSendOptions())
+        
+        | The ``OPERATE`` permission is necessary to call this RPC.
+        |
+        | Removes the temporary role to a user's session
+
+        :param int deviceId: Device's Id called by rpc (optional)
+        :param RouterClientSendOptions options: Router options for sending the message

@@ -1,0 +1,6 @@
+KServerException
+================
+
+.. automodule:: kortex_api.exceptions.KServerException
+    :members:
+    :undoc-members:

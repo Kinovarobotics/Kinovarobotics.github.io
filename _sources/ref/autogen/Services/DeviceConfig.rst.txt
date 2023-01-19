@@ -1,0 +1,128 @@
+================================
+DeviceConfig
+================================
+    
+.. py:currentmodule:: kortex_api.autogen
+
+.. py:class:: DeviceConfigClient
+        
+    :canonical: kortex_api.autogen.client_stubs.DeviceConfigClientRpc
+
+    .. py:method:: __init__(router, namespace = None)
+
+        Constructs a DeviceConfigClient with an initialized :class:`~kortex_api.RouterClient.RouterClient` and an optional namespace.
+
+        :param RouterClient router: :class:`~kortex_api.RouterClient.RouterClient` used for the communication
+        :param string namespace: Optional namespace on which to initialize the DeviceConfigClient (defaults to ``None``)
+
+    .. py:method:: IsAlive (timeoutMs: int = 1000)
+        
+        Returns ``True`` if the Service Server is detected online before ``timeoutMs`` is expired, ``False`` otherwise.
+        
+        :param unsigned int timeoutMs: The maximum time to wait for an answer from the server 
+        :rtype: bool
+
+
+        .. _DeviceConfigClientGetDeviceType:
+
+    .. py:method:: GetDeviceType (, deviceId = 0, options = RouterClientSendOptions())
+        
+        | The ``READ_ONLY`` permission is necessary to call this RPC.
+        |
+        | Retrieves the type for the device
+
+        :param int deviceId: Device's Id called by rpc (optional)
+        :param RouterClientSendOptions options: Router options for sending the message
+ 
+        :rtype: DeviceType
+
+        .. _DeviceConfigClientGetFirmwareVersion:
+
+    .. py:method:: GetFirmwareVersion (, deviceId = 0, options = RouterClientSendOptions())
+        
+        | The ``READ_ONLY`` permission is necessary to call this RPC.
+        |
+        | Retrieves the device firmware version
+
+        :param int deviceId: Device's Id called by rpc (optional)
+        :param RouterClientSendOptions options: Router options for sending the message
+ 
+        :rtype: FirmwareVersion
+
+        .. _DeviceConfigClientGetBootloaderVersion:
+
+    .. py:method:: GetBootloaderVersion (, deviceId = 0, options = RouterClientSendOptions())
+        
+        | The ``READ_ONLY`` permission is necessary to call this RPC.
+        |
+        | Retrieves the device bootloader version
+
+        :param int deviceId: Device's Id called by rpc (optional)
+        :param RouterClientSendOptions options: Router options for sending the message
+ 
+        :rtype: BootloaderVersion
+
+        .. _DeviceConfigClientGetModelNumber:
+
+    .. py:method:: GetModelNumber (, deviceId = 0, options = RouterClientSendOptions())
+        
+        | The ``READ_ONLY`` permission is necessary to call this RPC.
+        |
+        | Retrieves the device model number
+
+        :param int deviceId: Device's Id called by rpc (optional)
+        :param RouterClientSendOptions options: Router options for sending the message
+ 
+        :rtype: ModelNumber
+
+        .. _DeviceConfigClientGetPartNumber:
+
+    .. py:method:: GetPartNumber (, deviceId = 0, options = RouterClientSendOptions())
+        
+        | The ``READ_ONLY`` permission is necessary to call this RPC.
+        |
+        | Retrieves the device part number
+
+        :param int deviceId: Device's Id called by rpc (optional)
+        :param RouterClientSendOptions options: Router options for sending the message
+ 
+        :rtype: PartNumber
+
+        .. _DeviceConfigClientGetSerialNumber:
+
+    .. py:method:: GetSerialNumber (, deviceId = 0, options = RouterClientSendOptions())
+        
+        | The ``READ_ONLY`` permission is necessary to call this RPC.
+        |
+        | Retrieves the device serial number
+
+        :param int deviceId: Device's Id called by rpc (optional)
+        :param RouterClientSendOptions options: Router options for sending the message
+ 
+        :rtype: SerialNumber
+
+        .. _DeviceConfigClientGetMACAddress:
+
+    .. py:method:: GetMACAddress (, deviceId = 0, options = RouterClientSendOptions())
+        
+        | The ``READ_ONLY`` permission is necessary to call this RPC.
+        |
+        | Retrieves the device MAC address
+
+        :param int deviceId: Device's Id called by rpc (optional)
+        :param RouterClientSendOptions options: Router options for sending the message
+ 
+        :rtype: MACAddress
+
+        .. _DeviceConfigClientGetPartNumberRevision:
+
+    .. py:method:: GetPartNumberRevision (, deviceId = 0, options = RouterClientSendOptions())
+        
+        | The ``READ_ONLY`` permission is necessary to call this RPC.
+        |
+        | Retrieves the device part number revision
+
+        :param int deviceId: Device's Id called by rpc (optional)
+        :param RouterClientSendOptions options: Router options for sending the message
+ 
+        :rtype: PartNumberRevision

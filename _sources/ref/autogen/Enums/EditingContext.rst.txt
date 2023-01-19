@@ -1,0 +1,29 @@
+================================
+EditingContext
+================================
+    
+.. py:currentmodule:: kortex_api.autogen
+
+.. _EditingContextServiceVersion:
+
+.. py:class:: ServiceVersion
+
+     Identifies service current version
+
+    :canonical: kortex_api.autogen.messages.EditingContext_pb2.ServiceVersion
+    .. py:attribute:: RESERVED_0 (0):   Reserved
+
+    .. py:attribute:: CURRENT_VERSION (1):   Current version
+
+.. _EditingContextEditingContextType:
+
+.. py:class:: EditingContextType
+
+     Admissible types of editing contexts
+
+    :canonical: kortex_api.autogen.messages.EditingContext_pb2.EditingContextType
+    .. py:attribute:: EDITING_CONTEXT_TYPE_UNSPECIFIED (0):   Unspecified editing context
+
+    .. py:attribute:: EDITING_CONTEXT_TYPE_PROGRAM (1):   Program editing context
+
+    .. py:attribute:: EDITING_CONTEXT_TYPE_PROTECTION_ZONE (2):   Protection zone editing context

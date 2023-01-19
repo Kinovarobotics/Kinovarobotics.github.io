@@ -1,0 +1,48 @@
+.. code-block:: python
+
+    # Comm imports
+    from kortex_api.UDPTransport import UDPTransport
+    from kortex_api.RouterClient import RouterClient
+    from kortex_api.SessionManager import SessionManager
+
+    # Service imports
+    from kortex_api.autogen.client_stubs.BaseCyclicClientRpc import BaseCyclicClient
+
+    # Protobuf messages imports
+    from kortex_api.autogen.messages import Session_pb2
+
+    # Constants
+    UDP_PORT = 10001
+    CONTROLLER_ADDRESS = '192.168.1.10'
+
+    session_info = Session_pb2.CreateSessionInfo()
+    session_info.username = "admin"
+    session_info.password = "admin"
+    session_info.session_inactivity_timeout = 60000   # (milliseconds)
+    session_info.connection_inactivity_timeout = 2000 # (milliseconds)
+    error_callback = lambda kException: print("_________ callback error _________ {}".format(kException))
+
+
+    # Create objects
+    transport = UDPTransport()
+    router = RouterClient(transport, error_callback)
+    transport.connect(CONTROLLER_ADDRESS, UDP_PORT)
+
+    # Create session
+    print("Creating session for communication")
+    session_manager = SessionManager(router)
+    session_manager.CreateSession(session_info)
+    print("Session created")
+
+    # Call some RPC which requires a session
+    cyclic = BaseCyclicClient(router)
+    print(cyclic.RefreshFeedback())
+
+    
+    # TEARDOWN
+
+    # Close API session
+    session_manager.CloseSession()
+
+    # Disconnect from the transport object
+    transport.disconnect()

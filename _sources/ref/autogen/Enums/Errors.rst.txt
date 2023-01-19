@@ -1,0 +1,233 @@
+================================
+Errors
+================================
+    
+.. py:currentmodule:: kortex_api.autogen
+
+.. _ErrorsErrorCodes:
+
+.. py:class:: ErrorCodes
+
+     Possible error codes
+
+    :canonical: kortex_api.autogen.messages.Errors_pb2.ErrorCodes
+    .. py:attribute:: ERROR_NONE (0):   No error
+
+    .. py:attribute:: ERROR_PROTOCOL_SERVER (1):   Protocol server error
+
+    .. py:attribute:: ERROR_PROTOCOL_CLIENT (2):   Protocol client error
+
+    .. py:attribute:: ERROR_DEVICE (3):   Device error
+
+    .. py:attribute:: ERROR_INTERNAL (4):   Internal error
+
+.. _ErrorsSubErrorCodes:
+
+.. py:class:: SubErrorCodes
+
+     Possible sub-error codes
+
+    :canonical: kortex_api.autogen.messages.Errors_pb2.SubErrorCodes
+    .. py:attribute:: SUB_ERROR_NONE (0):   No sub error
+
+    .. py:attribute:: METHOD_FAILED (1):   Method returned a failure status (generic error)
+
+    .. py:attribute:: UNIMPLEMENTED (2):   Unimplemented method
+
+    .. py:attribute:: INVALID_PARAM (3):   Invalid parameter
+
+    .. py:attribute:: UNSUPPORTED_SERVICE (4):   Service not recognized
+
+    .. py:attribute:: UNSUPPORTED_METHOD (5):   Method not recognized
+
+    .. py:attribute:: TOO_LARGE_ENCODED_FRAME_BUFFER (6):   Encoded frame bigger than what transport permits
+
+    .. py:attribute:: FRAME_ENCODING_ERR (7):   Unable to encode frame
+
+    .. py:attribute:: FRAME_DECODING_ERR (8):   Unable to decode frame
+
+    .. py:attribute:: INCOMPATIBLE_HEADER_VERSION (9):   Frame header version differs from what is expected and is considered incompatible
+
+    .. py:attribute:: UNSUPPORTED_FRAME_TYPE (10):   Unrecognized frame type
+
+    .. py:attribute:: UNREGISTERED_NOTIFICATION_RECEIVED (11):   Server receiving unregistered notification
+
+    .. py:attribute:: INVALID_SESSION (12):   Session not recognized
+
+    .. py:attribute:: PAYLOAD_DECODING_ERR (13):   Unable to decode payload
+
+    .. py:attribute:: UNREGISTERED_FRAME_RECEIVED (14):   Client received a response for which it did not send an RPC call
+
+    .. py:attribute:: INVALID_PASSWORD (15):   Password does not match specified user
+
+    .. py:attribute:: USER_NOT_FOUND (16):   Unrecognized user
+
+    .. py:attribute:: ENTITY_NOT_FOUND (17):   Cannot find entity
+
+    .. py:attribute:: ROBOT_MOVEMENT_IN_PROGRESS (18):   Robot refuses new control command because robot movement in progress
+
+    .. py:attribute:: ROBOT_NOT_MOVING (19):   Robot refuses stop command because robot is not moving
+
+    .. py:attribute:: NO_MORE_STORAGE_SPACE (20):   Unable to execute because no more storage
+
+    .. py:attribute:: ROBOT_NOT_READY (21):   Robot initialization is not complete
+
+    .. py:attribute:: ROBOT_IN_FAULT (22):   Robot in fault
+
+    .. py:attribute:: ROBOT_IN_MAINTENANCE (23):   Robot in maintenance
+
+    .. py:attribute:: ROBOT_IN_UPDATE_MODE (24):   Robot in update
+
+    .. py:attribute:: ROBOT_IN_EMERGENCY_STOP (25):   Robot in emergency stop state
+
+    .. py:attribute:: SINGLE_LEVEL_SERVOING (26):   Robot is in single-level servoing mode
+
+    .. py:attribute:: LOW_LEVEL_SERVOING (27):   Robot is in low-level servoing mode
+
+    .. py:attribute:: MAPPING_GROUP_NON_ROOT (28):   Trying to add a non-root MapGroup to Mapping
+
+    .. py:attribute:: MAPPING_INVALID_GROUP (29):   Trying to add an invalid or non-existent MapGroup to Mapping
+
+    .. py:attribute:: MAPPING_INVALID_MAP (30):   Trying to add an invalid or non-existent Map to Mapping
+
+    .. py:attribute:: MAP_GROUP_INVALID_MAP (31):   Trying to add an invalid or non-existent Map to MapGroup
+
+    .. py:attribute:: MAP_GROUP_INVALID_PARENT (32):   Trying to add a MapGroup under an invalid parent
+
+    .. py:attribute:: MAP_GROUP_INVALID_CHILD (33):   Trying to add an invalid or non-existent to MapGroup
+
+    .. py:attribute:: MAP_GROUP_INVALID_MOVE (34):   Trying to change a MapGroup's parent: move not supported
+
+    .. py:attribute:: MAP_IN_USE (35):   Deleting a Map used in a Mapping or MapGroup
+
+    .. py:attribute:: WIFI_CONNECT_ERROR (36):   Unable to connect to specified Wifi network
+
+    .. py:attribute:: UNSUPPORTED_NETWORK_TYPE (37):   Unsupported network type
+
+    .. py:attribute:: TOO_LARGE_ENCODED_PAYLOAD_BUFFER (38):   Encoded payload bigger than what transport permits
+
+    .. py:attribute:: UPDATE_PERMISSION_DENIED (39):   Attempting update command on non-updatable entity
+
+    .. py:attribute:: DELETE_PERMISSION_DENIED (40):   Attempting delete command on non-deletable entity
+
+    .. py:attribute:: DATABASE_ERROR (41):   Internal DB error
+
+    .. py:attribute:: UNSUPPORTED_OPTION (42):   Option not supported
+
+    .. py:attribute:: UNSUPPORTED_RESOLUTION (43):   Resolution not supported
+
+    .. py:attribute:: UNSUPPORTED_FRAME_RATE (44):   Frame rate not supported
+
+    .. py:attribute:: UNSUPPORTED_BIT_RATE (45):   Bit rate not supported
+
+    .. py:attribute:: UNSUPPORTED_ACTION (46):   Action not supported (generic, when an action is not supported for a particular item)
+
+    .. py:attribute:: UNSUPPORTED_FOCUS_ACTION (47):   Focus action not supported
+
+    .. py:attribute:: VALUE_IS_ABOVE_MAXIMUM (48):   Specified value is above the supported maximum
+
+    .. py:attribute:: VALUE_IS_BELOW_MINIMUM (49):   Specified value is below the supported minimum
+
+    .. py:attribute:: DEVICE_DISCONNECTED (50):   Device is not connected
+
+    .. py:attribute:: DEVICE_NOT_READY (51):   Device is not ready
+
+    .. py:attribute:: INVALID_DEVICE (52):   Device id is invalid during bridging
+
+    .. py:attribute:: SAFETY_THRESHOLD_REACHED (53):   Safety threshold is reached therefore safety is on
+
+    .. py:attribute:: INVALID_USER_SESSION_ACCESS (54):   Service or function access not allowed: out of session or level access
+
+    .. py:attribute:: CONTROL_MANUAL_STOP (55):   Manually stopped sequence or action
+
+    .. py:attribute:: CONTROL_OUTSIDE_WORKSPACE (56):   Commanded Cartesian position is outside of robot workspace
+
+    .. py:attribute:: CONTROL_ACTUATOR_COUNT_MISMATCH (57):   Number of constraint sent does not correspond to number of actuator (ex: joint speed)
+
+    .. py:attribute:: CONTROL_INVALID_DURATION (58):   Duration constraint is too short. The robot would need out of limit speeds/accelerations to reach this duration.
+
+    .. py:attribute:: CONTROL_INVALID_SPEED (59):   Speed constraint is negative
+
+    .. py:attribute:: CONTROL_LARGE_SPEED (60):   Speed constraint is too high (exceed speed limit of leads to high acceleration)
+
+    .. py:attribute:: CONTROL_INVALID_ACCELERATION (61):   Speed constraint is too high or duration constraint too short and leads to high acceleration
+
+    .. py:attribute:: CONTROL_INVALID_TIME_STEP (62):   Refresh rate is smaller than the duration of the trajectory
+
+    .. py:attribute:: CONTROL_LARGE_SIZE (63):   Duration of the trajectory is more than 100s. The length of the trajectory is limited to 100000 points to avoid saturating the base memory.
+
+    .. py:attribute:: CONTROL_WRONG_MODE (64):   Control mode is not a trajectory mode
+
+    .. py:attribute:: CONTROL_JOINT_POSITION_LIMIT (65):   Commanded configuration contains at least one actuator which is out of its physical limits
+
+    .. py:attribute:: CONTROL_NO_FILE_IN_MEMORY (66):   Trajectory is not computed and try to be started
+
+    .. py:attribute:: CONTROL_INDEX_OUT_OF_TRAJECTORY (67):   Attempting to read a point of the trajectory with an index higher than the number of point in trajectory point list.
+
+    .. py:attribute:: CONTROL_ALREADY_RUNNING (68):   Trajectory is already running
+
+    .. py:attribute:: CONTROL_WRONG_STARTING_POINT (69):   Robot is not on the first point of the trajectory when we try to start the trajectory. This can happen if there is a motion between the moment when trajectory is computed and when it is started.
+
+    .. py:attribute:: CONTROL_CARTESIAN_CANNOT_START (70):   Cannot start
+
+    .. py:attribute:: CONTROL_UNDEFINED_CONSTRAINT (71):   Kontrol library is not initialized
+
+    .. py:attribute:: CONTROL_UNINITIALIZED (72):   Contraint sent is not defined
+
+    .. py:attribute:: CONTROL_NO_ACTION (73):   Action does not exist
+
+    .. py:attribute:: CONTROL_UNDEFINED (74):   Undefined error
+
+    .. py:attribute:: WRONG_SERVOING_MODE (75):   Robot is in not in the right servoing mode
+
+    .. py:attribute:: CONTROL_WRONG_STARTING_SPEED (76):   Robot is not at the right speed when starting a new trajectory.
+
+    .. py:attribute:: USERNAME_LENGTH_EXCEEDED (100):   User profile username length exceeds maximum allowed length
+
+    .. py:attribute:: FIRSTNAME_LENGTH_EXCEEDED (101):   User profile first name length exceeds maximum allowed length
+
+    .. py:attribute:: LASTNAME_LENGTH_EXCEEDED (102):   User profile last name length exceeds maximum allowed length
+
+    .. py:attribute:: PASSWORD_LENGTH_EXCEEDED (103):   User profile password length exceeds maximum allowed length
+
+    .. py:attribute:: USERNAME_ALREADY_EXISTS (104):   User profile username already in use by another profile
+
+    .. py:attribute:: USERNAME_EMPTY (105):   User profile empty username not allowed
+
+    .. py:attribute:: PASSWORD_NOT_CHANGED (106):   Change password both passwords are the same
+
+    .. py:attribute:: MAXIMUM_USER_PROFILES_USED (107):   Maximum number of user profiles in use
+
+    .. py:attribute:: ROUTER_UNVAILABLE (108):   The client router is currently unavailable. This can happen if an API method is called after the router has been deactivated via the method SetActivationStatus.
+
+    .. py:attribute:: ADDRESS_NOT_IN_VALID_RANGE (120):   IP Address not valid against netmask
+
+    .. py:attribute:: ADDRESS_NOT_CONFIGURABLE (121):   IP Address not configurable on specified interface
+
+    .. py:attribute:: SESSION_NOT_IN_CONTROL (130):   Trying to perform command from a non-controlling session in single-level mode
+
+    .. py:attribute:: METHOD_TIMEOUT (131):   Timeout occured during method execution
+
+    .. py:attribute:: UNSUPPORTED_ROBOT_CONFIGURATION (132):   Product Configuration setter method failed because changing this parameter is unsupported on your robot model
+
+    .. py:attribute:: NVRAM_READ_FAIL (133):   Failed to read in NVRAM.
+
+    .. py:attribute:: NVRAM_WRITE_FAIL (134):   Failed to write in NVRAM.
+
+    .. py:attribute:: NETWORK_NO_ADDRESS_ASSIGNED (135):   The specified interface has no assigned IP
+
+    .. py:attribute:: READ_PERMISSION_DENIED (136):   Attempting read command on unreadable entity
+
+    .. py:attribute:: CONTROLLER_INVALID_MAPPING (137):   Attempting to assign an unsuited mapping to controller
+
+    .. py:attribute:: ACTION_IN_USE (138):   Attempting to delete an Action used by another entity
+
+    .. py:attribute:: SEND_FAILED (139):   An error occured when trying to send the message (Transport error)
+
+    .. py:attribute:: CONTROL_WAYPOINT_TRAJECTORY_ABORTED (140):   Waypoint trajectory sequence aborted by kontrol library
+
+    .. py:attribute:: CONTROL_PERMISSION_DENIED (141):   Permission to execute a routine from the kontrol interface denied
+
+    .. py:attribute:: COLLISION_DETECTED (142):   A collision was detected by the robot
+
+    .. py:attribute:: WRONG_MODE (143):   The method failed because the robot is not in the correct mode

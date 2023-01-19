@@ -1,0 +1,179 @@
+================================
+Notifications
+================================
+    
+.. py:currentmodule:: kortex_api.autogen
+
+.. py:class:: ProtectionZoneClient
+    
+
+    :ref:`OnNotificationProtectionZoneChangeTopic <OnNotificationProtectionZoneClientProtectionZoneChangeTopic>` :      Subscribes to protection zone change topic for notifications
+
+
+    :ref:`OnNotificationToolSphereChangeTopic <OnNotificationProtectionZoneClientToolSphereChangeTopic>` :      Subscribes to tool sphere change topic for notifications
+
+
+.. py:class:: EventBrokerClient
+    
+
+    :ref:`OnNotificationEventTopic <OnNotificationEventBrokerClientEventTopic>` :      Subscribes to new events notifications
+
+
+.. py:class:: ToolManagerClient
+    
+
+    :ref:`OnNotificationActiveToolInformationChangedTopic <OnNotificationToolManagerClientActiveToolInformationChangedTopic>` :      Subscribes to tool information notifications
+
+
+    :ref:`OnNotificationToolInformationTopic <OnNotificationToolManagerClientToolInformationTopic>` :      Subscribes to custom tool notifications
+
+
+.. py:class:: ControlConfigClient
+    
+
+    :ref:`OnNotificationControlConfigurationTopic <OnNotificationControlConfigClientControlConfigurationTopic>` :      Subscribes to control configuration notifications
+
+
+    :ref:`OnNotificationControlModeTopic <OnNotificationControlConfigClientControlModeTopic>` :      Subscribes to control mode topic for notifications
+
+
+.. py:class:: IndustrialIOClient
+    
+
+    :ref:`OnNotificationDigitalOutputChangeTopic <OnNotificationIndustrialIOClientDigitalOutputChangeTopic>` :      Subscribes to digital output change topic for notifications.
+
+
+    :ref:`OnNotificationDigitalInputChangeTopic <OnNotificationIndustrialIOClientDigitalInputChangeTopic>` :      Subscribes to digital input change topic for notifications.
+
+
+    :ref:`OnNotificationAnalogIOChangeTopic <OnNotificationIndustrialIOClientAnalogIOChangeTopic>` :      Subscribes to analog input/output change topic for notifications.
+
+
+    :ref:`OnNotificationWristAnalogIOChangeTopic <OnNotificationIndustrialIOClientWristAnalogIOChangeTopic>` :       Subscribes to wrist's analog configuration change topic for notifications.      This notification is only emitted when the Industrial I/O Plugin changes the wrist's configuration.      It's not emitted when the analog value changes.     
+
+
+.. py:class:: BaseClient
+    
+
+    :ref:`OnNotificationConfigurationChangeTopic <OnNotificationBaseClientConfigurationChangeTopic>` :      Subscribes to configuration change topic for notifications
+
+
+    :ref:`OnNotificationOperatingModeTopic <OnNotificationBaseClientOperatingModeTopic>` :      Subscribes to operating mode topic for notifications
+
+
+    :ref:`OnNotificationControllerTopic <OnNotificationBaseClientControllerTopic>` :      Subscribes to controller topic for notifications
+
+
+    :ref:`OnNotificationActionTopic <OnNotificationBaseClientActionTopic>` :      Subscribes to action topic for notifications
+
+
+    :ref:`OnNotificationRobotEventTopic <OnNotificationBaseClientRobotEventTopic>` :      Subscribes to robot event topic for notifications
+
+
+    :ref:`OnNotificationServoingModeTopic <OnNotificationBaseClientServoingModeTopic>` :      Subscribes to servoing mode topic for notifications
+
+
+    :ref:`OnNotificationFactoryTopic <OnNotificationBaseClientFactoryTopic>` :      Subscribes to factory topic for notifications
+
+
+    :ref:`OnNotificationArmStateTopic <OnNotificationBaseClientArmStateTopic>` :      Subscribes to robot arm state notifications
+
+
+    :ref:`OnNotificationUpdatingModeTopic <OnNotificationBaseClientUpdatingModeTopic>` :      Subscribes to updating mode topic for notifications
+
+
+    :ref:`OnNotificationHandGuidingModeTopic <OnNotificationBaseClientHandGuidingModeTopic>` :      Subscribes to Hand-Guiding mode topic for notifications
+
+
+    :ref:`OnNotificationEnablingDeviceTopic <OnNotificationBaseClientEnablingDeviceTopic>` :      Subscribes to enabling device topic for notifications
+
+
+    :ref:`OnNotificationMotionTopic <OnNotificationBaseClientMotionTopic>` :      Subscribes to motion topic for notifications
+
+
+    :ref:`OnNotificationProgramRequestTopic <OnNotificationBaseClientProgramRequestTopic>` :      Subscribes to program request topic for notifications
+
+
+    :ref:`OnNotificationArmCalibrationStatusChangeTopic <OnNotificationBaseClientArmCalibrationStatusChangeTopic>` :      Subscribes to arm calibration status change topic for notifications
+
+
+    :ref:`OnNotificationAcknowledgeActionTopic <OnNotificationBaseClientAcknowledgeActionTopic>` :      Subscribes to acknowledge action topic for notifications
+
+
+.. py:class:: VariableManagerClient
+    
+
+    :ref:`OnNotificationVariableChangeTopic <OnNotificationVariableManagerClientVariableChangeTopic>` :      Subscribes to Configuration change topic on variables
+
+
+    :ref:`OnNotificationVariableJsonSchemasChangedTopic <OnNotificationVariableManagerClientVariableJsonSchemasChangedTopic>` :      Subscribes to variable JSON schemas changes notification
+
+
+.. py:class:: PluginClient
+    
+
+    :ref:`OnNotificationStateTopic <OnNotificationPluginClientStateTopic>` :      Subscribes to State change topic for the Plugin
+
+
+    :ref:`OnNotificationConfigurationChangeTopic <OnNotificationPluginClientConfigurationChangeTopic>` :      Subscribes to Configuration change topic for the Plugin
+
+
+    :ref:`OnNotificationActionTopic <OnNotificationPluginClientActionTopic>` :      Subscribes to Action notifications for the Plugin
+
+
+    :ref:`OnNotificationInfoChangeTopic <OnNotificationPluginClientInfoChangeTopic>` :      Subscribes to Info change topic for the Plugin
+
+
+.. py:class:: ToolPluginClient
+    
+
+    :ref:`OnNotificationToolInformationTopic <OnNotificationToolPluginClientToolInformationTopic>` :      Subscribes to tool information notifications
+
+
+.. py:class:: PluginManagerClient
+    
+
+    :ref:`OnNotificationPluginUpdatedTopic <OnNotificationPluginManagerClientPluginUpdatedTopic>` :      Notification of plugin update events 
+
+
+    :ref:`OnNotificationPluginInstallationTopic <OnNotificationPluginManagerClientPluginInstallationTopic>` :      Notification of plugin installation events 
+
+
+.. py:class:: ProgramRunnerClient
+    
+
+    :ref:`OnNotificationStateChangeTopic <OnNotificationProgramRunnerClientStateChangeTopic>` :      Subscribes to state event notifications
+
+
+    :ref:`OnNotificationStatusChangeTopic <OnNotificationProgramRunnerClientStatusChangeTopic>` :      Subscribes to status event notifications
+
+
+    :ref:`OnNotificationConfigurationChangeTopic <OnNotificationProgramRunnerClientConfigurationChangeTopic>` :      Subscribes to Configuration change topic on programs
+
+
+    :ref:`OnNotificationExecutionEventTopic <OnNotificationProgramRunnerClientExecutionEventTopic>` :      Subscribes to program execution event notifications
+
+
+.. py:class:: SafetyIOClient
+    
+
+    :ref:`OnNotificationSafetyIOChangeTopic <OnNotificationSafetyIOClientSafetyIOChangeTopic>` :      Subscribes to safety io change topic for notifications
+
+
+.. py:class:: SafetyControlUnitConfigClient
+    
+
+    :ref:`OnNotificationSafetyParametersChecksumChangeTopic <OnNotificationSafetyControlUnitConfigClientSafetyParametersChecksumChangeTopic>` :      Subscribes to safety parameters checksum change topic for notifications
+
+
+.. py:class:: SafetyFunctionsClient
+    
+
+    :ref:`OnNotificationSafetyFunctionChangeTopic <OnNotificationSafetyFunctionsClientSafetyFunctionChangeTopic>` :      Subscribes to safety function change topic for notifications
+
+
+    :ref:`OnNotificationSafetyModeChangeTopic <OnNotificationSafetyFunctionsClientSafetyModeChangeTopic>` :      Subscribes to safety function change topic for notifications
+
+
+    :ref:`OnNotificationProtectiveStopChangeTopic <OnNotificationSafetyFunctionsClientProtectiveStopChangeTopic>` :      Subscribes to protective stop change topic for notifications
+

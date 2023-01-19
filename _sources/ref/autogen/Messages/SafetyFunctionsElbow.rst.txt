@@ -1,0 +1,69 @@
+================================
+SafetyFunctionsElbow
+================================
+    
+.. py:currentmodule:: kortex_api.autogen
+
+.. _SafetyFunctionsElbowElbowInfo:
+
+.. py:class:: ElbowInfo
+
+    Elbow information
+
+   :canonical: kortex_api.autogen.messages.SafetyFunctionsElbow_pb2.ElbowInfo
+
+   :param mode:   Safety system mode (normal or reduced)
+   :type mode: :ref:`SafetySystemMode <SafetyFunctionsElbowSafetySystemMode>` 
+
+   :param with_margin:   True for limits adapted with margins
+   :type with_margin: :ref:`bool <>` 
+
+.. _SafetyFunctionsElbowElbowSpeedLimit:
+
+.. py:class:: ElbowSpeedLimit
+
+    Elbow speed limit
+
+   :canonical: kortex_api.autogen.messages.SafetyFunctionsElbow_pb2.ElbowSpeedLimit
+
+   :param info:   Elbow information
+   :type info: :ref:`ElbowInfo <SafetyFunctionsElbowElbowInfo>` 
+
+   :param translation_limit:   Elbow translation speed limit in meters/second (m/s)
+   :type translation_limit: :ref:`float <>` 
+
+.. _SafetyFunctionsElbowElbowForceLimit:
+
+.. py:class:: ElbowForceLimit
+
+    Elbow force limit
+
+   :canonical: kortex_api.autogen.messages.SafetyFunctionsElbow_pb2.ElbowForceLimit
+
+   :param info:   Elbow information
+   :type info: :ref:`ElbowInfo <SafetyFunctionsElbowElbowInfo>` 
+
+   :param limit:   Elbow force limit in newtons (N)
+   :type limit: :ref:`float <>` 
+
+.. _SafetyFunctionsElbowElbowSpeedLimitList:
+
+.. py:class:: ElbowSpeedLimitList
+
+    Array of elbow speed limit (for each safety system mode)
+
+   :canonical: kortex_api.autogen.messages.SafetyFunctionsElbow_pb2.ElbowSpeedLimitList
+
+   :param elbow_speed_limit:   List of elbow speed limit (for each safety system mode)
+   :type elbow_speed_limit: :ref:`ElbowSpeedLimit <SafetyFunctionsElbowElbowSpeedLimit>` [ ]
+
+.. _SafetyFunctionsElbowElbowForceLimitList:
+
+.. py:class:: ElbowForceLimitList
+
+    Array of elbow force limit (for each safety system mode)
+
+   :canonical: kortex_api.autogen.messages.SafetyFunctionsElbow_pb2.ElbowForceLimitList
+
+   :param elbow_force_limit:   List of elbow force limit (for each safety system mode)
+   :type elbow_force_limit: :ref:`ElbowForceLimit <SafetyFunctionsElbowElbowForceLimit>` [ ]

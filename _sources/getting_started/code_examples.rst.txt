@@ -1,0 +1,27 @@
+Code examples
+=============
+Welcome to the code examples. It is a good starting point if you want to learn how to initialize the kortex API and how to access its services.
+
+Using a MQTT session
+-----------------------
+This piece of code shows how to initialize a session with the Kortex API using the MQTT transport. Once the session has been created, 
+a client communicating with the base service is created and the function GetArmState() is executed. Once this is all done, everything is closed
+smoothly using the correct teardown sequence.
+
+.. include:: code_examples/mqtt_session.py.rst
+
+Getting the robot feedback with a UDP session
+-----------------------
+This other piece of code shows how to initialize a session with the Kortex API using the UDP transport. Once the session has been created, 
+a client communicating with the base cyclic service is created and the function RefreshFeedback() is executed. Once this is all done, everything is closed
+smoothly using the correct teardown sequence.
+
+.. include:: code_examples/udp_session.py.rst
+
+Run a program
+-----------------------
+This example shows how to start a program that is already stored on the controller. It assumes that the controller and the robot has been 
+powered on. Assign the program ID you want to start to this variable PROGRAM_ID. Once this is all done, everything is closed smoothly 
+using the correct teardown sequence.
+
+.. include:: code_examples/run_program.py.rst

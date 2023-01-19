@@ -1,0 +1,186 @@
+================================
+ProtectionZone
+================================
+    
+.. py:currentmodule:: kortex_api.autogen
+
+.. py:class:: ProtectionZoneClient
+        
+    :canonical: kortex_api.autogen.client_stubs.ProtectionZoneClientRpc
+
+    .. py:method:: __init__(router, namespace = None)
+
+        Constructs a ProtectionZoneClient with an initialized :class:`~kortex_api.RouterClient.RouterClient` and an optional namespace.
+
+        :param RouterClient router: :class:`~kortex_api.RouterClient.RouterClient` used for the communication
+        :param string namespace: Optional namespace on which to initialize the ProtectionZoneClient (defaults to ``None``)
+
+    .. py:method:: IsAlive (timeoutMs: int = 1000)
+        
+        Returns ``True`` if the Service Server is detected online before ``timeoutMs`` is expired, ``False`` otherwise.
+        
+        :param unsigned int timeoutMs: The maximum time to wait for an answer from the server 
+        :rtype: bool
+
+
+        .. _ProtectionZoneClientCreateProtectionZone:
+
+    .. py:method:: CreateProtectionZone (protectionzoneconfig, deviceId = 0, options = RouterClientSendOptions())
+        
+        | The ``SAFETIES`` permission is necessary to call this RPC.
+        |
+        | Creates a new protection zone and returns a handle to the protection zone.
+        | The arm must be powered off and not be in an Unrecoverable Fault state to create a protection zone.
+        | The parameter orientation from the ZoneShape needs to be an orthonormal matrix, or else an error ERROR_DEVICE, METHOD_FAILED, is raised.
+        | If the shape dimensions are not greater than 0, an the error ERROR_DEVICE, METHOD_FAILED is raised.
+        | The shape dimensions are entered in meters and must be initialized according to the shape_type. The order is important and must be as followed:
+        | The dimensions must contain the radius it is a sphere, the x, y and z (length, width, height) dimensions if it is a rectangular prism, the radius and height if it is a cylinder.
+        | The shape origin needs to be a three dimensional vector that corresponds to the x,y,z coordinates.
+        | 
+
+
+        :param protectionzoneconfig:  
+        :type protectionzoneconfig: :ref:`ProtectionZoneConfig <ProtectionZoneProtectionZoneConfig>`
+
+        :param int deviceId: Device's Id called by rpc (optional)
+        :param RouterClientSendOptions options: Router options for sending the message
+ 
+        :rtype: ProtectionZoneHandle
+
+        .. _ProtectionZoneClientUpdateProtectionZone:
+
+    .. py:method:: UpdateProtectionZone (protectionzoneconfig, deviceId = 0, options = RouterClientSendOptions())
+        
+        | The ``SAFETIES`` permission is necessary to call this RPC.
+        |
+        | Updates an existing protection zone
+        | The arm must be powered off and not be in an Unrecoverable Fault state to update a protection zone.
+        | Updates on the protection zone fields need to follow the same rules as the ones mentioned in CreateProtectionZone's description.
+        | The handle.identifier of the protection zone to be updated needs to match the identifier from an existing protection zone, or else an ENTITY_NOT_FOUND exception is thrown.
+        | 
+
+
+        :param protectionzoneconfig:  
+        :type protectionzoneconfig: :ref:`ProtectionZoneConfig <ProtectionZoneProtectionZoneConfig>`
+
+        :param int deviceId: Device's Id called by rpc (optional)
+        :param RouterClientSendOptions options: Router options for sending the message
+
+        .. _ProtectionZoneClientReadProtectionZone:
+
+    .. py:method:: ReadProtectionZone (protectionzonehandle, deviceId = 0, options = RouterClientSendOptions())
+        
+        | The ``READ_ONLY`` permission is necessary to call this RPC.
+        |
+        | Retrieves an existing protection zone
+
+
+        :param protectionzonehandle:  
+        :type protectionzonehandle: :ref:`ProtectionZoneHandle <ProtectionZoneProtectionZoneHandle>`
+
+        :param int deviceId: Device's Id called by rpc (optional)
+        :param RouterClientSendOptions options: Router options for sending the message
+ 
+        :rtype: ProtectionZoneConfig
+
+        .. _ProtectionZoneClientDeleteProtectionZone:
+
+    .. py:method:: DeleteProtectionZone (protectionzonehandle, deviceId = 0, options = RouterClientSendOptions())
+        
+        | The ``SAFETIES`` permission is necessary to call this RPC.
+        |
+        | Deletes an existing protection zone
+        | The arm must be powered off and not be in an Unrecoverable Fault state to delete a protection zone.
+        | The handle.identifier of the protection zone to be deleted needs to match the identifier from an existing protection zone, or else an ENTITY_NOT_FOUND exception is thrown.
+        | 
+
+
+        :param protectionzonehandle:  
+        :type protectionzonehandle: :ref:`ProtectionZoneHandle <ProtectionZoneProtectionZoneHandle>`
+
+        :param int deviceId: Device's Id called by rpc (optional)
+        :param RouterClientSendOptions options: Router options for sending the message
+
+        .. _ProtectionZoneClientReadAllProtectionZones:
+
+    .. py:method:: ReadAllProtectionZones (, deviceId = 0, options = RouterClientSendOptions())
+        
+        | The ``READ_ONLY`` permission is necessary to call this RPC.
+        |
+        | Retrieves a list of all protection zones
+
+        :param int deviceId: Device's Id called by rpc (optional)
+        :param RouterClientSendOptions options: Router options for sending the message
+ 
+        :rtype: ProtectionZoneConfigList
+
+        .. _ProtectionZoneClientSetToolSphere:
+
+    .. py:method:: SetToolSphere (toolsphere, deviceId = 0, options = RouterClientSendOptions())
+        
+        | The ``SAFETIES`` permission is necessary to call this RPC.
+        |
+        | Sets the tool sphere.
+        | The arm must be powered off and not be in an Unrecoverable Fault state to set the tool sphere.
+        | 
+
+
+        :param toolsphere:  
+        :type toolsphere: :ref:`ToolSphere <ProtectionZoneToolSphere>`
+
+        :param int deviceId: Device's Id called by rpc (optional)
+        :param RouterClientSendOptions options: Router options for sending the message
+
+        .. _ProtectionZoneClientGetToolSphere:
+
+    .. py:method:: GetToolSphere (, deviceId = 0, options = RouterClientSendOptions())
+        
+        | The ``READ_ONLY`` permission is necessary to call this RPC.
+        |
+        | Gets the tool sphere
+
+        :param int deviceId: Device's Id called by rpc (optional)
+        :param RouterClientSendOptions options: Router options for sending the message
+ 
+        :rtype: ToolSphere
+
+        .. _OnNotificationProtectionZoneClientProtectionZoneChangeTopic:
+
+    .. py:method:: OnNotificationProtectionZoneChangeTopic(callback, notificationoptions)
+    
+        | The ``READ_ONLY`` permission is necessary to call this RPC.
+        |
+        | Subscribes to protection zone change topic for notifications
+
+        :param callback: Function callback taking a :class:`ProtectionZoneChangeNotification` as only argument, and returning ``None``.
+        :type callback: function
+        :param NotificationOptions notificationoptions: Notification options
+        :rtype: NotificationHandle
+
+        .. _OnNotificationProtectionZoneClientToolSphereChangeTopic:
+
+    .. py:method:: OnNotificationToolSphereChangeTopic(callback, notificationoptions)
+    
+        | The ``READ_ONLY`` permission is necessary to call this RPC.
+        |
+        | Subscribes to tool sphere change topic for notifications
+
+        :param callback: Function callback taking a :class:`ToolSphereChangeNotification` as only argument, and returning ``None``.
+        :type callback: function
+        :param NotificationOptions notificationoptions: Notification options
+        :rtype: NotificationHandle
+
+        .. _ProtectionZoneClientUnsubscribe:
+
+    .. py:method:: Unsubscribe (notificationhandle, deviceId = 0, options = RouterClientSendOptions())
+        
+        | The ``READ_ONLY`` permission is necessary to call this RPC.
+        |
+        | Unsubscribes client from receiving notifications for the specified topic
+
+
+        :param notificationhandle:  
+        :type notificationhandle: :ref:`NotificationHandle <CommonNotificationHandle>`
+
+        :param int deviceId: Device's Id called by rpc (optional)
+        :param RouterClientSendOptions options: Router options for sending the message

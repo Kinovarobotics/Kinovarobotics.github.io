@@ -1,0 +1,57 @@
+================================
+ToolPlugin
+================================
+    
+.. py:currentmodule:: kortex_api.autogen
+
+.. _ToolPluginServiceVersion:
+
+.. py:class:: ServiceVersion
+
+     Identifies service current version
+
+    :canonical: kortex_api.autogen.messages.ToolPlugin_pb2.ServiceVersion
+    .. py:attribute:: RESERVED_0 (0):   Reserved
+
+    .. py:attribute:: CURRENT_VERSION (1):   Current version
+
+.. _ToolPluginToolPluginType:
+
+.. py:class:: ToolPluginType
+
+     Define the tool type
+
+    :canonical: kortex_api.autogen.messages.ToolPlugin_pb2.ToolPluginType
+    .. py:attribute:: TOOL_TYPE_UNSPECIFIED (0):   Undefined
+
+    .. py:attribute:: TOOL_TYPE_CUSTOM (1):   A custom tool that does not have a plugin
+
+    .. py:attribute:: TOOL_TYPE_PLUGIN (2):   A tool that can be accessed via a plugin
+
+.. _ToolPluginToolConnectionState:
+
+.. py:class:: ToolConnectionState
+
+     Define the state of a tool
+
+    :canonical: kortex_api.autogen.messages.ToolPlugin_pb2.ToolConnectionState
+    .. py:attribute:: TOOL_CONNECTION_STATE_UNSPECIFIED (0):   The connection state is unspecified
+
+    .. py:attribute:: TOOL_CONNECTION_STATE_UNKNOWN (1):   The connection state is unknown
+
+    .. py:attribute:: TOOL_CONNECTION_STATE_DISCONNECTED (2):   The connection state is disconnected
+
+    .. py:attribute:: TOOL_CONNECTION_STATE_CONNECTED (3):   The connection state is connected
+
+.. _ToolPluginToolInformationEvent:
+
+.. py:class:: ToolInformationEvent
+
+     Define a tool information event inside a ToolInformationNotification.
+
+    :canonical: kortex_api.autogen.messages.ToolPlugin_pb2.ToolInformationEvent
+    .. py:attribute:: TOOL_INFORMATION_EVENT_UNSPECIFIED (0):   Unspecified event
+
+    .. py:attribute:: TOOL_INFORMATION_EVENT_ALL (1):   All information is targeted
+
+    .. py:attribute:: TOOL_INFORMATION_EVENT_CONNECTION_STATE (2):   Only the connection state has changed

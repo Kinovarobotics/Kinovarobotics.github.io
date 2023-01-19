@@ -1,0 +1,107 @@
+================================
+Session
+================================
+    
+.. py:currentmodule:: kortex_api.autogen
+
+.. _SessionCreateSessionInfo:
+
+.. py:class:: CreateSessionInfo
+
+    Parameters needed to create a new session
+
+   :canonical: kortex_api.autogen.messages.Session_pb2.CreateSessionInfo
+
+   :param username:   User name 
+   :type username: :ref:`str <>` 
+
+   :param session_inactivity_timeout:   Inactivity period (in milliseconds) allowed before the session times out and closes on its own
+   :type session_inactivity_timeout: :ref:`int <>` 
+
+   :param password:   Password for the user
+   :type password: :ref:`str <>` 
+
+   :param connection_inactivity_timeout:   Inactivity period (in milliseconds) allowed before the robot stops any movements initiated from this session
+   :type connection_inactivity_timeout: :ref:`int <>` 
+
+.. _SessionConnectionList:
+
+.. py:class:: ConnectionList
+
+    Array of connections
+
+   :canonical: kortex_api.autogen.messages.Session_pb2.ConnectionList
+
+   :param connection:   This field is deprecated and will be removed in a future release
+   :type connection: :ref:`Connection <CommonConnection>` [ ]
+
+   :param user_connections:   List of all established user connections
+   :type user_connections: :ref:`Connection <CommonConnection>` [ ]
+
+   :param plugin_connections:   List of all established plugin connections
+   :type plugin_connections: :ref:`Connection <CommonConnection>` [ ]
+
+   :param internal_connections:   List of all established internal connections
+   :type internal_connections: :ref:`Connection <CommonConnection>` [ ]
+
+   :param unauthenticated_connections:   List of all unauthenticated connections (which did not create a session)
+   :type unauthenticated_connections: :ref:`Connection <CommonConnection>` [ ]
+
+   :param monitor_connections:   List of all established monitor connections
+   :type monitor_connections: :ref:`Connection <CommonConnection>` [ ]
+
+.. _SessionSessionStatusHandle:
+
+.. py:class:: SessionStatusHandle
+
+    Defines a session information sent through a raw frame to all routers
+
+   :canonical: kortex_api.autogen.messages.Session_pb2.SessionStatusHandle
+
+   :param session_identifier:   Id for the session itself
+   :type session_identifier: :ref:`int <>` 
+
+   :param user_identifier:   Id for the user linked to the session
+   :type user_identifier: :ref:`int <>` 
+
+   :param roles:   Roles of this session's user (includes temporary roles)
+   :type roles: :ref:`UserRole <CommonUserRole>` [ ]
+
+.. _SessionPayloadSessionStatusRaw:
+
+.. py:class:: PayloadSessionStatusRaw
+
+    Defines a status for sessions
+
+   :canonical: kortex_api.autogen.messages.Session_pb2.PayloadSessionStatusRaw
+
+   :param sessions:   List of active/logged-in sessions 
+   :type sessions: :ref:`SessionStatusHandle <SessionSessionStatusHandle>` [ ]
+
+.. _SessionTemporaryRoleRequest:
+
+.. py:class:: TemporaryRoleRequest
+
+    Defines the message to fill when adding a temporary role to a session
+
+   :canonical: kortex_api.autogen.messages.Session_pb2.TemporaryRoleRequest
+
+   :param role_identifier:   Identifier for the role to add to this session
+   :type role_identifier: :ref:`str <>` 
+
+   :param password:   If the role is Admin, password of admin user. If the role is System, password of system user.
+   :type password: :ref:`str <>` 
+
+.. _SessionAccessControlOptions:
+
+.. py:class:: AccessControlOptions
+
+    Defines the value of the Access Control options
+
+   :canonical: kortex_api.autogen.messages.Session_pb2.AccessControlOptions
+
+   :param single_source_control:   True if Single Source Control is enabled, false otherwise. This setting is persisted upon rebooting.
+   :type single_source_control: :ref:`bool <>` 
+
+   :param bypass_remote_access:   True if bypassing the remote access check is enabled, false otherwise. This setting is not persisted upon rebooting.
+   :type bypass_remote_access: :ref:`bool <>` 

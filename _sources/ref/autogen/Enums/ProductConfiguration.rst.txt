@@ -1,0 +1,120 @@
+================================
+ProductConfiguration
+================================
+    
+.. py:currentmodule:: kortex_api.autogen
+
+.. _ProductConfigurationModelId:
+
+.. py:class:: ModelId
+
+     Admissible model identification
+
+    :canonical: kortex_api.autogen.messages.ProductConfiguration_pb2.ModelId
+    .. py:attribute:: MODEL_ID_UNSPECIFIED (0):   Unspecified Model identification
+
+    .. py:attribute:: MODEL_ID_L53 (1):   Gen3 Ultra Lightweight Robot
+
+    .. py:attribute:: MODEL_ID_L31 (2):   Gen3 lite
+
+    .. py:attribute:: MODEL_ID_HDK (3):   Hardware Development Kit
+
+    .. py:attribute:: MODEL_ID_C61 (4):   Link 6Kg 1st Generation
+
+.. _ProductConfigurationBaseType:
+
+.. py:class:: BaseType
+
+     Admissible base types
+
+    :canonical: kortex_api.autogen.messages.ProductConfiguration_pb2.BaseType
+    .. py:attribute:: BASE_TYPE_UNSPECIFIED (0):   Unspecified base type
+
+    .. py:attribute:: BASE_TYPE_L53_QUICK_CONNECT (1):   L53 (Gen3) Quick Connect Base
+
+    .. py:attribute:: BASE_TYPE_L53_FIXED (2):   L53 (Gen3) Fixed Base
+
+    .. py:attribute:: BASE_TYPE_L31_FIXED (3):   L31 (Gen3 lite) Fixed Base
+
+    .. py:attribute:: BASE_TYPE_HDK_FIXED (4):   HDK Fixed Base
+
+    .. py:attribute:: BASE_TYPE_C61_FIXED (5):   C61 Fixed Base
+
+.. _ProductConfigurationEndEffectorType:
+
+.. py:class:: EndEffectorType
+
+     Admissible end-effector modules
+
+    :canonical: kortex_api.autogen.messages.ProductConfiguration_pb2.EndEffectorType
+    .. py:attribute:: END_EFFECTOR_TYPE_UNSPECIFIED (0):   Unspecified end-effector type
+
+    .. py:attribute:: END_EFFECTOR_TYPE_NOT_INSTALLED (1):   No gripper installed
+
+    .. py:attribute:: END_EFFECTOR_TYPE_L31_GRIPPER_2F (2):   L31 (Gen3 lite) gripper, 2 fingers
+
+    .. py:attribute:: END_EFFECTOR_TYPE_ROBOTIQ_2F_85 (3):   Robotiq 2F-85 gripper, 2 fingers
+
+    .. py:attribute:: END_EFFECTOR_TYPE_ROBOTIQ_2F_140 (4):   Robotiq 2F-140 gripper, 2 fingers
+
+.. _ProductConfigurationVisionModuleType:
+
+.. py:class:: VisionModuleType
+
+     Admissible vision modules
+
+    :canonical: kortex_api.autogen.messages.ProductConfiguration_pb2.VisionModuleType
+    .. py:attribute:: VISION_MODULE_TYPE_UNSPECIFIED (0):   Unspecified vision module type
+
+    .. py:attribute:: VISION_MODULE_TYPE_NOT_INSTALLED (1):   Not Applicable / Not Installed
+
+    .. py:attribute:: VISION_MODULE_TYPE_L53_2D3D (2):   L53 (Gen3) Vision Module
+
+    .. py:attribute:: VISION_MODULE_TYPE_L53_2D (3):   L53 (Gen3) Vision Module without 3D sensor
+
+.. _ProductConfigurationInterfaceModuleType:
+
+.. py:class:: InterfaceModuleType
+
+     Admissible interface modules
+
+    :canonical: kortex_api.autogen.messages.ProductConfiguration_pb2.InterfaceModuleType
+    .. py:attribute:: INTERFACE_MODULE_TYPE_UNSPECIFIED (0):   Unspecified interface module type
+
+    .. py:attribute:: INTERFACE_MODULE_TYPE_NOT_INSTALLED (1):   Not Applicable / Not Installed
+
+    .. py:attribute:: INTERFACE_MODULE_TYPE_L53 (2):   L53 (Gen3) Interface Module
+
+    .. py:attribute:: INTERFACE_MODULE_TYPE_L31 (3):   L31 (Gen3 lite) Interface Module
+
+    .. py:attribute:: INTERFACE_MODULE_TYPE_C61 (4):   C61 Interface Module (with FT sensor)
+
+.. _ProductConfigurationArmLaterality:
+
+.. py:class:: ArmLaterality
+
+     Admissible arm laterality
+
+    :canonical: kortex_api.autogen.messages.ProductConfiguration_pb2.ArmLaterality
+    .. py:attribute:: ARM_LATERALITY_UNSPECIFIED (0):   Unspecified arm laterality
+
+    .. py:attribute:: ARM_LATERALITY_NOT_APPLICABLE (1):   Not Applicable
+
+    .. py:attribute:: ARM_LATERALITY_LEFT (2):   Left Laterality
+
+    .. py:attribute:: ARM_LATERALITY_RIGHT (3):   Right Laterality
+
+.. _ProductConfigurationWristType:
+
+.. py:class:: WristType
+
+     Admissible wrist types
+
+    :canonical: kortex_api.autogen.messages.ProductConfiguration_pb2.WristType
+    .. py:attribute:: WRIST_TYPE_UNSPECIFIED (0):   Unspecified wrist type
+
+    .. py:attribute:: WRIST_TYPE_NOT_APPLICABLE (1):   Not Applicable
+
+    .. py:attribute:: WRIST_TYPE_SPHERICAL (2):   Spherical Wrist
+
+    .. py:attribute:: WRIST_TYPE_CURVED (3):   Curved Wrist

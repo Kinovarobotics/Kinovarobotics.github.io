@@ -1,0 +1,48 @@
+================================
+VariableManager
+================================
+    
+.. py:currentmodule:: kortex_api.autogen
+
+.. _VariableManagerServiceVersion:
+
+.. py:class:: ServiceVersion
+
+     Identifies VariableManager service current version
+
+    :canonical: kortex_api.autogen.messages.VariableManager_pb2.ServiceVersion
+    .. py:attribute:: RESERVED_0 (0):   Reserved
+
+    .. py:attribute:: CURRENT_VERSION (1):   Current version
+
+.. _VariableManagerVariableType:
+
+.. py:class:: VariableType
+
+     Variable types
+
+    :canonical: kortex_api.autogen.messages.VariableManager_pb2.VariableType
+    .. py:attribute:: VARIABLE_TYPE_UNSPECIFIED (0):  
+
+    .. py:attribute:: VARIABLE_TYPE_BOOL (1):  
+
+    .. py:attribute:: VARIABLE_TYPE_NUMBER (2):  
+
+    .. py:attribute:: VARIABLE_TYPE_STRING (3):  
+
+    .. py:attribute:: VARIABLE_TYPE_JSON (4):  
+
+.. _VariableManagerConfigurationChangeEvent:
+
+.. py:class:: ConfigurationChangeEvent
+
+     Configuration Change event
+
+    :canonical: kortex_api.autogen.messages.VariableManager_pb2.ConfigurationChangeEvent
+    .. py:attribute:: CONFIGURATION_CHANGE_EVENT_UNSPECIFIED (0):  
+
+    .. py:attribute:: CONFIGURATION_CHANGE_EVENT_VARIABLES_CHANGED (1):  
+
+    .. py:attribute:: CONFIGURATION_CHANGE_EVENT_VARIABLES_DELETED (2):  
+
+    .. py:attribute:: CONFIGURATION_CHANGE_EVENT_NAMESPACES_DELETED (3):  

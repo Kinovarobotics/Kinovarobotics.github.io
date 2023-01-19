@@ -1,0 +1,774 @@
+================================
+ActuatorConfig
+================================
+    
+.. py:currentmodule:: kortex_api.autogen
+
+.. _ActuatorConfigServiceVersion:
+
+.. py:class:: ServiceVersion
+
+     Identifies ActuatorConfig service current version
+
+    :canonical: kortex_api.autogen.messages.ActuatorConfig_pb2.ServiceVersion
+    .. py:attribute:: RESERVED_0 (0):   Reserved
+
+    .. py:attribute:: CURRENT_VERSION (1):   Current version
+
+.. _ActuatorConfigControlMode:
+
+.. py:class:: ControlMode
+
+     Admissible control modes
+
+    :canonical: kortex_api.autogen.messages.ActuatorConfig_pb2.ControlMode
+    .. py:attribute:: NONE (0):   None
+
+    .. py:attribute:: POSITION (1):   Position mode
+
+    .. py:attribute:: VELOCITY (2):   Velocity mode
+
+    .. py:attribute:: TORQUE (3):   Torque mode
+
+    .. py:attribute:: CURRENT (4):   Current mode
+
+    .. py:attribute:: CUSTOM (5):   Custom mode
+
+    .. py:attribute:: TORQUE_HIGH_VELOCITY (6):   High velocity torque mode
+
+.. _ActuatorConfigCommandMode:
+
+.. py:class:: CommandMode
+
+     Admissible command modes
+
+    :canonical: kortex_api.autogen.messages.ActuatorConfig_pb2.CommandMode
+    .. py:attribute:: CYCLIC (0):   Cyclic data only
+
+    .. py:attribute:: ASYNC (2):   Config messages only
+
+    .. py:attribute:: CYCLIC_JITTERCOMPENSATED_POSITION (3):   Smoothing using only position inputs
+
+    .. py:attribute:: CYCLIC_JITTERCOMPENSATED_VELOCITY (4):   Smoothing using position and velocity inputs
+
+.. _ActuatorConfigControlLoopSelection:
+
+.. py:class:: ControlLoopSelection
+
+     Admissible control loop selections
+
+    :canonical: kortex_api.autogen.messages.ActuatorConfig_pb2.ControlLoopSelection
+    .. py:attribute:: RESERVED (0):   0x0 - Reserved (internal use only)
+
+    .. py:attribute:: JOINT_POSITION (1):   0x1 - Joint position control (if available)
+
+    .. py:attribute:: MOTOR_POSITION (2):   0x2 - Motor position control
+
+    .. py:attribute:: JOINT_VELOCITY (4):   0x4 - Joint velocity control (if available)
+
+    .. py:attribute:: MOTOR_VELOCITY (8):   0x8 - Motor velocity control
+
+    .. py:attribute:: JOINT_TORQUE (16):   0x10 - Joint torque control
+
+    .. py:attribute:: MOTOR_CURRENT (32):   0x20 - Motor current control
+
+    .. py:attribute:: JOINT_TORQUE_HIGH_VELOCITY (64):   0x30 - High velocity joint torque control
+
+.. _ActuatorConfigCoggingFeedforwardMode:
+
+.. py:class:: CoggingFeedforwardMode
+
+     Admissible cogging feedforward modes
+
+    :canonical: kortex_api.autogen.messages.ActuatorConfig_pb2.CoggingFeedforwardMode
+    .. py:attribute:: FEEDFORWARD_OFF (0):   No cogging compensation
+
+    .. py:attribute:: FEEDFORWARD_ADAPTIVE (1):   Cogging compensation with adaptive parameters
+
+    .. py:attribute:: FEEDFORWARD_CALIBRATED (2):   Cogging compensation with calibrated parameters
+
+.. _ActuatorConfigLookupTableSelection:
+
+.. py:class:: LookupTableSelection
+
+     Admissible lookup table selections
+
+    :canonical: kortex_api.autogen.messages.ActuatorConfig_pb2.LookupTableSelection
+    .. py:attribute:: LOOKUP_TABLE_JOINT_POSITION (0):   Joint position sensor table
+
+    .. py:attribute:: LOOKUP_TABLE_MOTOR_POSITION (1):   Motor position sensor table
+
+    .. py:attribute:: LOOKUP_TABLE_COGGING (2):   Motor cogging table
+
+    .. py:attribute:: LOOKUP_TABLE_IMPEDANCE_FEEDFORWARD (3):   Impedance mode feedforward table
+
+    .. py:attribute:: LOOKUP_TABLE_GEARBOX_STIFFNESS (4):   Gearbox stiffness table
+
+.. _ActuatorConfigLookupTableDataSelection:
+
+.. py:class:: LookupTableDataSelection
+
+     Admissible lookup table data selections
+
+    :canonical: kortex_api.autogen.messages.ActuatorConfig_pb2.LookupTableDataSelection
+    .. py:attribute:: LOOKUP_TABLE_DATA_X (0):   Lookup table query points
+
+    .. py:attribute:: LOOKUP_TABLE_DATA_Y (1):   Lookup table output points
+
+.. _ActuatorConfigFourierModelSelection:
+
+.. py:class:: FourierModelSelection
+
+     Admissible Fourier model selections
+
+    :canonical: kortex_api.autogen.messages.ActuatorConfig_pb2.FourierModelSelection
+    .. py:attribute:: FOURIER_MODEL_KINEMATIC_ERROR (0):   Kinematic error fourier model (forward movement)
+
+    .. py:attribute:: FOURIER_MODEL_KINEMATIC_ERROR_REVERSE (1):   Kinematic error fourier model (reverse movement)
+
+.. _ActuatorConfigGen3ActuatorDiagnosticIdentifierBankA:
+
+.. py:class:: Gen3ActuatorDiagnosticIdentifierBankA
+
+     Admissible Gen3 actuator diagnostics bank A
+
+    :canonical: kortex_api.autogen.messages.ActuatorConfig_pb2.Gen3ActuatorDiagnosticIdentifierBankA
+    .. py:attribute:: GEN3_ACT_BANK_A_UNSPECIFIED_DIAGNOSTIC_IDENTIFIER (0):   0x0 - Unspecified Gen3 actuator diagnostic bank A
+
+    .. py:attribute:: GEN3_ACT_BANK_A_FOLLOWING_ERROR (1):   0x1 - Following error
+
+    .. py:attribute:: GEN3_ACT_BANK_A_MAXIMUM_VELOCITY (2):   0x2 - Maximum velocity
+
+    .. py:attribute:: GEN3_ACT_BANK_A_JOINT_LIMIT_HIGH (4):   0x4 - Joint position limit high
+
+    .. py:attribute:: GEN3_ACT_BANK_A_JOINT_LIMIT_LOW (8):   0x8 - Joint position limit low
+
+    .. py:attribute:: GEN3_ACT_BANK_A_STRAIN_GAUGE_MISMATCH (16):   0x10 - Strain gauge mismatch
+
+    .. py:attribute:: GEN3_ACT_BANK_A_MAXIMUM_TORQUE (32):   0x20 - Maximum torque
+
+    .. py:attribute:: GEN3_ACT_BANK_A_UNRELIABLE_ABSOLUTE_POSITION (64):   0x40 - Unreliable absolute position
+
+    .. py:attribute:: GEN3_ACT_BANK_A_MAGNETIC_POSITION (128):   0x80 - Magnetic position
+
+    .. py:attribute:: GEN3_ACT_BANK_A_HALL_POSITION (256):   0x100 - Hall position
+
+    .. py:attribute:: GEN3_ACT_BANK_A_HALL_SEQUENCE (512):   0x200 - Hall sequence
+
+    .. py:attribute:: GEN3_ACT_BANK_A_INPUT_ENCODER_HALL_MISMATCH (1024):   0x400 - Input encoder Hall mismatch
+
+    .. py:attribute:: GEN3_ACT_BANK_A_INPUT_ENCODER_INDEX_MISMATCH (2048):   0x800 - Input encoder index mismatch
+
+    .. py:attribute:: GEN3_ACT_BANK_A_INPUT_ENCODER_MAGNETIC_MISMATCH (4096):   0x1000 - Input encoder magnetic mismatch
+
+    .. py:attribute:: GEN3_ACT_BANK_A_MAXIMUM_MOTOR_CURRENT (8192):   0x2000 - Maximum motor current
+
+    .. py:attribute:: GEN3_ACT_BANK_A_MOTOR_CURRENT_MISMATCH (16384):   0x4000 - Motor current mismatch
+
+    .. py:attribute:: GEN3_ACT_BANK_A_MAXIMUM_VOLTAGE (32768):   0x8000 - Maximum voltage
+
+    .. py:attribute:: GEN3_ACT_BANK_A_MINIMUM_VOLTAGE (65536):   0x10000 - Minimum voltage
+
+    .. py:attribute:: GEN3_ACT_BANK_A_MAXIMUM_MOTOR_TEMPERATURE (131072):   0x20000 - Maximum motor temperature
+
+    .. py:attribute:: GEN3_ACT_BANK_A_MAXIMUM_CORE_TEMPERATURE (262144):   0x40000 - Maximum core temperature
+
+    .. py:attribute:: GEN3_ACT_BANK_A_NON_VOLATILE_MEMORY_CORRUPTED (524288):   0x80000 - Non-volatile memory corrupted
+
+    .. py:attribute:: GEN3_ACT_BANK_A_MOTOR_DRIVER_FAULT (1048576):   0x100000 - Motor driver fault
+
+    .. py:attribute:: GEN3_ACT_BANK_A_EMERGENCY_LINE_ASSERTED (2097152):   0x200000 - Emergency line asserted
+
+    .. py:attribute:: GEN3_ACT_BANK_A_COMMUNICATION_TICK_LOST (4194304):   0x400000 - Communication tick lost
+
+    .. py:attribute:: GEN3_ACT_BANK_A_WATCHDOG_TRIGGERED (8388608):   0x800000 - Watchdog triggered
+
+    .. py:attribute:: GEN3_ACT_BANK_A_UNRELIABLE_CAPACITIVE_SENSOR (16777216):   0x1000000 - Capacitive sensor is unreliable
+
+    .. py:attribute:: GEN3_ACT_BANK_A_UNEXPECTED_GEAR_RATIO (33554432):   0x2000000 - Incorrect gear ratio for detected configuration
+
+    .. py:attribute:: GEN3_ACT_BANK_A_HALL_MAGNETIC_MISMATCH (67108864):   0x4000000 - Position mismatch between hall and magnetic sensors
+
+    .. py:attribute:: GEN3_ACT_BANK_A_BRAKE_DRIVER_FAULT (134217728):   0x8000000 - Brake driver fault
+
+    .. py:attribute:: GEN3_ACT_BANK_A_BRAKE_RELEASE_FAILED (268435456):   0x10000000 - Brake release failed
+
+    .. py:attribute:: GEN3_ACT_BANK_A_JOINT_ENCODER_FAULT (536870912):   0x20000000 - Joint encoder fault
+
+.. _ActuatorConfigLinkActuatorMainMCUDiagnosticIdentifierBankA:
+
+.. py:class:: LinkActuatorMainMCUDiagnosticIdentifierBankA
+
+     Admissible bank A Link actuator main MCU diagnostics
+
+    :canonical: kortex_api.autogen.messages.ActuatorConfig_pb2.LinkActuatorMainMCUDiagnosticIdentifierBankA
+    .. py:attribute:: LINK_ACT_MAIN_MCU_BANK_A_UNSPECIFIED_DIAGNOSTIC_IDENTIFIER (0):   0x0 - Unspecified Link actuator main MCU diagnostic bank A identifier
+
+    .. py:attribute:: LINK_ACT_MAIN_MCU_BANK_A_STARTUP_SELF_TESTS_TIMED_OUT (1):   0x1 - Startup self tests timed out
+
+    .. py:attribute:: LINK_ACT_MAIN_MCU_BANK_A_MCU_CORE_GENERAL_PURPOSE_REGISTERS (2):   0x2 - MCU core general purpose registers
+
+    .. py:attribute:: LINK_ACT_MAIN_MCU_BANK_A_MCU_CORE_ARITHMETIC_FUNCTIONS (4):   0x4 - MCU core arithmetic functions
+
+    .. py:attribute:: LINK_ACT_MAIN_MCU_BANK_A_MCU_CORE_MULTIPLIER_FUNCTIONS (8):   0x8 - MCU core multiplier functions
+
+    .. py:attribute:: LINK_ACT_MAIN_MCU_BANK_A_MCU_CORE_CONTROL_FLOW_INSTRUCTIONS (16):   0x10 - MCU core control flow instructions
+
+    .. py:attribute:: LINK_ACT_MAIN_MCU_BANK_A_MCU_CORE_LOAD_STORE_UNIT (32):   0x20 - MCU core load store unit
+
+    .. py:attribute:: LINK_ACT_MAIN_MCU_BANK_A_MCU_CORE_SHIFT_ROTATE_FUNCTIONS (64):   0x40 - MCU core shift rotate functions
+
+    .. py:attribute:: LINK_ACT_MAIN_MCU_BANK_A_MCU_CORE_STACK_POINTER (128):   0x80 - MCU core stack pointer
+
+    .. py:attribute:: LINK_ACT_MAIN_MCU_BANK_A_MCU_CORE_PIPELINE_FUNCTIONS (256):   0x100 - MCU core pipeline functions
+
+    .. py:attribute:: LINK_ACT_MAIN_MCU_BANK_A_MCU_CORE_FPU_REGISTERS_BANK (512):   0x200 - MCU core fpu registers bank
+
+    .. py:attribute:: LINK_ACT_MAIN_MCU_BANK_A_MCU_CORE_FPU_SINGLE_PRECISION_FUNCTIONS (1024):   0x400 - MCU core fpu single precision functions
+
+    .. py:attribute:: LINK_ACT_MAIN_MCU_BANK_A_MCU_CORE_CACHE_MANAGEMENT_LOGIC (2048):   0x800 - MCU core cache management logic
+
+    .. py:attribute:: LINK_ACT_MAIN_MCU_BANK_A_MCU_RAM_BIST_FAULT (4096):   0x1000 - MCU RAM BIST fault
+
+    .. py:attribute:: LINK_ACT_MAIN_MCU_BANK_A_JOINT_POSITION_FOLLOWING_ERROR (8192):   0x2000 - Joint position following error
+
+    .. py:attribute:: LINK_ACT_MAIN_MCU_BANK_A_JOINT_MAXIMUM_VELOCITY (16384):   0x4000 - Joint maximum velocity
+
+    .. py:attribute:: LINK_ACT_MAIN_MCU_BANK_A_JOINT_POSITION_LIMIT_HIGH (32768):   0x8000 - Joint position limit high
+
+    .. py:attribute:: LINK_ACT_MAIN_MCU_BANK_A_JOINT_POSITION_LIMIT_LOW (65536):   0x10000 - Joint position limit low
+
+    .. py:attribute:: LINK_ACT_MAIN_MCU_BANK_A_JOINT_MAXIMUM_TORQUE (131072):   0x20000 - Joint maximum torque
+
+    .. py:attribute:: LINK_ACT_MAIN_MCU_BANK_A_MOTOR_DRV_CONFIGURATION_FAILED (262144):   0x40000 - Motor driver configuration failed
+
+    .. py:attribute:: LINK_ACT_MAIN_MCU_BANK_A_MOTOR_DRV_FAULT_PIN_ASSERTED (524288):   0x80000 - Motor driver fault pin asserted
+
+    .. py:attribute:: LINK_ACT_MAIN_MCU_BANK_A_MOTOR_DRV_VDS_OVERCURRENT (1048576):   0x100000 - Motor driver Vds overcurrent
+
+    .. py:attribute:: LINK_ACT_MAIN_MCU_BANK_A_MOTOR_DRV_GATE_DRIVER_FAULT (2097152):   0x200000 - Motor driver gate driver fault
+
+    .. py:attribute:: LINK_ACT_MAIN_MCU_BANK_A_MOTOR_DRV_PSU_UNDERVOLTAGE_LOCKOUT (4194304):   0x400000 - Motor driver PSU undervoltage lockout
+
+    .. py:attribute:: LINK_ACT_MAIN_MCU_BANK_A_MOTOR_DRV_GATE_DRIVER_UNDERVOLTAGE_LOCKOUT (8388608):   0x800000 - Motor driver gate driver undervoltage lockout
+
+    .. py:attribute:: LINK_ACT_MAIN_MCU_BANK_A_MOTOR_DRV_THERMAL_SHUTDOWN (16777216):   0x1000000 - Motor driver thermal shutdown
+
+    .. py:attribute:: LINK_ACT_MAIN_MCU_BANK_A_MOTOR_DRV_SENSE_AMPLIFIER_OVERCURRENT (33554432):   0x2000000 - Motor driver sense amplifier overcurrent
+
+    .. py:attribute:: LINK_ACT_MAIN_MCU_BANK_A_BRAKE_DRV_FAULT_PIN_ASSERTED (67108864):   0x4000000 - Brake driver fault pin asserted
+
+    .. py:attribute:: LINK_ACT_MAIN_MCU_BANK_A_BRAKE_NOT_RELEASING (134217728):   0x8000000 - Brake not releasing
+
+    .. py:attribute:: LINK_ACT_MAIN_MCU_BANK_A_BRAKE_CIRCUIT_CURRENT_OUT_OF_RANGE (268435456):   0x10000000 - Brake circuit current out of range
+
+    .. py:attribute:: LINK_ACT_MAIN_MCU_BANK_A_BRAKE_CIRCUIT_UNEXPECTED_VOLTAGE (536870912):   0x20000000 - Brake circuit unexpected voltage
+
+    .. py:attribute:: LINK_ACT_MAIN_MCU_BANK_A_BRAKE_RELEASE_MOTION_OUT_OF_RANGE (1073741824):   0x40000000 - Brake release motion out of range
+
+.. _ActuatorConfigLinkActuatorMainMCUDiagnosticIdentifierBankB:
+
+.. py:class:: LinkActuatorMainMCUDiagnosticIdentifierBankB
+
+     Admissible bank B Link actuator main MCU diagnostics
+
+    :canonical: kortex_api.autogen.messages.ActuatorConfig_pb2.LinkActuatorMainMCUDiagnosticIdentifierBankB
+    .. py:attribute:: LINK_ACT_MAIN_MCU_BANK_B_UNSPECIFIED_DIAGNOSTIC_IDENTIFIER (0):   0x0 - Unspecified Link actuator main MCU diagnostic bank B identifier
+
+    .. py:attribute:: LINK_ACT_MAIN_MCU_BANK_B_VMON_48V_OVERVOLTAGE (1):   0x1 - Voltage monitoring 48V overvoltage
+
+    .. py:attribute:: LINK_ACT_MAIN_MCU_BANK_B_VMON_48V_UNDERVOLTAGE (2):   0x2 - Voltage monitoring 48V undervoltage
+
+    .. py:attribute:: LINK_ACT_MAIN_MCU_BANK_B_VMON_5V_OVERVOLTAGE (4):   0x4 - Voltage monitoring 5V overvoltage
+
+    .. py:attribute:: LINK_ACT_MAIN_MCU_BANK_B_VMON_5V_UNDERVOLTAGE (8):   0x8 - Voltage monitoring 5V undervoltage
+
+    .. py:attribute:: LINK_ACT_MAIN_MCU_BANK_B_VMON_3V3_OVERVOLTAGE (16):   0x10 - Voltage monitoring 3V3 overvoltage
+
+    .. py:attribute:: LINK_ACT_MAIN_MCU_BANK_B_VMON_3V3_UNDERVOLTAGE (32):   0x20 - Voltage monitoring 3V3 undervoltage
+
+    .. py:attribute:: LINK_ACT_MAIN_MCU_BANK_B_VMON_2V8_OVERVOLTAGE (64):   0x40 - Voltage monitoring 2V8 overvoltage
+
+    .. py:attribute:: LINK_ACT_MAIN_MCU_BANK_B_VMON_2V8_UNDERVOLTAGE (128):   0x80 - Voltage monitoring 2V8 undervoltage
+
+    .. py:attribute:: LINK_ACT_MAIN_MCU_BANK_B_VMON_1V8_OVERVOLTAGE (256):   0x100 - Voltage monitoring 1V8 overvoltage
+
+    .. py:attribute:: LINK_ACT_MAIN_MCU_BANK_B_VMON_1V8_UNDERVOLTAGE (512):   0x200 - Voltage monitoring 1V8 undervoltage
+
+    .. py:attribute:: LINK_ACT_MAIN_MCU_BANK_B_VMON_1V2_OVERVOLTAGE (1024):   0x400 - Voltage monitoring 1V2 overvoltage
+
+    .. py:attribute:: LINK_ACT_MAIN_MCU_BANK_B_VMON_1V2_UNDERVOLTAGE (2048):   0x800 - Voltage monitoring 1V2 undervoltage
+
+    .. py:attribute:: LINK_ACT_MAIN_MCU_BANK_B_VREF_2V5_OVERVOLTAGE (4096):   0x1000 - Voltage reference 2V5 overvoltage
+
+    .. py:attribute:: LINK_ACT_MAIN_MCU_BANK_B_VREF_2V5_UNDERVOLTAGE (8192):   0x2000 - Voltage reference 2V5 undervoltage
+
+    .. py:attribute:: LINK_ACT_MAIN_MCU_BANK_B_MOTOR_OVERCURRENT (16384):   0x4000 - Motor overcurrent
+
+    .. py:attribute:: LINK_ACT_MAIN_MCU_BANK_B_MOTOR_CURRENT_SENSE_DISAGREEMENT (32768):   0x8000 - Motor current sense disagreement
+
+    .. py:attribute:: LINK_ACT_MAIN_MCU_BANK_B_MOTOR_PHASES_CURRENT_UNBALANCED (65536):   0x10000 - Motor phases current unbalanced
+
+    .. py:attribute:: LINK_ACT_MAIN_MCU_BANK_B_MOTOR_ENCODER_CONFIGURATION_FAILED (131072):   0x20000 - Motor encoder configuration failed
+
+    .. py:attribute:: LINK_ACT_MAIN_MCU_BANK_B_MOTOR_ENCODER_FAULT_DETECTED (262144):   0x40000 - Motor encoder fault detected
+
+    .. py:attribute:: LINK_ACT_MAIN_MCU_BANK_B_MOTOR_ENCODER_ERROR_PIN_ASSERTED (524288):   0x80000 - Motor encoder error pin asserted
+
+    .. py:attribute:: LINK_ACT_MAIN_MCU_BANK_B_MOTOR_ENCODER_SPI_QEI_POSITION_DISAGREEMENT (1048576):   0x100000 - Motor encoder SPI QEI position disagreement
+
+    .. py:attribute:: LINK_ACT_MAIN_MCU_BANK_B_JOINT_ENCODER_CONFIGURATION_FAILED (2097152):   0x200000 - Joint encoder configuration failed
+
+    .. py:attribute:: LINK_ACT_MAIN_MCU_BANK_B_JOINT_ENCODER_FAULT_DETECTED (4194304):   0x400000 - Joint encoder fault detected
+
+    .. py:attribute:: LINK_ACT_MAIN_MCU_BANK_B_JOINT_ENCODER_DIAG_PIN_ASSERTED (8388608):   0x800000 - Joint encoder diagnostic pin asserted
+
+    .. py:attribute:: LINK_ACT_MAIN_MCU_BANK_B_JOINT_ENCODER_SPI_QEI_POSITION_DISAGREEMENT (16777216):   0x1000000 - Joint encoder SPI QEI position disagreement
+
+    .. py:attribute:: LINK_ACT_MAIN_MCU_BANK_B_ENCODERS_POSITION_DISAGREEMENT (33554432):   0x2000000 - Encoders position disagreement
+
+.. _ActuatorConfigLinkActuatorMainMCUDiagnosticIdentifierBankC:
+
+.. py:class:: LinkActuatorMainMCUDiagnosticIdentifierBankC
+
+     Admissible bank C Link actuator main MCU diagnostics
+
+    :canonical: kortex_api.autogen.messages.ActuatorConfig_pb2.LinkActuatorMainMCUDiagnosticIdentifierBankC
+    .. py:attribute:: LINK_ACT_MAIN_MCU_BANK_C_UNSPECIFIED_DIAGNOSTIC_IDENTIFIER (0):   0x0 - Unspecified Link actuator main MCU diagnostic bank C identifier
+
+    .. py:attribute:: LINK_ACT_MAIN_MCU_BANK_C_MOTOR_HOUSING_TEMP_SENSOR_I2C_ERROR (1):   0x1 - Motor housing temperature sensor I2C error
+
+    .. py:attribute:: LINK_ACT_MAIN_MCU_BANK_C_MOTOR_HOUSING_TEMPERATURE_TOO_HIGH (2):   0x2 - Motor housing temperature too high
+
+    .. py:attribute:: LINK_ACT_MAIN_MCU_BANK_C_MOTOR_HOUSING_TEMPERATURE_TOO_LOW (4):   0x4 - Motor housing temperature too low
+
+    .. py:attribute:: LINK_ACT_MAIN_MCU_BANK_C_CORE_TEMPERATURE_TOO_HIGH (8):   0x8 - Core temperature too high
+
+    .. py:attribute:: LINK_ACT_MAIN_MCU_BANK_C_CORE_TEMPERATURE_TOO_LOW (16):   0x10 - Core temperature too low
+
+    .. py:attribute:: LINK_ACT_MAIN_MCU_BANK_C_EEPROM_I2C_ERROR (32):   0x20 - EEPROM I2C error
+
+    .. py:attribute:: LINK_ACT_MAIN_MCU_BANK_C_EEPROM_CORRUPTED (64):   0x40 - EEPROM corrupted
+
+    .. py:attribute:: LINK_ACT_MAIN_MCU_BANK_C_FRAM_I2C_ERROR (128):   0x80 - FRAM I2C error
+
+    .. py:attribute:: LINK_ACT_MAIN_MCU_BANK_C_FRAM_CORRUPTED (256):   0x100 - FRAM corrupted
+
+    .. py:attribute:: LINK_ACT_MAIN_MCU_BANK_C_XCOM_SAFETY_MCU_NOT_DETECTED (512):   0x200 - Cross communication safety MCU not detected
+
+    .. py:attribute:: LINK_ACT_MAIN_MCU_BANK_C_XCOM_CONFIGURATION_FAILED (1024):   0x400 - Cross communication configuration failed
+
+    .. py:attribute:: LINK_ACT_MAIN_MCU_BANK_C_XCOM_SPI_COMM_FAILURE (2048):   0x800 - Cross communication SPI communication failure
+
+    .. py:attribute:: LINK_ACT_MAIN_MCU_BANK_C_MOTOR_DRV_ENABLE_DISAGREEMENT (4096):   0x1000 - Motor driver enable disagreement
+
+    .. py:attribute:: LINK_ACT_MAIN_MCU_BANK_C_BRAKE_DRV_ENABLE_DISAGREEMENT (8192):   0x2000 - Brake driver enable disagreement
+
+    .. py:attribute:: LINK_ACT_MAIN_MCU_BANK_C_VMON_48V_DISAGREEMENT (16384):   0x4000 - Voltage monitoring 48V disagreement
+
+    .. py:attribute:: LINK_ACT_MAIN_MCU_BANK_C_MOTOR_HOUSING_TEMPERATURE_DISAGREEMENT (32768):   0x8000 - Motor housing temperature disagreement
+
+    .. py:attribute:: LINK_ACT_MAIN_MCU_BANK_C_JOINT_POSITION_DISAGREEMENT (65536):   0x10000 - Joint position disagreement
+
+    .. py:attribute:: LINK_ACT_MAIN_MCU_BANK_C_MOTOR_POSITION_DISAGREEMENT (131072):   0x20000 - Motor position disagreement
+
+    .. py:attribute:: LINK_ACT_MAIN_MCU_BANK_C_JOINT_VELOCITY_DISAGREEMENT (262144):   0x40000 - Joint velocity disagreement
+
+    .. py:attribute:: LINK_ACT_MAIN_MCU_BANK_C_MOTOR_VELOCITY_DISAGREEMENT (524288):   0x80000 - Motor velocity disagreement
+
+    .. py:attribute:: LINK_ACT_MAIN_MCU_BANK_C_MOTOR_CURRENT_DISAGREEMENT (1048576):   0x100000 - Motor current disagreement
+
+    .. py:attribute:: LINK_ACT_MAIN_MCU_BANK_C_SAFE_COMM_FAILURE (2097152):   0x200000 - Safe communication failure
+
+    .. py:attribute:: LINK_ACT_MAIN_MCU_BANK_C_WATCHDOG_RESET_OCCURRED (4194304):   0x400000 - Independent or window watchdog reset occurred
+
+.. _ActuatorConfigLinkActuatorSafetyMCUDiagnosticIdentifierBankA:
+
+.. py:class:: LinkActuatorSafetyMCUDiagnosticIdentifierBankA
+
+     Admissible bank A Link actuator safety MCU diagnostics
+
+    :canonical: kortex_api.autogen.messages.ActuatorConfig_pb2.LinkActuatorSafetyMCUDiagnosticIdentifierBankA
+    .. py:attribute:: LINK_ACT_SFTY_MCU_BANK_A_UNSPECIFIED_DIAGNOSTIC_IDENTIFIER (0):   0x0 - Unspecified Link actuator safety MCU diagnostic bank A identifier
+
+    .. py:attribute:: LINK_ACT_SFTY_MCU_BANK_A_STARTUP_SELF_TESTS_TIMED_OUT (1):   0x1 - Startup self tests timed out
+
+    .. py:attribute:: LINK_ACT_SFTY_MCU_BANK_A_VMON_48V_OVERVOLTAGE (2):   0x2 - Voltage monitoring 48V overvoltage
+
+    .. py:attribute:: LINK_ACT_SFTY_MCU_BANK_A_VMON_48V_UNDERVOLTAGE (4):   0x4 - Voltage monitoring 48V undervoltage
+
+    .. py:attribute:: LINK_ACT_SFTY_MCU_BANK_A_VREF_2V5_OVERVOLTAGE (8):   0x8 - Voltage reference 2V5 overvoltage
+
+    .. py:attribute:: LINK_ACT_SFTY_MCU_BANK_A_VREF_2V5_UNDERVOLTAGE (16):   0x10 - Voltage reference 2V5 undervoltage
+
+    .. py:attribute:: LINK_ACT_SFTY_MCU_BANK_A_MOTOR_CURRENT_SENSE_DISAGREEMENT (32):   0x20 - Motor current sense disagreement
+
+    .. py:attribute:: LINK_ACT_SFTY_MCU_BANK_A_MOTOR_ENCODER_ERROR_PIN_ASSERTED (64):   0x40 - Motor encoder error pin asserted
+
+    .. py:attribute:: LINK_ACT_SFTY_MCU_BANK_A_JOINT_ENCODER_DIAG_PIN_ASSERTED (128):   0x80 - Joint encoder diagnostic pin asserted
+
+    .. py:attribute:: LINK_ACT_SFTY_MCU_BANK_A_ENCODERS_POSITION_DISAGREEMENT (256):   0x100 - Encoders position disagreement
+
+    .. py:attribute:: LINK_ACT_SFTY_MCU_BANK_A_MOTOR_HOUSING_TEMP_SENSOR_I2C_ERROR (512):   0x200 - Motor housing temperature sensor I2C error
+
+    .. py:attribute:: LINK_ACT_SFTY_MCU_BANK_A_MOTOR_HOUSING_TEMPERATURE_TOO_HIGH (1024):   0x400 - Motor housing temperature too high
+
+    .. py:attribute:: LINK_ACT_SFTY_MCU_BANK_A_MOTOR_HOUSING_TEMPERATURE_TOO_LOW (2048):   0x800 - Motor housing temperature too low
+
+    .. py:attribute:: LINK_ACT_SFTY_MCU_BANK_A_CORE_TEMPERATURE_TOO_HIGH (4096):   0x1000 - Core temperature too high
+
+    .. py:attribute:: LINK_ACT_SFTY_MCU_BANK_A_CORE_TEMPERATURE_TOO_LOW (8192):   0x2000 - Core temperature too low
+
+    .. py:attribute:: LINK_ACT_SFTY_MCU_BANK_A_EMULATED_EEPROM_CORRUPTED (16384):   0x4000 - Emulated EEPROM corrupted
+
+    .. py:attribute:: LINK_ACT_SFTY_MCU_BANK_A_XCOM_SPI_COMM_FAILURE (32768):   0x8000 - Cross communication SPI communication failure
+
+    .. py:attribute:: LINK_ACT_SFTY_MCU_BANK_A_MOTOR_DRV_ENABLE_DISAGREEMENT (65536):   0x10000 - Motor driver enable disagreement
+
+    .. py:attribute:: LINK_ACT_SFTY_MCU_BANK_A_BRAKE_DRV_ENABLE_DISAGREEMENT (131072):   0x20000 - Brake driver enable disagreement
+
+    .. py:attribute:: LINK_ACT_SFTY_MCU_BANK_A_VMON_48V_DISAGREEMENT (262144):   0x40000 - Voltage monitoring 48V disagreement
+
+    .. py:attribute:: LINK_ACT_SFTY_MCU_BANK_A_MOTOR_HOUSING_TEMPERATURE_DISAGREEMENT (524288):   0x80000 - Motor housing temperature disagreement
+
+    .. py:attribute:: LINK_ACT_SFTY_MCU_BANK_A_JOINT_POSITION_DISAGREEMENT (1048576):   0x100000 - Joint position disagreement
+
+    .. py:attribute:: LINK_ACT_SFTY_MCU_BANK_A_MOTOR_POSITION_DISAGREEMENT (2097152):   0x200000 - Motor position disagreement
+
+    .. py:attribute:: LINK_ACT_SFTY_MCU_BANK_A_JOINT_VELOCITY_DISAGREEMENT (4194304):   0x400000 - Joint velocity disagreement
+
+    .. py:attribute:: LINK_ACT_SFTY_MCU_BANK_A_MOTOR_VELOCITY_DISAGREEMENT (8388608):   0x800000 - Motor velocity disagreement
+
+    .. py:attribute:: LINK_ACT_SFTY_MCU_BANK_A_MOTOR_CURRENT_DISAGREEMENT (16777216):   0x1000000 - Motor current disagreement
+
+    .. py:attribute:: LINK_ACT_SFTY_MCU_BANK_A_SAFE_COMM_FAILURE (33554432):   0x2000000 - Safe communication failure
+
+    .. py:attribute:: LINK_ACT_SFTY_MCU_BANK_A_WATCHDOG_RESET_OCCURRED (67108864):   0x4000000 - Independent or window watchdog reset occured
+
+.. _ActuatorConfigLinkActuatorSafetyMCUDiagnosticIdentifierBankB:
+
+.. py:class:: LinkActuatorSafetyMCUDiagnosticIdentifierBankB
+
+     Admissible bank B Link actuator safety MCU diagnostics
+
+    :canonical: kortex_api.autogen.messages.ActuatorConfig_pb2.LinkActuatorSafetyMCUDiagnosticIdentifierBankB
+    .. py:attribute:: LINK_ACT_SFTY_MCU_BANK_B_UNSPECIFIED_DIAGNOSTIC_IDENTIFIER (0):   0x0 - Unspecified Link actuator safety MCU diagnostic bank B identifier
+
+    .. py:attribute:: LINK_ACT_SFTY_MCU_BANK_B_MCU_CORE_GENERAL_PURPOSE_REGISTERS (1):   0x1 - MCU core general purpose registers
+
+    .. py:attribute:: LINK_ACT_SFTY_MCU_BANK_B_MCU_CORE_ARITHMETIC_FUNCTIONS (2):   0x2 - MCU core arithmetic functions
+
+    .. py:attribute:: LINK_ACT_SFTY_MCU_BANK_B_MCU_CORE_MULTIPLIER_FUNCTIONS (4):   0x4 - MCU core multiplier functions
+
+    .. py:attribute:: LINK_ACT_SFTY_MCU_BANK_B_MCU_CORE_CONTROL_FLOW_INSTRUCTIONS (8):   0x8 - MCU core control flow instructions
+
+    .. py:attribute:: LINK_ACT_SFTY_MCU_BANK_B_MCU_CORE_LOAD_STORE_UNIT (16):   0x10 - MCU core load store unit
+
+    .. py:attribute:: LINK_ACT_SFTY_MCU_BANK_B_MCU_CORE_SHIFT_ROTATE_FUNCTIONS (32):   0x20 - MCU core shift rotate functions
+
+    .. py:attribute:: LINK_ACT_SFTY_MCU_BANK_B_MCU_CORE_STACK_POINTER (64):   0x40 - MCU core stack pointer
+
+    .. py:attribute:: LINK_ACT_SFTY_MCU_BANK_B_MCU_CORE_PIPELINE_FUNCTIONS (128):   0x80 - MCU core pipeline functions
+
+    .. py:attribute:: LINK_ACT_SFTY_MCU_BANK_B_MCU_RAM_BIST_FAULT (256):   0x100 - MCU RAM BIST fault
+
+.. _ActuatorConfigCustomDataIndex:
+
+.. py:class:: CustomDataIndex
+
+     Custom data options
+
+    :canonical: kortex_api.autogen.messages.ActuatorConfig_pb2.CustomDataIndex
+    .. py:attribute:: NO_CUSTOM_DATA_SELECTED (0):   No custom data selected
+
+    .. py:attribute:: UINT32_TEST_RAMP (1):   Incremental value used for test and validation
+
+    .. py:attribute:: UINT32_MOTOR_ENCODER_RAW (2):   Rotor encoder incremental value (raw)
+
+    .. py:attribute:: UINT32_JOINT_ENCODER_RAW (3):   Joint encoder incremental value (raw)
+
+    .. py:attribute:: FLOAT_TEMPERATURE_PHASE_0 (4):   Motor phase 0 temperature (degrees Celsius)
+
+    .. py:attribute:: FLOAT_TEMPERATURE_PHASE_1 (5):   Motor phase 1 temperature (degrees Celsius)
+
+    .. py:attribute:: FLOAT_TEMPERATURE_PHASE_2 (6):   Motor phase 2 temperature (degrees Celsius)
+
+    .. py:attribute:: INT32_TORQUE_SENSOR_RAW_0 (7):   Individual torque sensor strain gauge 0 ADC value (raw)
+
+    .. py:attribute:: INT32_TORQUE_SENSOR_RAW_1 (8):   Individual torque sensor strain gauge 1 ADC value (raw)
+
+    .. py:attribute:: INT32_TORQUE_SENSOR_RAW_2 (9):   Individual torque sensor strain gauge 2 ADC value (raw)
+
+    .. py:attribute:: INT32_TORQUE_SENSOR_RAW_3 (10):   Individual torque sensor strain gauge 3 ADC value (raw)
+
+    .. py:attribute:: FLOAT_TORQUE_SENSOR_0 (11):   Individual torque sensor strain gauge 0 converted value (Newton-meters)
+
+    .. py:attribute:: FLOAT_TORQUE_SENSOR_1 (12):   Individual torque sensor strain gauge 1 converted value (Newton-meters)
+
+    .. py:attribute:: FLOAT_TORQUE_SENSOR_2 (13):   Individual torque sensor strain gauge 2 converted value (Newton-meters)
+
+    .. py:attribute:: FLOAT_TORQUE_SENSOR_3 (14):   Individual torque sensor strain gauge 3 converted value (Newton-meters)
+
+    .. py:attribute:: UINT32_MOTOR_ENCODER_RAW_LATCH_ON_INDEX_RISING (15):   Rotor encoder incremental value at last index signal rising edge (raw)
+
+    .. py:attribute:: UINT32_JOINT_ENCODER_RAW_LATCH_ON_INDEX_RISING (16):   Joint encoder incremental value at last index signal rising edge (raw)
+
+    .. py:attribute:: UINT32_ABSOLUTE_POSITION_SENSOR_RAW (17):   Absolute position sensor integer value (raw)
+
+    .. py:attribute:: FLOAT_ABSOLUTE_POSITION_SENSOR (18):   Absolute position sensor converted value (degrees)
+
+    .. py:attribute:: FLOAT_CONTROL_POSITION_JOINT_REQUESTED (19):   Last axis position command received via Ethernet
+
+    .. py:attribute:: UINT32_JIG_FLAGS (20):   Jig status flags (internal use)
+
+    .. py:attribute:: UINT32_TICK_MOTOR_CONTROL (21):   Rotor encoder incremental value corrected for counter overflow (raw)
+
+    .. py:attribute:: UINT32_TICK_JOINT_CONTROL (22):   Joint encoder incremental value corrected for counter overflow (raw)
+
+    .. py:attribute:: UINT32_INDEX_TICK_MOTOR_CONTROL (23):   Rotor encoder incremental value corrected for counter overflow at last index signal rising edge (raw)
+
+    .. py:attribute:: UINT32_INDEX_TICK_JOINT_CONTROL (24):   Joint encoder incremental value corrected for counter overflow at last index signal rising edge (raw)
+
+    .. py:attribute:: FLOAT_ACCELERATION_X (25):   x-axis acceleration (meters per second squared)
+
+    .. py:attribute:: FLOAT_ACCELERATION_Y (26):   y-axis acceleration (meters per second squared)
+
+    .. py:attribute:: FLOAT_ACCELERATION_Z (27):   z-axis acceleration (meters per second squared)
+
+    .. py:attribute:: FLOAT_ANGULAR_RATE_X (28):   x-axis angular velocity (degrees per second)
+
+    .. py:attribute:: FLOAT_ANGULAR_RATE_Y (29):   y-axis angular velocity (degrees per second)
+
+    .. py:attribute:: FLOAT_ANGULAR_RATE_Z (30):   z-axis angular velocity (degrees per second)
+
+    .. py:attribute:: FLOAT_POSITION_MOTOR_CMD (31):   Axis position command sent to motor position control loop (degrees)
+
+    .. py:attribute:: FLOAT_VELOCITY_MOTOR_CMD (32):   Axis velocity command sent to motor velocity control loop (degrees per second)
+
+    .. py:attribute:: FLOAT_POSITION_MOTOR (33):   Actuator position measured by rotor encoder (degrees)
+
+    .. py:attribute:: FLOAT_VELOCITY_MOTOR (34):   Actuator angular velocity measured by rotor encoder (degrees per second)
+
+    .. py:attribute:: UINT32_COMMUNICATIONS_JITTER (35):   Jitter from the communication (microseconds)
+
+    .. py:attribute:: FLOAT_TORQUE_AVERAGE (36):   Actuator torque (Newton-meters)
+
+    .. py:attribute:: FLOAT_CURRENT_MOTOR (37):   Motor current (Amperes)
+
+    .. py:attribute:: FLOAT_VOLTAGE_DIGITAL (38):   Main board voltage (Volts)
+
+    .. py:attribute:: FLOAT_TEMPERATURE_MOTOR_CELSIUS (39):   Motor temperature (maximum of the three (3) phase temperatures) (degrees Celsius)
+
+    .. py:attribute:: FLOAT_TEMPERATURE_CORE_CELSIUS (40):   Microcontroller temperature (degrees Celsius)
+
+    .. py:attribute:: UINT32_FAULT_A (41):   Main MCU Bank A faults (see ActuatorConfig.Gen3ActuatorDiagnosticIdentifierBankA and ActuatorConfig.LinkActuatorMainMCUDiagnosticIdentifierBankA)
+
+    .. py:attribute:: UINT32_FAULT_B (42):   Main MCU Bank B faults (see ActuatorConfig.LinkActuatorMainMCUDiagnosticIdentifierBankB)
+
+    .. py:attribute:: UINT32_WARNING_A (43):   Main MCU Bank A warnings (see ActuatorConfig.Gen3ActuatorDiagnosticIdentifierBankA)
+
+    .. py:attribute:: UINT32_WARNING_B (44):   Main MCU Bank B warnings
+
+    .. py:attribute:: FLOAT_POSITION_FROM_HALLS (45):   Actuator position measured by motor hall sensors (degrees)
+
+    .. py:attribute:: FLOAT_PHASE_CURRENT_0 (46):   Motor phase 0 current (Amperes)
+
+    .. py:attribute:: FLOAT_PHASE_CURRENT_1 (47):   Motor phase 1 current (Amperes)
+
+    .. py:attribute:: FLOAT_PHASE_CURRENT_2 (48):   Motor phase 2 current (Amperes)
+
+    .. py:attribute:: FLOAT_PHASE_PWM_0 (49):   Pulse width modulation duty cycle applied to motor phase 0 (percentage)
+
+    .. py:attribute:: FLOAT_PHASE_PWM_1 (50):   Pulse width modulation duty cycle applied to motor phase 1 (percentage)
+
+    .. py:attribute:: FLOAT_PHASE_PWM_2 (51):   Pulse width modulation duty cycle applied to motor phase 2 (percentage)
+
+    .. py:attribute:: FLOAT_MOTOR_ELECTRICAL_ANGLE (52):   Motor electrical angle (degrees)
+
+    .. py:attribute:: FLOAT_CURRENT_MOTOR_CMD (53):   Motor current command sent to motor drive (Amperes)
+
+    .. py:attribute:: FLOAT_TORQUE_JOINT_CMD (54):   Axis torque command sent to joint torque control loop (Newton-meters)
+
+    .. py:attribute:: FLOAT_POSITION_UNWRAPPED (55):   Actuator position unwrapped (degrees)
+
+    .. py:attribute:: UINT32_HALL_SENSOR_0 (56):   Hall sensor 0 value (raw)
+
+    .. py:attribute:: UINT32_HALL_SENSOR_1 (57):   Hall sensor 1 value (raw)
+
+    .. py:attribute:: UINT32_HALL_SENSOR_2 (58):   Hall sensor 2 value (raw)
+
+    .. py:attribute:: INT32_HALL_SENSOR_SCALED_0 (59):   Hall sensor 0 scaled value (raw)
+
+    .. py:attribute:: INT32_HALL_SENSOR_SCALED_1 (60):   Hall sensor 1 scaled value (raw)
+
+    .. py:attribute:: INT32_HALL_SENSOR_SCALED_2 (61):   Hall sensor 2 scaled value (raw)
+
+    .. py:attribute:: FLOAT_COGGING_COEFFICIENT_A_0 (62):   Cogging torque cancellation coefficient A0 (Amperes)
+
+    .. py:attribute:: FLOAT_COGGING_COEFFICIENT_A_1 (63):   Cogging torque cancellation coefficient A1 (Amperes)
+
+    .. py:attribute:: FLOAT_COGGING_COEFFICIENT_A_2 (64):   Cogging torque cancellation coefficient A2 (Amperes)
+
+    .. py:attribute:: FLOAT_COGGING_COEFFICIENT_A_3 (65):   Cogging torque cancellation coefficient A3 (Amperes)
+
+    .. py:attribute:: FLOAT_COGGING_COEFFICIENT_A_4 (66):   Cogging torque cancellation coefficient A4 (Amperes)
+
+    .. py:attribute:: FLOAT_COGGING_COEFFICIENT_A_5 (67):   Cogging torque cancellation coefficient A5 (Amperes)
+
+    .. py:attribute:: FLOAT_COGGING_COEFFICIENT_A_6 (68):   Cogging torque cancellation coefficient A6 (Amperes)
+
+    .. py:attribute:: FLOAT_COGGING_COEFFICIENT_A_7 (69):   Cogging torque cancellation coefficient A7 (Amperes)
+
+    .. py:attribute:: FLOAT_COGGING_COEFFICIENT_A_8 (70):   Cogging torque cancellation coefficient A8 (Amperes)
+
+    .. py:attribute:: FLOAT_COGGING_COEFFICIENT_A_9 (71):   Cogging torque cancellation coefficient A9 (Amperes)
+
+    .. py:attribute:: FLOAT_COGGING_COEFFICIENT_A_10 (72):   Cogging torque cancellation coefficient A10 (Amperes)
+
+    .. py:attribute:: FLOAT_COGGING_COEFFICIENT_A_11 (73):   Cogging torque cancellation coefficient A11 (Amperes)
+
+    .. py:attribute:: FLOAT_COGGING_COEFFICIENT_A_12 (74):   Cogging torque cancellation coefficient A12 (Amperes)
+
+    .. py:attribute:: FLOAT_COGGING_COEFFICIENT_A_13 (75):   Cogging torque cancellation coefficient A13 (Amperes)
+
+    .. py:attribute:: FLOAT_COGGING_COEFFICIENT_A_14 (76):   Cogging torque cancellation coefficient A14 (Amperes)
+
+    .. py:attribute:: FLOAT_COGGING_COEFFICIENT_A_15 (77):   Cogging torque cancellation coefficient A15 (Amperes)
+
+    .. py:attribute:: FLOAT_COGGING_COEFFICIENT_B_0 (78):   Cogging torque cancellation coefficient B0 (Amperes)
+
+    .. py:attribute:: FLOAT_COGGING_COEFFICIENT_B_1 (79):   Cogging torque cancellation coefficient B1 (Amperes)
+
+    .. py:attribute:: FLOAT_COGGING_COEFFICIENT_B_2 (80):   Cogging torque cancellation coefficient B2 (Amperes)
+
+    .. py:attribute:: FLOAT_COGGING_COEFFICIENT_B_3 (81):   Cogging torque cancellation coefficient B3 (Amperes)
+
+    .. py:attribute:: FLOAT_COGGING_COEFFICIENT_B_4 (82):   Cogging torque cancellation coefficient B4 (Amperes)
+
+    .. py:attribute:: FLOAT_COGGING_COEFFICIENT_B_5 (83):   Cogging torque cancellation coefficient B5 (Amperes)
+
+    .. py:attribute:: FLOAT_COGGING_COEFFICIENT_B_6 (84):   Cogging torque cancellation coefficient B6 (Amperes)
+
+    .. py:attribute:: FLOAT_COGGING_COEFFICIENT_B_7 (85):   Cogging torque cancellation coefficient B7 (Amperes)
+
+    .. py:attribute:: FLOAT_COGGING_COEFFICIENT_B_8 (86):   Cogging torque cancellation coefficient B8 (Amperes)
+
+    .. py:attribute:: FLOAT_COGGING_COEFFICIENT_B_9 (87):   Cogging torque cancellation coefficient B9 (Amperes)
+
+    .. py:attribute:: FLOAT_COGGING_COEFFICIENT_B_10 (88):   Cogging torque cancellation coefficient B10 (Amperes)
+
+    .. py:attribute:: FLOAT_COGGING_COEFFICIENT_B_11 (89):   Cogging torque cancellation coefficient B11 (Amperes)
+
+    .. py:attribute:: FLOAT_COGGING_COEFFICIENT_B_12 (90):   Cogging torque cancellation coefficient B12 (Amperes)
+
+    .. py:attribute:: FLOAT_COGGING_COEFFICIENT_B_13 (91):   Cogging torque cancellation coefficient B13 (Amperes)
+
+    .. py:attribute:: FLOAT_COGGING_COEFFICIENT_B_14 (92):   Cogging torque cancellation coefficient B14 (Amperes)
+
+    .. py:attribute:: FLOAT_COGGING_COEFFICIENT_B_15 (93):   Cogging torque cancellation coefficient B15 (Amperes)
+
+    .. py:attribute:: FLOAT_CURRENT_COGGING_FEEDFORWARD (94):   Commanded cogging cancellation feedforward current sent to motor drive (Amperes)
+
+    .. py:attribute:: UINT32_MOTOR_POSITION_ABSOLUTE_RAW (95):   Absolute rotor position reported by sensor (raw)
+
+    .. py:attribute:: FLOAT_MOTOR_POSITION_ABSOLUTE_RAW_WRAP (96):   Absolute rotor position, range 0-360 (degrees)
+
+    .. py:attribute:: FLOAT_MOTOR_POSITION_ABSOLUTE_RAW_UNWRAP (97):   Absolute rotor position (degrees)
+
+    .. py:attribute:: FLOAT_MOTOR_POSITION_ABSOLUTE_LINEARIZED (98):   Absolute rotor position linearized (degrees)
+
+    .. py:attribute:: FLOAT_MOTOR_POSITION_ABSOLUTE_CALIBRATED (99):   Absolute rotor position linearized and with calibrated offset (degrees)
+
+    .. py:attribute:: UINT32_MOTOR_POSITION_INCREMENTAL_RAW (100):   Incremental rotor position (raw)
+
+    .. py:attribute:: FLOAT_MOTOR_POSITION_INCREMENTAL_RAW_WRAP (101):   Incremental rotor position, range 0-360 (degrees)
+
+    .. py:attribute:: FLOAT_MOTOR_POSITION_INCREMENTAL_RAW_UNWRAP (102):   Incremental rotor position (degrees)
+
+    .. py:attribute:: FLOAT_MOTOR_POSITION_INCREMENTAL_LINEARIZED (103):   Incremental rotor position linearized (degrees)
+
+    .. py:attribute:: FLOAT_MOTOR_POSITION_INCREMENTAL_CALIBRATED (104):   Incremental rotor position linearized and with calibrated offset (degrees)
+
+    .. py:attribute:: UINT32_JOINT_POSITION_ABSOLUTE_RAW (105):   Absolute joint position reported by sensor (raw)
+
+    .. py:attribute:: FLOAT_JOINT_POSITION_ABSOLUTE_RAW_WRAP (106):   Absolute joint position, range 0-360 (degrees)
+
+    .. py:attribute:: FLOAT_JOINT_POSITION_ABSOLUTE_RAW_UNWRAP (107):   Absolute joint position (degrees)
+
+    .. py:attribute:: FLOAT_JOINT_POSITION_ABSOLUTE_LINEARIZED (108):   Absolute joint position linearized (degrees)
+
+    .. py:attribute:: FLOAT_JOINT_POSITION_ABSOLUTE_CALIBRATED (109):   Absolute joint position linearized and with calibrated offset (degrees)
+
+    .. py:attribute:: UINT32_JOINT_POSITION_INCREMENTAL_RAW (110):   Incremental joint position (raw)
+
+    .. py:attribute:: FLOAT_JOINT_POSITION_INCREMENTAL_RAW_WRAP (111):   Incremental joint position, range 0-360 (degrees)
+
+    .. py:attribute:: FLOAT_JOINT_POSITION_INCREMENTAL_RAW_UNWRAP (112):   Incremental joint position (degrees)
+
+    .. py:attribute:: FLOAT_JOINT_POSITION_INCREMENTAL_LINEARIZED (113):   Incremental joint position linearized (degrees)
+
+    .. py:attribute:: FLOAT_JOINT_POSITION_INCREMENTAL_CALIBRATED (114):   Incremental joint position linearized and with calibrated offset (degrees)
+
+    .. py:attribute:: FLOAT_POSITION_MOTOR_UNWRAPPED (115):   Actuator position measured by rotor encoder, unwrapped (degrees)
+
+    .. py:attribute:: FLOAT_MOTOR_POWER (116):   Motor power (Watts)
+
+    .. py:attribute:: FLOAT_MOTOR_POWER_FILTERED (117):   Motor power averaged over the configured amount of time (Watts)
+
+    .. py:attribute:: FLOAT_MOTOR_DIRECT_CURRENT (118):   Motor direct current (Amperes)
+
+    .. py:attribute:: FLOAT_MOTOR_QUADRATURE_CURRENT (119):   Motor quadrature current (Amperes)
+
+    .. py:attribute:: FLOAT_MOTOR_DIRECT_VOLTAGE (120):   Motor direct voltage (Volts)
+
+    .. py:attribute:: FLOAT_MOTOR_QUADRATURE_VOLTAGE (121):   Motor quadrature voltage (Volts)
+
+    .. py:attribute:: FLOAT_TORQUE_ESTIMATE_FROM_CURRENT (122):   Joint torque estimated from motor current (Nm)
+
+    .. py:attribute:: FLOAT_TORQUE_ESTIMATE_FROM_DEFLECTION (123):   Joint torque estimated from gearbox deflection (Nm)
+
+    .. py:attribute:: FLOAT_POSITION_JOINT (124):   Actuator position measured by joint encoder (degrees)
+
+    .. py:attribute:: FLOAT_POSITION_JOINT_CMD (125):   Axis position command sent to joint position control loop (degrees)
+
+    .. py:attribute:: FLOAT_VELOCITY_JOINT (126):   Actuator velocity measured by joint encoder (degrees per second)
+
+    .. py:attribute:: FLOAT_VELOCITY_JOINT_CMD (127):   Axis velocity command sent to joint velocity control loop (degrees per second)
+
+    .. py:attribute:: FLOAT_KINEMATIC_ERROR (128):   The kinematic error model offset (degrees)
+
+    .. py:attribute:: FLOAT_MOTOR_POSITION_FOR_TORQUE_ESTIMATION (129):   The motor position plus the zero offset and multiplied by the gear ratio (degrees)
+
+    .. py:attribute:: FLOAT_GEARBOX_DEFLECTION (130):   The gearbox deflection (degrees)
+
+    .. py:attribute:: FLOAT_GEARBOX_DEFLECTION_KINEMATIC_ERROR_COMPENSATED (131):   The gearbox deflection with the kinematic error compensated (degrees)
+
+    .. py:attribute:: FLOAT_VELOCITY_MOTOR_FILTERED (132):   Motor velocity filtered (degrees per second)
+
+    .. py:attribute:: FLOAT_VELOCITY_JOINT_FILTERED (133):   Joint velocity filtered (degrees per second)
+
+    .. py:attribute:: UINT32_FAULT_C (134):   Main MCU Bank C faults (see ActuatorConfig.LinkActuatorMainMCUDiagnosticIdentifierBankC)
+
+    .. py:attribute:: UINT32_SFTY_FAULT_BANK_A (135):   Safety MCU Bank A faults (see ActuatorConfig.LinkActuatorSafetyMCUDiagnosticIdentifierBankA)
+
+    .. py:attribute:: FLOAT_PHASE_CURRENT_0_HALL (136):   Motor phase 0 current from hall effect sensor (Amperes)
+
+    .. py:attribute:: FLOAT_PHASE_CURRENT_1_HALL (137):   Motor phase 1 current from hall effect sensor (Amperes)
+
+    .. py:attribute:: FLOAT_PHASE_CURRENT_2_HALL (138):   Motor phase 2 current from hall effect sensor (Amperes)
+
+    .. py:attribute:: FLOAT_CURRENT_MOTOR_FILTERED (139):   Filtered motor current (Amperes)
+
+    .. py:attribute:: FLOAT_PHASE_CURRENT_0_FILTERED (140):   Filtered motor phase 0 current (Amperes)
+
+    .. py:attribute:: FLOAT_PHASE_CURRENT_1_FILTERED (141):   Filtered motor phase 1 current (Amperes)
+
+    .. py:attribute:: FLOAT_PHASE_CURRENT_2_FILTERED (142):   Filtered motor phase 2 current (Amperes)
+
+    .. py:attribute:: FLOAT_PHASE_CURRENT_0_HALL_FILTERED (143):   Filtered motor phase 0 current from hall effect sensor (Amperes)
+
+    .. py:attribute:: FLOAT_PHASE_CURRENT_1_HALL_FILTERED (144):   Filtered motor phase 1 current from hall effect sensor (Amperes)
+
+    .. py:attribute:: FLOAT_PHASE_CURRENT_2_HALL_FILTERED (145):   Filtered motor phase 2 current from hall effect sensor (Amperes)
+
+    .. py:attribute:: FLOAT_ACCELERATION_MOTOR (146):   Actuator acceleration measured by joint encoder (degrees per second squared)

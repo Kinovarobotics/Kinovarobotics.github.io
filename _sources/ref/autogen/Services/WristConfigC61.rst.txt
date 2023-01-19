@@ -1,0 +1,325 @@
+================================
+WristConfigC61
+================================
+    
+.. py:currentmodule:: kortex_api.autogen
+
+.. py:class:: WristConfigC61Client
+        
+    :canonical: kortex_api.autogen.client_stubs.Wrist.Config.WristConfigC61ClientRpc
+
+    .. py:method:: __init__(router, namespace = None)
+
+        Constructs a WristConfigC61Client with an initialized :class:`~kortex_api.RouterClient.RouterClient` and an optional namespace.
+
+        :param RouterClient router: :class:`~kortex_api.RouterClient.RouterClient` used for the communication
+        :param string namespace: Optional namespace on which to initialize the WristConfigC61Client (defaults to ``None``)
+
+    .. py:method:: IsAlive (timeoutMs: int = 1000)
+        
+        Returns ``True`` if the Service Server is detected online before ``timeoutMs`` is expired, ``False`` otherwise.
+        
+        :param unsigned int timeoutMs: The maximum time to wait for an answer from the server 
+        :rtype: bool
+
+
+        .. _WristConfigC61ClientSetDigitalIOConfiguration:
+
+    .. py:method:: SetDigitalIOConfiguration (digitalioconfiguration, deviceId, options = RouterClientSendOptions())
+        
+        | The ``CONFIGURE`` permission is necessary to call this RPC.
+        |
+        | Configures a digital I/O channel.
+        | The arm must be powered on and the wrist's device identifier must be supplied as an input parameter.
+        | The channel.identifier parameter must be between 1 and 8.
+        | Filling the input_configuration parameter will set the pin as input and filling the output_configuration parameter will set the pin as output.
+        | 
+
+
+        :param digitalioconfiguration:  
+        :type digitalioconfiguration: :ref:`DigitalIOConfiguration <IndustrialIODigitalIOConfiguration>`
+
+        :param int deviceId: Device's Id called by rpc (required)
+        :param RouterClientSendOptions options: Router options for sending the message
+
+        .. _WristConfigC61ClientGetDigitalIOConfiguration:
+
+    .. py:method:: GetDigitalIOConfiguration (digitalchannelidentifier, deviceId, options = RouterClientSendOptions())
+        
+        | The ``READ_ONLY`` permission is necessary to call this RPC.
+        |
+        | Retrieves a digital I/O configuration for a specific channel.
+        | The arm must be powered on and the wrist's device identifier must be supplied as an input parameter.
+        | The identifier parameter must be between 1 and 8.
+        | 
+
+
+        :param digitalchannelidentifier:  
+        :type digitalchannelidentifier: :ref:`DigitalChannelIdentifier <IndustrialIODigitalChannelIdentifier>`
+
+        :param int deviceId: Device's Id called by rpc (required)
+        :param RouterClientSendOptions options: Router options for sending the message
+ 
+        :rtype: DigitalIOConfiguration
+
+        .. _WristConfigC61ClientSetDigitalOutputHighState:
+
+    .. py:method:: SetDigitalOutputHighState (digitalchannelidentifier, deviceId, options = RouterClientSendOptions())
+        
+        | The ``OPERATE`` permission is necessary to call this RPC.
+        |
+        | Sets a digital output channel to a high state.
+        | The arm must be powered on and the wrist's device identifier must be supplied as an input parameter.
+        | The identifier parameter must be between 1 and 8.
+        | 
+
+
+        :param digitalchannelidentifier:  
+        :type digitalchannelidentifier: :ref:`DigitalChannelIdentifier <IndustrialIODigitalChannelIdentifier>`
+
+        :param int deviceId: Device's Id called by rpc (required)
+        :param RouterClientSendOptions options: Router options for sending the message
+
+        .. _WristConfigC61ClientSetDigitalOutputLowState:
+
+    .. py:method:: SetDigitalOutputLowState (digitalchannelidentifier, deviceId, options = RouterClientSendOptions())
+        
+        | The ``OPERATE`` permission is necessary to call this RPC.
+        |
+        | Sets a digital output channel to a low state.
+        | The arm must be powered on and the wrist's device identifier must be supplied as an input parameter.
+        | The identifier parameter must be between 1 and 8.
+        | 
+
+
+        :param digitalchannelidentifier:  
+        :type digitalchannelidentifier: :ref:`DigitalChannelIdentifier <IndustrialIODigitalChannelIdentifier>`
+
+        :param int deviceId: Device's Id called by rpc (required)
+        :param RouterClientSendOptions options: Router options for sending the message
+
+        .. _WristConfigC61ClientGetDigitalIOInfo:
+
+    .. py:method:: GetDigitalIOInfo (digitalchannelidentifier, deviceId, options = RouterClientSendOptions())
+        
+        | The ``READ_ONLY`` permission is necessary to call this RPC.
+        |
+        | Retrieves a digital I/O channel information.
+        | The arm must be powered on and the wrist's device identifier must be supplied as an input parameter.
+        | The identifier parameter must be between 1 and 8.
+        | 
+
+
+        :param digitalchannelidentifier:  
+        :type digitalchannelidentifier: :ref:`DigitalChannelIdentifier <IndustrialIODigitalChannelIdentifier>`
+
+        :param int deviceId: Device's Id called by rpc (required)
+        :param RouterClientSendOptions options: Router options for sending the message
+ 
+        :rtype: DigitalIOInfo
+
+        .. _WristConfigC61ClientGetAllDigitalIOInfo:
+
+    .. py:method:: GetAllDigitalIOInfo (, deviceId, options = RouterClientSendOptions())
+        
+        | The ``READ_ONLY`` permission is necessary to call this RPC.
+        |
+        | Retrieves all digital I/O channel information.
+        | The arm must be powered on and the wrist's device identifier must be supplied as an input parameter.
+        | 
+
+        :param int deviceId: Device's Id called by rpc (required)
+        :param RouterClientSendOptions options: Router options for sending the message
+ 
+        :rtype: DigitalIOInfoList
+
+        .. _WristConfigC61ClientSetAnalogIOConfiguration:
+
+    .. py:method:: SetAnalogIOConfiguration (analogioconfiguration, deviceId, options = RouterClientSendOptions())
+        
+        | The ``CONFIGURE`` permission is necessary to call this RPC.
+        |
+        | Configures a analog channel.
+        | The arm must be powered on and the wrist's device identifier must be supplied as an input parameter.
+        | The channel.identifier parameter must be either ANALOG_CHANNEL_C or ANALOG_CHANNEL_D.
+        | 
+
+
+        :param analogioconfiguration:  
+        :type analogioconfiguration: :ref:`AnalogIOConfiguration <IndustrialIOAnalogIOConfiguration>`
+
+        :param int deviceId: Device's Id called by rpc (required)
+        :param RouterClientSendOptions options: Router options for sending the message
+
+        .. _WristConfigC61ClientGetAnalogIOConfiguration:
+
+    .. py:method:: GetAnalogIOConfiguration (analogiochannelidentifier, deviceId, options = RouterClientSendOptions())
+        
+        | The ``READ_ONLY`` permission is necessary to call this RPC.
+        |
+        | Retrieves a analog input/output configuration for a specific channel.
+        | The arm must be powered on and the wrist's device identifier must be supplied as an input parameter.
+        | The identifier parameter must be either ANALOG_CHANNEL_C or ANALOG_CHANNEL_D.
+        | 
+
+
+        :param analogiochannelidentifier:  
+        :type analogiochannelidentifier: :ref:`AnalogIOChannelIdentifier <IndustrialIOAnalogIOChannelIdentifier>`
+
+        :param int deviceId: Device's Id called by rpc (required)
+        :param RouterClientSendOptions options: Router options for sending the message
+ 
+        :rtype: AnalogIOConfiguration
+
+        .. _WristConfigC61ClientSetAnalogValue:
+
+    .. py:method:: SetAnalogValue (analogoutput, deviceId, options = RouterClientSendOptions())
+        
+        | The ``OPERATE`` permission is necessary to call this RPC.
+        |
+        | Sets a analog value on a channel.
+        | The arm must be powered on and the wrist's device identifier must be supplied as an input parameter.
+        | The identifier parameter must be either ANALOG_CHANNEL_C or ANALOG_CHANNEL_D.
+        | An UNSUPPORTED_ACTION error will be thrown when setting an analog value to a pin configured as input.
+        | Warning : sending a dac_value over the maximum value will cause a fault to be reported by the Wrist and power off the arm.
+        | 
+
+
+        :param analogoutput:  
+        :type analogoutput: :ref:`AnalogOutput <IndustrialIOAnalogOutput>`
+
+        :param int deviceId: Device's Id called by rpc (required)
+        :param RouterClientSendOptions options: Router options for sending the message
+
+        .. _WristConfigC61ClientGetAnalogIOInfo:
+
+    .. py:method:: GetAnalogIOInfo (analogiochannelidentifier, deviceId, options = RouterClientSendOptions())
+        
+        | The ``READ_ONLY`` permission is necessary to call this RPC.
+        |
+        | Retrieves a analog input/output channel information.
+        | The arm must be powered on and the wrist's device identifier must be supplied as an input parameter.
+        | The identifier parameter must be either ANALOG_CHANNEL_C or ANALOG_CHANNEL_D.
+        | 
+
+
+        :param analogiochannelidentifier:  
+        :type analogiochannelidentifier: :ref:`AnalogIOChannelIdentifier <IndustrialIOAnalogIOChannelIdentifier>`
+
+        :param int deviceId: Device's Id called by rpc (required)
+        :param RouterClientSendOptions options: Router options for sending the message
+ 
+        :rtype: AnalogIOInfo
+
+        .. _WristConfigC61ClientGetAllAnalogIOInfo:
+
+    .. py:method:: GetAllAnalogIOInfo (, deviceId, options = RouterClientSendOptions())
+        
+        | The ``READ_ONLY`` permission is necessary to call this RPC.
+        |
+        | Retrieves all analog input/output channels information.
+        | The arm must be powered on and the wrist's device identifier must be supplied as an input parameter.
+        | 
+
+        :param int deviceId: Device's Id called by rpc (required)
+        :param RouterClientSendOptions options: Router options for sending the message
+ 
+        :rtype: AnalogIOInfoList
+
+        .. _WristConfigC61ClientClearFaults:
+
+    .. py:method:: ClearFaults (, deviceId, options = RouterClientSendOptions())
+        
+        | The ``OPERATE`` permission is necessary to call this RPC.
+        |
+        | Clears Digital and Analog I/O faults.
+        | The arm must be powered on and the wrist's device identifier must be supplied as an input parameter.
+        | 
+
+        :param int deviceId: Device's Id called by rpc (required)
+        :param RouterClientSendOptions options: Router options for sending the message
+
+        .. _WristConfigC61ClientGetRS485Configuration:
+
+    .. py:method:: GetRS485Configuration (rs485deviceidentification, deviceId, options = RouterClientSendOptions())
+        
+        | The ``READ_ONLY`` permission is necessary to call this RPC.
+        |
+        | Retrieves RS485 configuration.
+        | The arm must be powered on and the wrist's device identifier must be supplied as an input parameter.
+        | The port_id parameter must be set to RS485_PORT_FLANGE.
+        | 
+
+
+        :param rs485deviceidentification:  
+        :type rs485deviceidentification: :ref:`RS485DeviceIdentification <WristConfigC61RS485DeviceIdentification>`
+
+        :param int deviceId: Device's Id called by rpc (required)
+        :param RouterClientSendOptions options: Router options for sending the message
+ 
+        :rtype: RS485Configuration
+
+        .. _WristConfigC61ClientSetRS485Configuration:
+
+    .. py:method:: SetRS485Configuration (rs485configuration, deviceId, options = RouterClientSendOptions())
+        
+        | The ``CONFIGURE`` permission is necessary to call this RPC.
+        |
+        | Configures RS485.
+        | The arm must be powered on and the wrist's device identifier must be supplied as an input parameter.
+        | The port_id parameter must be set to RS485_PORT_FLANGE.
+        | 
+
+
+        :param rs485configuration:  
+        :type rs485configuration: :ref:`RS485Configuration <WristConfigC61RS485Configuration>`
+
+        :param int deviceId: Device's Id called by rpc (required)
+        :param RouterClientSendOptions options: Router options for sending the message
+
+        .. _WristConfigC61ClientGetPowerSupply24VState:
+
+    .. py:method:: GetPowerSupply24VState (, deviceId, options = RouterClientSendOptions())
+        
+        | The ``READ_ONLY`` permission is necessary to call this RPC.
+        |
+        | Gets the power supply +24V state.
+        | The arm must be powered on and the wrist's device identifier must be supplied as an input parameter.
+        | 
+
+        :param int deviceId: Device's Id called by rpc (required)
+        :param RouterClientSendOptions options: Router options for sending the message
+ 
+        :rtype: PowerSupply24VState
+
+        .. _WristConfigC61ClientSetPowerSupply24VState:
+
+    .. py:method:: SetPowerSupply24VState (powersupply24vstate, deviceId, options = RouterClientSendOptions())
+        
+        | The ``OPERATE`` permission is necessary to call this RPC.
+        |
+        | Sets the power supply +24V state.
+        | The arm must be powered on and the wrist's device identifier must be supplied as an input parameter.
+        | 
+
+
+        :param powersupply24vstate:  
+        :type powersupply24vstate: :ref:`PowerSupply24VState <WristConfigC61PowerSupply24VState>`
+
+        :param int deviceId: Device's Id called by rpc (required)
+        :param RouterClientSendOptions options: Router options for sending the message
+
+        .. _WristConfigC61ClientGetArmSerialNumber:
+
+    .. py:method:: GetArmSerialNumber (, deviceId, options = RouterClientSendOptions())
+        
+        | The ``READ_ONLY`` permission is necessary to call this RPC.
+        |
+        | Gets the arm serial number.
+        | The arm must be powered on and the wrist's device identifier must be supplied as an input parameter.
+        | 
+
+        :param int deviceId: Device's Id called by rpc (required)
+        :param RouterClientSendOptions options: Router options for sending the message
+ 
+        :rtype: SerialNumber

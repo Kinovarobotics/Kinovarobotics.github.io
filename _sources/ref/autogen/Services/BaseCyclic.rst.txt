@@ -1,0 +1,37 @@
+================================
+BaseCyclic
+================================
+    
+.. py:currentmodule:: kortex_api.autogen
+
+.. py:class:: BaseCyclicClient
+        
+    :canonical: kortex_api.autogen.client_stubs.BaseCyclicClientRpc
+
+    .. py:method:: __init__(router, namespace = None)
+
+        Constructs a BaseCyclicClient with an initialized :class:`~kortex_api.RouterClient.RouterClient` and an optional namespace.
+
+        :param RouterClient router: :class:`~kortex_api.RouterClient.RouterClient` used for the communication
+        :param string namespace: Optional namespace on which to initialize the BaseCyclicClient (defaults to ``None``)
+
+    .. py:method:: IsAlive (timeoutMs: int = 1000)
+        
+        Returns ``True`` if the Service Server is detected online before ``timeoutMs`` is expired, ``False`` otherwise.
+        
+        :param unsigned int timeoutMs: The maximum time to wait for an answer from the server 
+        :rtype: bool
+
+
+        .. _BaseCyclicClientRefreshFeedback:
+
+    .. py:method:: RefreshFeedback (, deviceId = 0, options = RouterClientSendOptions())
+        
+        | The ``READ_ONLY`` permission is necessary to call this RPC.
+        |
+        | Obtains feedback from base, actuators, and interface on their status
+
+        :param int deviceId: Device's Id called by rpc (optional)
+        :param RouterClientSendOptions options: Router options for sending the message
+ 
+        :rtype: Feedback

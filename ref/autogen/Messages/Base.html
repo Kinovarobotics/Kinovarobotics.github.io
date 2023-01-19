@@ -1,0 +1,2543 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Base &mdash; Kortex API  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/dark_mode_css/general.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/dark_mode_css/dark.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/sphinx_highlight.js"></script>
+        <script src="../../../_static/dark_mode_js/default_dark.js"></script>
+        <script src="../../../_static/dark_mode_js/theme_switcher.js"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="BaseCyclic" href="BaseCyclic.html" />
+    <link rel="prev" title="ActuatorCyclic" href="ActuatorCyclic.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> Kortex API
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption" role="heading"><span class="caption-text">Getting started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../getting_started/installation.html">Install the API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../getting_started/api_mechanism.html">Get to know it</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../getting_started/code_examples.html">See what you can do (examples)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../getting_started/error_management.html">Managing problems</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">API</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Python API Reference</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../RouterClient.html">RouterClient</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../SessionManager.html">SessionManager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../MqttTransport.html">MqttTransport</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../UDPTransport.html">UDPTransport</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Constants.html">Constants</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../exceptions/index.html">Exceptions</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">Autogen</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../Enums/index.html">Enums</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Services/index.html">Services</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="index.html">Messages</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="ActuatorConfig.html">ActuatorConfig</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ActuatorCyclic.html">ActuatorCyclic</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Base</a></li>
+<li class="toctree-l4"><a class="reference internal" href="BaseCyclic.html">BaseCyclic</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Common.html">Common</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ControlConfig.html">ControlConfig</a></li>
+<li class="toctree-l4"><a class="reference internal" href="DeviceConfig.html">DeviceConfig</a></li>
+<li class="toctree-l4"><a class="reference internal" href="DeviceManager.html">DeviceManager</a></li>
+<li class="toctree-l4"><a class="reference internal" href="EditingContext.html">EditingContext</a></li>
+<li class="toctree-l4"><a class="reference internal" href="EventBroker.html">EventBroker</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Frame.html">Frame</a></li>
+<li class="toctree-l4"><a class="reference internal" href="IndustrialIO.html">IndustrialIO</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Modbus.html">Modbus</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Plugin.html">Plugin</a></li>
+<li class="toctree-l4"><a class="reference internal" href="PluginManager.html">PluginManager</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ProductConfiguration.html">ProductConfiguration</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ProgramConfig.html">ProgramConfig</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ProgramRunner.html">ProgramRunner</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ProtectionZone.html">ProtectionZone</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SafetyControlUnitConfig.html">SafetyControlUnitConfig</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SafetyFunctions.html">SafetyFunctions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SafetyFunctionsCommon.html">SafetyFunctionsCommon</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SafetyFunctionsElbow.html">SafetyFunctionsElbow</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SafetyFunctionsJointLimits.html">SafetyFunctionsJointLimits</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SafetyFunctionsToolCenterPoint.html">SafetyFunctionsToolCenterPoint</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SafetyIO.html">SafetyIO</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Session.html">Session</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ToolManager.html">ToolManager</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ToolPlugin.html">ToolPlugin</a></li>
+<li class="toctree-l4"><a class="reference internal" href="VariableManager.html">VariableManager</a></li>
+<li class="toctree-l4"><a class="reference internal" href="WristConfigC61.html">WristConfigC61</a></li>
+<li class="toctree-l4"><a class="reference internal" href="WristCyclicC61.html">WristCyclicC61</a></li>
+<li class="toctree-l4"><a class="reference internal" href="WristCyclicCommon.html">WristCyclicCommon</a></li>
+<li class="toctree-l4"><a class="reference internal" href="WristCyclicGeneric.html">WristCyclicGeneric</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../Notifications.html">Notifications</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Kortex API</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../index.html">Python API Reference</a> &raquo;</li>
+        
+          <li><a href="../index.html">Autogen</a> &raquo;</li>
+        
+          <li><a href="index.html">Messages</a> &raquo;</li>
+        
+      <li>Base</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../_sources/ref/autogen/Messages/Base.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="base">
+<h1>Base<a class="headerlink" href="#base" title="Permalink to this heading">¶</a></h1>
+<span class="target" id="basearmcalibrationstatus"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.ArmCalibrationStatus">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ArmCalibrationStatus</span></span><a class="headerlink" href="#kortex_api.autogen.ArmCalibrationStatus" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Arm calibration status</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.Base_pb2.ArmCalibrationStatus</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><p><strong>status</strong> (<a class="reference internal" href="../Enums/Base.html#basearmcalibrationstatustype"><span class="std std-ref">ArmCalibrationStatusType</span></a>) – Arm calibration status</p>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="basearmcalibrationstatuschangenotification"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.ArmCalibrationStatusChangeNotification">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ArmCalibrationStatusChangeNotification</span></span><a class="headerlink" href="#kortex_api.autogen.ArmCalibrationStatusChangeNotification" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Arm calibration status change notification</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.Base_pb2.ArmCalibrationStatusChangeNotification</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>status</strong> (<a class="reference internal" href="../Enums/Base.html#basearmcalibrationstatustype"><span class="std std-ref">ArmCalibrationStatusType</span></a>) – Arm calibration status concerned by the change</p></li>
+<li><p><strong>generic_info</strong> (<a class="reference internal" href="Common.html#commonnotificationinformation"><span class="std std-ref">NotificationInformation</span></a>) – Generic notification information</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="basefsreadargs"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.FSReadArgs">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">FSReadArgs</span></span><a class="headerlink" href="#kortex_api.autogen.FSReadArgs" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>File system read argument</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.Base_pb2.FSReadArgs</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>path</strong> (<a class="reference internal" href="Common.html#commonfspath"><span class="std std-ref">FSPath</span></a>) – File path</p></li>
+<li><p><strong>offset</strong> (<span class="xref std std-ref">int</span>) – Byte offset from beginning of file.</p></li>
+<li><p><strong>len</strong> (<span class="xref std std-ref">int</span>) – Number of bytes to read.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="basefsreaddata"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.FSReadData">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">FSReadData</span></span><a class="headerlink" href="#kortex_api.autogen.FSReadData" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>File system read data</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.Base_pb2.FSReadData</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><p><strong>data</strong> (<span class="xref std std-ref">bytes</span>) – Data to read</p>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="basefswriteargs"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.FSWriteArgs">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">FSWriteArgs</span></span><a class="headerlink" href="#kortex_api.autogen.FSWriteArgs" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>File system write argument</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.Base_pb2.FSWriteArgs</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>path</strong> (<a class="reference internal" href="Common.html#commonfspath"><span class="std std-ref">FSPath</span></a>) – File path</p></li>
+<li><p><strong>append</strong> (<span class="xref std std-ref">bool</span>) – Append data to end of file if true. File is replaced if false. False by default.</p></li>
+<li><p><strong>data</strong> (<span class="xref std std-ref">bytes</span>) – Data to write.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="basefslistargs"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.FSListArgs">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">FSListArgs</span></span><a class="headerlink" href="#kortex_api.autogen.FSListArgs" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>File system list argument</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.Base_pb2.FSListArgs</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>path</strong> (<a class="reference internal" href="Common.html#commonfspath"><span class="std std-ref">FSPath</span></a>) – File path</p></li>
+<li><p><strong>recursive</strong> (<span class="xref std std-ref">bool</span>) – Perform recursive listing (default to false)</p></li>
+<li><p><strong>extension</strong> (<span class="xref std std-ref">str</span>) – File extension filter (default all extensions).</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="basefulluserprofile"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.FullUserProfile">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">FullUserProfile</span></span><a class="headerlink" href="#kortex_api.autogen.FullUserProfile" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Information about a user, together with a password. Full set of information needed to create a user profile.</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.Base_pb2.FullUserProfile</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>user_profile</strong> (<a class="reference internal" href="#baseuserprofile"><span class="std std-ref">UserProfile</span></a>) – Information about the user, including its username.</p></li>
+<li><p><strong>password</strong> (<span class="xref std std-ref">str</span>) – User’s password</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="baseuserprofile"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.UserProfile">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">UserProfile</span></span><a class="headerlink" href="#kortex_api.autogen.UserProfile" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Information about a user</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.Base_pb2.UserProfile</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>handle</strong> (<a class="reference internal" href="Common.html#commonuserprofilehandle"><span class="std std-ref">UserProfileHandle</span></a>) – User handle (no need to set it with CreateUserProfile())</p></li>
+<li><p><strong>username</strong> (<span class="xref std std-ref">str</span>) – Username, which is used to connect to robot (or login via Web App)</p></li>
+<li><p><strong>firstname</strong> (<span class="xref std std-ref">str</span>) – User’s first name</p></li>
+<li><p><strong>lastname</strong> (<span class="xref std std-ref">str</span>) – User’s last name</p></li>
+<li><p><strong>application_data</strong> (<span class="xref std std-ref">str</span>) – Application data (reserved for use by Web App)</p></li>
+<li><p><strong>roles</strong> (<a class="reference internal" href="Common.html#commonuserrole"><span class="std std-ref">UserRole</span></a> [ ]) – User roles (read only)</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="baseuserprofilelist"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.UserProfileList">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">UserProfileList</span></span><a class="headerlink" href="#kortex_api.autogen.UserProfileList" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Array of user profiles</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.Base_pb2.UserProfileList</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><p><strong>user_profiles</strong> (<a class="reference internal" href="#baseuserprofile"><span class="std std-ref">UserProfile</span></a> [ ]) – User profile</p>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="baseuserlist"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.UserList">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">UserList</span></span><a class="headerlink" href="#kortex_api.autogen.UserList" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Array of user profile handles</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.Base_pb2.UserList</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><p><strong>user_handles</strong> (<a class="reference internal" href="Common.html#commonuserprofilehandle"><span class="std std-ref">UserProfileHandle</span></a> [ ]) – User handle</p>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="basepasswordchange"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.PasswordChange">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">PasswordChange</span></span><a class="headerlink" href="#kortex_api.autogen.PasswordChange" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Information required to change user password</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.Base_pb2.PasswordChange</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>handle</strong> (<a class="reference internal" href="Common.html#commonuserprofilehandle"><span class="std std-ref">UserProfileHandle</span></a>) – User handle</p></li>
+<li><p><strong>old_password</strong> (<span class="xref std std-ref">str</span>) – Current password</p></li>
+<li><p><strong>new_password</strong> (<span class="xref std std-ref">str</span>) – New password</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="baseactionhandle"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.ActionHandle">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ActionHandle</span></span><a class="headerlink" href="#kortex_api.autogen.ActionHandle" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Reference to a specific action</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.Base_pb2.ActionHandle</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>identifier</strong> (<span class="xref std std-ref">int</span>) – Action identifier</p></li>
+<li><p><strong>action_type</strong> (<a class="reference internal" href="../Enums/Base.html#baseactiontype"><span class="std std-ref">ActionType</span></a>) – Action type</p></li>
+<li><p><strong>permission</strong> (<span class="xref std std-ref">int</span>) – Permission of specified Action entity. Must use ‘Kinova.Api.Common.Permission’ enum.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="baserequestedactiontype"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.RequestedActionType">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">RequestedActionType</span></span><a class="headerlink" href="#kortex_api.autogen.RequestedActionType" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Message used for requesting all action instances of a specific action type</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.Base_pb2.RequestedActionType</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><p><strong>action_type</strong> (<a class="reference internal" href="../Enums/Base.html#baseactiontype"><span class="std std-ref">ActionType</span></a>) – Action type</p>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="baseaction"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.Action">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Action</span></span><a class="headerlink" href="#kortex_api.autogen.Action" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Defines an action. An action is some task performed on the robot.</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.Base_pb2.Action</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>handle</strong> (<a class="reference internal" href="#baseactionhandle"><span class="std std-ref">ActionHandle</span></a>) – Reference to the action (useful when updating an existing action)</p></li>
+<li><p><strong>name</strong> (<span class="xref std std-ref">str</span>) – Action friendly name</p></li>
+<li><p><strong>application_data</strong> (<span class="xref std std-ref">str</span>) – Application data (reserved for use by Web App)</p></li>
+<li><p><strong>send_twist_command</strong> (<a class="reference internal" href="#kortex_api.autogen.TwistCommand" title="kortex_api.autogen.TwistCommand"><em>TwistCommand</em></a>) – Control the tool in velocity. Part of the <code class="docutils literal notranslate"><span class="pre">action_parameters</span></code> <a class="reference external" href="https://developers.google.com/protocol-buffers/docs/reference/python-generated#oneof">Oneof</a>.</p></li>
+<li><p><strong>send_joint_speeds</strong> (<a class="reference internal" href="ControlConfig.html#kortex_api.autogen.JointSpeeds" title="kortex_api.autogen.JointSpeeds"><em>JointSpeeds</em></a>) – <p>Action to control each joint speed. Part of the <code class="docutils literal notranslate"><span class="pre">action_parameters</span></code> <a class="reference external" href="https://developers.google.com/protocol-buffers/docs/reference/python-generated#oneof">Oneof</a>.</p>
+</p></li>
+<li><p><strong>toggle_hand_guiding_mode</strong> (<a class="reference internal" href="../Enums/Base.html#kortex_api.autogen.HandGuidingMode" title="kortex_api.autogen.HandGuidingMode"><em>HandGuidingMode</em></a>) – <p>Enable or disable the Hand-Guiding mode. Part of the <code class="docutils literal notranslate"><span class="pre">action_parameters</span></code> <a class="reference external" href="https://developers.google.com/protocol-buffers/docs/reference/python-generated#oneof">Oneof</a>.</p>
+</p></li>
+<li><p><strong>switch_control_mapping</strong> (<a class="reference internal" href="#kortex_api.autogen.SwitchControlMapping" title="kortex_api.autogen.SwitchControlMapping"><em>SwitchControlMapping</em></a>) – <p>Switch the active controller map. Part of the <code class="docutils literal notranslate"><span class="pre">action_parameters</span></code> <a class="reference external" href="https://developers.google.com/protocol-buffers/docs/reference/python-generated#oneof">Oneof</a>.</p>
+</p></li>
+<li><p><strong>navigate_joints</strong> (<a class="reference internal" href="../Enums/Base.html#kortex_api.autogen.JointNavigationDirection" title="kortex_api.autogen.JointNavigationDirection"><em>JointNavigationDirection</em></a>) – <p>Select the next actuator to control in a map. Part of the <code class="docutils literal notranslate"><span class="pre">action_parameters</span></code> <a class="reference external" href="https://developers.google.com/protocol-buffers/docs/reference/python-generated#oneof">Oneof</a>.</p>
+</p></li>
+<li><p><strong>navigate_mappings</strong> (<a class="reference internal" href="../Enums/Base.html#kortex_api.autogen.NavigationDirection" title="kortex_api.autogen.NavigationDirection"><em>NavigationDirection</em></a>) – <p>Select a different map. Part of the <code class="docutils literal notranslate"><span class="pre">action_parameters</span></code> <a class="reference external" href="https://developers.google.com/protocol-buffers/docs/reference/python-generated#oneof">Oneof</a>.</p>
+</p></li>
+<li><p><strong>change_twist</strong> (<a class="reference internal" href="#kortex_api.autogen.ChangeTwist" title="kortex_api.autogen.ChangeTwist"><em>ChangeTwist</em></a>) – <p>Change tool twist. Part of the <code class="docutils literal notranslate"><span class="pre">action_parameters</span></code> <a class="reference external" href="https://developers.google.com/protocol-buffers/docs/reference/python-generated#oneof">Oneof</a>.</p>
+</p></li>
+<li><p><strong>change_joint_speeds</strong> (<a class="reference internal" href="#kortex_api.autogen.ChangeJointSpeeds" title="kortex_api.autogen.ChangeJointSpeeds"><em>ChangeJointSpeeds</em></a>) – <p>Change the joint speeds individually. Part of the <code class="docutils literal notranslate"><span class="pre">action_parameters</span></code> <a class="reference external" href="https://developers.google.com/protocol-buffers/docs/reference/python-generated#oneof">Oneof</a>.</p>
+</p></li>
+<li><p><strong>apply_quick_stop</strong> (<a class="reference internal" href="#kortex_api.autogen.QuickStop" title="kortex_api.autogen.QuickStop"><em>QuickStop</em></a>) – <p>Apply robot quick stop. Part of the <code class="docutils literal notranslate"><span class="pre">action_parameters</span></code> <a class="reference external" href="https://developers.google.com/protocol-buffers/docs/reference/python-generated#oneof">Oneof</a>.</p>
+</p></li>
+<li><p><strong>clear_faults</strong> (<a class="reference internal" href="#kortex_api.autogen.Faults" title="kortex_api.autogen.Faults"><em>Faults</em></a>) – <p>Clear faults. Robot will be able to move if there is no more fault (see BaseCyclic.BaseFeedback.[fault_bank_a | fault_bank_b]). Part of the <code class="docutils literal notranslate"><span class="pre">action_parameters</span></code> <a class="reference external" href="https://developers.google.com/protocol-buffers/docs/reference/python-generated#oneof">Oneof</a>.</p>
+</p></li>
+<li><p><strong>execute_action</strong> (<a class="reference internal" href="Common.html#kortex_api.autogen.ActionHandle" title="kortex_api.autogen.ActionHandle"><em>ActionHandle</em></a>) – <p>Execute an existing action. Part of the <code class="docutils literal notranslate"><span class="pre">action_parameters</span></code> <a class="reference external" href="https://developers.google.com/protocol-buffers/docs/reference/python-generated#oneof">Oneof</a>.</p>
+</p></li>
+<li><p><strong>stop_action</strong> (<a class="reference internal" href="#kortex_api.autogen.Stop" title="kortex_api.autogen.Stop"><em>Stop</em></a>) – <p>Stop movement. Part of the <code class="docutils literal notranslate"><span class="pre">action_parameters</span></code> <a class="reference external" href="https://developers.google.com/protocol-buffers/docs/reference/python-generated#oneof">Oneof</a>.</p>
+</p></li>
+<li><p><strong>play_pre_computed_trajectory</strong> (<a class="reference internal" href="#kortex_api.autogen.PreComputedJointTrajectory" title="kortex_api.autogen.PreComputedJointTrajectory"><em>PreComputedJointTrajectory</em></a>) – <p>Play a pre-computed joint trajectory. Part of the <code class="docutils literal notranslate"><span class="pre">action_parameters</span></code> <a class="reference external" href="https://developers.google.com/protocol-buffers/docs/reference/python-generated#oneof">Oneof</a>.</p>
+</p></li>
+<li><p><strong>execute_waypoint_list</strong> (<a class="reference internal" href="#kortex_api.autogen.WaypointList" title="kortex_api.autogen.WaypointList"><em>WaypointList</em></a>) – <p>Execute a trajectory defined by a series of waypoints. Part of the <code class="docutils literal notranslate"><span class="pre">action_parameters</span></code> <a class="reference external" href="https://developers.google.com/protocol-buffers/docs/reference/python-generated#oneof">Oneof</a>.</p>
+</p></li>
+<li><p><strong>change_payload_parameters</strong> (<a class="reference internal" href="#kortex_api.autogen.ChangePayloadParameters" title="kortex_api.autogen.ChangePayloadParameters"><em>ChangePayloadParameters</em></a>) – <p>Change payload parameters. Part of the <code class="docutils literal notranslate"><span class="pre">action_parameters</span></code> <a class="reference external" href="https://developers.google.com/protocol-buffers/docs/reference/python-generated#oneof">Oneof</a>.</p>
+</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="baseswitchcontrolmapping"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.SwitchControlMapping">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">SwitchControlMapping</span></span><a class="headerlink" href="#kortex_api.autogen.SwitchControlMapping" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Action parameter to switch the active controller map</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.Base_pb2.SwitchControlMapping</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>controller_identifier</strong> (<span class="xref std std-ref">int</span>) – Identifier of the controller for which changing the active map is requested</p></li>
+<li><p><strong>map_group_handle</strong> (<a class="reference internal" href="#basemapgrouphandle"><span class="std std-ref">MapGroupHandle</span></a>) – Reference to the map group for which the active map needs to change</p></li>
+<li><p><strong>map_handle</strong> (<a class="reference internal" href="#basemaphandle"><span class="std std-ref">MapHandle</span></a>) – Reference to new active map</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="basechangepayloadparameters"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.ChangePayloadParameters">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ChangePayloadParameters</span></span><a class="headerlink" href="#kortex_api.autogen.ChangePayloadParameters" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Action to change the payload parameters</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.Base_pb2.ChangePayloadParameters</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>mass</strong> (<span class="xref std std-ref">float</span>) – Payload mass in kilogram</p></li>
+<li><p><strong>inertia</strong> (<a class="reference internal" href="Common.html#commonsymmetricmatrix3x3"><span class="std std-ref">SymmetricMatrix3x3</span></a>) – Payload inertia in kilogram square meter</p></li>
+<li><p><strong>center_of_mass</strong> (<a class="reference internal" href="Common.html#commoncartesianvector"><span class="std std-ref">CartesianVector</span></a>) – Payload center of mass in meter</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="basechangetwist"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.ChangeTwist">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ChangeTwist</span></span><a class="headerlink" href="#kortex_api.autogen.ChangeTwist" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Action to change the maximum Cartesian velocity by a specific increment</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.Base_pb2.ChangeTwist</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>linear</strong> (<span class="xref std std-ref">float</span>) – Linear Cartesian velocity increment (in meters per second)</p></li>
+<li><p><strong>angular</strong> (<span class="xref std std-ref">float</span>) – Angular Cartesian velocity increment (in degrees per second)</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="basechangejointspeeds"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.ChangeJointSpeeds">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ChangeJointSpeeds</span></span><a class="headerlink" href="#kortex_api.autogen.ChangeJointSpeeds" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Action to change the maximum angular velocity per joint by a specific increment</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.Base_pb2.ChangeJointSpeeds</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><p><strong>joint_speeds</strong> (<a class="reference internal" href="#basejointspeeds"><span class="std std-ref">JointSpeeds</span></a>) – Joint speeds</p>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="basequickstop"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.QuickStop">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">QuickStop</span></span><a class="headerlink" href="#kortex_api.autogen.QuickStop" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Action to force a quick stop of the robot</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.Base_pb2.QuickStop</p>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="basefaults"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.Faults">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Faults</span></span><a class="headerlink" href="#kortex_api.autogen.Faults" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Action to clear faults</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.Base_pb2.Faults</p>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="basestop"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.Stop">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Stop</span></span><a class="headerlink" href="#kortex_api.autogen.Stop" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Action to stop robot movement This message is deprecated and will be removed in a future release.</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.Base_pb2.Stop</p>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="baseactionlist"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.ActionList">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ActionList</span></span><a class="headerlink" href="#kortex_api.autogen.ActionList" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Array of actions</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.Base_pb2.ActionList</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><p><strong>action_list</strong> (<a class="reference internal" href="#baseaction"><span class="std std-ref">Action</span></a> [ ]) – Action</p>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="basessid"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.Ssid">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Ssid</span></span><a class="headerlink" href="#kortex_api.autogen.Ssid" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Wi-Fi SSID</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.Base_pb2.Ssid</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><p><strong>identifier</strong> (<span class="xref std std-ref">str</span>) – Wi-Fi Service Set Identifier</p>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="basecommunicationinterfaceconfiguration"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.CommunicationInterfaceConfiguration">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">CommunicationInterfaceConfiguration</span></span><a class="headerlink" href="#kortex_api.autogen.CommunicationInterfaceConfiguration" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Configuration information for enabling or disabling a specific communication interface (e.g. Wi-Fi, Wired Ethernet) This message may be removed in a future release. It has been moved to Network service.</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.Base_pb2.CommunicationInterfaceConfiguration</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>type</strong> (<a class="reference internal" href="../Enums/Base.html#basenetworktype"><span class="std std-ref">NetworkType</span></a>) – Network type (e.g. Wi-Fi, Wired Ethernet)</p></li>
+<li><p><strong>enable</strong> (<span class="xref std std-ref">bool</span>) – Enable configuration. Set to true to enable network, false otherwise</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="basenetworkhandle"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.NetworkHandle">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">NetworkHandle</span></span><a class="headerlink" href="#kortex_api.autogen.NetworkHandle" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Reference to a network This is used in various RPC calls. Will be moved out of base.proto eventually.</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.Base_pb2.NetworkHandle</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><p><strong>type</strong> (<a class="reference internal" href="../Enums/Base.html#basenetworktype"><span class="std std-ref">NetworkType</span></a>) – Network type</p>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="baseipv4configuration"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.IPv4Configuration">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">IPv4Configuration</span></span><a class="headerlink" href="#kortex_api.autogen.IPv4Configuration" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>IPv4 configuration information This message may be removed in a future release. It has been moved to Network service.</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.Base_pb2.IPv4Configuration</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>ip_address</strong> (<span class="xref std std-ref">int</span>) – IPv4 address</p></li>
+<li><p><strong>subnet_mask</strong> (<span class="xref std std-ref">int</span>) – IPv4 subnet mask</p></li>
+<li><p><strong>default_gateway</strong> (<span class="xref std std-ref">int</span>) – Gateway IPv4 address</p></li>
+<li><p><strong>dhcp_enabled</strong> (<span class="xref std std-ref">bool</span>) – Enable automatic (DHCP) IPv4 configuration. Set to true to enable DHCP instead of static configuration.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="baseipv4information"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.IPv4Information">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">IPv4Information</span></span><a class="headerlink" href="#kortex_api.autogen.IPv4Information" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Information about an IPv4 endpoint This message may be removed in a future release. It has been moved to Network service.</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.Base_pb2.IPv4Information</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>ip_address</strong> (<span class="xref std std-ref">int</span>) – IPv4 address</p></li>
+<li><p><strong>subnet_mask</strong> (<span class="xref std std-ref">int</span>) – IPv4 subnet mask</p></li>
+<li><p><strong>default_gateway</strong> (<span class="xref std std-ref">int</span>) – Gateway IPv4 address</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="basefullipv4configuration"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.FullIPv4Configuration">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">FullIPv4Configuration</span></span><a class="headerlink" href="#kortex_api.autogen.FullIPv4Configuration" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>IPv4 configuration for a specific network This message may be removed in a future release. It has been moved to Network service.</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.Base_pb2.FullIPv4Configuration</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>handle</strong> (<a class="reference internal" href="#basenetworkhandle"><span class="std std-ref">NetworkHandle</span></a>) – Network handle</p></li>
+<li><p><strong>ipv4_configuration</strong> (<a class="reference internal" href="#baseipv4configuration"><span class="std std-ref">IPv4Configuration</span></a>) – IPv4 configuration</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="basewifiinformation"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.WifiInformation">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">WifiInformation</span></span><a class="headerlink" href="#kortex_api.autogen.WifiInformation" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Information about a specific Wi-Fi network This message may be removed in a future release. It has been moved to Network service.</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.Base_pb2.WifiInformation</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>ssid</strong> (<a class="reference internal" href="#basessid"><span class="std std-ref">Ssid</span></a>) – SSID</p></li>
+<li><p><strong>security_type</strong> (<span class="xref std std-ref">int</span>) – Wi-Fi security type</p></li>
+<li><p><strong>encryption_type</strong> (<span class="xref std std-ref">int</span>) – Wi-Fi encryption type</p></li>
+<li><p><strong>signal_quality</strong> (<a class="reference internal" href="../Enums/Base.html#basesignalquality"><span class="std std-ref">SignalQuality</span></a>) – Wi-Fi signal quality</p></li>
+<li><p><strong>signal_strength</strong> (<span class="xref std std-ref">int</span>) – Wi-Fi signal power in dBm</p></li>
+<li><p><strong>frequency</strong> (<span class="xref std std-ref">int</span>) – Wi-Fi operating frequency (channel) in MHz</p></li>
+<li><p><strong>channel</strong> (<span class="xref std std-ref">int</span>) – Wi-Fi operating channel</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="basewifiinformationlist"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.WifiInformationList">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">WifiInformationList</span></span><a class="headerlink" href="#kortex_api.autogen.WifiInformationList" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Array of information about different Wi-Fi networks This message may be removed in a future release. It has been moved to Network service.</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.Base_pb2.WifiInformationList</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><p><strong>wifi_information_list</strong> (<a class="reference internal" href="#basewifiinformation"><span class="std std-ref">WifiInformation</span></a> [ ]) – Wi-Fi information</p>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="basewificonfiguration"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.WifiConfiguration">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">WifiConfiguration</span></span><a class="headerlink" href="#kortex_api.autogen.WifiConfiguration" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Wi-Fi connection configuration This message may be removed in a future release. It has been moved to Network service.</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.Base_pb2.WifiConfiguration</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>ssid</strong> (<a class="reference internal" href="#basessid"><span class="std std-ref">Ssid</span></a>) – SSID</p></li>
+<li><p><strong>security_key</strong> (<span class="xref std std-ref">str</span>) – Security key to used when connecting to Wi-Fi network</p></li>
+<li><p><strong>connect_automatically</strong> (<span class="xref std std-ref">bool</span>) – Connection mode. Set to true so robot automatically connects to this Wi-Fi network at bootup, false otherwise</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="basewificonfigurationlist"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.WifiConfigurationList">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">WifiConfigurationList</span></span><a class="headerlink" href="#kortex_api.autogen.WifiConfigurationList" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Array of Wi-Fi connection configuration for different networks This message may be removed in a future release. It has been moved to Network service.</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.Base_pb2.WifiConfigurationList</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><p><strong>wifi_configuration_list</strong> (<a class="reference internal" href="#basewificonfiguration"><span class="std std-ref">WifiConfiguration</span></a> [ ]) – Wi-Fi configurations</p>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="baserotationmatrixrow"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.RotationMatrixRow">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">RotationMatrixRow</span></span><a class="headerlink" href="#kortex_api.autogen.RotationMatrixRow" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>This message will be removed in a future release. It has been moved to Common service.</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.Base_pb2.RotationMatrixRow</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>column1</strong> (<span class="xref std std-ref">float</span>) – Value between -1.0 and 1.0</p></li>
+<li><p><strong>column2</strong> (<span class="xref std std-ref">float</span>) – Value between -1.0 and 1.0</p></li>
+<li><p><strong>column3</strong> (<span class="xref std std-ref">float</span>) – Value between -1.0 and 1.0</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="baserotationmatrix"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.RotationMatrix">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">RotationMatrix</span></span><a class="headerlink" href="#kortex_api.autogen.RotationMatrix" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>This message will be removed in a future release. It has been moved to Common service.</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.Base_pb2.RotationMatrix</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>row1</strong> (<a class="reference internal" href="#baserotationmatrixrow"><span class="std std-ref">RotationMatrixRow</span></a>) – First rotation matrix row</p></li>
+<li><p><strong>row2</strong> (<a class="reference internal" href="#baserotationmatrixrow"><span class="std std-ref">RotationMatrixRow</span></a>) – Second rotation matrix row</p></li>
+<li><p><strong>row3</strong> (<a class="reference internal" href="#baserotationmatrixrow"><span class="std std-ref">RotationMatrixRow</span></a>) – Third rotation matrix row</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="baseconfigurationchangenotification"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.ConfigurationChangeNotification">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ConfigurationChangeNotification</span></span><a class="headerlink" href="#kortex_api.autogen.ConfigurationChangeNotification" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Representation of a configuration change event</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.Base_pb2.ConfigurationChangeNotification</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>event</strong> (<a class="reference internal" href="../Enums/Base.html#baseconfigurationnotificationevent"><span class="std std-ref">ConfigurationNotificationEvent</span></a>) – Configuration event</p></li>
+<li><p><strong>generic_info</strong> (<a class="reference internal" href="Common.html#commonnotificationinformation"><span class="std std-ref">NotificationInformation</span></a>) – Generic notification information</p></li>
+<li><p><strong>action_handle</strong> (<a class="reference internal" href="Common.html#kortex_api.autogen.ActionHandle" title="kortex_api.autogen.ActionHandle"><em>ActionHandle</em></a>) – <p>Action for which the configuration changed. Part of the <code class="docutils literal notranslate"><span class="pre">configuration_change</span></code> <a class="reference external" href="https://developers.google.com/protocol-buffers/docs/reference/python-generated#oneof">Oneof</a>.</p>
+</p></li>
+<li><p><strong>mapping_handle</strong> (<a class="reference internal" href="#kortex_api.autogen.MappingHandle" title="kortex_api.autogen.MappingHandle"><em>MappingHandle</em></a>) – <p>Mapping for which the configuration changed. Part of the <code class="docutils literal notranslate"><span class="pre">configuration_change</span></code> <a class="reference external" href="https://developers.google.com/protocol-buffers/docs/reference/python-generated#oneof">Oneof</a>.</p>
+</p></li>
+<li><p><strong>map_group_handle</strong> (<a class="reference internal" href="#kortex_api.autogen.MapGroupHandle" title="kortex_api.autogen.MapGroupHandle"><em>MapGroupHandle</em></a>) – <p>Map group for which the configuration changed. Part of the <code class="docutils literal notranslate"><span class="pre">configuration_change</span></code> <a class="reference external" href="https://developers.google.com/protocol-buffers/docs/reference/python-generated#oneof">Oneof</a>.</p>
+</p></li>
+<li><p><strong>map_handle</strong> (<a class="reference internal" href="#kortex_api.autogen.MapHandle" title="kortex_api.autogen.MapHandle"><em>MapHandle</em></a>) – <p>Map for which the configuration changed. Part of the <code class="docutils literal notranslate"><span class="pre">configuration_change</span></code> <a class="reference external" href="https://developers.google.com/protocol-buffers/docs/reference/python-generated#oneof">Oneof</a>.</p>
+</p></li>
+<li><p><strong>user_profile_handle</strong> (<a class="reference internal" href="Common.html#kortex_api.autogen.UserProfileHandle" title="kortex_api.autogen.UserProfileHandle"><em>UserProfileHandle</em></a>) – <p>User Profile for which the configuration changed. Part of the <code class="docutils literal notranslate"><span class="pre">configuration_change</span></code> <a class="reference external" href="https://developers.google.com/protocol-buffers/docs/reference/python-generated#oneof">Oneof</a>.</p>
+</p></li>
+<li><p><strong>diagnostic_handle</strong> (<a class="reference internal" href="Common.html#kortex_api.autogen.DiagnosticHandle" title="kortex_api.autogen.DiagnosticHandle"><em>DiagnosticHandle</em></a>) – <p>Diagnostic for which the configuration changed. Part of the <code class="docutils literal notranslate"><span class="pre">configuration_change</span></code> <a class="reference external" href="https://developers.google.com/protocol-buffers/docs/reference/python-generated#oneof">Oneof</a>.</p>
+</p></li>
+<li><p><strong>network_handle</strong> (<a class="reference internal" href="#kortex_api.autogen.NetworkHandle" title="kortex_api.autogen.NetworkHandle"><em>NetworkHandle</em></a>) – <p>Network element for which the configuration changed. Part of the <code class="docutils literal notranslate"><span class="pre">configuration_change</span></code> <a class="reference external" href="https://developers.google.com/protocol-buffers/docs/reference/python-generated#oneof">Oneof</a>.</p>
+</p></li>
+<li><p><strong>ssid</strong> (<a class="reference internal" href="#kortex_api.autogen.Ssid" title="kortex_api.autogen.Ssid"><em>Ssid</em></a>) – <p>Wi-Fi instance for which the configuration changed. Part of the <code class="docutils literal notranslate"><span class="pre">configuration_change</span></code> <a class="reference external" href="https://developers.google.com/protocol-buffers/docs/reference/python-generated#oneof">Oneof</a>.</p>
+</p></li>
+<li><p><strong>controller_handle</strong> (<a class="reference internal" href="#kortex_api.autogen.ControllerHandle" title="kortex_api.autogen.ControllerHandle"><em>ControllerHandle</em></a>) – <p>Controller instance for which the configuration changed. Part of the <code class="docutils literal notranslate"><span class="pre">configuration_change</span></code> <a class="reference external" href="https://developers.google.com/protocol-buffers/docs/reference/python-generated#oneof">Oneof</a>.</p>
+</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="baseservoingmodeinformation"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.ServoingModeInformation">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ServoingModeInformation</span></span><a class="headerlink" href="#kortex_api.autogen.ServoingModeInformation" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Information about the servoing mode</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.Base_pb2.ServoingModeInformation</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><p><strong>servoing_mode</strong> (<a class="reference internal" href="../Enums/Base.html#baseservoingmode"><span class="std std-ref">ServoingMode</span></a>) – Servoing mode</p>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="baseupdatingmodeinformation"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.UpdatingModeInformation">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">UpdatingModeInformation</span></span><a class="headerlink" href="#kortex_api.autogen.UpdatingModeInformation" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Information about the updating mode</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.Base_pb2.UpdatingModeInformation</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>updating_mode</strong> (<a class="reference internal" href="../Enums/Base.html#baseupdatingmode"><span class="std std-ref">UpdatingMode</span></a>) – Updating mode</p></li>
+<li><p><strong>device_handle</strong> (<a class="reference internal" href="Common.html#commondevicehandle"><span class="std std-ref">DeviceHandle</span></a>) – Device matching updating mode (if applicable)</p></li>
+<li><p><strong>local_file_uid</strong> (<a class="reference internal" href="Common.html#commonfileid"><span class="std std-ref">FileId</span></a>) – Local file unique identifier (optional)</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="baseoperatingmodenotification"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.OperatingModeNotification">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">OperatingModeNotification</span></span><a class="headerlink" href="#kortex_api.autogen.OperatingModeNotification" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Notification when the operating mode has changed</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.Base_pb2.OperatingModeNotification</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>operating_mode</strong> (<a class="reference internal" href="../Enums/Common.html#commonoperatingmodetype"><span class="std std-ref">OperatingModeType</span></a>) – New operating mode</p></li>
+<li><p><strong>generic_info</strong> (<a class="reference internal" href="Common.html#commonnotificationinformation"><span class="std std-ref">NotificationInformation</span></a>) – Generic notification information</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="baseupdatingmodenotification"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.UpdatingModeNotification">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">UpdatingModeNotification</span></span><a class="headerlink" href="#kortex_api.autogen.UpdatingModeNotification" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Notification about a single updating mode event</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.Base_pb2.UpdatingModeNotification</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>updating_mode</strong> (<a class="reference internal" href="../Enums/Base.html#baseupdatingmode"><span class="std std-ref">UpdatingMode</span></a>) – New updating mode</p></li>
+<li><p><strong>device_handle</strong> (<a class="reference internal" href="Common.html#commondevicehandle"><span class="std std-ref">DeviceHandle</span></a>) – Device matching updating mode (if applicable)</p></li>
+<li><p><strong>generic_info</strong> (<a class="reference internal" href="Common.html#commonnotificationinformation"><span class="std std-ref">NotificationInformation</span></a>) – Generic notification information</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="baseservoingmodenotification"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.ServoingModeNotification">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ServoingModeNotification</span></span><a class="headerlink" href="#kortex_api.autogen.ServoingModeNotification" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Notification about a single servoing mode event</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.Base_pb2.ServoingModeNotification</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>servoing_mode</strong> (<a class="reference internal" href="../Enums/Base.html#baseservoingmode"><span class="std std-ref">ServoingMode</span></a>) – New servoing mode</p></li>
+<li><p><strong>generic_info</strong> (<a class="reference internal" href="Common.html#commonnotificationinformation"><span class="std std-ref">NotificationInformation</span></a>) – Generic notification information</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="basecontrollerhandle"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.ControllerHandle">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ControllerHandle</span></span><a class="headerlink" href="#kortex_api.autogen.ControllerHandle" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Reference to a specific controller device</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.Base_pb2.ControllerHandle</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>type</strong> (<a class="reference internal" href="../Enums/Base.html#basecontrollertype"><span class="std std-ref">ControllerType</span></a>) – Controller device type</p></li>
+<li><p><strong>controller_identifier</strong> (<span class="xref std std-ref">int</span>) – Controller device identifier</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="basecontrollerelementhandle"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.ControllerElementHandle">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ControllerElementHandle</span></span><a class="headerlink" href="#kortex_api.autogen.ControllerElementHandle" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Reference ro a specific button (or axis) of a controller device</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.Base_pb2.ControllerElementHandle</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>controller_handle</strong> (<a class="reference internal" href="#basecontrollerhandle"><span class="std std-ref">ControllerHandle</span></a>) – Controller handle</p></li>
+<li><p><strong>button</strong> (<em>int</em>) – <p>Button identifier (only set if ‘button’ controller event, otherwise zero). Part of the <code class="docutils literal notranslate"><span class="pre">identifier</span></code> <a class="reference external" href="https://developers.google.com/protocol-buffers/docs/reference/python-generated#oneof">Oneof</a>.</p>
+</p></li>
+<li><p><strong>axis</strong> (<em>int</em>) – <p>Axis identifier (only set if ‘axis’ controller event, otherwise zero). Part of the <code class="docutils literal notranslate"><span class="pre">identifier</span></code> <a class="reference external" href="https://developers.google.com/protocol-buffers/docs/reference/python-generated#oneof">Oneof</a>.</p>
+</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="basecontrollernotification"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.ControllerNotification">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ControllerNotification</span></span><a class="headerlink" href="#kortex_api.autogen.ControllerNotification" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Notification about a single controller event</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.Base_pb2.ControllerNotification</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>generic_info</strong> (<a class="reference internal" href="Common.html#commonnotificationinformation"><span class="std std-ref">NotificationInformation</span></a>) – Generic notification information</p></li>
+<li><p><strong>controller_state</strong> (<a class="reference internal" href="#kortex_api.autogen.ControllerState" title="kortex_api.autogen.ControllerState"><em>ControllerState</em></a>) – <p>Used to indicate if a controller connection or disconnection event occured. Part of the <code class="docutils literal notranslate"><span class="pre">state</span></code> <a class="reference external" href="https://developers.google.com/protocol-buffers/docs/reference/python-generated#oneof">Oneof</a>.</p>
+</p></li>
+<li><p><strong>controller_element</strong> (<a class="reference internal" href="#kortex_api.autogen.ControllerElementState" title="kortex_api.autogen.ControllerElementState"><em>ControllerElementState</em></a>) – <p>Used to indicate if a specific button (or axis) was pressed (or moved). Part of the <code class="docutils literal notranslate"><span class="pre">state</span></code> <a class="reference external" href="https://developers.google.com/protocol-buffers/docs/reference/python-generated#oneof">Oneof</a>.</p>
+</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="basecontrollerlist"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.ControllerList">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ControllerList</span></span><a class="headerlink" href="#kortex_api.autogen.ControllerList" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Array of references to different controllers</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.Base_pb2.ControllerList</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><p><strong>handles</strong> (<a class="reference internal" href="#basecontrollerhandle"><span class="std std-ref">ControllerHandle</span></a> [ ]) – Controller handle</p>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="basecontrollerstate"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.ControllerState">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ControllerState</span></span><a class="headerlink" href="#kortex_api.autogen.ControllerState" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Indicates if a specific controller is connected (or disconnected)</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.Base_pb2.ControllerState</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>handle</strong> (<a class="reference internal" href="#basecontrollerhandle"><span class="std std-ref">ControllerHandle</span></a>) – Controller identifier</p></li>
+<li><p><strong>event_type</strong> (<a class="reference internal" href="../Enums/Base.html#basecontrollereventtype"><span class="std std-ref">ControllerEventType</span></a>) – Type of controller event that occured</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="basecontrollerelementstate"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.ControllerElementState">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ControllerElementState</span></span><a class="headerlink" href="#kortex_api.autogen.ControllerElementState" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Indicates if a specific button (or axis) was pressed (or moved)</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.Base_pb2.ControllerElementState</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>handle</strong> (<a class="reference internal" href="#basecontrollerelementhandle"><span class="std std-ref">ControllerElementHandle</span></a>) – Controller element handle</p></li>
+<li><p><strong>event_type</strong> (<a class="reference internal" href="../Enums/Base.html#basecontrollerelementeventtype"><span class="std std-ref">ControllerElementEventType</span></a>) – Type of controller element event that occured</p></li>
+<li><p><strong>axis_value</strong> (<span class="xref std std-ref">float</span>) – Axis value (set between -1.0 and 1.0); only set if ‘axis’ controller element, otherwise set to zero</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="baseactionnotification"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.ActionNotification">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ActionNotification</span></span><a class="headerlink" href="#kortex_api.autogen.ActionNotification" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Notification about a single action event</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.Base_pb2.ActionNotification</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>action_event</strong> (<a class="reference internal" href="../Enums/Base.html#baseactionevent"><span class="std std-ref">ActionEvent</span></a>) – Action event type</p></li>
+<li><p><strong>handle</strong> (<a class="reference internal" href="#baseactionhandle"><span class="std std-ref">ActionHandle</span></a>) – Identifies the action for which this event occured</p></li>
+<li><p><strong>abort_details</strong> (<span class="xref std std-ref">SubErrorCodes</span>) – Details if action_event is equal to ACTION_ABORT</p></li>
+<li><p><strong>trajectory_info</strong> (<a class="reference internal" href="#basetrajectoryinfo"><span class="std std-ref">TrajectoryInfo</span></a> [ ]) – Additional information from the current action</p></li>
+<li><p><strong>generic_info</strong> (<a class="reference internal" href="Common.html#commonnotificationinformation"><span class="std std-ref">NotificationInformation</span></a>) – Generic notification information</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="basetrajectoryinfo"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.TrajectoryInfo">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">TrajectoryInfo</span></span><a class="headerlink" href="#kortex_api.autogen.TrajectoryInfo" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Additional trajectory information</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.Base_pb2.TrajectoryInfo</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>trajectory_info_type</strong> (<a class="reference internal" href="../Enums/Base.html#basetrajectoryinfotype"><span class="std std-ref">TrajectoryInfoType</span></a>) – Trajectory information type</p></li>
+<li><p><strong>waypoint_index</strong> (<span class="xref std std-ref">int</span>) – Waypoint index (if applicable)</p></li>
+<li><p><strong>joint_index</strong> (<span class="xref std std-ref">int</span>) – Joint index (if applicable)</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="baseroboteventnotification"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.RobotEventNotification">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">RobotEventNotification</span></span><a class="headerlink" href="#kortex_api.autogen.RobotEventNotification" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Notification about a single robot event</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.Base_pb2.RobotEventNotification</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>event</strong> (<a class="reference internal" href="../Enums/Base.html#baserobotevent"><span class="std std-ref">RobotEvent</span></a>) – Robot event type</p></li>
+<li><p><strong>handle</strong> (<a class="reference internal" href="Common.html#commondevicehandle"><span class="std std-ref">DeviceHandle</span></a>) – Identifier of the hardware device connected or disconnected</p></li>
+<li><p><strong>generic_info</strong> (<a class="reference internal" href="Common.html#commonnotificationinformation"><span class="std std-ref">NotificationInformation</span></a>) – Generic notification information</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="basefactorynotification"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.FactoryNotification">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">FactoryNotification</span></span><a class="headerlink" href="#kortex_api.autogen.FactoryNotification" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Notification about a single factory event</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.Base_pb2.FactoryNotification</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>event</strong> (<a class="reference internal" href="../Enums/Base.html#basefactoryevent"><span class="std std-ref">FactoryEvent</span></a>) – Event type</p></li>
+<li><p><strong>generic_info</strong> (<a class="reference internal" href="Common.html#commonnotificationinformation"><span class="std std-ref">NotificationInformation</span></a>) – Generic notification information</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="baseconfigurationchangenotificationlist"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.ConfigurationChangeNotificationList">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ConfigurationChangeNotificationList</span></span><a class="headerlink" href="#kortex_api.autogen.ConfigurationChangeNotificationList" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Array of configuration change notifications</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.Base_pb2.ConfigurationChangeNotificationList</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><p><strong>notifications</strong> (<a class="reference internal" href="#baseconfigurationchangenotification"><span class="std std-ref">ConfigurationChangeNotification</span></a> [ ]) – Notification</p>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="baseoperatingmodenotificationlist"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.OperatingModeNotificationList">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">OperatingModeNotificationList</span></span><a class="headerlink" href="#kortex_api.autogen.OperatingModeNotificationList" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Array of operating mode notifications This message will be removed in a future release. It has been renamed UpdatingModeNotificationList.</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.Base_pb2.OperatingModeNotificationList</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><p><strong>notifications</strong> (<a class="reference internal" href="#baseoperatingmodenotification"><span class="std std-ref">OperatingModeNotification</span></a> [ ]) – Notification</p>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="baseupdatingmodenotificationlist"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.UpdatingModeNotificationList">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">UpdatingModeNotificationList</span></span><a class="headerlink" href="#kortex_api.autogen.UpdatingModeNotificationList" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Array of updating mode notifications</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.Base_pb2.UpdatingModeNotificationList</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><p><strong>notifications</strong> (<a class="reference internal" href="#baseupdatingmodenotification"><span class="std std-ref">UpdatingModeNotification</span></a> [ ]) – Notification</p>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="baseservoingmodenotificationlist"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.ServoingModeNotificationList">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ServoingModeNotificationList</span></span><a class="headerlink" href="#kortex_api.autogen.ServoingModeNotificationList" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Array of servoing mode notifications</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.Base_pb2.ServoingModeNotificationList</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><p><strong>notifications</strong> (<a class="reference internal" href="#baseservoingmodenotification"><span class="std std-ref">ServoingModeNotification</span></a> [ ]) – Notification</p>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="basediagnosticnotificationlist"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.DiagnosticNotificationList">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">DiagnosticNotificationList</span></span><a class="headerlink" href="#kortex_api.autogen.DiagnosticNotificationList" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Array of diagnostic notifications</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.Base_pb2.DiagnosticNotificationList</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><p><strong>notifications</strong> (<a class="reference internal" href="Common.html#commondiagnosticnotification"><span class="std std-ref">DiagnosticNotification</span></a> [ ]) – Notification</p>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="basecontrollernotificationlist"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.ControllerNotificationList">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ControllerNotificationList</span></span><a class="headerlink" href="#kortex_api.autogen.ControllerNotificationList" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Array of controller notifications</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.Base_pb2.ControllerNotificationList</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><p><strong>notifications</strong> (<a class="reference internal" href="#basecontrollernotification"><span class="std std-ref">ControllerNotification</span></a> [ ]) – Notifications</p>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="baseactionnotificationlist"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.ActionNotificationList">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ActionNotificationList</span></span><a class="headerlink" href="#kortex_api.autogen.ActionNotificationList" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Array of action notifications</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.Base_pb2.ActionNotificationList</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><p><strong>notifications</strong> (<a class="reference internal" href="#baseactionnotification"><span class="std std-ref">ActionNotification</span></a> [ ]) – Notification</p>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="baseroboteventnotificationlist"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.RobotEventNotificationList">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">RobotEventNotificationList</span></span><a class="headerlink" href="#kortex_api.autogen.RobotEventNotificationList" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Array of robot event notifications</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.Base_pb2.RobotEventNotificationList</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><p><strong>notifications</strong> (<a class="reference internal" href="#baseroboteventnotification"><span class="std std-ref">RobotEventNotification</span></a> [ ]) – Notification</p>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="basemappinghandle"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.MappingHandle">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">MappingHandle</span></span><a class="headerlink" href="#kortex_api.autogen.MappingHandle" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Reference to a specific Mapping</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.Base_pb2.MappingHandle</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>identifier</strong> (<span class="xref std std-ref">int</span>) – Mapping identifier</p></li>
+<li><p><strong>permission</strong> (<span class="xref std std-ref">int</span>) – Permission of specified mapping entity. Must use ‘Kinova.Api.Common.Permission’ enum.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="basecontrollerevent"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.ControllerEvent">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ControllerEvent</span></span><a class="headerlink" href="#kortex_api.autogen.ControllerEvent" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>A controller event</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.Base_pb2.ControllerEvent</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>input_type</strong> (<a class="reference internal" href="../Enums/Base.html#basecontrollerinputtype"><span class="std std-ref">ControllerInputType</span></a>) – Type of controller input that caused the event_identifier</p></li>
+<li><p><strong>behavior</strong> (<a class="reference internal" href="../Enums/Base.html#basecontrollerbehavior"><span class="std std-ref">ControllerBehavior</span></a>) – Controller behavior that occured</p></li>
+<li><p><strong>input_identifier</strong> (<span class="xref std std-ref">int</span>) – Controller input that caused the event</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="basegpioevent"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.GpioEvent">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">GpioEvent</span></span><a class="headerlink" href="#kortex_api.autogen.GpioEvent" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>A GPIO event</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.Base_pb2.GpioEvent</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>input_type</strong> (<a class="reference internal" href="../Enums/Base.html#basecontrollerinputtype"><span class="std std-ref">ControllerInputType</span></a>) – Type of controller input that caused the event_identifier</p></li>
+<li><p><strong>input_identifier</strong> (<span class="xref std std-ref">int</span>) – GPIO PIN ID that caused the event</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="basemapevent"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.MapEvent">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">MapEvent</span></span><a class="headerlink" href="#kortex_api.autogen.MapEvent" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>A map event</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.Base_pb2.MapEvent</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>name</strong> (<span class="xref std std-ref">str</span>) – Map event friendly name</p></li>
+<li><p><strong>gpio_event</strong> (<a class="reference internal" href="#kortex_api.autogen.GpioEvent" title="kortex_api.autogen.GpioEvent"><em>GpioEvent</em></a>) – <p>Mapped GPIO event. Part of the <code class="docutils literal notranslate"><span class="pre">events</span></code> <a class="reference external" href="https://developers.google.com/protocol-buffers/docs/reference/python-generated#oneof">Oneof</a>.</p>
+</p></li>
+<li><p><strong>controller_event</strong> (<a class="reference internal" href="#kortex_api.autogen.ControllerEvent" title="kortex_api.autogen.ControllerEvent"><em>ControllerEvent</em></a>) – <p>Mapped controller event. Part of the <code class="docutils literal notranslate"><span class="pre">events</span></code> <a class="reference external" href="https://developers.google.com/protocol-buffers/docs/reference/python-generated#oneof">Oneof</a>.</p>
+</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="basemapelement"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.MapElement">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">MapElement</span></span><a class="headerlink" href="#kortex_api.autogen.MapElement" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Associates an event to an action</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.Base_pb2.MapElement</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>event</strong> (<a class="reference internal" href="#basemapevent"><span class="std std-ref">MapEvent</span></a>) – Map event that occured</p></li>
+<li><p><strong>action</strong> (<a class="reference internal" href="#baseaction"><span class="std std-ref">Action</span></a>) – Action to invoke upon event occurence</p></li>
+<li><p><strong>name</strong> (<span class="xref std std-ref">str</span>) – Map element friendly name</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="basemap"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.Map">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Map</span></span><a class="headerlink" href="#kortex_api.autogen.Map" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>A map as an array of map elements</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.Base_pb2.Map</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>handle</strong> (<a class="reference internal" href="#basemaphandle"><span class="std std-ref">MapHandle</span></a>) – Map handle (do not set on createMap() call)</p></li>
+<li><p><strong>name</strong> (<span class="xref std std-ref">str</span>) – Map friendly name</p></li>
+<li><p><strong>elements</strong> (<a class="reference internal" href="#basemapelement"><span class="std std-ref">MapElement</span></a> [ ]) – Array of map elements</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="basemaphandle"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.MapHandle">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">MapHandle</span></span><a class="headerlink" href="#kortex_api.autogen.MapHandle" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Reference to a specific map</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.Base_pb2.MapHandle</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>identifier</strong> (<span class="xref std std-ref">int</span>) – Identifier</p></li>
+<li><p><strong>permission</strong> (<span class="xref std std-ref">int</span>) – Permission of specified map entity. Must use ‘Kinova.Api.Common.Permission’ enum.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="basemapgrouphandle"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.MapGroupHandle">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">MapGroupHandle</span></span><a class="headerlink" href="#kortex_api.autogen.MapGroupHandle" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Reference to a specific map group (not implemented yet)</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.Base_pb2.MapGroupHandle</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>identifier</strong> (<span class="xref std std-ref">int</span>) – Identifier</p></li>
+<li><p><strong>permission</strong> (<span class="xref std std-ref">int</span>) – Permission of specified map group entity. Must use ‘Kinova.Api.Common.Permission’ enum.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="basemapgroup"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.MapGroup">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">MapGroup</span></span><a class="headerlink" href="#kortex_api.autogen.MapGroup" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>All information about a map group including the list of maps that it contains and its  relationship versus other map groups (not implemented yet)</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.Base_pb2.MapGroup</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>group_handle</strong> (<a class="reference internal" href="#basemapgrouphandle"><span class="std std-ref">MapGroupHandle</span></a>) – Map group handle (do not set on createMapGroup() call)</p></li>
+<li><p><strong>name</strong> (<span class="xref std std-ref">str</span>) – Map group friendly name</p></li>
+<li><p><strong>related_mapping_handle</strong> (<a class="reference internal" href="#basemappinghandle"><span class="std std-ref">MappingHandle</span></a>) – Mapping that this map group belongs to</p></li>
+<li><p><strong>parent_group_handle</strong> (<a class="reference internal" href="#basemapgrouphandle"><span class="std std-ref">MapGroupHandle</span></a>) – Parent map group (if any)</p></li>
+<li><p><strong>children_map_group_handles</strong> (<a class="reference internal" href="#basemapgrouphandle"><span class="std std-ref">MapGroupHandle</span></a> [ ]) – Children map groups (if any)</p></li>
+<li><p><strong>map_handles</strong> (<a class="reference internal" href="#basemaphandle"><span class="std std-ref">MapHandle</span></a> [ ]) – Array of maps that are included in this map group</p></li>
+<li><p><strong>application_data</strong> (<span class="xref std std-ref">str</span>) – Application data (reserved for use by Web App)</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="basemapgrouplist"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.MapGroupList">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">MapGroupList</span></span><a class="headerlink" href="#kortex_api.autogen.MapGroupList" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Array of map groups (not implemented yet)</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.Base_pb2.MapGroupList</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><p><strong>map_groups</strong> (<a class="reference internal" href="#basemapgroup"><span class="std std-ref">MapGroup</span></a> [ ]) – Map group</p>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="basemapping"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.Mapping">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Mapping</span></span><a class="headerlink" href="#kortex_api.autogen.Mapping" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>All information about a mapping including the controller to which it is associated,  the array of map groups it contains, the currently active map group, the array of maps it contains  and the currently active map</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.Base_pb2.Mapping</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>handle</strong> (<a class="reference internal" href="#basemappinghandle"><span class="std std-ref">MappingHandle</span></a>) – Mapping handle (do not set on createMapping() call)</p></li>
+<li><p><strong>name</strong> (<span class="xref std std-ref">str</span>) – Mapping friendly name</p></li>
+<li><p><strong>controller_identifier</strong> (<span class="xref std std-ref">int</span>) – Associated controller identifier</p></li>
+<li><p><strong>active_map_group_handle</strong> (<a class="reference internal" href="#basemapgrouphandle"><span class="std std-ref">MapGroupHandle</span></a>) – Currently active map group (not implemented yet)</p></li>
+<li><p><strong>map_group_handles</strong> (<a class="reference internal" href="#basemapgrouphandle"><span class="std std-ref">MapGroupHandle</span></a> [ ]) – Array of associated map groups (not implemented yet)</p></li>
+<li><p><strong>active_map_handle</strong> (<a class="reference internal" href="#basemaphandle"><span class="std std-ref">MapHandle</span></a>) – Currently active map</p></li>
+<li><p><strong>map_handles</strong> (<a class="reference internal" href="#basemaphandle"><span class="std std-ref">MapHandle</span></a> [ ]) – Array of associated maps</p></li>
+<li><p><strong>application_data</strong> (<span class="xref std std-ref">str</span>) – Application data (reserved for use by Web App)</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="basepose"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.Pose">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Pose</span></span><a class="headerlink" href="#kortex_api.autogen.Pose" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>A Cartesian tool pose (position and orientation).  Orientation is defined as a sequence of three Euler angles using x-y-z Tait-Bryan extrinsic convention.  That is, rotation around fixed X-axis, then rotation around fixed Y-axis, then rotation around fixed Z-axis.</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.Base_pb2.Pose</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>x</strong> (<span class="xref std std-ref">float</span>) – X position (in meters)</p></li>
+<li><p><strong>y</strong> (<span class="xref std std-ref">float</span>) – Y position (in meters)</p></li>
+<li><p><strong>z</strong> (<span class="xref std std-ref">float</span>) – Z position (in meters)</p></li>
+<li><p><strong>theta_x</strong> (<span class="xref std std-ref">float</span>) – Theta X orientation (in degrees)</p></li>
+<li><p><strong>theta_y</strong> (<span class="xref std std-ref">float</span>) – Theta Y orienation (in degrees)</p></li>
+<li><p><strong>theta_z</strong> (<span class="xref std std-ref">float</span>) – Theta Z orientation (in degrees)</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="basewrench"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.Wrench">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Wrench</span></span><a class="headerlink" href="#kortex_api.autogen.Wrench" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>A wrench (force and torque)</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.Base_pb2.Wrench</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>force_x</strong> (<span class="xref std std-ref">float</span>) – Linear X force (Newtons or ratio between -1.0 and 1.0 if used with Joystick command)</p></li>
+<li><p><strong>force_y</strong> (<span class="xref std std-ref">float</span>) – Linear Y force (Newtons or ratio between -1.0 and 1.0 if used with Joystick command)</p></li>
+<li><p><strong>force_z</strong> (<span class="xref std std-ref">float</span>) – Linear Z force (Newtons or ratio between -1.0 and 1.0 if used with Joystick command)</p></li>
+<li><p><strong>torque_x</strong> (<span class="xref std std-ref">float</span>) – Angular X torque (Newton-meters or ratio between -1.0 and 1.0 if used with Joystick command)</p></li>
+<li><p><strong>torque_y</strong> (<span class="xref std std-ref">float</span>) – Angular Y torque (Newton-meters or ratio between -1.0 and 1.0 if used with Joystick command)</p></li>
+<li><p><strong>torque_z</strong> (<span class="xref std std-ref">float</span>) – Angular Z torque (Newton-meters or ratio between -1.0 and 1.0 if used with Joystick command)</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="basetwist"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.Twist">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Twist</span></span><a class="headerlink" href="#kortex_api.autogen.Twist" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>A twist (linear and angular velocity).</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.Base_pb2.Twist</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>linear_x</strong> (<span class="xref std std-ref">float</span>) – Linear X velocity  (m/s or ratio between -1.0 and 1.0 if used with joystick command)</p></li>
+<li><p><strong>linear_y</strong> (<span class="xref std std-ref">float</span>) – Linear Y velocity  (m/s or ratio between -1.0 and 1.0 if used with joystick command)</p></li>
+<li><p><strong>linear_z</strong> (<span class="xref std std-ref">float</span>) – Linear Z velocity  (m/s or ratio between -1.0 and 1.0 if used with joystick command)</p></li>
+<li><p><strong>angular_x</strong> (<span class="xref std std-ref">float</span>) – Angular X velocity (deg/s or ratio between -1.0 and 1.0 if used with joystick command)</p></li>
+<li><p><strong>angular_y</strong> (<span class="xref std std-ref">float</span>) – Angular Y velocity (deg/s or ratio between -1.0 and 1.0 if used with joystick command)</p></li>
+<li><p><strong>angular_z</strong> (<span class="xref std std-ref">float</span>) – Angular Z velocity (deg/s or ratio between -1.0 and 1.0 if used with joystick command)</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="basehandguiding"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.HandGuiding">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">HandGuiding</span></span><a class="headerlink" href="#kortex_api.autogen.HandGuiding" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>An Hand-Guiding mode</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.Base_pb2.HandGuiding</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><p><strong>hand_guiding_mode</strong> (<a class="reference internal" href="../Enums/Base.html#basehandguidingmode"><span class="std std-ref">HandGuidingMode</span></a>) – mode</p>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="basetwistcommand"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.TwistCommand">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">TwistCommand</span></span><a class="headerlink" href="#kortex_api.autogen.TwistCommand" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>A twist command to be applied to the tool</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.Base_pb2.TwistCommand</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>reference_frame</strong> (<a class="reference internal" href="../Enums/Common.html#commoncartesianreferenceframe"><span class="std std-ref">CartesianReferenceFrame</span></a>) – The reference frame used for the twist command</p></li>
+<li><p><strong>twist</strong> (<a class="reference internal" href="#basetwist"><span class="std std-ref">Twist</span></a>) – Twist value</p></li>
+<li><p><strong>duration</strong> (<span class="xref std std-ref">float</span>) – Duration constraint. If not 0, allows to set a limit (in seconds) to the TwistCommand</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="basejointangles"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.JointAngles">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">JointAngles</span></span><a class="headerlink" href="#kortex_api.autogen.JointAngles" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>An array of joint angles</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.Base_pb2.JointAngles</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><p><strong>joint_angles</strong> (<a class="reference internal" href="#basejointangle"><span class="std std-ref">JointAngle</span></a> [ ]) – Array of joint angles</p>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="basejointangle"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.JointAngle">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">JointAngle</span></span><a class="headerlink" href="#kortex_api.autogen.JointAngle" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Angle value of a specific joint</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.Base_pb2.JointAngle</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>joint_identifier</strong> (<span class="xref std std-ref">int</span>) – Joint identifier</p></li>
+<li><p><strong>value</strong> (<span class="xref std std-ref">float</span>) – Position (in degrees)</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="basejointspeeds"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.JointSpeeds">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">JointSpeeds</span></span><a class="headerlink" href="#kortex_api.autogen.JointSpeeds" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>An array of joints speeds</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.Base_pb2.JointSpeeds</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>joint_speeds</strong> (<a class="reference internal" href="#basejointspeed"><span class="std std-ref">JointSpeed</span></a> [ ]) – Array of joint speeds</p></li>
+<li><p><strong>duration</strong> (<span class="xref std std-ref">float</span>) – Duration constraint. If not 0, allows to set a limit (in seconds) common to every joint specified in ‘joint_speeds’</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="basejointspeed"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.JointSpeed">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">JointSpeed</span></span><a class="headerlink" href="#kortex_api.autogen.JointSpeed" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Speed of a specific joint</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.Base_pb2.JointSpeed</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>joint_identifier</strong> (<span class="xref std std-ref">int</span>) – Joint identifier</p></li>
+<li><p><strong>value</strong> (<span class="xref std std-ref">float</span>) – Joint speed (in degrees per second)</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="basejointtorques"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.JointTorques">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">JointTorques</span></span><a class="headerlink" href="#kortex_api.autogen.JointTorques" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>An array of joint torques</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.Base_pb2.JointTorques</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>joint_torques</strong> (<a class="reference internal" href="#basejointtorque"><span class="std std-ref">JointTorque</span></a> [ ]) – Array of joint torque.</p></li>
+<li><p><strong>duration</strong> (<span class="xref std std-ref">int</span>) – Duration constraint. If not 0, allows to set a limit (in seconds) common to every joint specified in ‘joint_torques’ (not implemented yet)</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="basejointtorque"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.JointTorque">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">JointTorque</span></span><a class="headerlink" href="#kortex_api.autogen.JointTorque" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>joint torque for a specified joint</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.Base_pb2.JointTorque</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>joint_identifier</strong> (<span class="xref std std-ref">int</span>) – Joint identifier</p></li>
+<li><p><strong>value</strong> (<span class="xref std std-ref">float</span>) – Joint speed (in Newton*meters)</p></li>
+<li><p><strong>duration</strong> (<span class="xref std std-ref">int</span>) – Duration constraint. If not 0, allows to set a limit (in seconds) to the JointTorque (not implemented yet)</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="basecontrollerconfiguration"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.ControllerConfiguration">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ControllerConfiguration</span></span><a class="headerlink" href="#kortex_api.autogen.ControllerConfiguration" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Controller configuration information</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.Base_pb2.ControllerConfiguration</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>handle</strong> (<a class="reference internal" href="#basecontrollerhandle"><span class="std std-ref">ControllerHandle</span></a>) – Controller identifier</p></li>
+<li><p><strong>name</strong> (<span class="xref std std-ref">str</span>) – Controller friendly name</p></li>
+<li><p><strong>active_mapping_handle</strong> (<a class="reference internal" href="#basemappinghandle"><span class="std std-ref">MappingHandle</span></a>) – Mapping that is active on this controller</p></li>
+<li><p><strong>analog_input_identifier_enum</strong> (<span class="xref std std-ref">str</span>) – Name that identifies the enum used to interpret the ‘analog_input_identifier’ field (for example in ControllerEvent). Thus ‘analog_input_identifier_enum’ shall take the name of an existing enum (ex. XboxOneAnalogInputIdentifier)</p></li>
+<li><p><strong>digital_input_identifier_enum</strong> (<span class="xref std std-ref">str</span>) – Name that identifies the enum used to interpret the ‘digital_input_identifier’ field (for example in ControllerEvent). Thus ‘digital_input_identifier_enum’ shall take the name of an existing enum (ex. XboxOneDigitalInputIdentifier, WristDigitalInputIdentifier)</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="basecontrollerconfigurationlist"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.ControllerConfigurationList">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ControllerConfigurationList</span></span><a class="headerlink" href="#kortex_api.autogen.ControllerConfigurationList" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Controller configuration information for multiple controllers</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.Base_pb2.ControllerConfigurationList</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><p><strong>controller_configurations</strong> (<a class="reference internal" href="#basecontrollerconfiguration"><span class="std std-ref">ControllerConfiguration</span></a> [ ]) – List of controller configurations</p>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="baseactuatorinformation"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.ActuatorInformation">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ActuatorInformation</span></span><a class="headerlink" href="#kortex_api.autogen.ActuatorInformation" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>A count of the number of actuators in the robot</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.Base_pb2.ActuatorInformation</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><p><strong>count</strong> (<span class="xref std std-ref">int</span>) – Number of actuators</p>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="basearmstateinformation"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.ArmStateInformation">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ArmStateInformation</span></span><a class="headerlink" href="#kortex_api.autogen.ArmStateInformation" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Information about the arm state</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.Base_pb2.ArmStateInformation</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>active_state</strong> (<a class="reference internal" href="../Enums/Common.html#commonarmstate"><span class="std std-ref">ArmState</span></a>) – Arm active state</p></li>
+<li><p><strong>connection</strong> (<a class="reference internal" href="Common.html#commonconnection"><span class="std std-ref">Connection</span></a>) – Connection information of the last processed command which triggered an arm state change</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="basearmstatenotification"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.ArmStateNotification">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ArmStateNotification</span></span><a class="headerlink" href="#kortex_api.autogen.ArmStateNotification" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Notification about a single arm state event</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.Base_pb2.ArmStateNotification</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>active_state</strong> (<a class="reference internal" href="../Enums/Common.html#commonarmstate"><span class="std std-ref">ArmState</span></a>) – New arm state</p></li>
+<li><p><strong>generic_info</strong> (<a class="reference internal" href="Common.html#commonnotificationinformation"><span class="std std-ref">NotificationInformation</span></a>) – Generic notification information</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="baseprecomputedjointtrajectory"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.PreComputedJointTrajectory">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">PreComputedJointTrajectory</span></span><a class="headerlink" href="#kortex_api.autogen.PreComputedJointTrajectory" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Pre-computed joint trajectory subject to specified continuity constraints. The starting point of the trajectory must have an elapsed time of 0 ms and the angular values must reflect the current state of the robot. The robot control libraries will validate the trajectory fulfills the specified continuity constraints before playing the trajectory.</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.Base_pb2.PreComputedJointTrajectory</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>mode</strong> (<a class="reference internal" href="../Enums/Base.html#basetrajectorycontinuitymode"><span class="std std-ref">TrajectoryContinuityMode</span></a>) – Trajectory continuity mode</p></li>
+<li><p><strong>trajectory_elements</strong> (<a class="reference internal" href="#baseprecomputedjointtrajectoryelement"><span class="std std-ref">PreComputedJointTrajectoryElement</span></a> [ ]) – List of pre-computed elements composing the trajectory.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="baseprecomputedjointtrajectoryelement"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.PreComputedJointTrajectoryElement">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">PreComputedJointTrajectoryElement</span></span><a class="headerlink" href="#kortex_api.autogen.PreComputedJointTrajectoryElement" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Set of angle, speed, acceleration, and elapsed time values for each joint for a given 1 ms interval. A PreComputedJointTrajectory is made up of a series of these elements.</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.Base_pb2.PreComputedJointTrajectoryElement</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>joint_angles</strong> (<span class="xref std std-ref">float</span> [ ]) – Angles values for all joints (in degrees)</p></li>
+<li><p><strong>joint_speeds</strong> (<span class="xref std std-ref">float</span> [ ]) – Speed values for all joints (in degrees per second)</p></li>
+<li><p><strong>joint_accelerations</strong> (<span class="xref std std-ref">float</span> [ ]) – Acceleration values for all joints (in degrees per second^2)</p></li>
+<li><p><strong>time_from_start</strong> (<span class="xref std std-ref">float</span>) – Absolute elaspsed time since initial point (in seconds)</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="basetrajectoryerrorelement"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.TrajectoryErrorElement">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">TrajectoryErrorElement</span></span><a class="headerlink" href="#kortex_api.autogen.TrajectoryErrorElement" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Details for a single trajectory validation error</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.Base_pb2.TrajectoryErrorElement</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>error_type</strong> (<a class="reference internal" href="../Enums/Base.html#basetrajectoryerrortype"><span class="std std-ref">TrajectoryErrorType</span></a>) – Error type</p></li>
+<li><p><strong>error_value</strong> (<span class="xref std std-ref">float</span>) – Erroneous value</p></li>
+<li><p><strong>min_value</strong> (<span class="xref std std-ref">float</span>) – Minimum permitted value</p></li>
+<li><p><strong>max_value</strong> (<span class="xref std std-ref">float</span>) – Maximum permitted value</p></li>
+<li><p><strong>index</strong> (<span class="xref std std-ref">int</span>) – Actuator index</p></li>
+<li><p><strong>message</strong> (<span class="xref std std-ref">str</span>) – Clarification message for the error</p></li>
+<li><p><strong>waypoint_index</strong> (<span class="xref std std-ref">int</span>) – Waypoint index (if it applies)</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="basetrajectoryerrorreport"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.TrajectoryErrorReport">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">TrajectoryErrorReport</span></span><a class="headerlink" href="#kortex_api.autogen.TrajectoryErrorReport" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Report collecting information on different validation errors for a particular trajectory</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.Base_pb2.TrajectoryErrorReport</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><p><strong>trajectory_error_elements</strong> (<a class="reference internal" href="#basetrajectoryerrorelement"><span class="std std-ref">TrajectoryErrorElement</span></a> [ ]) – </p>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="basewaypointvalidationreport"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.WaypointValidationReport">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">WaypointValidationReport</span></span><a class="headerlink" href="#kortex_api.autogen.WaypointValidationReport" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Waypoint Validation results</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.Base_pb2.WaypointValidationReport</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>trajectory_error_report</strong> (<a class="reference internal" href="#basetrajectoryerrorreport"><span class="std std-ref">TrajectoryErrorReport</span></a>) – Report on the validation, the waypoint list is valid if empty</p></li>
+<li><p><strong>optimal_waypoint_list</strong> (<a class="reference internal" href="#basewaypointlist"><span class="std std-ref">WaypointList</span></a>) – Validated Waypoint List with optimal blending radius if the option was set</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="basewaypoint"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.Waypoint">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Waypoint</span></span><a class="headerlink" href="#kortex_api.autogen.Waypoint" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>A waypoint describing part of a trajectory.</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.Base_pb2.Waypoint</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>name</strong> (<span class="xref std std-ref">str</span>) – Waypoint friendly name</p></li>
+<li><p><strong>angular_waypoint</strong> (<a class="reference internal" href="#kortex_api.autogen.AngularWaypoint" title="kortex_api.autogen.AngularWaypoint"><em>AngularWaypoint</em></a>) – <p>. Part of the <code class="docutils literal notranslate"><span class="pre">type_of_waypoint</span></code> <a class="reference external" href="https://developers.google.com/protocol-buffers/docs/reference/python-generated#oneof">Oneof</a>.</p>
+</p></li>
+<li><p><strong>cartesian_waypoint</strong> (<a class="reference internal" href="#kortex_api.autogen.CartesianWaypoint" title="kortex_api.autogen.CartesianWaypoint"><em>CartesianWaypoint</em></a>) – <p>. Part of the <code class="docutils literal notranslate"><span class="pre">type_of_waypoint</span></code> <a class="reference external" href="https://developers.google.com/protocol-buffers/docs/reference/python-generated#oneof">Oneof</a>.</p>
+</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="baseangularwaypoint"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.AngularWaypoint">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">AngularWaypoint</span></span><a class="headerlink" href="#kortex_api.autogen.AngularWaypoint" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>An angular Waypoint</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.Base_pb2.AngularWaypoint</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>angles</strong> (<span class="xref std std-ref">float</span> [ ]) – Target position (in deg)</p></li>
+<li><p><strong>maximum_velocities</strong> (<span class="xref std std-ref">float</span> [ ]) – Maximum velocities for each actuator (in deg/s) during movement (optional)</p></li>
+<li><p><strong>maximum_accelerations</strong> (<span class="xref std std-ref">float</span> [ ]) – Maximum accelerations for each actuator (in deg/s^2) during movement (optional)</p></li>
+<li><p><strong>duration</strong> (<em>float</em>) – <p>Duration to reach this waypoint from the previous position (in seconds). Part of the <code class="docutils literal notranslate"><span class="pre">constraint</span></code> <a class="reference external" href="https://developers.google.com/protocol-buffers/docs/reference/python-generated#oneof">Oneof</a>.</p>
+</p></li>
+<li><p><strong>blending</strong> (<em>float</em>) – <p>Blending value (from 0 to 1, 1 being the optimal blending). Part of the <code class="docutils literal notranslate"><span class="pre">constraint</span></code> <a class="reference external" href="https://developers.google.com/protocol-buffers/docs/reference/python-generated#oneof">Oneof</a>.</p>
+</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="basecartesianwaypoint"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.CartesianWaypoint">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">CartesianWaypoint</span></span><a class="headerlink" href="#kortex_api.autogen.CartesianWaypoint" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>A Cartesian Waypoint</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.Base_pb2.CartesianWaypoint</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>pose</strong> (<a class="reference internal" href="#basepose"><span class="std std-ref">Pose</span></a>) – Target Cartesian Pose</p></li>
+<li><p><strong>reference_frame</strong> (<a class="reference internal" href="../Enums/Common.html#commoncartesianreferenceframe"><span class="std std-ref">CartesianReferenceFrame</span></a>) – The reference frame used for the goal Pose</p></li>
+<li><p><strong>maximum_linear_velocity</strong> (<span class="xref std std-ref">float</span>) – Maximum linear velocity (in m/s) during movement (optional)</p></li>
+<li><p><strong>maximum_angular_velocity</strong> (<span class="xref std std-ref">float</span>) – Maximum angular velocity (in deg/s) during movement (optional)</p></li>
+<li><p><strong>blending_radius</strong> (<span class="xref std std-ref">float</span>) – Blending radius (in m) to use for the movement (if this waypoint is not an endpoint).</p></li>
+<li><p><strong>maximum_linear_acceleration</strong> (<span class="xref std std-ref">float</span>) – Maximum linear acceleration (in m/s^2) during movement (optional)</p></li>
+<li><p><strong>maximum_angular_acceleration</strong> (<span class="xref std std-ref">float</span>) – Maximum angular acceleration (in deg/s^2) during movement (optional)</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="basewaypointlist"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.WaypointList">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">WaypointList</span></span><a class="headerlink" href="#kortex_api.autogen.WaypointList" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>A waypoint list</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.Base_pb2.WaypointList</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>waypoints</strong> (<a class="reference internal" href="#basewaypoint"><span class="std std-ref">Waypoint</span></a> [ ]) – Array of waypoints</p></li>
+<li><p><strong>duration</strong> (<span class="xref std std-ref">float</span>) – Duration of the waypoint list (in seconds). If unspecified or equal to 0, optimal duration is assumed.</p></li>
+<li><p><strong>use_optimal_blending</strong> (<span class="xref std std-ref">bool</span>) – At validation if this value is true, the waypoint list with optimal blending will be returned.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="basekinematictrajectoryconstraints"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.KinematicTrajectoryConstraints">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">KinematicTrajectoryConstraints</span></span><a class="headerlink" href="#kortex_api.autogen.KinematicTrajectoryConstraints" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Angular and Cartesian kinematic constraints (maximum velocities)</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.Base_pb2.KinematicTrajectoryConstraints</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>angular_velocities</strong> (<span class="xref std std-ref">float</span> [ ]) – Angular velocities for each actuator (in deg/s)</p></li>
+<li><p><strong>linear_velocity</strong> (<span class="xref std std-ref">float</span>) – Linear velocity (in m/s)</p></li>
+<li><p><strong>angular_velocity</strong> (<span class="xref std std-ref">float</span>) – Angular velocity (in deg/s)</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="basefirmwarebundleversions"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.FirmwareBundleVersions">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">FirmwareBundleVersions</span></span><a class="headerlink" href="#kortex_api.autogen.FirmwareBundleVersions" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Firmware bundle versions including main firmware bundle version and components versions</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.Base_pb2.FirmwareBundleVersions</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>main_bundle_version</strong> (<span class="xref std std-ref">str</span>) – Version of the main bundle</p></li>
+<li><p><strong>components_versions</strong> (<a class="reference internal" href="#basefirmwarecomponentversion"><span class="std std-ref">FirmwareComponentVersion</span></a> [ ]) – List containing all components of the bundle</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="basefirmwarecomponentversion"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.FirmwareComponentVersion">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">FirmwareComponentVersion</span></span><a class="headerlink" href="#kortex_api.autogen.FirmwareComponentVersion" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Individual component with its version</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.Base_pb2.FirmwareComponentVersion</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>name</strong> (<span class="xref std std-ref">str</span>) – Name of the component</p></li>
+<li><p><strong>version</strong> (<span class="xref std std-ref">str</span>) – Version of the component</p></li>
+<li><p><strong>device_id</strong> (<span class="xref std std-ref">int</span>) – Device id of the component</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="baseikdata"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.IKData">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">IKData</span></span><a class="headerlink" href="#kortex_api.autogen.IKData" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Input needed for the calculation of inverse kinematics</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.Base_pb2.IKData</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>cartesian_pose</strong> (<a class="reference internal" href="#basepose"><span class="std std-ref">Pose</span></a>) – Cartesian pose of the end effector used to calculate the corresponding joint angles</p></li>
+<li><p><strong>guess</strong> (<a class="reference internal" href="#basejointangles"><span class="std std-ref">JointAngles</span></a>) – Initial guess for the joint angles</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="basehandguidingmodenotification"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.HandGuidingModeNotification">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">HandGuidingModeNotification</span></span><a class="headerlink" href="#kortex_api.autogen.HandGuidingModeNotification" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Notification about an Hand-Guiding mode change event</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.Base_pb2.HandGuidingModeNotification</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>hand_guiding_mode</strong> (<a class="reference internal" href="../Enums/Base.html#basehandguidingmode"><span class="std std-ref">HandGuidingMode</span></a>) – Active Hand-Guiding mode</p></li>
+<li><p><strong>generic_info</strong> (<a class="reference internal" href="Common.html#commonnotificationinformation"><span class="std std-ref">NotificationInformation</span></a>) – Generic notification information</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="baseenablingdevicenotification"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.EnablingDeviceNotification">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">EnablingDeviceNotification</span></span><a class="headerlink" href="#kortex_api.autogen.EnablingDeviceNotification" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Notification about an enabling device state change event</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.Base_pb2.EnablingDeviceNotification</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>event</strong> (<a class="reference internal" href="../Enums/Base.html#baseenablingdeviceevent"><span class="std std-ref">EnablingDeviceEvent</span></a>) – Enabling device event</p></li>
+<li><p><strong>enabling_device_type</strong> (<a class="reference internal" href="../Enums/Base.html#baseenablingdevicetype"><span class="std std-ref">EnablingDeviceType</span></a>) – Enabling device type</p></li>
+<li><p><strong>generic_info</strong> (<a class="reference internal" href="Common.html#commonnotificationinformation"><span class="std std-ref">NotificationInformation</span></a>) – Generic notification information</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="baseinversekinematicsevent"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.InverseKinematicsEvent">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">InverseKinematicsEvent</span></span><a class="headerlink" href="#kortex_api.autogen.InverseKinematicsEvent" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Inverse kinematics event</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.Base_pb2.InverseKinematicsEvent</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>event</strong> (<a class="reference internal" href="../Enums/Base.html#baseinversekinematicseventtype"><span class="std std-ref">InverseKinematicsEventType</span></a>) – Inverse kinematic event type</p></li>
+<li><p><strong>best_iteration</strong> (<span class="xref std std-ref">int</span>) – Best iteration from inverse kinematic calculation</p></li>
+<li><p><strong>position_error</strong> (<span class="xref std std-ref">float</span>) – Position error from inverse kinematic calculation (meters)</p></li>
+<li><p><strong>orientation_error</strong> (<span class="xref std std-ref">float</span>) – Orientation error from inverse kinematic calculation (degrees)</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="basejointlimitevent"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.JointLimitEvent">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">JointLimitEvent</span></span><a class="headerlink" href="#kortex_api.autogen.JointLimitEvent" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Joint limit event</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.Base_pb2.JointLimitEvent</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>event</strong> (<a class="reference internal" href="../Enums/Base.html#basejointlimiteventtype"><span class="std std-ref">JointLimitEventType</span></a>) – Joint limit event type</p></li>
+<li><p><strong>joint_limit</strong> (<a class="reference internal" href="#basejointangle"><span class="std std-ref">JointAngle</span></a> [ ]) – Id and value of joints limit reached</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="baseprotectionzoneevent"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.ProtectionZoneEvent">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ProtectionZoneEvent</span></span><a class="headerlink" href="#kortex_api.autogen.ProtectionZoneEvent" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Protection zone event</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.Base_pb2.ProtectionZoneEvent</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>event</strong> (<a class="reference internal" href="../Enums/Base.html#baseprotectionzoneeventtype"><span class="std std-ref">ProtectionZoneEventType</span></a>) – Protection zone event type</p></li>
+<li><p><strong>element</strong> (<a class="reference internal" href="../Enums/Base.html#baseprotectionzoneelementtype"><span class="std std-ref">ProtectionZoneElementType</span></a>) – Protection zone element type</p></li>
+<li><p><strong>identifier</strong> (<span class="xref std std-ref">int</span>) – Protection zone identifier</p></li>
+<li><p><strong>link_index</strong> (<span class="xref std std-ref">int</span>) – Link index</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="basecollisionevent"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.CollisionEvent">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">CollisionEvent</span></span><a class="headerlink" href="#kortex_api.autogen.CollisionEvent" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Collision event</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.Base_pb2.CollisionEvent</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>event</strong> (<a class="reference internal" href="../Enums/Base.html#basecollisioneventtype"><span class="std std-ref">CollisionEventType</span></a>) – Collision event type</p></li>
+<li><p><strong>joint_indexes</strong> (<span class="xref std std-ref">int</span> [ ]) – Indexes of the joints that have been involved in the collision</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="basecartesianlimitevent"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.CartesianLimitEvent">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">CartesianLimitEvent</span></span><a class="headerlink" href="#kortex_api.autogen.CartesianLimitEvent" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Cartesian limit event</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.Base_pb2.CartesianLimitEvent</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>event</strong> (<a class="reference internal" href="../Enums/Base.html#basecartesianlimiteventtype"><span class="std std-ref">CartesianLimitEventType</span></a>) – Cartesian limit event type</p></li>
+<li><p><strong>cartesian_limit</strong> (<span class="xref std std-ref">float</span>) – Value of Cartesian limit reached</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="basemotionnotificationevent"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.MotionNotificationEvent">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">MotionNotificationEvent</span></span><a class="headerlink" href="#kortex_api.autogen.MotionNotificationEvent" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Motion notification event</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.Base_pb2.MotionNotificationEvent</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>inverse_kinematics_event</strong> (<a class="reference internal" href="#kortex_api.autogen.InverseKinematicsEvent" title="kortex_api.autogen.InverseKinematicsEvent"><em>InverseKinematicsEvent</em></a>) – <p>Inverse kinematics event. Part of the <code class="docutils literal notranslate"><span class="pre">motion_event</span></code> <a class="reference external" href="https://developers.google.com/protocol-buffers/docs/reference/python-generated#oneof">Oneof</a>.</p>
+</p></li>
+<li><p><strong>joint_limit_event</strong> (<a class="reference internal" href="#kortex_api.autogen.JointLimitEvent" title="kortex_api.autogen.JointLimitEvent"><em>JointLimitEvent</em></a>) – <p>Joint limit event. Part of the <code class="docutils literal notranslate"><span class="pre">motion_event</span></code> <a class="reference external" href="https://developers.google.com/protocol-buffers/docs/reference/python-generated#oneof">Oneof</a>.</p>
+</p></li>
+<li><p><strong>protection_zone_event</strong> (<a class="reference internal" href="#kortex_api.autogen.ProtectionZoneEvent" title="kortex_api.autogen.ProtectionZoneEvent"><em>ProtectionZoneEvent</em></a>) – <p>Protection zone event. Part of the <code class="docutils literal notranslate"><span class="pre">motion_event</span></code> <a class="reference external" href="https://developers.google.com/protocol-buffers/docs/reference/python-generated#oneof">Oneof</a>.</p>
+</p></li>
+<li><p><strong>collision_event</strong> (<a class="reference internal" href="#kortex_api.autogen.CollisionEvent" title="kortex_api.autogen.CollisionEvent"><em>CollisionEvent</em></a>) – <p>Collision event. Part of the <code class="docutils literal notranslate"><span class="pre">motion_event</span></code> <a class="reference external" href="https://developers.google.com/protocol-buffers/docs/reference/python-generated#oneof">Oneof</a>.</p>
+</p></li>
+<li><p><strong>trajectory_report_event</strong> (<a class="reference internal" href="#kortex_api.autogen.TrajectoryErrorElement" title="kortex_api.autogen.TrajectoryErrorElement"><em>TrajectoryErrorElement</em></a>) – <p>trajectory report event. Part of the <code class="docutils literal notranslate"><span class="pre">motion_event</span></code> <a class="reference external" href="https://developers.google.com/protocol-buffers/docs/reference/python-generated#oneof">Oneof</a>.</p>
+</p></li>
+<li><p><strong>cartesian_limit_event</strong> (<a class="reference internal" href="#kortex_api.autogen.CartesianLimitEvent" title="kortex_api.autogen.CartesianLimitEvent"><em>CartesianLimitEvent</em></a>) – <p>Cartesian limit event. Part of the <code class="docutils literal notranslate"><span class="pre">motion_event</span></code> <a class="reference external" href="https://developers.google.com/protocol-buffers/docs/reference/python-generated#oneof">Oneof</a>.</p>
+</p></li>
+<li><p><strong>overcurrent_value</strong> (<em>float</em>) – <p>Last overcurrent value. Part of the <code class="docutils literal notranslate"><span class="pre">motion_event</span></code> <a class="reference external" href="https://developers.google.com/protocol-buffers/docs/reference/python-generated#oneof">Oneof</a>.</p>
+</p></li>
+<li><p><strong>trajectory_execution_failure</strong> (<em>bool</em>) – <p>The trajectory execution failed. Part of the <code class="docutils literal notranslate"><span class="pre">motion_event</span></code> <a class="reference external" href="https://developers.google.com/protocol-buffers/docs/reference/python-generated#oneof">Oneof</a>.</p>
+</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="basemotionnotification"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.MotionNotification">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">MotionNotification</span></span><a class="headerlink" href="#kortex_api.autogen.MotionNotification" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Motion Notification</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.Base_pb2.MotionNotification</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>events</strong> (<a class="reference internal" href="#basemotionnotificationevent"><span class="std std-ref">MotionNotificationEvent</span></a> [ ]) – Motion notification list</p></li>
+<li><p><strong>generic_info</strong> (<a class="reference internal" href="Common.html#commonnotificationinformation"><span class="std std-ref">NotificationInformation</span></a>) – Generic notification information</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="baseprogramrequestnotification"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.ProgramRequestNotification">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ProgramRequestNotification</span></span><a class="headerlink" href="#kortex_api.autogen.ProgramRequestNotification" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Notification about a program request event</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.Base_pb2.ProgramRequestNotification</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>program_request</strong> (<a class="reference internal" href="../Enums/Base.html#baseprogramrequesteventtype"><span class="std std-ref">ProgramRequestEventType</span></a>) – Program request</p></li>
+<li><p><strong>generic_info</strong> (<a class="reference internal" href="Common.html#commonnotificationinformation"><span class="std std-ref">NotificationInformation</span></a>) – Generic notification information</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="baseremoteaccesshandle"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.RemoteAccessHandle">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">RemoteAccessHandle</span></span><a class="headerlink" href="#kortex_api.autogen.RemoteAccessHandle" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Remote Access handle</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.Base_pb2.RemoteAccessHandle</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><p><strong>identifier</strong> (<span class="xref std std-ref">int</span>) – Identifier for the Remote Access</p>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="baseenableremoteaccessargs"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.EnableRemoteAccessArgs">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">EnableRemoteAccessArgs</span></span><a class="headerlink" href="#kortex_api.autogen.EnableRemoteAccessArgs" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Args for Remote Access Enable RPC</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.Base_pb2.EnableRemoteAccessArgs</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>handle</strong> (<a class="reference internal" href="#baseremoteaccesshandle"><span class="std std-ref">RemoteAccessHandle</span></a>) – Handle of the enabled Remote Access</p></li>
+<li><p><strong>key</strong> (<span class="xref std std-ref">str</span>) – Key for key-protected remote accesses (optional)</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="baseiptablesrule"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.IptablesRule">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">IptablesRule</span></span><a class="headerlink" href="#kortex_api.autogen.IptablesRule" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Iptables rule</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.Base_pb2.IptablesRule</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>chain</strong> (<span class="xref std std-ref">str</span>) – Chain to apply the rule</p></li>
+<li><p><strong>parameters</strong> (<span class="xref std std-ref">str</span>) – Parameters for the iptables rule</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="baseremoteaccessinfo"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.RemoteAccessInfo">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">RemoteAccessInfo</span></span><a class="headerlink" href="#kortex_api.autogen.RemoteAccessInfo" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Remote Access information</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.Base_pb2.RemoteAccessInfo</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>handle</strong> (<a class="reference internal" href="#baseremoteaccesshandle"><span class="std std-ref">RemoteAccessHandle</span></a>) – Handle for the Remote Access</p></li>
+<li><p><strong>description</strong> (<span class="xref std std-ref">str</span>) – Description of the Remote Access</p></li>
+<li><p><strong>is_enabled</strong> (<span class="xref std std-ref">bool</span>) – Status of the Remote Access (enabled or not)</p></li>
+<li><p><strong>is_key_required</strong> (<span class="xref std std-ref">bool</span>) – Indicates if the Remote Access enabling requires a key</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="baseremoteaccessinfolist"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.RemoteAccessInfoList">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">RemoteAccessInfoList</span></span><a class="headerlink" href="#kortex_api.autogen.RemoteAccessInfoList" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Array of all Remote Access Information</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.Base_pb2.RemoteAccessInfoList</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><p><strong>remote_access_info</strong> (<a class="reference internal" href="#baseremoteaccessinfo"><span class="std std-ref">RemoteAccessInfo</span></a> [ ]) – List of Remote Accesses</p>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="baseremoteaccessparameters"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.RemoteAccessParameters">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">RemoteAccessParameters</span></span><a class="headerlink" href="#kortex_api.autogen.RemoteAccessParameters" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Remote Access parameters</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.Base_pb2.RemoteAccessParameters</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>remote_access_info</strong> (<a class="reference internal" href="#baseremoteaccessinfo"><span class="std std-ref">RemoteAccessInfo</span></a>) – Remote Access information</p></li>
+<li><p><strong>iptables_rules</strong> (<a class="reference internal" href="#baseiptablesrule"><span class="std std-ref">IptablesRule</span></a> [ ]) – List of Remote Access related iptables rules</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="baseremoteaccesschangenotification"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.RemoteAccessChangeNotification">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">RemoteAccessChangeNotification</span></span><a class="headerlink" href="#kortex_api.autogen.RemoteAccessChangeNotification" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Remote Access change Notification</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.Base_pb2.RemoteAccessChangeNotification</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>remote_access_info</strong> (<a class="reference internal" href="#baseremoteaccessinfo"><span class="std std-ref">RemoteAccessInfo</span></a>) – Remote Access information concerned by the change</p></li>
+<li><p><strong>generic_info</strong> (<a class="reference internal" href="Common.html#commonnotificationinformation"><span class="std std-ref">NotificationInformation</span></a>) – Generic notification information</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="baseacknowledgeactionnotification"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.AcknowledgeActionNotification">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">AcknowledgeActionNotification</span></span><a class="headerlink" href="#kortex_api.autogen.AcknowledgeActionNotification" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Notification about an Acknowledge action event</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.Base_pb2.AcknowledgeActionNotification</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>event</strong> (<a class="reference internal" href="../Enums/Base.html#baseacknowledgeactionevent"><span class="std std-ref">AcknowledgeActionEvent</span></a>) – Acknowledge action event</p></li>
+<li><p><strong>generic_info</strong> (<a class="reference internal" href="Common.html#commonnotificationinformation"><span class="std std-ref">NotificationInformation</span></a>) – Generic notification information</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="BaseCyclic.html" class="btn btn-neutral float-right" title="BaseCyclic" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="ActuatorCyclic.html" class="btn btn-neutral float-left" title="ActuatorCyclic" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2022, Kinova.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

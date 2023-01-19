@@ -1,0 +1,49 @@
+================================
+WristCyclicC61
+================================
+    
+.. py:currentmodule:: kortex_api.autogen
+
+.. _WristCyclicC61WristButtonMask:
+
+.. py:class:: WristButtonMask
+
+    
+
+    :canonical: kortex_api.autogen.messages.WristCyclicC61_pb2.WristButtonMask
+    .. py:attribute:: WRIST_BUTTON_UNSPECIFIED (0):   0x0  Unspecified
+
+    .. py:attribute:: WRIST_BUTTON_HAND_GUIDING (1):   0x1  Hand-Guiding button pressed
+
+    .. py:attribute:: WRIST_BUTTON_1 (2):   0x2  Button 1 pressed
+
+    .. py:attribute:: WRIST_BUTTON_2 (4):   0x4  Button 2 pressed
+
+    .. py:attribute:: WRIST_BUTTON_3 (8):   0x8  Button 3 pressed
+
+    .. py:attribute:: WRIST_BUTTON_4 (16):   0x10 Button 4 pressed
+
+.. _WristCyclicC61WristDigitalIOMask:
+
+.. py:class:: WristDigitalIOMask
+
+    
+
+    :canonical: kortex_api.autogen.messages.WristCyclicC61_pb2.WristDigitalIOMask
+    .. py:attribute:: DIGITAL_IO_UNSPECIFIED (0):   0x0  Unspecified
+
+    .. py:attribute:: DIGITAL_IO_A_1 (1):   0x1  Digital IO on M8 connector A, channel 1
+
+    .. py:attribute:: DIGITAL_IO_A_2 (2):   0x2  Digital IO on M8 connector A, channel 2
+
+    .. py:attribute:: DIGITAL_IO_A_3 (4):   0x4  Digital IO on M8 connector A, channel 3
+
+    .. py:attribute:: DIGITAL_IO_A_4 (8):   0x8  Digital IO on M8 connector A, channel 4
+
+    .. py:attribute:: DIGITAL_IO_B_1 (16):   0x10 Digital IO on M8 connector B, channel 1
+
+    .. py:attribute:: DIGITAL_IO_B_2 (32):   0x20 Digital IO on M8 connector B, channel 2
+
+    .. py:attribute:: DIGITAL_IO_B_3 (64):   0x40 Digital IO on M8 connector B, channel 3
+
+    .. py:attribute:: DIGITAL_IO_B_4 (128):   0x80 Digital IO on M8 connector B, channel 4

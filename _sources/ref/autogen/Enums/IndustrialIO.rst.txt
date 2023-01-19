@@ -1,0 +1,186 @@
+================================
+IndustrialIO
+================================
+    
+.. py:currentmodule:: kortex_api.autogen
+
+.. _IndustrialIOServiceVersion:
+
+.. py:class:: ServiceVersion
+
+     Identifies IndustrialIO service current version
+
+    :canonical: kortex_api.autogen.messages.IndustrialIO_pb2.ServiceVersion
+    .. py:attribute:: RESERVED_0 (0):   Reserved
+
+    .. py:attribute:: CURRENT_VERSION (1):   Current version
+
+.. _IndustrialIODigitalOutputMode:
+
+.. py:class:: DigitalOutputMode
+
+     Admissible digital output modes
+
+    :canonical: kortex_api.autogen.messages.IndustrialIO_pb2.DigitalOutputMode
+    .. py:attribute:: DIGITAL_OUTPUT_MODE_UNSPECIFIED (0):   Unspecified mode
+
+    .. py:attribute:: DIGITAL_OUTPUT_MODE_HIGH_SIDE (1):   High side mode
+
+    .. py:attribute:: DIGITAL_OUTPUT_MODE_PUSH_PULL (2):   Push-pull mode
+
+.. _IndustrialIODebounceFilterDelay:
+
+.. py:class:: DebounceFilterDelay
+
+     Admissible debouce delay filter for a digital input
+
+    :canonical: kortex_api.autogen.messages.IndustrialIO_pb2.DebounceFilterDelay
+    .. py:attribute:: DEBOUNCE_FILTER_DELAY_UNSPECIFIED (0):   Unspecified debounce filter delay
+
+    .. py:attribute:: DEBOUNCE_FILTER_DELAY_50_US (50):   50 microseconds debounce filter delay
+
+    .. py:attribute:: DEBOUNCE_FILTER_DELAY_100_US (100):   100 microseconds debounce filter delay
+
+    .. py:attribute:: DEBOUNCE_FILTER_DELAY_400_US (400):   400 microseconds debounce filter delay
+
+    .. py:attribute:: DEBOUNCE_FILTER_DELAY_800_US (800):   800 microseconds debounce filter delay
+
+    .. py:attribute:: DEBOUNCE_FILTER_DELAY_1600_US (1600):   1600 microseconds debounce filter delay
+
+    .. py:attribute:: DEBOUNCE_FILTER_DELAY_3200_US (3200):   3200 microseconds debounce filter delay
+
+    .. py:attribute:: DEBOUNCE_FILTER_DELAY_12800_US (12800):   12800 microseconds debounce filter delay
+
+    .. py:attribute:: DEBOUNCE_FILTER_DELAY_20000_US (20000):   20000 microseconds debounce filter delay
+
+.. _IndustrialIOAnalogChannelIdentifier:
+
+.. py:class:: AnalogChannelIdentifier
+
+     Admissible analog channel identifier
+
+    :canonical: kortex_api.autogen.messages.IndustrialIO_pb2.AnalogChannelIdentifier
+    .. py:attribute:: ANALOG_CHANNEL_UNSPECIFIED (0):   Unspecified channel
+
+    .. py:attribute:: ANALOG_CHANNEL_A (1):   Analog Channel A (not supported with WristConfigC61)
+
+    .. py:attribute:: ANALOG_CHANNEL_B (2):   Analog Channel B (not supported with WristConfigC61)
+
+    .. py:attribute:: ANALOG_CHANNEL_C (3):   Analog Channel C
+
+    .. py:attribute:: ANALOG_CHANNEL_D (4):   Analog Channel D
+
+.. _IndustrialIOAnalogMode:
+
+.. py:class:: AnalogMode
+
+     Admissible analog channel mode
+
+    :canonical: kortex_api.autogen.messages.IndustrialIO_pb2.AnalogMode
+    .. py:attribute:: ANALOG_MODE_UNSPECIFIED (0):   Unspecified mode
+
+    .. py:attribute:: ANALOG_MODE_HIGH_IMPEDANCE (1):   High impedance mode (ADC Off)
+
+    .. py:attribute:: ANALOG_MODE_VOLTAGE_OUTPUT (2):   Voltage output mode
+
+    .. py:attribute:: ANALOG_MODE_CURRENT_OUTPUT (3):   Current output mode
+
+    .. py:attribute:: ANALOG_MODE_VOLTAGE_INPUT (4):   Voltage input mode
+
+    .. py:attribute:: ANALOG_MODE_CURRENT_INPUT_EXTERN (5):   Current input externally powered mode
+
+.. _IndustrialIODigitalOutputFaultIdentifier:
+
+.. py:class:: DigitalOutputFaultIdentifier
+
+     Admissible digital output faults
+
+    :canonical: kortex_api.autogen.messages.IndustrialIO_pb2.DigitalOutputFaultIdentifier
+    .. py:attribute:: DIGITAL_OUTPUT_NO_FAULT (0):   0x0 - No digital output fault
+
+    .. py:attribute:: DIGITAL_OUTPUT_SPI_CRC_FAULT (1):   0x1 - CRC fault occurred in a previous spi transaction
+
+    .. py:attribute:: DIGITAL_OUTPUT_UNDER_VOLTAGE_LOCKOUT_FAULT (2):   0x2 - An under-voltage lockout was detected in a previous SPI transaction
+
+.. _IndustrialIODigitalPinState:
+
+.. py:class:: DigitalPinState
+
+     Admissible digital pin states
+
+    :canonical: kortex_api.autogen.messages.IndustrialIO_pb2.DigitalPinState
+    .. py:attribute:: DIGITAL_PIN_STATE_UNKNOWN (0):   Unknown pin state
+
+    .. py:attribute:: DIGITAL_PIN_STATE_LOW (1):   Low state
+
+    .. py:attribute:: DIGITAL_PIN_STATE_HIGH (2):   High State
+
+.. _IndustrialIODigitalInputFaultIdentifier:
+
+.. py:class:: DigitalInputFaultIdentifier
+
+     Admissible digital input channel fault
+
+    :canonical: kortex_api.autogen.messages.IndustrialIO_pb2.DigitalInputFaultIdentifier
+    .. py:attribute:: DIGITAL_INPUT_NO_FAULT (0):   0x0 - No digital input fault
+
+    .. py:attribute:: DIGITAL_INPUT_SPI_CRC_FAULT (1):   0x1 - CRC fault occurred in a previous spi transaction
+
+    .. py:attribute:: DIGITAL_INPUT_POWER_ON_RESET_FAULT (2):   0x2 - Power on reset event has reset the register map to its power-on-reset state
+
+    .. py:attribute:: DIGITAL_INPUT_TEMPERATURE_1_FAULT (4):   0x4 - Temperature Alarm 1 threshold has been exceeded
+
+    .. py:attribute:: DIGITAL_INPUT_TEMPERATURE_2_FAULT (8):   0x8 - Temperature Alarm 2 threshold has been exceeded
+
+    .. py:attribute:: DIGITAL_INPUT_LOW_24_VOLTAGE_FAULT (16):   0X10 - 24V supply is low (below the 24VL threshold)
+
+    .. py:attribute:: DIGITAL_INPUT_MISSING_24_VOLTAGE_FAULT (32):   0X20 - 24V supply is missing (below the 24VM threshold)
+
+    .. py:attribute:: DIGITAL_INPUT_WIRE_BREAK_FAULT (64):   0x40 - One or more bits in the wire break register are set
+
+    .. py:attribute:: DIGITAL_INPUT_SPI_CLOCK_FAULT (128):   0x80 - SPI received a number of clock pulses not equal to a multiple of eight
+
+    .. py:attribute:: DIGITAL_INPUT_OVERTEMP_SHUTDOWN_FAULT (256):   0x100 - Over temperature shutdown (the safe operating temperature has been exceeded)
+
+    .. py:attribute:: DIGITAL_INPUT_REFDI_OPEN_FAULT (512):   0x200 - Open condition is detected on the reference digital input pin
+
+    .. py:attribute:: DIGITAL_INPUT_REFDI_SHORT_FAULT (1024):   0x400 - Short condition is detected on the reference digital input pin
+
+    .. py:attribute:: DIGITAL_INPUT_REFWB_OPEN_FAULT (2048):   0x800 - Open condition is detected on the reference wire break pin
+
+    .. py:attribute:: DIGITAL_INPUT_REFWB_SHORT_FAULT (4096):   0x1000 - Short condition is detected on the reference wire break pin
+
+.. _IndustrialIOAnalogIOFaultIdentifier:
+
+.. py:class:: AnalogIOFaultIdentifier
+
+     Admissible analog input/output fault identifier
+
+    :canonical: kortex_api.autogen.messages.IndustrialIO_pb2.AnalogIOFaultIdentifier
+    .. py:attribute:: ANALOG_NO_FAULT (0):   0x0 - No analog I/O fault
+
+    .. py:attribute:: ANALOG_RESET_OCCURRED_FAULT (1):   0x1 - A reset occurred
+
+    .. py:attribute:: ANALOG_INVALID_CRC_SPI_FAULT (2):   0x2 - An invalid CRC is received
+
+    .. py:attribute:: ANALOG_ADC_SATURATION_FAULT (4):   0x4 - The adc value might be outside the user selected measurement range
+
+    .. py:attribute:: ANALOG_ADC_CONVERSION_FAULT (8):   0x8 - The adc conversion might be outside selected measurement range
+
+    .. py:attribute:: ANALOG_LOW_ALDO1V8_FAULT (16):   0x10 - The aldo1v8 pin fell below 1.35V
+
+    .. py:attribute:: ANALOG_LOW_DVCC_FAULT (32):   0x20 - The dvcc pin fell below 1.93V
+
+    .. py:attribute:: ANALOG_LOW_AVDD_FAULT (64):   0x40 - The avdd pin fell below 9.26V
+
+    .. py:attribute:: ANALOG_LOW_ALDO5V_FAULT (128):   0x80 - The aldo5v pin fell below 4.0V
+
+    .. py:attribute:: ANALOG_HIGH_TEMPERATURE_FAULT (256):   0x100 - A high temperature fault occurred (typically 115 degrees Celsius)
+
+    .. py:attribute:: ANALOG_CHANNEL_A_FAULT (512):   0x200 - A fault occurred on channel A
+
+    .. py:attribute:: ANALOG_CHANNEL_B_FAULT (1024):   0x400 - A fault occurred on channel B
+
+    .. py:attribute:: ANALOG_CHANNEL_C_FAULT (2048):   0x800 - A fault occurred on channel C
+
+    .. py:attribute:: ANALOG_CHANNEL_D_FAULT (4096):   0x1000 - A fault occurred on channel D

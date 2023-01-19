@@ -1,0 +1,16 @@
+================================
+WristCyclicCommon
+================================
+    
+.. py:currentmodule:: kortex_api.autogen
+
+.. _WristCyclicCommonMessageId:
+
+.. py:class:: MessageId
+
+    Identifies a message
+
+   :canonical: kortex_api.autogen.messages.WristCyclicCommon_pb2.MessageId
+
+   :param identifier:   Message ID (first 2 bytes : device ID, last 2 bytes : sequence number)
+   :type identifier: :ref:`int <>` 

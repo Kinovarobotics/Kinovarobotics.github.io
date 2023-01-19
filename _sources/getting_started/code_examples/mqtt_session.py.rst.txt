@@ -1,0 +1,48 @@
+.. code-block:: python
+    
+    # Comm imports
+    from kortex_api.MqttTransport import MqttTransport
+    from kortex_api.RouterClient import RouterClient
+
+    # Service imports
+    from kortex_api.autogen.client_stubs.BaseClientRpc import BaseClient
+    from kortex_api.autogen.client_stubs.SessionClientRpc import SessionClient
+    
+    # Protobuf messages imports
+    from kortex_api.autogen.messages import Session_pb2
+
+    # Constants
+    MQTT_PORT = 1883
+    CONTROLLER_ADDRESS = '192.168.1.10'
+    
+    session_info = Session_pb2.CreateSessionInfo()
+    session_info.username = "admin"
+    session_info.password = "admin"
+    session_info.session_inactivity_timeout = 60000   # (milliseconds)
+    session_info.connection_inactivity_timeout = 2000 # (milliseconds)
+    error_callback = lambda kException: print("_________ callback error _________ {}".format(kException))
+
+    
+    # Create objects
+    transport = MqttTransport()
+    router = RouterClient(transport, error_callback)
+    transport.connect(CONTROLLER_ADDRESS, MQTT_PORT)
+
+    # Create session
+    print("Creating session for communication")
+    session_client = SessionClient(router)
+    session_client.CreateSession(session_info)
+    print("Session created")
+
+    # Call some RPC which requires a session
+    base = BaseClient(router)
+    print(base.GetArmState())
+
+
+    # TEARDOWN
+
+    # Close API session
+    session_client.CloseSession()
+
+    # Disconnect from the transport object
+    transport.disconnect()

@@ -1,0 +1,1220 @@
+================================
+Base
+================================
+    
+.. py:currentmodule:: kortex_api.autogen
+
+.. _BaseArmCalibrationStatusType:
+
+.. py:class:: ArmCalibrationStatusType
+
+     Arm calibration status type
+
+    :canonical: kortex_api.autogen.messages.Base_pb2.ArmCalibrationStatusType
+    .. py:attribute:: ARM_CALIBRATION_STATUS_UNKNOWN (0):   Unknown arm calibration status
+
+    .. py:attribute:: ARM_CALIBRATION_STATUS_CALIBRATED (1):   Calibrated status
+
+    .. py:attribute:: ARM_CALIBRATION_STATUS_NOT_CALIBRATED (2):   Not calibrated status
+
+    .. py:attribute:: ARM_CALIBRATION_STATUS_WAITING_ARM_POWER_ON (3):   Waiting arm power on status
+
+.. _BaseServiceVersion:
+
+.. py:class:: ServiceVersion
+
+     Identifies Base service current version
+
+    :canonical: kortex_api.autogen.messages.Base_pb2.ServiceVersion
+    .. py:attribute:: RESERVED_0 (0):   Reserved
+
+    .. py:attribute:: CURRENT_VERSION (1):   Current version
+
+.. _BaseActionType:
+
+.. py:class:: ActionType
+
+     Admissible types of actions
+
+    :canonical: kortex_api.autogen.messages.Base_pb2.ActionType
+    .. py:attribute:: UNSPECIFIED_ACTION (0):   Unspecified action type
+
+    .. py:attribute:: SEND_TWIST_COMMAND (1):   Control the robot in Cartesian velocity
+
+    .. py:attribute:: SEND_JOINT_SPEEDS (4):   Control each joint speed
+
+    .. py:attribute:: TOGGLE_HAND_GUIDING_MODE (13):   Enable or disable the Hand-Guiding mode
+
+    .. py:attribute:: SWITCH_CONTROL_MAPPING (16):   Switch the active controller map
+
+    .. py:attribute:: NAVIGATE_JOINTS (17):   Select the next actuator to control from control mapping
+
+    .. py:attribute:: NAVIGATE_MAPPINGS (18):   Select a different map
+
+    .. py:attribute:: CHANGE_TWIST (22):   Change the twist
+
+    .. py:attribute:: CHANGE_JOINT_SPEEDS (23):   Change the joint speeds individually
+
+    .. py:attribute:: APPLY_QUICK_STOP (28):   Apply robot quick stop
+
+    .. py:attribute:: CLEAR_FAULTS (29):   Clear faults. Robot will be able to move if there is no more fault (see BaseCyclic.BaseFeedback.[fault_bank_a | fault_bank_b])
+
+    .. py:attribute:: EXECUTE_ACTION (32):   Execute an existing action
+
+    .. py:attribute:: STOP_ACTION (35):   Stop robot movement
+
+    .. py:attribute:: PLAY_PRE_COMPUTED_TRAJECTORY (39):   Play a pre-computed trajectory
+
+    .. py:attribute:: EXECUTE_WAYPOINT_LIST (41):   Execute a trajectory defined by a series of waypoints
+
+    .. py:attribute:: CHANGE_PAYLOAD_PARAMETERS (42):   Change the payload
+
+.. _BaseNetworkType:
+
+.. py:class:: NetworkType
+
+     Admissible network types This is currently used in armbase. Will be moved out of base.proto eventually.
+
+    :canonical: kortex_api.autogen.messages.Base_pb2.NetworkType
+    .. py:attribute:: UNSPECIFIED_NETWORK_TYPE (0):   Unspecified network type
+
+    .. py:attribute:: WIFI (1):   Wi-Fi network
+
+    .. py:attribute:: WIRED_ETHERNET (2):   Wired Ethernet network
+
+    .. py:attribute:: WIRED_MICROUSB (3):   Wired Ethernet over USB network (RNDIS)
+
+.. _BaseWifiSecurityType:
+
+.. py:class:: WifiSecurityType
+
+     Admissible Wi-Fi Security types This message may be removed in a future release. It has been moved to Network service.
+
+    :canonical: kortex_api.autogen.messages.Base_pb2.WifiSecurityType
+    .. py:attribute:: UNSPECIFIED_AUTHENTICATION (0):   Unspecified Wi-Fi security type
+
+    .. py:attribute:: WEP (1):   WEP authentication required
+
+    .. py:attribute:: WPA2_PERSONAL (2):   WPA2 Personal authentication required
+
+    .. py:attribute:: WPA_PERSONAL (4):   WPA Personal authentication required
+
+    .. py:attribute:: NO_AUTHENTICATION (8):   No authentication required
+
+.. _BaseWifiEncryptionType:
+
+.. py:class:: WifiEncryptionType
+
+     Admissible Wi-Fi encryption types This message may be removed in a future release. It has been moved to Network service.
+
+    :canonical: kortex_api.autogen.messages.Base_pb2.WifiEncryptionType
+    .. py:attribute:: UNSPECIFIED_ENCRYPTION (0):   Unspecified Wi-Fi encryption type
+
+    .. py:attribute:: AES_ENCRYPTION (1):   AES encryption
+
+    .. py:attribute:: TKIP_ENCRYPTION (2):   TKIP encryption
+
+    .. py:attribute:: WEP_ENCRYPTION (4):   WEP encryption
+
+.. _BaseSignalQuality:
+
+.. py:class:: SignalQuality
+
+     Admissible signal quality values This message may be removed in a future release. It has been moved to Network service.
+
+    :canonical: kortex_api.autogen.messages.Base_pb2.SignalQuality
+    .. py:attribute:: UNSPECIFIED_SIGNAL_QUALITY (0):   Unspecified signal quality
+
+    .. py:attribute:: POOR (1):   Poor signal quality
+
+    .. py:attribute:: FAIR (2):   Fair signal quality
+
+    .. py:attribute:: GOOD (3):   Good signal quality
+
+    .. py:attribute:: EXCELLENT (4):   Excellent signal quality
+
+    .. py:attribute:: NONE (5):   No signal
+
+.. _BaseConfigurationNotificationEvent:
+
+.. py:class:: ConfigurationNotificationEvent
+
+     Admissible configuration events This enum will be removed in a future release. It has been moved to Common proto.
+
+    :canonical: kortex_api.autogen.messages.Base_pb2.ConfigurationNotificationEvent
+    .. py:attribute:: UNSPECIFIED_CONFIGURATION_EVENT (0):   Unspecified configuration event
+
+    .. py:attribute:: CONFIGURATION_UPDATED (1):   Configuration deleted
+
+    .. py:attribute:: CONFIGURATION_DELETED (2):   Configuration updated
+
+    .. py:attribute:: CONFIGURATION_DELETED_ALL (3):   All configurations deleted
+
+    .. py:attribute:: CONFIGURATION_CREATED (4):   Configuration created
+
+.. _BaseOperatingMode:
+
+.. py:class:: OperatingMode
+
+     Admissible robot operating modes (used to report robot firmware upgrade current state) This enum will be removed in a future release. It has been renamed UpdatingMode.
+
+    :canonical: kortex_api.autogen.messages.Base_pb2.OperatingMode
+    .. py:attribute:: UNSPECIFIED_OPERATING_MODE (0):   Unspecified operating mode
+
+    .. py:attribute:: MAINTENANCE_MODE (1):   Robot in maintenance mode
+
+    .. py:attribute:: UPDATE_MODE (2):   Robot waiting for upgrade package
+
+    .. py:attribute:: UPDATE_COMPLETED_MODE (3):   Robot update successfully completed
+
+    .. py:attribute:: UPDATE_FAILED_MODE (4):   Robot update failed
+
+    .. py:attribute:: SHUTTING_DOWN_MODE (5):   Robot about to shutdown
+
+    .. py:attribute:: RUN_MODE (6):   Robot properly running (or normal operation mode)
+
+    .. py:attribute:: UPDATING_DEVICE_MODE (7):   Robot updating device
+
+.. _BaseUpdatingMode:
+
+.. py:class:: UpdatingMode
+
+     Admissible robot updating modes (used to report robot firmware upgrade current state)
+
+    :canonical: kortex_api.autogen.messages.Base_pb2.UpdatingMode
+    .. py:attribute:: UPDATE_MODE_UNSPECIFIED (0):   Unspecified updating mode
+
+    .. py:attribute:: UPDATE_MODE_MAINTENANCE (1):   Robot in maintenance mode
+
+    .. py:attribute:: UPDATE_MODE_UPDATE (2):   Robot waiting for upgrade package
+
+    .. py:attribute:: UPDATE_MODE_UPDATE_COMPLETED (3):   Robot update successfully completed
+
+    .. py:attribute:: UPDATE_MODE_UPDATE_FAILED (4):   Robot update failed
+
+    .. py:attribute:: UPDATE_MODE_SHUTTING_DOWN (5):   Robot about to shutdown
+
+    .. py:attribute:: UPDATE_MODE_IDLE (6):   Robot properly running (or normal operation mode)
+
+    .. py:attribute:: UPDATE_MODE_UPDATING_DEVICE (7):   Robot updating device
+
+.. _BaseServoingMode:
+
+.. py:class:: ServoingMode
+
+     Admissible servoing modes
+
+    :canonical: kortex_api.autogen.messages.Base_pb2.ServoingMode
+    .. py:attribute:: UNSPECIFIED_SERVOING_MODE (0):   Unspecified servoing mode
+
+    .. py:attribute:: SINGLE_LEVEL_SERVOING (2):   Single-level servoing
+
+    .. py:attribute:: LOW_LEVEL_SERVOING (3):   Low-level servoing
+
+    .. py:attribute:: BYPASS_SERVOING (4):   Bypass mode
+
+.. _BaseUserEvent:
+
+.. py:class:: UserEvent
+
+     Admissible user event types
+
+    :canonical: kortex_api.autogen.messages.Base_pb2.UserEvent
+    .. py:attribute:: UNSPECIFIED_USER_EVENT (0):   Unspecified user event
+
+    .. py:attribute:: LOGGED_OUT (1):   User logged out
+
+    .. py:attribute:: LOGGED_IN (2):   User logged in
+
+.. _BaseControllerType:
+
+.. py:class:: ControllerType
+
+     Admissible controller types
+
+    :canonical: kortex_api.autogen.messages.Base_pb2.ControllerType
+    .. py:attribute:: UNSPECIFIED_CONTROLLER_TYPE (0):   Unspecified controller device type
+
+    .. py:attribute:: XBOX_CONTROLLER (1):   Xbox gamepad
+
+    .. py:attribute:: BASIC_JOYSTICK_CONTROLLER (3):   Simplified joystick connected to Kinova robot base
+
+    .. py:attribute:: BASE_GPIO_CONTROLLER (4):   GPIO Controller
+
+    .. py:attribute:: LINK_WRIST_CONTROLLER (6):   Link wrist buttons
+
+.. _BaseControllerEventType:
+
+.. py:class:: ControllerEventType
+
+     Admissible controller event types
+
+    :canonical: kortex_api.autogen.messages.Base_pb2.ControllerEventType
+    .. py:attribute:: UNSPECIFIED_CONTROLLER_EVENT (0):   Unspecified controller event
+
+    .. py:attribute:: CONTROLLER_DISCONNECTED (1):   Controller is disconnected
+
+    .. py:attribute:: CONTROLLER_CONNECTED (2):   Controller is connected
+
+.. _BaseControllerElementEventType:
+
+.. py:class:: ControllerElementEventType
+
+     Admissible controller element event types
+
+    :canonical: kortex_api.autogen.messages.Base_pb2.ControllerElementEventType
+    .. py:attribute:: UNSPECIFIED_CONTROLLER_ELEMENT_EVENT (0):   Unspecified controller element event
+
+    .. py:attribute:: AXIS_MOVED (1):   Controller axis moved
+
+    .. py:attribute:: BUTTON_DOWN (2):   Controller button pressed
+
+    .. py:attribute:: BUTTON_UP (3):   Controller button released
+
+    .. py:attribute:: BUTTON_CLICK (4):   Controller button clicked
+
+.. _BaseActionEvent:
+
+.. py:class:: ActionEvent
+
+     Admissible action event types
+
+    :canonical: kortex_api.autogen.messages.Base_pb2.ActionEvent
+    .. py:attribute:: UNSPECIFIED_ACTION_EVENT (0):   Unspecified action event
+
+    .. py:attribute:: ACTION_END (1):   Action execution end reached
+
+    .. py:attribute:: ACTION_ABORT (2):   Action execution aborted
+
+    .. py:attribute:: ACTION_PAUSE (3):   Action execution paused
+
+    .. py:attribute:: ACTION_START (4):   Action execution started
+
+    .. py:attribute:: ACTION_PREPROCESS_START (5):   Action pre-process started
+
+    .. py:attribute:: ACTION_PREPROCESS_ABORT (6):   Action pre-process aborted
+
+    .. py:attribute:: ACTION_PREPROCESS_END (7):   Action pre-process ended
+
+    .. py:attribute:: ACTION_POSTPROCESS_START (8):   Action post-process started
+
+    .. py:attribute:: ACTION_POSTPROCESS_ABORT (9):   Action post-process aborted
+
+    .. py:attribute:: ACTION_POSTPROCESS_END (10):   Action post-process ended
+
+    .. py:attribute:: ACTION_FEEDBACK (11):   Action feedback received
+
+.. _BaseRobotEvent:
+
+.. py:class:: RobotEvent
+
+     Admissible robot events
+
+    :canonical: kortex_api.autogen.messages.Base_pb2.RobotEvent
+    .. py:attribute:: UNSPECIFIED_ROBOT_EVENT (0):   Unspecified robot event
+
+    .. py:attribute:: ARM_CONNECTED (1):   Robot arm is connected
+
+    .. py:attribute:: ARM_DISCONNECTED (2):   Robot arm is disconnected
+
+    .. py:attribute:: USB_STORAGE_CONNECTED (8):   USB storage has been connected
+
+    .. py:attribute:: USB_STORAGE_DISCONNECTED (9):   USB storage has been disconnected
+
+.. _BaseFactoryEvent:
+
+.. py:class:: FactoryEvent
+
+     Admissible factory events
+
+    :canonical: kortex_api.autogen.messages.Base_pb2.FactoryEvent
+    .. py:attribute:: UNSPECIFIED_FACTORY_EVENT (0):   Unspecified factory event
+
+    .. py:attribute:: FACTORY_DEFAULT_RESTORED (1):   Factory defaults restored on robot
+
+.. _BaseNetworkEvent:
+
+.. py:class:: NetworkEvent
+
+     Admissible network events This message may be removed in a future release. It has been moved to Network service.
+
+    :canonical: kortex_api.autogen.messages.Base_pb2.NetworkEvent
+    .. py:attribute:: UNSPECIFIED_NETWORK_EVENT (0):   Unspecified network event
+
+    .. py:attribute:: WIFI_CONNECTED (1):   Wi-Fi connected
+
+    .. py:attribute:: WIFI_DISCONNECTED (2):   Wi-Fi Disconnected
+
+    .. py:attribute:: WIFI_SCAN_STARTED (3):   Wi-Fi scan was initiated
+
+    .. py:attribute:: WIFI_SCAN_RESULTS (4):   Wi-Fi scan results are available
+
+    .. py:attribute:: WIFI_SCAN_FAILED (5):   Wi-Fi scan failed
+
+    .. py:attribute:: WIFI_NOT_FOUND (6):   Wi-Fi selected network not found
+
+    .. py:attribute:: WIFI_ASSOC_REJECTED (7):   Wi-Fi AP rejected association
+
+    .. py:attribute:: WIFI_AUTH_WRONG_KEY (8):   Wi-Fi wrong PSK supplied
+
+    .. py:attribute:: WIFI_AUTH_CONN_FAILED (9):   Wi-Fi connection failure during auth
+
+    .. py:attribute:: WIFI_AUTH_FAILED (10):   Wi-Fi authentication failure
+
+.. _BaseControllerInputType:
+
+.. py:class:: ControllerInputType
+
+     Admissible controller input types
+
+    :canonical: kortex_api.autogen.messages.Base_pb2.ControllerInputType
+    .. py:attribute:: UNSPECIFIED_CONTROLLER_INPUT_TYPE (0):   Unspecified controller input type
+
+    .. py:attribute:: ANALOG (1):   Analog controller input type
+
+    .. py:attribute:: DIGITAL (2):   Digital controller input type
+
+.. _BaseControllerBehavior:
+
+.. py:class:: ControllerBehavior
+
+     Admissible controller input behaviors
+
+    :canonical: kortex_api.autogen.messages.Base_pb2.ControllerBehavior
+    .. py:attribute:: UNSPECIFIED_CONTROLLER_BEHAVIOR (0):   Unspecified controller behavior
+
+    .. py:attribute:: CONTROLLER_BUTTON_DOWN (1):   Pushing button down
+
+    .. py:attribute:: CONTROLLER_BUTTON_UP (2):   Releasing button
+
+    .. py:attribute:: CONTROLLER_AXIS_POSITIVE (3):   Positive axis movement
+
+    .. py:attribute:: CONTROLLER_AXIS_NEGATIVE (4):   Negative axis movement
+
+    .. py:attribute:: CONTROLLER_BUTTON_CLICK (5):   Button down and up within X msec
+
+.. _BaseBaseDiagnosticIdentifierBankA:
+
+.. py:class:: BaseDiagnosticIdentifierBankA
+
+      Admissible Base bank A diagnostics.  Used with BaseCyclic.BaseFeedback.fault_bank_a 
+
+    :canonical: kortex_api.autogen.messages.Base_pb2.BaseDiagnosticIdentifierBankA
+    .. py:attribute:: BASE_BANK_A_UNSPECIFIED_DIAGNOSTIC_IDENTIFIER (0):   0x0 - Unspecified base diagnostic
+
+    .. py:attribute:: BASE_BANK_A_FIRMWARE_UPDATE_FAILURE (1):   0x1 - Firmware update failure
+
+    .. py:attribute:: BASE_BANK_A_EXTERNAL_COMMUNICATION_ERROR (2):   0x2 - External communication error
+
+    .. py:attribute:: BASE_BANK_A_JOINT_FAULT (16):   0x10 - Joint fault
+
+    .. py:attribute:: BASE_BANK_A_NO_KINEMATICS_SUPPORT (32):   0x20 - No kinematics support
+
+    .. py:attribute:: BASE_BANK_A_NETWORK_ERROR (64):   0x40 - Network error
+
+    .. py:attribute:: BASE_BANK_A_JOINT_DETECTION_ERROR (128):   0x80 - Joint detection error
+
+    .. py:attribute:: BASE_BANK_A_NETWORK_INITIALIZATION_ERROR (256):   0x100 - Network initialization error
+
+    .. py:attribute:: BASE_BANK_A_EMERGENCY_STOP_ACTIVATED (4096):   0x1000 - Emergency  stop activated
+
+    .. py:attribute:: BASE_BANK_A_NVRAM_CORRUPTED (32768):   0x8000 - NVRAM corrupted
+
+    .. py:attribute:: BASE_BANK_A_INCOMPATIBLE_FIRMWARE_VERSION (65536):   0x10000 - Incompatible firmware version
+
+    .. py:attribute:: BASE_BANK_A_POWERON_SELF_TEST_FAILURE (131072):   0x20000 - Power on self test failure
+
+    .. py:attribute:: BASE_BANK_A_STOP_TRIGGERED (1048576):   0x100000 - Stop triggered
+
+    .. py:attribute:: BASE_BANK_A_PROTECTION_ZONE_COLLISION_DETECTED (2097152):   0x200000 - Protection zone collision detected
+
+    .. py:attribute:: BASE_BANK_A_SELF_COLLISION_DETECTED (4194304):   0x400000 - Self-collision detected
+
+    .. py:attribute:: BASE_BANK_A_COLLISION_DETECTED (8388608):   0x800000 - Collision detected
+
+    .. py:attribute:: BASE_BANK_A_SAFETY_PARAMETERS_CHECKSUM_MISMATCH (16777216):   0x1000000 - Safety parameters checksum mismatch
+
+    .. py:attribute:: BASE_BANK_A_HARD_STOP_FAILURE (33554432):   0x2000000 - Hard Stop command failed
+
+    .. py:attribute:: BASE_BANK_A_SINGULARITY_ERROR_DETECTED (67108864):   0x4000000 - Singularity error detected
+
+    .. py:attribute:: BASE_BANK_A_JOINT_LIMIT_POSITION (134217728):   0x8000000 - Joint Limit Position
+
+    .. py:attribute:: BASE_BANK_A_JOINT_TRACKING_ERROR (268435456):   0x10000000 - Joint Tracking Error
+
+    .. py:attribute:: BASE_BANK_A_CALIB_SERIAL_NUMBER_INVALID (536870912):   0x20000000 - Calibration serial number invalid
+
+    .. py:attribute:: BASE_BANK_A_ACTUATOR_MODEL_INVALID (1073741824):   0x40000000 - Actuator Model invalid
+
+.. _BaseBaseDiagnosticIdentifierBankB:
+
+.. py:class:: BaseDiagnosticIdentifierBankB
+
+      Admissible Base bank B diagnostics.  Used with BaseCyclic.BaseFeedback.fault_bank_b 
+
+    :canonical: kortex_api.autogen.messages.Base_pb2.BaseDiagnosticIdentifierBankB
+    .. py:attribute:: BASE_BANK_B_UNSPECIFIED_DIAGNOSTIC_IDENTIFIER (0):   0x0 - Unspecified base diagnostic
+
+    .. py:attribute:: BASE_BANK_B_JOINT_1_MOTOR_TEMPERATURE_TOO_HIGH (1):   0x1 - Joint 1 motor temperature too high
+
+    .. py:attribute:: BASE_BANK_B_JOINT_2_MOTOR_TEMPERATURE_TOO_HIGH (2):   0x2 - Joint 2 motor temperature too high
+
+    .. py:attribute:: BASE_BANK_B_JOINT_3_MOTOR_TEMPERATURE_TOO_HIGH (4):   0x4 - Joint 3 motor temperature too high
+
+    .. py:attribute:: BASE_BANK_B_JOINT_4_MOTOR_TEMPERATURE_TOO_HIGH (8):   0x8 - Joint 4 motor temperature too high
+
+    .. py:attribute:: BASE_BANK_B_JOINT_5_MOTOR_TEMPERATURE_TOO_HIGH (16):   0x10 - Joint 5 motor temperature too high
+
+    .. py:attribute:: BASE_BANK_B_JOINT_6_MOTOR_TEMPERATURE_TOO_HIGH (32):   0x20 - Joint 6 motor temperature too high
+
+    .. py:attribute:: BASE_BANK_B_JOINT_7_MOTOR_TEMPERATURE_TOO_HIGH (64):   0x40 - Joint 7 motor temperature too high
+
+    .. py:attribute:: BASE_BANK_B_JOINT_1_CORE_TEMPERATURE_TOO_HIGH (128):   0x80 - Joint 1 core temperature too high
+
+    .. py:attribute:: BASE_BANK_B_JOINT_2_CORE_TEMPERATURE_TOO_HIGH (256):   0x100 - Joint 2 core temperature too high
+
+    .. py:attribute:: BASE_BANK_B_JOINT_3_CORE_TEMPERATURE_TOO_HIGH (512):   0x200 - Joint 3 core temperature too high
+
+    .. py:attribute:: BASE_BANK_B_JOINT_4_CORE_TEMPERATURE_TOO_HIGH (1024):   0x400 - Joint 4 core temperature too high
+
+    .. py:attribute:: BASE_BANK_B_JOINT_5_CORE_TEMPERATURE_TOO_HIGH (2048):   0x800 - Joint 5 core temperature too high
+
+    .. py:attribute:: BASE_BANK_B_JOINT_6_CORE_TEMPERATURE_TOO_HIGH (4096):   0x1000 - Joint 6 core temperature too high
+
+    .. py:attribute:: BASE_BANK_B_JOINT_7_CORE_TEMPERATURE_TOO_HIGH (8192):   0x2000 - Joint 7 core temperature too high
+
+.. _BaseLinkStateIdentifierBank:
+
+.. py:class:: LinkStateIdentifierBank
+
+      Admissible State Bank  Used with BaseCyclic.BaseFeedback.state_bank 
+
+    :canonical: kortex_api.autogen.messages.Base_pb2.LinkStateIdentifierBank
+    .. py:attribute:: LINK_STATE_BANK_UNSPECIFIED_IDENTIFIER (0):   0x0 - Unspecified Link state bank identifier
+
+    .. py:attribute:: LINK_STATE_BANK_COLLISION_DETECTED (1):   0x1 - Collision detected
+
+.. _BaseLinkSCUDiagnosticIdentifierBankA:
+
+.. py:class:: LinkSCUDiagnosticIdentifierBankA
+
+      Admissible Link SCU bank A diagnostics.  Used with BaseCyclic.BaseFeedback.scu_fault_bank_a 
+
+    :canonical: kortex_api.autogen.messages.Base_pb2.LinkSCUDiagnosticIdentifierBankA
+    .. py:attribute:: LINK_SCU_BANK_A_UNSPECIFIED_DIAGNOSTIC_IDENTIFIER (0):   0x0 - Unspecified Link SCU diagnostic bank A identifier
+
+    .. py:attribute:: LINK_SCU_BANK_A_STARTUP_SELF_TESTS_TIMED_OUT (1):   0x1 - startup self-tests timed out
+
+    .. py:attribute:: LINK_SCU_BANK_A_SCU_MCU_BIST_MODULE_FAILURE (2):   0x2 - SCU MCU BIST module failure
+
+    .. py:attribute:: LINK_SCU_BANK_A_SCU_MCU_MEMORY_BIST_FAULT (4):   0x4 - SCU MCU memory BIST fault
+
+    .. py:attribute:: LINK_SCU_BANK_A_SCU_MCU_LOGIC_BIST_FAULT (8):   0x8 - SCU MCU logic BIST fault
+
+    .. py:attribute:: LINK_SCU_BANK_A_SCU_MCU_STARTUP_BIST_TIMEOUT (16):   0x10 - SCU MCU startup BIST timeout
+
+    .. py:attribute:: LINK_SCU_BANK_A_SCU_MCU_CORE_TEMPERATURE_TOO_HIGH (64):   0x40 - SCU MCU core temperature too high
+
+    .. py:attribute:: LINK_SCU_BANK_A_SCU_MCU_CORE_TEMPERATURE_TOO_LOW (128):   0x80 - SCU MCU core temperature too low
+
+    .. py:attribute:: LINK_SCU_BANK_A_SCU_BOARD_TEMPERATURE_TOO_HIGH (256):   0x100 - SCU board temperature too high
+
+    .. py:attribute:: LINK_SCU_BANK_A_SCU_BOARD_TEMPERATURE_TOO_LOW (512):   0x200 - SCU board temperature too low
+
+    .. py:attribute:: LINK_SCU_BANK_A_RESERVED_1024 (1024):   0x400 - reserved
+
+    .. py:attribute:: LINK_SCU_BANK_A_RESERVED_2048 (2048):   0x800 - reserved
+
+    .. py:attribute:: LINK_SCU_BANK_A_SBC_SPI_CONFIGURATION_FAILED (4096):   0x1000 - SBC SPI configuration failed
+
+    .. py:attribute:: LINK_SCU_BANK_A_SBC_FAULT_DETECTED (8192):   0x2000 - SBC fault detected
+
+    .. py:attribute:: LINK_SCU_BANK_A_SBC_DEBUG_MODE_ACTIVE (16384):   0x4000 - SBC debug mode active
+
+    .. py:attribute:: LINK_SCU_BANK_A_CLAMP_VIN_OVERVOLTAGE (32768):   0x8000 - clamp Vin overvoltage
+
+    .. py:attribute:: LINK_SCU_BANK_A_CLAMP_VIN_UNDERVOLTAGE (65536):   0x10000 - clamp Vin_undervoltage
+
+    .. py:attribute:: LINK_SCU_BANK_A_CLAMP_VOUT_OVERVOLTAGE (131072):   0x20000 - clamp Vout overvoltage
+
+    .. py:attribute:: LINK_SCU_BANK_A_CLAMP_VOUT_UNDERVOLTAGE (262144):   0x40000 - clamp Vout undervoltage
+
+    .. py:attribute:: LINK_SCU_BANK_A_CLAMP_TEMPERATURE_TOO_HIGH (524288):   0x80000 - clamp temperature too high
+
+    .. py:attribute:: LINK_SCU_BANK_A_ARM_OVERCURRENT (1048576):   0x100000 - arm overcurrent
+
+    .. py:attribute:: LINK_SCU_BANK_A_EMERGENCY_STOP_BUTTON_SIGNALS_DISAGREEMENT (2097152):   0x200000 - emergency stop button signals disagreement
+
+    .. py:attribute:: LINK_SCU_BANK_A_SAFETY_INPUT_0_SIGNALS_DISAGREEMENT (4194304):   0x400000 - safety input 0 signals disagreement
+
+    .. py:attribute:: LINK_SCU_BANK_A_SAFETY_INPUT_1_SIGNALS_DISAGREEMENT (8388608):   0x800000 - safety input 1 signals disagreement
+
+    .. py:attribute:: LINK_SCU_BANK_A_SAFETY_INPUT_2_SIGNALS_DISAGREEMENT (16777216):   0x1000000 - safety input 2 signals disagreement
+
+    .. py:attribute:: LINK_SCU_BANK_A_SAFETY_INPUT_3_SIGNALS_DISAGREEMENT (33554432):   0x2000000 - safety input 3 signals disagreement
+
+    .. py:attribute:: LINK_SCU_BANK_A_SAFETY_INPUT_4_SIGNALS_DISAGREEMENT (67108864):   0x4000000 - safety input 4 signals disagreement
+
+    .. py:attribute:: LINK_SCU_BANK_A_SAFETY_INPUT_5_SIGNALS_DISAGREEMENT (134217728):   0x8000000 - safety input 5 signals disagreement
+
+    .. py:attribute:: LINK_SCU_BANK_A_SAFETY_INPUT_6_SIGNALS_DISAGREEMENT (268435456):   0x10000000 - safety input 6 signals disagreement
+
+    .. py:attribute:: LINK_SCU_BANK_A_SAFETY_INPUT_7_SIGNALS_DISAGREEMENT (536870912):   0x20000000 - safety input 7 signals disagreement
+
+    .. py:attribute:: LINK_SCU_BANK_A_TP_EMERGENCY_STOP_SIGNALS_DISAGREEMENT (1073741824):   0x40000000 - teach pendant emergency stop button signals disagreement
+
+    .. py:attribute:: LINK_SCU_BANK_A_TP_ENABLING_DEVICE_SIGNALS_DISAGREEMENT (-2147483648):   0x80000000 - teach pendant enabling device signals disagreement
+
+.. _BaseLinkSCUDiagnosticIdentifierBankB:
+
+.. py:class:: LinkSCUDiagnosticIdentifierBankB
+
+      Admissible Link SCU bank B diagnostics.  Used with BaseCyclic.BaseFeedback.scu_fault_bank_b 
+
+    :canonical: kortex_api.autogen.messages.Base_pb2.LinkSCUDiagnosticIdentifierBankB
+    .. py:attribute:: LINK_SCU_BANK_B_UNSPECIFIED_DIAGNOSTIC_IDENTIFIER (0):   0x0 - Unspecified Link SCU diagnostic bank B identifier
+
+    .. py:attribute:: LINK_SCU_BANK_B_SAFE_COMM_FAILURE_MPU (1):   0x1 - safe comm failure MPU
+
+    .. py:attribute:: LINK_SCU_BANK_B_SAFE_COMM_FAILURE_JOINT_1_MAIN_MCU (2):   0x2 - safe comm failure joint 1 main MCU
+
+    .. py:attribute:: LINK_SCU_BANK_B_SAFE_COMM_FAILURE_JOINT_1_SAFETY_MCU (4):   0x4 - safe comm failure joint 1 safety MCU
+
+    .. py:attribute:: LINK_SCU_BANK_B_SAFE_COMM_FAILURE_JOINT_2_MAIN_MCU (8):   0x8 - safe comm failure joint 2 main MCU
+
+    .. py:attribute:: LINK_SCU_BANK_B_SAFE_COMM_FAILURE_JOINT_2_SAFETY_MCU (16):   0x10 - safe comm failure joint 2 safety MCU
+
+    .. py:attribute:: LINK_SCU_BANK_B_SAFE_COMM_FAILURE_JOINT_3_MAIN_MCU (32):   0x20 - safe comm failure joint 3 main MCU
+
+    .. py:attribute:: LINK_SCU_BANK_B_SAFE_COMM_FAILURE_JOINT_3_SAFETY_MCU (64):   0x40 - safe comm failure joint 3 safety MCU
+
+    .. py:attribute:: LINK_SCU_BANK_B_SAFE_COMM_FAILURE_JOINT_4_MAIN_MCU (128):   0x80 - safe comm failure joint 4 main MCU
+
+    .. py:attribute:: LINK_SCU_BANK_B_SAFE_COMM_FAILURE_JOINT_4_SAFETY_MCU (256):   0x100 - safe comm failure joint 4 safety MCU
+
+    .. py:attribute:: LINK_SCU_BANK_B_SAFE_COMM_FAILURE_JOINT_5_MAIN_MCU (512):   0x200 - safe comm failure joint 5 main MCU
+
+    .. py:attribute:: LINK_SCU_BANK_B_SAFE_COMM_FAILURE_JOINT_5_SAFETY_MCU (1024):   0x400 - safe comm failure joint 5 safety MCU
+
+    .. py:attribute:: LINK_SCU_BANK_B_SAFE_COMM_FAILURE_JOINT_6_MAIN_MCU (2048):   0x800 - safe comm failure joint 6 main MCU
+
+    .. py:attribute:: LINK_SCU_BANK_B_SAFE_COMM_FAILURE_JOINT_6_SAFETY_MCU (4096):   0x1000 - safe comm failure joint 6 safety MCU
+
+    .. py:attribute:: LINK_SCU_BANK_B_SAFE_COMM_FAILURE_JOINT_7_MAIN_MCU (8192):   0x2000 - safe comm failure joint 7 main MCU
+
+    .. py:attribute:: LINK_SCU_BANK_B_SAFE_COMM_FAILURE_JOINT_7_SAFETY_MCU (16384):   0x4000 - safe comm failure joint 7 safety MCU
+
+    .. py:attribute:: LINK_SCU_BANK_B_SAFE_COMM_FAILURE_WRIST_MAIN_MCU (32768):   0x8000 - safe comm failure wrist main MCU
+
+    .. py:attribute:: LINK_SCU_BANK_B_SAFE_COMM_FAILURE_WRIST_SAFETY_MCU (65536):   0x10000 - safe comm failure wrist safety MCU
+
+    .. py:attribute:: LINK_SCU_BANK_B_SAFE_DI_BANK_A_CONFIGURATION_FAILED (131072):   0x20000 - safe DI bank A configuration failed
+
+    .. py:attribute:: LINK_SCU_BANK_B_SAFE_DI_BANK_A_SPI_COMMUNICATION_FAILURE (262144):   0x40000 - safe DI bank A SPI communication failure
+
+    .. py:attribute:: LINK_SCU_BANK_B_SAFE_DI_BANK_A_FAULT_DETECTED (524288):   0x80000 - safe DI bank A fault detected
+
+    .. py:attribute:: LINK_SCU_BANK_B_SAFE_DI_RESERVED_0 (1048576):   0x100000 - safe DI bank A reserved 0
+
+    .. py:attribute:: LINK_SCU_BANK_B_SAFE_DI_RESERVED_1 (2097152):   0x200000 - safe DI bank A reserved 1
+
+    .. py:attribute:: LINK_SCU_BANK_B_SAFE_DI_RESERVED_2 (4194304):   0x400000 - safe DI bank A reserved 2
+
+    .. py:attribute:: LINK_SCU_BANK_B_SAFE_DI_RESERVED_3 (8388608):   0x800000 - safe DI bank A reserved 3
+
+    .. py:attribute:: LINK_SCU_BANK_B_SAFE_DI_RESERVED_4 (16777216):   0x1000000 - safe DI bank A reserved 4
+
+    .. py:attribute:: LINK_SCU_BANK_B_SAFE_DI_RESERVED_5 (33554432):   0x2000000 - safe DI bank A reserved 5
+
+    .. py:attribute:: LINK_SCU_BANK_B_SAFE_DI_RESERVED_6 (67108864):   0x4000000 - safe DI bank A reserved 6
+
+    .. py:attribute:: LINK_SCU_BANK_B_SAFE_DI_RESERVED_7 (134217728):   0x8000000 - safe DI bank A reserved 7
+
+.. _BaseLinkSCUDiagnosticIdentifierBankC:
+
+.. py:class:: LinkSCUDiagnosticIdentifierBankC
+
+      Admissible Link SCU bank C diagnostics.  Used with BaseCyclic.BaseFeedback.scu_fault_bank_c 
+
+    :canonical: kortex_api.autogen.messages.Base_pb2.LinkSCUDiagnosticIdentifierBankC
+    .. py:attribute:: LINK_SCU_BANK_C_UNSPECIFIED_DIAGNOSTIC_IDENTIFIER (0):   0x0 - Unspecified Link SCU diagnostic bank C identifier
+
+    .. py:attribute:: LINK_SCU_BANK_C_SAFE_DI_BANK_B_CONFIGURATION_FAILED (1):   0x1 - safe DI bank B configuration failed
+
+    .. py:attribute:: LINK_SCU_BANK_C_SAFE_DI_BANK_B_SPI_COMMUNICATION_FAILURE (2):   0x2 - safe DI bank B SPI communication failure
+
+    .. py:attribute:: LINK_SCU_BANK_C_SAFE_DI_BANK_B_FAULT_DETECTED (4):   0x4 - safe DI bank B fault detected
+
+    .. py:attribute:: LINK_SCU_BANK_C_ENABLING_DEVICE_OPERATING_MODE_VIOLATION (8):   0x8 - Enabling devices vs. arm operating mode violation detected
+
+    .. py:attribute:: LINK_SCU_BANK_C_WRIST_ENABLING_DEVICE_OPERATING_MODE_VIOLATION (16):   0x10 - Wrist enabling device vs. arm operating mode violation detected
+
+    .. py:attribute:: LINK_SCU_BANK_C_TCP_POSITION_DISAGREEMENT (32):   0x20 - tcp position disagreement
+
+    .. py:attribute:: LINK_SCU_BANK_C_TCP_ORIENTATION_DISAGREEMENT (64):   0x40 - tcp orientation disagreement
+
+    .. py:attribute:: LINK_SCU_BANK_C_TCP_TRANSLATION_SPEED_DISAGREEMENT (128):   0x80 - tcp translation speed disagreement
+
+    .. py:attribute:: LINK_SCU_BANK_C_TCP_ROTATION_SPEED_DISAGREEMENT (256):   0x100 - tcp rotation speed disagreement
+
+    .. py:attribute:: LINK_SCU_BANK_C_TCP_MONITORING_RESERVED_0 (512):   0x200 - tcp monitoring reserved 0
+
+    .. py:attribute:: LINK_SCU_BANK_C_TCP_MONITORING_RESERVED_1 (1024):   0x400 - tcp monitoring reserved 1
+
+    .. py:attribute:: LINK_SCU_BANK_C_SAFE_DO_BANK_A_CONFIGURATION_FAILED (2048):   0x800 - safe DO bank A configuration failed
+
+    .. py:attribute:: LINK_SCU_BANK_C_SAFE_DO_BANK_A_SPI_COMMUNICATION_FAILURE (4096):   0x1000 - safe DO bank A SPI communication failure
+
+    .. py:attribute:: LINK_SCU_BANK_C_SAFE_DO_BANK_A_UNDERVOLTAGE_LOCKOUT (8192):   0x2000 - safe DO bank A undervoltage lockout
+
+    .. py:attribute:: LINK_SCU_BANK_C_SAFE_DO_BANK_A_CHA_0_FAULT_DETECTED (16384):   0x4000 - safe DO bank A channel 0 fault detected
+
+    .. py:attribute:: LINK_SCU_BANK_C_SAFE_DO_BANK_A_CHA_1_FAULT_DETECTED (32768):   0x8000 - safe DO bank A channel 1 fault detected
+
+    .. py:attribute:: LINK_SCU_BANK_C_SAFE_DO_BANK_A_CHA_2_FAULT_DETECTED (65536):   0x10000 - safe DO bank A channel 2 fault detected
+
+    .. py:attribute:: LINK_SCU_BANK_C_SAFE_DO_BANK_A_CHA_3_FAULT_DETECTED (131072):   0x20000 - safe DO bank A channel 3 fault detected
+
+    .. py:attribute:: LINK_SCU_BANK_C_SAFE_DO_BANK_A_CHA_4_FAULT_DETECTED (262144):   0x40000 - safe DO bank A channel 4 fault detected
+
+    .. py:attribute:: LINK_SCU_BANK_C_SAFE_DO_BANK_A_CHA_5_FAULT_DETECTED (524288):   0x80000 - safe DO bank A channel 5 fault detected
+
+    .. py:attribute:: LINK_SCU_BANK_C_SAFE_DO_BANK_A_CHA_6_FAULT_DETECTED (1048576):   0x100000 - safe DO bank A channel 6 fault detected
+
+    .. py:attribute:: LINK_SCU_BANK_C_SAFE_DO_BANK_A_CHA_7_FAULT_DETECTED (2097152):   0x200000 - safe DO bank A channel 7 fault detected
+
+    .. py:attribute:: LINK_SCU_BANK_C_SAFE_DO_BANK_B_CONFIGURATION_FAILED (4194304):   0x400000 - safe DO bank B configuration failed
+
+    .. py:attribute:: LINK_SCU_BANK_C_SAFE_DO_BANK_B_SPI_COMMUNICATION_FAILURE (8388608):   0x800000 - safe DO bank B SPI communication failure
+
+    .. py:attribute:: LINK_SCU_BANK_C_SAFE_DO_BANK_B_UNDERVOLTAGE_LOCKOUT (16777216):   0x1000000 - safe DO bank B undervoltage lockout
+
+    .. py:attribute:: LINK_SCU_BANK_C_SAFE_DO_BANK_B_CHA_0_FAULT_DETECTED (33554432):   0x2000000 - safe DO bank B channel 0 fault detected
+
+    .. py:attribute:: LINK_SCU_BANK_C_SAFE_DO_BANK_B_CHA_1_FAULT_DETECTED (67108864):   0x4000000 - safe DO bank B channel 1 fault detected
+
+    .. py:attribute:: LINK_SCU_BANK_C_SAFE_DO_BANK_B_CHA_2_FAULT_DETECTED (134217728):   0x8000000 - safe DO bank B channel 2 fault detected
+
+    .. py:attribute:: LINK_SCU_BANK_C_SAFE_DO_BANK_B_CHA_3_FAULT_DETECTED (268435456):   0x10000000 - safe DO bank B channel 3 fault detected
+
+    .. py:attribute:: LINK_SCU_BANK_C_SAFE_DO_BANK_B_CHA_4_FAULT_DETECTED (536870912):   0x20000000 - safe DO bank B channel 4 fault detected
+
+    .. py:attribute:: LINK_SCU_BANK_C_SAFE_DO_BANK_B_CHA_5_FAULT_DETECTED (1073741824):   0x40000000 - safe DO bank B channel 5 fault detected
+
+.. _BaseLinkSCUDiagnosticIdentifierBankD:
+
+.. py:class:: LinkSCUDiagnosticIdentifierBankD
+
+      Admissible Link SCU bank D diagnostics.  Used with BaseCyclic.BaseFeedback.scu_fault_bank_d 
+
+    :canonical: kortex_api.autogen.messages.Base_pb2.LinkSCUDiagnosticIdentifierBankD
+    .. py:attribute:: LINK_SCU_BANK_D_UNSPECIFIED_DIAGNOSTIC_IDENTIFIER (0):   0x0 - Unspecified Link SCU diagnostic bank D identifier
+
+    .. py:attribute:: LINK_SCU_BANK_D_SAFE_DO_BANK_B_CHA_6_FAULT_DETECTED (1):   0x1 - safe DO bank B channel 6 fault detected
+
+    .. py:attribute:: LINK_SCU_BANK_D_SAFE_DO_BANK_B_CHA_7_FAULT_DETECTED (2):   0x2 - safe DO bank B channel 7 fault detected
+
+    .. py:attribute:: LINK_SCU_BANK_D_FCCU_RESET_OCCURRED (4):   0x4 - FCCU reset occurred
+
+    .. py:attribute:: LINK_SCU_BANK_D_SOFTWARE_WATCHDOG_TIMER_RESET_OCCURRED (8):   0x8 - software watchdog timer reset occurred
+
+    .. py:attribute:: LINK_SCU_BANK_D_SBC_WATCHDOG_RESET_OCCURRED (16):   0x10 - SBC watchdog reset occurred
+
+    .. py:attribute:: LINK_SCU_BANK_D_JOINT_FAULT_DETECTED (32):   0x20 - joint fault detected
+
+    .. py:attribute:: LINK_SCU_BANK_D_JOINT_1_POSITION_DISAGREEMENT (64):   0x40 - joint 1 position disagreement
+
+    .. py:attribute:: LINK_SCU_BANK_D_JOINT_2_POSITION_DISAGREEMENT (128):   0x80 - joint 2 position disagreement
+
+    .. py:attribute:: LINK_SCU_BANK_D_JOINT_3_POSITION_DISAGREEMENT (256):   0x100 - joint 3 position disagreement
+
+    .. py:attribute:: LINK_SCU_BANK_D_JOINT_4_POSITION_DISAGREEMENT (512):   0x200 - joint 4 position disagreement
+
+    .. py:attribute:: LINK_SCU_BANK_D_JOINT_5_POSITION_DISAGREEMENT (1024):   0x400 - joint 5 position disagreement
+
+    .. py:attribute:: LINK_SCU_BANK_D_JOINT_6_POSITION_DISAGREEMENT (2048):   0x800 - joint 6 position disagreement
+
+    .. py:attribute:: LINK_SCU_BANK_D_JOINT_7_POSITION_DISAGREEMENT (4096):   0x1000 - joint 7 position disagreement
+
+    .. py:attribute:: LINK_SCU_BANK_D_JOINT_1_SPEED_DISAGREEMENT (8192):   0x2000 - joint 1 speed disagreement
+
+    .. py:attribute:: LINK_SCU_BANK_D_JOINT_2_SPEED_DISAGREEMENT (16384):   0x4000 - joint 2 speed disagreement
+
+    .. py:attribute:: LINK_SCU_BANK_D_JOINT_3_SPEED_DISAGREEMENT (32768):   0x8000 - joint 3 speed disagreement
+
+    .. py:attribute:: LINK_SCU_BANK_D_JOINT_4_SPEED_DISAGREEMENT (65536):   0x10000 - joint 4 speed disagreement
+
+    .. py:attribute:: LINK_SCU_BANK_D_JOINT_5_SPEED_DISAGREEMENT (131072):   0x20000 - joint 5 speed disagreement
+
+    .. py:attribute:: LINK_SCU_BANK_D_JOINT_6_SPEED_DISAGREEMENT (262144):   0x40000 - joint 6 speed disagreement
+
+    .. py:attribute:: LINK_SCU_BANK_D_JOINT_7_SPEED_DISAGREEMENT (524288):   0x80000 - joint 7 speed disagreement
+
+    .. py:attribute:: LINK_SCU_BANK_D_JOINT_1_TORQUE_DISAGREEMENT (1048576):   0x100000 - joint 1 torque disagreement
+
+    .. py:attribute:: LINK_SCU_BANK_D_JOINT_2_TORQUE_DISAGREEMENT (2097152):   0x200000 - joint 2 torque disagreement
+
+    .. py:attribute:: LINK_SCU_BANK_D_JOINT_3_TORQUE_DISAGREEMENT (4194304):   0x400000 - joint 3 torque disagreement
+
+    .. py:attribute:: LINK_SCU_BANK_D_JOINT_4_TORQUE_DISAGREEMENT (8388608):   0x800000 - joint 4 torque disagreement
+
+    .. py:attribute:: LINK_SCU_BANK_D_JOINT_5_TORQUE_DISAGREEMENT (16777216):   0x1000000 - joint 5 torque disagreement
+
+    .. py:attribute:: LINK_SCU_BANK_D_JOINT_6_TORQUE_DISAGREEMENT (33554432):   0x2000000 - joint 6 torque disagreement
+
+    .. py:attribute:: LINK_SCU_BANK_D_JOINT_7_TORQUE_DISAGREEMENT (67108864):   0x4000000 - joint 7 torque disagreement
+
+    .. py:attribute:: LINK_SCU_BANK_D_ARM_POWER_RELAY_A_STUCK (134217728):   0x8000000 - power relay A is stuck
+
+    .. py:attribute:: LINK_SCU_BANK_D_ARM_POWER_RELAY_B_STUCK (268435456):   0x10000000 - power relay B is stuck
+
+    .. py:attribute:: LINK_SCU_BANK_D_ARM_INRUSH_CURRENT_LIMITER_MOSFET_STUCK (536870912):   0x20000000 - inrush current limiter mosfet circuit is stuck
+
+    .. py:attribute:: LINK_SCU_BANK_D_EMERGENCY_STOP_DELAY_CIRCUIT_A_MALFUNCTION (1073741824):   0x40000000 - malfunction detected in Emergency Stop Delay Circuit A
+
+    .. py:attribute:: LINK_SCU_BANK_D_EMERGENCY_STOP_DELAY_CIRCUIT_B_MALFUNCTION (-2147483648):   0x80000000 - malfunction detected in Emergency Stop Delay Circuit B
+
+.. _BaseWrenchMode:
+
+.. py:class:: WrenchMode
+
+     Admissible wrench (force) modes
+
+    :canonical: kortex_api.autogen.messages.Base_pb2.WrenchMode
+    .. py:attribute:: UNSPECIFIED_WRENCH_MODE (0):   Unspecified wrench mode
+
+    .. py:attribute:: WRENCH_RESTRICTED (1):   Wrench restricted mode (tool motion is authorized only in the direction of the wrench command)
+
+    .. py:attribute:: WRENCH_NORMAL (2):   Wrench normal mode (tool motion is authorized in any direction)
+
+.. _BaseHandGuidingMode:
+
+.. py:class:: HandGuidingMode
+
+     Admissible Hand-Guiding modes
+
+    :canonical: kortex_api.autogen.messages.Base_pb2.HandGuidingMode
+    .. py:attribute:: UNSPECIFIED_HAND_GUIDING_MODE (0):   Unspecified Hand-Guiding mode
+
+    .. py:attribute:: CARTESIAN (1):   Cartesian Hand-Guiding mode
+
+    .. py:attribute:: JOINT (2):   Joint Hand-Guiding mode
+
+    .. py:attribute:: NULL_SPACE (3):   Null space Hand-Guiding mode
+
+    .. py:attribute:: DISABLED (4):   No Hand-Guiding
+
+.. _BaseNavigationDirection:
+
+.. py:class:: NavigationDirection
+
+     Admissible map navigation directions
+
+    :canonical: kortex_api.autogen.messages.Base_pb2.NavigationDirection
+    .. py:attribute:: UNSPECIFIED_NAVIGATION_DIRECTION (0):   Unspecified navigation direction
+
+    .. py:attribute:: NEXT (1):   Go to next map
+
+    .. py:attribute:: UP (2):   Go to parent map group (not implemented yet)
+
+    .. py:attribute:: DOWN (3):   Go to children map group (not implemented yet)
+
+    .. py:attribute:: PREVIOUS (4):   Go to previous map
+
+.. _BaseJointNavigationDirection:
+
+.. py:class:: JointNavigationDirection
+
+     Admissible joint navigation directions
+
+    :canonical: kortex_api.autogen.messages.Base_pb2.JointNavigationDirection
+    .. py:attribute:: UNSPECIFIED_JOINT_NAVIGATION_DIRECTION (0):   Unspecified joint navigation direction
+
+    .. py:attribute:: JOINT_NEXT (1):   Go to next joint
+
+    .. py:attribute:: JOINT_PREVIOUS (2):   Go to previous joint
+
+.. _BaseSoundType:
+
+.. py:class:: SoundType
+
+     Admissible sound types (not implemented yet)
+
+    :canonical: kortex_api.autogen.messages.Base_pb2.SoundType
+    .. py:attribute:: UNSPECIFIED_SOUND_TYPE (0):   Unspecified sound types
+
+    .. py:attribute:: BIP_SERIES (1):   Bip series sound type
+
+    .. py:attribute:: SINGLE_BIP (2):   Single bin sound type
+
+.. _BaseXboxOneDigitalInputIdentifier:
+
+.. py:class:: XboxOneDigitalInputIdentifier
+
+     Admissible XBOXONE digital inputs
+
+    :canonical: kortex_api.autogen.messages.Base_pb2.XboxOneDigitalInputIdentifier
+    .. py:attribute:: UNSPECIFIED_XBOXONE_DIGITAL (0):   Unspecified  digital input
+
+    .. py:attribute:: XBOXONE_PAD_UP (1):   Pad up input
+
+    .. py:attribute:: XBOXONE_PAD_DOWN (2):   Pad down input
+
+    .. py:attribute:: XBOXONE_PAD_LEFT (3):   Pad left input
+
+    .. py:attribute:: XBOXONE_PAD_RIGHT (4):   Pad right input
+
+    .. py:attribute:: XBOXONE_FILE_BUTTON_START (5):   File button start input
+
+    .. py:attribute:: XBOXONE_DOCUMENT_BUTTON_BACK (6):   Document button back input
+
+    .. py:attribute:: XBOXONE_LEFT_THUMB_BUTTON (7):   Left thumb button input
+
+    .. py:attribute:: XBOXONE_RIGHT_THUMB_BUTTON (8):   Right thumb button input
+
+    .. py:attribute:: XBOXONE_LEFT_SHOULDER (9):   Left shoulder input
+
+    .. py:attribute:: XBOXONE_RIGHT_SHOULDER (10):   Right shoulder input
+
+    .. py:attribute:: XBOXONE_BUTTON_A (13):   Button A input
+
+    .. py:attribute:: XBOXONE_BUTTON_B (14):   Button B input
+
+    .. py:attribute:: XBOXONE_BUTTON_X (15):   Button X input
+
+    .. py:attribute:: XBOXONE_BUTTON_Y (16):   Button Y input
+
+.. _BaseXboxOneAnalogInputIdentifier:
+
+.. py:class:: XboxOneAnalogInputIdentifier
+
+     Admissible XBOXONE analog inputs
+
+    :canonical: kortex_api.autogen.messages.Base_pb2.XboxOneAnalogInputIdentifier
+    .. py:attribute:: UNSPECIFIED_XBOXONE_ANALOG (0):   Unspecified analog input
+
+    .. py:attribute:: XBOXONE_THUMB_LEFT_X (1):   Thumb left X input
+
+    .. py:attribute:: XBOXONE_THUMB_LEFT_Y (2):   Thumb left Y input
+
+    .. py:attribute:: XBOXONE_THUMB_RIGHT_X (3):   Thumb right X input
+
+    .. py:attribute:: XBOXONE_THUMB_RIGHT_Y (4):   Thumb right Y input
+
+    .. py:attribute:: XBOXONE_TRIGGER_LEFT (5):   Trigger left input
+
+    .. py:attribute:: XBOXONE_TRIGGER_RIGHT (6):   Trigger right input
+
+.. _BaseGen3WristDigitalInputIdentifier:
+
+.. py:class:: Gen3WristDigitalInputIdentifier
+
+     Admissible Gen3 wrist digital inputs
+
+    :canonical: kortex_api.autogen.messages.Base_pb2.Gen3WristDigitalInputIdentifier
+    .. py:attribute:: UNSPECIFIED_WRIST_DIGITAL (0):   Unspecified digital input
+
+    .. py:attribute:: WRIST_BUTTON_1 (1):   Button 1 input
+
+    .. py:attribute:: WRIST_BUTTON_2 (2):   Button 2 input
+
+    .. py:attribute:: WRIST_BUTTON_BOTH (3):   Button 1 + Button 2 combo
+
+.. _BaseLink6WristDigitalInputIdentifier:
+
+.. py:class:: Link6WristDigitalInputIdentifier
+
+     Admissible Link 6 wrist digital inputs
+
+    :canonical: kortex_api.autogen.messages.Base_pb2.Link6WristDigitalInputIdentifier
+    .. py:attribute:: UNSPECIFIED_BUTTON (0):   Unspecified digital input
+
+    .. py:attribute:: HAND_GUIDING_BUTTON (1):   Hand-Guiding button
+
+    .. py:attribute:: SNAPSHOT_BUTTON (2):   Snapshot button
+
+    .. py:attribute:: PLUS_BUTTON (3):   "Plus" button (+)
+
+    .. py:attribute:: MINUS_BUTTON (4):   "Minus" button (-)
+
+    .. py:attribute:: MODE_SELECTION_BUTTON (5):   Mode selection button
+
+.. _BaseCapSenseMode:
+
+.. py:class:: CapSenseMode
+
+     Admissible capacitive sensor modes
+
+    :canonical: kortex_api.autogen.messages.Base_pb2.CapSenseMode
+    .. py:attribute:: RESERVED (0):   Reserved, do not use
+
+    .. py:attribute:: INACTIVE (1):   Cap sensor is inactive
+
+    .. py:attribute:: ACTIVE_AUTO_THRESHOLD (2):   Cap sensor is active in automatic threshold mode
+
+    .. py:attribute:: ACTIVE_NOISE_ATT (4):   Cap sensor is active with noise mitigation enabled
+
+    .. py:attribute:: ACTIVE_NORMAL (5):   Cap sensor is active in normal mode
+
+    .. py:attribute:: CONFIGURATION (6):   Configuration mode
+
+.. _BaseTrajectoryContinuityMode:
+
+.. py:class:: TrajectoryContinuityMode
+
+     Admissible trajectory continuity mode
+
+    :canonical: kortex_api.autogen.messages.Base_pb2.TrajectoryContinuityMode
+    .. py:attribute:: TRAJECTORY_CONTINUITY_MODE_UNSPECIFIED (0):   Unspecified continuity
+
+    .. py:attribute:: TRAJECTORY_CONTINUITY_MODE_POSITION (1):   Position continuity only
+
+    .. py:attribute:: TRAJECTORY_CONTINUITY_MODE_SPEED (2):   Position and speed continuity
+
+    .. py:attribute:: TRAJECTORY_CONTINUITY_MODE_ACCELERATION (3):   Position, speed and acceleration continuity
+
+.. _BaseTrajectoryErrorType:
+
+.. py:class:: TrajectoryErrorType
+
+     Trajectory validation error types
+
+    :canonical: kortex_api.autogen.messages.Base_pb2.TrajectoryErrorType
+    .. py:attribute:: TRAJECTORY_ERROR_TYPE_UNSPECIFIED (0):   Unspecified error type
+
+    .. py:attribute:: TRAJECTORY_ERROR_TYPE_OUTSIDE_WORKSPACE (1):   The desired pose is outside robot workspace
+
+    .. py:attribute:: TRAJECTORY_ERROR_TYPE_ACTUATOR_COUNT_MISMATCH (2):   The provided number of joint values does not match robot's number of actuators
+
+    .. py:attribute:: TRAJECTORY_ERROR_TYPE_INVALID_DURATION (3):   The duration exceeds a limit or is invalid
+
+    .. py:attribute:: TRAJECTORY_ERROR_TYPE_JOINT_NO_MOTION (4):   The robot's actuators are already at the targeted configuration
+
+    .. py:attribute:: TRAJECTORY_ERROR_TYPE_INVALID_JOINT_SPEED (5):   The joint speed exceeds a limit, initial speed does not match current robot speed or is invalid
+
+    .. py:attribute:: TRAJECTORY_ERROR_TYPE_INVALID_JOINT_ACCELERATION (7):   The joint acceleration exceeds a limit or is invalid
+
+    .. py:attribute:: TRAJECTORY_ERROR_TYPE_INVALID_TIME_STEP (8):   The time step does not match robot time step or is invalid
+
+    .. py:attribute:: TRAJECTORY_ERROR_TYPE_INVALID_TRAJECTORY_SIZE (9):   The trajectory size is outside the limits or is invalid
+
+    .. py:attribute:: TRAJECTORY_ERROR_TYPE_INVALID_JOINT_POSITION (11):   The joint position exceeds a limit, initial joint position does not match current robot joint position or is invalid
+
+    .. py:attribute:: TRAJECTORY_ERROR_TYPE_TRAJECTORY_ALREADY_RUNNING (15):   The new trajectory cannot start because another trajectory is being played
+
+    .. py:attribute:: TRAJECTORY_ERROR_TYPE_INVALID_CARTESIAN_POSITION (20):   The cartesian position exceeds a limit, initial pose does not match current robot pose or is invalid
+
+    .. py:attribute:: TRAJECTORY_ERROR_TYPE_INVALID_CARTESIAN_ORIENTATION (21):   The cartesian orientation exceeds a limit, initial orientation does not match current robot orientation or is invalid
+
+    .. py:attribute:: TRAJECTORY_ERROR_TYPE_INVALID_CARTESIAN_LINEAR_VELOCITY (22):   The cartesian linear velocity exceeds a limit or is invalid
+
+    .. py:attribute:: TRAJECTORY_ERROR_TYPE_INVALID_CARTESIAN_ANGULAR_VELOCITY (23):   The cartesian angular velocity exceeds a limit or is invalid
+
+    .. py:attribute:: TRAJECTORY_ERROR_TYPE_INVALID_JOINT_TORQUE (24):   The joint torque exceeds a limit or is invalid
+
+    .. py:attribute:: TRAJECTORY_ERROR_TYPE_MULTIPLE_WAYPOINT_TYPE_LIST (25):   The waypoints in a trajectory must be all of the same type (cartesian or angular)
+
+    .. py:attribute:: TRAJECTORY_ERROR_TYPE_INITIAL_WAYPOINT_NO_STOP (26):   The first waypoint must not have blending
+
+    .. py:attribute:: TRAJECTORY_ERROR_TYPE_FINAL_WAYPOINT_NO_STOP (27):   The last waypoint must not have blending
+
+    .. py:attribute:: TRAJECTORY_ERROR_TYPE_INVALID_BLENDING_RADIUS (28):   The blending radius must be positive and not overlap other blendings or waypoint or is invalid
+
+    .. py:attribute:: TRAJECTORY_ERROR_TYPE_INVALID_REFERENCE_FRAME (29):   The reference frame is invalid or not supported
+
+    .. py:attribute:: TRAJECTORY_ERROR_TYPE_NUMERICAL_ERROR_IMPOSSIBLE_TRAJECTORY (30):   The conditions (points, velocities) of the trajectory lead to numerical errors that make the computation impossible
+
+    .. py:attribute:: TRAJECTORY_ERROR_TYPE_CONTROLLED_STOP_IN_PROGRESS (31):   A controlled stop is in progress
+
+    .. py:attribute:: TRAJECTORY_ERROR_TYPE_COMPUTE_FAIL_UNEXPECTED_ERROR (32):   Computation of Waypoint trajectory failed due to an unknown error.
+
+.. _BaseTrajectoryInfoType:
+
+.. py:class:: TrajectoryInfoType
+
+     Additional trajectory info type
+
+    :canonical: kortex_api.autogen.messages.Base_pb2.TrajectoryInfoType
+    .. py:attribute:: UNSPECIFIED_TRAJECTORY_INFORMATION (0):   No information provided
+
+    .. py:attribute:: JOINT_ACCELERATION_LIMIT_REACHED (1):   Joint acceleration limit reached
+
+    .. py:attribute:: JOINT_SPEED_LIMIT_REACHED (2):   Joint speed limit reached
+
+    .. py:attribute:: JOINT_POSITION_LIMIT_REACHED (3):   Joint position limit reached
+
+    .. py:attribute:: JOINT_TORQUE_LIMIT_REACHED (4):   Joint torque limit reached
+
+    .. py:attribute:: SINGULARITY_REGION (5):   The arm is inside a singularity region
+
+    .. py:attribute:: INVERSE_KINEMATIC_FAILED (6):   The inverse kinematic calculation has failed
+
+    .. py:attribute:: CARTESIAN_ACCELERATION_LIMIT_REACHED (7):   Cartesian acceleration limit reached
+
+    .. py:attribute:: CARTESIAN_SPEED_LIMIT_REACHED (8):   Cartesian speed limit reached
+
+    .. py:attribute:: CARTESIAN_POSITION_LIMIT_REACHED (9):   Cartesian position limit reached
+
+    .. py:attribute:: CARTESIAN_WRENCH_LIMIT_REACHED (10):   Cartesian torque limit reached
+
+    .. py:attribute:: ENTERING_PROTECTION_ZONE (11):   The arm is entering a protection zone
+
+    .. py:attribute:: WAYPOINT_REACHED (12):   Waypoint reached
+
+    .. py:attribute:: TRAJECTORY_OK (13):   There is more trajectory notification
+
+.. _BaseEnablingDeviceEvent:
+
+.. py:class:: EnablingDeviceEvent
+
+     Enabling device event type
+
+    :canonical: kortex_api.autogen.messages.Base_pb2.EnablingDeviceEvent
+    .. py:attribute:: UNSPECIFIED_ENABLING_DEVICE_EVENT (0):   No enabling device event
+
+    .. py:attribute:: ENABLING_DEVICE_PRESSED (1):   The enabling device has been pressed
+
+    .. py:attribute:: ENABLING_DEVICE_RELEASED (2):   The enabling device has been released
+
+.. _BaseEnablingDeviceType:
+
+.. py:class:: EnablingDeviceType
+
+     Enabling device type
+
+    :canonical: kortex_api.autogen.messages.Base_pb2.EnablingDeviceType
+    .. py:attribute:: UNSPECIFIED_ENABLING_DEVICE_TYPE (0):   Unspecified enabling device
+
+    .. py:attribute:: WRIST_ENABLING_DEVICE (1):   Wrist enabling device
+
+    .. py:attribute:: TEACH_PENDANT_ENABLING_DEVICE (2):   Teach pendant enabling device
+
+    .. py:attribute:: SAFETY_INPUT_ENABLING_DEVICE (3):   Safety input enabling device
+
+.. _BaseInverseKinematicsEventType:
+
+.. py:class:: InverseKinematicsEventType
+
+     Inverse kinematics event type
+
+    :canonical: kortex_api.autogen.messages.Base_pb2.InverseKinematicsEventType
+    .. py:attribute:: UNSPECIFIED_IK_EVENT (0):   Unspecified inverse kinematics event
+
+    .. py:attribute:: IK_SOLUTION_NOT_FOUND (1):   Inverse kinematic solution event
+
+    .. py:attribute:: IK_SINGULARITY_REGION (2):   Arm is in a singularity region event
+
+.. _BaseJointLimitEventType:
+
+.. py:class:: JointLimitEventType
+
+     Joint limit event type
+
+    :canonical: kortex_api.autogen.messages.Base_pb2.JointLimitEventType
+    .. py:attribute:: UNSPECIFIED_JOINT_LIMIT_EVENT (0):   Unspecified joint limit event
+
+    .. py:attribute:: JOINT_LIMIT_ACCELERATION (1):   Joint acceleration limit reached
+
+    .. py:attribute:: JOINT_LIMIT_SPEED (2):   Joint speed limit reached
+
+    .. py:attribute:: JOINT_LIMIT_POSITION (3):   Joint position limit reached
+
+    .. py:attribute:: JOINT_LIMIT_POSITION_TOWARDS_LIMITS (4):   Joint moving toward joint position limits
+
+    .. py:attribute:: JOINT_LIMIT_TORQUE (5):   Joint torque limit reached
+
+    .. py:attribute:: JOINT_LIMIT_ACCELERATION_SATURATED (6):   Joint acceleration saturated
+
+    .. py:attribute:: JOINT_LIMIT_SPEED_SATURATED (7):   Joint speed saturated
+
+    .. py:attribute:: JOINT_LIMIT_POSITION_SATURATED (8):   Joint position saturated
+
+    .. py:attribute:: JOINT_LIMIT_TRACKING_ERROR (9):   Joint position tracking error has exceeded the configured robot joint position tracking error limit
+
+.. _BaseProtectionZoneEventType:
+
+.. py:class:: ProtectionZoneEventType
+
+     Protection zone event type
+
+    :canonical: kortex_api.autogen.messages.Base_pb2.ProtectionZoneEventType
+    .. py:attribute:: UNSPECIFIED_PROTECTION_ZONE_EVENT (0):   Unspecified protection zone event
+
+    .. py:attribute:: PROTECTION_ZONE_INSIDE_REDUCED_SPEED_ZONE (1):   The tool or the arm has entered a reduced speed zone
+
+    .. py:attribute:: PROTECTION_ZONE_INSIDE_STOP_ZONE (2):   The tool or the arm has entered in a protection zone (stopping)
+
+.. _BaseProtectionZoneElementType:
+
+.. py:class:: ProtectionZoneElementType
+
+     Protection zone element type
+
+    :canonical: kortex_api.autogen.messages.Base_pb2.ProtectionZoneElementType
+    .. py:attribute:: UNSPECIFIED_PROTECTION_ZONE_ELEMENT (0):   Unspecified protection zone element type
+
+    .. py:attribute:: PROTECTION_ZONE_ELEMENT_TOOL (1):   The tool has triggered the protection zone event
+
+    .. py:attribute:: PROTECTION_ZONE_ELEMENT_ARM (2):   The arm has triggered the protection zone event
+
+.. _BaseCollisionEventType:
+
+.. py:class:: CollisionEventType
+
+     Collision event type
+
+    :canonical: kortex_api.autogen.messages.Base_pb2.CollisionEventType
+    .. py:attribute:: UNSPECIFIED_COLLISION_EVENT (0):   Unspecified collision event type
+
+    .. py:attribute:: COLLISION_DETECTED_EVENT (1):   A Collision has been detected on one or many joints
+
+    .. py:attribute:: SELF_COLLISION_PREVENTED_EVENT (2):   A self collision between two joints has been prevented
+
+.. _BaseCartesianLimitEventType:
+
+.. py:class:: CartesianLimitEventType
+
+     Cartesian limit event type
+
+    :canonical: kortex_api.autogen.messages.Base_pb2.CartesianLimitEventType
+    .. py:attribute:: UNSPECIFIED_CARTESIAN_LIMIT_EVENT (0):   Unspecified cartesian limit event
+
+    .. py:attribute:: TOOL_LINEAR_VELOCITY_LIMIT (1):   Tool linear velocity limit reached
+
+    .. py:attribute:: TOOL_ANGULAR_VELOCITY_LIMIT (2):   Tool angular velocity limit reached
+
+    .. py:attribute:: ELBOW_LINEAR_VELOCITY_LIMIT (3):   Elbow linear velocity limit reached
+
+    .. py:attribute:: TOOL_LINEAR_VELOCITY_SATURATED (4):   Tool linear velocity saturated
+
+    .. py:attribute:: TOOL_ANGULAR_VELOCITY_SATURATED (5):   Tool angular velocity saturated
+
+    .. py:attribute:: ELBOW_LINEAR_VELOCITY_SATURATED (6):   Elbow linear velocity saturated
+
+.. _BaseProgramRequestEventType:
+
+.. py:class:: ProgramRequestEventType
+
+     Program request event type
+
+    :canonical: kortex_api.autogen.messages.Base_pb2.ProgramRequestEventType
+    .. py:attribute:: PROGRAM_REQUEST_UNSPECIFIED (0):   Unspecified program request
+
+    .. py:attribute:: PROGRAM_REQUEST_PAUSE (1):   Program request pause
+
+    .. py:attribute:: PROGRAM_REQUEST_RESUME (2):   Program request resume
+
+    .. py:attribute:: PROGRAM_REQUEST_STOP (3):   Program request stop
+
+    .. py:attribute:: PROGRAM_REQUEST_PAUSE_AUTOMATIC_RESUME (4):   Program request pause with automatic resume
+
+.. _BaseAcknowledgeActionEvent:
+
+.. py:class:: AcknowledgeActionEvent
+
+     Acknowledge action event type
+
+    :canonical: kortex_api.autogen.messages.Base_pb2.AcknowledgeActionEvent
+    .. py:attribute:: UNSPECIFIED_ACKNOWLEDGE_ACTION_EVENT (0):   No acknowledge action event
+
+    .. py:attribute:: ACKNOWLEDGE_ACTION_OCCURRED (1):   Acknowledge action occurred

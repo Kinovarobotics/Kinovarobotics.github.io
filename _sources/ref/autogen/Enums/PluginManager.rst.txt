@@ -1,0 +1,73 @@
+================================
+PluginManager
+================================
+    
+.. py:currentmodule:: kortex_api.autogen
+
+.. _PluginManagerServiceVersion:
+
+.. py:class:: ServiceVersion
+
+     Identifies PluginManager service current version
+
+    :canonical: kortex_api.autogen.messages.PluginManager_pb2.ServiceVersion
+    .. py:attribute:: RESERVED_0 (0):   Reserved
+
+    .. py:attribute:: CURRENT_VERSION (1):   Current version
+
+.. _PluginManagerContainerState:
+
+.. py:class:: ContainerState
+
+     State of a Plugin's container
+
+    :canonical: kortex_api.autogen.messages.PluginManager_pb2.ContainerState
+    .. py:attribute:: CONTAINER_STATE_UNSPECIFIED (0):  
+
+    .. py:attribute:: CONTAINER_STATE_NOT_APPLICABLE (1):   There is no container for this plugin
+
+    .. py:attribute:: CONTAINER_STATE_RUNNING (2):   The container is running
+
+    .. py:attribute:: CONTAINER_STATE_STOPPED (3):   The container is stopped
+
+    .. py:attribute:: CONTAINER_STATE_CRASHED (4):   The container is stopped because it crashed unexpectedly
+
+    .. py:attribute:: CONTAINER_STATE_LAUNCHING (5):   The container is being launched
+
+    .. py:attribute:: CONTAINER_STATE_SHUTTING_DOWN (6):   The container is being shut down
+
+.. _PluginManagerInstallationType:
+
+.. py:class:: InstallationType
+
+     Installation type of a plugin
+
+    :canonical: kortex_api.autogen.messages.PluginManager_pb2.InstallationType
+    .. py:attribute:: INSTALLATION_TYPE_UNSPECIFIED (0):  
+
+    .. py:attribute:: INSTALLATION_TYPE_CORE (1):   This plugin runs natively on the controller and cannot be uninstalled
+
+    .. py:attribute:: INSTALLATION_TYPE_INSTALLED (2):   This plugin runs in a Docker container on the controller and followed a normal installation process 
+
+    .. py:attribute:: INSTALLATION_TYPE_EXTERNAL (3):   This plugin runs outside of the controller and is not managed by the Plugin Manager
+
+.. _PluginManagerPluginInstallationEvent:
+
+.. py:class:: PluginInstallationEvent
+
+    
+
+    :canonical: kortex_api.autogen.messages.PluginManager_pb2.PluginInstallationEvent
+    .. py:attribute:: PLUGIN_INSTALLATION_EVENT_UNSPECIFIED (0):  
+
+    .. py:attribute:: PLUGIN_INSTALLATION_EVENT_INSTALLATION_COMPLETED (1):  
+
+    .. py:attribute:: PLUGIN_INSTALLATION_EVENT_INSTALLATION_FAILED (2):  
+
+    .. py:attribute:: PLUGIN_INSTALLATION_EVENT_UNINSTALLATION_COMPLETED (3):  
+
+    .. py:attribute:: PLUGIN_INSTALLATION_EVENT_UNINSTALLATION_FAILED (4):  
+
+    .. py:attribute:: PLUGIN_INSTALLATION_EVENT_UNINSTALL_ALL_COMPLETED (5):  
+
+    .. py:attribute:: PLUGIN_INSTALLATION_EVENT_UNINSTALL_ALL_FAILED (6):  

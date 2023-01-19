@@ -1,0 +1,223 @@
+================================
+Modbus
+================================
+    
+.. py:currentmodule:: kortex_api.autogen
+
+.. py:class:: ModbusClient
+        
+    :canonical: kortex_api.autogen.client_stubs.ModbusClientRpc
+
+    .. py:method:: __init__(router, namespace = None)
+
+        Constructs a ModbusClient with an initialized :class:`~kortex_api.RouterClient.RouterClient` and an optional namespace.
+
+        :param RouterClient router: :class:`~kortex_api.RouterClient.RouterClient` used for the communication
+        :param string namespace: Optional namespace on which to initialize the ModbusClient (defaults to ``None``)
+
+    .. py:method:: IsAlive (timeoutMs: int = 1000)
+        
+        Returns ``True`` if the Service Server is detected online before ``timeoutMs`` is expired, ``False`` otherwise.
+        
+        :param unsigned int timeoutMs: The maximum time to wait for an answer from the server 
+        :rtype: bool
+
+
+        .. _ModbusClientReadCoils:
+
+    .. py:method:: ReadCoils (readrequest, deviceId = 0, options = RouterClientSendOptions())
+        
+        | The ``READ_ONLY`` permission is necessary to call this RPC.
+        |
+        | MODBUS function code 1.
+        | A DEVICE_READY error will be thrown if no connection has been initialized with InitConnection.
+        | 
+
+
+        :param readrequest:  
+        :type readrequest: :ref:`ReadRequest <ModbusReadRequest>`
+
+        :param int deviceId: Device's Id called by rpc (optional)
+        :param RouterClientSendOptions options: Router options for sending the message
+ 
+        :rtype: ReadCoilResponse
+
+        .. _ModbusClientReadDiscreteInputs:
+
+    .. py:method:: ReadDiscreteInputs (readrequest, deviceId = 0, options = RouterClientSendOptions())
+        
+        | The ``READ_ONLY`` permission is necessary to call this RPC.
+        |
+        | MODBUS function code 2
+        | A DEVICE_READY error will be thrown if no connection has been initialized with InitConnection.
+        | 
+
+
+        :param readrequest:  
+        :type readrequest: :ref:`ReadRequest <ModbusReadRequest>`
+
+        :param int deviceId: Device's Id called by rpc (optional)
+        :param RouterClientSendOptions options: Router options for sending the message
+ 
+        :rtype: ReadCoilResponse
+
+        .. _ModbusClientReadHoldingRegisters:
+
+    .. py:method:: ReadHoldingRegisters (readrequest, deviceId = 0, options = RouterClientSendOptions())
+        
+        | The ``READ_ONLY`` permission is necessary to call this RPC.
+        |
+        | MODBUS function code 3
+        | A DEVICE_READY error will be thrown if no connection has been initialized with InitConnection.
+        | 
+
+
+        :param readrequest:  
+        :type readrequest: :ref:`ReadRequest <ModbusReadRequest>`
+
+        :param int deviceId: Device's Id called by rpc (optional)
+        :param RouterClientSendOptions options: Router options for sending the message
+ 
+        :rtype: ReadRegisterResponse
+
+        .. _ModbusClientReadInputRegisters:
+
+    .. py:method:: ReadInputRegisters (readrequest, deviceId = 0, options = RouterClientSendOptions())
+        
+        | The ``READ_ONLY`` permission is necessary to call this RPC.
+        |
+        | MODBUS function code 4
+        | A DEVICE_READY error will be thrown if no connection has been initialized with InitConnection.
+        | 
+
+
+        :param readrequest:  
+        :type readrequest: :ref:`ReadRequest <ModbusReadRequest>`
+
+        :param int deviceId: Device's Id called by rpc (optional)
+        :param RouterClientSendOptions options: Router options for sending the message
+ 
+        :rtype: ReadRegisterResponse
+
+        .. _ModbusClientWriteSingleCoil:
+
+    .. py:method:: WriteSingleCoil (singlecoilwriterequest, deviceId = 0, options = RouterClientSendOptions())
+        
+        | The ``CONFIGURE`` permission is necessary to call this RPC.
+        |
+        | MODBUS function code 5
+        | A DEVICE_READY error will be thrown if no connection has been initialized with InitConnection.
+        | 
+
+
+        :param singlecoilwriterequest:  
+        :type singlecoilwriterequest: :ref:`SingleCoilWriteRequest <ModbusSingleCoilWriteRequest>`
+
+        :param int deviceId: Device's Id called by rpc (optional)
+        :param RouterClientSendOptions options: Router options for sending the message
+
+        .. _ModbusClientWriteSingleHoldRegister:
+
+    .. py:method:: WriteSingleHoldRegister (singleregisterwriterequest, deviceId = 0, options = RouterClientSendOptions())
+        
+        | The ``CONFIGURE`` permission is necessary to call this RPC.
+        |
+        | MODBUS function code 6
+        | A DEVICE_READY error will be thrown if no connection has been initialized with InitConnection.
+        | 
+
+
+        :param singleregisterwriterequest:  
+        :type singleregisterwriterequest: :ref:`SingleRegisterWriteRequest <ModbusSingleRegisterWriteRequest>`
+
+        :param int deviceId: Device's Id called by rpc (optional)
+        :param RouterClientSendOptions options: Router options for sending the message
+
+        .. _ModbusClientWriteMultipleCoils:
+
+    .. py:method:: WriteMultipleCoils (multiplecoilswriterequest, deviceId = 0, options = RouterClientSendOptions())
+        
+        | The ``CONFIGURE`` permission is necessary to call this RPC.
+        |
+        | MODBUS function code 15
+        | A DEVICE_READY error will be thrown if no connection has been initialized with InitConnection.
+        | 
+
+
+        :param multiplecoilswriterequest:  
+        :type multiplecoilswriterequest: :ref:`MultipleCoilsWriteRequest <ModbusMultipleCoilsWriteRequest>`
+
+        :param int deviceId: Device's Id called by rpc (optional)
+        :param RouterClientSendOptions options: Router options for sending the message
+
+        .. _ModbusClientWriteMultipleHoldRegisters:
+
+    .. py:method:: WriteMultipleHoldRegisters (multipleregisterswriterequest, deviceId = 0, options = RouterClientSendOptions())
+        
+        | The ``CONFIGURE`` permission is necessary to call this RPC.
+        |
+        | MODBUS function code 16
+        | A DEVICE_READY error will be thrown if no connection has been initialized with InitConnection.
+        | 
+
+
+        :param multipleregisterswriterequest:  
+        :type multipleregisterswriterequest: :ref:`MultipleRegistersWriteRequest <ModbusMultipleRegistersWriteRequest>`
+
+        :param int deviceId: Device's Id called by rpc (optional)
+        :param RouterClientSendOptions options: Router options for sending the message
+
+        .. _ModbusClientInitConnection:
+
+    .. py:method:: InitConnection (connectionparameters, deviceId = 0, options = RouterClientSendOptions())
+        
+        | The ``CONFIGURE`` permission is necessary to call this RPC.
+        |
+        | Initialize a connection with a MODBUS server (slave). Returns a device handle for the created connection.
+        | To connect with the Wrist, the ip_address should be "10.10.0.16" and the port should be 502.
+        | An INVALID_DEVICE error will be thrown if the device ID is invalid or if the connection to the given device ID fails to be established.
+        | 
+
+
+        :param connectionparameters:  
+        :type connectionparameters: :ref:`ConnectionParameters <ModbusConnectionParameters>`
+
+        :param int deviceId: Device's Id called by rpc (optional)
+        :param RouterClientSendOptions options: Router options for sending the message
+ 
+        :rtype: DeviceHandle
+
+        .. _ModbusClientSetTargetSlave:
+
+    .. py:method:: SetTargetSlave (devicehandle, deviceId = 0, options = RouterClientSendOptions())
+        
+        | The ``CONFIGURE`` permission is necessary to call this RPC.
+        |
+        | Sets the slave target. It will receive the next MODBUS commands.
+        | The device_identifier field shall be filled with a valid slave ID.
+        | An INVALID_DEVICE error will be thrown if the slave ID is invalid.
+        | 
+
+
+        :param devicehandle:  
+        :type devicehandle: :ref:`DeviceHandle <CommonDeviceHandle>`
+
+        :param int deviceId: Device's Id called by rpc (optional)
+        :param RouterClientSendOptions options: Router options for sending the message
+
+        .. _ModbusClientCloseConnection:
+
+    .. py:method:: CloseConnection (devicehandle, deviceId = 0, options = RouterClientSendOptions())
+        
+        | The ``CONFIGURE`` permission is necessary to call this RPC.
+        |
+        | Close the currently active connection with a MODBUS server (slave).
+        | The input parameter is unused.
+        | 
+
+
+        :param devicehandle:  
+        :type devicehandle: :ref:`DeviceHandle <CommonDeviceHandle>`
+
+        :param int deviceId: Device's Id called by rpc (optional)
+        :param RouterClientSendOptions options: Router options for sending the message

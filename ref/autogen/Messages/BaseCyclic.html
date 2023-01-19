@@ -1,0 +1,466 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>BaseCyclic &mdash; Kortex API  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/dark_mode_css/general.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/dark_mode_css/dark.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/sphinx_highlight.js"></script>
+        <script src="../../../_static/dark_mode_js/default_dark.js"></script>
+        <script src="../../../_static/dark_mode_js/theme_switcher.js"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Common" href="Common.html" />
+    <link rel="prev" title="Base" href="Base.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> Kortex API
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption" role="heading"><span class="caption-text">Getting started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../getting_started/installation.html">Install the API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../getting_started/api_mechanism.html">Get to know it</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../getting_started/code_examples.html">See what you can do (examples)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../getting_started/error_management.html">Managing problems</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">API</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Python API Reference</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../RouterClient.html">RouterClient</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../SessionManager.html">SessionManager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../MqttTransport.html">MqttTransport</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../UDPTransport.html">UDPTransport</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Constants.html">Constants</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../exceptions/index.html">Exceptions</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">Autogen</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../Enums/index.html">Enums</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Services/index.html">Services</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="index.html">Messages</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="ActuatorConfig.html">ActuatorConfig</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ActuatorCyclic.html">ActuatorCyclic</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Base.html">Base</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">BaseCyclic</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Common.html">Common</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ControlConfig.html">ControlConfig</a></li>
+<li class="toctree-l4"><a class="reference internal" href="DeviceConfig.html">DeviceConfig</a></li>
+<li class="toctree-l4"><a class="reference internal" href="DeviceManager.html">DeviceManager</a></li>
+<li class="toctree-l4"><a class="reference internal" href="EditingContext.html">EditingContext</a></li>
+<li class="toctree-l4"><a class="reference internal" href="EventBroker.html">EventBroker</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Frame.html">Frame</a></li>
+<li class="toctree-l4"><a class="reference internal" href="IndustrialIO.html">IndustrialIO</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Modbus.html">Modbus</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Plugin.html">Plugin</a></li>
+<li class="toctree-l4"><a class="reference internal" href="PluginManager.html">PluginManager</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ProductConfiguration.html">ProductConfiguration</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ProgramConfig.html">ProgramConfig</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ProgramRunner.html">ProgramRunner</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ProtectionZone.html">ProtectionZone</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SafetyControlUnitConfig.html">SafetyControlUnitConfig</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SafetyFunctions.html">SafetyFunctions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SafetyFunctionsCommon.html">SafetyFunctionsCommon</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SafetyFunctionsElbow.html">SafetyFunctionsElbow</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SafetyFunctionsJointLimits.html">SafetyFunctionsJointLimits</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SafetyFunctionsToolCenterPoint.html">SafetyFunctionsToolCenterPoint</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SafetyIO.html">SafetyIO</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Session.html">Session</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ToolManager.html">ToolManager</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ToolPlugin.html">ToolPlugin</a></li>
+<li class="toctree-l4"><a class="reference internal" href="VariableManager.html">VariableManager</a></li>
+<li class="toctree-l4"><a class="reference internal" href="WristConfigC61.html">WristConfigC61</a></li>
+<li class="toctree-l4"><a class="reference internal" href="WristCyclicC61.html">WristCyclicC61</a></li>
+<li class="toctree-l4"><a class="reference internal" href="WristCyclicCommon.html">WristCyclicCommon</a></li>
+<li class="toctree-l4"><a class="reference internal" href="WristCyclicGeneric.html">WristCyclicGeneric</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../Notifications.html">Notifications</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Kortex API</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../index.html">Python API Reference</a> &raquo;</li>
+        
+          <li><a href="../index.html">Autogen</a> &raquo;</li>
+        
+          <li><a href="index.html">Messages</a> &raquo;</li>
+        
+      <li>BaseCyclic</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../_sources/ref/autogen/Messages/BaseCyclic.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="basecyclic">
+<h1>BaseCyclic<a class="headerlink" href="#basecyclic" title="Permalink to this heading">¶</a></h1>
+<span class="target" id="basecyclicbasefeedback"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.BaseFeedback">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">BaseFeedback</span></span><a class="headerlink" href="#kortex_api.autogen.BaseFeedback" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Defines the feedback provided by the base</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.BaseCyclic_pb2.BaseFeedback</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>active_state_connection_identifier</strong> (<span class="xref std std-ref">int</span>) – Connection identifier of the last processed command which triggered an arm state change</p></li>
+<li><p><strong>active_state</strong> (<a class="reference internal" href="../Enums/Common.html#commonarmstate"><span class="std std-ref">ArmState</span></a>) – Active state of the arm</p></li>
+<li><p><strong>arm_voltage</strong> (<span class="xref std std-ref">float</span>) – Arm voltage (in Volts)</p></li>
+<li><p><strong>arm_current</strong> (<span class="xref std std-ref">float</span>) – Arm current (in Amperes)</p></li>
+<li><p><strong>temperature_cpu</strong> (<span class="xref std std-ref">float</span>) – CPU temperature (in degree Celsius)</p></li>
+<li><p><strong>temperature_ambient</strong> (<span class="xref std std-ref">float</span>) – Ambient temperature (in degree Celsius)</p></li>
+<li><p><strong>imu_acceleration_x</strong> (<span class="xref std std-ref">float</span>) – IMU Measured acceleration (X-Axis) of the base (in meters per second squared)</p></li>
+<li><p><strong>imu_acceleration_y</strong> (<span class="xref std std-ref">float</span>) – IMU Measured acceleration (Y-Axis) of the base (in meters per second squared)</p></li>
+<li><p><strong>imu_acceleration_z</strong> (<span class="xref std std-ref">float</span>) – IMU Measured acceleration (Z-Axis) of the base (in meters per second squared)</p></li>
+<li><p><strong>imu_angular_velocity_x</strong> (<span class="xref std std-ref">float</span>) – IMU Measured angular velocity (X-Axis) of the base (in degrees per second)</p></li>
+<li><p><strong>imu_angular_velocity_y</strong> (<span class="xref std std-ref">float</span>) – IMU Measured angular velocity (Y-Axis) of the base (in degrees per second)</p></li>
+<li><p><strong>imu_angular_velocity_z</strong> (<span class="xref std std-ref">float</span>) – IMU Measured angular velocity (Z-Axis) of the base (in degrees per second)</p></li>
+<li><p><strong>tool_pose_x</strong> (<span class="xref std std-ref">float</span>) – Measured Cartesian position (X-Axis) of the tool (in meters)</p></li>
+<li><p><strong>tool_pose_y</strong> (<span class="xref std std-ref">float</span>) – Measured Cartesian position (Y-Axis) of the tool (in meters)</p></li>
+<li><p><strong>tool_pose_z</strong> (<span class="xref std std-ref">float</span>) – Measured Cartesian position (Z-Axis) of the tool (in meters)</p></li>
+<li><p><strong>tool_pose_theta_x</strong> (<span class="xref std std-ref">float</span>) – Measured Cartesian orientation (X-Axis) of the tool (in degrees)</p></li>
+<li><p><strong>tool_pose_theta_y</strong> (<span class="xref std std-ref">float</span>) – Measured Cartesian orientation (Y-Axis) of the tool (in degrees)</p></li>
+<li><p><strong>tool_pose_theta_z</strong> (<span class="xref std std-ref">float</span>) – Measured Cartesian orientation (Z-Axis) of the tool (in degrees)</p></li>
+<li><p><strong>tool_twist_linear_x</strong> (<span class="xref std std-ref">float</span>) – Measured Cartesian linear velocity (X-Axis) of the tool (in meters per second)</p></li>
+<li><p><strong>tool_twist_linear_y</strong> (<span class="xref std std-ref">float</span>) – Measured Cartesian linear velocity (Y-Axis) of the tool (in meters per second)</p></li>
+<li><p><strong>tool_twist_linear_z</strong> (<span class="xref std std-ref">float</span>) – Measured Cartesian linear velocity (Z-Axis) of the tool (in meters per second)</p></li>
+<li><p><strong>tool_twist_angular_x</strong> (<span class="xref std std-ref">float</span>) – Measured Cartesian angular velocity (X-Axis) of the tool (in degrees per second)</p></li>
+<li><p><strong>tool_twist_angular_y</strong> (<span class="xref std std-ref">float</span>) – Measured Cartesian angular velocity (Y-Axis) of the tool (in degrees per second)</p></li>
+<li><p><strong>tool_twist_angular_z</strong> (<span class="xref std std-ref">float</span>) – Measured Cartesian angular velocity (Z-Axis) of the tool (in degrees per second)</p></li>
+<li><p><strong>tool_external_wrench_force_x</strong> (<span class="xref std std-ref">float</span>) – Computed force in X-Axis from external wrench (in Newtons)</p></li>
+<li><p><strong>tool_external_wrench_force_y</strong> (<span class="xref std std-ref">float</span>) – Computed force in Y-Axis from external wrench (in Newtons)</p></li>
+<li><p><strong>tool_external_wrench_force_z</strong> (<span class="xref std std-ref">float</span>) – Computed force in Z-Axis from external wrench (in Newtons)</p></li>
+<li><p><strong>tool_external_wrench_torque_x</strong> (<span class="xref std std-ref">float</span>) – Computed torque about X-axis from external wrench (in Newton-meters)</p></li>
+<li><p><strong>tool_external_wrench_torque_y</strong> (<span class="xref std std-ref">float</span>) – Computed torque about Y-axis from external wrench (in Newton-meters)</p></li>
+<li><p><strong>tool_external_wrench_torque_z</strong> (<span class="xref std std-ref">float</span>) – Computed torque about Z-axis from external wrench (in Newton-meters)</p></li>
+<li><p><strong>fault_bank_a</strong> (<span class="xref std std-ref">int</span>) – The arm fault flags bank A (see Base.BaseDiagnosticIdentifierBankA)</p></li>
+<li><p><strong>fault_bank_b</strong> (<span class="xref std std-ref">int</span>) – The arm fault flags bank B (see Base.BaseDiagnosticIdentifierBankB)</p></li>
+<li><p><strong>warning_bank_a</strong> (<span class="xref std std-ref">int</span>) – The arm warning flags bank A</p></li>
+<li><p><strong>warning_bank_b</strong> (<span class="xref std std-ref">int</span>) – The arm warning flags bank B</p></li>
+<li><p><strong>commanded_tool_pose_x</strong> (<span class="xref std std-ref">float</span>) – Commanded Cartesian position (X-Axis) of the tool (in meters)</p></li>
+<li><p><strong>commanded_tool_pose_y</strong> (<span class="xref std std-ref">float</span>) – Commanded Cartesian position (Y-Axis) of the tool (in meters)</p></li>
+<li><p><strong>commanded_tool_pose_z</strong> (<span class="xref std std-ref">float</span>) – Commanded Cartesian position (Z-Axis) of the tool (in meters)</p></li>
+<li><p><strong>commanded_tool_pose_theta_x</strong> (<span class="xref std std-ref">float</span>) – Commanded Cartesian orientation (X-Axis) of the tool (in degrees)</p></li>
+<li><p><strong>commanded_tool_pose_theta_y</strong> (<span class="xref std std-ref">float</span>) – Commanded Cartesian orientation (Y-Axis) of the tool (in degrees)</p></li>
+<li><p><strong>commanded_tool_pose_theta_z</strong> (<span class="xref std std-ref">float</span>) – Commanded Cartesian orientation (Z-Axis) of the tool (in degrees)</p></li>
+<li><p><strong>operating_mode</strong> (<a class="reference internal" href="../Enums/Common.html#commonoperatingmodetype"><span class="std std-ref">OperatingModeType</span></a>) – Current operating mode of the arm (only applicable if active_state is operational or recovery)</p></li>
+<li><p><strong>enabling_device_state</strong> (<span class="xref std std-ref">bool</span>) – Current enabling device state. True is pressed, false if released</p></li>
+<li><p><strong>scu_fault_bank_a</strong> (<span class="xref std std-ref">int</span>) – The SCU diagnostic flags bank A (see Base.LinkSCUDiagnosticIdentifierBankA)</p></li>
+<li><p><strong>scu_fault_bank_b</strong> (<span class="xref std std-ref">int</span>) – The SCU diagnostic flags bank B (see Base.LinkSCUDiagnosticIdentifierBankB)</p></li>
+<li><p><strong>scu_fault_bank_c</strong> (<span class="xref std std-ref">int</span>) – The SCU diagnostic flags bank C (see Base.LinkSCUDiagnosticIdentifierBankC)</p></li>
+<li><p><strong>scu_fault_bank_d</strong> (<span class="xref std std-ref">int</span>) – The SCU diagnostic flags bank D (see Base.LinkSCUDiagnosticIdentifierBankD)</p></li>
+<li><p><strong>flange_pose</strong> (<a class="reference internal" href="Base.html#basepose"><span class="std std-ref">Pose</span></a>) – Measured Pose of the flange</p></li>
+<li><p><strong>is_emergency_stop_activated</strong> (<span class="xref std std-ref">bool</span>) – Emergency stop state. True if pressed, false otherwise</p></li>
+<li><p><strong>active_payload</strong> (<span class="xref std std-ref">float</span>) – Active Payload (in kg)</p></li>
+<li><p><strong>state_bank</strong> (<span class="xref std std-ref">int</span>) – State of the robot arm (see Base.LinkStateIdentifierBank)</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="basecyclicfieldcustomtype"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.FieldCustomType">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">FieldCustomType</span></span><a class="headerlink" href="#kortex_api.autogen.FieldCustomType" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Custom data field</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.BaseCyclic_pb2.FieldCustomType</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><p><strong>command_list</strong> (<a class="reference internal" href="../Enums/BaseCyclic.html#basecycliccustomtype"><span class="std std-ref">CustomType</span></a> [ ]) – Command list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="basecyclicfieldcustomdata"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.FieldCustomData">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">FieldCustomData</span></span><a class="headerlink" href="#kortex_api.autogen.FieldCustomData" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Custom data field</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.BaseCyclic_pb2.FieldCustomData</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>float</strong> (<em>float</em>) – Float. Part of the <code class="docutils literal notranslate"><span class="pre">values</span></code> <a class="reference external" href="https://developers.google.com/protocol-buffers/docs/reference/python-generated#oneof">Oneof</a>.</p></li>
+<li><p><strong>fix32</strong> (<em>int</em>) – <p>Fixed32. Part of the <code class="docutils literal notranslate"><span class="pre">values</span></code> <a class="reference external" href="https://developers.google.com/protocol-buffers/docs/reference/python-generated#oneof">Oneof</a>.</p>
+</p></li>
+<li><p><strong>int32</strong> (<em>int</em>) – <p>Int32. Part of the <code class="docutils literal notranslate"><span class="pre">values</span></code> <a class="reference external" href="https://developers.google.com/protocol-buffers/docs/reference/python-generated#oneof">Oneof</a>.</p>
+</p></li>
+<li><p><strong>uint32</strong> (<em>int</em>) – <p>Unit32. Part of the <code class="docutils literal notranslate"><span class="pre">values</span></code> <a class="reference external" href="https://developers.google.com/protocol-buffers/docs/reference/python-generated#oneof">Oneof</a>.</p>
+</p></li>
+<li><p><strong>bool</strong> (<em>bool</em>) – <p>Bool. Part of the <code class="docutils literal notranslate"><span class="pre">values</span></code> <a class="reference external" href="https://developers.google.com/protocol-buffers/docs/reference/python-generated#oneof">Oneof</a>.</p>
+</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="basecyclicrepeatedfieldcustomdata"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.RepeatedFieldCustomData">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">RepeatedFieldCustomData</span></span><a class="headerlink" href="#kortex_api.autogen.RepeatedFieldCustomData" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.BaseCyclic_pb2.RepeatedFieldCustomData</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><p><strong>data</strong> (<a class="reference internal" href="#basecyclicfieldcustomdata"><span class="std std-ref">FieldCustomData</span></a> [ ]) – Data</p>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="basecycliccustomdata"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.CustomData">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">CustomData</span></span><a class="headerlink" href="#kortex_api.autogen.CustomData" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Custom development data, content varies according to debug needs</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.BaseCyclic_pb2.CustomData</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>frame_id</strong> (<span class="xref std std-ref">int</span>) – Frame ID</p></li>
+<li><p><strong>custom_datas</strong> (<a class="reference internal" href="#basecyclicrepeatedfieldcustomdata"><span class="std std-ref">RepeatedFieldCustomData</span></a> [ ]) – Custom data</p></li>
+<li><p><strong>actuators_custom_data</strong> (<a class="reference internal" href="ActuatorCyclic.html#actuatorcycliccustomdata"><span class="std std-ref">CustomData</span></a> [ ]) – Actuator custom data</p></li>
+<li><p><strong>wrist_custom_data</strong> (<span class="xref std std-ref">CustomData</span>) – Wrist module custom data</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="basecycliccommand"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.Command">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Command</span></span><a class="headerlink" href="#kortex_api.autogen.Command" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Defines a command provided to robot devices (actuators and interface)</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.BaseCyclic_pb2.Command</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>frame_id</strong> (<span class="xref std std-ref">int</span>) – Frame ID</p></li>
+<li><p><strong>actuators</strong> (<a class="reference internal" href="ActuatorCyclic.html#actuatorcycliccommand"><span class="std std-ref">Command</span></a> [ ]) – Actuator command</p></li>
+<li><p><strong>wrist</strong> (<span class="xref std std-ref">Command</span>) – Wrist module command</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="basecyclicfeedback"></span><dl class="py class">
+<dt class="sig sig-object py" id="kortex_api.autogen.Feedback">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Feedback</span></span><a class="headerlink" href="#kortex_api.autogen.Feedback" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Defines the feedback provided by robot devices (base, actuators and interface)</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Canonical</dt>
+<dd class="field-odd"><p>kortex_api.autogen.messages.BaseCyclic_pb2.Feedback</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>frame_id</strong> (<span class="xref std std-ref">int</span>) – Frame ID</p></li>
+<li><p><strong>base</strong> (<a class="reference internal" href="#basecyclicbasefeedback"><span class="std std-ref">BaseFeedback</span></a>) – Base feedback</p></li>
+<li><p><strong>actuators</strong> (<a class="reference internal" href="ActuatorCyclic.html#actuatorcyclicfeedback"><span class="std std-ref">Feedback</span></a> [ ]) – Actuator feedback</p></li>
+<li><p><strong>wrist</strong> (<span class="xref std std-ref">Feedback</span>) – Wrist module feedback</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="Common.html" class="btn btn-neutral float-right" title="Common" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="Base.html" class="btn btn-neutral float-left" title="Base" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2022, Kinova.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -1,0 +1,622 @@
+================================
+ControlConfig
+================================
+    
+.. py:currentmodule:: kortex_api.autogen
+
+.. py:class:: ControlConfigClient
+        
+    :canonical: kortex_api.autogen.client_stubs.ControlConfigClientRpc
+
+    .. py:method:: __init__(router, namespace = None)
+
+        Constructs a ControlConfigClient with an initialized :class:`~kortex_api.RouterClient.RouterClient` and an optional namespace.
+
+        :param RouterClient router: :class:`~kortex_api.RouterClient.RouterClient` used for the communication
+        :param string namespace: Optional namespace on which to initialize the ControlConfigClient (defaults to ``None``)
+
+    .. py:method:: IsAlive (timeoutMs: int = 1000)
+        
+        Returns ``True`` if the Service Server is detected online before ``timeoutMs`` is expired, ``False`` otherwise.
+        
+        :param unsigned int timeoutMs: The maximum time to wait for an answer from the server 
+        :rtype: bool
+
+
+        .. _ControlConfigClientSetGravityVector:
+
+    .. py:method:: SetGravityVector (gravityvector, deviceId = 0, options = RouterClientSendOptions())
+        
+        | The ``CONFIGURE`` permission is necessary to call this RPC.
+        |
+        | Sets global gravity vector in terms of base reference frame.
+        | The arm must be powered off and not be in an Unrecoverable Fault state, or powered on and be in Monitored Stop state to set the gravity vector.
+        | This needs to be configured to enable control of the robot in wall or ceiling mounting.
+        | 
+
+
+        :param gravityvector:  
+        :type gravityvector: :ref:`GravityVector <ControlConfigGravityVector>`
+
+        :param int deviceId: Device's Id called by rpc (optional)
+        :param RouterClientSendOptions options: Router options for sending the message
+
+        .. _ControlConfigClientGetGravityVector:
+
+    .. py:method:: GetGravityVector (, deviceId = 0, options = RouterClientSendOptions())
+        
+        | The ``READ_ONLY`` permission is necessary to call this RPC.
+        |
+        | Retrieves global gravity vector
+
+        :param int deviceId: Device's Id called by rpc (optional)
+        :param RouterClientSendOptions options: Router options for sending the message
+ 
+        :rtype: GravityVector
+
+        .. _ControlConfigClientSetPayloadInformation:
+
+    .. py:method:: SetPayloadInformation (payloadinformation, deviceId = 0, options = RouterClientSendOptions())
+        
+        | The ``CONFIGURE`` permission is necessary to call this RPC.
+        |
+        | Sets payload information.
+        | This needs to be configured so that the controller can take into account the presence of the payload while computing the kinematics of the robot.
+        | The arm must not be in an Unrecoverable Fault state to set the payload information.
+        | This RPC will also error with a WRONG_MODE error if a program is playing when it's called.
+        | 
+
+
+        :param payloadinformation:  
+        :type payloadinformation: :ref:`PayloadInformation <ControlConfigPayloadInformation>`
+
+        :param int deviceId: Device's Id called by rpc (optional)
+        :param RouterClientSendOptions options: Router options for sending the message
+
+        .. _ControlConfigClientGetPayloadInformation:
+
+    .. py:method:: GetPayloadInformation (, deviceId = 0, options = RouterClientSendOptions())
+        
+        | The ``READ_ONLY`` permission is necessary to call this RPC.
+        |
+        | Retrieves payload information
+
+        :param int deviceId: Device's Id called by rpc (optional)
+        :param RouterClientSendOptions options: Router options for sending the message
+ 
+        :rtype: PayloadInformation
+
+        .. _ControlConfigClientGetToolConfiguration:
+
+    .. py:method:: GetToolConfiguration (, deviceId = 0, options = RouterClientSendOptions())
+        
+        | The ``READ_ONLY`` permission is necessary to call this RPC.
+        |
+        | Retrieves the tool configuration
+
+        :param int deviceId: Device's Id called by rpc (optional)
+        :param RouterClientSendOptions options: Router options for sending the message
+ 
+        :rtype: ToolConfiguration
+
+        .. _OnNotificationControlConfigClientControlConfigurationTopic:
+
+    .. py:method:: OnNotificationControlConfigurationTopic(callback, notificationoptions)
+    
+        | The ``READ_ONLY`` permission is necessary to call this RPC.
+        |
+        | Subscribes to control configuration notifications
+
+        :param callback: Function callback taking a :class:`ControlConfigurationNotification` as only argument, and returning ``None``.
+        :type callback: function
+        :param NotificationOptions notificationoptions: Notification options
+        :rtype: NotificationHandle
+
+        .. _ControlConfigClientUnsubscribe:
+
+    .. py:method:: Unsubscribe (notificationhandle, deviceId = 0, options = RouterClientSendOptions())
+        
+        | The ``CONFIGURE`` permission is necessary to call this RPC.
+        |
+        | Unsubscribes client from receiving specified type of notifications
+
+
+        :param notificationhandle:  
+        :type notificationhandle: :ref:`NotificationHandle <CommonNotificationHandle>`
+
+        :param int deviceId: Device's Id called by rpc (optional)
+        :param RouterClientSendOptions options: Router options for sending the message
+
+        .. _ControlConfigClientSetCartesianReferenceFrame:
+
+    .. py:method:: SetCartesianReferenceFrame (cartesianreferenceframeinfo, deviceId = 0, options = RouterClientSendOptions())
+        
+        | The ``CONFIGURE`` permission is necessary to call this RPC.
+        |
+        | Defines the reference frame to use with twist commands
+        | The arm must be powered on to set the reference frame.
+        | 
+
+
+        :param cartesianreferenceframeinfo:  
+        :type cartesianreferenceframeinfo: :ref:`CartesianReferenceFrameInfo <ControlConfigCartesianReferenceFrameInfo>`
+
+        :param int deviceId: Device's Id called by rpc (optional)
+        :param RouterClientSendOptions options: Router options for sending the message
+
+        .. _ControlConfigClientGetCartesianReferenceFrame:
+
+    .. py:method:: GetCartesianReferenceFrame (, deviceId = 0, options = RouterClientSendOptions())
+        
+        | The ``READ_ONLY`` permission is necessary to call this RPC.
+        |
+        | Retrieves the current reference frame used by the twist commands
+
+        :param int deviceId: Device's Id called by rpc (optional)
+        :param RouterClientSendOptions options: Router options for sending the message
+ 
+        :rtype: CartesianReferenceFrameInfo
+
+        .. _ControlConfigClientSetLockedCartesianAxes:
+
+    .. py:method:: SetLockedCartesianAxes (axislockconfig, deviceId = 0, options = RouterClientSendOptions())
+        
+        | The ``CONFIGURE`` permission is necessary to call this RPC.
+        |
+        | Apply or remove a lock on some axis.
+        | control_mode must be CARTESIAN_HAND_GUIDING.
+        | translation.reference_frame must be CARTESIAN_REFERENCE_FRAME_TOOL or CARTESIAN_REFERENCE_FRAME_BASE.
+        | orientation.reference_frame must be CARTESIAN_REFERENCE_FRAME_TOOL or CARTESIAN_REFERENCE_FRAME_BASE.
+        | Both the translation and the orientation reference frames must be supplied and valid.
+        | translation.axes must contain 0 to 3 vectors. If more than one vector is provided, they must all be perpendicular.
+        | orientation.axes must contain 0 to 3 vectors. If more than one vector is provided, they must all be perpendicular.
+        | 
+
+
+        :param axislockconfig:  
+        :type axislockconfig: :ref:`AxisLockConfig <ControlConfigAxisLockConfig>`
+
+        :param int deviceId: Device's Id called by rpc (optional)
+        :param RouterClientSendOptions options: Router options for sending the message
+
+        .. _ControlConfigClientGetLockedCartesianAxes:
+
+    .. py:method:: GetLockedCartesianAxes (controlmodeinformation, deviceId = 0, options = RouterClientSendOptions())
+        
+        | The ``READ_ONLY`` permission is necessary to call this RPC.
+        |
+        | Retrieves the locked axis status.
+        | control_mode must be CARTESIAN_HAND_GUIDING.
+        | 
+
+
+        :param controlmodeinformation:  
+        :type controlmodeinformation: :ref:`ControlModeInformation <ControlConfigControlModeInformation>`
+
+        :param int deviceId: Device's Id called by rpc (optional)
+        :param RouterClientSendOptions options: Router options for sending the message
+ 
+        :rtype: AxisLockConfig
+
+        .. _ControlConfigClientGetControlMode:
+
+    .. py:method:: GetControlMode (, deviceId = 0, options = RouterClientSendOptions())
+        
+        | The ``READ_ONLY`` permission is necessary to call this RPC.
+        |
+        | Retrieves current control mode
+
+        :param int deviceId: Device's Id called by rpc (optional)
+        :param RouterClientSendOptions options: Router options for sending the message
+ 
+        :rtype: ControlModeInformation
+
+        .. _ControlConfigClientSetJointSpeedSoftLimits:
+
+    .. py:method:: SetJointSpeedSoftLimits (jointspeedsoftlimits, deviceId = 0, options = RouterClientSendOptions())
+        
+        | The ```` permission is necessary to call this RPC.
+        |
+        | Set the software joint speed limits.
+
+
+        :param jointspeedsoftlimits:  
+        :type jointspeedsoftlimits: :ref:`JointSpeedSoftLimits <ControlConfigJointSpeedSoftLimits>`
+
+        :param int deviceId: Device's Id called by rpc (optional)
+        :param RouterClientSendOptions options: Router options for sending the message
+
+        .. _ControlConfigClientSetTwistLinearSoftLimit:
+
+    .. py:method:: SetTwistLinearSoftLimit (twistlinearsoftlimit, deviceId = 0, options = RouterClientSendOptions())
+        
+        | The ```` permission is necessary to call this RPC.
+        |
+        | Set the software twist linear limit.
+
+
+        :param twistlinearsoftlimit:  
+        :type twistlinearsoftlimit: :ref:`TwistLinearSoftLimit <ControlConfigTwistLinearSoftLimit>`
+
+        :param int deviceId: Device's Id called by rpc (optional)
+        :param RouterClientSendOptions options: Router options for sending the message
+
+        .. _ControlConfigClientSetTwistAngularSoftLimit:
+
+    .. py:method:: SetTwistAngularSoftLimit (twistangularsoftlimit, deviceId = 0, options = RouterClientSendOptions())
+        
+        | The ```` permission is necessary to call this RPC.
+        |
+        | Set the software twist angular limit.
+
+
+        :param twistangularsoftlimit:  
+        :type twistangularsoftlimit: :ref:`TwistAngularSoftLimit <ControlConfigTwistAngularSoftLimit>`
+
+        :param int deviceId: Device's Id called by rpc (optional)
+        :param RouterClientSendOptions options: Router options for sending the message
+
+        .. _ControlConfigClientSetJointAccelerationSoftLimits:
+
+    .. py:method:: SetJointAccelerationSoftLimits (jointaccelerationsoftlimits, deviceId = 0, options = RouterClientSendOptions())
+        
+        | The ```` permission is necessary to call this RPC.
+        |
+        | Set the software joint acceleration limits.
+
+
+        :param jointaccelerationsoftlimits:  
+        :type jointaccelerationsoftlimits: :ref:`JointAccelerationSoftLimits <ControlConfigJointAccelerationSoftLimits>`
+
+        :param int deviceId: Device's Id called by rpc (optional)
+        :param RouterClientSendOptions options: Router options for sending the message
+
+        .. _ControlConfigClientGetKinematicHardLimits:
+
+    .. py:method:: GetKinematicHardLimits (, deviceId = 0, options = RouterClientSendOptions())
+        
+        | The ``READ_ONLY`` permission is necessary to call this RPC.
+        |
+        | Retrieves angular and twist hard limits.
+
+        :param int deviceId: Device's Id called by rpc (optional)
+        :param RouterClientSendOptions options: Router options for sending the message
+ 
+        :rtype: KinematicLimits
+
+        .. _ControlConfigClientSetDesiredLinearTwist:
+
+    .. py:method:: SetDesiredLinearTwist (lineartwist, deviceId = 0, options = RouterClientSendOptions())
+        
+        | The ``CONFIGURE`` permission is necessary to call this RPC.
+        |
+        | Sets the desired linear twist when jogging the robot
+        | A VALUE_ABOVE_MAXIMUM error will be raised if the twist value is above 1.6 m/s.
+        | 
+
+
+        :param lineartwist:  
+        :type lineartwist: :ref:`LinearTwist <ControlConfigLinearTwist>`
+
+        :param int deviceId: Device's Id called by rpc (optional)
+        :param RouterClientSendOptions options: Router options for sending the message
+
+        .. _ControlConfigClientSetDesiredAngularTwist:
+
+    .. py:method:: SetDesiredAngularTwist (angulartwist, deviceId = 0, options = RouterClientSendOptions())
+        
+        | The ``CONFIGURE`` permission is necessary to call this RPC.
+        |
+        | Sets the desired angular twist when jogging the robot
+        | A VALUE_ABOVE_MAXIMUM error will be raised if the twist value is above 142.5 deg/s.
+        | 
+
+
+        :param angulartwist:  
+        :type angulartwist: :ref:`AngularTwist <ControlConfigAngularTwist>`
+
+        :param int deviceId: Device's Id called by rpc (optional)
+        :param RouterClientSendOptions options: Router options for sending the message
+
+        .. _ControlConfigClientSetDesiredJointSpeeds:
+
+    .. py:method:: SetDesiredJointSpeeds (jointspeeds, deviceId = 0, options = RouterClientSendOptions())
+        
+        | The ``CONFIGURE`` permission is necessary to call this RPC.
+        |
+        | Sets the desired joint speeds when jogging in angular mode.
+        | A VALUE_ABOVE_MAXIMUM error will be raised if any of the joint speeds is above its limit.
+        | The size of the joint_speed parameter must be equal to the number of actuators.
+        | 
+
+
+        :param jointspeeds:  
+        :type jointspeeds: :ref:`JointSpeeds <ControlConfigJointSpeeds>`
+
+        :param int deviceId: Device's Id called by rpc (optional)
+        :param RouterClientSendOptions options: Router options for sending the message
+
+        .. _ControlConfigClientGetDesiredSpeeds:
+
+    .. py:method:: GetDesiredSpeeds (, deviceId = 0, options = RouterClientSendOptions())
+        
+        | The ``READ_ONLY`` permission is necessary to call this RPC.
+        |
+        | Retrieves the desired joystick speeds
+
+        :param int deviceId: Device's Id called by rpc (optional)
+        :param RouterClientSendOptions options: Router options for sending the message
+ 
+        :rtype: DesiredSpeeds
+
+        .. _ControlConfigClientResetGravityVector:
+
+    .. py:method:: ResetGravityVector (, deviceId = 0, options = RouterClientSendOptions())
+        
+        | The ``CONFIGURE`` permission is necessary to call this RPC.
+        |
+        | Resets gravity vector to default values.
+        | The arm must be powered off and not be in an Unrecoverable Fault state, or powered on and be in Monitored Stop state to set the gravity vector.
+        | The default values are (x = 0, y = 0, z = -9.81).
+        | 
+
+        :param int deviceId: Device's Id called by rpc (optional)
+        :param RouterClientSendOptions options: Router options for sending the message
+ 
+        :rtype: GravityVector
+
+        .. _ControlConfigClientResetPayloadInformation:
+
+    .. py:method:: ResetPayloadInformation (, deviceId = 0, options = RouterClientSendOptions())
+        
+        | The ``CONFIGURE`` permission is necessary to call this RPC.
+        |
+        | Resets payload information to default values.
+        | This needs to be configured so that the controller can take into account the presence of the payload in computing the dynamics of the robot.
+        | The arm must not be in an Unrecoverable Fault state to set the payload information.
+        | This RPC will also error with a WRONG_MODE error if a program is playing when it's called.
+        | 
+
+        :param int deviceId: Device's Id called by rpc (optional)
+        :param RouterClientSendOptions options: Router options for sending the message
+ 
+        :rtype: PayloadInformation
+
+        .. _ControlConfigClientResetJointSpeedSoftLimits:
+
+    .. py:method:: ResetJointSpeedSoftLimits (controlmodeinformation, deviceId = 0, options = RouterClientSendOptions())
+        
+        | The ```` permission is necessary to call this RPC.
+        |
+        | Resets joint speed soft limits to default values
+
+
+        :param controlmodeinformation:  
+        :type controlmodeinformation: :ref:`ControlModeInformation <ControlConfigControlModeInformation>`
+
+        :param int deviceId: Device's Id called by rpc (optional)
+        :param RouterClientSendOptions options: Router options for sending the message
+ 
+        :rtype: JointSpeedSoftLimits
+
+        .. _ControlConfigClientResetTwistLinearSoftLimit:
+
+    .. py:method:: ResetTwistLinearSoftLimit (controlmodeinformation, deviceId = 0, options = RouterClientSendOptions())
+        
+        | The ```` permission is necessary to call this RPC.
+        |
+        | Resets twist linear soft limit to default value
+
+
+        :param controlmodeinformation:  
+        :type controlmodeinformation: :ref:`ControlModeInformation <ControlConfigControlModeInformation>`
+
+        :param int deviceId: Device's Id called by rpc (optional)
+        :param RouterClientSendOptions options: Router options for sending the message
+ 
+        :rtype: TwistLinearSoftLimit
+
+        .. _ControlConfigClientResetTwistAngularSoftLimit:
+
+    .. py:method:: ResetTwistAngularSoftLimit (controlmodeinformation, deviceId = 0, options = RouterClientSendOptions())
+        
+        | The ```` permission is necessary to call this RPC.
+        |
+        | Resets twist angular soft limit to default value
+
+
+        :param controlmodeinformation:  
+        :type controlmodeinformation: :ref:`ControlModeInformation <ControlConfigControlModeInformation>`
+
+        :param int deviceId: Device's Id called by rpc (optional)
+        :param RouterClientSendOptions options: Router options for sending the message
+ 
+        :rtype: TwistAngularSoftLimit
+
+        .. _ControlConfigClientResetJointAccelerationSoftLimits:
+
+    .. py:method:: ResetJointAccelerationSoftLimits (controlmodeinformation, deviceId = 0, options = RouterClientSendOptions())
+        
+        | The ```` permission is necessary to call this RPC.
+        |
+        | Resets joint acceleration soft limits to default values
+
+
+        :param controlmodeinformation:  
+        :type controlmodeinformation: :ref:`ControlModeInformation <ControlConfigControlModeInformation>`
+
+        :param int deviceId: Device's Id called by rpc (optional)
+        :param RouterClientSendOptions options: Router options for sending the message
+ 
+        :rtype: JointAccelerationSoftLimits
+
+        .. _OnNotificationControlConfigClientControlModeTopic:
+
+    .. py:method:: OnNotificationControlModeTopic(callback, notificationoptions)
+    
+        | The ``READ_ONLY`` permission is necessary to call this RPC.
+        |
+        | Subscribes to control mode topic for notifications
+
+        :param callback: Function callback taking a :class:`ControlModeNotification` as only argument, and returning ``None``.
+        :type callback: function
+        :param NotificationOptions notificationoptions: Notification options
+        :rtype: NotificationHandle
+
+        .. _ControlConfigClientSetJointPositionSoftLimits:
+
+    .. py:method:: SetJointPositionSoftLimits (jointpositionsoftlimits, deviceId = 0, options = RouterClientSendOptions())
+        
+        | The ```` permission is necessary to call this RPC.
+        |
+        | Set the software joint position limits.
+
+
+        :param jointpositionsoftlimits:  
+        :type jointpositionsoftlimits: :ref:`JointPositionSoftLimits <ControlConfigJointPositionSoftLimits>`
+
+        :param int deviceId: Device's Id called by rpc (optional)
+        :param RouterClientSendOptions options: Router options for sending the message
+
+        .. _ControlConfigClientResetJointPositionSoftLimits:
+
+    .. py:method:: ResetJointPositionSoftLimits (controlmodeinformation, deviceId = 0, options = RouterClientSendOptions())
+        
+        | The ```` permission is necessary to call this RPC.
+        |
+        | Resets joint position soft limits to default values
+
+
+        :param controlmodeinformation:  
+        :type controlmodeinformation: :ref:`ControlModeInformation <ControlConfigControlModeInformation>`
+
+        :param int deviceId: Device's Id called by rpc (optional)
+        :param RouterClientSendOptions options: Router options for sending the message
+ 
+        :rtype: JointPositionSoftLimits
+
+        .. _ControlConfigClientZeroExternalWrenchFromFTSensor:
+
+    .. py:method:: ZeroExternalWrenchFromFTSensor (, deviceId = 0, options = RouterClientSendOptions())
+        
+        | The ``CONFIGURE`` permission is necessary to call this RPC.
+        |
+        | Adds a persistent offset to the force torque sensor measurements of external efforts to make them equal to zero.
+        | This allows to compensate for small measurement errors (for example drift due to temperature).
+        | The arm must be powered on to set the zero external wrench.
+        | 
+
+        :param int deviceId: Device's Id called by rpc (optional)
+        :param RouterClientSendOptions options: Router options for sending the message
+
+        .. _ControlConfigClientResetExternalWrenchFromFTSensor:
+
+    .. py:method:: ResetExternalWrenchFromFTSensor (, deviceId = 0, options = RouterClientSendOptions())
+        
+        | The ``CONFIGURE`` permission is necessary to call this RPC.
+        |
+        | Resets external wrench from force torque sensor.
+        | The arm must be powered on to set the zero external wrench.
+        | 
+
+        :param int deviceId: Device's Id called by rpc (optional)
+        :param RouterClientSendOptions options: Router options for sending the message
+
+        .. _ControlConfigClientGetTcpTranslationSpeedSaturation:
+
+    .. py:method:: GetTcpTranslationSpeedSaturation (, deviceId = 0, options = RouterClientSendOptions())
+        
+        | The ``READ_ONLY`` permission is necessary to call this RPC.
+        |
+        | Gets the tcp translation speed saturation
+
+        :param int deviceId: Device's Id called by rpc (optional)
+        :param RouterClientSendOptions options: Router options for sending the message
+ 
+        :rtype: LinearTwist
+
+        .. _ControlConfigClientGetCollisionDetectionRangesList:
+
+    .. py:method:: GetCollisionDetectionRangesList (, deviceId = 0, options = RouterClientSendOptions())
+        
+        | The ``READ_ONLY`` permission is necessary to call this RPC.
+        |
+        | Retrieves collision detection limits range
+
+        :param int deviceId: Device's Id called by rpc (optional)
+        :param RouterClientSendOptions options: Router options for sending the message
+ 
+        :rtype: CollisionDetectionRangesList
+
+        .. _ControlConfigClientSetAllCollisionDetectionLimits:
+
+    .. py:method:: SetAllCollisionDetectionLimits (collisiondetectionlimitslist, deviceId = 0, options = RouterClientSendOptions())
+        
+        | The ``CONFIGURE`` permission is necessary to call this RPC.
+        |
+        | Sets all collision detection limits and activation mode statuses.
+        | The arm must be powered off and not be in an Unrecoverable Fault state, or powered on and be in Monitored Stop state to set the limits.
+        | 
+
+
+        :param collisiondetectionlimitslist:  
+        :type collisiondetectionlimitslist: :ref:`CollisionDetectionLimitsList <ControlConfigCollisionDetectionLimitsList>`
+
+        :param int deviceId: Device's Id called by rpc (optional)
+        :param RouterClientSendOptions options: Router options for sending the message
+
+        .. _ControlConfigClientGetAllCollisionDetectionLimits:
+
+    .. py:method:: GetAllCollisionDetectionLimits (, deviceId = 0, options = RouterClientSendOptions())
+        
+        | The ``READ_ONLY`` permission is necessary to call this RPC.
+        |
+        | Gets all collision detection limits and activation mode statuses
+
+        :param int deviceId: Device's Id called by rpc (optional)
+        :param RouterClientSendOptions options: Router options for sending the message
+ 
+        :rtype: CollisionDetectionLimitsList
+
+        .. _ControlConfigClientGetEnergyLimitsRangesList:
+
+    .. py:method:: GetEnergyLimitsRangesList (, deviceId = 0, options = RouterClientSendOptions())
+        
+        | The ``READ_ONLY`` permission is necessary to call this RPC.
+        |
+        | Retrieves energy limitation ranges
+
+        :param int deviceId: Device's Id called by rpc (optional)
+        :param RouterClientSendOptions options: Router options for sending the message
+ 
+        :rtype: EnergyLimitsRangesList
+
+        .. _ControlConfigClientSetAllEnergyLimits:
+
+    .. py:method:: SetAllEnergyLimits (energylimitslist, deviceId = 0, options = RouterClientSendOptions())
+        
+        | The ``CONFIGURE`` permission is necessary to call this RPC.
+        |
+        | Sets all energy limits and activation mode statuses.
+        | The arm must be powered off and not be in an Unrecoverable Fault state, or powered on and be in Monitored Stop state to set the limits.
+        | 
+
+
+        :param energylimitslist:  
+        :type energylimitslist: :ref:`EnergyLimitsList <ControlConfigEnergyLimitsList>`
+
+        :param int deviceId: Device's Id called by rpc (optional)
+        :param RouterClientSendOptions options: Router options for sending the message
+
+        .. _ControlConfigClientGetAllEnergyLimits:
+
+    .. py:method:: GetAllEnergyLimits (, deviceId = 0, options = RouterClientSendOptions())
+        
+        | The ``READ_ONLY`` permission is necessary to call this RPC.
+        |
+        | Gets all energy limits and activation mode statuses
+
+        :param int deviceId: Device's Id called by rpc (optional)
+        :param RouterClientSendOptions options: Router options for sending the message
+ 
+        :rtype: EnergyLimitsList

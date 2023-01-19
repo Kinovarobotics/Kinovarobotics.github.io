@@ -1,0 +1,16 @@
+================================
+DeviceManager
+================================
+    
+.. py:currentmodule:: kortex_api.autogen
+
+.. _DeviceManagerServiceVersion:
+
+.. py:class:: ServiceVersion
+
+     Identifies DeviceManager service current version
+
+    :canonical: kortex_api.autogen.messages.DeviceManager_pb2.ServiceVersion
+    .. py:attribute:: RESERVED_0 (0):   Reserved
+
+    .. py:attribute:: CURRENT_VERSION (1):   Current version
